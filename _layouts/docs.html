@@ -61,10 +61,16 @@
 </section>
 <div class="sub-nav">
 <ul>
-<li><a href="/docs/getting-started/">Getting Started</a></li>
+  {% for p in site.pages %}
+    <li>
+      <a href="{{ p.url }}">{{ p.title }}</a>
+    </li>
+  {% endfor %}
+
+<!--<li><a href="/docs/getting-started/">Getting Started</a></li>
 <li><a href="/docs/elements/">Elements</a></li>
 <li><a href="/docs/mapper/">Mapper</a></li>
-<li class="active"><a href="/docs/on-prem/">On-Premise</a></li>
+<li class="active"><a href="/docs/on-prem/">On-Premise</a></li>-->
 </ul>
 </div>
 <div class="docs">
