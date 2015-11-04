@@ -61,16 +61,13 @@
 </section>
 <div class="sub-nav">
 <ul>
-  {% for p in site.pages %}
+{% for p in site.pages %}
+  {% if page.categories contains 'fruit' %}
     <li>
       <a href="{{ p.url }}">{{ p.title }}</a>
     </li>
-  {% endfor %}
-
-<!--<li><a href="/docs/getting-started/">Getting Started</a></li>
-<li><a href="/docs/elements/">Elements</a></li>
-<li><a href="/docs/mapper/">Mapper</a></li>
-<li class="active"><a href="/docs/on-prem/">On-Premise</a></li>-->
+  {% endif %}
+{% endfor %}
 </ul>
 </div>
 <div class="docs">
