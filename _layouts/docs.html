@@ -61,10 +61,10 @@
 </section>
 <div class="sub-nav">
 <ul>
-{% for page in site.pages %}
+{% for p in site.pages %}
   {% if page.categories contains 'onprem' %}
     <li>
-      <a href="{{ page.url }}">{{ page.title }}</a>
+      <a href="{{ p.url }}">{{ p.title }}</a>
     </li>
   {% endif %}
 {% endfor %}
@@ -74,10 +74,11 @@
 <div class="docs-wrapper">
 <div class="section-nav">
 <ul>
-<li><a class='active expanded' href="/docs/on-prem/">Getting Started</a></li>
-<li><a class='' href="/docs/on-prem/command-line.html">Command-line Layer</a></li>
-<li><a class='' href="/docs/on-prem/ansible.html">Ansible Layer</a></li>
-<li><a class='' href="/docs/on-prem/server.html">Server Layer</a></li>
+{% for page in site.pages %}
+  {% if page.categories contains 'onprem' %}
+    <li><a class='' href="{{page.url}}">{{page.title}}</a></li>
+  {% endif %}
+{% endfor %}
 </ul>
 </div>
 <div class="docs-content">
