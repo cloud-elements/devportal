@@ -61,10 +61,10 @@
 </section>
 <div class="sub-nav">
 <ul>
-{% for p in site.pages %}
+{% for page in site.pages %}
   {% if page.categories contains 'onprem' %}
     <li>
-      <a href="{{ p.url }}">{{ p.title }}</a>
+      <a href="{{ page.url }}">{{ page.title }}</a>
     </li>
   {% endif %}
 {% endfor %}
