@@ -1,5 +1,5 @@
 ---
-title: Cloud Elements2
+title: Cloud Elements
 excerpt: Developer Platform
 layout: default
 ---
