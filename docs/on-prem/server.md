@@ -1,7 +1,8 @@
 ---
 title: On-Premise
-excerpt: Robust yet low-touch private clouds
+description: Robust yet low-touch private clouds
 layout: docs
+categories: [onprem]
 ---
 
 ## `app` Role
