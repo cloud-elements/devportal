@@ -71,9 +71,9 @@
 <div class="docs-wrapper">
 <div class="section-nav">
 <ul>
-{% for page in site.pages %}
-  {% if page.categories contains 'onprem' %}
-    <li><a class='' href="{{page.url}}">{{page.title}}</a></li>
+{% for p in site.pages %}
+  {% if p.categories contains 'onprem' %}
+    <li><a class='' href="{{p.url}}">{{p.title}}</a></li>
   {% endif %}
 {% endfor %}
 </ul>
