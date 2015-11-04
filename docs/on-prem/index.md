@@ -1,5 +1,6 @@
 ---
-title: On-Premise
+hub: On-Premise
+title: Getting Started
 description: Robust yet low-touch private clouds
 layout: docs
 categories: [onprem]

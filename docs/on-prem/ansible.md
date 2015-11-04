@@ -1,9 +1,9 @@
 ---
-title: On-Premise
+hub: On-Premise
+title: Ansible Layer
 description: Robust yet low-touch private clouds
 layout: docs
 categories: [onprem]
-
 ---
 
 ## Installation
