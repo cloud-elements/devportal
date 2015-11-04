@@ -73,7 +73,11 @@
 <ul>
 {% for p in site.pages %}
   {% if p.categories contains 'onprem' %}
-    <li><a class='' href="{{p.url}}">{{p.title}}</a></li>
+    {% if p.url == page.url %}
+      <li><a class='active expanded' href="{{p.url}}">{{p.title}}</a></li>
+    {% else %}
+      <li><a class='' href="{{p.url}}">{{p.title}}</a></li>
+    {% endif %}
   {% endif %}
 {% endfor %}
 </ul>
