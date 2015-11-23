@@ -1,14 +1,12 @@
 ---
-hub: On-Premise
-title: Getting Started
-description: Robust yet low-touch private clouds
+hub: CRM
+title: Salesforce
+description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs
-categories: [onprem]
+categories: [documentation]
 ---
 
-Hykes is compositional in nature, made up of conceptual abstracted layers (much like the OSI-Model).
-Each layer composes operations from those below it, which simplifies interactions and reduces
-required knowledge.
+Integrate Salesforce into your application via the Cloud Elements APIs.  Review the following documentation for instructions on creating a new connected app in Salesforce, creating an instance, events, and more.
 
 __Represented as a tree-like structure:__
 
