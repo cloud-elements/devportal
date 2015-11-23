@@ -1,6 +1,6 @@
 ---
-hub: CRM
-title: Salesforce
+hub: Salesforce
+title: Setup Guide
 description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs
 categories: [documentation]
