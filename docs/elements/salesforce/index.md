@@ -27,9 +27,7 @@ Select "Setup" if not taken there by default:
 7. Add the selected scopes
 8. Click "Save" at the bottom of the window ![Salesforce Connected App step 2](img/salesforce-connected-app-2.png)
 9. Please make a note of the "Consumer Key"
-10. Please make a note of the "Consumer Secret"
-
-![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
+10. Please make a note of the "Consumer Secret" ![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
 
 
 __Represented as a tree-like structure:__
