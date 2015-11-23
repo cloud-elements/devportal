@@ -16,7 +16,6 @@ Via a web browser, login to your Salesforce account:
 [https://login.salesforce.com/](https://login.salesforce.com/)
 
 
-<div>
 Select "Setup" if not taken there by default:
 1. In left hand nav menu, under create, select "Apps"
 2. Click "New"
@@ -36,7 +35,7 @@ Select "Setup" if not taken there by default:
 10. Please make a note of the "Consumer Secret"
 
 ![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
-<div>
+
 
 __Represented as a tree-like structure:__
 
