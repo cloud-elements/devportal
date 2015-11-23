@@ -52,7 +52,7 @@ Description: The result of this API invocation is an OAuth redirect URL from the
 
 Example cURL Command:
 
-```javascript
+```
 {
   "element": {
     "key": "sfdc"
