@@ -21,6 +21,8 @@ __Represented as a tree-like structure:__
 
 ---
 
+![hi](img/instagram-manage-clients.png)
+
 ## Command-line Layer
 
 Highest-order layer which provides means to perform all regular cloud operations via a simple CLI.
