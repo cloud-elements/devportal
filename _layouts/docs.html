@@ -8,13 +8,11 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   <title>{{page.title}}</title>
-  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
   <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <style>
-    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-    /* this chunk of css is not part of the toolkit :) */
     body {
       width: 1px;
       min-width: 100%;
@@ -70,77 +68,79 @@
     </div>
   </div>
   <div class="container docs-content">
-
-<h1 id="contents">Contents</h1>
-
-<ul id="markdown-toc">
-  <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
-  <li><a href="#intro" id="markdown-toc-intro">Intro</a></li>
-  <li><a href="#whats-included" id="markdown-toc-whats-included">What’s included</a>    <ul>
-      <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a></li>
-      <li><a href="#gulpfilejs" id="markdown-toc-gulpfilejs">Gulpfile.js</a></li>
-      <li><a href="#theme-source-code" id="markdown-toc-theme-source-code">Theme source code</a></li>
-    </ul>
-  </li>
-  <li><a href="#custom-builds" id="markdown-toc-custom-builds">Custom builds</a></li>
-  <li><a href="#basic-template" id="markdown-toc-basic-template">Basic template</a></li>
-  <li><a href="#utilities" id="markdown-toc-utilities">Utilities</a>    <ul>
-      <li><a href="#positioning" id="markdown-toc-positioning">Positioning</a></li>
-      <li><a href="#width" id="markdown-toc-width">Width</a></li>
-      <li><a href="#margin-and-padding" id="markdown-toc-margin-and-padding">Margin and padding</a></li>
-      <li><a href="#responsive-text-alignment" id="markdown-toc-responsive-text-alignment">Responsive text alignment</a></li>
-    </ul>
-  </li>
-  <li><a href="#components" id="markdown-toc-components">Components</a>    <ul>
-      <li><a href="#entypo" id="markdown-toc-entypo">Entypo</a>        <ul>
-          <li><a href="#available-icons" id="markdown-toc-available-icons">Available icons</a></li>
-          <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+    <h1 id="contents">Contents</h1>
+    <ul id="markdown-toc">
+      <li><a href="#contents" id="markdown-toc-contents">Contents</a></li>
+      <li><a href="#intro" id="markdown-toc-intro">Intro</a></li>
+      <li><a href="#whats-included" id="markdown-toc-whats-included">What’s included</a>
+        <ul>
+          <li><a href="#getting-started" id="markdown-toc-getting-started">Getting started</a></li>
+          <li><a href="#gulpfilejs" id="markdown-toc-gulpfilejs">Gulpfile.js</a></li>
+          <li><a href="#theme-source-code" id="markdown-toc-theme-source-code">Theme source code</a></li>
         </ul>
       </li>
-      <li><a href="#outline-buttons" id="markdown-toc-outline-buttons">Outline buttons</a></li>
-      <li><a href="#pill-buttons" id="markdown-toc-pill-buttons">Pill buttons</a></li>
-      <li><a href="#flex-table" id="markdown-toc-flex-table">Flex table</a></li>
-      <li><a href="#stat-cards" id="markdown-toc-stat-cards">Stat cards</a></li>
-      <li><a href="#divided-heading" id="markdown-toc-divided-heading">Divided heading</a></li>
-      <li><a href="#custom-form-controls" id="markdown-toc-custom-form-controls">Custom form controls</a></li>
-      <li><a href="#icon-input" id="markdown-toc-icon-input">Icon input</a></li>
-      <li><a href="#nav-bordered" id="markdown-toc-nav-bordered">Nav bordered</a></li>
-      <li><a href="#icon-nav" id="markdown-toc-icon-nav">Icon nav</a></li>
-      <li><a href="#dashhead" id="markdown-toc-dashhead">Dashhead</a></li>
-      <li><a href="#list-group" id="markdown-toc-list-group">List group</a>        <ul>
-          <li><a href="#list-group-header" id="markdown-toc-list-group-header">List group header</a></li>
-          <li><a href="#list-group-progress" id="markdown-toc-list-group-progress">List group progress</a></li>
+      <li><a href="#custom-builds" id="markdown-toc-custom-builds">Custom builds</a></li>
+      <li><a href="#basic-template" id="markdown-toc-basic-template">Basic template</a></li>
+      <li><a href="#utilities" id="markdown-toc-utilities">Utilities</a>
+        <ul>
+          <li><a href="#positioning" id="markdown-toc-positioning">Positioning</a></li>
+          <li><a href="#width" id="markdown-toc-width">Width</a></li>
+          <li><a href="#margin-and-padding" id="markdown-toc-margin-and-padding">Margin and padding</a></li>
+          <li><a href="#responsive-text-alignment" id="markdown-toc-responsive-text-alignment">Responsive text alignment</a></li>
         </ul>
       </li>
-      <li><a href="#custom-modals" id="markdown-toc-custom-modals">Custom Modals</a></li>
-    </ul>
-  </li>
-  <li><a href="#plugins" id="markdown-toc-plugins">Plugins</a>    <ul>
-      <li><a href="#tablesorter" id="markdown-toc-tablesorter">Tablesorter</a></li>
-      <li><a href="#datepicker" id="markdown-toc-datepicker">Datepicker</a></li>
-      <li><a href="#chartjs" id="markdown-toc-chartjs">Chart.js</a>        <ul>
-          <li><a href="#data-api" id="markdown-toc-data-api">Data API</a></li>
-          <li><a href="#doughnut" id="markdown-toc-doughnut">Doughnut</a></li>
-          <li><a href="#bar" id="markdown-toc-bar">Bar</a></li>
-          <li><a href="#line" id="markdown-toc-line">Line</a></li>
-          <li><a href="#sparkline" id="markdown-toc-sparkline">Sparkline</a></li>
+      <li><a href="#components" id="markdown-toc-components">Components</a>
+        <ul>
+          <li><a href="#entypo" id="markdown-toc-entypo">Entypo</a>
+            <ul>
+              <li><a href="#available-icons" id="markdown-toc-available-icons">Available icons</a></li>
+              <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+            </ul>
+          </li>
+          <li><a href="#outline-buttons" id="markdown-toc-outline-buttons">Outline buttons</a></li>
+          <li><a href="#pill-buttons" id="markdown-toc-pill-buttons">Pill buttons</a></li>
+          <li><a href="#flex-table" id="markdown-toc-flex-table">Flex table</a></li>
+          <li><a href="#stat-cards" id="markdown-toc-stat-cards">Stat cards</a></li>
+          <li><a href="#divided-heading" id="markdown-toc-divided-heading">Divided heading</a></li>
+          <li><a href="#custom-form-controls" id="markdown-toc-custom-form-controls">Custom form controls</a></li>
+          <li><a href="#icon-input" id="markdown-toc-icon-input">Icon input</a></li>
+          <li><a href="#nav-bordered" id="markdown-toc-nav-bordered">Nav bordered</a></li>
+          <li><a href="#icon-nav" id="markdown-toc-icon-nav">Icon nav</a></li>
+          <li><a href="#dashhead" id="markdown-toc-dashhead">Dashhead</a></li>
+          <li><a href="#list-group" id="markdown-toc-list-group">List group</a>
+            <ul>
+              <li><a href="#list-group-header" id="markdown-toc-list-group-header">List group header</a></li>
+              <li><a href="#list-group-progress" id="markdown-toc-list-group-progress">List group progress</a></li>
+            </ul>
+          </li>
+          <li><a href="#custom-modals" id="markdown-toc-custom-modals">Custom Modals</a></li>
+        </ul>
+      </li>
+      <li><a href="#plugins" id="markdown-toc-plugins">Plugins</a>
+        <ul>
+          <li><a href="#tablesorter" id="markdown-toc-tablesorter">Tablesorter</a></li>
+          <li><a href="#datepicker" id="markdown-toc-datepicker">Datepicker</a></li>
+          <li><a href="#chartjs" id="markdown-toc-chartjs">Chart.js</a>
+            <ul>
+              <li><a href="#data-api" id="markdown-toc-data-api">Data API</a></li>
+              <li><a href="#doughnut" id="markdown-toc-doughnut">Doughnut</a></li>
+              <li><a href="#bar" id="markdown-toc-bar">Bar</a></li>
+              <li><a href="#line" id="markdown-toc-line">Line</a></li>
+              <li><a href="#sparkline" id="markdown-toc-sparkline">Sparkline</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
-  </li>
-</ul>
-{{content}}
-
-
-
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/chart.js"></script>
-    <script src="/assets/js/tablesorter.min.js"></script>
-    <script src="/assets/js/toolkit.js"></script>
-    <script src="/assets/js/application.js"></script>
-    <script>
-      // execute/clear BS loaders for docs
-      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
-    </script>
-  </body>
+    {{content}}
+  </div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/chart.js"></script>
+  <script src="/assets/js/tablesorter.min.js"></script>
+  <script src="/assets/js/toolkit.js"></script>
+  <script src="/assets/js/application.js"></script>
+  <script>
+    $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+  </script>
+</body>
 </html>
