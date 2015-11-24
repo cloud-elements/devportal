@@ -203,4 +203,4 @@ instance JSON with polling events enabled:
 
 new content
 
-{% include bulkloader.md %}
+{% include bulkloader.md hub="crm" %}
