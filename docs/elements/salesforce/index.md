@@ -265,6 +265,7 @@ curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
 'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/bulk/1234/status'
 ```
+
 Example of Successful Response:
 
 ```
