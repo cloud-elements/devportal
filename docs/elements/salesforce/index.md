@@ -236,7 +236,7 @@ A csv file with populated data is required in our request, like the one seen bel
 
 Example data will be used in this demonstration.
 
-![Sample CSV Data](../../../img/sample-csv.png)
+![Sample CSV Data](/assets/img/sample-csv.png)
 
 An Example request can be seen below.:
 
