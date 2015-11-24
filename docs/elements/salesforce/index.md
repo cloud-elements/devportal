@@ -61,7 +61,7 @@ curl -X GET
 
 Response:
 
-```
+```javascript
 {
 "element": "sfdc",
 "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
@@ -95,7 +95,7 @@ Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECR
 ```
 This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
-```
+```javascript
 {
   "element": {
     "key": "sfdc"
@@ -131,7 +131,7 @@ If the user does not specify a required config entry, an error will result notif
 
 Below is a successful JSON response:
 
-```
+```javascript
 {
     "id": 123,
     "name": "test",
@@ -177,7 +177,7 @@ In order to enable polling, add these two extra configurations to your instance 
 
 instance JSON with polling events enabled:
 
-```
+```javascript
 {
   "element": {
     "key": "sfdc"
@@ -220,7 +220,7 @@ curl -X GET
 
 Example of Successful Response:
 
-```
+```javascript
 [
   "activities",
   "contact",
@@ -268,7 +268,7 @@ curl -X GET
 
 Example of Successful Response:
 
-```
+```javascript
 {
   "id": "1234",
   "status": "COMPLETE"
@@ -276,6 +276,3 @@ Example of Successful Response:
 ```
 
 Once the job is completed, login to the cloud service an find your newly created contacts.
-
-New Character
-ONce more
