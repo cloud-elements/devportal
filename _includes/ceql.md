@@ -63,7 +63,7 @@ __NOTE: when working with dates and time, wrapping a value in the ` character wi
 
 For example:  __select * from customers ‘`metaData.lastUpdateTime` > 2015-01-06T09:31:38-07:00’__
 
-Since the __‘`metaData.lastUpdateTime` > 2015-01-06T09:31:38-07:00′__  is wrapped in ` character, the column will not get split.
+Since the __‘`metaData.lastUpdateTime` > 2015-01-06T09:31:38-07:00′__  is wrapped in \` character, the column will not get split.
 
 * __API Docs:__ where Name=’GenePoint’ OR (Industry=’Biotechnology’ AND LastModifiedDate>’2015-01-01T00:00:00.000Z’)
 * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name=’GenePoint’ OR (Industry=’Biotechnology’ AND LastModifiedDate>’2015-01-01T00:00:00.000Z’)
