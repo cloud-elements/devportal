@@ -197,7 +197,9 @@ instance JSON with polling events enabled:
   "name": "<Insert_Instance_Name>"
 }
 ```
+
 ### Webhooks
+
 
 ### Bulk APIs
 
@@ -214,6 +216,7 @@ curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
 'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/objects'
 ```
+
 Example of Successful Response:
 
 ```
