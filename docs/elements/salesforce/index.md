@@ -45,15 +45,15 @@ Request URL: /elements/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
-apiKey– the key obtained from registering your app with the provider
-apiSecret – the secret obtained from registering your app with the provider
-callbackUrl – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
+* __apiKey–__ the key obtained from registering your app with the provider
+* __apiSecret__ – the secret obtained from registering your app with the provider
+* __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
+
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
 Example cURL Command:
 
-```
-{
+```{
   "element": {
     "key": "sfdc"
   },
@@ -61,7 +61,7 @@ Example cURL Command:
     "code": "<Code_On_The_Return_URL>"
   },
   "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
+    "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.api.key": "<Insert_Client_ID>",
     "oauth.api.secret": "<Insert_Client_Secret>"
   },
@@ -69,8 +69,7 @@ Example cURL Command:
     "<Add_Your_Tag>"
   ],
   "name": "<Insert_Instance_Name>"
-}
-```
+}```
 
 ---
 
