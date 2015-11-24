@@ -11,7 +11,7 @@ Errors are never fun. To save you time we took a list of error codes from our se
 ```
 A complete list of our normalized error codes can be found below.
 
-| Response Code | Error                                                                                |
+| Response Code | Error new word                                                                       |
 |---------------|:------------------------------------------------------------------------------------:|
 | 200           | OK – Everything worked as expected.                                                  |
 | 400           | Bad Request – Often due to a missing request parameter.                              |
