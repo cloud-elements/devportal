@@ -246,6 +246,7 @@ curl -X POST
 -F file=@sample.csv
 'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/bulk/contact?path=/sample.csv'
 ```
+
 Example of Successful Response:
 
 ```
