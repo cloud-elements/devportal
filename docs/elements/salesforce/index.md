@@ -37,7 +37,7 @@ Salesforce is a Customer Success Platform. When you provision an instance, your 
 
 Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
 
-Get Elements OAuth Information
+### Get Elements OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
@@ -53,7 +53,49 @@ Description: The result of this API invocation is an OAuth redirect URL from the
 
 Example cURL Command:
 
-```{
+```
+curl -X GET
+-H 'Content-Type: application/json'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
+
+```
+Response:
+
+```
+{
+"element": "sfdc",
+"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
+}
+```
+Handle Callback from the Endpoint:
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+
+### Create an Instance
+
+To provision your Salesforce Element, use the /instances API.
+
+Below is an example of the provisioning API call.
+
+* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
+* __HTTP Verb__: POST
+* __Request URL__: /instances
+* __Request Body__: Required – see below
+* __Query Parameters__: none
+
+Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+
+A sample request illustrating the /instances API is shown below.
+
+HTTP Headers:
+
+```
+Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
+
+```
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+
+```
+{
   "element": {
     "key": "sfdc"
   },
@@ -69,7 +111,52 @@ Example cURL Command:
     "<Add_Your_Tag>"
   ],
   "name": "<Insert_Instance_Name>"
-}```
+}
+```
+Here is an example cURL command to create an instance using /instances API.
+
+Example Request:
+
+```
+curl -X POST
+-H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
+-H 'Content-Type: application/json'
+-d @instance.json
+'https://api.cloud-elements.com/elements/api-v2/instances'
+```
+
+If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
+
+Below is a successful JSON response:
+
+```
+{
+    "id": 123,
+    "name": "test",
+    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+    "element": {
+        "id": 39,
+        "name": "Salesforce.com",
+        "key": "sfdc",
+        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
+        "active": true,
+        "deleted": false,
+        "typeOauth": true,
+        "trialAccount": false,
+        "configDescription": "If you do not have a Salesforce.com account, you can create one at <a href="http://www.salesforce.com" target="_blank">Salesforce.com Signup</a>",
+        "signupURL": "http://www.salesforce.com"
+    },
+    "provisionInteractions": [],
+    "valid": true,
+    "eventsEnabled": true,
+    "disabled": false,
+    "maxCacheSize": 0,
+    "cacheTimeToLive": 0,
+    "cachingEnabled": false
+}
+```
+
+Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
 ---
 
