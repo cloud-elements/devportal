@@ -203,6 +203,8 @@ instance JSON with polling events enabled:
 
 new content
 
+{% include transfromations.md %}
+
 {% include bulkloader.md hub="crm" %}
 
 {% include ceql.md %}
