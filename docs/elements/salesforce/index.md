@@ -249,7 +249,7 @@ curl -X POST
 
 Example of Successful Response:
 
-```
+```javascript
 {
   "id": "1234",
   "status": "CREATED"
