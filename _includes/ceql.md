@@ -41,6 +41,8 @@ Where can it be used?
 
   * CEQL, or at least parts of CEQL, can be used in most of our find or search related APIs.
 
+![Cloud Elements Query Language CEQL](/assets/img/ceql-description.png)
+
 ### Examples:
 
 Select from accounts where the Name equals a specific value:
@@ -84,3 +86,5 @@ CEQL SHORTCOMINGS:
 * CEQL does not support sub­queries
 
 __Select from accounts where the name equals a specific value OR the Industry is a specific value AND the LastModifiedDate > a specific value__
+
+![Cloud Elements Query Language CEQL](/assets/img/ceql-example.png)
