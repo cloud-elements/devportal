@@ -203,7 +203,7 @@ instance JSON with polling events enabled:
 
 new content
 
-{% include transfromations.md %}
+{% include transformations.md %}
 
 {% include bulkloader.md hub="crm" %}
 
