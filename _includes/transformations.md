@@ -15,6 +15,8 @@ __An important note concerning workflow:__
 __The objects referenced in your transform must exist (i.e. have been registered via the process outlined above), before registering the transform. Otherwise the transform registration will fail.
 Below is an example of the Supplemental Address Object defined in Salesforce and SugarCRM, and what it would look like in your application by utilizing the Transformation APIs.__
 
+![Cloud Elements Transformations](/assets/img/transformations-flow.png)
+
 In order to access the Organizations APIs, you must sign up for Cloud Elements Service.  You will need your Organization and User Secrets to make successful Transformations API calls.  These are generated for you when you sign up for our service.
 
 ### Using the APIs
