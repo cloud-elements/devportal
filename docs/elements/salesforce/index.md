@@ -53,7 +53,7 @@ Description: The result of this API invocation is an OAuth redirect URL from the
 
 Example cURL Command:
 
-```
+```bash
 curl -X GET
 -H 'Content-Type: application/json'
 'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
@@ -240,7 +240,7 @@ Example data will be used in this demonstration.
 
 An Example request can be seen below.:
 
-```
+```bash
 curl -X POST
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
 -F file=@sample.csv
@@ -260,7 +260,7 @@ An id is assigned to job. This can be used to check the status of a bulk job.
 
 The id “1234” will be used in the request URL in the next example.
 
-```
+```bash
 curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
 'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/bulk/1234/status'
