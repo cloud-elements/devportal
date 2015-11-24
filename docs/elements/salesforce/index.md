@@ -58,6 +58,7 @@ curl -X GET
 -H 'Content-Type: application/json'
 'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
 ```
+
 Response:
 
 ```
@@ -113,6 +114,7 @@ This instance.json file must be included with your instance request.  Please fil
   "name": "<Insert_Instance_Name>"
 }
 ```
+
 Here is an example cURL command to create an instance using /instances API.
 
 Example Request:
