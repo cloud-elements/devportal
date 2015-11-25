@@ -510,3 +510,7 @@ img {
   display: block;
   padding: 10px;
 }
+
+td, th {
+    padding-right: 50px;
+}
