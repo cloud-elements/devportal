@@ -6,7 +6,7 @@ layout: docs
 categories: [elements-salesforce]
 ---
 
-## Enpoint Setup
+## Endpoint Setup
 
 Follow these steps to setup your Salesforce application with the endpoint.
 
