@@ -1,7 +1,7 @@
 ---
 hub: Salesforce
-title: Salesforce Create Instance
-description: Create Instance.
+title: Create Instance
+description: Create Instance
 layout: docs
 categories: [elements-salesforce]
 ---
@@ -64,7 +64,7 @@ A sample request illustrating the /instances API is shown below.
 
 HTTP Headers:
 
-```
+```bash
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
@@ -94,7 +94,7 @@ Here is an example cURL command to create an instance using /instances API.
 
 Example Request:
 
-```
+```bash
 curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
