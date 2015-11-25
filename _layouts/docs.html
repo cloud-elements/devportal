@@ -73,9 +73,9 @@
       {% for p in site.pages %}
         {% if p.categories contains 'elements-salesforce' %}
           {% if p.url == page.url %}
-            <li><a href="{{ p.url }}" id="markdown-toc-intro">{{ p.title }}</a></li>
+            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
           {% else %}
-            <li><a href="{{ p.url }}" id="markdown-toc-intro">{{ p.title }}</a></li>
+            <li><a href="{{ p.url }}">{{ p.title }}</a></li>
           {% endif %}
         {% endif %}
       {% endfor %}
