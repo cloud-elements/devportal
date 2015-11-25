@@ -71,7 +71,7 @@
     <h1 id="contents">Contents</h1>
     <ul id="markdown-toc">
       {% for p in site.pages %}
-        {% if p.categories contains 'elements-salesforce' %}
+        {% if p.categories contains 'elements-salesforce' or p.categories contains 'elements-concepts' %}
           <li><a href="{{ p.url }}">{{ p.title }}</a></li>
         {% endif %}
       {% endfor %}
