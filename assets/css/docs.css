@@ -275,9 +275,9 @@ body {
 #markdown-toc > li {
   margin-bottom: 5px;
 }
-#markdown-toc > li:first-child {
+/*#markdown-toc > li:first-child {
   display: none;
-}
+}*/
 #markdown-toc ul {
   list-style: none;
   padding-left: 20px;
