@@ -3,7 +3,6 @@ section: Salesforce
 title: Salesforce Events
 description: Events
 layout: docs
-categories: [elements-salesforce]
 ---
 
 ## Events
