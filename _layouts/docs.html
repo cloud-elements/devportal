@@ -72,6 +72,7 @@
     <ul id="markdown-toc">
       {% for p in site.pages %}
         {% if p.section == page.section %}
+        <!-- TODO need an order variable on each page, sort by priority -->
           <li><a href="{{ p.url }}">{{ p.title }}</a></li>
         {% endif %}
       {% endfor %}
