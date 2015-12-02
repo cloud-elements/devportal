@@ -1,6 +1,6 @@
 ---
 section: Salesforce
-title: Salesforce Endpoint Setup
+title: Endpoint Setup
 description: Endpoint setup
 layout: docs
 categories: [elements-salesforce]

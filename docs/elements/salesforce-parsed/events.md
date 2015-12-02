@@ -1,7 +1,7 @@
 ---
 section: Salesforce
-title: Salesforce Events
-description: Events
+title: Events
+description: Enable Salesforce events for your application.
 layout: docs
 ---
 

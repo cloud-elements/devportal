@@ -1,6 +1,6 @@
 ---
 section: Salesforce
-title: Salesforce Setup Guide
+title: Overview
 description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs
 ---
