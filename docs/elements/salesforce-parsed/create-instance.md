@@ -3,7 +3,6 @@ section: Salesforce
 title: Create Instance
 description: Create Instance
 layout: docs
-categories: [elements-salesforce]
 ---
 
 ## Create Instance
