@@ -11,7 +11,7 @@ Salesforce is a Customer Success Platform. When you provision an instance, your 
 
 Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
 
-### Get Elements OAuth Information
+### Step 1. Get Elements OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
@@ -45,7 +45,7 @@ Response:
 Handle Callback from the Endpoint:
 Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
-### Create an Instance
+### Step 2. Create an Instance
 
 To provision your Salesforce Element, use the /instances API.
 
