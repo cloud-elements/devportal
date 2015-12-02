@@ -1,3 +1,10 @@
+---
+section: Autotask
+title: Create Instance
+description: Provision an Autotask Instance.
+layout: docs
+---
+
 ## Autotask Create Instance
 
 Autotask is a Complete IT Management Platform. When you provision an instance, your app will have access to the different functionality offered by the Autotask platform.

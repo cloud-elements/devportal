@@ -1,5 +1,5 @@
 ---
-hub: Salesforce
+section: Salesforce
 title: Salesforce Events
 description: Events
 layout: docs

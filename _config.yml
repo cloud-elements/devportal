@@ -1,4 +1,4 @@
-categories: [elements-salesforce, elements-concepts]
+section: [elements-salesforce, elements-concepts, foo]
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 

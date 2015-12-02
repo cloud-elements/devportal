@@ -1,5 +1,5 @@
 ---
-hub: On-Premise
+section: On-Premise
 title: Server Layer
 description: Robust yet low-touch private clouds
 layout: docs

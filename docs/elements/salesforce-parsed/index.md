@@ -1,9 +1,8 @@
 ---
-hub: Salesforce
+section: Salesforce
 title: Salesforce Setup Guide
 description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs
-categories: [elements-salesforce]
 ---
 
 

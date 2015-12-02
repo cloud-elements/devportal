@@ -1,5 +1,5 @@
 ---
-hub: Salesforce
+section: Salesforce
 title: Salesforce Endpoint Setup
 description: Endpoint setup
 layout: docs

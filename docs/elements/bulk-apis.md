@@ -1,5 +1,5 @@
 ---
-hub: Elements
+section: Elements
 title: Bulk APIs
 description: Bulk APIs
 layout: docs

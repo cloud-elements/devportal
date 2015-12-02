@@ -1,5 +1,5 @@
 ---
-hub: On-Premise
+section: On-Premise
 title: Getting Started
 description: Robust yet low-touch private clouds
 layout: docs
