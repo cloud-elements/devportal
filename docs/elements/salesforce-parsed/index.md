@@ -11,6 +11,8 @@ The Salesforce Element is a collection of resources providing a pre-built integr
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
+new
+
 
 
 <!-- {% include transformations.md %}
