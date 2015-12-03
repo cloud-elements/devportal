@@ -6,7 +6,7 @@ layout: docs
 categories: [onprem]
 ---
 
-Hykes is compositional in nature, made up of conceptual abstracted layers (much like the OSI-Model).
+Hykes is cool and compositional in nature, made up of conceptual abstracted layers (much like the OSI-Model).
 Each layer composes operations from those below it, which simplifies interactions and reduces
 required knowledge.
 
