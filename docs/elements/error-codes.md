@@ -1,5 +1,5 @@
 ---
-section: Elements
+heading: Elements
 title: Cloud Elements Error Codes
 description: Cloud Elements Error Codes
 layout: docs

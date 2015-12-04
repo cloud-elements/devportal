@@ -1,5 +1,5 @@
 ---
-section: Bulk APIs
+heading: Bulk APIs
 title: Bulk APIs
 description: Cloud Elements Bulk API functionality.
 layout: docs

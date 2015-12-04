@@ -1,7 +1,8 @@
 ---
-section: Autotask
+heading: Autotask
 title: Overview
 description: Integrate Autotask into your application via the Cloud Elements APIs.
+order: 1
 layout: docs
 ---
 

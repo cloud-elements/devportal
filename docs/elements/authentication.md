@@ -1,4 +1,11 @@
-## AUTHENTICATION OVERVIEW
+---
+heading: Authentication
+title: Authentication
+description: Cloud Elements Authentication Overview.
+layout: docs
+---
+
+### Overview
 
 To call our APIs, you will need an account with Cloud Elements. To get an account, you must [sign up](https://console.cloud-elements.com/elements/jsp/signup.jsp) using our API Manager Console. When you create an account with us, we assign you an Organization secret and a User secret. An Organization is a customer of Cloud Elements (/organizations).
 An Organization secret and User secret are needed to call our Platform APIs, to do things like:
@@ -15,6 +22,8 @@ An Element token and a User secret are required to execute one of our Hub API ca
 Our tokens and secrets are passed as HTTP Header Values. For example, to make an API call, the following authorization header is passed:
 
 `Authorization: User JKELSDKEntgNAeZsGxY, Element NESLFOBeDke89w3ceaa`
+
+#### Base URL
 
 The Cloud Elements base URL for all API calls is:
 

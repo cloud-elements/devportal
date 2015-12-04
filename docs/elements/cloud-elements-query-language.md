@@ -1,5 +1,5 @@
 ---
-section: Elements
+heading: Elements
 title: Cloud Elements Query Language
 description: Cloud Elements Query Language
 layout: docs

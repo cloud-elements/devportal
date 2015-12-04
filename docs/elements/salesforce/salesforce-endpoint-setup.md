@@ -1,5 +1,5 @@
 ---
-section: Salesforce
+heading: Salesforce
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

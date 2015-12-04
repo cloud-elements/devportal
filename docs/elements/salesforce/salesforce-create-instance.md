@@ -1,5 +1,5 @@
 ---
-section: Salesforce
+heading: Salesforce
 title: Create Instance
 description: Create Instance
 layout: docs
