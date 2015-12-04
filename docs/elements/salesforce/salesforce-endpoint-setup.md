@@ -16,9 +16,11 @@ Via a web browser, login to your Salesforce account:
 
 
 Select "Setup" if not taken there by default:
+
 1. In left hand nav menu, under create, select "Apps"
 
-2. Click "New" ![Salesforce Connected App step 1](img/salesforce-connected-app-1.png)
+2. Click "New"
+![Salesforce Connected App step 1](img/salesforce-connected-app-1.png)
 
 3. Fill out the basic information about the app
 

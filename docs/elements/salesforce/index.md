@@ -5,7 +5,7 @@ description: Integrate Salesforce into your application via the Cloud Elements A
 layout: docs
 ---
 
-### Welcome to the Salesforce API
+### Welcome to the Salesforce Element
 
 The Salesforce Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
 
@@ -13,9 +13,8 @@ All API calls to Cloud Elements should be made to the `https://api.cloud-element
 
 In order to create a connection to Salesforce the following steps are required:
 
-1. Create a new Salesforce Connected app
-2. Call the GET /elements/sfdc/oauth/url with your Salesforce API key and secret
-3. Call the POST /instances API to instantiate your Salesforce connected app
+1. Create a new Salesforce Connected app, the endpoint setup
+2. Call the `GET /elements/sfdc/oauth/url` with your Salesforce API key and secret
+3. Call the `POST /instances` API to instantiate your Salesforce connected app
 
-Instructions are provided to walk you through each of these steps.
-Begin by creating a new Salesforce connected app.
+Get started by [creating a Salesforce connected app](/docs/elements/salesforce/autotask-create-instance.html).
