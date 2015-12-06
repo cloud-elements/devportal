@@ -504,6 +504,10 @@ body {
 /// Custom CSS for Docs Pages ///
 ///////////////////////////////*/
 
+img.navbar-brand {
+    margin-top: -15px;
+}
+
 img {
   vertical-align: middle;
   max-width: 100%;
@@ -513,4 +517,9 @@ img {
 
 td, th {
     padding-right: 50px;
+}
+
+.input-with-icon > .form-control {
+    padding-left: 30px;
+    width: 300px;
 }

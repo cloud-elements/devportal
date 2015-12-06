@@ -34,7 +34,7 @@
         </button>
         <a class="navbar-brand navbar-brand-emphasized" href="../index.html">
           <span class="icon icon-leaf navbar-brand-icon"></span>
-          Dashboard
+          Cloud Elements
         </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -72,12 +72,23 @@
   <div class="container docs-content">
     <h1 id="contents">Contents</h1>
     <ul id="markdown-toc">
+      <li><strong>{{ page.heading }} Docs<strong></li>
       {% for p in site.pages %}
         {% assign pPath = p.path | split:"/" %}
         {% assign pPathMinusFileName = pPath | pop | join:"/" %}
         {% assign pathMinusFileName = path | pop | join:"/" %}
         {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
-        {% if pathMinusFileName == pPathMinusFileName or pathMinusFileNameMinusParentDirectory == pPathMinusFileName %}
+        {% if pathMinusFileName == pPathMinusFileName %}
+          <li><a href="{{ p.url }}">{{ p.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      <li><strong>Elements Docs<strong></li>
+      {% for p in site.pages %}
+        {% assign pPath = p.path | split:"/" %}
+        {% assign pPathMinusFileName = pPath | pop | join:"/" %}
+        {% assign pathMinusFileName = path | pop | join:"/" %}
+        {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
+        {% if pathMinusFileNameMinusParentDirectory == pPathMinusFileName %}
           <li><a href="{{ p.url }}">{{ p.title }}</a></li>
         {% endif %}
       {% endfor %}
