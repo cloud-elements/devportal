@@ -3,6 +3,7 @@ heading: Salesforce
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+order: 5
 ---
 
 ## Endpoint Setup

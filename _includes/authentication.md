@@ -1,10 +1,3 @@
----
-heading: Authentication
-title: Authentication
-description: Cloud Elements Authentication Overview.
-layout: docs
----
-
 ### Overview
 
 To call our APIs, you will need an account with Cloud Elements. To get an account, you must [sign up](https://console.cloud-elements.com/elements/jsp/signup.jsp) using our API Manager Console. When you create an account with us, we assign you an Organization secret and a User secret. An Organization is a customer of Cloud Elements (/organizations).
