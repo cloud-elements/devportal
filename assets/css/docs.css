@@ -504,6 +504,10 @@ body {
 /// Custom CSS for Docs Pages ///
 ///////////////////////////////*/
 
+img.navbar-brand {
+    margin-top: -15px;
+}
+
 img {
   vertical-align: middle;
   max-width: 100%;
@@ -513,4 +517,36 @@ img {
 
 td, th {
     padding-right: 50px;
+}
+
+.input-with-icon > .form-control {
+    padding-left: 30px;
+    width: 300px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #40B4E5;
+  color: #000;
+  padding-top: 20px;
 }

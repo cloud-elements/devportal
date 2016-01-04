@@ -1,5 +1,5 @@
 ---
-section: Autotask
+heading: Autotask
 title: Create Instance
 description: Provision an Autotask Instance.
 layout: docs

@@ -1,155 +1,132 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cloud Elements Developers</title>
-<link rel="shortcut icon" href="https://developers.coinbase.com/images/favicon.ico" type="image/x-icon"/>
-<link href="https://developers.coinbase.com/stylesheets/base.css" rel="stylesheet" type="text/css"/>
-
-<meta property="og:title" content="Coinbase Developers"/>
-<meta property="og:url" content="/"/>
-<meta property="og:description" content="Bitcoin infrastructure for developers"/>
-<meta property="og:image" content="https://developers.coinbase.com/images/coinbase.png"/>
-<meta property="og:type" content="website"/>
-
-
-<meta name="twitter:title" content="Coinbase Developers"/>
-<meta name="twitter:url" content="/"/>
-<meta name="twitter:card" content="Bitcoin infrastructure for developers"/>
-<meta name="twitter:image" content="https://developers.coinbase.com/images/coinbase.png"/>
-
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="author" content="">
+  <title>Documentation</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <link href="../assets/css/toolkit-inverse.css" rel="stylesheet">
+  <link href="../assets/css/docs.css" rel="stylesheet">
+  <link href="../assets/css/application.css" rel="stylesheet">
+  <style>
+  /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+  /* this chunk of css is not part of the toolkit :) */
+  body {
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;
+  }
+  </style>
 </head>
-<body>
-<div class="navbar-container">
-<nav class="navbar">
-<a class="logo-container" href="/"><div class="logo"></div></a>
-<ul>
-<li><a href="#">Features<b class="caret"></b></a>
-<ul>
-<li><a href="/docs/merchants">Elements</a></li>
-<li><a href="/docs/blockchain">Elements Mapper</a></li>
-<li><a href="/docs/blockchain">Elements Loader</a></li>
-<li><a href="/docs/exchange">Elements On-Prem</a></li>
-</ul>
-</li>
-<li><a href="#">Support<b class="caret"></b></a>
-<ul>
-<li><a href="https://community.coinbase.com/c/developers" target="_blank">Forum</a></li>
-<li><a href="http://stackoverflow.com/questions/tagged/coinbase" target="_blank">Stack Overflow</a></li>
-</ul>
-</li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="/api/v2">API Reference</a></li>
-<li><a href="https://www.coinbase.com/settings/api">My Apps</a></li>
-<li><a href="/bithack">Bithack</a></li>
-</ul>
-</nav>
-</div>
-<div class="page-container">
-<section class="hero">
-<div class="hero-content">
-<div class="hero-title">
-<h1>Cloud Elements Developer Portal</h1>
-<p>You build the killer app. We'll take care of the REST.</p>
-<div class="newsletter">
-<form action="https://coinbase.us5.list-manage.com/subscribe/post?u=5b98f517486d1f7d44c14371a&amp;id=3ab22366bf" method="POST" class="form form--complex">
-<input class="form__text_input form__object--fillspace" placeholder="Subscribe for email updates" type="email" name="EMAIL">
-<input class="form__object--fillspace-gap btn btn--primary btn--large" type="submit" value="Subscribe">
-</form>
-</div>
-</div>
-<div class="products">
-<a href="/docs/getting-started" class="product wallet">
-<h3>Getting Started</h3>
-<span class="line"></span>
-<p>Learn that basics for RESTful success</p>
-</a>
-<a href="/docs/elements" class="product exchange">
-<h3>Elements</h3>
-<p>API integration catalog</p>
-</a>
-<a href="/docs/mapper" class="product merchant">
-<h3>Mapper</h3>
-<p>Normalize objects across cloud services</p>
-</a>
-<a href="/docs/on-prem" class="product blockchain">
-<h3>On-Premise</h3>
-<p>Robust yet low-touch private clouds</p>
-</a>
-</div>
-</div>
-</section>
-<div class="news">
-<a href="/blog"><span class="icon">NEW</span><p>Cloud Elements Sandbox improvements – <strong>Read more ›</strong></p>
-</a>
-</div>
-<section class="features">
-<div class="feature-title">
-<h1>Why build with Cloud Elements?</h1>
-</div>
-<div class="feature-list">
-<div class="feature">
-<div class="icon-container">
-<span class="icon users"></span>
-</div>
-<div class="feature-description">
-<h3>OAuth Into Millions Of Wallets</h3>
-<p>Cloud Elements is the largest provider of bitcoin wallets - those customers can install your app with just a few clicks.</p>
-</div>
-</div>
-<div class="feature">
-<div class="icon-container">
-<span class="icon security"></span>
-</div>
-<div class="feature-description">
-<h3>Battle Tested Bitcoin Storage</h3>
-<p>Storing bitcoin securely is no easy task - why re-create it from scratch? Our wallet and multisig vault are battle tested.</p>
-</div>
-</div>
-<div class="feature">
-<div class="icon-container">
-<span class="icon countries"></span>
-</div>
-<div class="feature-description">
-<h3>Buy/Sell Capability In 26 Countries</h3>
-<p>Use our bank relationships across multiple countries to let your customers exchange their bitcoin.</p>
-</div>
-</div>
-<div class="feature">
-<div class="icon-container">
-<span class="icon community"></span>
-</div>
-<div class="feature-description">
-<h3>The Most Popular Bitcoin API</h3>
-<p>With over 7000 developer applications created, Cloud Elements is the largest bitcoin platform in the world.</p>
-</div>
-</div>
-</div>
-</section>
-<section class="banner">
-<h2>Build with Cloud Elements</h2>
-<a href="https://www.coinbase.com/settings/api"><div class="button">Get started</div></a>
-</section>
-<footer>
-<div class="footer-content">
-<ul>
-<li><a href="/">Home</a></li>
-<li><a href="/docs/wallet">Features</a></li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="https://community.coinbase.com/c/developers" target="_blank">Forum</a></li>
-<li><a href="http://stackoverflow.com/questions/tagged/coinbase" target="_blank">Stack Overflow</a></li>
-<li><a href="/api/v2">API Reference</a></li>
-</ul>
-<div class="newsletter" id="subscribe">
-<form action="https://coinbase.us5.list-manage.com/subscribe/post?u=5b98f517486d1f7d44c14371a&amp;id=3ab22366bf" method="POST" class="form form--complex">
-<input class="form__text_input form__object--fillspace" placeholder="Subscribe for email updates" type="email" name="EMAIL">
-<input class="form__object--fillspace-gap btn btn--primary btn--large" type="submit" value="Subscribe">
-</form>
-</div>
-</div>
-</footer>
-</div>
+
+
+<body class="with-top-navbar">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand navbar-brand-emphasized" href="../index.html">
+          <span class="icon icon-cloud navbar-brand-icon"></span>
+          Cloud Elements
+        </a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="/index.html">Home</a>
+          </li>
+          <li>
+            <a href="/docs/elements.html">
+              Docs
+            </a>
+          </li>
+          <li >
+            <a href="/forum.html">Forum</a>
+          </li>
+          <li >
+            <a href="/change-log.html">Change Log</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="jumbotron">
+    <div class="container text-xs-center p-a-lg">
+    <h2>Cloud Elements Developer Portal</h2>
+    <p>You build the killer app, we'll take care of the REST.</p>
+    <div class="input-with-icon">
+      <input type="text" value="Find docs, i.e. Salesforce" class="form-control">
+      <span class="icon icon-magnifying-glass"></span>
+    </div>
+  </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row text-xs-center p-a-lg">
+    <div class="col-md-4">
+      <div class="panel panel-default p-b-lg">
+        <div class="panel-heading">
+          <h3 class="panel-title">Element Guides</h3>
+        </div>
+        <a href="/docs/elements.html">
+          <div class="panel-body">
+          Find Element Documentation i.e. Salesforce, HubSpot, QuickBooks
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default p-b-lg">
+        <div class="panel-heading">
+          <h3 class="panel-title">API Toolkit</h3>
+        </div>
+        <div class="panel-body">
+          Find Documentation on products like Formulas, Element Loader, Element Mapper
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default p-b-lg">
+        <div class="panel-heading">
+          <h3 class="panel-title">Quick Start</h3>
+        </div>
+        <div class="panel-body">
+          View sample apps, POSTman collections, and how to videos to get you started
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="container docs-content">
+
+    <h1 id="contents">Contents</h1>
+
+    <a class="docs-top" style="display: none" href="#">Back to top</a>
+  </div>
+
+  <!-- <div id="footer">
+      <div class="container-fluid">
+        <p class="text-xs-center">© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
+      </div>
+  </div> -->
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/chart.js"></script>
+  <script src="../assets/js/tablesorter.min.js"></script>
+  <script src="../assets/js/toolkit.js"></script>
+  <script src="../assets/js/application.js"></script>
+  <script>
+  // execute/clear BS loaders for docs
+  $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+  </script>
 </body>
 </html>

@@ -1,5 +1,3 @@
-{% assign path = page.path | split:"/" %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +7,23 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
-  <title>{{page.title}}</title>
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <title>Documentation</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
   <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <style>
-    body {
-      width: 1px;
-      min-width: 100%;
-      *width: 100%;
-    }
+  /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+  /* this chunk of css is not part of the toolkit :) */
+  body {
+    width: 1px;
+    min-width: 100%;
+    *width: 100%;
+  }
   </style>
 </head>
+
+
 <body class="with-top-navbar">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -39,7 +41,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li>
+          <li >
             <a href="/index.html">Home</a>
           </li>
           <li class="active">
@@ -47,48 +49,47 @@
               Docs
             </a>
           </li>
-          <li>
+          <li >
             <a href="/forum.html">Forum</a>
           </li>
-          <li>
+          <li >
             <a href="/change-log.html">Change Log</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="docs-header" id="content">
-    <div class="container">
-      <h1>{{page.heading}}</h1>
-      <p>{{page.description}}</p>
+  <div class="jumbotron">
+    <div class="container text-xs-center p-a-lg">
+    <h2>Cloud Elements Developer Portal</h2>
+    <p>You build the killer app, we'll take care of the REST.</p>
+    <div class="input-with-icon">
+      <input type="text" value="Find docs, i.e. Salesforce" class="form-control">
+      <span class="icon icon-magnifying-glass"></span>
     </div>
   </div>
-  <div class="container docs-content">
-    <h1 id="contents">Contents</h1>
-    <ul id="markdown-toc">
-      <li><strong>{{ page.heading }} Docs<strong></li>
-      {% assign sorted = site.pages | sort:"order" %}
-      {% for p in sorted %}
-        {% assign pPath = p.path | split:"/" %}
-        {% assign pPathMinusFileName = pPath | pop | join:"/" %}
-        {% assign pathMinusFileName = path | pop | join:"/" %}
-        {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
-        {% assign pElementName = pPath | pop | last %}
-        {% assign elementName = page.url | split:"#" | last %}
-        {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
-          <li><a href="{{ p.url }}">{{ p.title }}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    {{content}}
   </div>
+  <div class="container-fluid text-xs-center">
+    {{content | column}}
+
+    <a class="docs-top" style="display: none" href="#">Back to top</a>
+  </div>
+<!-- <div id="wrap">
+  <div id="footer">
+      <div class="container-fluid">
+        <p class="text-xs-center">© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
+      </div>
+  </div>
+</div> -->
+
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/chart.js"></script>
   <script src="/assets/js/tablesorter.min.js"></script>
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
   <script>
-    $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+  // execute/clear BS loaders for docs
+  $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
   </script>
 </body>
 </html>
