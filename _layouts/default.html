@@ -9,9 +9,10 @@
   <meta name="author" content="">
   <title>Documentation</title>
   <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
-  <link href="../assets/css/toolkit-inverse.css" rel="stylesheet">
-  <link href="../assets/css/docs.css" rel="stylesheet">
-  <link href="../assets/css/application.css" rel="stylesheet">
+  <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
+  <link href="/assets/css/docs.css" rel="stylesheet">
+  <link href="/assets/css/application.css" rel="stylesheet">
+  <link href="/assets/css/custom-styles.css" rel="stylesheet">
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
   /* this chunk of css is not part of the toolkit :) */
@@ -22,7 +23,6 @@
   }
   </style>
 </head>
-
 
 <body class="with-top-navbar">
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -49,81 +49,66 @@
               Docs
             </a>
           </li>
-          <li >
-            <a href="/forum.html">Forum</a>
-          </li>
-          <li >
-            <a href="/change-log.html">Change Log</a>
-          </li>
         </ul>
       </div>
     </div>
   </nav>
+
   <div class="jumbotron">
     <div class="container text-xs-center p-a-lg">
     <h2>Cloud Elements Developer Portal</h2>
     <p>You build the killer app, we'll take care of the REST.</p>
-    <div class="input-with-icon">
-      <input type="text" value="Find docs, i.e. Salesforce" class="form-control">
-      <span class="icon icon-magnifying-glass"></span>
-    </div>
   </div>
   </div>
   <div class="container-fluid">
     <div class="row text-xs-center p-a-lg">
     <div class="col-md-4">
-      <div class="panel panel-default p-b-lg">
-        <div class="panel-heading">
-          <h3 class="panel-title">Element Guides</h3>
-        </div>
-        <a href="/docs/elements.html">
-          <div class="panel-body">
-          Find Element Documentation i.e. Salesforce, HubSpot, QuickBooks
-          </div>
-        </a>
-      </div>
+      <a href="/docs/elements.html">
+        <h3>Element Guides</h3>
+        <img class="center-block img-icon" src="/assets/img/guides-icon.png" alt="Cloud Elements Documentation" />
+      </a>
+        <p>
+          Get up and running with our Elements
+        <br>
+          i.e. <strong>Salesforce, HubSpot, QuickBooks</strong>
+        </p>
     </div>
     <div class="col-md-4">
-      <div class="panel panel-default p-b-lg">
-        <div class="panel-heading">
-          <h3 class="panel-title">API Toolkit</h3>
-        </div>
-        <div class="panel-body">
-          Find Documentation on products like Formulas, Element Loader, Element Mapper
-        </div>
-      </div>
+      <a href="/docs/products/api-toolkit.html">
+        <h3>API Toolkit</h3>
+        <img class="center-block img-icon" src="/assets/img/api-toolkit-icon.png" alt="Cloud Elements API Toolkit" />
+      </a>
+        <p>
+          Want to build your own integrations?
+          <br>
+          Learn how to build Elements, create Formulas, map and move data.
+        </p>
     </div>
     <div class="col-md-4">
-      <div class="panel panel-default p-b-lg">
-        <div class="panel-heading">
-          <h3 class="panel-title">Quick Start</h3>
-        </div>
-        <div class="panel-body">
-          View sample apps, POSTman collections, and how to videos to get you started
-        </div>
-      </div>
+      <a href="/docs/on-prem/index.html">
+        <h3>On Prem Deployment</h3>
+        <img class="center-block img-icon" src="/assets/img/on-prem-icon.png" alt="Cloud Elements API Toolkit" />
+      </a>
+        <p>
+          Deploying on prem?
+          <br>
+          View documentation to get you up and running quickly
+        </p>
     </div>
   </div>
   </div>
-
-  <div class="container docs-content">
-
-    <h1 id="contents">Contents</h1>
-
-    <a class="docs-top" style="display: none" href="#">Back to top</a>
+<div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<div class="container">
+  <div class="navbar-text">
+    <p>© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
   </div>
-
-  <!-- <div id="footer">
-      <div class="container-fluid">
-        <p class="text-xs-center">© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
-      </div>
-  </div> -->
-
-  <script src="../assets/js/jquery.min.js"></script>
-  <script src="../assets/js/chart.js"></script>
-  <script src="../assets/js/tablesorter.min.js"></script>
-  <script src="../assets/js/toolkit.js"></script>
-  <script src="../assets/js/application.js"></script>
+  </div>
+</div>
+  <script src="/assets/js/jquery.min.js"></script>
+  <script src="/assets/js/chart.js"></script>
+  <script src="/assets/js/tablesorter.min.js"></script>
+  <script src="/assets/js/toolkit.js"></script>
+  <script src="/assets/js/application.js"></script>
   <script>
   // execute/clear BS loaders for docs
   $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
