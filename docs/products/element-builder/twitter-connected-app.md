@@ -28,3 +28,5 @@ Via a web browser, go to [https://apps.twitter.com/app/new](https://apps.twitter
 
 7. Copy “API Secret”.
 ![Twitter Connected App step 3](/assets/img/element-builder/twitter-connected-app-3.png)
+
+The next step is to [create a new Twitter Element via API](create-via-api.html)
