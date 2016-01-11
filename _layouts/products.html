@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
-  <title>Cloud Elements Developer Portal</title>
+  <title>Cloud Elements API Toolkit</title>
   <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
   <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
@@ -23,6 +23,7 @@
   }
   </style>
 </head>
+
 
 <body class="with-top-navbar">
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -41,7 +42,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active">
+          <li >
             <a href="/index.html">Home</a>
           </li>
           <li>
@@ -49,7 +50,7 @@
               Docs
             </a>
           </li>
-          <li>
+          <li class="active">
             <a href="/docs/products/api-toolkit.html">
               API Toolkit
             </a>
@@ -58,50 +59,58 @@
       </div>
     </div>
   </nav>
-
   <div class="jumbotron">
     <div class="container text-xs-center p-a-lg">
-      <h2>Cloud Elements Developer Portal</h2>
-      <p>You build the killer app, we'll take care of the REST.</p>
-    </div>
+    <h2>Cloud Elements API Toolkit</h2>
+    <p>Need to build your own integration? <br> Find documentation on all of the tools needed to get started.</p>
+  </div>
   </div>
   <div class="container-fluid">
     <div class="row text-xs-center p-a-lg">
-      <div class="col-md-4">
-        <a href="/docs/elements.html">
-          <h3>Element Guides</h3>
-          <img class="center-block img-icon" src="/assets/img/guides-icon.png" alt="Cloud Elements Documentation" />
+      <div class="col-md-3">
+        <a href="/docs/products/element-builder/overview.html">
+          <h3>Elements Builder</h3>
+          <img class="center-block img-icon" src="/assets/img/element-builder-icon.png" alt="Cloud Elements Element Builder" />
         </a>
         <p>
-          Get up and running with our Elements
-          <br>
-          i.e. <strong>Salesforce, HubSpot, QuickBooks</strong>
+          Get up and running with building your own integrations
         </p>
       </div>
-      <div class="col-md-4">
-        <a href="/docs/products/api-toolkit.html">
-          <h3>API Toolkit</h3>
-          <img class="center-block img-icon" src="/assets/img/api-toolkit-icon.png" alt="Cloud Elements API Toolkit" />
+      <div class="col-md-3">
+        <a href="/docs/products/element-loader/overview.html">
+          <h3>Element Loader</h3>
+          <img class="center-block img-icon" src="/assets/img/element-loader-icon.png" alt="Cloud Elements Element Loader" />
         </a>
         <p>
-          Want to build your own integrations?
-          <br>
-          Learn how to build Elements, create Formulas, map and move data.
+          Learn how to bulk transfer data from different cloud services.
         </p>
       </div>
-      <div class="col-md-4">
-        <a href="/docs/on-prem/index.html">
-          <h3>On Prem Deployment</h3>
-          <img class="center-block img-icon" src="/assets/img/on-prem-icon.png" alt="Cloud Elements API Toolkit" />
+      <div class="col-md-3">
+        <a href="/docs/products/element-mapper/overview.html">
+          <h3>Element Mapper</h3>
+          <img class="center-block img-icon" src="/assets/img/element-mapper-icon.png" alt="Cloud Elements Element Mapper" />
         </a>
         <p>
-          Deploying on prem?
-          <br>
-          View documentation to get you up and running quickly
+          Learn how to map and transfer data from different cloud services.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <a href="/docs/products/formulas/overview.html">
+          <h3>Formulas</h3>
+          <img class="center-block img-icon" src="/assets/img/formulas-icon.png" alt="Cloud Elements Formulas" />
+        </a>
+        <p>
+          Learn how to sync objects and create formulas between cloud services.
         </p>
       </div>
     </div>
   </div>
+  <div class="container-fluid text-xs-center">
+    {{content | column}}
+
+    <a class="docs-top" style="display: none" href="#">Back to top</a>
+  </div>
+
   <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
     <div class="container">
       <div class="navbar-text">

@@ -1,3 +1,5 @@
+{% assign path = page.path | split:"/" %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +14,7 @@
   <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
+  <link href="/assets/css/custom-styles.css" rel="stylesheet">
   <style>
     body {
       width: 1px;
@@ -31,31 +34,24 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand navbar-brand-emphasized" href="../index.html">
-          <span class="icon icon-leaf navbar-brand-icon"></span>
-          Dashboard
+          <span class="icon icon-cloud navbar-brand-icon"></span>
+          Cloud Elements
         </a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li >
-            <a href="../index.html">Overview</a>
-          </li>
-          <li >
-            <a href="../order-history/index.html">Order History</a>
-          </li>
-          <li >
-            <a href="../fluid/index.html">Fluid layout</a>
-          </li>
-          <li >
-            <a href="../icon-nav/index.html">Icon nav</a>
+          <li>
+            <a href="/index.html">Home</a>
           </li>
           <li class="active">
-            <a href="../docs/index.html">
+            <a href="/docs/elements.html">
               Docs
             </a>
           </li>
-          <li >
-            <a href="../light/index.html">Light UI</a>
+          <li>
+            <a href="/docs/products/api-toolkit.html">
+              API Toolkit
+            </a>
           </li>
         </ul>
       </div>
@@ -63,21 +59,35 @@
   </nav>
   <div class="docs-header" id="content">
     <div class="container">
-      <h1>{{page.section}}</h1>
+      <h1>{{page.heading}}</h1>
       <p>{{page.description}}</p>
     </div>
   </div>
   <div class="container docs-content">
     <h1 id="contents">Contents</h1>
     <ul id="markdown-toc">
-      {% for p in site.pages %}
-        {% if p.section == page.section %}
-        <!-- TODO need an order variable on each page, sort by priority -->
+      <li><strong>{{ page.heading }} Docs<strong></li>
+      {% assign sorted = site.pages | sort:"order" %}
+      {% for p in sorted %}
+        {% assign pPath = p.path | split:"/" %}
+        {% assign pPathMinusFileName = pPath | pop | join:"/" %}
+        {% assign pathMinusFileName = path | pop | join:"/" %}
+        {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
+        {% assign pElementName = pPath | pop | last %}
+        {% assign elementName = page.url | split:"#" | last %}
+        {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
           <li><a href="{{ p.url }}">{{ p.title }}</a></li>
         {% endif %}
       {% endfor %}
     </ul>
     {{content}}
+  </div>
+  <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class="container">
+      <div class="navbar-text">
+        <p>© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
+      </div>
+    </div>
   </div>
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/chart.js"></script>

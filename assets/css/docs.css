@@ -229,8 +229,8 @@ body {
   margin-bottom: 30px;
   font-size: 20px;
   color: #fff;
-  background-color: #1ca8dd;
-  background-image: linear-gradient(to bottom, #137499, #1ca8dd);
+  background-color: #3bb6e5;
+  background-image: linear-gradient(to bottom, #137499, #3bb6e5);
 }
 .docs-header h1 {
   margin-bottom: 5px;
@@ -303,9 +303,9 @@ body {
   }
   #markdown-toc .active > a {
     padding-left: 18px;
-    color: #1ca8dd;
+    color: #3bb6e5;
     background-color: transparent;
-    border-left: 2px solid #1ca8dd;
+    border-left: 2px solid #3bb6e5;
   }
   #markdown-toc.affix {
     top: 0;
@@ -504,6 +504,10 @@ body {
 /// Custom CSS for Docs Pages ///
 ///////////////////////////////*/
 
+img.navbar-brand {
+    margin-top: -15px;
+}
+
 img {
   vertical-align: middle;
   max-width: 100%;
@@ -513,4 +517,9 @@ img {
 
 td, th {
     padding-right: 50px;
+}
+
+.input-with-icon > .form-control {
+    padding-left: 30px;
+    width: 300px;
 }
