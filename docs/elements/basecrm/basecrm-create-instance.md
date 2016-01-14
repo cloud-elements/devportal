@@ -69,7 +69,7 @@ Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECR
 This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Base CRM is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```javascript
-{{
+{
   "element": {
     "key": "base"
   },
@@ -105,14 +105,14 @@ If the user does not specify a required config entry, an error will result notif
 Below is a successful JSON response:
 
 ```javascript
-{{
+{
   "id": 123,
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
   "element": {
     "id": 48,
     "name": "BaseCRM Beta",
-    "key": "base",
+    "key": "basecrm",
     "description": "Add a BaseCRM Instance to connect your existing BaseCRM account to the eCommerce Hub, allowing you to manage orders and products across multiple eCommerce Elements. You will need your BaseCRM account information to add an instance.",
     "image": "elements/provider_BaseCRM.png",
     "active": true,

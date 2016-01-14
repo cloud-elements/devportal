@@ -11,7 +11,7 @@ First we will make the GET /objects call to retrieve a list of available objects
 ```bash
 curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/{{ include.hub }}/objects'
+'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/objects'
 ```
 
 Example of Successful Response:
