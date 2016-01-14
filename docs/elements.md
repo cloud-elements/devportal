@@ -6,7 +6,7 @@ layout: elements
 ---
 
 * [Autotask](./elements/autotask/autotask-overview.html)
-* BaseCRM
+* [BaseCRM](./elements/basecrm/index.html)
 * Close.io
 * ConnectWise
 * Dynamics CRM
