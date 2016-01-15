@@ -5,9 +5,9 @@ description: Find API documentation, guides, and more on all of the currently su
 layout: elements
 ---
 
-* [Autotask](./elements/autotask/autotask-overview.html)
+* [Autotask](./elements/autotask/index.html)
 * [BaseCRM](./elements/basecrm/index.html)
-* Close.io
+* [Close.io](./elements/closeio/index.html)
 * ConnectWise
 * Dynamics CRM
 * HubSpot CRM

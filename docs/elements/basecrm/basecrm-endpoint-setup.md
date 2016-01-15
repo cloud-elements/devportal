@@ -32,3 +32,5 @@ Log in to your Base CRM profile at [https://app.futuresimple.com/sales](https://
 
 10. Copy the “Client ID” and “Client Secret” as they will be needed to provision a Base CRM Element
 ![Base CRM Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/10/BaseCRMAPI4.png)
+
+Next [create an instance](basecrm-create-instance.html).
