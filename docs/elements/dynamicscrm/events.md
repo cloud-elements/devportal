@@ -10,8 +10,6 @@ order: 30
 
 There are no extra configurations needed to enable Microsoft Dynamics CRM Help Desk events.
 
-Microsoft Dynamics CRM Help Desk Files and Folders are currently supported within the Events Framework.
-
 In order to enable polling, add these two extra configurations to your instance JSON:
 
 ```

@@ -10,7 +10,7 @@ layout: elements
 * [Close.io](./elements/closeio/index.html)
 * [ConnectWise](./elements/connectwise/index.html)
 * [Dynamics CRM](./elements/dynamicscrm/index.html)
-* HubSpot CRM
+* [HubSpot CRM](./elements/hubspot/index.html)
 * Infusionsoft
 * NetSuite CRM
 * Oracle Sales Cloud
