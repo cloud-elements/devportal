@@ -1,16 +1,16 @@
 ---
-heading: Autotask
+heading: Microsoft Dynamics CRM
 title: Events
-description: Enable Autotask events for your application.
+description: Enable Microsoft Dynamics CRM events for your application.
 layout: docs
 order: 30
 ---
 
 ## Events
 
-There are no extra configurations needed to enable Autotask Help Desk events.
+There are no extra configurations needed to enable Microsoft Dynamics CRM Help Desk events.
 
-Autotask Help Desk Files and Folders are currently supported within the Events Framework.
+Microsoft Dynamics CRM Help Desk Files and Folders are currently supported within the Events Framework.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -21,15 +21,15 @@ In order to enable polling, add these two extra configurations to your instance 
 
 instance JSON with polling events enabled:
 
-```json
+```JSON
 {
   "element": {
-    "key": "autotaskhelpdesk"
+    "key": "dynamicscrmadfs"
   },
   "configuration": {
-    "helpdesk.autotask.username":  "<INSERT_AUTOTASK_USERNAME>",
-    "helpdesk.autotask.password": "<INSERT_AUTOTASK_PASSWORD>",
-    "helpdesk.autotask.server.url": "<INSERT_AUTOTASK_SERVER_URL>",
+    "user.username": "<INSERT_DYNMAICS_CRM_USERNAME>",
+    "user.password": "<INSERT_DYNMAICS_CRM_PASSWORD>",
+    "dynamics.tenant": "yourcompanyname.crm.dynamics.com",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },

@@ -8,8 +8,8 @@ layout: elements
 * [Autotask](./elements/autotask/index.html)
 * [BaseCRM](./elements/basecrm/index.html)
 * [Close.io](./elements/closeio/index.html)
-* ConnectWise
-* Dynamics CRM
+* [ConnectWise](./elements/connectwise/index.html)
+* [Dynamics CRM](./elements/dynamicscrm/index.html)
 * HubSpot CRM
 * Infusionsoft
 * NetSuite CRM

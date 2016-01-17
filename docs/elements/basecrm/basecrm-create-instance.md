@@ -66,7 +66,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Base CRM is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Base CRM is “base”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```javascript
 {
