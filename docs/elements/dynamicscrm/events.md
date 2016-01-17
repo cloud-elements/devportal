@@ -8,7 +8,7 @@ order: 30
 
 ## Events
 
-There are no extra configurations needed to enable Microsoft Dynamics CRM Help Desk events.
+There are no extra configurations needed to enable Microsoft Dynamics CRM events.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 

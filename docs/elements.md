@@ -10,10 +10,10 @@ layout: elements
 * [Close.io](./elements/closeio/index.html)
 * [ConnectWise](./elements/connectwise/index.html)
 * [Dynamics CRM](./elements/dynamicscrm/index.html)
-* [HubSpot CRM](./elements/hubspot/index.html)
-* Infusionsoft
-* NetSuite CRM
-* Oracle Sales Cloud
+* [HubSpot](./elements/hubspot/index.html)
+* [Infusionsoft](./elements/infusionsoft/index.html)
+* [NetSuite](./elements/netsuite/index.html)
+* [Oracle Sales Cloud](./elements/oraclesalescloud/index.html)
 * Pipedrive
 * [Salesforce](./elements/salesforce/index.html)
 * SugarCRM

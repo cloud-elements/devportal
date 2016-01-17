@@ -14,7 +14,7 @@ order: 1
 In order to create a connection to HubSpot the following steps are required:
 
 1. Set up the [endpoint](hubspot-endpoint-setup.html)
-2. Call the `GET /elements/sfdc/oauth/url` with your HubSpot API key and secret
+2. Call the `GET /elements/hubspot/oauth/url` with your HubSpot API key and secret
 3. Call the `POST /instances` API to instantiate your HubSpot connected app
 
 #### In Depth
