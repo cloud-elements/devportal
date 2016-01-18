@@ -14,9 +14,9 @@ layout: elements
 * [Infusionsoft](./elements/infusionsoft/index.html)
 * [NetSuite](./elements/netsuite/index.html)
 * [Oracle Sales Cloud](./elements/oraclesalescloud/index.html)
-* Pipedrive
+* [Pipedrive](./elements/pipedrive/index.html)
 * [Salesforce](./elements/salesforce/index.html)
-* SugarCRM
-* ZohoCRM
+* [SugarCRM](./elements/sugarcrm/index.html)
+* [ZohoCRM](./elements/zohocrm/index.html)
 * Box
 * Dropbox

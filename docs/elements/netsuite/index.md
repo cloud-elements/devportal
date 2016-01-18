@@ -22,4 +22,4 @@ The NetSuite Element is a collection of resources providing a pre-built integrat
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
-Get started by [setting up the endpoint](netsuite-endpoint-setup.html).
+Get started by [retrieving your Account ID](netsuite-endpoint-setup.html).
