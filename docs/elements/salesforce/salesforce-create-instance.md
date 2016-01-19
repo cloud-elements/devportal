@@ -36,7 +36,7 @@ curl -X GET
 
 Response:
 
-```javascript
+```json
 {
 "element": "sfdc",
 "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
@@ -70,7 +70,7 @@ Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECR
 ```
 This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
-```javascript
+```json
 {
   "element": {
     "key": "sfdc"
@@ -106,7 +106,7 @@ If the user does not specify a required config entry, an error will result notif
 
 Below is a successful JSON response:
 
-```javascript
+```json
 {
     "id": 123,
     "name": "test",
@@ -134,3 +134,123 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+
+##### Marketing Cloud
+
+Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
+
+```bash
+curl -X GET
+-H 'Content-Type: application/json'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcmarketingcloud'
+```
+
+Response:
+
+```bash
+{
+"element": "sfdcmarketingcloud",
+"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdc"
+}
+```
+Create Instance JSON:
+
+```json
+{
+  "element": {
+    "key": "sfdcmarketingcloud"
+  },
+  "providerData": {
+    "code": "<Code_On_The_Return_URL>"
+  },
+  "configuration": {
+    "oauth.callback.url": "https://www.demonstrab.ly/home",
+    "oauth.api.key": "<Insert_Client_ID>",
+    "oauth.api.secret": "<Insert_Client_Secret>"
+  },
+  "tags": [
+    "<Add_Your_Tag>"
+  ],
+  "name": "<Insert_Instance_Name>"
+}
+```
+
+##### Service Cloud
+
+Provision an instance to Service Cloud functions only. Use the following JSON, the key value (sfdcservicecloud instead of sfdc) is the only difference in the JSON in the first example.
+
+```bash
+curl -X GET
+-H 'Content-Type: application/json'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdcservicecloud/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcservicecloud'
+```
+
+Response:
+
+```bash
+{
+  "element": "sfdcservicecloud",
+  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcservicecloud"
+}
+```
+Create Instance JSON:
+
+```json
+{
+  "element": {
+    "key": "sfdcservicecloud"
+  },
+  "providerData": {
+    "code": "<Code_On_The_Return_URL>"
+  },
+  "configuration": {
+    "oauth.callback.url": "https://www.demonstrab.ly/home",
+    "oauth.api.key": "<Insert_Client_ID>",
+    "oauth.api.secret": "<Insert_Client_Secret>"
+  },
+  "tags": [
+    "<Add_Your_Tag>"
+  ],
+  "name": "<Insert_Instance_Name>"
+}
+```
+
+##### Documents
+
+Provision an instance to Documents functions only. Use the following JSON, the key value (sfdcdocuments instead of sfdc) is the only difference in the JSON in the first example.
+
+```bash
+curl -X GET
+-H 'Content-Type: application/json'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdcdocuments/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcdocuments'
+```
+
+Response:
+
+```bash
+{
+  "element": "sfdcservicecloud",
+  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcdocuments"
+}
+```
+Create Instance JSON:
+
+```json
+{
+  "element": {
+    "key": "sfdcdocuments"
+  },
+  "providerData": {
+    "code": "<Code_On_The_Return_URL>"
+  },
+  "configuration": {
+    "oauth.callback.url": "https://www.demonstrab.ly/home",
+    "oauth.api.key": "<Insert_Client_ID>",
+    "oauth.api.secret": "<Insert_Client_Secret>"
+  },
+  "tags": [
+    "<Add_Your_Tag>"
+  ],
+  "name": "<Insert_Instance_Name>"
+}
+```

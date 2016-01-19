@@ -11,7 +11,7 @@ First we will make the GET /objects call to retrieve a list of available objects
 ```bash
 curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/{{ include.hub }}/objects'
+'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/objects'
 ```
 
 Example of Successful Response:
@@ -40,7 +40,7 @@ An Example request can be seen below.:
 curl -X POST
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
 -F file=@sample.csv
-'https://api.cloud-elements.com/elements/api-v2/hubs/{{ include.hub }}/bulk/contact?path=/sample.csv'
+'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/bulk/contact?path=/sample.csv'
 ```
 
 Example of Successful Response:
@@ -59,7 +59,7 @@ The id “1234” will be used in the request URL in the next example.
 ```bash
 curl -X GET
 -H 'Authorization: Element <INSERT ELEMENT TOKEN>, User <INSERT_USER_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/{{ include.hub }}/bulk/1234/status'
+'https://api.cloud-elements.com/elements/api-v2/hubs/marketing/bulk/1234/status'
 ```
 
 Example of Successful Response:
