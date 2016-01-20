@@ -18,5 +18,10 @@ layout: elements
 * [Salesforce](./elements/salesforce/index.html)
 * [SugarCRM](./elements/sugarcrm/index.html)
 * [ZohoCRM](./elements/zohocrm/index.html)
+* [Act-On](./elements/acton/index.html)
+* Eloqua
+* MailChimp
+* Marketo
+* Pardot
 * Box
 * Dropbox
