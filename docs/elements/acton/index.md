@@ -14,7 +14,7 @@ order: 1
 In order to create a connection to Act-On the following steps are required:
 
 1. Retrieve your Act-On Client ID and Client Secret, these two items are sent to you when you sign up for your account
-2. Call the `GET /elements/sfdc/oauth/url` with your Act-On API key and secret
+2. Call the `GET /elements/acton/oauth/url` with your Act-On API key and secret
 3. Call the `POST /instances` API to instantiate your Act-On connected app
 
 #### In Depth

@@ -19,9 +19,9 @@ layout: elements
 * [SugarCRM](./elements/sugarcrm/index.html)
 * [ZohoCRM](./elements/zohocrm/index.html)
 * [Act-On](./elements/acton/index.html)
-* Eloqua
-* MailChimp
-* Marketo
-* Pardot
+* [Eloqua](./elements/eloqua/index.html)
+* [MailChimp](./elements/mailchimp/index.html)
+* [Marketo](./elements/marketo/index.html)
+* [Pardot](./elements/pardot/index.html)
 * Box
 * Dropbox
