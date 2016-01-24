@@ -23,5 +23,10 @@ layout: elements
 * [MailChimp](./elements/mailchimp/index.html)
 * [Marketo](./elements/marketo/index.html)
 * [Pardot](./elements/pardot/index.html)
+* [FreshBooks](./elements/freshbooks/index.html)
+* [Great Plains](./elements/greatplains/index.html)
+* [QuickBooks Enterprise](./elements/quickbooksenterprise/index.html)
+* [QuickBooks Online](./elements/quickbooksonline/index.html)
+* [Xero](./elements/xero/index.html)
 * Box
 * Dropbox
