@@ -28,5 +28,11 @@ layout: elements
 * [QuickBooks Enterprise](./elements/quickbooksenterprise/index.html)
 * [QuickBooks Online](./elements/quickbooksonline/index.html)
 * [Xero](./elements/xero/index.html)
+* [Freshdesk](./elements/freshdesk/index.html)
+* [Freshservice](./elements/freshservice/index.html)
+* [JIRA](./elements/jira/index.html)
+* [Oracle Service Cloud](./elements/oracleservicecloud/index.html)
+* [ServiceNow](./elements/servicenow/index.html)
+* [Zendesk](./elements/zendesk/index.html)
 * Box
 * Dropbox
