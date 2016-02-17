@@ -8,7 +8,7 @@ order: 5
 
 ## Endpoint Setup
 
-Follow these steps to retrieve your Close.io Marketing API Key. Via a web browser, go to [https://app.close.io/login/](https://app.close.io/login/) and login to your account.
+Follow these steps to retrieve your Close.io API Key. Via a web browser, go to [https://app.close.io/login/](https://app.close.io/login/) and login to your account.
 
 1. Click your account name in the top right corner, then click “Settings”
 ![Close.io Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/04/CloseioAPI1.png)

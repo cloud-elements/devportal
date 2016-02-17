@@ -34,5 +34,10 @@ layout: elements
 * [Oracle Service Cloud](./elements/oracleservicecloud/index.html)
 * [ServiceNow](./elements/servicenow/index.html)
 * [Zendesk](./elements/zendesk/index.html)
+* [Ecwid](./elements/ecwid/index.html)
+* [Etsy](./elements/etsy/index.html)
+* [Shopify](./elements/shopify/index.html)
+* [Volusion](./elements/volusion/index.html)
+* [WooCommerce](./elements/woocommerce/index.html)
 * Box
 * Dropbox
