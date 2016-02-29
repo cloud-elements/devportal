@@ -39,5 +39,12 @@ layout: elements
 * [Shopify](./elements/shopify/index.html)
 * [Volusion](./elements/volusion/index.html)
 * [WooCommerce](./elements/woocommerce/index.html)
+* Amazon S3
 * Box
 * Dropbox
+* Evernote
+* Google Drive
+* OneDrive
+* OneDrive Business
+* OneNote
+* Sharepoint
