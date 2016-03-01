@@ -1,16 +1,14 @@
 ---
-heading: Autotask
+heading: OneDrive
 title: Events
-description: Enable Autotask events for your application.
+description: Enable OneDrive events for your application.
 layout: docs
 order: 30
 ---
 
 ## Events
 
-Cloud Elements supports polling events for Autotask.
-
-Autotask Help Desk Files and Folders are currently supported within the Events Framework.
+Cloud Elements supports polling events for OneDrive.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -24,12 +22,15 @@ instance JSON with polling events enabled:
 ```json
 {
   "element": {
-    "key": "autotaskhelpdesk"
+    "key": "onedrivev2"
+  },
+  "providerData": {
+    "code": "Code on Return the URL"
   },
   "configuration": {
-    "helpdesk.autotask.username":  "<INSERT_AUTOTASK_USERNAME>",
-    "helpdesk.autotask.password": "<INSERT_AUTOTASK_PASSWORD>",
-    "helpdesk.autotask.server.url": "<INSERT_AUTOTASK_SERVER_URL>",
+    "oauth.api.key": "<INSERT_ONEDRIVE_CLIENT_ID>",
+    "oauth.api.secret": "<INSERT_ONEDRIVE_CLIENT_SECRET>",
+    "oauth.callback.url": "https://www.yourcallbackurl.com/oauth2callback",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },

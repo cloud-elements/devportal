@@ -8,7 +8,7 @@ order: 20
 
 ## Create Instance
 
-Dropbox is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Dropbox platform.
+Dropbox is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Dropbox platform.
 
 ### Step 1. Get Elements OAuth Information
 

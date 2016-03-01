@@ -43,8 +43,11 @@ layout: elements
 * [Box](./elements/box/index.html)
 * [Dropbox](./elements/dropbox/index.html)
 * [Evernote](./elements/evernote/index.html)
-* Google Drive
-* OneDrive
-* OneDrive Business
-* OneNote
-* Sharepoint
+* [Google Drive](./elements/googledrive/index.html)
+* [OneDrive](./elements/ondedrive/index.html)
+* [OneDrive Business](./elements/ondedrivebusiness/index.html)
+* [OneNote](./elements/onenote/index.html)
+* [Sharepoint](./elements/sharepoint/index.html)
+* InfoBip
+* SendGrid
+* Twilio SMS

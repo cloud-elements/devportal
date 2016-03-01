@@ -8,7 +8,7 @@ order: 20
 
 ## Create Instance
 
-Box is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Box platform.
+Box is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Box platform.
 
 ### Step 1. Get Elements OAuth Information
 
