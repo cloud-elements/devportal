@@ -13,7 +13,7 @@ order: 1
 
 In order to create a connection to Amazon S3 the following steps are required:
 
-1. Create a new Amazon S3 connected app
+1. Create a new [Amazon S3 connected app](amazons3-endpoint-setup.html)
 2. Call the `POST /instances` API to instantiate your Amazon S3 connected app
 
 #### In Depth
