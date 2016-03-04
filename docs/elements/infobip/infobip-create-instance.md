@@ -1,5 +1,5 @@
 ---
-heading: Close.io
+heading: InfoBip
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -8,7 +8,7 @@ order: 15
 
 ## Create Instance
 
-To provision your Close.io Element, use the /instances API.
+To provision your InfoBip Element, use the /instances API.
 
 ### Step 1. Call the /instances API
 
@@ -28,16 +28,18 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Close.io is “closeio”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements InfoBip is “infobip”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "closeio"
+    "key": "infobip"
   },
   "configuration": {
-    "username": "<INSERT_CLOSE_IO_API_KEY>",
-    "password": "<INSERT_CLOSE_IO_PASSWORD>"
+    "messaging.sms.infobip.sender": "+17777777777",
+    "messaging.sms.infobip.username": "<INSERT_INFOBIP_USERNAME>",
+    "messaging.sms.infobip.password": "<INSERT_INFOBIP_PASSWORD>",
+    "messaging.sms.infobip.callback.url": "https://www.maycoolapp.com/auth"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -68,35 +70,23 @@ Below is a successful JSON response:
   "name": "Test",
   "token": "cuED0/DezalhhzK2OtO6kMP7NvPnMyNcRDZc=",
   "element": {
-    "id": 146,
-    "name": "Close.io Beta",
-    "key": "closeio",
-    "description": "Add a Close.io CRM Instance to connect your existing Close.io account to the CRM Hub, allowing you to manage contacts, accounts, opportunities, etc. across multiple CRM Elements. You will need your Close.io CRM account information to add an instance.",
-    "image": "https://pbs.twimg.com/profile_images/497905627948015616/vNCOkr1Z.png",
+    "id": 37,
+    "name": "Infobip",
+    "key": "infobip",
+    "description": "Mobilise your business by integrating into Infobip mobile services cloud. Infobip solutions are designed specifically for companies handling huge amounts of user data and give access to the most varied demographics for marketing, customer care, polling and loyalty programs. The API enables users to communicate with your app or chat with one another; your code decides.",
+    "image": "elements/provider_infobip.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
-    "trialAccount": false,
-    "transformationsEnabled": true,
-    "authentication": {
-      "type": "basic"
-    },
-    "hub": "crm",
-    "parameters": []
+    "trialAccount": true,
+    "configDescription": "If you do not have an Infobip account, you can create one at <a href="http://www.infobip.com/sign_up/" target="_blank">Infobip Signup</a>",
+    "signupURL": "http://www.infobip.com/sign_up/"
   },
   "provisionInteractions": [],
   "valid": true,
   "disabled": false,
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
-  "configuration": {
-    "base.url": "https://app.close.io/api/v1",
-    "pagination.offset": "true",
-    "password": "CLOSE_IO_PASSOWRD",
-    "pagination.max": "100",
-    "username": "CLOSE_IO_API_KEY"
-  },
-  "eventsEnabled": false,
   "cachingEnabled": false
 }
 ```

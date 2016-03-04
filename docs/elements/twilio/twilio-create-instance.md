@@ -1,5 +1,5 @@
 ---
-heading: Close.io
+heading: Twilio SMS
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -8,7 +8,7 @@ order: 15
 
 ## Create Instance
 
-To provision your Close.io Element, use the /instances API.
+To provision your Twilio SMS Element, use the /instances API.
 
 ### Step 1. Call the /instances API
 
@@ -28,16 +28,19 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Close.io is “closeio”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Twilio SMS is "twilio".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "closeio"
+    "key": "twilio"
   },
   "configuration": {
-    "username": "<INSERT_CLOSE_IO_API_KEY>",
-    "password": "<INSERT_CLOSE_IO_PASSWORD>"
+      "messaging.sms.twilio.protocol": "sms",
+      "messaging.sms.twilio.account": "<INSERT_TWILIO_SMS_ACCOUNT>",
+      "messaging.sms.twilio.sender": "<INSERT_TWILIO_SMS_SENDER>",
+      "messaging.sms.twilio.token": "<INSERT_TWILIO_SMS_TOKEN>",
+      "messaging.sms.twilio.callback.url": "https://www.mycoolapp.com/auth"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -64,39 +67,27 @@ Below is a successful JSON response:
 
 ```json
 {
-  "id": 12,
+  "id": 1234,
   "name": "Test",
   "token": "cuED0/DezalhhzK2OtO6kMP7NvPnMyNcRDZc=",
   "element": {
-    "id": 146,
-    "name": "Close.io Beta",
-    "key": "closeio",
-    "description": "Add a Close.io CRM Instance to connect your existing Close.io account to the CRM Hub, allowing you to manage contacts, accounts, opportunities, etc. across multiple CRM Elements. You will need your Close.io CRM account information to add an instance.",
-    "image": "https://pbs.twimg.com/profile_images/497905627948015616/vNCOkr1Z.png",
+    "id": 7,
+    "name": "Twilio SMS",
+    "key": "twilio",
+    "description": "Global Text Messaging API.  Build apps that send and receive SMS using phone numbers and short codes. Let friends say hello, tell customers their packages are delivered or alert employees that a shift is ready. The API enables users to communicate with your app or chat with one another; your code decides.",
+    "image": "elements/provider_twilio.png",
     "active": true,
     "deleted": false,
-    "typeOauth": false,
-    "trialAccount": false,
-    "transformationsEnabled": true,
-    "authentication": {
-      "type": "basic"
-    },
-    "hub": "crm",
-    "parameters": []
+    "typeOauth": true,
+    "trialAccount": true,
+    "configDescription": "If you do not have an Twilio account, you can create one at <a href="https://www.twilio.com/try-twilio" target="_blank">Twilio Signup</a>",
+    "signupURL": "https://www.twilio.com/try-twilio"
   },
   "provisionInteractions": [],
   "valid": true,
   "disabled": false,
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
-  "configuration": {
-    "base.url": "https://app.close.io/api/v1",
-    "pagination.offset": "true",
-    "password": "CLOSE_IO_PASSOWRD",
-    "pagination.max": "100",
-    "username": "CLOSE_IO_API_KEY"
-  },
-  "eventsEnabled": false,
   "cachingEnabled": false
 }
 ```
