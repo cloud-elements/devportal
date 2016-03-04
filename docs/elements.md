@@ -36,6 +36,7 @@ layout: elements
 * [Zendesk](./elements/zendesk/index.html)
 * [Ecwid](./elements/ecwid/index.html)
 * [Etsy](./elements/etsy/index.html)
+* [Magento](./elements/magento/index.html)
 * [Shopify](./elements/shopify/index.html)
 * [Volusion](./elements/volusion/index.html)
 * [WooCommerce](./elements/woocommerce/index.html)
@@ -55,3 +56,4 @@ layout: elements
 * [Flickr](./elements/flickr/index.html)
 * [Instagram](./elements/instagram/index.html)
 * [ServiceMax](./elements/servicemax/index.html)
+* [Typeform](./elements/typeform/index.html)
