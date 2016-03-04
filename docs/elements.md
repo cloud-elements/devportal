@@ -48,6 +48,6 @@ layout: elements
 * [OneDrive Business](./elements/ondedrivebusiness/index.html)
 * [OneNote](./elements/onenote/index.html)
 * [Sharepoint](./elements/sharepoint/index.html)
-* InfoBip
-* SendGrid
-* Twilio SMS
+* [InfoBip](./elements/infobip/index.html)
+* [SendGrid](./elements/sendgrid/index.html)
+* [Twilio SMS](./elements/twilio/index.html)
