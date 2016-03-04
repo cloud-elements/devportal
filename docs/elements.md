@@ -54,3 +54,4 @@ layout: elements
 * [Facebook](./elements/facebook/index.html)
 * [Flickr](./elements/flickr/index.html)
 * [Instagram](./elements/instagram/index.html)
+* [ServiceMax](./elements/servicemax/index.html)
