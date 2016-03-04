@@ -51,3 +51,6 @@ layout: elements
 * [InfoBip](./elements/infobip/index.html)
 * [SendGrid](./elements/sendgrid/index.html)
 * [Twilio SMS](./elements/twilio/index.html)
+* [Facebook](./elements/facebook/index.html)
+* [Flickr](./elements/flickr/index.html)
+* [Instagram](./elements/instagram/index.html)
