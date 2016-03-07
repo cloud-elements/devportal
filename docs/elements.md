@@ -57,3 +57,4 @@ layout: elements
 * [Instagram](./elements/instagram/index.html)
 * [ServiceMax](./elements/servicemax/index.html)
 * [Typeform](./elements/typeform/index.html)
+* [ABBYY](./elements/abbyy/index.html)
