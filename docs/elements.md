@@ -59,3 +59,4 @@ layout: elements
 * [Typeform](./elements/typeform/index.html)
 * [ABBYY](./elements/abbyy/index.html)
 * [HireRight](./elements/hireright/index.html)
+* [DocuSign](./elements/docusign/index.html)
