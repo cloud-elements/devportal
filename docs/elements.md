@@ -58,3 +58,4 @@ layout: elements
 * [ServiceMax](./elements/servicemax/index.html)
 * [Typeform](./elements/typeform/index.html)
 * [ABBYY](./elements/abbyy/index.html)
+* [HireRight](./elements/hireright/index.html)
