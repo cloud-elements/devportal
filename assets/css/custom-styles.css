@@ -10,7 +10,101 @@
   width: 125px;
 }
 
+#logo {
+  margin-left: 17px;
+  padding: 0;
+  margin-top: -15px;
+  width: 87%;
+}
 
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #fff;
+}
+
+.nav {
+  color: #fff;
+  height: 90px;
+  float: right;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-brand-emphasized,
+.navbar-default .navbar-brand-emphasized:hover,
+.navbar-default .navbar-brand-emphasized:focus {
+  background-color: #fff;
+}
+
+.nav > .nav-header {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 5px;
+  font-size: 85%;
+  font-weight: normal;
+  letter-spacing: 1px;
+  color: #fff;
+  text-transform: uppercase;
+  height: 92px;
+}
+
+.navbar-default {
+    border-color: #fff;
+}
+
+.navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    font-weight: bold;
+    color: #000;
+    text-decoration: underline;
+}
+
+.nav > .navbar-nav a:hover {
+  background-color: none;
+}
+
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0;
+    background: #fff;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+    float: right;
+    background-color: #fff;
+}
+
+.nav > .navbar-default .navbar-nav > li > a {
+  color: #000;
+}
+
+.navbar-default .navbar-nav > li > a .active{
+  color: #000;
+}
+
+hr {
+  height: .25rem;
+  width: 25%;
+  margin: 0;
+  background: #40b4e5;
+  border: none;
+  transition: .3s ease-in-out;
+}
+
+.try-it {
+  margin-top: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 97%;
+  background-color: #ff4e4e;
+  padding-left: 27px;
+  padding-right: 27px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
 
 
 
@@ -28,6 +122,7 @@
 html,
 body {
   height: 100%;
+  font-family: "Open Sans", sans-serif;
   /* The html and body elements cannot have any padding or margin. */
 }
 
@@ -47,4 +142,31 @@ body {
   background-color: #40B4E5;
   color: #FFF;
   padding-top: 20px;
+}
+
+
+
+/*///////////////////////////////
+/// Media Quieries for Index  ///
+///////////////////////////////*/
+
+@media (max-width: 992px) {
+  #logo {
+    height: 70%;
+    padding: 0;
+    margin-top: -15px;
+  }
+}
+
+@media (min-width: 992px){
+.navbar-nav > li {
+    float: left;
+    margin-right: 30px;
+}
+
+@media (min-width: 992px) {
+.navbar-nav > li > a {
+    padding-bottom: 14.5px;
+    padding-top: 36px;
+    color: #000;
 }
