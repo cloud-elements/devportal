@@ -1,7 +1,9 @@
 /*///////////////////////////////
 /// Custom CSS for Index      ///
 ///////////////////////////////*/
-
+body.with-top-navbar{
+  background-color: #202020;
+}
 .background-white {
   background-color: #fff;
 }
@@ -20,9 +22,12 @@
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 15px;
   background: #fff;
+}
+
+.jumbotron{
+  margin-bottom: 0;
 }
 
 .nav {
@@ -79,7 +84,7 @@
     background-color: #fff;
 }
 
-.nav > .navbar-default .navbar-nav > li > a {
+.nav.navbar-light .navbar-nav > li > a {
   color: #000;
 }
 
@@ -107,7 +112,22 @@ hr {
   padding-bottom: 13px;
 }
 
+.navbar-light .navbar-toggle {
+    border-color: #333333;
+    margin-top: 30px;
+}
 
+.navbar-light .navbar-toggle .icon-bar {
+    background-color: #222;
+}
+
+.navbar-light .navbar-toggle:hover, .navbar-light .navbar-toggle:focus {
+    background-color: #333333;
+}
+
+.navbar-light .navbar-toggle:hover .icon-bar, .navbar-light .navbar-toggle:focus  .icon-bar{
+    background-color: #ffffff;
+}
 
 /*///////////////////////////////
 /// Sticky Footer Styles      ///
@@ -119,33 +139,37 @@ hr {
     margin-bottom: 0;
     border: 1px solid transparent;
 }
-
-html,
-body {
-  height: 100%;
-  font-family: "Open Sans", sans-serif;
-  /* The html and body elements cannot have any padding or margin. */
-}
-
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -60px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
-}
-
 /* Set the fixed height of the footer here */
-#footer {
-  height: 60px;
-  background-color: #40B4E5;
-  color: #FFF;
-  padding-top: 20px;
+.footer-navbar{
+  background-color: #1a1a1a;
+  margin: 0;
+  border: none;
 }
 
+.footer-wrapper, .sub-footer{
+  width: 100%;
+  float: left;
+}
 
+.sub-footer{
+  background-color: #202020;
+}
+
+.sub-footer .navbar-text, .footer-wrapper .footer-content{
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  float: none;
+}
+.footer-wrapper .footer-content{
+  padding: 15px;
+}
+.sub-footer .navbar-text p{
+  letter-spacing: 1px;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 15px;
+}
 
 /*///////////////////////////////
 /// Media Quieries for Index  ///
@@ -156,6 +180,10 @@ body {
     height: 70%;
     padding: 0;
     margin-top: -15px;
+  }
+  .nav{
+    height: inherit;
+    width: 100%;
   }
 }
 
