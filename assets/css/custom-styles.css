@@ -57,11 +57,12 @@
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     font-weight: bold;
     color: #000;
-    text-decoration: underline;
+    border-bottom: 2px solid #40b4e5;
+    padding-bottom: 5px;
 }
 
-.nav > .navbar-nav a:hover {
-  background-color: none;
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
 }
 
 .container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse {
