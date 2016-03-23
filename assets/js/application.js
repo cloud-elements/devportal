@@ -63,7 +63,7 @@ var App = {
           var distance =  Math.max(scrollTop - cache.containerTop, 0)
 
           if (!distance) {
-            $($toc.find('li')[1]).addClass('active')
+            // $($toc.find('li')[1]).addClass('active')
             return $toc.css({
               position: '',
               left: '',
@@ -74,7 +74,7 @@ var App = {
           $toc.css({
             position: 'fixed',
             left: cache.containerRight,
-            top: 40
+            top: 120
           })
         }
 
