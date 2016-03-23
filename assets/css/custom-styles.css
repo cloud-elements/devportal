@@ -283,6 +283,38 @@ hr {
   color: #00b8dd;
 }
 
+
+/*///////////////////////////////
+/// Custom Styles for Docs CSS///
+///////////////////////////////*/
+
+.docs-header {
+  padding-top: 130px;
+  background-color: #252525;
+  background-image: none;
+}
+
+.docs-header p {
+  color: #f2f2f2;
+  font-size: 0.875em;
+}
+
+.docs-header h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .04em;
+}
+
+body.with-top-navbar {
+  background-color: #fff;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.docs-content {
+  padding-bottom: 100px;
+}
+
 /*///////////////////////////////
 /// Media Quieries for Index  ///
 ///////////////////////////////*/
