@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="author" content="">
   <title>Cloud Elements API Documentation</title>
-  <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
   <link href="/assets/css/toolkit-light.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
@@ -26,39 +27,7 @@
 
 
 <body class="with-top-navbar">
-  <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand navbar-brand-emphasized" href="../index.html">
-          <span class="icon icon-cloud navbar-brand-icon"></span>
-          Cloud Elements
-        </a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li >
-            <a href="/index.html">Home</a>
-          </li>
-          <li class="active">
-            <a href="/docs/elements.html">
-              Docs
-            </a>
-          </li>
-          <li>
-            <a href="/docs/products/api-toolkit.html">
-              API Toolkit
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  {% include nav.html %}
   <div class="jumbotron">
     <div class="container text-xs-center p-a-lg">
     <h2>Cloud Elements Supported Elements</h2>
@@ -70,36 +39,7 @@
 
     <a class="docs-top" style="display: none" href="#">Back to top</a>
   </div>
-
-  <div class="navbar navbar-default footer-navbar" role="navigation">
-    <div class="footer-wrapper">
-      <ul class="col-md-3">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <ul class="col-md-3">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <ul class="col-md-3">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-      <ul class="col-md-3">
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-        <li><a href="#">link</a></li>
-      </ul>
-    </div>
-    <div class="sub-footer">
-      <div class="navbar-text">
-        <p>© Copyright 2015 Cloud Elements Inc. All rights reserved. Various trademarks held by their respective owners. | 3001 Brighton Blvd. Suite #653, Denver, CO 80216 United States</p>
-      </div>
-    </div>
-  </div>
+  {% include footer.html %}
   <script src="/assets/js/jquery.min.js"></script>
   <script src="/assets/js/chart.js"></script>
   <script src="/assets/js/tablesorter.min.js"></script>
