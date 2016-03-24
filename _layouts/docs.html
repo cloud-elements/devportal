@@ -30,8 +30,10 @@
     <div class="container">
       <h1>{{page.heading}}</h1>
       <p class="p-t">{{page.description}}</p>
+      {% if page.breadcrumbs %}
+        <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
+      {% endif %}
     </div>
-    
   </div>
   <div class="container docs-content">
     <!-- <h1 id="contents">Contents</h1> -->

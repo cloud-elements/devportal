@@ -3,6 +3,8 @@ heading: Salesforce
 title: Events
 description: Enable Salesforce events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+parent: Supported Elements
 order: 25
 ---
 

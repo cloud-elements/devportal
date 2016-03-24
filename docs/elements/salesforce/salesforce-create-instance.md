@@ -3,6 +3,8 @@ heading: Salesforce
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+parent: Supported Elements
 order: 20
 ---
 

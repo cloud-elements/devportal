@@ -3,6 +3,8 @@ heading: Salesforce
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+parent: Supported Elements
 order: 5
 ---
 

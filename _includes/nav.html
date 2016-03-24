@@ -1,6 +1,20 @@
 <!-- Main Nav -->
 <nav class="nav navbar navbar-light navbar-fixed-top">
-  <div class="container-fluid">
+  <div id="search-bar-wrapper" class="search-bar-wrapper">
+      <div class="flextable">
+        <div class="flextable-item flextable-primary">
+          <input type="text" class="form-control" placeholder="Search Docs">
+        </div>
+        <div class="flextable-item">
+            <div class="btn-group">
+              <button type="button" class="btn btn-default">
+                <span class="icon icon-magnifying-glass"></span>
+              </button>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="container-fluid navbar-wraper">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
         <span class="sr-only">Toggle navigation</span>
@@ -12,6 +26,7 @@
         <img src="/assets/img/cloud-elements-logo.png" alt="Cloud Elements Logo" />
       </a>
     </div>
+    <div class="filler"></div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         {% if page.url == '/' || page.url == '/index.html'%}

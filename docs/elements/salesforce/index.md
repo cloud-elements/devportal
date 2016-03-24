@@ -3,10 +3,12 @@ heading: Salesforce
 title: Overview
 description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+parent: Supported Elements
 order: 1
 ---
 
-### Welcome to the Salesforce Element
+## Welcome to the Salesforce Element
 
 
 #### At a Glance
