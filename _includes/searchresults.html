@@ -1,0 +1,22 @@
+<div id="results" class="col-md-12">
+
+</div>
+
+<script>
+	var JEKYLL_POSTS = [];
+	{% for page in site.pages %}
+		JEKYLL_POSTS.push({
+	    "heading"    : "{{ page.heading | escape }}",
+	    "title" : "{{ page.title }}",
+	    "description"     : "{{ page.description }}",
+	    "url"      : "{{ site.baseurl }}{{ page.url }}"
+		});
+  {% endfor %}
+</script>
+<script src="{{ "/assets/js/search.js" | prepend: site.baseurl }}"></script>
+<script>
+	new jekyllSearch({
+		selector: "#results",
+		properties: ["title", "heading", "description"]
+	});
+</script>
