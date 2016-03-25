@@ -82,7 +82,7 @@ var App = {
           $toc.css({
             position: 'fixed',
             left: cache.containerRight,
-            top: 130
+            top: 90
           })
         }
 
