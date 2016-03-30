@@ -50,12 +50,12 @@
 		results.forEach(function(result) {
 
 			var div = document.createElement("div");
-			div.className = "search-result col-md-6";
+			div.className = "search-result col-md-12 text-xs-left";
 
-			var title = document.createElement("h2");
+			var title = document.createElement("h4");
 			var url = document.createElement("a");
 			url.href = result.url;
-			url.innerHTML = result.title +" | "+ result.heading;
+			url.innerHTML = result.title +" | "+ result.heading+ "<br>" + "<span class='search-description'>" + result.description + "<span>";
 			title.appendChild(url);
 
 			div.appendChild(title);

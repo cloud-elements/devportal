@@ -297,6 +297,23 @@ hr {
   color: #40b6e4;
 }
 
+/*//////////////////////////////////////
+/// Custom Styles for Search Results ///
+//////////////////////////////////////*/
+
+.search-result {
+
+}
+
+.search-result a {
+  text-decoration: none;
+}
+
+.search-description {
+  color: #555555;
+  font-size: 0.750em;
+}
+
 /*///////////////////////////////
 ///     Icon Boxes Style      ///
 ///////////////////////////////*/
