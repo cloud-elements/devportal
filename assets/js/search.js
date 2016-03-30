@@ -55,7 +55,7 @@
 			var title = document.createElement("h4");
 			var url = document.createElement("a");
 			url.href = result.url;
-			url.innerHTML = result.title +" | "+ result.heading+ "<br>" + "<span class='search-description'>" + result.description + "<span>";
+			url.innerHTML = result.title +" | "+ result.heading+ "<br>" + "<span class='search-description'>" + result.description + "</span>";
 			title.appendChild(url);
 
 			div.appendChild(title);
@@ -86,7 +86,7 @@
 			return this.el.innerHTML = this.noResultsMessage;
 		}
 
-		var defaultMessage = "No results found";
+		var defaultMessage = "<span class='error-message'>" + "Sorry, no results were found for " + parseQueryFromURL() + "</span>" + "<br>" + "<p>Search Suggestions</p>" + "<ul>" + "<li>Check your spelling</li>";
 		this.noResultsMessage = options.noResultsMessage || defaultMessage;
 
 		var defaultProperties = ["title"];
