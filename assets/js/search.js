@@ -86,7 +86,7 @@
 			return this.el.innerHTML = this.noResultsMessage;
 		}
 
-		var defaultMessage = "<span class='error-message'>" + "Sorry, no results were found for " + parseQueryFromURL() + "</span>" + "<br>" + "<p>Search Suggestions</p>" + "<ul>" + "<li>Check your spelling</li>";
+		var defaultMessage = "<span class='error-message'>" + "Sorry, no results were found for " + parseQueryFromURL() + "</span>" + "<br>" + "<p class='p-t'><strong>Search Suggestions</strong></p>" + "<ul>" + "<li>Check your spelling</li>" + "<li>Try more general words i.e. Salesforce or Element Builder</li>";
 		this.noResultsMessage = options.noResultsMessage || defaultMessage;
 
 		var defaultProperties = ["title"];
