@@ -371,7 +371,7 @@ hr {
 ///   Element Catalog Style   ///
 ///////////////////////////////*/
 
-.element-column > div {
+.element-column > a {
     display: block;
     border: 1px solid #f2f2f2;
     padding: 10px;
@@ -379,12 +379,13 @@ hr {
     cursor: pointer;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
-    color: #f2f2f2;
-    max-width: 200px;
-    margin: 0 0 10px 70px;
+    color: #40b6e4;
+    margin-bottom: 10px;
+    /*max-width: 200px;*/
+    /*margin: 0 0 10px 70px;*/
 }
 
-.element-column > div img {
+.element-column > a img {
   width: 150px;
   display: block;
   margin-left: auto;
@@ -392,16 +393,12 @@ hr {
   transition: transform 0.5s;
 }
 
-.element-column > div:hover {
+.element-column > a:hover {
   background-color: #f5f5f5;
-  text-decoration: none;
-}
-
-.element-column > div:hover a {
   text-decoration: none !important;
 }
 
-.element-column > div:hover img {
+.element-column > a:hover img {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
@@ -457,6 +454,49 @@ hr {
 }
 
 
+/*///////////////////////////////
+/// Custom Styles for Docs CSS///
+///////////////////////////////*/
+
+.docs-header {
+  background-color: #252525;
+  background-image: none;
+  padding: 0;
+  /*To be consistant with the other page style*/
+  height: inherit;
+  background-image: url(/assets/img/jumbo.png);
+  background-size: cover;
+}
+.docs-header .container{
+  padding: 30px 0;
+}
+.docs-header a{
+  font-size: 0.6em;
+}
+.docs-header p {
+  color: #f2f2f2;
+  font-size: 0.875em;
+  padding: 0 !important;
+  margin: 10px 0;
+}
+
+.docs-header h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: .04em;
+}
+
+.docs-content {
+  padding-bottom: 100px;
+}
+.docs-top:hover, #markdown-toc a:hover{
+  color: #3bb6e5;
+}
+
+.docs-top:hover, #markdown-toc a:hover {
+    color: #1c5065;
+}
 
 /* Set the fixed height of the footer here */
 .footer-navbar{
@@ -477,6 +517,10 @@ hr {
   margin: 0 auto;
   float: none;
 }
+
+/*///////////////////////////////
+///       Footer Styles       ///
+///////////////////////////////*/
 
 .footer-wrapper .footer-content li{
   list-style: none;
@@ -525,51 +569,6 @@ hr {
 }
 .footer-wrapper .social a:hover{
   color: #00b8dd;
-}
-
-
-/*///////////////////////////////
-/// Custom Styles for Docs CSS///
-///////////////////////////////*/
-
-.docs-header {
-  background-color: #252525;
-  background-image: none;
-  padding: 0;
-  /*To be consistant with the other page style*/
-  height: inherit;
-  background-image: url(/assets/img/jumbo.png);
-  background-size: cover;
-}
-.docs-header .container{
-  padding: 30px 0;
-}
-.docs-header a{
-  font-size: 0.6em;
-}
-.docs-header p {
-  color: #f2f2f2;
-  font-size: 0.875em;
-  padding: 0 !important;
-  margin: 10px 0;
-}
-
-.docs-header h1 {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  font-weight: bold;
-  letter-spacing: .04em;
-}
-
-.docs-content {
-  padding-bottom: 100px;
-}
-.docs-top:hover, #markdown-toc a:hover{
-  color: #3bb6e5;
-}
-
-.docs-top:hover, #markdown-toc a:hover {
-    color: #1c5065;
 }
 
 /*///////////////////////////////
