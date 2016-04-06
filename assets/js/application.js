@@ -8,6 +8,14 @@ var App = {
     App._navDoc()
 
     $(window).on('resize', App._tooltips)
+    $(window).scroll(function(){
+        var scrollPos = $(document).scrollTop();
+        if(scrollPos > 90){
+          $('#search-bar-wrapper').css('display', 'none');
+        }else if(scrollPos < 89){
+          $('#search-bar-wrapper').css('display', 'block');
+        }
+    });
 
     $(document).on('shown.bs.tab', function () {
       $(document).trigger('redraw.bs.charts')
@@ -63,7 +71,7 @@ var App = {
           var distance =  Math.max(scrollTop - cache.containerTop, 0)
 
           if (!distance) {
-            $($toc.find('li')[1]).addClass('active')
+            // $($toc.find('li')[1]).addClass('active')
             return $toc.css({
               position: '',
               left: '',
@@ -74,7 +82,7 @@ var App = {
           $toc.css({
             position: 'fixed',
             left: cache.containerRight,
-            top: 40
+            top: 90
           })
         }
 
