@@ -8,10 +8,10 @@ order: 1
 
 ### Elements Builder BETA
 
-Elements Builder gives you the ability create custom integrations to cloud services using the Cloud Elements API Management Platform. We are currently testing our BETA version. Please contact us if you are interested in participating in our round of BETA testing.
+Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  We are currently testing our BETA version.  __Currently only endpoints with a REST API can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you are interested in participating in our round of BETA testing.
 
-This workflow will demonstrate creating an Element via API.
+The Element Builder developer docs are broken down into three guides:
 
-**Twitter** will be used in this demonstration.
-
-The first step is to [create a new Twitter connected app](twitter-connected-app.html)
+* [Element Creation via API](create-via-api.html)
+* [Element Creation via the Element Builder UI](create-via-element-builder-ui.html)
+* [Element Enhancement - adding resources, events, etc. to current Elements](enhance-existing-elements.html)
