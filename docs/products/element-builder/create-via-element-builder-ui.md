@@ -516,39 +516,12 @@ __Export:__ exports Element JSON, this JSON can be imported at a later time
 To access the Element admin functions, click on the gear.
 
 To import Element JSON, click “Import Element” and follow the prompts.  All functionality will be available based on the last state of the Element prior to export.
-![Element Builder Admin Dashboard 1](http://cloud-elements.com/wp-content/uploads/2016/02/AdminClone1.png
+![Element Builder Admin Dashboard 1](http://cloud-elements.com/wp-content/uploads/2016/02/AdminClone1.png)
 
-#### FAQ
+#### Support
 
-This section will provide some tech tips on authentication and debugging API calls.
+Element Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
 
-Have a tech tip suggestion? Please contact [Support](mailto:support@cloud-elements.com).
+Need some help?  Don’t hesitate to reach out to [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.
 
-##### AUTHORIZATION TIPS
-
-Element Builder supports 4 types of endpoint authorization:
-
-* OAuth 1
-* OAuth 2
-* Basic Authorization
-* Custom Authorization
-
-The purpose of the Authorization Tech Tip is to provide examples of each of the authentication.  OAuth 1 was demonstrated earlier in the guide with the Twitter endpoint under the Configuration.  Examples of the remaining auth types will be shown below.
-
-Cloud Elements strongly encourages researching the endpoint authorization prior to building a new Element. The authorization type can typically be found in the Overview or Authentication portion of the endpoint API documentation.
-
-###### OAUTH 2
-
-Box will be used to demonstrate the OAuth 2 authentication type.  As a best practice, researching the Box API documentation to see what the endpoint expects in terms of auth requests should be the first step.  The Box API documentation can be found here: [https://box-content.readme.io/docs/oauth-20](https://box-content.readme.io/docs/oauth-20).
-
-This excerpt is from the Box API docs:
->Before you can start using OAuth2 with your application, you’ll need to tell Box a bit of information about your application
-
->Register your application [here](https://app.box.com/login?redirect_url=%2Fdevelopers%2Fservices%2Fedit%2F).
-Set your redirect url
-Select your scope
-Make a note of both your client_id and client_secret.
-
-Box provides further information about scope in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Element.
-
-Now that we familiar with the Box auth flow, let’s take a look at the Configuration tab in Element Builder – this is where the authentication type setup occurs.
+The Cloud Elements Team
