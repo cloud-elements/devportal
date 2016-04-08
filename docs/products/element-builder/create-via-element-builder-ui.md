@@ -1,6 +1,6 @@
 ---
 heading: Element Builder
-title: Create Element
+title: Create Element via Element Builder UI
 description: Create a new Element via the Element Builder UI.
 layout: docs
 order: 3
@@ -220,7 +220,7 @@ Cloud Elements supports the following parameter types:
 Configuration: value that has been saved to the instance
 Header: value to be added in the header of the API request
 Path: value to be added to the URL of the API request
-Body: value to be sent with as data such as a JSON paylod with the API request
+Body: value to be sent with as data such as a JSON payload with the API request
 Query: query request
 Form: needed when multiple items must be sent in parts such as an ID, followed by the body
 Multipart: needed when performing a file upload
