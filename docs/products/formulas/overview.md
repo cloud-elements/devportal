@@ -11,7 +11,7 @@ order: 1
 Cloud Elements supports customizable workflows, called __formulas__ to keep your systems in sync.
 Cloud Elements currently supports formula creation via API and via the Formula Builder UI within the API Manager Console.
 
-The formula developer docs are broken down into four guides:
+The formula developer docs are broken down into three guides:
 
 * [Formula Creation via API](formulas-via-api.html)
 * [Example Formula Use Cases](formula-use-cases.html)
