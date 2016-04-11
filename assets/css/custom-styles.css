@@ -523,6 +523,13 @@ hr {
     color: #1c5065;
 }
 
+/* API Docs button ul and supported elements breadcrumb*/
+
+.apidocs-button {
+  list-style: none;
+  margin-left: -40px;
+}
+
 /* Set the fixed height of the footer here */
 .footer-navbar{
   background-color: #1a1a1a;

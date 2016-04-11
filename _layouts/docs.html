@@ -30,13 +30,17 @@
     <div class="container">
       <h1>{{page.heading}}</h1>
       <p class="p-t">{{page.description}}</p>
-      {% if page.breadcrumbs %}
-        <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
-      {% endif %}
-
-      {% if page.swagger %}
-        <a href="{{ page.swagger }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
-      {% endif %}
+      <ul class="apidocs-button">
+        <li>{% if page.swagger %}
+          <a class="btn btn-danger" href="{{ page.swagger }}">View API Docs</a>
+        {% endif %}
+        </li>
+        <li>
+        {% if page.breadcrumbs %}
+          <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
+        {% endif %}
+        </li>
+      </ul>
     </div>
   </div>
   <div class="container docs-content">
