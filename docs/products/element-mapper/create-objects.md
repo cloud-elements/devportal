@@ -1,7 +1,7 @@
 ---
 heading: Element Mapper
-title: Map and Transform Data via the Element Mapper API
-description: Get up and running with Element Mapper API.
+title: Create Element Mapper Custom Objects
+description: Create Custom Objects to be mapped and synced between services
 layout: docs
 order: 3
 ---
