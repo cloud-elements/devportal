@@ -21,6 +21,7 @@ The Element Mapper UI can be found in the Cloud Elements API Manger or you can c
 The Element Mapper developer docs are broken down into three guides:
 
 * [Quick Start Guide](quick-start-guide.html)
+* [Create Objects](create-objects.html)
 * [Map and Transform Data via API](map-and-transform-data-via-api.html)
 * [Customized JavaScript](customized-javascript.html)
 * [Array Support](array-support.html)
