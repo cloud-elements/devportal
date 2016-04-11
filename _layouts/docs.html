@@ -33,6 +33,10 @@
       {% if page.breadcrumbs %}
         <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
       {% endif %}
+
+      {% if page.swagger %}
+        <a href="{{ page.swagger }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
+      {% endif %}
     </div>
   </div>
   <div class="container docs-content">
