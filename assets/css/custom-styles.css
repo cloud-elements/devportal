@@ -526,8 +526,8 @@ hr {
 /* API Docs button ul and supported elements breadcrumb*/
 
 .apidocs-button {
-  list-style: none;
-  margin-left: -40px;
+  text-decoration: none;
+  /*background-color: #ff4e4e;*/
 }
 
 /* Set the fixed height of the footer here */

@@ -43,7 +43,7 @@
           {% assign elementName = page.url | split:"#" | last %}
           {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
                 {% if p.title == "API Docs" %}
-                  <a class="btn-sm btn-danger" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
+                  <a class="btn btn-danger apidocs-button" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
                 {% endif %}
           {% endif %}
         {% endfor %}
