@@ -550,6 +550,15 @@ hr {
   float: none;
 }
 
+/* Swagger Overwrite */
+#swagger-ui-container .container{
+  width: 100%;
+}
+#swagger-ui-container .container #resources .heading,
+#swagger-ui-container .container #resources .endpoint,
+#swagger-ui-container .container #resources .endpoint .operations .operation{
+  clear: inherit;
+}
 /*///////////////////////////////
 ///       Footer Styles       ///
 ///////////////////////////////*/

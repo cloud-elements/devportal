@@ -4,7 +4,7 @@ title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-swagger: https://api.cloud-elements.com/elements/api-docs2/?elementId=260
+elementId: 260
 parent: Supported Elements
 order: 15
 ---

@@ -4,12 +4,12 @@ title: Overview
 description: Integrate ABBYY into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-swagger: https://api.cloud-elements.com/elements/api-docs2/?elementId=260
+elementId: 260
 parent: Supported Elements
 order: 1
 ---
 
-### Welcome to the ABBYY Element
+## Welcome to the ABBYY Element
 
 
 #### At a Glance
