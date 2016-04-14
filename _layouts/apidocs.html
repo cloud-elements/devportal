@@ -72,15 +72,6 @@
       </div>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class=".col-md-9 .col-md-offset-3">
-        {% if page.breadcrumbs %}
-          <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
-        {% endif %}
-      </div>
-    </div>
-  </div>
   <div class="container docs-content">
     <!-- <h1 id="contents">Contents</h1> -->
     <!-- Sub Nav -->
@@ -109,6 +100,9 @@
           </li>
         {% endif %}
       {% endfor %}
+      {% if page.breadcrumbs %}
+        <a href="{{ page.breadcrumbs }}"> {{ page.parent }}</a>
+      {% endif %}
     </ul>
     <!-- END Sub Nav -->
 

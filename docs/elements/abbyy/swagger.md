@@ -5,7 +5,7 @@ description: ABBYY API Docs
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 260
-parent: Supported Elements
+parent: Back to Element Guides
 order: 50
 ---
 

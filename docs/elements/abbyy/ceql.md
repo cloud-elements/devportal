@@ -5,7 +5,7 @@ description: Make database queries using Cloud Elements Query Language.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 260
-parent: Supported Elements
+parent: Back to Element Guides
 order: 45
 ---
 

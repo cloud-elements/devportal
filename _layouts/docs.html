@@ -47,15 +47,10 @@
                 {% endif %}
           {% endif %}
         {% endfor %}
-        <br>
-        {% if page.breadcrumbs %}
-          <a href="{{ page.breadcrumbs }}"><i class="fa fa-arrow-circle-left"></i> {{ page.parent }}</a>
-        {% endif %}
       </div>
     </div>
   </div>
   <div class="container docs-content">
-
     <!-- <h1 id="contents">Contents</h1> -->
     <!-- Sub Nav -->
     <ul id="markdown-toc">
@@ -82,6 +77,9 @@
           </li>
         {% endif %}
       {% endfor %}
+      {% if page.breadcrumbs %}
+        <a href="{{ page.breadcrumbs }}"> {{ page.parent }}</a>
+      {% endif %}
     </ul>
     <!-- END Sub Nav -->
 
