@@ -1,4 +1,4 @@
-### Bulk APIs
+## Bulk APIs
 
 Cloud Element Bulk API calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once.
 
