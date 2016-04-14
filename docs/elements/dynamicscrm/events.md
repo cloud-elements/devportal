@@ -3,6 +3,9 @@ heading: Microsoft Dynamics CRM
 title: Events
 description: Enable Microsoft Dynamics CRM events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 190
+parent: Back to Element Guides
 order: 30
 ---
 

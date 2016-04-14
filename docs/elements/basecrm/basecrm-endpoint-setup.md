@@ -3,6 +3,9 @@ heading: Base CRM
 title: Endpoint Setup
 description: Integrate Base CRM into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 201
+parent: Back to Element Guides
 order: 2
 ---
 ## Endpoint Setup

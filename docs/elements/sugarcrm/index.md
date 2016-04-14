@@ -3,6 +3,9 @@ heading: SugarCRM
 title: Overview
 description: Integrate SugarCRM into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 170
+parent: Back to Element Guides
 order: 1
 ---
 

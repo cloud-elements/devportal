@@ -3,6 +3,9 @@ heading: Pipedrive
 title: Overview
 description: Integrate Pipedrive into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 167
+parent: Back to Element Guides
 order: 1
 ---
 

@@ -3,6 +3,9 @@ heading: SugarCRM
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 170
+parent: Back to Element Guides
 order: 15
 ---
 
