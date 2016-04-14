@@ -5,7 +5,7 @@ description: Find API documentation, guides, and more on all of the currently su
 layout: elements
 ---
 
-* [![Autotask Logo](/assets/img/element-logos/autotask.png)Autotask](./elements/autotask/index.html)
+* [![Autotask](/assets/img/element-logos/autotask.png)Autotask](./elements/autotask/index.html)
 * [![BaseCRM](/assets/img/element-logos/basecrm.png)BaseCRM](./elements/basecrm/index.html)
 * [![Close.io](/assets/img/element-logos/closeio.png)Close.io](./elements/closeio/index.html)
 * [![ConnectWise](/assets/img/element-logos/connectwise.png)ConnectWise](./elements/connectwise/index.html)

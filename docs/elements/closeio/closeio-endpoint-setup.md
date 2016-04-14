@@ -3,6 +3,9 @@ heading: Close.io
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 166
+parent: Back to Element Guides
 order: 5
 ---
 
