@@ -523,11 +523,18 @@ hr {
     color: #1c5065;
 }
 
-/* API Docs button ul and supported elements breadcrumb*/
+.docs-top:hover, #markdown-toc a:hover {
+    color: #1c5065;
+}
 
+/* API Docs button in header of element docs*/
 .apidocs-button {
   text-decoration: none;
-  /*background-color: #ff4e4e;*/
+}
+
+/* API Docs button in left hand nav of element docs*/
+.apidocs-menu-button {
+  color: #fff;
 }
 
 /* Set the fixed height of the footer here */

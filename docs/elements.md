@@ -56,4 +56,4 @@ layout: elements
 * [![Facebook](/assets/img/element-logos/facebook.png)Facebook](./elements/facebook/index.html)
 * [![Flickr](/assets/img/element-logos/flickr.png)Flickr](./elements/flickr/index.html)
 * [![Instagram](/assets/img/element-logos/instagram.png)Instagram](./elements/instagram/index.html)
-* [![ABBYY](/assets/img/element-logos/abbyy.png)Instagram](./elements/abbyy/index.html)
+* [![ABBYY](/assets/img/element-logos/abbyy.png)ABBYY](./elements/abbyy/index.html)
