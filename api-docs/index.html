@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Elements API Documentation</title>
+
+  <link href='//fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'/>
+
+  <link href='css/typography.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/reset.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/screen.css' media='screen' rel='stylesheet' type='text/css'/>
+  <link href='css/reset.css' media='print' rel='stylesheet' type='text/css'/>
+  <link href='css/print.css' media='print' rel='stylesheet' type='text/css'/>
+
+  <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
+  <script src='lib/jquery.ba-bbq.min.js' type='text/javascript'></script>
+  <script src='lib/handlebars-2.0.0.js' type='text/javascript'></script>
+  <script src='lib/underscore-min.js' type='text/javascript'></script>
+  <script src='lib/backbone-min.js' type='text/javascript'></script>
+  <script src='swagger-ui.js' type='text/javascript'></script>
+  <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
+  <script src='lib/jsoneditor.min.js' type='text/javascript'></script>
+  <script src='lib/marked.js' type='text/javascript'></script>
+  <script src='lib/swagger-oauth.js' type='text/javascript'></script>
+
+  <script type="text/javascript">
+
+    $(function() {
+
+      function getUrlParams(q) {
+        var params = {};
+        var vars = q.split('&');
+        for(var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        }
+
+        return params;
+      }
+
+      function getResource(uParams) {
+        var hubName = uParams['hub'];
+        if(uParams['resource'] != null) {
+          return uParams['resource'];
+        }
+        else if(hubName != null && hubName != undefined) {
+          return null;
+        } else if(uParams['elementId'] != null && uParams['elementId'] != undefined) {
+          return null;
+        } else if(uParams['element'] != null) {
+          return null;
+        } else {
+          return "all";
+        }
+      }
+
+      function getDocsUrl(uParams) {
+        var hubName = uParams['hub'];
+        var resource = uParams['resource'];
+        if(resource != null) {
+          return "https://api.cloud-elements.com/elements/api-v2/docs/" + resource;
+        }
+        else if(hubName != null && hubName != undefined) {
+          return "https://api.cloud-elements.com/elements/api-v2/docs/" + hubName;
+        } else if(uParams['elementId'] != null && uParams['elementId'] != undefined) {
+          return "https://api.cloud-elements.com/elements/api-v2/elements/" + uParams['elementId'] + "/docs";
+        } else if(uParams['element'] != null) {
+          var url = "https://api.cloud-elements.com/elements/api-v2/docs/" + uParams['element'];
+          if(uParams && uParams.elementKey) {
+            url += "?elementKey=" + uParams.elementKey;
+          }
+
+          if(uParams && uParams.elementName) {
+            url += "&elementName=" + urlParams.elementName;
+          }
+          return url;
+        } else {
+          return "https://api.cloud-elements.com/elements/api-v2/docs/all";
+        }
+      }
+
+      function getAuthorizationHeaderValue(uParams) {
+        var user = decodeURIComponent(uParams.userSecret);
+        var org = uParams.orgSecret;
+        var token = null;
+
+        if(uParams.token !== undefined) {
+          token = decodeURIComponent(uParams.token);
+        }
+
+        var header = 'User ' + user + ', Organization ' + org;
+        if(token != null) {
+          header = header + ', Element ' + token;
+        }
+
+        if(user != null && user != undefined && org != null && org != undefined) {
+          return header;
+        } else {
+          return null;
+        }
+      }
+
+      function getAuthorizationHeader(uParams) {
+        var authVal = getAuthorizationHeaderValue(uParams);
+        if(authVal != null && authVal != undefined) {
+          return {
+            'Authorization': authVal
+          }
+        }
+
+        return null;
+      }
+
+      function getDefaultParams(uParams) {
+        var authVal = getAuthorizationHeaderValue(uParams);
+        if(authVal != null && authVal != undefined) {
+          return [
+            {paramKey: 'Authorization', defaultValue: authVal }
+          ];
+        } else {
+          return null;
+        }
+      }
+
+      function expandDocs(uParams) {
+          var urlRes = getResource(urlParams);
+          if(urlRes =='all_platform' || urlRes =='all_hubs' || urlRes =='all') {
+            return null;
+          }
+        return "list";
+      }
+
+      var urlParams = getUrlParams(window.location.search.substring(1));
+      var defaultParams = getDefaultParams(urlParams);
+      var authorizations = getAuthorizationHeader(urlParams);
+      var url = getDocsUrl(urlParams);
+      var docExpansion = expandDocs(urlParams);
+      window.swaggerUi = new SwaggerUi({
+        url: url,
+        swaggerRequestHeaders: authorizations,
+        defaultParams: defaultParams,
+        dom_id: "swagger-ui-container",
+        sampleModel: true,
+        apisSorter: "alpha",
+        docExpansion: docExpansion,
+        showInfo: false,
+        supportedSubmitMethods: ['get', 'post', 'patch', 'put', 'delete'],
+        onComplete: function(swaggerApi, swaggerUi) {
+          console.log("Loaded SwaggerUI");
+
+
+          //With Swagger 2.0 it expects all the docs to be in single JSON
+          //Because of this between the hubs the resources get mixed up.
+          // To render the hubs documentation currectly disabling the click action of swagger and updating the href url to
+          // rerender index.html with just the selected hub
+
+          var urlRes = getResource(urlParams);
+          if(urlRes =='all_hubs' || urlRes =='all') {
+            //modify the hubs
+            $('a[href="#!/crm"]').text("hubs/crm");
+            $('#endpointListTogger_crm').text("Show/Hide");
+            $('a[href="#!/crm"]').unbind("click");
+            $('a[href="#!/crm"]').prop("href","/elements/api-docs2/index.html?resource=crm");
+
+            $('a[href="#!/documents"]').text("hubs/documents");
+            $('#endpointListTogger_documents').text("Show/Hide");
+            $('a[href="#!/documents"]').unbind("click");
+            $('a[href="#!/documents"]').prop("href","/elements/api-docs2/index.html?resource=documents");
+
+            $('a[href="#!/erp"]').text("hubs/erp");
+            $('#endpointListTogger_erp').text("Show/Hide");
+            $('a[href="#!/erp"]').unbind("click");
+            $('a[href="#!/erp"]').prop("href","/elements/api-docs2/index.html?resource=erp");
+
+            $('a[href="#!/finance"]').text("hubs/finance");
+            $('#endpointListTogger_finance').text("Show/Hide");
+            $('a[href="#!/finance"]').unbind("click");
+            $('a[href="#!/finance"]').prop("href","/elements/api-docs2/index.html?resource=finance");
+
+            $('a[href="#!/helpdesk"]').text("hubs/helpdesk");
+            $('#endpointListTogger_helpdesk').text("Show/Hide");
+            $('a[href="#!/helpdesk"]').unbind("click");
+            $('a[href="#!/helpdesk"]').prop("href","/elements/api-docs2/index.html?resource=helpdesk");
+
+            $('a[href="#!/humancapital"]').text("hubs/humancapital");
+            $('#endpointListTogger_humancapital').text("Show/Hide");
+            $('a[href="#!/humancapital"]').unbind("click");
+            $('a[href="#!/humancapital"]').prop("href","/elements/api-docs2/index.html?resource=humancapital");
+
+            $('a[href="#!/infrastructure"]').text("hubs/infrastructure");
+            $('#endpointListTogger_infrastructure').text("Show/Hide");
+            $('a[href="#!/infrastructure"]').unbind("click");
+            $('a[href="#!/infrastructure"]').prop("href","/elements/api-docs2/index.html?resource=infrastructure");
+
+            $('a[href="#!/marketing"]').text("hubs/marketing");
+            $('#endpointListTogger_marketing').text("Show/Hide");
+            $('a[href="#!/marketing"]').unbind("click");
+            $('a[href="#!/marketing"]').prop("href","/elements/api-docs2/index.html?resource=marketing");
+
+            $('a[href="#!/messaging"]').text("hubs/messaging");
+            $('#endpointListTogger_messaging').text("Show/Hide");
+            $('a[href="#!/messaging"]').unbind("click");
+            $('a[href="#!/messaging"]').prop("href","/elements/api-docs2/index.html?resource=messaging");
+
+            $('a[href="#!/social"]').text("hubs/social");
+            $('#endpointListTogger_social').text("Show/Hide");
+            $('a[href="#!/social"]').unbind("click");
+            $('a[href="#!/social"]').prop("href","/elements/api-docs2/index.html?resource=social");
+
+            $('a[href="#!/idmanagement"]').text("hubs/idmanagement");
+            $('#endpointListTogger_idmanagement').text("Show/Hide");
+            $('a[href="#!/idmanagement"]').unbind("click");
+            $('a[href="#!/idmanagement"]').prop("href","/elements/api-docs2/index.html?resource=idmanagement");
+
+            $('a[href="#!/ecommerce"]').text("hubs/ecommerce");
+            $('#endpointListTogger_ecommerce').text("Show/Hide");
+            $('a[href="#!/ecommerce"]').unbind("click");
+            $('a[href="#!/ecommerce"]').prop("href","/elements/api-docs2/index.html?resource=ecommerce");
+
+          }
+
+          $('pre code').each(function(i, e) {
+            hljs.highlightBlock(e)
+          });
+        },
+        openResource: function(elText) {
+          window.open = "api-docs2/index.html?resource=" + elText;
+        },
+        onFailure: function(data) {
+          console.log("Unable to Load SwaggerUI");
+        },
+        onPreRequest: function(model, map, opts) {
+
+          var maintainSession = urlParams['maintainSession'];
+          if(maintainSession != null && (maintainSession == true || maintainSession == "true")) {
+            //Added the session header to map
+            map['Elements-Session'] = true;
+            //Added the session header to model parameters
+            model.parameters.push({
+              'name': 'Elements-Session',
+              'in': 'header',
+              'required': 'true',
+              'defaultValue': true
+            });
+          }
+
+          var saveAsDefault = urlParams['saveAsDefault'];
+          if(saveAsDefault != null && (saveAsDefault == true || saveAsDefault == "true")) {
+            //Added the saveAsDefault to map
+            map['saveAsDefault'] = true;
+            //Added the saveAsDefault to model parameters
+            model.parameters.push({
+              'name': 'saveAsDefault',
+              'in': 'query',
+              'required': 'false',
+              'defaultValue': true
+            });
+          }
+        },
+        onPostRequest: function(code, content, contentType, headers, pre, response_body, url) {
+          //Any Post request logic
+        }
+      });
+
+      window.swaggerUi.load();
+    });
+
+  </script>
+
+  <style type="text/css">
+    body {
+      /*background-color: #f5f5f5;*/
+      min-height: 500px;
+    }
+
+    body #header {
+      background-color: #272729;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+      padding: 0px;
+      height: 42px;
+    }
+
+    body #header a#logo {
+      font-size: 1.3em;
+      padding: 0;
+      float: left;
+      padding-left: 45px;
+      padding-top: 11px;
+      padding-bottom: 5px;
+      background-position: 10px 5px;
+    }
+  </style>
+</head>
+
+<body class="swagger-section">
+<div id="message-bar" class="swagger-ui-wrap">&nbsp;</div>
+<div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</body>
+</html>

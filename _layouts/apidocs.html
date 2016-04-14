@@ -10,14 +10,37 @@
   <meta name="keywords" content="">
   <meta name="author" content="">
   <title>{{page.title}}</title>
+
+  <link href="/api-docs/css/typography.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/api-docs/css/reset.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="/api-docs/css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,400italic" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/assets/font-awesome/css/font-awesome.min.css">
   <link href="/assets/css/toolkit-light.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
+
+
+
+  <!-- <link href="/api-docs/css/reset.css" media="print" rel="stylesheet" type="text/css"/> -->
+  <!-- <link href="/api-docs/css/print.css" media="print" rel="stylesheet" type="text/css"/> -->
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
 
-  <style>
+  <script src="/api-docs/lib/jquery-1.8.0.min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/jquery.slideto.min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/jquery.wiggle.min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/jquery.ba-bbq.min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/handlebars-2.0.0.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/underscore-min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/backbone-min.js" type="text/javascript"></script>
+  <script src="/api-docs/swagger-ui.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/highlight.7.3.pack.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/jsoneditor.min.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/marked.js" type="text/javascript"></script>
+  <script src="/api-docs/lib/swagger-oauth.js" type="text/javascript"></script>
+  <script src="/api-docs/api.js" type="text/javascript"></script>
+
+    <style>
     body {
       width: 1px;
       min-width: 100%;
@@ -32,7 +55,6 @@
       <h1>{{page.heading}}</h1>
       <p class="p-t">{{page.description}}</p>
       <div class="apidocs-button">
-
         {% assign sorted = site.pages | sort:"order" %}
         {% for p in sorted %}
           {% assign pPath = p.path | split:"/" %}
@@ -43,7 +65,7 @@
           {% assign elementName = page.url | split:"#" | last %}
           {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
                 {% if p.title == "API Docs" %}
-                  <a class="btn btn-danger apidocs-button" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
+                  <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
                 {% endif %}
           {% endif %}
         {% endfor %}
@@ -54,6 +76,7 @@
     <!-- <h1 id="contents">Contents</h1> -->
     <!-- Sub Nav -->
     <ul id="markdown-toc">
+
       <li><strong>{{ page.heading }} Docs</strong></li>
       {% assign sorted = site.pages | sort:"order" %}
       {% for p in sorted %}
@@ -70,7 +93,7 @@
               <li>
             {% endif %}
               {% if p.title == "API Docs" %}
-                <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+                <a class="btn-sm btn-danger" href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
               {% else %}
               <a href="{{ p.url }}">{{ p.title }}</a>
               {% endif %}
@@ -84,6 +107,7 @@
     <!-- END Sub Nav -->
 
     {{content}}
+
   </div>
   {% include footer.html %}
   <script src="/assets/js/jquery.min.js"></script>

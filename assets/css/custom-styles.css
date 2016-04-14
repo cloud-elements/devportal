@@ -523,6 +523,20 @@ hr {
     color: #1c5065;
 }
 
+.docs-top:hover, #markdown-toc a:hover {
+    color: #1c5065;
+}
+
+/* API Docs button in header of element docs*/
+.apidocs-button {
+  text-decoration: none;
+}
+
+/* API Docs button in left hand nav of element docs*/
+.apidocs-menu-button {
+  color: #fff;
+}
+
 /* Set the fixed height of the footer here */
 .footer-navbar{
   background-color: #1a1a1a;
@@ -543,6 +557,15 @@ hr {
   float: none;
 }
 
+/* Swagger Overwrite */
+#swagger-ui-container .container{
+  width: 100%;
+}
+#swagger-ui-container .container #resources .heading,
+#swagger-ui-container .container #resources .endpoint,
+#swagger-ui-container .container #resources .endpoint .operations .operation{
+  clear: inherit;
+}
 /*///////////////////////////////
 ///       Footer Styles       ///
 ///////////////////////////////*/
