@@ -3,10 +3,13 @@ heading: Microsoft Dynamics Great Plains
 title: Overview
 description: Integrate Microsoft Dynamics Great Plains into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 46
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Microsoft Dynamics Great Plains Element
+## Welcome to the Microsoft Dynamics Great Plains Element
 
 
 #### At a Glance

@@ -3,6 +3,9 @@ heading: QuickBooks Enterprise
 title: Overview
 description: Integrate QuickBooks Enterprise into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 195
+parent: Back to Element Guides
 order: 1
 ---
 

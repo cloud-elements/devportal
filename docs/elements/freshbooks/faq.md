@@ -3,6 +3,9 @@ heading: FreshBooks
 title: FAQ
 description: FreshBooks FAQ.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 172
+parent: Back to Element Guides
 order: 17
 ---
 
