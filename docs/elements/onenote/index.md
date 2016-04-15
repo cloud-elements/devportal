@@ -3,10 +3,13 @@ heading: OneNote
 title: Overview
 description: Integrate OneNote into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 134
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the OneNote Element
+## Welcome to the OneNote Element
 
 
 #### At a Glance

@@ -3,6 +3,9 @@ heading: Amazon S3
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 16
+parent: Back to Element Guides
 order: 20
 ---
 

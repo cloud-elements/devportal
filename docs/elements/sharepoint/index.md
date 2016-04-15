@@ -3,10 +3,13 @@ heading: Sharepoint 2013
 title: Overview
 description: Integrate Sharepoint 2013 into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 30
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Sharepoint 2013 Element
+## Welcome to the Sharepoint 2013 Element
 
 
 #### At a Glance

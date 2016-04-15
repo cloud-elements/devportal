@@ -3,10 +3,13 @@ heading: DocuSign
 title: Overview
 description: Integrate DocuSign into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 158
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the DocuSign Element
+## Welcome to the DocuSign Element
 
 
 #### At a Glance
