@@ -3,6 +3,9 @@ heading: Xero
 title: Overview
 description: Integrate Xero into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 40
+parent: Back to Element Guides
 order: 1
 ---
 

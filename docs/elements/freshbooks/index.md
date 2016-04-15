@@ -3,10 +3,13 @@ heading: FreshBooks
 title: Overview
 description: Integrate FreshBooks into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 172
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the FreshBooks Element
+## Welcome to the FreshBooks Element
 
 
 #### At a Glance
