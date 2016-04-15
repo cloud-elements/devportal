@@ -1,10 +1,10 @@
 ---
-heading: Salesforce CRM
+heading: Salesforce Service Cloud
 title: Events
-description: Enable Salesforce CRM events for your application.
+description: Enable Salesforce Service Cloud events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 29
 parent: Back to Element Guides
 order: 25
 ---
@@ -27,7 +27,7 @@ instance JSON with polling events enabled:
 ```json
 {
   "element": {
-    "key": "sfdc"
+    "key": "sfdcservicecloud"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
@@ -99,7 +99,7 @@ The following JSON may be used to create a Salesforce Instance with webhooks ena
 ```json
 {
   "element": {
-    "key": "sfdc"
+    "key": "sfdcservicecloud"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"

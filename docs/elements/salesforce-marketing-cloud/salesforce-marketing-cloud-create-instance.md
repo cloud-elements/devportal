@@ -1,10 +1,10 @@
 ---
-heading: Salesforce CRM
+heading: Salesforce Marketing Cloud
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 42
 parent: Back to Element Guides
 order: 20
 ---
@@ -13,7 +13,7 @@ order: 20
 
 Salesforce is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Salesforce platform.
 
-Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
+Optionally, you may provision an instance to specific features like CRM, Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -41,13 +41,13 @@ Response:
 
 ```json
 {
-"element": "sfdc",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
+"element": "sfdcmarketingcloud",
+"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdcmarketingcloud"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "sfdcmarketingcloud" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
@@ -71,12 +71,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is "sfdcmarketingcloud".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "sfdc"
+    "key": "sfdcmarketingcloud"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
@@ -117,8 +117,8 @@ Below is a successful JSON response:
     "element": {
         "id": 39,
         "name": "Salesforce.com",
-        "key": "sfdc",
-        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
+        "key": "sfdcmarketingcloud",
+        "description": "The Salesforce.com allows you to deliver revolutionary Marketing automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
         "active": true,
         "deleted": false,
         "typeOauth": true,
@@ -138,7 +138,7 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-##### Marketing Cloud
+##### CRM
 
 Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
 
@@ -152,7 +152,7 @@ Response:
 
 ```bash
 {
-"element": "sfdcmarketingcloud",
+"element": "sfdc",
 "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdc"
 }
 ```
@@ -161,7 +161,7 @@ Create Instance JSON:
 ```json
 {
   "element": {
-    "key": "sfdcmarketingcloud"
+    "key": "sfdc"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"

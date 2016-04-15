@@ -1,10 +1,10 @@
 ---
-heading: Salesforce CRM
+heading: Salesforce Documents
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 177
 parent: Back to Element Guides
 order: 20
 ---
@@ -13,7 +13,7 @@ order: 20
 
 Salesforce is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Salesforce platform.
 
-Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
+Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and CRM. Below are examples of each method.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -34,20 +34,20 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdcdocuments'
 ```
 
 Response:
 
 ```json
 {
-"element": "sfdc",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
+"element": "sfdcdocuments",
+"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdcdocuments"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdcdocuments” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
@@ -71,12 +71,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdcdocuments”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "sfdc"
+    "key": "sfdcdocuments"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
@@ -117,8 +117,8 @@ Below is a successful JSON response:
     "element": {
         "id": 39,
         "name": "Salesforce.com",
-        "key": "sfdc",
-        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
+        "key": "sfdcdocuments",
+        "description": "The Salesforce.com allows you to deliver revolutionary Document automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
         "active": true,
         "deleted": false,
         "typeOauth": true,
@@ -140,7 +140,7 @@ Note:  Make sure you have straight quotes in your JSON files and cURL commands. 
 
 ##### Marketing Cloud
 
-Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
+Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdcdocuments) is the only difference in the JSON in the first example.
 
 ```bash
 curl -X GET
@@ -180,7 +180,7 @@ Create Instance JSON:
 
 ##### Service Cloud
 
-Provision an instance to Service Cloud functions only. Use the following JSON, the key value (sfdcservicecloud instead of sfdc) is the only difference in the JSON in the first example.
+Provision an instance to Service Cloud functions only. Use the following JSON, the key value (sfdcservicecloud instead of sfdcdocuments) is the only difference in the JSON in the first example.
 
 ```bash
 curl -X GET
@@ -218,22 +218,22 @@ Create Instance JSON:
 }
 ```
 
-##### Documents
+##### CRM
 
-Provision an instance to Documents functions only. Use the following JSON, the key value (sfdcdocuments instead of sfdc) is the only difference in the JSON in the first example.
+Provision an instance to Documents functions only. Use the following JSON, the key value (sfdc instead of sfdcdocuments) is the only difference in the JSON in the first example.
 
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdcdocuments/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcdocuments'
+'https://api.cloud-elements.com/elements/api-v2/elements/sfdcdocuments/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdc'
 ```
 
 Response:
 
 ```bash
 {
-  "element": "sfdcservicecloud",
-  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcdocuments"
+  "element": "sfdc",
+  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdc"
 }
 ```
 Create Instance JSON:
@@ -241,7 +241,7 @@ Create Instance JSON:
 ```json
 {
   "element": {
-    "key": "sfdcdocuments"
+    "key": "sfdc"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
