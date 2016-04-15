@@ -3,6 +3,9 @@ heading: Eloqua
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 27
+parent: Back to Element Guides
 order: 20
 ---
 

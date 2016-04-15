@@ -3,6 +3,9 @@ heading: Marketo
 title: Authentication
 description: Integrate Marketo into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 85
+parent: Back to Element Guides
 order: 10
 ---
 

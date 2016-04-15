@@ -3,6 +3,9 @@ heading: Pardot
 title: Find API Key
 description: Find API Key
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 90
+parent: Back to Element Guides
 order: 5
 ---
 

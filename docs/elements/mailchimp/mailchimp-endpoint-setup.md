@@ -3,6 +3,9 @@ heading: MailChimp
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 197
+parent: Back to Element Guides
 order: 5
 ---
 

@@ -3,6 +3,9 @@ heading: Pardot
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 90
+parent: Back to Element Guides
 order: 40
 ---
 
