@@ -3,10 +3,13 @@ heading: HubSpot
 title: Overview
 description: Integrate HubSpot into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 43
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the HubSpot Element
+## Welcome to the HubSpot Element
 
 
 #### At a Glance

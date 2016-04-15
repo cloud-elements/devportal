@@ -1,8 +1,11 @@
 ---
-heading: Infusionsoft
+heading: Infusionsoft CRM
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 191
+parent: Back to Element Guides
 order: 20
 ---
 
@@ -10,7 +13,7 @@ order: 20
 
 Infusionsoft is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Infusionsoft platform.
 
-Optionally, you may provision an instance to specific features like Marketing and CRM.  Below are examples of each method beginning with CRM.
+Optionally, you may provision an instance to specific features like Marketing and CRM.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -159,43 +162,3 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-##### Marketing
-
-Provision an instance to Infusionsoft Marketing functions only. Use the following JSON, the key value (infusionsoftmarketing instead of infusionsoftcrm) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/infusionsoftmarketing/oauth/url?apiKey=fake_infusionsoft_client_secret_api_key&apiSecret=fake_infusionsoft_client_secret_api_secret&callbackUrl=https://www.mycoolapp/auth&scope=full&state=infusionsoftmarketing'
-```
-
-Response:
-
-```bash
-{
-"element": "infusionsoftmarketing",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_infusionsoft_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mmycoolapp.com/auth&scope=full&state=infusionsoftmarketing"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "infusionsoftmarketing"
-  },
-  "providerData": {
-    "code": "Code on the Return URL"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.yourcallbackurl.com",
-    "oauth.api.key": "<INSERT_INFUSIONSOFT_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_INFUSIONSOFT_CLIENT_SECRET>",
-    "document.tagging": false
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}

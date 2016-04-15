@@ -1,17 +1,17 @@
 ---
-heading: HubSpot
+heading: HubSpot CRM
 title: Events
-description: Enable HubSpot events for your application.
+description: Enable HubSpot CRM events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 43
+elementId: 168
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-There are no extra configurations needed to enable HubSpot events.
+There are no extra configurations needed to enable HubSpot CRM events.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -25,7 +25,7 @@ instance JSON with polling events enabled:
 ```JSON
 {
   "element": {
-    "key": "hubspot"
+    "key": "hubspotcrm"
   },
   "providerData": {
     "apikey": "<INSERT HUBSPOT_OAUTH_CLIENT_ID>",

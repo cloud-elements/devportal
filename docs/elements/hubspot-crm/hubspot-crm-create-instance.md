@@ -1,10 +1,10 @@
 ---
-heading: HubSpot
+heading: HubSpot CRM
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 43
+elementId: 168
 parent: Back to Element Guides
 order: 15
 ---
@@ -50,7 +50,7 @@ Response:
 
 ```json
 {
-  "element": "hubspot",
+  "element": "hubspotcrm",
   "oauthUrl": "https://app.hubspot.com/auth/authenticate?client_id=123456789d-1234-12e4-bda9-12345b8bf20&portalId=123456&redirect_uri=http%3A%2F%2Fdemonstrab.ly&scope=contacts-rw%20offline"
 }
 ```
@@ -81,12 +81,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot is “hubspot”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot is “hubspotcrm”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "hubspot"
+    "key": "hubspotcrm"
   },
   "providerData": {
     "apikey": "<INSERT HUBSPOT_OAUTH_CLIENT_ID>",
@@ -130,8 +130,8 @@ Below is a successful JSON response:
   "token": "dsPr6AheKIS8pt7rp8E81bSRINFgeEkx9Ftr+7t",
   "element": {
     "id": 43,
-    "name": "HubSpot",
-    "key": "hubspot",
+    "name": "HubSpot CRM",
+    "key": "hubspotcrm",
     "description": "HubSpot is an inbound marketing software platform that helps companies attract visitors, convert leads, and close customers.",
     "image": "elements/provider_hubspot.png",
     "active": true,

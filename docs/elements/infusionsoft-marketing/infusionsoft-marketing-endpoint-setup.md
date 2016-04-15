@@ -1,14 +1,17 @@
 ---
-heading: Infusionsoft
+heading: Infusionsoft Marketing
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 192
+parent: Back to Element Guides
 order: 5
 ---
 
 ## Endpoint Setup
 
-Follow these steps to setup your Infusionsoft application with the endpoint.
+Follow these steps to setup your Infusionsoft Marketing application with the endpoint.
 
 Sign in to your developer account at:
 [https://keys.developer.infusionsoft.com/apps/mykeys](https://keys.developer.infusionsoft.com/apps/mykeys)
@@ -28,4 +31,4 @@ Sign in to your developer account at:
 6. Copy the “Secret”
 ![Infusionsoft Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/07/InfusionsoftAPI3.png)
 
-Next [create an instance](infusionsoft-create-instance.html).
+Next [create an instance](infusionsoft-marketing-create-instance.html).

@@ -1,17 +1,17 @@
 ---
-heading: HubSpot
+heading: HubSpot CRM
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 43
+elementId: 168
 parent: Back to Element Guides
 order: 5
 ---
 
 ## Endpoint Setup
 
-Follow these steps to setup your HubSpot application with the endpoint.
+Follow these steps to setup your HubSpot CRM application with the endpoint.
 
 Via a web browser, login to your HubSpot account:
 [http://developers.hubspot.com/](http://developers.hubspot.com/).
@@ -32,4 +32,4 @@ Via a web browser, login to your HubSpot account:
 6. Click "Save"
 ![HubSpot Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/01/HubSpotAPI4.png)
 
-Next [create an instance](hubspot-create-instance.html).
+Next [create an instance](hubspot-crm-create-instance.html).

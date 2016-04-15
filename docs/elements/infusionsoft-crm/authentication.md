@@ -1,10 +1,10 @@
 ---
-heading: ServiceMax
+heading: Infusionsoft CRM
 title: Authentication
-description: Integrate ServiceMax into your application via the Cloud Elements APIs.
+description: Integrate Infusionsoft CRM into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 169
+elementId: 191
 parent: Back to Element Guides
 order: 10
 ---
