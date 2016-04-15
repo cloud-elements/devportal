@@ -3,6 +3,9 @@ heading: Eloqua
 title: Events
 description: Enable Eloqua events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 27
+parent: Back to Element Guides
 order: 30
 ---
 

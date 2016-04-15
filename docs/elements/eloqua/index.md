@@ -3,6 +3,9 @@ heading: Eloqua
 title: Overview
 description: Integrate Eloqua into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 27
+parent: Back to Element Guides
 order: 1
 ---
 
