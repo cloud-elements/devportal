@@ -3,10 +3,13 @@ heading: Facebook
 title: Overview
 description: Integrate Facebook into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 222
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Facebook Element
+## Welcome to the Facebook Element
 
 
 #### At a Glance

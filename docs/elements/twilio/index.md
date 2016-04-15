@@ -3,10 +3,13 @@ heading: Twilio SMS
 title: Overview
 description: Integrate Twilio SMS into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 7
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Twilio SMS Element
+## Welcome to the Twilio SMS Element
 
 
 #### At a Glance

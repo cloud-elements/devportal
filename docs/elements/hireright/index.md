@@ -3,10 +3,13 @@ heading: HireRight
 title: Overview
 description: Integrate HireRight into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 277
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the HireRight Element
+## Welcome to the HireRight Element
 
 
 #### At a Glance
