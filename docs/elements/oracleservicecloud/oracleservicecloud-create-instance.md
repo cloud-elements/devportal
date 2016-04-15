@@ -3,6 +3,9 @@ heading: Oracle Service Cloud
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 88
+parent: Back to Element Guides
 order: 20
 ---
 
