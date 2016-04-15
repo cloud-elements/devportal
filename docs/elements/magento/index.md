@@ -3,10 +3,13 @@ heading: Magento
 title: Overview
 description: Integrate Magento into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 356
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Magento Element
+## Welcome to the Magento Element
 
 
 #### At a Glance

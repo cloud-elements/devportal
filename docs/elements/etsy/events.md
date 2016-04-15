@@ -3,6 +3,9 @@ heading: Etsy
 title: Events
 description: Enable Etsy events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 128
+parent: Back to Element Guides
 order: 25
 ---
 

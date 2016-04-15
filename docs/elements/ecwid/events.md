@@ -3,6 +3,9 @@ heading: Ecwid
 title: Events
 description: Enable Ecwid events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 52
+parent: Back to Element Guides
 order: 25
 ---
 

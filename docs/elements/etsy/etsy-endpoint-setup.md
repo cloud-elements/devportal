@@ -3,6 +3,9 @@ heading: Etsy
 title: Register as a Consumer
 description: Register as a Consumer
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 128
+parent: Back to Element Guides
 order: 5
 ---
 
