@@ -3,6 +3,9 @@ heading: OneNote
 title: Endpoint Setup
 description: Integrate OneNote into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 134
+parent: Back to Element Guides
 order: 2
 ---
 ## Endpoint Setup

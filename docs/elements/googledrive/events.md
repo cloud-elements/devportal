@@ -3,6 +3,9 @@ heading: Google Drive
 title: Events
 description: Enable Google Drive events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 21
+parent: Back to Element Guides
 order: 30
 ---
 

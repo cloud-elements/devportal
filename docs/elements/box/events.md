@@ -3,6 +3,9 @@ heading: Box
 title: Events
 description: Enable Box events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 22
+parent: Back to Element Guides
 order: 30
 ---
 

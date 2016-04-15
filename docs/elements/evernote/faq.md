@@ -3,6 +3,9 @@ heading: Evernote
 title: FAQ
 description: Frequently asked questions and notes on conventions.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 125
+parent: Back to Element Guides
 order: 50
 ---
 

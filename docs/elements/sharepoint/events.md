@@ -3,6 +3,9 @@ heading: Sharepoint 2013
 title: Events
 description: Enable Sharepoint 2013 events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 30
+parent: Back to Element Guides
 order: 30
 ---
 
