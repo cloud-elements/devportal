@@ -1,10 +1,10 @@
 ---
-heading: Eloqua
+heading: Pardot
 title: API Docs
-description: Eloqua API Documentation.
+description: Pardot API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
-elementId: 27
+elementId: 90
 parent: Back to Element Guides
 order: 90
 ---

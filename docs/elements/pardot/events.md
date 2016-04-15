@@ -3,6 +3,9 @@ heading: Pardot
 title: Events
 description: Enable Pardot events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 90
+parent: Back to Element Guides
 order: 30
 ---
 

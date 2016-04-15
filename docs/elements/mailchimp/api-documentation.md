@@ -1,7 +1,7 @@
 ---
 heading: MailChimp
 title: API Docs
-description: MailChimp CRM API Documentation.
+description: MailChimp API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 197

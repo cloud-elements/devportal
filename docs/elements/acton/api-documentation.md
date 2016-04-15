@@ -1,7 +1,7 @@
 ---
 heading: Act-On
 title: API Docs
-description: Act-On CRM API Documentation.
+description: Act-On API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 45
