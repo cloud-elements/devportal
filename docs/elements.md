@@ -57,3 +57,5 @@ layout: elements
 * [![Flickr](/assets/img/element-logos/flickr.png)Flickr](./elements/flickr/index.html)
 * [![Instagram](/assets/img/element-logos/instagram.png)Instagram](./elements/instagram/index.html)
 * [![ABBYY](/assets/img/element-logos/abbyy.png)ABBYY](./elements/abbyy/index.html)
+* [![DocuSign](/assets/img/element-logos/docusign.png)DocuSign](./elements/docusign/index.html)
+* [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/index.html)
