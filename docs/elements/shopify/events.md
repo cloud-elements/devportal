@@ -3,6 +3,9 @@ heading: Shopify
 title: Events
 description: Enable Shopify events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 48
+parent: Back to Element Guides
 order: 25
 ---
 

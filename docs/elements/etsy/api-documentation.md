@@ -1,0 +1,12 @@
+---
+heading: Etsy
+title: API Docs
+description: Etsy API Documentation.
+layout: apidocs
+breadcrumbs: /docs/elements.html
+elementId: 128
+parent: Back to Element Guides
+order: 90
+---
+
+{% include swagger.html %}
