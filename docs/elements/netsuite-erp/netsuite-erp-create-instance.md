@@ -1,8 +1,11 @@
 ---
-heading: NetSuite
+heading: NetSuite ERP
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 157
+parent: Back to Element Guides
 order: 15
 ---
 
@@ -34,12 +37,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements NetSuite is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements NetSuite is “netsuiteerp”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "netsuitecrm"
+    "key": "netsuiteerp"
   },
   "configuration": {
      "user.username":"<INSERT_NETSUITE_EMAIL>",
@@ -110,14 +113,14 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-##### ERP
+##### CRM
 
 Provision an instance to the ERP functions only. Use the following JSON, the key value (netsuitecrm instead of netsuitecrm) is the only difference in the JSON in the first example.
 
 ```json
 {
   "element": {
-    "key": "netsuiteerp"
+    "key": "netsuitecrm"
   },
   "configuration": {
      "user.username":"<INSERT_NETSUITE_EMAIL>",

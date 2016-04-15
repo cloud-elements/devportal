@@ -1,19 +1,22 @@
 ---
-heading: NetSuite
+heading: NetSuite Finance
 title: Overview
-description: Integrate NetSuite into your application via the Cloud Elements APIs.
+description: Integrate NetSuite Finance into your application via the Cloud Elements APIs.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 155
+parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the NetSuite Element
+## Welcome to the NetSuite Finance Element
 
 
 #### At a Glance
 
 In order to create a connection to NetSuite the following steps are required:
 
-1. Your Username, Password, and Account ID, see how to [find your account ID](netsuite-endpoint-setup.html)
+1. Your Username, Password, and Account ID, see how to [find your account ID](netsuite-finance-endpoint-setup.html)
 2. Call the `POST /instances` API to instantiate your NetSuite connected app
 
 #### In Depth
@@ -22,4 +25,4 @@ The NetSuite Element is a collection of resources providing a pre-built integrat
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
-Get started by [retrieving your Account ID](netsuite-endpoint-setup.html).
+Get started by [retrieving your Account ID](netsuite-finance-endpoint-setup.html).

@@ -1,8 +1,11 @@
 ---
-heading: NetSuite
+heading: NetSuite Finance
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 155
+parent: Back to Element Guides
 order: 5
 ---
 
@@ -19,4 +22,4 @@ Via a web browser, login to your NetSuite System page and login.
 2. Copy your “ACCOUNT ID”
 ![NetSuite Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/04/NetSuiteAPI2.png)
 
-Next [create an instance](netsuite-create-instance.html).
+Next [create an instance](netsuite-finance-create-instance.html).
