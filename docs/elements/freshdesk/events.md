@@ -3,6 +3,9 @@ heading: Freshdesk
 title: Events
 description: Enable Freshdesk events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 144
+parent: Back to Element Guides
 order: 30
 ---
 
