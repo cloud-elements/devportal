@@ -8,3 +8,7 @@ categories: [gettingstarted]
 ---
 
 {% include authentication.md %}
+
+{% include padding-all.html %}
+
+{% include cloud-elements-oauth-workflow.md %}
