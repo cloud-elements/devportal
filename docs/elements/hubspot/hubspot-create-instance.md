@@ -3,6 +3,9 @@ heading: HubSpot
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 43
+parent: Back to Element Guides
 order: 15
 ---
 
@@ -149,85 +152,3 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-##### CRM
-
-Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/hubspotcrm/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456&scope=contacts-rw%20offline&callbackUrl=http://demonstrab.ly'
-```
-
-Response:
-
-```json
-{
-  "element": "hubspotcrm",
-  "oauthUrl": "https://app.hubspot.com/auth/authenticate?client_id=123456789d-1234-12e4-bda9-12345b8bf20&portalId=123456&redirect_uri=http%3A%2F%2Fdemonstrab.ly&scope=contacts-rw%20offline"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "hubspotcrm"
-  },
-  "providerData": {
-    "apikey": "<INSERT HUBSPOT_OAUTH_CLIENT_ID>",
-    "access_token": "<ACCESS_TOKEN RETURNED IN OAUTH EXCHANGE>",
-    "refresh_token": "<REFRESH_TOKEN RETURNED IN OAUTH EXCHANGE>",
-    "expires_in": "<TIME FRAME IN WHICH REFRESH TOKEN EXPIRES (seconds)>"
-  },
-  "configuration": {
-    "oauth.api.key": "<INSERT HUBSPOT_OAUTH_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT HUBSPOT_OAUTH_PORTAL_ID>",
-    "oauth.callback.url": "www.samplecallbackurl.com",
-    "oauth.scope": "contacts-rw+offline"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
-
-##### Create Instance via API Key and not OAuth
-
-To provision your HubSpot Element, use the /instances API.
-
-Below is an example of the provisioning API call.
-
-* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
-* __HTTP Verb__: POST
-* __Request URL__: /instances
-* __Request Body__: Required – see below
-* __Query Parameters__: none
-
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
-
-A sample request illustrating the /instances API is shown below.
-
-HTTP Headers:
-
-```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot is “hubspot”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
-
-```JSON
-{
-  "element": {
-    "key": "hubspot"
-  },
-   "configuration": {
-       "hubspot.authorization.apikey": "<INSERT_HUBSPOT_CRM_OAUTH_CLIENT_ID>",
-       "authentication.type": "apiKey",
-       "create.bulk.properties": "<INSERT_TRUE_TO_CREATE_BULK_PROPERTIES_OTHERWISE_FALSE>"
-   },
-  "name": "Via API test"
-}
-```

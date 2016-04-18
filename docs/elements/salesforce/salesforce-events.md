@@ -1,8 +1,11 @@
 ---
-heading: Salesforce
+heading: Salesforce CRM
 title: Events
-description: Enable Salesforce events for your application.
+description: Enable Salesforce CRM events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 23
+parent: Back to Element Guides
 order: 25
 ---
 

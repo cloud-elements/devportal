@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the SugarCRM Element
+## Welcome to the SugarCRM Element
 
 
 #### At a Glance

@@ -1,8 +1,11 @@
 ---
-heading: Salesforce
+heading: Salesforce CRM
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 23
+parent: Back to Element Guides
 order: 5
 ---
 

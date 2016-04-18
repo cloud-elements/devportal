@@ -3,12 +3,15 @@ heading: HubSpot
 title: Events
 description: Enable HubSpot events for your application.
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 43
+parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-There are no extra configurations needed to enable HubSpot Help Desk events.
+There are no extra configurations needed to enable HubSpot events.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 

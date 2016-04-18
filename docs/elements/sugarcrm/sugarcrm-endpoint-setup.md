@@ -13,7 +13,7 @@ order: 5
 
 Follow these steps to configure your SugarCRM application.
 
-Login to your app via your unique SurgarCRM URL.
+Login to your app via your unique SugarCRM URL.
 
 1. Click on your profile in the top right and select “Admin”.
 ![SugarCRM Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/05/SurgarAPI1.png)
