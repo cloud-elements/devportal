@@ -1,9 +1,10 @@
 ---
 heading: Formulas
-title: API Docs
+title: API Documentation
 description: Formulas API Documentation.
+apis: true
 layout: apidocs
-elementId: resource=formulas
+platform: formulas
 order: 90
 ---
 

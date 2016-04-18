@@ -1,9 +1,9 @@
 ---
 heading: Element Builder
-title: API Docs
+title: API Documentation
 description: Formulas API Documentation.
 layout: apidocs
-elementId: resource=elementsbuilder
+platform: elementsbuilder
 order: 90
 ---
 
