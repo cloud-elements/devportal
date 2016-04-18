@@ -16,7 +16,7 @@ order: 1
 
 In order to create a connection to Salesforce the following steps are required:
 
-1. Set up the [endpoint](salesforce-endpoint-setup.html)
+1. Set up the [endpoint](salesforce-documents-endpoint-setup.html)
 2. Call the `GET /elements/sfdcdocuments/oauth/url` with your Salesforce API key and secret
 3. Call the `POST /instances` API to instantiate your Salesforce connected app
 
