@@ -3,10 +3,14 @@ heading: Element Builder
 title: Hooks
 description: View example Hooks that are supported in the Element Builder UI.
 layout: docs
+apis: API Docs
+platform: elementsbuilder
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 6
 ---
 
-### Hooks
+## Hooks
 
 This Tech Tip is focused on Hooks.  Some examples of a Global Pre-Hook, Pre-Hook, Post-Hook, and Web-Hook Event will be shown.
 

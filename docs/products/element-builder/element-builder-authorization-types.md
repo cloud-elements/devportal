@@ -3,10 +3,14 @@ heading: Element Builder
 title: Authorization Types
 description: View example Authorization Types that can be built using the Element Builder UI.
 layout: docs
+apis: API Docs
+platform: elementsbuilder
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 5
 ---
 
-### Authorization Types
+## Authorization Types
 
 This section will provide some tech tips on authentication.
 

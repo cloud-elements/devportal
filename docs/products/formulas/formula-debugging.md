@@ -3,10 +3,14 @@ heading: Formulas
 title: Formula Debugging
 description: View debugging tips when working with formulas.
 layout: docs
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 20
 ---
 
-### Formula Debugging
+## Formula Debugging
 
 Cloud Elements offers ways to investigate the execution of each step in a formula to check for errors in steps, as well as, JSON payloads being returned.
 

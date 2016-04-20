@@ -19,6 +19,10 @@ a {
   color: #40b6e4;
 }
 
+.red-button {
+  background-color: #ff4e4e;
+}
+
 /*///////////////////////////////
 ///    Custom CSS for Nav     ///
 ///////////////////////////////*/
@@ -247,6 +251,7 @@ hr {
   height: inherit;
   background-image: url(/assets/img/jumbo.png);
   background-size: cover;
+  background-repeat: center center;
 }
 
 .title h2{

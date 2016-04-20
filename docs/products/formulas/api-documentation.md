@@ -1,10 +1,12 @@
 ---
 heading: Formulas
-title: API Documentation
+title: Platform Documentation
 description: Formulas API Documentation.
-apis: true
 layout: apidocs
+apis: API Docs
 platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 90
 ---
 

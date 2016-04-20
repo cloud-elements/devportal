@@ -3,6 +3,10 @@ heading: Formulas
 title: Overview
 description: Learn how to sync objects and create formulas between cloud services.
 layout: docs
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 1
 ---
 

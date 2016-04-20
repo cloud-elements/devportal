@@ -44,7 +44,7 @@
           {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
             {% if p.title == "API Docs" %}
               <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
-            {% elsif p.api == "true" %}
+            {% elsif p.title == "Platform Documentation" %}
               <a class="btn btn-danger apidocs" href="{{ p.url }}?resource={{ page.platform }}">View API Docs</a>
             {% else %}
 
@@ -75,8 +75,8 @@
             {% endif %}
               {% if p.title == "API Docs" %}
                   <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
-              {% elsif p.title == "API Documentation" %}
-                <a href="{{ p.url }}?resource={{ page.platform }}">{{ p.title }}</a>
+              {% elsif p.title == "Platform Documentation" %}
+                <a href="{{ p.url }}?resource={{ page.platform }}">{{ p.apis }}</a>
               {% else %}
                 <a href="{{ p.url }}">{{ p.title }}</a>
               {% endif %}

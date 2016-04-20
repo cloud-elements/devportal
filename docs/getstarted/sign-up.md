@@ -3,7 +3,7 @@ heading: Sign Up
 title: Sign up for Cloud Elements Service
 description:  Sign up for Cloud Elements Service
 layout: docs
-order: 5
+order: 6
 categories: [gettingstarted]
 ---
 
