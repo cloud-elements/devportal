@@ -3,9 +3,9 @@ heading: Ground2Cloud
 title: Managing Ground2Cloud
 description: Information about how to manage Ground2Cloud.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
-order: 6
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
+order: 7
 ---
 
 ## Managing Tightrope

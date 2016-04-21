@@ -3,9 +3,9 @@ heading: Ground2Cloud
 title: How It Works
 description: Information about how Ground2Cloud works.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
-order: 3
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
+order: 4
 ---
 
 ## How It Works

@@ -3,9 +3,9 @@ heading: Ground2Cloud
 title: Installing Ground2Cloud
 description: Information about how Ground2Cloud is installed.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
-order: 5
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
+order: 6
 ---
 
 ## Installing Tightrope

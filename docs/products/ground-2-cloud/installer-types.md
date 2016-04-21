@@ -3,9 +3,9 @@ heading: Ground2Cloud
 title: Installer Types
 description: Information about Ground2Cloud installer types.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
-order: 4
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
+order: 5
 ---
 
 ## Installer Types

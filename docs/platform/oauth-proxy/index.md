@@ -3,6 +3,8 @@ heading: OAuth Proxy
 title: OAuth Proxy Documentation
 description: View the OAuth Proxy Guide with screen shots and setup instructions.
 layout: docs
+breadcrumbs: /docs/platform/index.html
+parent: Back to Platform Docs
 order: 4
 ---
 

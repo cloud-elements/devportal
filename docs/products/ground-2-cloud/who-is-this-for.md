@@ -3,8 +3,8 @@ heading: Ground2Cloud
 title: Who This Manual is For
 description: Information about when Ground2Cloud can be used.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 2
 ---
 

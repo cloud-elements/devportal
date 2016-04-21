@@ -54,6 +54,16 @@
             API TOOLKIT
           </a>
         </li>
+
+        {% if page.url == '/docs/platform/index.html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="/docs/platform/index.html">
+            PLATFORM
+          </a>
+        </li>
         <li>
           <button type="button" class="btn btn-lg btn-danger try-it">Try it For Free! <i class="fa fa-caret-right"></i></button>
         </li>

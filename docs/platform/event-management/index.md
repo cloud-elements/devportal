@@ -3,6 +3,8 @@ heading: Event Management
 title: Event Management
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
 layout: docs
+breadcrumbs: /docs/platform/index.html
+parent: Back to Platform Docs
 order: 2
 ---
 

@@ -3,8 +3,8 @@ heading: Ground2Cloud
 title: Overview
 description: Overview Guide explaining the Cloud Elements Ground2Cloud On-Prem Connector.
 layout: docs
-breadcrumbs: /docs/products/platform/index.html
-parent: Back to Platform Overview
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 1
 ---
 

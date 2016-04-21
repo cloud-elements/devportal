@@ -14,9 +14,8 @@ All of these capabilities are managed through a single platform that tracks usag
 
 Get started by viewing guides on:
 
-* [Account Management - create accounts for you customers and more](/docs/products/platform/accounts/account-management.html)
+* [Account Management - create accounts for you customers and more](/docs/platform/accounts/account-management.html)
 * [Event Management](event-management.html)
-* [Ground2Cloud On-Prem Connector](/docs/products/platform/ground-2-cloud/index.html)
 * [OAuth Proxy Management](oauth-proxy.html)
 * [Platform API Docs](platform-docs.html)
 

@@ -1,11 +1,11 @@
 ---
-heading: Account APIs
+heading: Usage APIs
 title: Platform Documentation
-description: Account API Documentation.
+description: Usage API Documentation.
 layout: apidocs
 apis: API Docs
-platform: accounts
-breadcrumbs: /docs/products/platform/platform-docs.html
+platform: usage
+breadcrumbs: /docs/platform/index.html
 parent: Back to Platform Docs
 order: 90
 ---
