@@ -4,7 +4,7 @@ title: Overview
 description: Find API documentation and example API calls.
 layout: docs
 platform: organizations
-breadcrumbs: /docs/platform/index.html
+breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
 ---

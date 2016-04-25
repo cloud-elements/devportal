@@ -4,7 +4,7 @@ title: Overview of Cloud Elements Account APIs
 description: Find API documentation, account management guides, and more on all of the currently supported Account APIs.
 layout: docs
 platform: accounts
-breadcrumbs: /docs/platform/index.html
+breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
 ---
