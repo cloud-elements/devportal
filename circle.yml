@@ -20,7 +20,7 @@ deployment:
       - git config --global user.email 'greg+cedevportal@cloud-elements.com'
       - git config --global user.name 'cedevportal'
       - git init
-      - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git
+      - git remote add gh https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git
       - git add -A
       - git commit -m "Live release"
-      - git push origin master --force
+      - git push gh master --force
