@@ -10,3 +10,17 @@ dependencies:
 test:
   override:
     - exit 0
+
+deployment:
+  live:
+    branch: master
+    commands:
+      - jekyll build
+      - cd _site
+      - git init
+      - git remote add origin https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git
+      - git add -A
+      - git commit -m "Live release"
+      - git config --global user.email 'greg+cedevportal@cloud-elements.com'
+      - git config --global user.name 'cedevportal'
+      - git push origin master --force
