@@ -9,7 +9,8 @@ dependencies:
 
 test:
   override:
-    - jekyll build
+    - jekyll build:
+      timeout: 2400
 
 deployment:
   live:
