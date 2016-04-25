@@ -3,10 +3,14 @@ heading: Formulas
 title: Create Formula via API
 description: Learn how to create formulas via API and start syncing cloud services.
 layout: docs
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 5
 ---
 
-### Create Formula via API
+## Create Formula via API
 
 #### Overview
 The Cloud Elements Formulas define a set of actions that will take place based on an event happening. Formulas can be utilized to automate a process that involves steps across multiple systems or to keep those systems synchronized like CRM, Ticketing, and Marketing Systems. For example, when a contact is created in Salesforce, the same contact is also created in HubSpot, Marketo, Eloqua, etc. Another example would be when an opportunity is won, an email would be sent notifying the team.

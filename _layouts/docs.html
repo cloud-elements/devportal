@@ -42,9 +42,13 @@
           {% assign pElementName = pPath | pop | last %}
           {% assign elementName = page.url | split:"#" | last %}
           {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
-                {% if p.title == "API Docs" %}
-                  <a class="btn btn-danger apidocs-button" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
-                {% endif %}
+            {% if p.title == "API Docs" %}
+              <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
+            {% elsif p.title == "Platform Documentation" %}
+              <a class="btn btn-danger apidocs" href="{{ p.url }}?resource={{ page.platform }}">View API Docs</a>
+            {% else %}
+
+            {% endif %}
           {% endif %}
         {% endfor %}
       </div>
@@ -70,9 +74,11 @@
               <li>
             {% endif %}
               {% if p.title == "API Docs" %}
-                <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+                  <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+              {% elsif p.title == "Platform Documentation" %}
+                <a href="{{ p.url }}?resource={{ page.platform }}">{{ p.apis }}</a>
               {% else %}
-              <a href="{{ p.url }}">{{ p.title }}</a>
+                <a href="{{ p.url }}">{{ p.title }}</a>
               {% endif %}
           </li>
         {% endif %}

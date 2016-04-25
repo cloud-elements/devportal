@@ -3,6 +3,10 @@ heading: Formulas
 title: Overview
 description: Learn how to sync objects and create formulas between cloud services.
 layout: docs
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 1
 ---
 
@@ -22,3 +26,5 @@ If working with APIs is your preferred method, view the [Formula Creation via AP
 View our [Formulas Use Cases Guide](formula-use-cases.html) for example use cases such as, when a contact is created in a CRM service, the same contact is created in the Marketing service. See screenshots and example API calls.
 
 View our [Formulas Debugging Tips](formula-debugging.html) for suggestions on debugging your formula. See screenshots and example API calls.
+
+View the [Formulas API Documentation](api-documentation.html) to see all of the available endpoints currently supported.

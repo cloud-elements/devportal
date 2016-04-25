@@ -3,10 +3,10 @@ heading: FAQs
 title: FAQs
 description: Frequently Asked Questions
 layout: docs
-order: 2
+order: 10
 categories: [gettingstarted]
 ---
 
-# INDEX
+# FAQs
 
-How should i format like a list of questions and have the page jump to the answer?
+Check back later, Content Coming Soon.

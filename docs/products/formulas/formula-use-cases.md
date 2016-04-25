@@ -3,10 +3,14 @@ heading: Formulas
 title: Formula Use Cases
 description: View common example use cases demonstrating the functionality of formulas.
 layout: docs
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 15
 ---
 
-### Example Formula Use Cases
+## Example Formula Use Cases
 
 This section will demonstrate some common Formula use cases. The first use case that will be discussed is when a contact is created in the CRM system e.g Salesforce, SugarCRM, etc., the same contact is created in the Marketing System e.g. HubSpot, MailJet, etc.
 

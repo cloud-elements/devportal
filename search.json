@@ -4,11 +4,21 @@ layout: null
 [
   {% for page in site.pages %}
      {
-       {% if page.title != nil %}
-       "heading"    : "{{ page.heading | escape }}",
-       "title" : "{{ page.title }}",
-       "description"     : "{{ page.description }}",
-       "url"      : "{{ site.baseurl }}{{ page.url }}"
+       {% if page.title == "API Docs" %}
+            "heading"    : "{{ page.heading | escape }}",
+            "title" : "{{ page.title }}",
+            "description"     : "{{ page.description }}",
+            "url"      : "{{ site.baseurl }}{{ page.url }}?elementId={{ page.elementId}}"
+      {% elsif page.title == "Platform Documentation" %}
+            "heading"    : "{{ page.heading | escape }}",
+            "title" : "{{ page.title }}",
+            "description"     : "{{ page.description }}",
+            "url"      : "{{ site.baseurl }}{{ page.url }}?resource={{ page.platform}}"
+      {% else %}
+            "heading"    : "{{ page.heading | escape }}",
+            "title" : "{{ page.title }}",
+            "description"     : "{{ page.description }}",
+            "url"      : "{{ site.baseurl }}{{ page.url }}"
        {% endif %}
      } {% unless forloop.last %},{% endunless %}
   {% endfor %}

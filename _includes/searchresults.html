@@ -5,12 +5,28 @@
 <script>
 	var JEKYLL_POSTS = [];
 	{% for page in site.pages %}
-		JEKYLL_POSTS.push({
-	    "heading"    : "{{ page.heading | escape }}",
-	    "title" : "{{ page.title }}",
-	    "description"     : "{{ page.description }}",
-	    "url"      : "{{ site.baseurl }}{{ page.url }}"
-		});
+		{% if page.title == "API Docs" %}
+			JEKYLL_POSTS.push({
+				"heading"    : "{{ page.heading | escape }}",
+				"title" : "{{ page.title }}",
+				"description"     : "{{ page.description }}",
+				"url"      : "{{ site.baseurl }}{{ page.url }}?elementId={{ page.elementId}}"
+			});
+		{% elsif page.title == "Platform Documentation" %}
+			JEKYLL_POSTS.push({
+		    "heading"    : "{{ page.heading | escape }}",
+		    "title" : "{{ page.title }}",
+		    "description"     : "{{ page.description }}",
+		    "url"      : "{{ site.baseurl }}{{ page.url }}?resource={{ page.platform}}"
+			});
+		{% else %}
+			JEKYLL_POSTS.push({
+		    "heading"    : "{{ page.heading | escape }}",
+		    "title" : "{{ page.title }}",
+		    "description"     : "{{ page.description }}",
+		    "url"      : "{{ site.baseurl }}{{ page.url }}"
+			});
+		{% endif %}
   {% endfor %}
 </script>
 <script src="{{ "/assets/js/search.js" | prepend: site.baseurl }}"></script>

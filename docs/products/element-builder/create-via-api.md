@@ -3,6 +3,10 @@ heading: Element Builder
 title: Create Element via API
 description: Create a new Element via API.
 layout: docs
+apis: API Docs
+platform: elementsbuilder
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 2
 ---
 
