@@ -2,6 +2,11 @@ machine:
   ruby:
     version: 2.3.0
 
+dependencies:
+  pre:
+    - gem install jekyll
+    - gem install redcarpet
+
 test:
   override:
     - exit 0
