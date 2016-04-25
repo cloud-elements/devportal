@@ -5,7 +5,7 @@ description: Element API Documentation.
 layout: apidocs
 apis: API Docs
 platform: elements
-breadcrumbs: /docs/platform/index.html
+breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 90
 ---

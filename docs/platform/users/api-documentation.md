@@ -5,7 +5,7 @@ description: User API Documentation.
 layout: apidocs
 apis: API Docs
 platform: users
-breadcrumbs: /docs/platform/index.html
+breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 90
 ---
