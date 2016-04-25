@@ -9,13 +9,12 @@ dependencies:
 
 test:
   override:
-    - exit 0
+    - jekyll build
 
 deployment:
   live:
     branch: master
     commands:
-      - jekyll build
       - cd _site
       - git config --global user.email 'greg+cedevportal@cloud-elements.com'
       - git config --global user.name 'cedevportal'
