@@ -77,3 +77,4 @@ layout: elements
 * [![Adobe eSign](/assets/img/element-logos/adobeesign.png)Adobe eSign](./elements/adobe-esign/index.html)
 * [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/index.html)
 * [![ServiceMax](/assets/img/element-logos/servicemax.png)ServiceMax](./elements/servicemax/index.html)
+* [![Chargebee](/assets/img/element-logos/chargebee.png)Chargebee](./elements/chargebee/index.html)
