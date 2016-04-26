@@ -45,19 +45,19 @@ Both types of triggers must be tied to a specific Element Instance. Cloud Elemen
 
 There are four types of steps:
 
-* elementRequest: Cloud Elements Hub API call like POST /contacts
+* `elementRequest`: Cloud Elements Hub API call like POST /contacts
   * able to specify parts of request, method, body, API
-* filter: returns only a boolean (true or false)
+* `filter`: returns only a boolean (true or false)
   * customizable JavaScript
   * able to program if/else logic like if contact created, send email, else stop formula
-* script: returns a JavaScript object
+* `script`: returns a JavaScript object
   * can build a payload for a request step i.e. contact, account, etc.
   * able to take data from two objects and combine them to make custom object, such as fields from Salesforce contact and account to make custom contact
-* loop: loop over a set of steps
+* `loop`: loop over a set of steps
 
 Each step has different properties it requires in order to execute.
 
-All types of steps can have an “onSuccess” or “onFailure” result. An onSuccess result will kick off the next step of the formula. An onFailure result will also kick off a step that could be an error message, exit the formula altogether, or be used to branch from a filter step. It is important to point out that formula logic must be sound so the next step can execute after an onSuccess result is received.
+All types of steps can have an `onSuccess` or `onFailure` result. An `onSuccess` result will kick off the next step of the formula. An `onFailure` result will also kick off a step that could be an error message, exit the formula altogether, or be used to branch from a filter step. It is important to point out that formula logic must be sound so the next step can execute after an `onSuccess` result is received.
 
 ###### CONFIGURATION
 
@@ -155,46 +155,59 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
 
     "steps": [
         {
-            "name": "1-contact-filter-step",   //Name of first step
-            "type": "filter",                  //Type of trigger - filter
+            "name": "1-contact-filter-step",
+            "type": "filter",
             "onSuccess": [
-                "2-create-update-filter-step"  //Action taken on success
+                "2-create-update-filter-step"
             ],
             "properties": {
                 "mimeType": "application/javascript",
-                "body": "var object = trigger.body.message.events[0].objectType;\nif (object.toUpperCase() == 'CONTACT'){ return true; } else { return false; }"
+                "body": "var object = trigger.event.objectType;\nif (object.toUpperCase() == 'CONTACT'){ return true; } else { return false; }"
             }
         },
         {
             "name": "2-create-update-filter-step",
             "type": "filter",
             "onSuccess": [
-                "3-build-email-json"
+                "3-get-contact"
             ],
             "properties": {
                 "mimeType": "application/javascript",
-                "body": "var action = trigger.body.message.events[0].eventType;\nif (action.toUpperCase() == 'UPDATED' || action.toUpperCase() == 'CREATED'){ return true; } else { return false; }"
+                "body": "var action = trigger.event.eventType;\nif (action.toUpperCase() == 'CREATED'){ return true; } else { return false; }"
             }
         },
         {
-            "name": "3-build-email-json",
-            "type": "script",  //Type of trigger - script - object payload created in properties.body below
+            "name": "3-get-contact",
+            "type": "elementRequest",
             "onSuccess": [
-                "4-send-email"
+                "4-build-email-json"
             ],
             "properties": {
-                "body": "return {'body': {'subject': 'Contact ' + trigger.body.message.events[0].eventType, 'message': 'Contact ' + trigger.body.message.raw.objects[0].FirstName + ' ' + trigger.body.message.raw.objects[0].LastName + ' has been ' + trigger.body.message.events[0].eventType + '.', 'to': 'greg@cloud-elements.com', 'from': 'claude@cloud-elements.com'}}",
+                "elementInstanceId": "${sfdc.instance.id}",
+                "method": "GET",
+                "api": "/hubs/crm/contacts/{objectId}",
+                "path": "${trigger.event}"
+            }
+        },
+        {
+            "name": "4-build-email-json",
+            "type": "script",
+            "onSuccess": [
+                "5-send-email"
+            ],
+            "properties": {
+                "body": "return {'body': {'subject': 'Contact ' + trigger.event.eventType, 'message': 'Contact ' + steps['3-get-contact'].response.body.FirstName + ' ' + steps['3-get-contact'].response.body.LastName + ' has been ' + trigger.event.eventType + '.', 'to': 'greg@cloud-elements.com', 'from': 'greg@cloud-elements.com'}}",
                 "mimeType": "application/javascript"
             }
         },
         {
-            "name": "4-send-email",
-            "type": "elementRequest",  //Trigger Type - elementRequest - will trigger an API call - POST /messages
+            "name": "5-send-email",
+            "type": "elementRequest",
             "properties": {
-                "elementInstanceId": "${sendgrid.instance.id}",  //SengGrid Element Instance ID needed
-                "method": "POST",  //HTTP Method
-                "api": "/hubs/messaging/messages/",  //URL
-                "body": "${steps.3-build-email-json.body}"  //Object created from step 3
+                "elementInstanceId": "${sendgrid.instance.id}",
+                "method": "POST",
+                "api": "/hubs/messaging/messages/",
+                "body": "${steps.4-build-email-json.body}"
             }
         }
     ],
@@ -214,6 +227,12 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
     ]
 }
 ```
+
+__NOTE:__ When multiple objects are found in one event one formula execution is kicked off per object, not event. So if you have an event that found 3 objects had been updated, 3 executions will be kicked off.
+
+In each execution `trigger.body` will contain the entire event and list of objects while `trigger.event` will contain just the single event that is to be used in the current execution.
+
+For this reason, use `trigger.event` to access the event object data instead of `trigger.body`. `trigger.body` will contain a full list of events received together so if you use that, __be aware__ that you may need to search through a list of objects to get the current one of you could end up running the formula multiple times for one object.
 
 We use the POST /formulas API to create the template. An example request can be seen below. Be sure to include your formula-template JSON (the Formula Template shown above) in your request.
 

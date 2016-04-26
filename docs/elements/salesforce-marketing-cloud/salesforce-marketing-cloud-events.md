@@ -48,6 +48,8 @@ instance JSON with polling events enabled:
 
 ### Webhooks
 
+When implementing webhooks for Salesforce, Cloud Elements creates APEX classes and triggers in order to send webhooks.  This can only be done in a Salesforce sandbox account.  If you want to support webhooks in a production Salesforce account, you'll have to make some modifications and migrate those classes to production according to the Salesforce specification. View more information regarding the [Salesforce specification](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_qs_deploy.htm).
+
 Follow these steps to setup your Salesforce application with the endpoint.
 
 __In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
@@ -56,38 +58,15 @@ Via a web browser, login to your Salesforce account:
 [https://login.salesforce.com/](https://login.salesforce.com/)
 
 
-Select "Setup" if not taken there by default:
-
-1. In left hand nav menu, under create, select "Apps"
-
-2. Click "New"
-![Salesforce Connected App step 1](img/salesforce-connected-app-1.png)
-
-3. Fill out the basic information about the app
-
-4. Make sure to select "Enable OAuth Settings"
-
-5. You’ll be required to enter a callback URL from the endpoint. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint. For our example,we’ll use a callback URL of https://mycoolapp.com/auth
-
-6. Choose from the "Selected OAuth Scopes". "Full Access" and "Perform requests on your behalf at any time (refresh_token_, offline_access)" are the minimum needed scopes.
-
-7. Add the selected scopes
-
-8. Click "Save" at the bottom of the window ![Salesforce Connected App step 2](img/salesforce-connected-app-2.png)
-
-9. Please make a note of the "Consumer Key"
-
-10. Please make a note of the "Consumer Secret" ![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
-
-11. Under "Administer" > "Security Controls" > select "Remote Site Settings"
+1. Under "Administer" > "Security Controls" > select "Remote Site Settings"
 ![Salesforce Webhook step 1](img/salesforce-webhook-1.png)
 
-12. Click “New Remote Site”
+2. Click “New Remote Site”
 ![Salesforce Webhook step 2](img/salesforce-webhook-2.png)
 
-13. Input “Remote Site Name” e.g. Cloud Elements and the following URL: `https://api.cloud-elements.com`
+3. Input “Remote Site Name” e.g. Cloud Elements and the following URL: `https://api.cloud-elements.com`
 
-14. Click “Save”
+4. Click “Save”
 ![Salesforce Webhook step 3](img/salesforce-webhook-3.png)
 
 __NOTE: Our current support for Salesforce Events include listening for the following:

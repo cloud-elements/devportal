@@ -16,7 +16,7 @@ Cloud Elements offers ways to investigate the execution of each step in a formul
 
 There are a few steps to perform in order to view the formula execution that can all be done via an API call. The formula template ID is needed, as well as, the formula instance ID.
 
-First, you can use the GET /formulas API call to view your formula template ID. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
+First, you can use the `GET /formulas` API call to view your formula template ID. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
 
 ```bash
 curl -X GET
@@ -139,7 +139,7 @@ While retrieving the ID is one facet of this call, the response body also presen
 
 The next step is to retrieve the formula instance ID. Not be confused with the formula template ID we retrieved in the previous step. Remember a formula template is not put into action until it is instantiated.
 
-Use the GET /formulas/instances API call to view your formula instance ID. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
+Use the `GET /formulas/instances` API call to view your formula instance ID. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
 
 ```bash
 curl -X GET
@@ -191,9 +191,15 @@ Example of Successful Response:
 ]
 ```
 
-In this example, the ID is ‘890’. This formula instance ID along with the formula template ID are needed to make the formula executions call.
+In this example, the ID is `890`. This formula instance ID along with the formula template ID are needed to make the formula executions call.
 
-Use the GET /formulas/{id}/instances/{instanceId}/executions API call to view all of the executions made by that formula. This will return IDs for each formula execution. To look at a specific execution, the ID of that execution is needed. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
+Use the `GET /formulas/{id}/instances/{instanceId}/executions` API call to view all of the executions made by that formula. This will return IDs for each formula execution. To look at a specific execution, the ID of that execution is needed. The ID is located at the top of the response right above the name of the formula. Below is an example of this call.
+
+__NOTE:__ When multiple objects are found in one event one formula execution is kicked off per object, not event. So if you have an event that found 3 objects had been updated, 3 executions will be kicked off.
+
+In each execution `trigger.body` will contain the entire event and list of objects while `trigger.event` will contain just the single event that is to be used in the current execution.
+
+For this reason, use `trigger.event` to access the event object data instead of `trigger.body`. `trigger.body` will contain a full list of events received together so if you use that, __be aware__ that you may need to search through a list of objects to get the current one of you could end up running the formula multiple times for one object.
 
 ```bash
 curl -X GET
@@ -223,7 +229,7 @@ Example of Successful Response:
 
 This formula has executed two times. Specific details about each of the steps including error codes and JSON payloads can be viewed by referencing the formula execution ID. The second ID in the list will be used to retrieve formula execution details.
 
-Use the `GET /formulas/{id}/instances/{instanceId}/executions/{executionId}` API call to view all of the executions made by that formula. This will return IDs for each formula execution. To look at a specific execution, the ID of that execution is needed. The ID is located at the top of the response right above the name of the formula. Using the second ID ‘123457’ retrieved from the previous step, a sample call will be made.
+Use the `GET /formulas/{id}/instances/{instanceId}/executions/{executionId}` API call to view all of the executions made by that formula. This will return IDs for each formula execution. To look at a specific execution, the ID of that execution is needed. The ID is located at the top of the response right above the name of the formula. Using the second ID `123457` retrieved from the previous step, a sample call will be made.
 
 ```bash
 curl -X GET
@@ -552,7 +558,7 @@ Below is a list of common debugging techniques.
     * View error codes and messages for each step
 * Review steps or formula template and make sure logic is sound
 * Check to make sure the JSON for an object like a contact is correct
-    * Perform a GET /contacts call for an endpoint and check to make sure the JSON matches the JSON on the formula step
-    * If it is a custom object, perform a GET /{objectName} call to that endpoint to check the object fields are returning correctly
+    * Perform a `GET /contacts` call for an endpoint and check to make sure the JSON matches the JSON on the formula step
+    * If it is a custom object, perform a `GET /{objectName}` call to that endpoint to check the object fields are returning correctly
 
 [Cloud Elements Support](mailto:support@cloud-elements.com) is always here to help, so please don’t hesitate to email us with questions or concerns.
