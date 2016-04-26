@@ -1,10 +1,10 @@
 ---
-heading: Element Builder
+heading: Element Mapper
 title: Platform Documentation
-description: Element Builder API Documentation.
+description: Element Mapper API Documentation.
 layout: apidocs
 apis: API Docs
-platform: elementsbuilder
+platform: organizations
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 90

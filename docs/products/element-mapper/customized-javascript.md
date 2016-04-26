@@ -2,7 +2,10 @@
 heading: Element Mapper
 title: Element Mapper Customized JavaScript
 description: Learn about Element Mapper's customized JavaScript editor.
+apis: API Docs
 layout: docs
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 5
 ---
 

@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Zendesk Element
+## Welcome to the Zendesk Element
 
 
 #### At a Glance
