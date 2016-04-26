@@ -2,7 +2,10 @@
 heading: Element Mapper
 title: Create Element Mapper Custom Objects
 description: Create Custom Objects to be mapped and synced between services
+apis: API Docs
 layout: docs
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 3
 ---
 

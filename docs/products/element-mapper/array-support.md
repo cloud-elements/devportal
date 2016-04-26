@@ -2,7 +2,10 @@
 heading: Element Mapper
 title: Element Mapper Array Support
 description: Learn about Element Mapper's array support.
+apis: API Docs
 layout: docs
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 6
 ---
 
