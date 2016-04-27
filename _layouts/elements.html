@@ -14,6 +14,7 @@
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
+  {% include favicon.html %}
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
   /* this chunk of css is not part of the toolkit :) */
@@ -36,9 +37,14 @@
   </div>
   <div class="container-fluid">
 
+      {% include filter.html %}
+
       {{content | column}}
 
       <a class="docs-top" style="display: none" href="#">Back to top</a>
+
+      {% include padding-all.html %}
+      {% include padding-all.html %}
 
   </div>
   {% include footer.html %}
@@ -47,6 +53,7 @@
   <script src="/assets/js/tablesorter.min.js"></script>
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
+  <script src="/assets/js/filter.js"></script>
   {% include google_analytics.html %}
   <script>
   // execute/clear BS loaders for docs
