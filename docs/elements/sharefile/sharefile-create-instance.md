@@ -11,7 +11,7 @@ order: 20
 
 ## Create Instance
 
-ShareFile is a Help Desk Platform. When you provision an instance, your app will have access to the different functionality offered by the ShareFile platform.
+ShareFile is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the ShareFile platform.
 
 ### Step 1. Get Elements OAuth Information
 

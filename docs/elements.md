@@ -50,6 +50,7 @@ layout: elements
 * [![Magento](/assets/img/element-logos/magento.png)Magento](./elements/magento/index.html)
 * [![Shopify](/assets/img/element-logos/shopify.png)Shopify](./elements/shopify/index.html)
 * [![Volusion](/assets/img/element-logos/volusion.png)Volusion](./elements/volusion/index.html)
+* [![Weebly](/assets/img/element-logos/weebly.png)Weebly](./elements/weebly/index.html)
 * [![WooCommerce](/assets/img/element-logos/woocommerce.png)WooCommerce](./elements/woocommerce/index.html)
 * [![NetSuite ERP](/assets/img/element-logos/netsuite.png)NetSuite ERP](./elements/netsuite-erp/index.html)
 * [![Amazon S3](/assets/img/element-logos/amazons3.png)Amazon S3](./elements/amazons3/index.html)
