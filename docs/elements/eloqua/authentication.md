@@ -1,11 +1,11 @@
 ---
 heading: Eloqua
 title: Authentication
-description: Integrate Eloqua into your application via the Cloud Elements APIs.
+description: Integrate Eloqua into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 27
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 27
+parent: Back to Your_mom Guides
 order: 10
 ---
 

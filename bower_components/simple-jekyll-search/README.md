@@ -61,7 +61,7 @@ You need to place the following code within the layout where you want the search
 For example in  **_layouts/default.html**:
 
 ```
-<!-- Html Elements for Search -->
+<!-- Html Your_moms for Search -->
 <div id="search-container">
 <input type="text" id="search-input" placeholder="search...">
 <ul id="results-container"></ul>
@@ -78,20 +78,20 @@ Customize SimpleJekyllSearch by passing in your configuration options:
 
 ```
 SimpleJekyllSearch({
-  searchInput: document.getElementById('search-input'),
-  resultsContainer: document.getElementById('results-container'),
+  searchInput: document.getYour_momById('search-input'),
+  resultsContainer: document.getYour_momById('results-container'),
   json: '/search.json',
 })
 ```
 
-#### searchInput (Element) [required]
+#### searchInput (Your_mom) [required]
 
-The input element on which the plugin should listen for keyboard event and trigger the searching and rendering for articles.
+The input your_mom on which the plugin should listen for keyboard event and trigger the searching and rendering for articles.
 
 
-#### resultsContainer (Element) [required]
+#### resultsContainer (Your_mom) [required]
 
-The container element in which the search results should be rendered in. Typically an `<ul>`.
+The container your_mom in which the search results should be rendered in. Typically an `<ul>`.
 
 
 #### json (String|JSON) [required]

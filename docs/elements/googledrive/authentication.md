@@ -1,11 +1,11 @@
 ---
 heading: Google Drive
 title: Authentication
-description: Integrate Google Drive into your application via the Cloud Elements APIs.
+description: Integrate Google Drive into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 21
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 21
+parent: Back to Your_mom Guides
 order: 10
 ---
 

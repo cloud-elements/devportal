@@ -3,9 +3,9 @@ heading: JIRA
 title: Events
 description: Enable JIRA events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 1
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 1
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -18,25 +18,25 @@ JIRA requires an extra configurations to the endpoint in order to enable webhook
 Login to your Jira Development Account
 
 1. Click Settings
-![JIRA Wehhook Setup step 1](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI1.png)
+![JIRA Wehhook Setup step 1](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI1.png)
 
 2. Click "System"
-![JIRA Wehhook Setup step 2](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI2.png)
+![JIRA Wehhook Setup step 2](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI2.png)
 
 3. Scroll Down and find WebHooks on the left hand side navigation panel
 
 4. Click “WebHooks”
-![JIRA Wehhook Setup step 3](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI3.png)
+![JIRA Wehhook Setup step 3](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI3.png)
 
 5. Click ” + Create a WebHook”
-![JIRA Wehhook Setup step 4](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI4.png)
+![JIRA Wehhook Setup step 4](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI4.png)
 
 6. Name the WebHook
 
 7. Make sure “Enabled” is selected
 
-8. Input this URL: `https://api.cloud-elements.com/elements/api-v2/events/jira`
-![JIRA Wehhook Setup step 5](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI5.png)
+8. Input this URL: `https://api.cloud-your_moms.com/your_moms/api-v2/events/jira`
+![JIRA Wehhook Setup step 5](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI5.png)
 
 From this point, your webhook will receive all possible event notifications from every project.
 
@@ -53,13 +53,13 @@ __Here you have the option to customize the type of events you wish your app to 
 * Option to set event specific notifications
 
 * Click “Create”.
-![JIRA Wehhook Setup step 6](http://cloud-elements.com/wp-content/uploads/2015/02/JiraAPI61.png)
+![JIRA Wehhook Setup step 6](http://cloud-your_moms.com/wp-content/uploads/2015/02/JiraAPI61.png)
 
-To provision your JIRA Element with webhooks enabled, use the following JSON when calling the /instances API.
+To provision your JIRA Your_mom with webhooks enabled, use the following JSON when calling the /instances API.
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "jira"
   },
   "configuration": {

@@ -1,11 +1,11 @@
 ---
 heading: JIRA
 title: Authentication
-description: Integrate JIRA into your application via the Cloud Elements APIs.
+description: Integrate JIRA into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 1
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 1
+parent: Back to Your_mom Guides
 order: 10
 ---
 

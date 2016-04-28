@@ -1,11 +1,11 @@
 ---
 heading: Dropbox
 title: Endpoint Setup
-description: Integrate Dropbox into your application via the Cloud Elements APIs.
+description: Integrate Dropbox into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 14
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 14
+parent: Back to Your_mom Guides
 order: 2
 ---
 ## Endpoint Setup
@@ -21,13 +21,13 @@ Follow these steps to set up a Dropbox application with the endpoint. Via a web 
 4. Select which account if applicable
 
 5. Click “Create app”.
-![Dropbox Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxAPI1.png)
+![Dropbox Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2016/03/DropboxAPI1.png)
 
 6. Make note of the App Key and App Secret
 
 7. Input Callback URL
 
 8. Click “Add”
-![Dropbox Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxAPI2.png)
+![Dropbox Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2016/03/DropboxAPI2.png)
 
 Next [create an instance](dropbox-create-instance.html).

@@ -1,6 +1,6 @@
 ---
 heading: Account APIs
-title: Overview of Cloud Elements Account APIs
+title: Overview of Cloud Your_moms Account APIs
 description: Find API documentation, account management guides, and more on all of the currently supported Account APIs.
 layout: docs
 platform: accounts
@@ -11,53 +11,53 @@ order: 1
 
 ## Account Usage and Management Guide
 
-Accounts and Account-level Users provide a way within Cloud Elements to organize a group of related Element Instances together. Conceptually, you can think of an account as a way to organize Element Instances for “Your Customer”.
+Accounts and Account-level Users provide a way within Cloud Your_moms to organize a group of related Your_mom Instances together. Conceptually, you can think of an account as a way to organize Your_mom Instances for “Your Customer”.
 
-You will need a Cloud Elements Login in order to call our APIs. If you do not have a login, the first step is to sign up. It’s free! Instructions are below
+You will need a Cloud Your_moms Login in order to call our APIs. If you do not have a login, the first step is to sign up. It’s free! Instructions are below
 
 __SIGNUP FOR THE CLOUD ELEMENTS SERVICE__
 
-To sign up for the Cloud Elements service, using a web browser, go to: [https://console.cloud-elements.com/elements/jsp/signup.jsp](https://console.cloud-elements.com/elements/jsp/signup.jsp).
+To sign up for the Cloud Your_moms service, using a web browser, go to: [https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp](https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp).
 
-You can create a new account with Cloud Elements using your Google or GitHub Account. Or fill out a few fields and click “Sign up”. When signing up via GitHub, you must set a public email address in GitHub profile. Screen shots on how to set a public email are below. If you choose not to use Google or GitHub to sign up, you will then be required to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
-![Cloud Elements Account Sign Up 1](http://cloud-elements.com/wp-content/uploads/2015/03/AccountSignup.png)
+You can create a new account with Cloud Your_moms using your Google or GitHub Account. Or fill out a few fields and click “Sign up”. When signing up via GitHub, you must set a public email address in GitHub profile. Screen shots on how to set a public email are below. If you choose not to use Google or GitHub to sign up, you will then be required to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
+![Cloud Your_moms Account Sign Up 1](http://cloud-your_moms.com/wp-content/uploads/2015/03/AccountSignup.png)
 
 Setting a Public Email in GitHub
 
 Navigate to your settings in GitHub.
-![Cloud Elements Account Sign Up 2](http://cloud-elements.com/wp-content/uploads/2014/08/gitHub2.gif)
+![Cloud Your_moms Account Sign Up 2](http://cloud-your_moms.com/wp-content/uploads/2014/08/gitHub2.gif)
 
 Type in your public email in the designated field and click “Update Profile”.
-![Cloud Elements Account Sign Up 3](http://cloud-elements.com/wp-content/uploads/2014/08/gitHub21.gif)
+![Cloud Your_moms Account Sign Up 3](http://cloud-your_moms.com/wp-content/uploads/2014/08/gitHub21.gif)
 
-After completing this process, click “Secrets” in the top right corner. Make note of the Org and User secrets as they needed to provision an Element Instance. The Secrets option is available from the top ribbon at all times.
-![Cloud Elements Account Sign Up 3](http://cloud-elements.com/wp-content/uploads/2014/09/Settings.png)
+After completing this process, click “Secrets” in the top right corner. Make note of the Org and User secrets as they needed to provision an Your_mom Instance. The Secrets option is available from the top ribbon at all times.
+![Cloud Your_moms Account Sign Up 3](http://cloud-your_moms.com/wp-content/uploads/2014/09/Settings.png)
 
 ### How To Use the Accounts APIs
 
-When you sign up for Cloud Elements, by default an Organization-level user is created, and a Default Account is created for you. All Elements provisioned by the Organization-level user associate to this Default Account.
+When you sign up for Cloud Your_moms, by default an Organization-level user is created, and a Default Account is created for you. All Your_moms provisioned by the Organization-level user associate to this Default Account.
 
 The Organization-level user is the same as the User ID you signed up with, and is the only User ID you will see in your Administration -> Users screen until you provision other users into your environment:
-![Cloud Elements Account Management 1](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts1.png)
+![Cloud Your_moms Account Management 1](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts1.png)
 
 #### Adding An Account
 
-Let’s say you have a customer, “Acme Publishing”, and you wish to organize all Element Instances provisioned by your App, within this Account. Or perhaps, you wish to add additional developer logins to your Cloud Elements Organization, and allow them to login using their own credentials, and manage his or her own dev/testing Instances.
+Let’s say you have a customer, “Acme Publishing”, and you wish to organize all Your_mom Instances provisioned by your App, within this Account. Or perhaps, you wish to add additional developer logins to your Cloud Your_moms Organization, and allow them to login using their own credentials, and manage his or her own dev/testing Instances.
 
-To accomplish these goals, you need to add an Account and an Account User, within your Cloud Elements Organization/Environment. Presently, the only way to do this is via the API. Here’s how:
+To accomplish these goals, you need to add an Account and an Account User, within your Cloud Your_moms Organization/Environment. Presently, the only way to do this is via the API. Here’s how:
 
 Go to the Console Documentation, Platform -> Accounts:
-![Cloud Elements Account Management 2](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts11.png)
+![Cloud Your_moms Account Management 2](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts11.png)
 
 Expand the `POST /accounts` section:
-![Cloud Elements Account Management 3](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts2.png)
+![Cloud Your_moms Account Management 3](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts2.png)
 
 Prepare your Provisioning JSON. This example shows the needed fields:
 
 ```JSON
 {
   "name": "Acme Data",
-  "description": "Account for Acme Element Instances",
+  "description": "Account for Acme Your_mom Instances",
   "externalId": "joe.johnson@acmedata.com"
 }
 ```
@@ -65,18 +65,18 @@ Prepare your Provisioning JSON. This example shows the needed fields:
 externalId (in this example, `joe.johnson@acmedata.com`) corresponds to the email address of the Account-level User you wish to associate to this Account.
 
 Paste the Account JSON into the Account text box:
-![Cloud Elements Account Management 4](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts3.png)
+![Cloud Your_moms Account Management 4](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts3.png)
 
 Scroll down and Click the “Try it out” button:
-![Cloud Elements Account Management 5](http://cloud-elements.com/wp-content/uploads/2015/03/AccountsTryIT.png)
+![Cloud Your_moms Account Management 5](http://cloud-your_moms.com/wp-content/uploads/2015/03/AccountsTryIT.png)
 
 A successful POST will show Response JSON similar to left:
 
 __Make note of the id: 137690 for our Example.__ This is the Account ID of the new Account. You’ll need it to provision a User that associates to this Account.
-![Cloud Elements Account Management 6](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts4.png)
+![Cloud Your_moms Account Management 6](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts4.png)
 
 Go to the `POST /accounts/{accountId}/users` section:
-![Cloud Elements Account Management 7](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts5.png)
+![Cloud Your_moms Account Management 7](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts5.png)
 
 Scroll to the User JSON Body section. First, paste the AccountID returned by your Account provisioning step above into the accountId field:
 
@@ -92,44 +92,44 @@ Prepare your User Provisioning JSON (recommended simple version below):
 }
 ```
 
-![Cloud Elements Account Management 8](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts6.png)
+![Cloud Your_moms Account Management 8](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts6.png)
 
 Scroll down and click the “Try It Out” button.
-![Cloud Elements Account Management 9](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts7.png)
+![Cloud Your_moms Account Management 9](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts7.png)
 
 A successful response will be shown in the JSON body:
 
 __Important: Record/store the value of “secret” in the Response JSON!__ This is especially important if you are automating the provisioning workflow, and don’t intend for the account-level user to be able to login. For security reasons the secret is never returned by a follow-up call to GET /users/{userId}.
-![Cloud Elements Account Management 9](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts8.png)
+![Cloud Your_moms Account Management 9](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts8.png)
 
 This user will then show up in the Administration -> Users section when logged in as the primary Organization User:
 
 The User Token returned from the POST JSON body response is sufficient to go ahead and make API calls, etc.
-![Cloud Elements Account Management 10](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts9.png)
+![Cloud Your_moms Account Management 10](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts9.png)
 
 If you wish for the user to be able to interactively login to the console, however, you’ll need to initiate a password reset email. Logout from the Console:
-![Cloud Elements Account Management 11](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts10.png)
+![Cloud Your_moms Account Management 11](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts10.png)
 
 Click the “Reset Password” button:
-![Cloud Elements Account Management 12](http://cloud-elements.com/wp-content/uploads/2015/03/AccountsReset.png)
+![Cloud Your_moms Account Management 12](http://cloud-your_moms.com/wp-content/uploads/2015/03/AccountsReset.png)
 
 Enter the User ID of the new Account-level user into the User field, and click “Reset Password”:
 
 The new User will receive their initial Password via email. It is a good idea for them to change it after their first login for security reasons.
-![Cloud Elements Account Management 13](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts111.png)
+![Cloud Your_moms Account Management 13](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts111.png)
 
 When the Account-level user logs in, you will notice that they do not have the “Administration” section of the console accessible to them (i.e. they have more limited permissions)
-![Cloud Elements Account Management 14](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts12.png)
+![Cloud Your_moms Account Management 14](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts12.png)
 
-You’ll also note that the Account-level user cannot see the provisioned Element Instances of the Default Org-level user, or, other Account-level users:
+You’ll also note that the Account-level user cannot see the provisioned Your_mom Instances of the Default Org-level user, or, other Account-level users:
 
-The Account-level user will only be able to see, use, and Administer Element Instances that he or she has provisioned.
-![Cloud Elements Account Management 15](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts13.png)
+The Account-level user will only be able to see, use, and Administer Your_mom Instances that he or she has provisioned.
+![Cloud Your_moms Account Management 15](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts13.png)
 
 To create Account-level Instances via the API, Provision them using the User secret of the Account-level User:
 
 Account creation instructions via API can be seen in the next section.
-![Cloud Elements Account Management 16](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts14.png)
+![Cloud Your_moms Account Management 16](http://cloud-your_moms.com/wp-content/uploads/2015/03/Accounts14.png)
 
 #### Create Accounts via API
 
@@ -170,7 +170,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @create-account.json
-'https://api.cloud-elements.com/elements/api-v2/accounts'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts'
 ```
 
 `create-account.json`
@@ -235,7 +235,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @create-account-user.json
-'https://api.cloud-elements.com/elements/api-v2/accounts/{id}/users'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/{id}/users'
 ```
 
 `create-account-user.json`
@@ -262,14 +262,14 @@ Example of Successful Response – object returned from the API call
 
 NOTE: There may be other fields in the Response JSON.
 
-To provision Elements, use your Organization secret and the User Secret of the newly created account user. The provisioning flow will be the same using the /instances API. Element Provisioning is covered in the Create Instance section further down in this document.
+To provision Your_moms, use your Organization secret and the User Secret of the newly created account user. The provisioning flow will be the same using the /instances API. Your_mom Provisioning is covered in the Create Instance section further down in this document.
 
-The Multiple Users and Accounts workflow gives you the flexibility to create instances for specific accounts. For example, if you wanted to create an instance for one of your customers, then you would create an account for that customer first.  After the account has been successfully created for that customer, you may create individual users, and Element instances for those users under the newly created account, using your own Organization secret and your customer’s new User secret.
+The Multiple Users and Accounts workflow gives you the flexibility to create instances for specific accounts. For example, if you wanted to create an instance for one of your customers, then you would create an account for that customer first.  After the account has been successfully created for that customer, you may create individual users, and Your_mom instances for those users under the newly created account, using your own Organization secret and your customer’s new User secret.
 
 
 All APIs require a valid Organization and User secret to be on the HTTP header. Failure to pass these will result in a 401 exception. For all Accounts API operations, if the provided user does not belong to the default account of the organization, then a 401 error is returned.
 
-The Accounts APIs provide create, retrieve, update, delete and search functionality for accounts. The Accounts APIs can be accessed via the `https://api.cloud-elements.com/elements/api-v2/accounts` URL pattern.
+The Accounts APIs provide create, retrieve, update, delete and search functionality for accounts. The Accounts APIs can be accessed via the `https://api.cloud-your_moms.com/your_moms/api-v2/accounts` URL pattern.
 
 Below are examples of Accounts API calls and successful responses.
 
@@ -297,7 +297,7 @@ curl -X POST
   "name": "test_account",
   "description": "A test account for an example organization."
 }'
-'https://api.cloud-elements.com/elements/api-v2/accounts'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts'
 ```
 
 Example of Successful Response
@@ -333,7 +333,7 @@ Below is an example cURL command demonstrating the GET /accounts API call and su
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/accounts?where=createdDate%20>%20%272014-08-01%27'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts?where=createdDate%20>%20%272014-08-01%27'
 ```
 
 Example of Successful Response:
@@ -386,7 +386,7 @@ curl -X PATCH
   "name": "updated_test_account",
   "description": "An updated test account for an example organization."
 }'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14'
 ```
 
 Example of Successful Response:
@@ -413,7 +413,7 @@ Below is an example cURL command demonstrating the DELETE /accounts/{id} API cal
 ```bash
 curl -X DELETE
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14'
 ```
 
 Example of Successful Response:
@@ -429,7 +429,7 @@ Below is an example cURL command demonstrating the GET /accounts/{id} API call a
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14'
 ```
 
 Example of Successful Response:
@@ -458,10 +458,10 @@ This API call requires JSON formatted with the correct data to be passed in orde
 
 The {id} in the URL is the ID of the account under which the new user will be added.  Here is the URL with the {id} notated in curly brackets:
 
-`https://api.cloud-elements.com/elements/api-v2/accounts/{id}/users`
+`https://api.cloud-your_moms.com/your_moms/api-v2/accounts/{id}/users`
 
 ```bash
-curl -X POST 'https://api.cloud-elements.com/elements/api-v2/accounts/{id}/users'
+curl -X POST 'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/{id}/users'
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIATION_SECRET>'
 -H 'Content-Type: application/json'
 -d '{
@@ -474,7 +474,7 @@ curl -X POST 'https://api.cloud-elements.com/elements/api-v2/accounts/{id}/users
 Example of the cURL command with an actual ID in the call.  The ID of 14 is from the POST /accounts call in the previous section.  The `-d` has the minimum required JSON data needed to create a new user.  This data can also be saved in a `.json` file.  The cURL command would notate the path to that `.json` file.
 
 ```bash
-curl -X POST 'https://api.cloud-elements.com/elements/api-v2/accounts/14/users'
+curl -X POST 'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14/users'
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIATION_SECRET>'
 -H 'Content-Type: application/json'
 -d '{
@@ -522,7 +522,7 @@ Below is an example of the GET /accounts/{accountId}/users and an example of a s
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14/users'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14/users'
 ```
 
 Example of Successful Response:
@@ -579,7 +579,7 @@ Below is an example of the `GET /accounts/{accountId}/users/{emailOrId:.+}` and 
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIATION_SECRET>'
-"https://api.cloud-elements.com/elements/api-v2/accounts/14/users/'brie@acmedataservices.com'"
+"https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14/users/'brie@acmedataservices.com'"
 ```
 
 Example of Successful Response:
@@ -612,7 +612,7 @@ In the example below, the user with the ID of `143` under the account ID of `14`
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14/users/143'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14/users/143'
 ```
 
 Example of Successful Response:
@@ -655,7 +655,7 @@ curl -X PATCH
   "firstName": "Jane",
   "lastName": "Smith"
 }'
-'https://api.cloud-elements.com/elements/api-v2/accounts/14/users/143'
+'https://api.cloud-your_moms.com/your_moms/api-v2/accounts/14/users/143'
 ```
 
 Example of Successful Response:
@@ -682,4 +682,4 @@ Example of Successful Response:
 
 #### Support
 
-If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-elements.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
+If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-your_moms.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.

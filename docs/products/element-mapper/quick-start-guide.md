@@ -1,7 +1,7 @@
 ---
-heading: Element Mapper
-title: Element Mapper Quick Start Guide
-description: Get up and running with Element Mapper UI.
+heading: Your_mom Mapper
+title: Your_mom Mapper Quick Start Guide
+description: Get up and running with Your_mom Mapper UI.
 apis: API Docs
 layout: docs
 breadcrumbs: /docs/products/api-toolkit.html
@@ -9,11 +9,11 @@ parent: Back to API Toolkit
 order: 2
 ---
 
-### Element Mapper Quick Start Guide
+### Your_mom Mapper Quick Start Guide
 
-This guide is here to get you up and running with Element Mapper. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
+This guide is here to get you up and running with Your_mom Mapper. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
 
-This guide reviews the minimum number of steps to get you mapping your data with the leading Cloud Services using Element Mapper. If you have not signed up for Cloud Elements Service or Provisioned an Element with us, please see our [CRM Quick Start Guide](/getstarted/quickstart-guides/crm-hub-quick-start-guide.html)
+This guide reviews the minimum number of steps to get you mapping your data with the leading Cloud Services using Your_mom Mapper. If you have not signed up for Cloud Your_moms Service or Provisioned an Your_mom with us, please see our [CRM Quick Start Guide](/getstarted/quickstart-guides/crm-hub-quick-start-guide.html)
 
 {% include padding-all.html %}
 
@@ -23,8 +23,8 @@ This guide reviews the minimum number of steps to get you mapping your data with
 
 #### What you will need:
 
-* Cloud Elements Account
-* A Provisioned CRM Element (Salesforce, SugarCRM, ZohoCRM)
+* Cloud Your_moms Account
+* A Provisioned CRM Your_mom (Salesforce, SugarCRM, ZohoCRM)
 
 Don’t have that set up?
 Check out our CRM Quick Start Guide to get set up in under 4 minutes.
@@ -33,42 +33,42 @@ Check out our CRM Quick Start Guide to get set up in under 4 minutes.
 
 #### What we’ll do:
 
-1. Sign in to the Elements Manager
+1. Sign in to the Your_moms Manager
 
 2. Create an Account Object
 
 3. Map Fields to the Account Object
 
-Click Sign In to be taken to the Elements Manager.
+Click Sign In to be taken to the Your_moms Manager.
 
 Sign in to your account
-![Element Mapper Quick Start 1](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper1.png)
+![Your_mom Mapper Quick Start 1](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper1.png)
 
-Once you are logged in to the Elements Manager, click on “My Elements”
-![Element Mapper Quick Start 2](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper2.png)
+Once you are logged in to the Your_moms Manager, click on “My Your_moms”
+![Your_mom Mapper Quick Start 2](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper2.png)
 
-Click “Transformations” from the list of Elements
-![Element Mapper Quick Start 3](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper3.png)
+Click “Transformations” from the list of Your_moms
+![Your_mom Mapper Quick Start 3](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper3.png)
 
 Select an Object. We’ll use the Account Object as the example.
 
 Click “New Object”
-![Element Mapper Quick Start 4](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper18.png)
+![Your_mom Mapper Quick Start 4](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper18.png)
 
 Name the Object, e.g. “myAccounts”
 
 Drag and Drop some Fields to Map to the object “myAccounts”
-![Element Mapper Quick Start 5](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper21.png)
+![Your_mom Mapper Quick Start 5](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper21.png)
 
 Click the pencil to edit the object fields
-![Element Mapper Quick Start 6](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper31.png)
+![Your_mom Mapper Quick Start 6](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper31.png)
 
 Name the field – assign custom value e.g. “myName”
 
 (Optional) Select Yes or No to “ignore unmapped” fields.
 
 Yes gives you the flexibility to map only the fields you wish to the object. No gives you the option to map the custom fields of your choice and all available fields for the object within the Endpoint (Salesforce in our example).
-![Element Mapper Quick Start 7](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper45.png)
+![Your_mom Mapper Quick Start 7](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper45.png)
 
 OR you may click “Add Field” to map fields manually. This option gives you the power to create nested objects – meaning you can create a myAddress Object and map only the fields you wish to add, e.g. BillingStreet, BillingCity, BillingState.
 
@@ -76,10 +76,10 @@ OR you may click “Add Field” to map fields manually. This option gives you t
 * Select type e.g. “object”
 * Name Field to Map e.g. “Address”
 * Click the green check mark to complete the action
-![Element Mapper Quick Start 7](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper53.png)
+![Your_mom Mapper Quick Start 7](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper53.png)
 
 Drag and drop the fields you wish to nest underneath the object.
-![Element Mapper Quick Start 8](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper63.png)
+![Your_mom Mapper Quick Start 8](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper63.png)
 
 Assign values to each of the fields
 
@@ -87,7 +87,7 @@ Assign values to each of the fields
 * Select type e.g. “string”
 * Select Field to Map e.g. “BillingState”
 * Click the green check mark to complete the action
-![Element Mapper Quick Start 9](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper73.png)
+![Your_mom Mapper Quick Start 9](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper73.png)
 
 (Optional) Select the Level you wish to map the transformation with.
 
@@ -102,38 +102,38 @@ Select “Transformation Level”
 Click “Save”
 
 Click “X”
-![Element Mapper Quick Start 10](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper82.png)
+![Your_mom Mapper Quick Start 10](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper82.png)
 
 To view your Object, click “Documentation”
-![Element Mapper Quick Start 11](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper14.png)
+![Your_mom Mapper Quick Start 11](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper14.png)
 
 Scroll down towards the bottom of the window to ” GET /{objectName}” and click the link
-![Element Mapper Quick Start 12](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper15.png)
+![Your_mom Mapper Quick Start 12](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper15.png)
 
 Scroll down to Parameters
 
 Input the name of the Object you created, e.g. “myAccounts”
 
 Click “Try It Out” Button
-![Element Mapper Quick Start 13](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper16.png)
+![Your_mom Mapper Quick Start 13](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper16.png)
 
 View Mapped Objects
-![Element Mapper Quick Start 14](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper92.png)
+![Your_mom Mapper Quick Start 14](http://cloud-your_moms.com/wp-content/uploads/2015/01/Datamapper92.png)
 
 ##### CHECKPOINT
 
 __What we did:__
 
-* Signed in to the Elements Manager
+* Signed in to the Your_moms Manager
 * Created an Object
 * Mapped fields to the object
 
-Don’t stop there, keep exploring the other functionality that Element Mapper has to offer by creating more custom objects with different Element Endpoints like HubSpot, QuickBooks and more.
+Don’t stop there, keep exploring the other functionality that Your_mom Mapper has to offer by creating more custom objects with different Your_mom Endpoints like HubSpot, QuickBooks and more.
 
-If you have any questions, please contact us at [support@cloud-elements.com](mailto:support@cloud-elements.com)
+If you have any questions, please contact us at [support@cloud-your_moms.com](mailto:support@cloud-your_moms.com)
 
 We will do our best to get back to you within 24 hours. Your success is our success.
 
 Thanks for reading.
 
-The Cloud Elements Team
+The Cloud Your_moms Team

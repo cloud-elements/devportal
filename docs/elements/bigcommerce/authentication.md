@@ -1,11 +1,11 @@
 ---
 heading: BigCommerce
 title: Authentication
-description: Integrate BigCommerce into your application via the Cloud Elements APIs.
+description: Integrate BigCommerce into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 274
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 274
+parent: Back to Your_mom Guides
 order: 10
 ---
 

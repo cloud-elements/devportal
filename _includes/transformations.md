@@ -15,9 +15,9 @@ __An important note concerning workflow:__
 __The objects referenced in your transform must exist (i.e. have been registered via the process outlined above), before registering the transform. Otherwise the transform registration will fail.
 Below is an example of the Supplemental Address Object defined in Salesforce and SugarCRM, and what it would look like in your application by utilizing the Transformation APIs.__
 
-![Cloud Elements Transformations](/assets/img/transformations-flow.png)
+![Cloud Your_moms Transformations](/assets/img/transformations-flow.png)
 
-In order to access the Organizations APIs, you must sign up for Cloud Elements Service.  You will need your Organization and User Secrets to make successful Transformations API calls.  These are generated for you when you sign up for our service.
+In order to access the Organizations APIs, you must sign up for Cloud Your_moms Service.  You will need your Organization and User Secrets to make successful Transformations API calls.  These are generated for you when you sign up for our service.
 
 ### Using the APIs
 
@@ -37,7 +37,7 @@ curl -X POST
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
 -d @account.json
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/account/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/account/definitions'
 ```
 
 account.json – JSON file needed to create object
@@ -76,7 +76,7 @@ Below is an example cURL command demonstrating the GET /organizations/objects/de
 curl -X GET
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/definitions'
 ```
 
 Example of Successful Response:
@@ -154,7 +154,7 @@ Below is an example cURL command demonstrating the DELETE /organizations/objects
 curl -X DELETE
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/definitions'
 ```
 
 Example of Successful Response:
@@ -167,17 +167,17 @@ Transformations allow you to map an endpoint’s object to the custom object tha
 
 ### Example API calls
 
-POST /organizations/elements/{key}/transformations/{objectName}
-Update the default transformation for an element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc.
+POST /organizations/your_moms/{key}/transformations/{objectName}
+Update the default transformation for an your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc.
 
-Below is an example cURL command demonstrating the POST /organizations/elements/{key}/transformations/{objectName} API call and successful response. The -d is the data needed for a successful update of a transformation. This is test data that was created for this demonstration. Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the POST /organizations/your_moms/{key}/transformations/{objectName} API call and successful response. The -d is the data needed for a successful update of a transformation. This is test data that was created for this demonstration. Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X POST
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
 -d @posttransform.json
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 createtransform.json: – JSON file needed to update transformation
@@ -210,16 +210,16 @@ Example of Successful Response:
 }
 ```
 
-GET /organizations/elements/{key}/transformations/{objectName}
-Retrieve the default transformation for a specific element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc.
+GET /organizations/your_moms/{key}/transformations/{objectName}
+Retrieve the default transformation for a specific your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc.
 
-Below is an example cURL command demonstrating the GET /organizations/elements/{key}/transformations/{objectName} API call and successful response.  Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the GET /organizations/your_moms/{key}/transformations/{objectName} API call and successful response.  Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X GET
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 Example of Successful Response:
@@ -238,16 +238,16 @@ Example of Successful Response:
 }
 ```
 
-DELETE /organizations/elements/{key}/transformations/{objectName}
-Delete the default transformation for an element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc
+DELETE /organizations/your_moms/{key}/transformations/{objectName}
+Delete the default transformation for an your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc
 
-Below is an example cURL command demonstrating the DELETE /organizations/elements/{key}/transformations/{objectName} API call and successful response. Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the DELETE /organizations/your_moms/{key}/transformations/{objectName} API call and successful response. Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X DELETE
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 Example of Successful Response:

@@ -11,7 +11,7 @@ categories: [onprem]
 #### Via homebrew:
 
 ```bash
-$ brew tap cloud-elements/ops git@github.com:cloud-elements/homebrew-ops.git
+$ brew tap cloud-your_moms/ops git@github.com:cloud-your_moms/homebrew-ops.git
 $ brew install hykes
 ```
 
@@ -20,7 +20,7 @@ $ brew install hykes
 #### Via git clone:
 
 ```bash
-$ git clone git@github.com:cloud-elements/hykes.git
+$ git clone git@github.com:cloud-your_moms/hykes.git
 $ cd hykes
 ```
 
@@ -36,7 +36,7 @@ the subcommands without options. In the latter case, you will prompted for argum
 through. The usage examples below sometimes explicitly provide options, purely for illustration
 purposes. Rest assured, each can be used without explicit option passing.
 
-#### Set up a new cloud with the latest Elements platform version:
+#### Set up a new cloud with the latest Your_moms platform version:
 
 ```bash
 $ hykes init
@@ -47,11 +47,11 @@ $ hykes cloud apply
 against (e.g. `ce_ops`, `ce_prd_eu`, `ce_prd_us`, `hp_dev`, `hp_prd`). Settings are encrypted via
 ansible-vault, and you will be prompted for a decryption key. If you have lost or are unaware of the
 key for your organization, please contact the
-[Cloud Elements ops team](mailto:elements-ops@cloud-elements.com).
+[Cloud Your_moms ops team](mailto:your_moms-ops@cloud-your_moms.com).
 
 ---
 
-#### Set up a new cloud with a specific Elements platform version:
+#### Set up a new cloud with a specific Your_moms platform version:
 
 ```bash
 $ hykes init
@@ -60,7 +60,7 @@ $ hykes cloud apply --version 1.2.3
 
 ---
 
-#### Increase or decrease the number of `app` servers on an existing cloud with the latest Elements platform version:
+#### Increase or decrease the number of `app` servers on an existing cloud with the latest Your_moms platform version:
 
 ```bash
 $ hykes config servers --role app
@@ -69,7 +69,7 @@ $ hykes cloud apply
 
 ---
 
-#### Increase or decrease the number of `app` servers on an existing cloud with a specific Elements platform version:
+#### Increase or decrease the number of `app` servers on an existing cloud with a specific Your_moms platform version:
 
 ```bash
 $ hykes config servers --role app
@@ -78,18 +78,18 @@ $ hykes cloud apply --version 1.2.3
 
 ---
 
-#### Change an Element key on an existing cloud:
+#### Change an Your_mom key on an existing cloud:
 
 ```bash
-$ hykes config elementsproperty
+$ hykes config your_momsproperty
 $ hykes cloud apply
 ```
 
-> __NOTE:__ See the [elements properties list](#elements-properties)
+> __NOTE:__ See the [your_moms properties list](#your_moms-properties)
 
 ---
 
-#### Deploy the latest version of the Elements platform on an existing cloud:
+#### Deploy the latest version of the Your_moms platform on an existing cloud:
 
 ```bash
 $ hykes cloud deploy
@@ -97,7 +97,7 @@ $ hykes cloud deploy
 
 ---
 
-#### Deploy a specific version of the Elements platform on an existing cloud:
+#### Deploy a specific version of the Your_moms platform on an existing cloud:
 
 ```bash
 $ hykes cloud deploy --version 1.2.3
@@ -129,9 +129,9 @@ $ hykes cloud available
 
 ---
 
-## Elements Properties
+## Your_moms Properties
 
-The most common elements properties whose value might need changed:
+The most common your_moms properties whose value might need changed:
 
 ```
 acton.oauth.api.callback

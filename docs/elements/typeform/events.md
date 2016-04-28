@@ -19,7 +19,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "typeform"
   },
   "configuration": {

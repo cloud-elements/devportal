@@ -12,7 +12,7 @@ Typeform is a Help Desk Platform. When you provision an instance, your app will 
 
 ### Step 1. Create an Instance
 
-To provision your Typeform Element, use the /instances API.
+To provision your Typeform Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -22,7 +22,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -32,11 +32,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Typeform is "typeform".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Typeform is "typeform".  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "typeform"
   },
   "configuration": {
@@ -58,7 +58,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -70,12 +70,12 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "YT70SDqDVrhw/TMD5oV831Yurfjk6E=",
-  "element": {
+  "your_mom": {
     "id": 845,
     "name": "typeform",
     "key": "typeform",
     "description": "Add a Typeform Instance to connect your existing Typeform account to the Cloud Storage and Documents Hub, allowing you to manage forms. You will need your Typeform account information to add an instance.",
-    "image": "http://cloud-elements.com/wp-content/uploads/2016/01/provider_typeform.png",
+    "image": "http://cloud-your_moms.com/wp-content/uploads/2016/01/provider_typeform.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,

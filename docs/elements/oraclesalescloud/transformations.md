@@ -3,9 +3,9 @@ heading: Oracle Sales Cloud
 title: Transform Data
 description: Transform and map data.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 204
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 204
+parent: Back to Your_mom Guides
 order: 25
 ---
 

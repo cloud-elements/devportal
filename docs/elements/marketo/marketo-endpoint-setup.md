@@ -3,9 +3,9 @@ heading: Marketo
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 85
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 85
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -21,31 +21,31 @@ These steps are also available on the Marketo Developer Site at: [http://develop
 A Custom Service in Marketo allows you to describe and define what data your application will have access to. You need to be logged in as a Marketo administrator to create a Custom Service and associate that service with a single API-Only user.
 
 Navigate to the admin area of the Marketo application
-![Marketo Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp1.png)
+![Marketo Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp1.png)
 
 Click on the Users & Roles node on the left panel.
-![Marketo Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp2.png)
+![Marketo Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp2.png)
 
 Create a new role
-![Marketo Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp3.png)
+![Marketo Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp3.png)
 
 Input Role Name and Assign Permissions.
-![Marketo Connected App step 3a](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp3a.png)
+![Marketo Connected App step 3a](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp3a.png)
 
 The next step is to create an API only user and associating it with the API role that you created in step 3. You can do so by checking the API-Only user checkbox at the time of user creation.
-![Marketo Connected App step 4](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp41.png)
+![Marketo Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp41.png)
 
 A Custom service is required to uniquely identify your client application. To create a custom application, go to the Admin->LaunchPoint screen and create a new service.
-![Marketo Connected App step 5](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp5.png)
+![Marketo Connected App step 5](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp5.png)
 
 Choose “Custom” service type, provide the display name, description and the user created in step 2.
-![Marketo Connected App step 7](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp7.png)
+![Marketo Connected App step 7](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp7.png)
 
 Click on “View Details” link on the grid to get the Client Id and Client Secret.
-![Marketo Connected App step 7a](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp7a.png)
+![Marketo Connected App step 7a](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp7a.png)
 
 In making a request to Marketo API, you will need to specify your Marketo instance in the endpoint URL. All request to Marketo REST API will follow the format below.
-![Marketo Connected App step 8](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp8.png)
+![Marketo Connected App step 8](http://cloud-your_moms.com/wp-content/uploads/2014/12/Marketowp8.png)
 
 ```bash
 REST API Endpoint URL->/rest/

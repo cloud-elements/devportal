@@ -3,9 +3,9 @@ heading: FreshBooks
 title: Register as a Consumer
 description: Register as a Consumer
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 172
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 172
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -19,13 +19,13 @@ Before we will approve your Consumer registration, we need your company name. En
 
 Login to your FreshBooks account via your FreshBooks subdomain.
 1. Click “My Account”
-![FreshBooks Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/07/FreshBooksAPI1.png)
+![FreshBooks Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2015/07/FreshBooksAPI1.png)
 
 2. Click “FreshBooks API”
-![FreshBooks Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/07/FreshBooksAPI2.png)
+![FreshBooks Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2015/07/FreshBooksAPI2.png)
 
 3. Copy the OAuth Secret.
-Remember FreshBooks requires a review of your account to enable OAuth Access.  Please ensure you have access prior to provisioning via the Cloud Elements API.
-![FreshBooks Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/07/FreshBooksAPI3.png)
+Remember FreshBooks requires a review of your account to enable OAuth Access.  Please ensure you have access prior to provisioning via the Cloud Your_moms API.
+![FreshBooks Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2015/07/FreshBooksAPI3.png)
 
 Next [create an instance](freshbooks-create-instance.html).

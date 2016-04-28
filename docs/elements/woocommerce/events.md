@@ -3,15 +3,15 @@ heading: WooCommerce
 title: Events
 description: Enable WooCommerce events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 127
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 127
+parent: Back to Your_mom Guides
 order: 25
 ---
 
 ## Events
 
-Cloud Elements supports polling events for WooCommerce.
+Cloud Your_moms supports polling events for WooCommerce.
 
 ### Polling
 
@@ -26,7 +26,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "woocommerce"
   },
   "configuration": {

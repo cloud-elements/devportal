@@ -1,11 +1,11 @@
 ---
 heading: Pardot
 title: Authentication
-description: Integrate Pardot into your application via the Cloud Elements APIs.
+description: Integrate Pardot into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 90
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 90
+parent: Back to Your_mom Guides
 order: 10
 ---
 

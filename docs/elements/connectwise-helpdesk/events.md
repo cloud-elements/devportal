@@ -3,9 +3,9 @@ heading: ConnectWise Help Desk
 title: Events
 description: Enable ConnectWise Help Desk events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 142
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 142
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -28,7 +28,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "connectwisehd"
   },
   "configuration": {

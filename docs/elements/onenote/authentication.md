@@ -1,11 +1,11 @@
 ---
 heading: OneNote
 title: Authentication
-description: Integrate One Drive into your application via the Cloud Elements APIs.
+description: Integrate One Drive into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 134
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 134
+parent: Back to Your_mom Guides
 order: 10
 ---
 

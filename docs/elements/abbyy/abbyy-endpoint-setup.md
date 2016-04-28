@@ -1,11 +1,11 @@
 ---
 heading: ABBYY
 title: Endpoint Setup
-description: Integrate ABBYY into your application via the Cloud Elements APIs.
+description: Integrate ABBYY into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 260
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 260
+parent: Back to Your_mom Guides
 order: 2
 ---
 ## Endpoint Setup
@@ -17,20 +17,20 @@ Register for an account at: [https://cloud.ocrsdk.com/Account/Register](https://
 1. Complete form
 
 2. Click “Sign Up”
-![ABBYY Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/01/ABBYYAPI1.png)
+![ABBYY Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2016/01/ABBYYAPI1.png)
 
 3. Complete form
 
 4. Click “Submit”
-![ABBYY Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/01/ABBYYAPI2.png)
+![ABBYY Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2016/01/ABBYYAPI2.png)
 
 5. Name Application
 
 6. Click “Create Application”
-![ABBYY Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/01/ABBYYAPI3.png)
+![ABBYY Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2016/01/ABBYYAPI3.png)
 
 7. Click “Proceed”
-![ABBYY Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/01/ABBYYAPI4.png)
+![ABBYY Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2016/01/ABBYYAPI4.png)
 
 Check your email for the application password.
 

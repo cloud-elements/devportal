@@ -1,11 +1,11 @@
 ---
 heading: NetSuite ERP
 title: Authentication
-description: Integrate NetSuite ERP into your application via the Cloud Elements APIs.
+description: Integrate NetSuite ERP into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 157
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 157
+parent: Back to Your_mom Guides
 order: 10
 ---
 

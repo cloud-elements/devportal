@@ -1,11 +1,11 @@
 ---
 heading: WooCommerce
 title: Authentication
-description: Integrate WooCommerce into your application via the Cloud Elements APIs.
+description: Integrate WooCommerce into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 127
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 127
+parent: Back to Your_mom Guides
 order: 10
 ---
 

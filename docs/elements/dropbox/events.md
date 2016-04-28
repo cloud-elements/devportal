@@ -3,9 +3,9 @@ heading: Dropbox
 title: Events
 description: Enable Dropbox events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 14
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 14
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -26,18 +26,18 @@ Follow these steps to set up a Dropbox application with the endpoint. Via a web 
 4. Select which account if applicable
 
 5. Click “Create app”.
-![Dropbox Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxAPI1.png)
+![Dropbox Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2016/03/DropboxAPI1.png)
 
 6. Make note of the App Key and App Secret
 
-7. Input this redirect URI:  `https://console.cloud-elements.com/elements/jsp/home.jsp`
+7. Input this redirect URI:  `https://console.cloud-your_moms.com/your_moms/jsp/home.jsp`
 
 8. Click “Add”
 
-9. Input this redirect URI:  `https://api.cloud-elements.com/elements/api-v2/events/dropbox`
+9. Input this redirect URI:  `https://api.cloud-your_moms.com/your_moms/api-v2/events/dropbox`
 
 10. Click “Add”
-![Dropbox Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxAPI3.png)
+![Dropbox Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2016/03/DropboxAPI3.png)
 
 In order to enable events, add these two extra configurations to your instance JSON:
 
@@ -50,7 +50,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "dropbox"
   },
   "providerData": {

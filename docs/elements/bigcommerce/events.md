@@ -3,15 +3,15 @@ heading: BigCommerce
 title: Events
 description: Enable BigCommerce events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 274
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 274
+parent: Back to Your_mom Guides
 order: 30
 ---
 
 ## Events
 
-Cloud Elements supports polling events for BigCommerce.
+Cloud Your_moms supports polling events for BigCommerce.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -24,7 +24,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element" : {
+  "your_mom" : {
     "key" : "bigcommerce"
   },
   "configuration" : {

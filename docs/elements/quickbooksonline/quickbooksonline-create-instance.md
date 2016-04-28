@@ -3,9 +3,9 @@ heading: QuickBooks Online
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 39
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 39
+parent: Back to Your_mom Guides
 order: 15
 ---
 
@@ -27,11 +27,11 @@ To summarize, development app tokens will work only for sandbox companies and pr
 
 For the complete article from Intuit, please [click here](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes).
 
-### Step 1. Get Elements OAuth Token
+### Step 1. Get Your_moms OAuth Token
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
+Request URL: /your_moms/{key}/oauth/token
 Request Body: None
 Query Parameters:
 
@@ -40,7 +40,7 @@ Query Parameters:
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /your_moms/{key}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -49,7 +49,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/quickbooks/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/quickbooks/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly'
 ```
 
 Response:
@@ -61,13 +61,13 @@ Response:
 }
 ```
 
-QuickBooks Online expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+QuickBooks Online expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /your_moms/{key}/oauth/url call which is shown below.
 
-### Step 2. Get Elements OAuth URL
+### Step 2. Get Your_moms OAuth URL
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -75,7 +75,7 @@ Query Parameters:
 * __apiKey–__ - the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
-* __requestToken__ - the token obtained from the GET /elements/{key}/oauth/token call (previous step).
+* __requestToken__ - the token obtained from the GET /your_moms/{key}/oauth/token call (previous step).
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
@@ -84,15 +84,15 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/quickbooks/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_fake_request_token&state=quickbooks'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/quickbooks/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_fake_request_token&state=quickbooks'
 ```
 
 Response:
 
 ```json
 {
-    "element": "quickbooks",
-    "oauthUrl": "https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdJHtIbwm3sGOoOCvXuv2Cs8fsQrZFjJWe4HEZAyb0&oauth_callback=http%3A%2F%2Fwww.cloud-elements.com%3Fstate%3Dquickbooks"
+    "your_mom": "quickbooks",
+    "oauthUrl": "https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdJHtIbwm3sGOoOCvXuv2Cs8fsQrZFjJWe4HEZAyb0&oauth_callback=http%3A%2F%2Fwww.cloud-your_moms.com%3Fstate%3Dquickbooks"
 }
 ```
 
@@ -114,7 +114,7 @@ __dataSource__
 
 These values will be used to create an Instance. An example of this process along with sample JSON will be shown in the next section.
 
-To provision your QuickBooks Online Element, use the /instances API.
+To provision your QuickBooks Online Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -124,7 +124,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -134,11 +134,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements QuickBooks Online is “quickbooks”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms QuickBooks Online is “quickbooks”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "quickbooks"
   },
   "providerData": {
@@ -169,7 +169,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -181,7 +181,7 @@ Below is a successful JSON response:
     "id": 1234,
     "name": "test",
     "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
-    "element": {
+    "your_mom": {
         "id": 1234,
         "name": "QuickBooks",
         "key": "quickbooks",

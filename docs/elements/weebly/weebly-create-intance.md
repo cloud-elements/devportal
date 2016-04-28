@@ -3,9 +3,9 @@ heading: Weebly
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 449
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 449
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,7 +13,7 @@ order: 20
 
 Weebly is a Help Desk Platform. When you provision an instance, your app will have access to the different functionality offered by the Weebly platform.
 
-There are steps to complete for Weebly prior to beginning the Cloud Elements OAuth Flow.  Information on [Completing the OAuth Flow](https://dev.weebly.com/authentication-using-oauth2.html) can be found on Weebly's site.  Below is an excerpt of that documentation.
+There are steps to complete for Weebly prior to beginning the Cloud Your_moms OAuth Flow.  Information on [Completing the OAuth Flow](https://dev.weebly.com/authentication-using-oauth2.html) can be found on Weebly's site.  Below is an excerpt of that documentation.
 
 ### Step 1 Completing the OAuth Flow (From Weebly Documentation)
 
@@ -100,7 +100,7 @@ Choose from the following scopes:
 
 ### Step 3. Create an Instance
 
-To provision your Weebly Element, use the /instances API.
+To provision your Weebly Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -110,7 +110,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -120,11 +120,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Weebly is "weebly".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Weebly is "weebly".  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "weebly"
   },
   "providerData": {
@@ -151,7 +151,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -163,11 +163,11 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "zg1dx35BCjiKo+pbTQS3dxcAKlfZcNVOWtI=",
-  "element": {
+  "your_mom": {
     "id": 41,
     "name": "Weebly",
     "key": "zendesk",
-    "description": "Add a Weebly Instance to connect your existing Weebly account to the eCommerce Hub, allowing you to manage orders and products across multiple eCommerce Elements. You will need your Weebly API information to add an instance.",
+    "description": "Add a Weebly Instance to connect your existing Weebly account to the eCommerce Hub, allowing you to manage orders and products across multiple eCommerce Your_moms. You will need your Weebly API information to add an instance.",
     "image": "http://blog.addthiscdn.com/wp-content/uploads/2015/11/weebly.png",
         "active": true,
         "deleted": false,

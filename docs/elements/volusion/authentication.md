@@ -1,11 +1,11 @@
 ---
 heading: Volusion
 title: Authentication
-description: Integrate Volusion into your application via the Cloud Elements APIs.
+description: Integrate Volusion into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 51
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 51
+parent: Back to Your_mom Guides
 order: 10
 ---
 

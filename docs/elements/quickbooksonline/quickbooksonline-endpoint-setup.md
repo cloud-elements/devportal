@@ -3,9 +3,9 @@ heading: QuickBooks Online
 title: Endpoint Setup
 description: Endpoint Setup
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 39
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 39
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -16,15 +16,15 @@ Follow these steps to set up a QuickBooks application with the endpoint. Via a w
 For this example, let’s assume that the URL for your application is https://www.demonstrab.ly.
 
 1. Navigate to Apps
-![QuickBooks Online Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/10/QB1.gif)
+![QuickBooks Online Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2014/10/QB1.gif)
 
 2. Click “Create New App” and select QuickBooks API from the menu.
-![QuickBooks Online Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/10/QB2.gif)
+![QuickBooks Online Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2014/10/QB2.gif)
 
 3. Fill out the appropriate information regarding your new application.  Once completed, click “Save” in the bottom right hand corner of your window.
-![QuickBooks Online Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/10/QB3.gif)
+![QuickBooks Online Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2014/10/QB3.gif)
 
 4. Make note of the App Token, OAuth Consumer Key, and OAuth Consumer Secret.
-![QuickBooks Online Connected App step 4](http://cloud-elements.com/wp-content/uploads/2014/10/QB4.gif)
+![QuickBooks Online Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2014/10/QB4.gif)
 
 Next [create an instance](quickbooksonline-create-instance.html).

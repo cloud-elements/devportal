@@ -11,27 +11,27 @@ order: 1
 
 ## Usage APIs
 
-The Usage API method calls allow you to track Element activity within your Cloud Elements Service Account. Services include retrieving logs, analytics, API calls, response times, and status calls. Stay on top of your Elements with the Usage APIs.
+The Usage API method calls allow you to track Your_mom activity within your Cloud Your_moms Service Account. Services include retrieving logs, analytics, API calls, response times, and status calls. Stay on top of your Your_moms with the Usage APIs.
 
-In order to access the Usage APIs, you must sign up for Cloud Elements Service. You will need your Organization and User Secrets to make success Usage API calls. These are generated for you when you sign up for our service. Details on how to sign up and where to find your Organization and User Secrets are documented in the next section.
+In order to access the Usage APIs, you must sign up for Cloud Your_moms Service. You will need your Organization and User Secrets to make success Usage API calls. These are generated for you when you sign up for our service. Details on how to sign up and where to find your Organization and User Secrets are documented in the next section.
 
 ### WHERE TO FIND THE USAGE APIS
 
-The Usage APIs can be accessed via the Cloud Elements Console at: [https://console.cloud-elements.com/elements/jsp/login.jsp](https://console.cloud-elements.com/elements/jsp/login.jsp). The console provides a Graphical User Interface (GUI) environment that formats data returned by each of the API calls into graphs. An example can be seen below. The Usage APIs can also be integrated right into you app.
+The Usage APIs can be accessed via the Cloud Your_moms Console at: [https://console.cloud-your_moms.com/your_moms/jsp/login.jsp](https://console.cloud-your_moms.com/your_moms/jsp/login.jsp). The console provides a Graphical User Interface (GUI) environment that formats data returned by each of the API calls into graphs. An example can be seen below. The Usage APIs can also be integrated right into you app.
 
 ### SIGN UP FOR THE CLOUD ELEMENTS SERVICE
 
-To sign up for the Cloud Elements service, using a web browser, go to [https://console.cloud-elements.com/elements/jsp/signup.jsp](https://console.cloud-elements.com/elements/jsp/signup.jsp).
+To sign up for the Cloud Your_moms service, using a web browser, go to [https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp](https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp).
 
-Sign up with Google, GitHub or fill out a short form to create a new account with Cloud Elements. If you choose not to use Google or GitHub to sign up, you will be asked to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
-![Cloud Elements Sign up 1](http://cloud-elements.com/wp-content/uploads/bfi_thumb/ConsoleSignup-m7cde2lpyjexfapmzvn0rpkw24op0jn7mwipj6q2zk.png)
+Sign up with Google, GitHub or fill out a short form to create a new account with Cloud Your_moms. If you choose not to use Google or GitHub to sign up, you will be asked to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
+![Cloud Your_moms Sign up 1](http://cloud-your_moms.com/wp-content/uploads/bfi_thumb/ConsoleSignup-m7cde2lpyjexfapmzvn0rpkw24op0jn7mwipj6q2zk.png)
 
 1. After completing this process, click “Secrets” in the top right corner of your dashboard as shown.
 
-2. Copy your User and Organization Secrets. They are needed to create a connection or “Element Instance”.
+2. Copy your User and Organization Secrets. They are needed to create a connection or “Your_mom Instance”.
 
 NOTE: If you ever need to reset your Secrets, this action can be done by clicking on “My Settings” which will take you to your profile.
-![Cloud Elements Sign up 2](http://cloud-elements.com/wp-content/uploads/bfi_thumb/ConsoleSignup22-m7ch2y2e2fak6ad3rqmz7knmq5beuc61n2yurd6md4.png)
+![Cloud Your_moms Sign up 2](http://cloud-your_moms.com/wp-content/uploads/bfi_thumb/ConsoleSignup22-m7ch2y2e2fak6ad3rqmz7knmq5beuc61n2yurd6md4.png)
 
 ### How to Use the Usage APIs
 
@@ -46,7 +46,7 @@ Below is an example cURL command demonstrating the `GET /usage API` call and suc
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
-'https://api.cloud-elements.com/elements/api-v2/usage'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage'
 ```
 
 Input Definitions:
@@ -56,7 +56,7 @@ Input Definitions:
 	The name of the hub. eg documents, messaging,crm. This is an optional input.
 
 	keys[]	      optional
-	A list of element keys. eg, keys[]=dropbox&keys[]=googledrive&keys[]=box
+	A list of your_mom keys. eg, keys[]=dropbox&keys[]=googledrive&keys[]=box
 
 	tags[]		optional
 	A list of tags. eg, tags[]=development&tags[]=qa
@@ -90,33 +90,33 @@ Example of Successful Response:
 		{
 			"id": "53e6df56e4b067fd19a9d69f",
 			"requestStatus": "SUCCESS",
-			"elementName": "GitHub OAuth",
-			"elementKey": "githuboauth",
+			"your_momName": "GitHub OAuth",
+			"your_momKey": "githuboauth",
 			"accountId": 1,
 			"instanceName": "production 2",
 			"usageDate": "2014-08-10T03:02:34.053+00:00",
 			"userId": 1,
 			"processTime": 992,
-			"requestURI": "/elements/api-v1/oauth/1/authenticate",
+			"requestURI": "/your_moms/api-v1/oauth/1/authenticate",
 			"requestIP": "172.31.28.13",
-			"elementTags": "production",
-			"elementApi": "authenticate",
+			"your_momTags": "production",
+			"your_momApi": "authenticate",
 			"companyId": 1
 		},
 		{
 			"id": "53e6e0c8e4b067fd19a9d6ab",
 			"requestStatus": "SUCCESS",
-			"elementName": "GitHub OAuth",
-			"elementKey": "githuboauth",
+			"your_momName": "GitHub OAuth",
+			"your_momKey": "githuboauth",
 			"accountId": 1,
 			"instanceName": "production 2",
 			"usageDate": "2014-08-10T03:02:32.412+00:00",
 			"userId": 1,
 			"processTime": 317,
-			"requestURI": "/elements/api-v1/oauth/getRequestToken",
+			"requestURI": "/your_moms/api-v1/oauth/getRequestToken",
 			"requestIP": "172.31.28.13",
-			"elementTags": "production",
-			"elementApi": "getRequestToken",
+			"your_momTags": "production",
+			"your_momApi": "getRequestToken",
 			"companyId": 1
 		}
 ]
@@ -124,7 +124,7 @@ Example of Successful Response:
 
 `GET /usage/analytics/activity`
 
-Retrieve the number of element API calls within a given date/time range.
+Retrieve the number of your_mom API calls within a given date/time range.
 
 Below is an example cURL command demonstrating the `GET /usage/analytics/activity` API call and successful response. Please make sure your quotes are straight in the cURL command.
 
@@ -133,7 +133,7 @@ curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type:application/json'
 -H 'Cache-Control:no-cache'
-'https://api.cloud-elements.com/elements/api-v2/usage/analytics/activity?from=2014-03-01T00:00:00Z&to=2014-04-01T00:00:00Z&interval=day'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage/analytics/activity?from=2014-03-01T00:00:00Z&to=2014-04-01T00:00:00Z&interval=day'
 ```
 
 Input Definitions
@@ -196,18 +196,18 @@ Example of Successful Response – example has been truncated.
     …
 ]
 ```
-`GET /usage/analytics/activity/elements`
+`GET /usage/analytics/activity/your_moms`
 
-Retrieve the number of element API calls for each element within a given date/time range.
+Retrieve the number of your_mom API calls for each your_mom within a given date/time range.
 
-Below is an example cURL command demonstrating the `GET /usage/analytics/activity/elements` API call and successful response. Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the `GET /usage/analytics/activity/your_moms` API call and successful response. Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type:application/json'
 -H 'Cache-Control:no-cache'
-'https://api.cloud-elements.com/elements/api-v2/usage/analytics/activity/elements?from=2014-03-01T00:00:00Z&to=2014-04-01T00:00:00Z&interval=month'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage/analytics/activity/your_moms?from=2014-03-01T00:00:00Z&to=2014-04-01T00:00:00Z&interval=month'
 ```
 
 Input Definitions:
@@ -243,7 +243,7 @@ Example Successful Response:
 
 `GET /usage/analytics/times`
 
-Retrieve the response times of element API calls within a given date/time range.
+Retrieve the response times of your_mom API calls within a given date/time range.
 
 Below is an example cURL command demonstrating the `GET /usage/analytics/times` API call and successful response. Please make sure your quotes are straight in the cURL command.
 
@@ -252,7 +252,7 @@ curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type:application/json'
 -H 'Cache-Control:no-cache'
-'https://api.cloud-elements.com/elements/api-v2/usage/analytics/times?from=2014-07-01T00:00:00Z&to=2014-08-01T00:00:00Z&interval=day'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage/analytics/times?from=2014-07-01T00:00:00Z&to=2014-08-01T00:00:00Z&interval=day'
 ```
 
 Input Definitions
@@ -324,7 +324,7 @@ Example of Successful Response:  Response has been truncated.
 
 `GET /usage/analytics/statuses`
 
-Retrieve the number of successes and failures of element API calls within a given date/time range.
+Retrieve the number of successes and failures of your_mom API calls within a given date/time range.
 
 Below is an example cURL command demonstrating the `GET /usage/analytics/statuses` API call and successful response. Please make sure your quotes are straight in the cURL command.
 
@@ -333,7 +333,7 @@ curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type:application/json'
 -H 'Cache-Control:no-cache'
-'https://api.cloud-elements.com/elements/api-v2/usage/analytics/statuses?from=2014-08-01T00:00:00Z&to=2014-08-27T00:00:00Z&interval=day'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage/analytics/statuses?from=2014-08-01T00:00:00Z&to=2014-08-27T00:00:00Z&interval=day'
 ```
 
 Input Definitions:
@@ -404,7 +404,7 @@ curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type:application/json'
 -H 'Cache-Control:no-cache'
-'https://api.cloud-elements.com/elements/api-v2/usage/id%20of%20log'
+'https://api.cloud-your_moms.com/your_moms/api-v2/usage/id%20of%20log'
 ```
 
 Input Definitions:
@@ -419,19 +419,19 @@ Example of Successful Response:
 {
 			"id": "53e6e0c8e4b067fd19a9d6ab",
 			"requestStatus": "SUCCESS",
-			"elementName": "GitHub OAuth",
-			"elementKey": "githuboauth",
+			"your_momName": "GitHub OAuth",
+			"your_momKey": "githuboauth",
 			"accountId": 1,
 			"instanceName": "production 2",
 			"usageDate": "2014-08-10T03:02:32.412+00:00",
 			"userId": 1,
 			"processTime": 317,
-			"requestURI": "/elements/api-v1/oauth/getRequestToken",
+			"requestURI": "/your_moms/api-v1/oauth/getRequestToken",
 			"requestIP": "172.31.28.13",
-			"elementTags": "production",
-			"elementApi": "getRequestToken",
+			"your_momTags": "production",
+			"your_momApi": "getRequestToken",
 			"companyId": 1
 }
 ```
 
-If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-elements.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
+If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-your_moms.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.

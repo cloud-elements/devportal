@@ -1,11 +1,11 @@
 ---
 heading: Magento
 title: Authentication
-description: Integrate Magento into your application via the Cloud Elements APIs.
+description: Integrate Magento into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 356
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 356
+parent: Back to Your_mom Guides
 order: 10
 ---
 

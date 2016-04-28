@@ -1,11 +1,11 @@
 ---
 heading: Flickr
 title: Authentication
-description: Integrate Flickr into your application via the Cloud Elements APIs.
+description: Integrate Flickr into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 251
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 251
+parent: Back to Your_mom Guides
 order: 10
 ---
 

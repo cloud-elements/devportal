@@ -1,11 +1,11 @@
 ---
 heading: Infusionsoft eCommerce
 title: Authentication
-description: Integrate Infusionsoft eCommerce into your application via the Cloud Elements APIs.
+description: Integrate Infusionsoft eCommerce into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 321
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 321
+parent: Back to Your_mom Guides
 order: 10
 ---
 

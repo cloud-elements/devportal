@@ -3,9 +3,9 @@ heading: Zoho CRM
 title: Events
 description: Enable Zoho CRM events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 44
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 44
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -24,7 +24,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "zohocrm"
   },
   "configuration": {

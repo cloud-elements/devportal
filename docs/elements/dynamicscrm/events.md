@@ -3,9 +3,9 @@ heading: Microsoft Dynamics CRM
 title: Events
 description: Enable Microsoft Dynamics CRM events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 190
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 190
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -24,7 +24,7 @@ instance JSON with polling events enabled:
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "dynamicscrmadfs"
   },
   "configuration": {

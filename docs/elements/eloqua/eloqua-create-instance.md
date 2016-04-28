@@ -3,9 +3,9 @@ heading: Eloqua
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 27
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 27
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -15,11 +15,11 @@ Eloqua is a Customer Success Platform. When you provision an instance, your app 
 
 Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Eloqua Documents. Below are examples of each method.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -34,24 +34,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/eloqua/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
+'https://api.cloud-your_moms.com/your_moms/api-v2/eloqua/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
 ```
 
 Response:
 
 ```json
 {
-  "element": "eloqua",
+  "your_mom": "eloqua",
   "oauthUrl": "https://login.eloqua.com/auth/oauth2/authorize?response_type=code&client_id=fake_client_id&redirect_uri=https://www.demonstrab.ly&state=eloqua"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “eloqua” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “eloqua” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Eloqua Element, use the /instances API.
+To provision your Eloqua Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -61,7 +61,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -71,11 +71,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Eloqua is “eloqua”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Eloqua is “eloqua”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "eloqua"
   },
   "providerData": {
@@ -102,7 +102,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -114,12 +114,12 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "ZogyTW2xTqD7pQWO/E5hLd0=",
-  "element": {
+  "your_mom": {
     "id": 1234,
     "name": "Eloqua",
     "key": "eloqua",
-    "description": " The Eloqua Element transforms the way you integrate sales and marketing data with your applications, by allowing you to integrate a leading Marketing Automation service in a fraction of the time, with a fraction of the code. Your marketing campaigns, leads and contacts can now be all in one place, integrated seamlessly into your application.",
-    "image": "elements/provider_eloqua.png",
+    "description": " The Eloqua Your_mom transforms the way you integrate sales and marketing data with your applications, by allowing you to integrate a leading Marketing Automation service in a fraction of the time, with a fraction of the code. Your marketing campaigns, leads and contacts can now be all in one place, integrated seamlessly into your application.",
+    "image": "your_moms/provider_eloqua.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,

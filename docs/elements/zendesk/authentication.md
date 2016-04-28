@@ -1,11 +1,11 @@
 ---
 heading: Zendesk
 title: Authentication
-description: Integrate Zendesk into your application via the Cloud Elements APIs.
+description: Integrate Zendesk into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 41
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 41
+parent: Back to Your_mom Guides
 order: 10
 ---
 

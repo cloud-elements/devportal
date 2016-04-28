@@ -3,9 +3,9 @@ heading: ShareFile
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 450
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 450
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,11 +13,11 @@ order: 20
 
 ShareFile is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the ShareFile platform.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -34,7 +34,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/shareFile/oauth/url?apiKey=shareFile_unique_identifier&apiSecret=shareFile_client_secret&siteAddress=your_shareFile_sbudomain&callbackUrl=http://www.my_cool_app.com/auth&state=shareFile'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/shareFile/oauth/url?apiKey=shareFile_unique_identifier&apiSecret=shareFile_client_secret&siteAddress=your_shareFile_sbudomain&callbackUrl=http://www.my_cool_app.com/auth&state=shareFile'
 ```
 
 Response:
@@ -42,16 +42,16 @@ Response:
 ```json
 {
   "oauthUrl": "https://secure.sharefile.com/oauth/authorize?client_id=insert_sharefile_client_id&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=sharefile",
-  "element": "sharefile"
+  "your_mom": "sharefile"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sharefile” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sharefile” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your ShareFile Element, use the /instances API.
+To provision your ShareFile Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -61,7 +61,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -71,11 +71,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements ShareFile is “sharefile”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms ShareFile is “sharefile”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "shareFile"
   },
   "providerData": {
@@ -103,7 +103,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -115,11 +115,11 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "zg1dx35BCjiKo+pbTQS3dxcAKlfZcNVOWtI=",
-  "element": {
+  "your_mom": {
     "id": 450,
     "name": "Sharefile",
     "key": "sharefile",
-    "description": "Sharefile Element",
+    "description": "Sharefile Your_mom",
     "image": "https://lh6.googleusercontent.com/--zcBqgYsBHE/AAAAAAAAAAI/AAAAAAAAAks/ICvceS9qZ-I/s0-c-k-no-ns/photo.jpg",
     "active": true,
     "deleted": false,
@@ -153,7 +153,7 @@ Below is a successful JSON response:
     "event.notification.callback.url": null,
     "event.notification.signature.key": null,
     "oauth.user.refresh_token": "ydDkYnjaxBiywa8jYBub2UQikA7SqlnD$$t5A4a5oU7FYJeZwa4V7LZzrl82AmdG9xmH8",
-    "sharefile.subdomain": "cloudelements",
+    "sharefile.subdomain": "cloudyour_moms",
     "event.poller.urls": "documents|/hubs/documents/events/poll/documents?where=lastmodifieddate='${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
     "sharefile.auth.url": "https://secure.sharefile.com/oauth/index.aspx",
     "oauth.api.key": "SHAREFILE_API_KEY",

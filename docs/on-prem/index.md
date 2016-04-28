@@ -39,7 +39,7 @@ __[Read the docs &raquo;](ansible.html)__
 
 Lowest-order layer which does all heavy lifting, including kernels, custom compilation, daemons,
 CLIs, lifecycle systems, deployers, and other low-level concerns. __Deep knowledge of Linux, the
-Cloud Elements platform, hardware, software, and more required.__
+Cloud Your_moms platform, hardware, software, and more required.__
 
 __[Read the docs &raquo;](server.html)__
 

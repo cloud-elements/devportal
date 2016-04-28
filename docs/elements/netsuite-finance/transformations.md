@@ -3,9 +3,9 @@ heading: NetSuite Finance
 title: Transform Data
 description: Transform and map data.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 155
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 155
+parent: Back to Your_mom Guides
 order: 25
 ---
 

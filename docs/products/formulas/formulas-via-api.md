@@ -13,11 +13,11 @@ order: 5
 ## Create Formula via API
 
 #### Overview
-The Cloud Elements Formulas define a set of actions that will take place based on an event happening. Formulas can be utilized to automate a process that involves steps across multiple systems or to keep those systems synchronized like CRM, Ticketing, and Marketing Systems. For example, when a contact is created in Salesforce, the same contact is also created in HubSpot, Marketo, Eloqua, etc. Another example would be when an opportunity is won, an email would be sent notifying the team.
+The Cloud Your_moms Formulas define a set of actions that will take place based on an event happening. Formulas can be utilized to automate a process that involves steps across multiple systems or to keep those systems synchronized like CRM, Ticketing, and Marketing Systems. For example, when a contact is created in Salesforce, the same contact is also created in HubSpot, Marketo, Eloqua, etc. Another example would be when an opportunity is won, an email would be sent notifying the team.
 
 A formula template is created, then a formula can be instantiated from that template. Once a formula template is created, multiple formulas can be instantiated from this template. An instantiated formula connects your desired services via your specific authenticated credentials.
 
-A formula requires an Element Instance be created to the endpoints or services you wish to connect. For this documentation, Salesforce and SendGrid will be used to show an example formula. It is important that Element Instances are created first as the Instance IDs for each Element are needed to instantiate a formula. This documentation will walk through the steps of creating a formula and provide example code.
+A formula requires an Your_mom Instance be created to the endpoints or services you wish to connect. For this documentation, Salesforce and SendGrid will be used to show an example formula. It is important that Your_mom Instances are created first as the Instance IDs for each Your_mom are needed to instantiate a formula. This documentation will walk through the steps of creating a formula and provide example code.
 
 ##### Formula Templates
 
@@ -37,15 +37,15 @@ Name your formula and give it a description. You may want to describe the flow o
 There are two types of triggers:
 
 * Event: polling and webhook type of events
-* Request: Cloud Elements Hub API call like POST /contacts
+* Request: Cloud Your_moms Hub API call like POST /contacts
 
-Both types of triggers must be tied to a specific Element Instance. Cloud Elements currently supports multiple triggers for one formula.
+Both types of triggers must be tied to a specific Your_mom Instance. Cloud Your_moms currently supports multiple triggers for one formula.
 
 ###### STEPS
 
 There are four types of steps:
 
-* `elementRequest`: Cloud Elements Hub API call like POST /contacts
+* `your_momRequest`: Cloud Your_moms Hub API call like POST /contacts
   * able to specify parts of request, method, body, API
 * `filter`: returns only a boolean (true or false)
   * customizable JavaScript
@@ -61,7 +61,7 @@ All types of steps can have an `onSuccess` or `onFailure` result. An `onSuccess`
 
 ###### CONFIGURATION
 
-Configuration values are represented as variables in the Formula Template. These values are defined when the Formula Instance is created via a JSON payload. This gives you the flexibility to implement multiple instances of the same formula template. For example, multiple customers can use the same Formula Template with different Element Instances.
+Configuration values are represented as variables in the Formula Template. These values are defined when the Formula Instance is created via a JSON payload. This gives you the flexibility to implement multiple instances of the same formula template. For example, multiple customers can use the same Formula Template with different Your_mom Instances.
 
 Field names can also be used as configuration values, allowing for customization according to the implementation.
 
@@ -74,17 +74,17 @@ The following steps are in sequential order to demonstrate the creation of a for
 
 #### Connect Your Services
 
-A formula requires an Element Instance to be created to the endpoints or services you wish to connect. For this documentation, Salesforce and SendGrid will be used to show an example formula.
+A formula requires an Your_mom Instance to be created to the endpoints or services you wish to connect. For this documentation, Salesforce and SendGrid will be used to show an example formula.
 
 __Formula Scenario__: when a contact is created in Salesforce, an email will be sent notifying a team member of the origination.
 
-An Element Instance must be created for both of these endpoints prior to creating a formula. __Events must be enabled for Salesforce__ as well.
+An Your_mom Instance must be created for both of these endpoints prior to creating a formula. __Events must be enabled for Salesforce__ as well.
 
-The Instance IDs for each Element are needed to create the formula instance.
+The Instance IDs for each Your_mom are needed to create the formula instance.
 
-##### Retrieve Element Instance ID
+##### Retrieve Your_mom Instance ID
 
-A Salesforce Element Instance with Events enabled will be created first. If you are not familiar with the Salesforce provisioning process, please see the [Salesforce Events](/docs/elements/salesforce/salesforce-events.html) and the [Create Instance](/docs/elements/salesforce/salesforce-create-instance.html) documentation.
+A Salesforce Your_mom Instance with Events enabled will be created first. If you are not familiar with the Salesforce provisioning process, please see the [Salesforce Events](/docs/your_moms/salesforce/salesforce-events.html) and the [Create Instance](/docs/your_moms/salesforce/salesforce-create-instance.html) documentation.
 
 Below is the example cURL command and response. The Instance ID is located in the JSON body with the key of ‘id’.
 
@@ -92,18 +92,18 @@ Below is the example cURL command and response. The Instance ID is located in th
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
 
 Below is a successful JSON response:
 
-![Retrieve Instance ID](http://cloud-elements.com/wp-content/uploads/2015/09/SFDCInstanceId.png)
+![Retrieve Instance ID](http://cloud-your_moms.com/wp-content/uploads/2015/09/SFDCInstanceId.png)
 
 Make note of the Instance ID and verify that events are enabled in the response body.
 
-A SendGrid Element Instance will be created next. If you are not familiar with the SendGrid provisioning process, please see the [SendGrid Create Instance](/docs/elements/sendgrid/sendgrid-create-instance.html) documentation.
+A SendGrid Your_mom Instance will be created next. If you are not familiar with the SendGrid provisioning process, please see the [SendGrid Create Instance](/docs/your_moms/sendgrid/sendgrid-create-instance.html) documentation.
 
 Below is the example cURL command and response. The Instance ID is located in the JSON body with the key of ‘id’.
 
@@ -111,14 +111,14 @@ Below is the example cURL command and response. The Instance ID is located in th
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
 
 Below is a successful JSON response:
 
-![Retrieve Instance ID](http://cloud-elements.com/wp-content/uploads/2015/09/SendGridInstanceId.png)
+![Retrieve Instance ID](http://cloud-your_moms.com/wp-content/uploads/2015/09/SendGridInstanceId.png)
 
 #### Example Formula Template
 
@@ -141,7 +141,7 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
         {
             "type": "event",
             "properties": {
-                "elementInstanceId": "${sfdc.instance.id}"  //$ indicates a variable
+                "your_momInstanceId": "${sfdc.instance.id}"  //$ indicates a variable
             },
             "onSuccess": [
                 "1-contact-filter-step"
@@ -178,12 +178,12 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
         },
         {
             "name": "3-get-contact",
-            "type": "elementRequest",
+            "type": "your_momRequest",
             "onSuccess": [
                 "4-build-email-json"
             ],
             "properties": {
-                "elementInstanceId": "${sfdc.instance.id}",
+                "your_momInstanceId": "${sfdc.instance.id}",
                 "method": "GET",
                 "api": "/hubs/crm/contacts/{objectId}",
                 "path": "${trigger.event}"
@@ -196,15 +196,15 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
                 "5-send-email"
             ],
             "properties": {
-                "body": "return {'body': {'subject': 'Contact ' + trigger.event.eventType, 'message': 'Contact ' + steps['3-get-contact'].response.body.FirstName + ' ' + steps['3-get-contact'].response.body.LastName + ' has been ' + trigger.event.eventType + '.', 'to': 'greg@cloud-elements.com', 'from': 'greg@cloud-elements.com'}}",
+                "body": "return {'body': {'subject': 'Contact ' + trigger.event.eventType, 'message': 'Contact ' + steps['3-get-contact'].response.body.FirstName + ' ' + steps['3-get-contact'].response.body.LastName + ' has been ' + trigger.event.eventType + '.', 'to': 'greg@cloud-your_moms.com', 'from': 'greg@cloud-your_moms.com'}}",
                 "mimeType": "application/javascript"
             }
         },
         {
             "name": "5-send-email",
-            "type": "elementRequest",
+            "type": "your_momRequest",
             "properties": {
-                "elementInstanceId": "${sendgrid.instance.id}",
+                "your_momInstanceId": "${sendgrid.instance.id}",
                 "method": "POST",
                 "api": "/hubs/messaging/messages/",
                 "body": "${steps.4-build-email-json.body}"
@@ -214,14 +214,14 @@ Below is an example Formula Template formatted as a JSON payload. Each of the pa
     "configuration": [
         {
             "name": "sfdcInstance",
-            "description": "The SFDC CRM element instance",
-            "type": "elementInstance",
+            "description": "The SFDC CRM your_mom instance",
+            "type": "your_momInstance",
             "key": "sfdc.instance.id"
         },
         {
             "name": "sendgridInstance",
-            "description": "The Sendgrid messaging element instance",
-            "type": "elementInstance",
+            "description": "The Sendgrid messaging your_mom instance",
+            "type": "your_momInstance",
             "key": "sendgrid.instance.id"
         }
     ]
@@ -241,7 +241,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @formula-template.json
-'https://api.cloud-elements.com/elements/api-v2/formulas'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas'
 ```
 
 Example of Successful Response:
@@ -294,7 +294,7 @@ Example of Successful Response:
       "type": "script",
       "properties": {
         "mimeType": "application/javascript",
-        "body": "return {'body': {'subject': 'Contact ' + trigger.body.message.events[0].eventType, 'message': 'Contact ' + trigger.body.message.raw.objects[0].FirstName + ' ' + trigger.body.message.raw.objects[0].LastName + ' has been ' + trigger.body.message.events[0].eventType + '.', 'to': 'greg@cloud-elements.com', 'from': 'claude@cloud-elements.com'}}"
+        "body": "return {'body': {'subject': 'Contact ' + trigger.body.message.events[0].eventType, 'message': 'Contact ' + trigger.body.message.raw.objects[0].FirstName + ' ' + trigger.body.message.raw.objects[0].LastName + ' has been ' + trigger.body.message.events[0].eventType + '.', 'to': 'greg@cloud-your_moms.com', 'from': 'claude@cloud-your_moms.com'}}"
       }
     },
     {
@@ -303,11 +303,11 @@ Example of Successful Response:
       "id": 720,
       "name": "4-send-email",
       "formulaId": 154,
-      "type": "elementRequest",
+      "type": "your_momRequest",
       "properties": {
         "body": "${steps.3-build-email-json.body}",
         "method": "POST",
-        "elementInstanceId": "${sendgrid.instance.id}",
+        "your_momInstanceId": "${sendgrid.instance.id}",
         "api": "/hubs/messaging/messages/"
       }
     }
@@ -323,7 +323,7 @@ Example of Successful Response:
       ],
       "onFailure": [],
       "properties": {
-        "elementInstanceId": "${sfdc.instance.id}"
+        "your_momInstanceId": "${sfdc.instance.id}"
       }
     }
   ],
@@ -333,15 +333,15 @@ Example of Successful Response:
       "id": 123,
       "key": "sfdc.instance.id",
       "name": "sfdcInstance",
-      "type": "elementInstance",
-      "description": "The SFDC CRM element instance"
+      "type": "your_momInstance",
+      "description": "The SFDC CRM your_mom instance"
     },
     {
       "id": 345,
       "key": "sendgrid.instance.id",
       "name": "sendgridInstance",
-      "type": "elementInstance",
-      "description": "The Sendgrid messaging element instance"
+      "type": "your_momInstance",
+      "description": "The Sendgrid messaging your_mom instance"
     }
   ]
 }
@@ -349,11 +349,11 @@ Example of Successful Response:
 
 The Formula Template ID is needed to create an instance. Please make note of the Formula Template ID. In our example, 189 is the ID found on line 2 of the response.
 
-The next step is to instantiate the Formula. The Formula Template ID and Element Instance IDs are needed.
+The next step is to instantiate the Formula. The Formula Template ID and Your_mom Instance IDs are needed.
 
 #### Create Formula Instance
 
-Once the Formula Template has been created, an instance of that Formula can now be created. __The Salesforce and SendGrid Element Instance IDs are needed in the JSON payload configuration to associate this Formula with those two Elements. The Formula Template ID is needed in the request URL as a parameter.__
+Once the Formula Template has been created, an instance of that Formula can now be created. __The Salesforce and SendGrid Your_mom Instance IDs are needed in the JSON payload configuration to associate this Formula with those two Your_moms. The Formula Template ID is needed in the request URL as a parameter.__
 
 Below is the instance-formula JSON needed to create a Formula Instance:
 
@@ -379,7 +379,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance-formula.json
-'https://api.cloud-elements.com/elements/formulas/189/instances'
+'https://api.cloud-your_moms.com/your_moms/formulas/189/instances'
 ```
 Example of Successful Response:
 
@@ -409,7 +409,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @contact.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/crm/contacts'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/crm/contacts'
 ```
 Contact JSON needed to create the contact. Include in your request.
 
@@ -436,15 +436,15 @@ Example of Successful Response:
 Or create a new contact in the Salesforce UI.
 
 Log in to Salesforce and click create a new contact.
-![Salesforce Create Contact 1](http://cloud-elements.com/wp-content/uploads/2015/09/SFDCCreateContact.png)
+![Salesforce Create Contact 1](http://cloud-your_moms.com/wp-content/uploads/2015/09/SFDCCreateContact.png)
 
 Input the contact information and click save
-![Salesforce Create Contact 2](http://cloud-elements.com/wp-content/uploads/2015/09/SFDCSaveContact.png)
+![Salesforce Create Contact 2](http://cloud-your_moms.com/wp-content/uploads/2015/09/SFDCSaveContact.png)
 
 A new message will be sent notifying team member that contact has been created.
-![Salesforce Create Contact 3](http://cloud-elements.com/wp-content/uploads/2015/09/SendGridSentMessage1.png)
+![Salesforce Create Contact 3](http://cloud-your_moms.com/wp-content/uploads/2015/09/SendGridSentMessage1.png)
 
 View our full Formula API Documentation on our website under Platform APIs > Formulas or log in to the API Manager Console and navigate to the documentation.  Viewing the APIs in the console will populate your User and Organization secrets right in the documentation.
-![Formula API Docs](http://cloud-elements.com/wp-content/uploads/2015/09/FormulasConsole.png)
+![Formula API Docs](http://cloud-your_moms.com/wp-content/uploads/2015/09/FormulasConsole.png)
 
-If you have questions or concerns, please do not hesitate to contact [Cloud Elements Support](mailto:support@cloud-elements.com).
+If you have questions or concerns, please do not hesitate to contact [Cloud Your_moms Support](mailto:support@cloud-your_moms.com).

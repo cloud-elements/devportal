@@ -3,9 +3,9 @@ heading: Google Drive
 title: FAQ
 description: Frequently asked questions and notes on conventions.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 21
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 21
+parent: Back to Your_mom Guides
 order: 50
 ---
 

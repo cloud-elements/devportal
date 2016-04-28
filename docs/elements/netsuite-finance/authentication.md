@@ -1,11 +1,11 @@
 ---
 heading: NetSuite Finance
 title: Authentication
-description: Integrate NetSuite Finance into your application via the Cloud Elements APIs.
+description: Integrate NetSuite Finance into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 155
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 155
+parent: Back to Your_mom Guides
 order: 10
 ---
 

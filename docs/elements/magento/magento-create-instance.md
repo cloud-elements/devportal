@@ -3,9 +3,9 @@ heading: Magento
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 356
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 356
+parent: Back to Your_mom Guides
 order: 15
 ---
 
@@ -13,11 +13,11 @@ order: 15
 
 Magento is a Finance Platform. When you provision an instance, your app will have access to the different functionality offered by the Magento platform.
 
-### Step 1. Get Elements OAuth Token
+### Step 1. Get Your_moms OAuth Token
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
+Request URL: /your_moms/{key}/oauth/token
 Request Body: None
 Query Parameters:
 
@@ -27,7 +27,7 @@ Query Parameters:
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
 * __siteAddress__ - your Magento Store URL e.g. mycompany.magento.com
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /your_moms/{key}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -36,7 +36,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/magento/oauth/token?apiKey=INSERT_MAGENTO_API_KEY4&apiSecret=INSERT_MAGENTO_API_SECRET&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com/auth&siteAddress=https%3A%2F%2Fwww.mycoolapp.com'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/magento/oauth/token?apiKey=INSERT_MAGENTO_API_KEY4&apiSecret=INSERT_MAGENTO_API_SECRET&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com/auth&siteAddress=https%3A%2F%2Fwww.mycoolapp.com'
 ```
 
 Response:
@@ -48,13 +48,13 @@ Response:
 }
 ```
 
-Magento expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+Magento expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /your_moms/{key}/oauth/url call which is shown below.
 
-### Step 2. Get Elements OAuth URL
+### Step 2. Get Your_moms OAuth URL
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -63,7 +63,7 @@ Query Parameters:
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
 * __siteAddress__ - your Magento Store URL e.g. mycompany.magento.com
-* __requestToken__ - the token obtained from the GET /elements/{key}/oauth/token call (previous step).
+* __requestToken__ - the token obtained from the GET /your_moms/{key}/oauth/token call (previous step).
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
@@ -72,15 +72,15 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/magento/oauth/url?apiKey=INSERT_MAGENTO_API_KEY&apiSecret=INSERT_MAGENTO_API_SECRET&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com/auth&requestToken=INSERT_REQUEST_TOKEN&siteAddress=https%3A%2F%2Fwww.mycoolapp.com'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/magento/oauth/url?apiKey=INSERT_MAGENTO_API_KEY&apiSecret=INSERT_MAGENTO_API_SECRET&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com/auth&requestToken=INSERT_REQUEST_TOKEN&siteAddress=https%3A%2F%2Fwww.mycoolapp.com'
 ```
 
 Response:
 
 ```json
 {
-  "oauthUrl": "https://www.mycoolapp.com/admin/oauth_authorize?oauth_token=dc323a3fe83a4f23ecb7976d&oauth_callback=https%3A%2F%2Fwww.cloud-elements.com%3Fstate%3Dmagento",
-  "element": "magento"
+  "oauthUrl": "https://www.mycoolapp.com/admin/oauth_authorize?oauth_token=dc323a3fe83a4f23ecb7976d&oauth_callback=https%3A%2F%2Fwww.cloud-your_moms.com%3Fstate%3Dmagento",
+  "your_mom": "magento"
 }
 ```
 
@@ -99,7 +99,7 @@ __secret__
 
 `http://mycoolapp.com/auth?state=magento&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&secret=12345674687464354`
 
-To provision your Magento Element, use the /instances API.
+To provision your Magento Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -109,7 +109,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -119,11 +119,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Magento is "magento".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Magento is "magento".  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "magento"
   },
   "providerData": {
@@ -153,7 +153,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -165,7 +165,7 @@ Below is a successful JSON response:
   "id": 123,
   "name": "Test",
   "token": "Ck9PmTdQ4WLe221gRtM0VAp2+trCYHBsEtA=",
-  "element": {
+  "your_mom": {
     "id": 356,
     "name": "Magento",
     "key": "magento",

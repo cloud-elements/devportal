@@ -1,11 +1,11 @@
 ---
 heading: Twilio SMS
 title: Authentication
-description: Integrate Twilio SMS into your application via the Cloud Elements APIs.
+description: Integrate Twilio SMS into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 7
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 7
+parent: Back to Your_mom Guides
 order: 10
 ---
 

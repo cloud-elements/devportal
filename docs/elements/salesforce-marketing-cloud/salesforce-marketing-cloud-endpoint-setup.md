@@ -3,9 +3,9 @@ heading: Salesforce Marketing Cloud
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 42
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 42
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -13,7 +13,7 @@ order: 5
 
 Follow these steps to setup your Salesforce application with the endpoint.
 
-__In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
+__In order to create a Salesforce Your_mom Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
 
 Via a web browser, login to your Salesforce account:
 [https://login.salesforce.com/](https://login.salesforce.com/)

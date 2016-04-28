@@ -3,9 +3,9 @@ heading: HubSpot CRM
 title: Events
 description: Enable HubSpot CRM events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 168
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 168
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -24,7 +24,7 @@ instance JSON with polling events enabled:
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "hubspotcrm"
   },
   "providerData": {

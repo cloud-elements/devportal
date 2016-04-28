@@ -12,7 +12,7 @@ A composition of the `common`, `java`, and `tomcat` services.
 
 ### `eltappctl` CLI
 
-Provides a simplified way of interacting with the elements application tier.
+Provides a simplified way of interacting with the your_moms application tier.
 
 __Usage:__
 
@@ -39,8 +39,8 @@ $ eltappctl restart
 
 ### `eltappdpl` CLI
 
-Provides a simplified way of updating the elements application tier with new releases of the
-elements platform.
+Provides a simplified way of updating the your_moms application tier with new releases of the
+your_moms platform.
 
 __Usage:__
 
@@ -51,7 +51,7 @@ $ eltappdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltappdpl pull latest
 $ eltappdpl pull 1.2.3
@@ -59,7 +59,7 @@ $ eltappdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltappdpl checkout latest
 $ eltappdpl checkout 1.2.3
@@ -82,7 +82,7 @@ A composition of the `common`, `memcached`, and `redis` services.
 
 ### `eltcshctl` CLI
 
-Provides a simplified way of interacting with the elements cache tier.
+Provides a simplified way of interacting with the your_moms cache tier.
 
 __Usage:__
 
@@ -109,7 +109,7 @@ $ eltcshctl restart
 
 ### `eltcshdpl` CLI
 
-Provides a simplified way of updating the elements cache tier with new releases of the elements
+Provides a simplified way of updating the your_moms cache tier with new releases of the your_moms
 platform.
 
 __Usage:__
@@ -121,7 +121,7 @@ $ eltcshdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltcshdpl pull latest
 $ eltcshdpl pull 1.2.3
@@ -129,7 +129,7 @@ $ eltcshdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltcshdpl checkout latest
 $ eltcshdpl checkout 1.2.3
@@ -146,7 +146,7 @@ directly which allows more robust version availability.
 
 ### `eltdbctl` CLI
 
-Provides a simplified way of interacting with the elements database tier.
+Provides a simplified way of interacting with the your_moms database tier.
 
 __Usage:__
 
@@ -173,7 +173,7 @@ $ eltdbctl restart
 
 ### `eltdbdpl` CLI
 
-Provides a simplified way of updating the elements database tier with new releases of the elements
+Provides a simplified way of updating the your_moms database tier with new releases of the your_moms
 platform.
 
 __Usage:__
@@ -185,7 +185,7 @@ $ eltdbdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltdbdpl pull latest
 $ eltdbdpl pull 1.2.3
@@ -193,7 +193,7 @@ $ eltdbdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltdbdpl checkout latest
 $ eltdbdpl checkout 1.2.3
@@ -203,14 +203,14 @@ $ eltdbdpl checkout 1.2.3
 
 _Deploy, based upon the current checkout context:_
 ```bash
-$ eltdbdpl deploy <elements_password> <cesecurity_password>
+$ eltdbdpl deploy <your_moms_password> <cesecurity_password>
 ```
 
 ---
 
 _Migrate, based upon the current checkout context:_
 ```bash
-$ eltdbdpl migrate <elements_password> <cesecurity_password> <master_encryption_password> <backup_encryption_password>
+$ eltdbdpl migrate <your_moms_password> <cesecurity_password> <master_encryption_password> <backup_encryption_password>
 ```
 
 ---
@@ -229,9 +229,9 @@ $ eltdbdpl migratecesecuritypass <cesecurity_password> <master_encryption_passwo
 
 ---
 
-_Obtain migration elements encrypted password, based upon the current checkout context:_
+_Obtain migration your_moms encrypted password, based upon the current checkout context:_
 ```bash
-$ eltdbdpl migrateelementspass <elements_password> <cesecurity_password> <master_encryption_password>
+$ eltdbdpl migrateyour_momspass <your_moms_password> <cesecurity_password> <master_encryption_password>
 ```
 
 ---
@@ -244,7 +244,7 @@ A composition of the `common` and `kafka` services.
 
 ### `elteibctl` CLI
 
-Provides a simplified way of interacting with the elements EIB tier.
+Provides a simplified way of interacting with the your_moms EIB tier.
 
 __Usage:__
 
@@ -271,7 +271,7 @@ $ elteibctl restart
 
 ### `elteibdpl` CLI
 
-Provides a simplified way of updating the elements EIB tier with new releases of the elements
+Provides a simplified way of updating the your_moms EIB tier with new releases of the your_moms
 platform.
 
 __Usage:__
@@ -283,7 +283,7 @@ $ elteibdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ elteibdpl pull latest
 $ elteibdpl pull 1.2.3
@@ -291,7 +291,7 @@ $ elteibdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ elteibdpl checkout latest
 $ elteibdpl checkout 1.2.3
@@ -307,8 +307,8 @@ A composition of the `common` and `nginx` services.
 
 ### `eltlbdpl` CLI
 
-Provides a simplified way of updating the elements load balancing tier with new releases of the
-elements platform.
+Provides a simplified way of updating the your_moms load balancing tier with new releases of the
+your_moms platform.
 
 __Usage:__
 
@@ -319,7 +319,7 @@ $ eltlbdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltlbdpl pull latest
 $ eltlbdpl pull 1.2.3
@@ -327,7 +327,7 @@ $ eltlbdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltlbdpl checkout latest
 $ eltlbdpl checkout 1.2.3
@@ -337,7 +337,7 @@ $ eltlbdpl checkout 1.2.3
 
 ### `eltlbctl` CLI
 
-Provides a simplified way of interacting with the elements load balancing tier.
+Provides a simplified way of interacting with the your_moms load balancing tier.
 
 __Usage:__
 
@@ -378,7 +378,7 @@ $ eltlbctl available
 
 ### `eltlbmon` CLI
 
-Provides a simplified way of monitoring the elements load balancing tier.
+Provides a simplified way of monitoring the your_moms load balancing tier.
 
 __Usage:__
 
@@ -453,7 +453,7 @@ A composition of the `common`, `java`, and `logstash` services.
 
 ### `eltlpictl` CLI
 
-Provides a simplified way of interacting with the elements log pipe tier.
+Provides a simplified way of interacting with the your_moms log pipe tier.
 
 __Usage:__
 
@@ -487,7 +487,7 @@ $ eltlpictl status
 
 ### `eltlpidpl` CLI
 
-Provides a simplified way of updating the elements log pipe tier with new releases of the elements
+Provides a simplified way of updating the your_moms log pipe tier with new releases of the your_moms
 platform.
 
 __Usage:__
@@ -499,7 +499,7 @@ $ eltlpidpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltlpidpl pull latest
 $ eltlpidpl pull 1.2.3
@@ -507,7 +507,7 @@ $ eltlpidpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltlpidpl checkout latest
 $ eltlpidpl checkout 1.2.3
@@ -523,7 +523,7 @@ A composition of the `common`, `java`, and `elasticsearch` services.
 
 ### `eltlsrctl` CLI
 
-Provides a simplified way of interacting with the elements log search tier.
+Provides a simplified way of interacting with the your_moms log search tier.
 
 __Usage:__
 
@@ -557,7 +557,7 @@ $ eltlsrctl status
 
 ### `eltlsrdpl` CLI
 
-Provides a simplified way of updating the elements log search tier with new releases of the elements
+Provides a simplified way of updating the your_moms log search tier with new releases of the your_moms
 platform.
 
 __Usage:__
@@ -569,7 +569,7 @@ $ eltlsrdpl init
 
 ---
 
-_Pull elements bundle via deployer:_
+_Pull your_moms bundle via deployer:_
 ```bash
 $ eltlsrdpl pull latest
 $ eltlsrdpl pull 1.2.3
@@ -577,7 +577,7 @@ $ eltlsrdpl pull 1.2.3
 
 ---
 
-_Checkout elements bundle via deployer:_
+_Checkout your_moms bundle via deployer:_
 ```bash
 $ eltlsrdpl checkout latest
 $ eltlsrdpl checkout 1.2.3

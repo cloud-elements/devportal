@@ -1,11 +1,11 @@
 ---
 heading: Sharepoint 2013
 title: Error Codes
-description: Cloud Elements Error Codes.
+description: Cloud Your_moms Error Codes.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 30
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 30
+parent: Back to Your_mom Guides
 order: 40
 ---
 

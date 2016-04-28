@@ -3,9 +3,9 @@ heading: FreshBooks
 title: FAQ
 description: FreshBooks FAQ.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 172
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 172
+parent: Back to Your_mom Guides
 order: 17
 ---
 
@@ -13,7 +13,7 @@ order: 17
 
 FRESHBOOKS RESPONSE PAYLOAD FAQ
 
-FreshBooks response payloads are by default formatted in XML.  Cloud Elements transforms the response payloads from XML to JSON in each of the API calls.
+FreshBooks response payloads are by default formatted in XML.  Cloud Your_moms transforms the response payloads from XML to JSON in each of the API calls.
 
 Due to this transformation, the ‘@’ and ‘$’ symbols will be seen in the JSON response payloads.  Fields prefixed with the ‘@’ are interpreted as attributes and the ‘$’ field represents text content.  Let’s take a look at an example.
 
@@ -53,4 +53,4 @@ The transformed XML would look like this:
 </customer>
 ```
 
-If you have any questions regarding the response payloads, please don’t hesitate to email us at [support@cloud-elements.com.](mailto:support@cloud-elements.com.)
+If you have any questions regarding the response payloads, please don’t hesitate to email us at [support@cloud-your_moms.com.](mailto:support@cloud-your_moms.com.)

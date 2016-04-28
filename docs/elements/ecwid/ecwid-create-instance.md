@@ -3,15 +3,15 @@ heading: Ecwid
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 52
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 52
+parent: Back to Your_mom Guides
 order: 15
 ---
 
 ## Create Instance
 
-To provision your Ecwid Element, use the /instances API.
+To provision your Ecwid Your_mom, use the /instances API.
 
 ### Step 1. Call the /instances API
 
@@ -24,7 +24,7 @@ To provision your Ecwid Element, use the /instances API.
 In order to create an Ecwid instance, you will need the Store ID, Order API Key, and Product API Key. For instructions on how to retrieve those credentials, please see our Ecwid Endpoint Setup.
 NOTE: Ecwid currently supports the the GET, PUT/PATCH, DELETE API calls. POST is not available at this time.
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -34,11 +34,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Ecwid is “ecwid”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Ecwid is “ecwid”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "ecwid"
   },
   "configuration": {
@@ -59,7 +59,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -71,12 +71,12 @@ Below is a successful JSON response:
   "id": 12345,
   "name": "test",
   "token": "dsPr6AheLIS8pt7rp8E81bSKEkx9Ftr+9Y",
-  "element": {
+  "your_mom": {
     "id": 42,
     "name": "Ecwid",
     "key": "ecwid",
     "description": "Ecwid is everything you need to sell anywhere.",
-    "image": "elements/provider_ecwid.png",
+    "image": "your_moms/provider_ecwid.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,

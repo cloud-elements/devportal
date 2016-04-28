@@ -1,11 +1,11 @@
 ---
 heading: Weebly
 title: Authentication
-description: Integrate Weebly into your application via the Cloud Elements APIs.
+description: Integrate Weebly into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 449
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 449
+parent: Back to Your_mom Guides
 order: 10
 ---
 

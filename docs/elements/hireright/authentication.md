@@ -1,11 +1,11 @@
 ---
 heading: HireRight
 title: Authentication
-description: Integrate HireRight into your application via the Cloud Elements APIs.
+description: Integrate HireRight into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 277
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 277
+parent: Back to Your_mom Guides
 order: 10
 ---
 
