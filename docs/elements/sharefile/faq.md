@@ -3,9 +3,9 @@ heading: ShareFile
 title: FAQ
 description: ShareFile FAQ.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 450
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 450
+parent: Back to Your_mom Guides
 order: 50
 ---
 

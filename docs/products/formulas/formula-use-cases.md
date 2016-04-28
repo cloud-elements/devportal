@@ -14,19 +14,19 @@ order: 15
 
 This section will demonstrate some common Formula use cases. The first use case that will be discussed is when a contact is created in the CRM system e.g Salesforce, SugarCRM, etc., the same contact is created in the Marketing System e.g. HubSpot, MailJet, etc.
 
-In this example, a contact will be created in Salesforce, then created in HubSpot via a Formula. This example will also show how to create a custom contact that will take custom values out of Salesforce and map them to create the new contact in HubSpot using Cloud Elements Transformations Service. This document will show screen shots with step by step directions on how to create the custom contact, map the appropriate fields for that contact,and create a Formula defining the steps needed to create a contact from a CRM System in a Marketing System.
+In this example, a contact will be created in Salesforce, then created in HubSpot via a Formula. This example will also show how to create a custom contact that will take custom values out of Salesforce and map them to create the new contact in HubSpot using Cloud Your_moms Transformations Service. This document will show screen shots with step by step directions on how to create the custom contact, map the appropriate fields for that contact,and create a Formula defining the steps needed to create a contact from a CRM System in a Marketing System.
 
-NOTE: This page assumes you have an Element Instance created for Salesforce and HubSpot and have the Salesforce Element set up to receive events. The Salesforce and HubSpot Instance IDs are needed to instantiate a Formula. Directions on this process can be found in the [Connect Services](formulas-via-api.html) section of the Formula User Guide.
+NOTE: This page assumes you have an Your_mom Instance created for Salesforce and HubSpot and have the Salesforce Your_mom set up to receive events. The Salesforce and HubSpot Instance IDs are needed to instantiate a Formula. Directions on this process can be found in the [Connect Services](formulas-via-api.html) section of the Formula User Guide.
 
 #### Create Custom Contact
 
-Log in to the Cloud Elements API Manager Console.
+Log in to the Cloud Your_moms API Manager Console.
 
 Select ‘My Objects’ and click ‘Add/Edit Object’.
-![Create Custom Contact 1](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact1.png)
+![Create Custom Contact 1](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact1.png)
 
 Click ‘New’
-![Create Custom Contact 2](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact2.png)
+![Create Custom Contact 2](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact2.png)
 
 Name the object. For this demonstration, we will name the object formulaContact.
 
@@ -41,15 +41,15 @@ Select data type – for this demonstration all types will be set to ‘string�
 Click ‘Green Checkmark’.
 
 Click ‘Save’ and close the window by clicking ‘X’ in top right corner.
-![Create Custom Contact 3](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact31.png)
+![Create Custom Contact 3](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact31.png)
 
 Select ‘My Instances’.
 
-Navigate to your HubSpot Element Instance. Click ‘Transformations’.
-![Create Custom Contact 4](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact4.png)
+Navigate to your HubSpot Your_mom Instance. Click ‘Transformations’.
+![Create Custom Contact 4](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact4.png)
 
 Select the custom object created, for this example, ‘formulaContact’.
-![Create Custom Contact 5](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact51.png)
+![Create Custom Contact 5](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact51.png)
 
 Select ‘contacts’ from list of objects.
 
@@ -58,7 +58,7 @@ Select ‘Yes’ under ‘IGNORE UNMAPPED’.
 Drag and drop the fields from the HubSpot contact to the formulaContact. This will map those values from the formulaContact to the new Contact that will be created in HubSpot. These values will be pulled from the values entered in Salesforce. For this example, FirstName, LastName, Email, and Phone will be mapped from Salesforce to HubSpot to create the new contact.
 
 Click ‘Save’.
-![Create Custom Contact 6](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact61.png)
+![Create Custom Contact 6](http://cloud-your_moms.com/wp-content/uploads/2015/09/CreateCustomContact61.png)
 
 #### Create The Formula Template
 
@@ -82,7 +82,7 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
     {
       "type": "event",
       "properties": {
-        "elementInstanceId": "${sfdc.instance.id}"
+        "your_momInstanceId": "${sfdc.instance.id}"
       },
       "onSuccess": [
         "1-contact-filter-step"
@@ -119,12 +119,12 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
     },
     {
       "name": "3-get-formulaContact", //Going to make a request from Salesforce for the contact that was just created
-      "type": "elementRequest",  //Type is elementRequest because I need to make an API call
+      "type": "your_momRequest",  //Type is your_momRequest because I need to make an API call
       "onSuccess": [
         "4-create-formulaContact-hubspot"
       ],
       "properties": {
-        "elementInstanceId": "${sfdc.instance.id}",
+        "your_momInstanceId": "${sfdc.instance.id}",
         "path": "${trigger.body.message.events[0]}",  //Path is the response body of previous step
         "mimeType": "application/javascript",
         "method": "GET",
@@ -133,9 +133,9 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
     },
     {
       "name": "4-create-formulaContact-hubspot",  //Creating the Contact in HubSpot
-      "type": "elementRequest",
+      "type": "your_momRequest",
       "properties": {
-        "elementInstanceId": "${hubspot.instance.id}",  //Need HubSpot ID here in form of variable
+        "your_momInstanceId": "${hubspot.instance.id}",  //Need HubSpot ID here in form of variable
         "mimeType": "application/javascript",
         "method": "POST",
         "api": "/hubs/marketing/formulaContact",  //Referencing the formulaContact Object created in the 'My Objects' feature of the API Manager Console
@@ -151,14 +151,14 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
   "configuration": [
     {
       "name": "sfdcInstance",
-      "description": "The SFDC CRM element instance",
-      "type": "elementInstance",
+      "description": "The SFDC CRM your_mom instance",
+      "type": "your_momInstance",
       "key": "sfdc.instance.id"  //Leave this value as is, the actual instance id will be inputted when the formula is instantiated
     },
     {
       "name": "hubspotInstance",
-      "description": "The HubSpot marketing element instance",
-      "type": "elementInstance",
+      "description": "The HubSpot marketing your_mom instance",
+      "type": "your_momInstance",
       "key": "hubspot.instance.id"
     }
   ]
@@ -169,7 +169,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @formula-template.json
-'https://api.cloud-elements.com/elements/api-v2/formulas'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas'
 Example of Successful Response:
 
 {
@@ -216,11 +216,11 @@ Example of Successful Response:
         "id": 723,
         "name": "3-get-formulaContact",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "mimeType": "application/javascript",
           "method": "GET",
-          "elementInstanceId": "${sfdc.instance.id}",
+          "your_momInstanceId": "${sfdc.instance.id}",
           "api": "/hubs/crm/contacts/{objectId}",
           "path": "${trigger.body.message.events[0]}"
         }
@@ -231,12 +231,12 @@ Example of Successful Response:
         "id": 724,
         "name": "4-create-formulaContact-hubspot",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "mimeType": "application/javascript",
           "body": "${3-get-formulaContact.response.body}",
           "method": "POST",
-          "elementInstanceId": "${hubspot.instance.id}",
+          "your_momInstanceId": "${hubspot.instance.id}",
           "api": "/hubs/marketing/formulaContact"
         }
       }
@@ -252,7 +252,7 @@ Example of Successful Response:
         ],
         "onFailure": [],
         "properties": {
-          "elementInstanceId": "${sfdc.instance.id}"
+          "your_momInstanceId": "${sfdc.instance.id}"
         }
       }
     ],
@@ -263,15 +263,15 @@ Example of Successful Response:
         "id": 123,
         "key": "sfdc.instance.id",
         "name": "sfdcInstance",
-        "type": "elementInstance",
-        "description": "The SFDC CRM element instance"
+        "type": "your_momInstance",
+        "description": "The SFDC CRM your_mom instance"
       },
       {
         "id": 345,
         "key": "hubspot.instance.id",
         "name": "hubspotInstance",
-        "type": "elementInstance",
-        "description": "The HubSpot marketing element instance"
+        "type": "your_momInstance",
+        "description": "The HubSpot marketing your_mom instance"
       }
     ]
   }
@@ -282,7 +282,7 @@ The Formula Template ID is needed to create an instance. Please make note of the
 
 #### Create Formula Instance
 
-Once the Formula Template has been created, an instance of that Formula can now be created. The Salesforce and HubSpot Element Instance IDs are needed in the JSON payload configuration to associate this Formula with those two Elements.
+Once the Formula Template has been created, an instance of that Formula can now be created. The Salesforce and HubSpot Your_mom Instance IDs are needed in the JSON payload configuration to associate this Formula with those two Your_moms.
 
 Below is the instance-formula JSON needed to create a Formula Instance:
 
@@ -309,7 +309,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance-formula.json
-'https://api.cloud-elements.com/elements/formulas/190/instances'
+'https://api.cloud-your_moms.com/your_moms/formulas/190/instances'
 ```
 Example of Successful Response:
 
@@ -338,7 +338,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @contact.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/crm/contacts'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/crm/contacts'
 ```
 
 Contact JSON needed to create the contact. Include in your request.
@@ -366,4 +366,4 @@ Example of Successful Response:
 
 Log in to HubSpot and view your newly created contact.
 
-More example use cases will be coming soon.  What would you like to see next?  [Contact us](mailto:support@cloud-elements.com) with your example use case.
+More example use cases will be coming soon.  What would you like to see next?  [Contact us](mailto:support@cloud-your_moms.com) with your example use case.

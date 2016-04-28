@@ -3,9 +3,9 @@ heading: Adobe eSign
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 426
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 426
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,11 +13,11 @@ order: 20
 
 Adobe eSign is an eSignature Platform. When you provision an instance, your app will have access to the different functionality offered by the Adobe eSign platform.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -32,7 +32,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'http://api.cloud-elements/elements/api-v2/elements/adobe-esignsocial/oauth/url?apiKey=insert_adobe-esign_app_id&apiSecret=insert_adobe-esign_app_secret&callbackUrl=www.mycoolapp.com/auth&scope=public_profile'
+'http://api.cloud-your_moms/your_moms/api-v2/your_moms/adobe-esignsocial/oauth/url?apiKey=insert_adobe-esign_app_id&apiSecret=insert_adobe-esign_app_secret&callbackUrl=www.mycoolapp.com/auth&scope=public_profile'
 ```
 
 Response:
@@ -40,17 +40,17 @@ Response:
 ```javascript
 {
   "oauthUrl": "https://secure.na1.echosign.com/public/oauth?scope=agreement_read%3Aaccount+agreement_send%3Aaccount+agreement_write%3Aaccount+library_read%3Aaccount+library_write%3Aaccount+user_login%3Aaccount+user_read%3Aaccount+user_write%3Aaccount+widget_read%3Aaccount+widget_write%3Aaccount+workflow_read%3Aaccount+workflow_write%3Aaccount&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=adobe_esign&client_id=adobe-esign_client_id",
-  "element": "adobe-esign"
+  "your_mom": "adobe-esign"
 }
 
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "adobe-esign" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "adobe-esign" in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Adobe eSign Element, use the /instances API.
+To provision your Adobe eSign Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -60,7 +60,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -70,11 +70,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Adobe eSign is "adobe-esign".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Adobe eSign is "adobe-esign".  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "adobe-esign"
   },
   "providerData": {
@@ -102,7 +102,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -114,12 +114,12 @@ Below is a successful JSON response:
   "id": 123,
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
-  "element": {
+  "your_mom": {
     "id": 22,
     "name": "Adobe eSign",
     "key": "adobe-esign",
     "description": "The future of business is digital. Adobe Esign helps businesses of all sizes easily and securely sign, send, and manage documents in the cloud, with unmatched availability and legal enforceability.",
-    "image": "elements/provider_adobeesign.png",
+    "image": "your_moms/provider_adobeesign.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,

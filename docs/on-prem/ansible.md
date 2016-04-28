@@ -11,7 +11,7 @@ categories: [onprem]
 #### Via git clone:
 
 ```bash
-$ git clone git@github.com:cloud-elements/hykes.git
+$ git clone git@github.com:cloud-your_moms/hykes.git
 $ cd hykes/src
 ```
 
@@ -47,7 +47,7 @@ such as `cli`.
 
 ## Inventories
 
-For ease of use, both for Cloud Elements and on-premise clouds, each organization, environment, and
+For ease of use, both for Cloud Your_moms and on-premise clouds, each organization, environment, and
 location combination is handled by a distinct inventory file (e.g. `ce_prd_us`, `ce_prd_eu`,
 `ce_stg`, `hp_prd`, `hp_stg`).
 
@@ -61,7 +61,7 @@ location combination is handled by a distinct inventory file (e.g. `ce_prd_us`, 
 
 #### Naming/grouping convention expressed simply:
 
-1. Two character code which represents organization (e.g. Cloud Elements=ce, Hewlett Packard=hp)
+1. Two character code which represents organization (e.g. Cloud Your_moms=ce, Hewlett Packard=hp)
 2. Append an underscore and a three character code which represents the environment (e.g.
 production=prd, staging=stg, development=dev, operations=ops)
 3. If an organization runs two or more of the same environment, append an underscore and location
@@ -72,17 +72,17 @@ code (e.g. us, eu, uswest, useast)
 Playbooks are broken into two groups, _core_ and _utility_. Core playbooks are the traditional
 playbooks you find in any Ansible setup; they provide a means to configure hosts based upon the
 selected inventory. Utility playbooks are ad-hoc in nature, providing functionality to do one-off
-tasks such as deploying new versions of the elements platform, changing the cloud's availability,
+tasks such as deploying new versions of the your_moms platform, changing the cloud's availability,
 and performing OS-level patching.
 
-#### Set up a new cloud with the latest Elements platform version:
+#### Set up a new cloud with the latest Your_moms platform version:
 ```bash
 $ ansible-playbook -i inventory site.yml
 ```
 
 ---
 
-#### Set up a new cloud with a specific Elements platform version:
+#### Set up a new cloud with a specific Your_moms platform version:
 
 ```bash
 $ ansible-playbook -i inventory site.yml --extra-vars='version=1.2.3'
@@ -140,7 +140,7 @@ $ ansible-playbook -i inventory database.yml --tags postgresql --extra-vars='lim
 
 ---
 
-#### Deploy the latest version of the Elements platform on an existing cloud:
+#### Deploy the latest version of the Your_moms platform on an existing cloud:
 
 ```bash
 $ ansible-playbook -i inventory util_deploy.yml
@@ -148,7 +148,7 @@ $ ansible-playbook -i inventory util_deploy.yml
 
 ---
 
-#### Deploy a specific version of the Elements platform on an existing cloud:
+#### Deploy a specific version of the Your_moms platform on an existing cloud:
 
 ```bash
 $ ansible-playbook -i inventory util_deploy.yml --extra-vars='version=1.2.3'

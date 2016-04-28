@@ -3,9 +3,9 @@ heading: NetSuite Human Capital
 title: Events
 description: Enable NetSuite Human Capital events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 141
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 141
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -26,7 +26,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "netsuitehc"
   },
   "configuration": {

@@ -3,9 +3,9 @@ heading: Marketo
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 85
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 85
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,11 +13,11 @@ order: 20
 
 Marketo is a Marketing Platform. When you provision an instance, your app will have access to the different functionality offered by the Marketo platform.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -32,24 +32,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api-v2/elements/marketo/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
+'https://api-v2/your_moms/marketo/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
 ```
 
 Response:
 
 ```json
 {
-  "element": "marketo",
+  "your_mom": "marketo",
   "oauthUrl": "https://www.mycoolapp.com/auth?state=marketo&code=7AB987CDDNC"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “marketo” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “marketo” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Marketo Element, use the /instances API.
+To provision your Marketo Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -59,7 +59,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -69,11 +69,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Marketo is “marketo”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Marketo is “marketo”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "marketo"
   },
   "providerData": {
@@ -102,7 +102,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -114,12 +114,12 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "VAnlQ/V28PT+M62kdajlsd90eHHtUJai+Efq8=",
-  "element": {
+  "your_mom": {
     "id": 1234,
     "name": "Marketo",
     "key": "marketo",
     "description": "Marketo Software's provides easy and powerful marketing automation software with everything a marketer needs: email, social, analytics, lead management, and more.",
-    "image": "elements/provider_marketo.png",
+    "image": "your_moms/provider_marketo.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,
@@ -127,7 +127,7 @@ Below is a successful JSON response:
     "existingAccountDescription": "Give your application access to your existing
  Marketo accountEnter yourn  credentials and details for your Marketo Account",
     "configDescription": "If you do not have a Marketo account, you can create one at Marketo  Signup",
-    "elementProvisionType": "OAUTH_TEMPLATE"
+    "your_momProvisionType": "OAUTH_TEMPLATE"
   },
   "provisionInteractions": [],
   "valid": true,

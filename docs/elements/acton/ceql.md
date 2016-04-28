@@ -1,11 +1,11 @@
 ---
 heading: Act-On
-title: Cloud Elements Query Language
-description: Make database queries using Cloud Elements Query Language.
+title: Cloud Your_moms Query Language
+description: Make database queries using Cloud Your_moms Query Language.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 45
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 45
+parent: Back to Your_mom Guides
 order: 45
 ---
 

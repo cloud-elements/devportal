@@ -3,9 +3,9 @@ heading: Etsy
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 128
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 128
+parent: Back to Your_mom Guides
 order: 15
 ---
 
@@ -13,11 +13,11 @@ order: 15
 
 Etsy is an eCommerce Platform. When you provision an instance, your app will have access to the different functionality offered by the Etsy platform.
 
-### Step 1. Get Elements OAuth Token
+### Step 1. Get Your_moms OAuth Token
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
+Request URL: /your_moms/{key}/oauth/token
 Request Body: None
 Query Parameters:
 
@@ -26,7 +26,7 @@ Query Parameters:
 * __apiSecret__ – SHARED SECRET
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /your_moms/{key}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -35,7 +35,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com:443/elements/api-v2/elements/etsy/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https%3A%2F%2Ffakecallbackurl.com%2Fauth'
+'https://api.cloud-your_moms.com:443/your_moms/api-v2/your_moms/etsy/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https%3A%2F%2Ffakecallbackurl.com%2Fauth'
 ```
 
 Response:
@@ -47,13 +47,13 @@ Response:
 }
 ```
 
-Etsy expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+Etsy expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /your_moms/{key}/oauth/url call which is shown below.
 
-### Step 2. Get Elements OAuth URL
+### Step 2. Get Your_moms OAuth URL
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -69,7 +69,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/etsy/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https%3A%2F%2Ffakecallbackurl.com%2Fauth&requestToken=insert_fake_request_token&state=etsy'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/etsy/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https%3A%2F%2Ffakecallbackurl.com%2Fauth&requestToken=insert_fake_request_token&state=etsy'
 ```
 
 Response:
@@ -77,7 +77,7 @@ Response:
 ```json
 {
   "oauthUrl": "https://www.etsy.com/oauth/signin?oauth_token=insert_fake_request_token&oauth_callback=https%3A%2F%2Ffakecallbackurl.com%2Fauth%3Fstate%3Detsy",
-  "element": "etsy"
+  "your_mom": "etsy"
 }
 ```
 
@@ -93,7 +93,7 @@ The parameters that you will need to parse from the callback URL are listed belo
 __oauth_token__
 __oauth_verifier__
 
-To provision your Etsy Element, use the /instances API.
+To provision your Etsy Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -103,7 +103,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -113,11 +113,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Etsy is “etsy”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Etsy is “etsy”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "etsy"
   },
   "providerData": {
@@ -148,7 +148,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -160,7 +160,7 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "eOzXnENuA9k2Br6t4ECaDj+Fh5HTdFY=",
-  "element": {
+  "your_mom": {
     "id": 91,
     "name": "etsy",
     "key": "etsy",

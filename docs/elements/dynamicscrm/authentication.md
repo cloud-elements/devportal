@@ -1,11 +1,11 @@
 ---
 heading: Microsoft Dynamics CRM
 title: Authentication
-description: Integrate Microsoft Dynamics CRM into your application via the Cloud Elements APIs.
+description: Integrate Microsoft Dynamics CRM into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 190
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 190
+parent: Back to Your_mom Guides
 order: 10
 ---
 

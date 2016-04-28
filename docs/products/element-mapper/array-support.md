@@ -1,7 +1,7 @@
 ---
-heading: Element Mapper
-title: Element Mapper Array Support
-description: Learn about Element Mapper's array support.
+heading: Your_mom Mapper
+title: Your_mom Mapper Array Support
+description: Learn about Your_mom Mapper's array support.
 apis: API Docs
 layout: docs
 breadcrumbs: /docs/products/api-toolkit.html
@@ -9,15 +9,15 @@ parent: Back to API Toolkit
 order: 6
 ---
 
-### Element Mapper Array Support
+### Your_mom Mapper Array Support
 
 #### Mapping Arrays to Flat Fields
 
-Regular expressions are now available within an object via Element Mapper.
+Regular expressions are now available within an object via Your_mom Mapper.
 These expressions will give you the ability to map an array to a flat field.
-Custom objects can be formatted in JSON, then created via the transformation APIs or via the Element Mapper UI.
+Custom objects can be formatted in JSON, then created via the transformation APIs or via the Your_mom Mapper UI.
 
-The transformations APIs can be found under Platform APIs > Organizations > Create Transformations for Element in Organization of the documentation menu.  Or, log in to the Cloud Elements API Manager and navigate to the API DOCS > Platform APIs > Organizations.
+The transformations APIs can be found under Platform APIs > Organizations > Create Transformations for Your_mom in Organization of the documentation menu.  Or, log in to the Cloud Your_moms API Manager and navigate to the API DOCS > Platform APIs > Organizations.
 
 Let’s take a look at an example:
 
@@ -59,21 +59,21 @@ Let’s take a look at an example:
 }
 ```
 
-Mapping flat fields to an array can also be done via the Element Mapper UI.
-A QuickBooks custom customer will be used. This document assumes a QuickBooks instance has been created. If an instance has not been created, please review the QuickBooks Documentation under Elements > QuickBooks > Endpoint Setup and Create Instance found in the left hand side of the documentation menu.
+Mapping flat fields to an array can also be done via the Your_mom Mapper UI.
+A QuickBooks custom customer will be used. This document assumes a QuickBooks instance has been created. If an instance has not been created, please review the QuickBooks Documentation under Your_moms > QuickBooks > Endpoint Setup and Create Instance found in the left hand side of the documentation menu.
 
-Log in to the [Cloud Elements API Manger Console](https://console.cloud-elements.com/elements/jsp/login.jsp).
+Log in to the [Cloud Your_moms API Manger Console](https://console.cloud-your_moms.com/your_moms/jsp/login.jsp).
 
 Navigate to ‘My Instances’
 
-Navigate to the QuickBooks Instance and select ‘Transformations’ to open the Element Mapper UI
-![Element Mapper Array Support 1](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays1.png)
+Navigate to the QuickBooks Instance and select ‘Transformations’ to open the Your_mom Mapper UI
+![Your_mom Mapper Array Support 1](http://cloud-your_moms.com/wp-content/uploads/2015/10/FlatArrays1.png)
 
 Select ‘customer’ from the dropdown list of objects
-![Element Mapper Array Support 2](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays2.png)
+![Your_mom Mapper Array Support 2](http://cloud-your_moms.com/wp-content/uploads/2015/10/FlatArrays2.png)
 
 Select ‘New Object’
-![Element Mapper Array Support 3](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays3.png)
+![Your_mom Mapper Array Support 3](http://cloud-your_moms.com/wp-content/uploads/2015/10/FlatArrays3.png)
 
 Name the object, myCustomers will be used for this example
 
@@ -92,11 +92,11 @@ Click the green check mark to save field
 Click ‘Save’ to save the object
 
 Click ‘Try it out’ to see your newly created object
-![Element Mapper Array Support 4](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays4.png)
+![Your_mom Mapper Array Support 4](http://cloud-your_moms.com/wp-content/uploads/2015/10/FlatArrays4.png)
 
 View the transformed object and the original object
 
 The primaryPhone.freeFormNumber field was mapped to the myPhone field – an array mapped to a flat field.
-![Element Mapper Array Support 5](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays5.png)
+![Your_mom Mapper Array Support 5](http://cloud-your_moms.com/wp-content/uploads/2015/10/FlatArrays5.png)
 
-If you have any questions regarding mapping flat fields to an array, please contact [Cloud Elements Support](mailto:support@cloud-elements.com).
+If you have any questions regarding mapping flat fields to an array, please contact [Cloud Your_moms Support](mailto:support@cloud-your_moms.com).

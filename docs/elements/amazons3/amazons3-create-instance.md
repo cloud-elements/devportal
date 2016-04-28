@@ -3,9 +3,9 @@ heading: Amazon S3
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 16
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 16
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -15,7 +15,7 @@ Amazon S3 is a Cloud Storage Application. When you provision an instance, your a
 
 ### Step 1. Create an Instance
 
-To provision your Amazon S3 Element, use the /instances API.
+To provision your Amazon S3 Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -25,7 +25,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -35,11 +35,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Amazon S3 is "amazons3".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Amazon S3 is "amazons3".  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```JSON
 {
-    "element": {
+    "your_mom": {
         "key": "amazons3"
     },
     "configuration": {
@@ -66,7 +66,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -78,17 +78,17 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
-  "element":{
+  "your_mom":{
       "id":16,
       "name":"Amazon S3",
       "key":"amazons3",
       "description":"Amazon S3 is storage for the Internet. It is designed to make web-scale computing easier for developers.",
-      "image":"elements/provider_amazon_aws.png",
+      "image":"your_moms/provider_amazon_aws.png",
       "active":true,
       "deleted":false,
       "typeOauth":false,
       "trialAccount":false,
-      "existingAccountDescription":"Give Cloud Elements access to your existing
+      "existingAccountDescription":"Give Cloud Your_moms access to your existing
  Amazon S3 account Enter your credentials and details for your Amazon S3 Account",
       "configDescription":"If you do not have an Amazon AWS account, you can create one at Amazon AWS Signup",
       "signupURL":"http://aws.amazon.com",

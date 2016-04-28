@@ -3,9 +3,9 @@ heading: Infusionsoft Marketing
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 192
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 192
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -15,11 +15,11 @@ Infusionsoft is a Customer Success Platform. When you provision an instance, you
 
 Optionally, you may provision an instance to specific features like Marketing and CRM.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -34,24 +34,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/infusionsoftcrm/oauth/url?apiKey=fake_infusionsoft_client_id&apiSecret=fake_infusionsoft_client_secret&callbackUrl=http://fake.oauth.callback/url&state=infusionsoftmarketing'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/infusionsoftcrm/oauth/url?apiKey=fake_infusionsoft_client_id&apiSecret=fake_infusionsoft_client_secret&callbackUrl=http://fake.oauth.callback/url&state=infusionsoftmarketing'
 ```
 
 Response:
 
 ```json
 {
-"element": "infusionsoftmarketing",
+"your_mom": "infusionsoftmarketing",
 "oauthUrl": "https://signin.infusionsoft.com/app/oauth/authorize?response_type=code&client_id=insert_infusionsoft_api_key&redirect_uri=https://mycoolapp.com/auth&scope=full&state=infusionsoftmarketing"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “infusionsoftmarketing” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “infusionsoftmarketing” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Infusionsoft Element, use the /instances API.
+To provision your Infusionsoft Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -61,7 +61,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -71,11 +71,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Infusionsoft Marketing is “infusionsoftmarketing”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Infusionsoft Marketing is “infusionsoftmarketing”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "infusionsoftmarketing"
   },
   "providerData": {
@@ -103,7 +103,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -115,11 +115,11 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "a5y4EtYt+ZYRpnIBD7gkQtthDebK8qKVU=",
-  "element": {
+  "your_mom": {
     "id": 126,
     "name": "Infusionsoft Beta",
     "key": "infusionsoftmarketing",
-    "description": "Add an Infusionsoft Instance to connect your existing Infusionsoft account to the Marketing Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple Marketing Elements. You will need your Infusionsoft account information to add an instance.",
+    "description": "Add an Infusionsoft Instance to connect your existing Infusionsoft account to the Marketing Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple Marketing Your_moms. You will need your Infusionsoft account information to add an instance.",
     "image": "http://www.sagepay.co.uk/files/styles/img_220x220/public/partner-logo/infusionsoft-220px.png?itok=yDDuLcdL",
     "active": true,
     "deleted": false,

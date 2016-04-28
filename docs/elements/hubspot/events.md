@@ -3,9 +3,9 @@ heading: HubSpot
 title: Events
 description: Enable HubSpot events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 43
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 43
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -24,7 +24,7 @@ instance JSON with polling events enabled:
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "hubspot"
   },
   "providerData": {

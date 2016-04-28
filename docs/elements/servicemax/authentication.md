@@ -1,11 +1,11 @@
 ---
 heading: ServiceMax
 title: Authentication
-description: Integrate ServiceMax into your application via the Cloud Elements APIs.
+description: Integrate ServiceMax into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 169
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 169
+parent: Back to Your_mom Guides
 order: 10
 ---
 

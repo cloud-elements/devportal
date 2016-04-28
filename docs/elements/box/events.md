@@ -3,9 +3,9 @@ heading: Box
 title: Events
 description: Enable Box events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 22
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 22
+parent: Back to Your_mom Guides
 order: 30
 ---
 
@@ -23,31 +23,31 @@ Via a web browser, go to  [https://app.box.com/developers/services/edit/](https:
 2. Select the appropriate options
 
 3. Click “Create Application”
-![Box Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI1.png)
+![Box Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxAPI1.png)
 
 4. After receiving confirmation that your application is created, click “Configure your application”
-![Box Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI2.png)
+![Box Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxAPI2.png)
 
 5. Copy the “client_id”
 
 6. Copy the “client_secret”
 
-7. You will be required to enter a callback URL from the endpoint. Enter this URL: `https://console.cloud-elements.com/elements/jsp/home.jsp`
+7. You will be required to enter a callback URL from the endpoint. Enter this URL: `https://console.cloud-your_moms.com/your_moms/jsp/home.jsp`
 
 8. Select your “Scopes” (check “Read and write all files and folders”)
-![Box Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI31.png)
+![Box Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxAPI31.png)
 
 9. Scroll down and click “Create a New Webhook”
-![Box Connected App step 4](http://cloud-elements.com/wp-content/uploads/2014/08/BoxCreateWebhook.png)
+![Box Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxCreateWebhook.png)
 
 On “Create Webhook” Screen
 
 1. Fill out app information
 
 2. Select “Event Types” - Events your app will be notified on
-![Box Connected App step 5](http://cloud-elements.com/wp-content/uploads/2014/08/BoxNameWebhook.png)
+![Box Connected App step 5](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxNameWebhook.png)
 
-3. Input this Endpoint URL: `https://api.cloud-elements.com/elements/api-v2/events/box`
+3. Input this Endpoint URL: `https://api.cloud-your_moms.com/your_moms/api-v2/events/box`
 
 4. Select the minimum configurations:
 Input “userId” Input “#to_user_id#”
@@ -57,7 +57,7 @@ Input “itemType” Input “#item_type#”
 Input “newItemId” Input “#new_item_id#”
 
 5. Click “Save Webhook”
-![Box Connected App step 6](http://cloud-elements.com/wp-content/uploads/2014/08/BoxCreateWebhookMinimumConfigs.png)
+![Box Connected App step 6](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxCreateWebhookMinimumConfigs.png)
 
 NOTE: As long as the minimum configuration fields are set properly, any other additional fields can also be specified. These additional fields will be sent along in the webhook call.
 
@@ -66,7 +66,7 @@ Box requires you to submit a Support Request to enable webhooks for your app. Yo
 Go to this URL: [https://developers.box.com/view-webhooks/](https://developers.box.com/view-webhooks/)
 
 Scroll to the bottom of the page and click Contact Us to submit a request. You will need your API Key. This can be found at the bottom of the app configuration screen.
-![Box Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/01/BoxContactUs.png)
+![Box Connected App step 7](http://cloud-your_moms.com/wp-content/uploads/2015/01/BoxContactUs.png)
 
 For your Box Ticket Request:
 
@@ -76,7 +76,7 @@ For your Box Ticket Request:
 * Input “API Key” This is your client_id that was assigned by Box when you created your app.
 
 Input your email and webhook request, as well as, a request to enable “As-User” functionality.
-![Box Connected App step 7](http://cloud-elements.com/wp-content/uploads/2014/08/BoxContactUs2.png)
+![Box Connected App step 7](http://cloud-your_moms.com/wp-content/uploads/2014/08/BoxContactUs2.png)
 
 In order to enable events, add these two extra configurations to your instance JSON:
 
@@ -89,7 +89,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "box"
   },
   "providerData": {

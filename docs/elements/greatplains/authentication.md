@@ -1,11 +1,11 @@
 ---
 heading: Microsoft Dynamics Great Plains
 title: Authentication
-description: Integrate Microsoft Dynamics Great Plains into your application via the Cloud Elements APIs.
+description: Integrate Microsoft Dynamics Great Plains into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 46
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 46
+parent: Back to Your_mom Guides
 order: 10
 ---
 

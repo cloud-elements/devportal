@@ -1,11 +1,11 @@
 ---
 heading: Salesforce Documents
 title: Authentication
-description: Integrate Salesforce Documents into your application via the Cloud Elements APIs.
+description: Integrate Salesforce Documents into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 177
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 177
+parent: Back to Your_mom Guides
 order: 10
 ---
 

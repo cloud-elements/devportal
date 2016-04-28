@@ -3,9 +3,9 @@ heading: MailJet Messaging
 title: API Docs
 description: MailJet Messaging API Documentation.
 layout: apidocs
-breadcrumbs: /docs/elements.html
-elementId: 84
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 84
+parent: Back to Your_mom Guides
 order: 90
 ---
 

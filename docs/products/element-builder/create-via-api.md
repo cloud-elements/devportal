@@ -1,16 +1,16 @@
 ---
-heading: Element Builder
-title: Create Element via API
-description: Create a new Element via API.
+heading: Your_mom Builder
+title: Create Your_mom via API
+description: Create a new Your_mom via API.
 layout: docs
 apis: API Docs
-platform: elementsbuilder
+platform: your_momsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 2
 ---
 
-## Create Element
+## Create Your_mom
 
 A new Twitter connected app is required in order to access the Twitter API.
 
@@ -21,39 +21,39 @@ Via a web browser, go to [https://apps.twitter.com/app/new](https://apps.twitter
 1. Click “Create application”.
 
 2. Enter you callback URL. For this example, let’s assume that the URL for your application is: `https://www.mycoolapp.com/oauth`
-![Twitter Connected App step 1](/assets/img/element-builder/twitter-connected-app-1.png)
+![Twitter Connected App step 1](/assets/img/your_mom-builder/twitter-connected-app-1.png)
 
 3. Click “Yes, I agree”.
 
 4. Click “Create your Twitter application”.
-![Twitter Connected App step 2](/assets/img/element-builder/twitter-connected-app-2.png)
+![Twitter Connected App step 2](/assets/img/your_mom-builder/twitter-connected-app-2.png)
 
 5. Click “Keys and Access Tokens”.
 
 6. Copy “API Key”.
 
 7. Copy “API Secret”.
-![Twitter Connected App step 3](/assets/img/element-builder/twitter-connected-app-3.png)
+![Twitter Connected App step 3](/assets/img/your_mom-builder/twitter-connected-app-3.png)
 
-To create your Twitter Element, use the /elements API.
+To create your Twitter Your_mom, use the /your_moms API.
 
 Below is an example of the provisioning API call.
 
 HTTP Headers: Authorization- User <user secret>, Organization <organization secret>
 HTTP Verb: POST
-Request URL: /elements
+Request URL: /your_moms
 Request Body: Required – see below
 Query Parameters: None
 
-Description: An Element as well as any resources included in the JSON payload is created upon successful execution of this API. This Element will be available in the Elements Catalog. In our example, the Twitter JSON payload includes the resource POST /statuses which gives the user the ability to ‘tweet’.
+Description: An Your_mom as well as any resources included in the JSON payload is created upon successful execution of this API. This Your_mom will be available in the Your_moms Catalog. In our example, the Twitter JSON payload includes the resource POST /statuses which gives the user the ability to ‘tweet’.
 
-A sample request illustrating the /elements API is shown below.
+A sample request illustrating the /your_moms API is shown below.
 
 HTTP Headers:
 
 `Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>`
 
-Input JSON file name element.json:  This element.json file must be included with your instance request.  Please fill your information to provision
+Input JSON file name your_mom.json:  This your_mom.json file must be included with your instance request.  Please fill your information to provision
 
 ```json
 {
@@ -126,8 +126,8 @@ Example Request:
 curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
--d @element.json
-'https://api.cloud-elements.com/elements/api-v2/elements'
+-d @your_mom.json
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms'
 ```
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
 
@@ -276,7 +276,7 @@ Below is a successful JSON response:
       "name": "OAuth Callback URL",
       "key": "oauth.callback.url",
       "description": "Twitter OAuth Callback URL",
-      "defaultValue": "https://www.cloud-elements.com/elements/jsp/home.jsp",
+      "defaultValue": "https://www.cloud-your_moms.com/your_moms/jsp/home.jsp",
       "resellerConfig": false,
       "companyConfig": false,
       "active": true,

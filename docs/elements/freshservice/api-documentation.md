@@ -3,9 +3,9 @@ heading: Freshservice
 title: API Docs
 description: Freshservice API Documentation.
 layout: apidocs
-breadcrumbs: /docs/elements.html
-elementId: 252
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 252
+parent: Back to Your_mom Guides
 order: 90
 ---
 

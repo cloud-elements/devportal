@@ -3,9 +3,9 @@ heading: Pardot
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 90
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 90
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -15,7 +15,7 @@ Pardot is a Marketing Platform. When you provision an instance, your app will ha
 
 ### Step 1. Create an Instance
 
-To provision your Pardot Element, use the /instances API.
+To provision your Pardot Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -25,7 +25,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -35,11 +35,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Pardot is “pardot”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Pardot is “pardot”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```JSON
 {
-  "element": {
+  "your_mom": {
     "key": "pardot"
   },
   "configuration": {
@@ -63,7 +63,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -75,12 +75,12 @@ Below is a successful JSON response:
   "id": 1234,
   "name": "Test",
   "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
-  "element": {
+  "your_mom": {
     "id": 95,
     "name": "Pardot Helpdesk",
     "key": "autotaskhelpdesk",
-    "description": "Add an Pardot Helpdesk Instance to connect your existing Pardot account to the Helpdesk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Pardot Helpdesk account information to add an instance.",
-    "image": "elements/provider_autotask.png",
+    "description": "Add an Pardot Helpdesk Instance to connect your existing Pardot account to the Helpdesk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Your_moms. You will need your Pardot Helpdesk account information to add an instance.",
+    "image": "your_moms/provider_autotask.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,

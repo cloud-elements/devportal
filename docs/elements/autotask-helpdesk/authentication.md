@@ -1,11 +1,11 @@
 ---
 heading: Autotask Help Desk
 title: Authentication
-description: Integrate Autotask Help Desk into your application via the Cloud Elements APIs.
+description: Integrate Autotask Help Desk into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 123
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 123
+parent: Back to Your_mom Guides
 order: 10
 ---
 

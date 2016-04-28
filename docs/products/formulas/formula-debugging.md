@@ -12,7 +12,7 @@ order: 20
 
 ## Formula Debugging
 
-Cloud Elements offers ways to investigate the execution of each step in a formula to check for errors in steps, as well as, JSON payloads being returned.
+Cloud Your_moms offers ways to investigate the execution of each step in a formula to check for errors in steps, as well as, JSON payloads being returned.
 
 There are a few steps to perform in order to view the formula execution that can all be done via an API call. The formula template ID is needed, as well as, the formula instance ID.
 
@@ -22,7 +22,7 @@ First, you can use the `GET /formulas` API call to view your formula template ID
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/formulas'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas'
 ```
 
 Example of Successful Response:
@@ -73,10 +73,10 @@ Example of Successful Response:
         "id": 723,
         "name": "3-get-formulaContact",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "method": "GET",
-          "elementInstanceId": "${sfdc.instance.id}",
+          "your_momInstanceId": "${sfdc.instance.id}",
           "api": "/hubs/crm/contact/{objectId}",
           "path": "${trigger.body.message.events[0]}",
           "mimeType": "application/javascript"
@@ -88,10 +88,10 @@ Example of Successful Response:
         "id": 724,
         "name": "4-create-formulaContact-hubspot",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "method": "POST",
-          "elementInstanceId": "${hubspot.instance.id}",
+          "your_momInstanceId": "${hubspot.instance.id}",
           "body": "${3-get-formulaContact.response.body}",
           "api": "/hubs/marketing/formulaContact",
           "mimeType": "application/javascript"
@@ -109,7 +109,7 @@ Example of Successful Response:
         ],
         "onFailure": [],
         "properties": {
-          "elementInstanceId": "${sfdc.instance.id}"
+          "your_momInstanceId": "${sfdc.instance.id}"
         }
       }
     ],
@@ -120,15 +120,15 @@ Example of Successful Response:
         "id": 123,
         "key": "sfdc.instance.id",
         "name": "sfdcInstance",
-        "type": "elementInstance",
-        "description": "The SFDC CRM element instance"
+        "type": "your_momInstance",
+        "description": "The SFDC CRM your_mom instance"
       },
       {
         "id": 345,
         "key": "hubspot.instance.id",
         "name": "hubspotInstance",
-        "type": "elementInstance",
-        "description": "The HubSpot marketing element instance"
+        "type": "your_momInstance",
+        "description": "The HubSpot marketing your_mom instance"
       }
     ]
   }
@@ -145,7 +145,7 @@ Use the `GET /formulas/instances` API call to view your formula instance ID. The
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/formulas'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas'
 ```
 
 Example of Successful Response:
@@ -168,15 +168,15 @@ Example of Successful Response:
           "id": 123,
           "key": "sfdc.instance.id",
           "name": "sfdcInstance",
-          "type": "elementInstance",
-          "description": "The SFDC CRM element instance"
+          "type": "your_momInstance",
+          "description": "The SFDC CRM your_mom instance"
         },
         {
           "id": 345,
           "key": "hubspot.instance.id",
           "name": "hubspotInstance",
-          "type": "elementInstance",
-          "description": "The HubSpot marketing element instance"
+          "type": "your_momInstance",
+          "description": "The HubSpot marketing your_mom instance"
         }
       ]
     },
@@ -205,7 +205,7 @@ For this reason, use `trigger.event` to access the event object data instead of 
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/formulas/190/instances/890/executions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas/190/instances/890/executions'
 ```
 
 Example of Successful Response:
@@ -235,7 +235,7 @@ Use the `GET /formulas/{id}/instances/{instanceId}/executions/{executionId}` API
 curl -X GET
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/formulas/190/instances/890/executions/123457'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas/190/instances/890/executions/123457'
 ```
 
 Example of Successful Response:
@@ -251,7 +251,7 @@ Example of Successful Response:
         {
           "id": 1299837,
           "key": "trigger.body",
-          "value": "{\"severity\":\"medium\",\"createdDate\":\"Tue Sep 22 19:48:03 UTC 2015\",\"topic\":\"instance-341984-sfdc-events\",\"action\":\"create\",\"id\":\"162595\",\"message\":{\"elementKey\":\"sfdc\",\"eventId\":\"12345\",\"accountId\":8237,\"companyId\":928,\"instance_id\":128908,\"instanceId\":123210,\"instanceName\":\"Formula Contact\",\"raw\":{\"objects\":[{\"ST_unsubscribe__c\":false,\"LastModifiedDate\":\"2015-09-22T19:52:16.000+0000\",\"IsDeleted\":false,\"SFSSDupeCatcher__Override_DupeCatcher__c\":false,\"Email\":\"jon@acme.com\",\"IsEmailBounced\":false,\"DoNotCall\":false,\"FirstName\":\"Jon\",\"HasOptedOutOfEmail\":false,\"HasOptedOutOfFax\":false,\"ST_Unsubscribe_Value__c\":\"Blast\",\"SystemModstamp\":\"2015-09-22T19:52:16.000+0000\",\"OwnerId\":\"006i0001VNdeABG\",\"CreatedById\":\"004i0001VNdeABG\",\"Phone\":\"(444) 444-4444\",\"CreatedDate\":\"2015-09-22T19:52:16.000+0000\",\"attributes\":{\"type\":\"Contact\",\"url\":\"/services/data/v34.0/sobjects/Contact/004i002z4e3XBAQ\"},\"Id\":\"008i002z4e3XABQ\",\"LastName\":\"Smith\",\"ST_synchable__c\":false,\"LastModifiedById\":\"002i0001VNdeABG\"}],\"action\":\"insert\"},\"userId\":1234,\"events\":[{\"date\":\"2015-09-22T19:52:16Z\",\"elementKey\":\"sfdc\",\"eventType\":\"CREATED\",\"objectId\":\"008i002z4e3XABQ\",\"objectType\":\"Contact\"}]},\"user\":\"cloud-elements\"}"
+          "value": "{\"severity\":\"medium\",\"createdDate\":\"Tue Sep 22 19:48:03 UTC 2015\",\"topic\":\"instance-341984-sfdc-events\",\"action\":\"create\",\"id\":\"162595\",\"message\":{\"your_momKey\":\"sfdc\",\"eventId\":\"12345\",\"accountId\":8237,\"companyId\":928,\"instance_id\":128908,\"instanceId\":123210,\"instanceName\":\"Formula Contact\",\"raw\":{\"objects\":[{\"ST_unsubscribe__c\":false,\"LastModifiedDate\":\"2015-09-22T19:52:16.000+0000\",\"IsDeleted\":false,\"SFSSDupeCatcher__Override_DupeCatcher__c\":false,\"Email\":\"jon@acme.com\",\"IsEmailBounced\":false,\"DoNotCall\":false,\"FirstName\":\"Jon\",\"HasOptedOutOfEmail\":false,\"HasOptedOutOfFax\":false,\"ST_Unsubscribe_Value__c\":\"Blast\",\"SystemModstamp\":\"2015-09-22T19:52:16.000+0000\",\"OwnerId\":\"006i0001VNdeABG\",\"CreatedById\":\"004i0001VNdeABG\",\"Phone\":\"(444) 444-4444\",\"CreatedDate\":\"2015-09-22T19:52:16.000+0000\",\"attributes\":{\"type\":\"Contact\",\"url\":\"/services/data/v34.0/sobjects/Contact/004i002z4e3XBAQ\"},\"Id\":\"008i002z4e3XABQ\",\"LastName\":\"Smith\",\"ST_synchable__c\":false,\"LastModifiedById\":\"002i0001VNdeABG\"}],\"action\":\"insert\"},\"userId\":1234,\"events\":[{\"date\":\"2015-09-22T19:52:16Z\",\"your_momKey\":\"sfdc\",\"eventType\":\"CREATED\",\"objectId\":\"008i002z4e3XABQ\",\"objectType\":\"Contact\"}]},\"user\":\"cloud-your_moms\"}"
         },
         {
           "id": 892807707,
@@ -289,7 +289,7 @@ Example of Successful Response:
         {
           "id": 1230099,
           "key": "3-get-formulaContact.request.headers",
-          "value": "{\"Authorization\":\"Element m02akfzTVFsQXpNxHI0e1oYI2Kf1OX6UD52CwyO5Zk4=, User X6paf8FfICCPxXBz35MXNcn9B87eAWFp4r//v5jXK74=, Organization 99c50ea36917376729aadece3ef89458\",\"Elements-Formula-Request-Id\":\"2246365\",\"Elements-Formula-Execution-Id\":\"314741\",\"Elements-Formula-Id\":\"155\",\"Elements-Formula-Step\":\"3-get-formulaContact\"}"
+          "value": "{\"Authorization\":\"Your_mom m02akfzTVFsQXpNxHI0e1oYI2Kf1OX6UD52CwyO5Zk4=, User X6paf8FfICCPxXBz35MXNcn9B87eAWFp4r//v5jXK74=, Organization 99c50ea36917376729aadece3ef89458\",\"Your_moms-Formula-Request-Id\":\"2246365\",\"Your_moms-Formula-Execution-Id\":\"314741\",\"Your_moms-Formula-Id\":\"155\",\"Your_moms-Formula-Step\":\"3-get-formulaContact\"}"
         },
         {
           "id": 1230000,
@@ -299,7 +299,7 @@ Example of Successful Response:
         {
           "id": 1230002,
           "key": "3-get-formulaContact.request.uri",
-          "value": "https://api.cloud-elements.com/elements/api-v2/hubs/crm/contact/008i002z4e3XABQ"
+          "value": "https://api.cloud-your_moms.com/your_moms/api-v2/hubs/crm/contact/008i002z4e3XABQ"
         },
         {
           "id": 1230003,
@@ -314,7 +314,7 @@ Example of Successful Response:
         {
           "id": 1230005,
           "key": "3-get-formulaContact.response.headers",
-          "value": "{\"date\":\"Tue, 22 Sep 2015 20:02:31 GMT\",\"content-length\":\"139\",\"set-cookie\":\"JSESSIONID=73CC2427FF16FEA53C536FDC8E1-n1.elements7; Path=/elements/; HttpOnly\",\"server\":\"nginx/1.6.0\",\"elements-request-id\":\"5601b17ce4b0309f8091\",\"connection\":\"keep-alive\",\"content-type\":\"application/json;charset=UTF-8\",\"Content-Type\":\"application/json\"}"
+          "value": "{\"date\":\"Tue, 22 Sep 2015 20:02:31 GMT\",\"content-length\":\"139\",\"set-cookie\":\"JSESSIONID=73CC2427FF16FEA53C536FDC8E1-n1.your_moms7; Path=/your_moms/; HttpOnly\",\"server\":\"nginx/1.6.0\",\"your_moms-request-id\":\"5601b17ce4b0309f8091\",\"connection\":\"keep-alive\",\"content-type\":\"application/json;charset=UTF-8\",\"Content-Type\":\"application/json\"}"
         }
       ],
       "status": "failed",
@@ -330,7 +330,7 @@ Example of Successful Response:
 
 The response will display each step and whether or not the step was successful. If a failure occurred, an error code is returned with a status message. In this example, the formula failed at the 3-get-formulaContact. Upon closer inspection, the path to the resource in Salesforce is not correct. Let’s take a look:
 
-The path in our current URL in step 3 is ‘https://api.cloud-elements.com/elements/api-v2/hubs/crm/contact/008i002z4e3XABQ’. We have the correct object ID. This can be found in the response body of the first step of the formula, but ‘contact’ should be ‘contacts’ in the URL.
+The path in our current URL in step 3 is ‘https://api.cloud-your_moms.com/your_moms/api-v2/hubs/crm/contact/008i002z4e3XABQ’. We have the correct object ID. This can be found in the response body of the first step of the formula, but ‘contact’ should be ‘contacts’ in the URL.
 
 The formula template will need to be updated with the correct URL in step 3.
 
@@ -341,7 +341,7 @@ curl -X PUT
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @formula-template.json
-'https://api.cloud-elements.com/elements/api-v2/formulas/190'
+'https://api.cloud-your_moms.com/your_moms/api-v2/formulas/190'
 ```
 
 Corrected Formula Template JSON:
@@ -356,7 +356,7 @@ Corrected Formula Template JSON:
     {
       "type": "event",
       "properties": {
-        "elementInstanceId": "${sfdc.instance.id}"
+        "your_momInstanceId": "${sfdc.instance.id}"
       },
       "onSuccess": [
         "1-contact-filter-step"
@@ -389,12 +389,12 @@ Corrected Formula Template JSON:
     },
     {
       "name": "3-get-formulaContact",
-      "type": "elementRequest",
+      "type": "your_momRequest",
       "onSuccess": [
         "4-create-formulaContact-hubspot"
       ],
       "properties": {
-        "elementInstanceId": "${sfdc.instance.id}",
+        "your_momInstanceId": "${sfdc.instance.id}",
         "path": "${trigger.body.message.events[0]}",
         "mimeType": "application/javascript",
         "method": "GET",
@@ -403,9 +403,9 @@ Corrected Formula Template JSON:
     },
     {
       "name": "4-create-formulaContact-hubspot",
-      "type": "elementRequest",
+      "type": "your_momRequest",
       "properties": {
-        "elementInstanceId": "${hubspot.instance.id}",
+        "your_momInstanceId": "${hubspot.instance.id}",
         "mimeType": "application/javascript",
         "method": "POST",
         "api": "/hubs/marketing/formulaContact",
@@ -417,14 +417,14 @@ Corrected Formula Template JSON:
   "configuration": [
     {
       "name": "sfdcInstance",
-      "description": "The SFDC CRM element instance",
-      "type": "elementInstance",
+      "description": "The SFDC CRM your_mom instance",
+      "type": "your_momInstance",
       "key": "sfdc.instance.id"
     },
     {
       "name": "hubspotInstance",
-      "description": "The HubSpot marketing element instance",
-      "type": "elementInstance",
+      "description": "The HubSpot marketing your_mom instance",
+      "type": "your_momInstance",
       "key": "hubspot.instance.id"
     }
   ]
@@ -478,10 +478,10 @@ Example of Successful Response:
         "id": 723,
         "name": "3-get-formulaContact",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "method": "GET",
-          "elementInstanceId": "${sfdc.instance.id}",
+          "your_momInstanceId": "${sfdc.instance.id}",
           "api": "/hubs/crm/contacts/{objectId}",
           "path": "${trigger.body.message.events[0]}",
           "mimeType": "application/javascript"
@@ -493,10 +493,10 @@ Example of Successful Response:
         "id": 724,
         "name": "4-create-formulaContact-hubspot",
         "formulaId": 155,
-        "type": "elementRequest",
+        "type": "your_momRequest",
         "properties": {
           "method": "POST",
-          "elementInstanceId": "${hubspot.instance.id}",
+          "your_momInstanceId": "${hubspot.instance.id}",
           "body": "${3-get-formulaContact.response.body}",
           "api": "/hubs/marketing/formulaContact",
           "mimeType": "application/javascript"
@@ -514,7 +514,7 @@ Example of Successful Response:
         ],
         "onFailure": [],
         "properties": {
-          "elementInstanceId": "${sfdc.instance.id}"
+          "your_momInstanceId": "${sfdc.instance.id}"
         }
       }
     ],
@@ -525,15 +525,15 @@ Example of Successful Response:
         "id": 123,
         "key": "sfdc.instance.id",
         "name": "sfdcInstance",
-        "type": "elementInstance",
-        "description": "The SFDC CRM element instance"
+        "type": "your_momInstance",
+        "description": "The SFDC CRM your_mom instance"
       },
       {
         "id": 345,
         "key": "hubspot.instance.id",
         "name": "hubspotInstance",
-        "type": "elementInstance",
-        "description": "The HubSpot marketing element instance"
+        "type": "your_momInstance",
+        "description": "The HubSpot marketing your_mom instance"
       }
     ]
   }
@@ -547,7 +547,7 @@ Each of the API calls displayed above can be made in our API Manager Console.
 Log in to the Console.
 
 Navigate to ‘Platform APIs’, then select ‘Formulas’. All available formula APIs can be executed.
-![Formula APIs](http://cloud-elements.com/wp-content/uploads/2015/09/FormulaAPICalls.png)
+![Formula APIs](http://cloud-your_moms.com/wp-content/uploads/2015/09/FormulaAPICalls.png)
 
 ##### COMMON DEBUGGING TECHNIQUES
 
@@ -561,4 +561,4 @@ Below is a list of common debugging techniques.
     * Perform a `GET /contacts` call for an endpoint and check to make sure the JSON matches the JSON on the formula step
     * If it is a custom object, perform a `GET /{objectName}` call to that endpoint to check the object fields are returning correctly
 
-[Cloud Elements Support](mailto:support@cloud-elements.com) is always here to help, so please don’t hesitate to email us with questions or concerns.
+[Cloud Your_moms Support](mailto:support@cloud-your_moms.com) is always here to help, so please don’t hesitate to email us with questions or concerns.

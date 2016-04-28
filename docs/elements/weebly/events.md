@@ -3,15 +3,15 @@ heading: Weebly
 title: Events
 description: Enable Weebly events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 449
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 449
+parent: Back to Your_mom Guides
 order: 25
 ---
 
 ## Events
 
-Cloud Elements supports webhook events for Weebly.
+Cloud Your_moms supports webhook events for Weebly.
 
 ### Webhooks
 
@@ -36,7 +36,7 @@ In order to enable webhooks, add this data to your `manifest.json`:
 	////WITH WEBHOOKS ENABLED///////
 	////////////////////////////////
 	"webhooks": {
-		"callback_url": "https://console.cloud-elements.com/elements/api-v2/weebly/events",
+		"callback_url": "https://console.cloud-your_moms.com/your_moms/api-v2/weebly/events",
 		"events": ["store.product.create", "store.product.update", "store.product.delete",
 		"store.cart.create", "store.cart.update"]
 	}
@@ -56,7 +56,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-	"element": {
+	"your_mom": {
 		"key": "weebly"
 	},
 	"providerData": {

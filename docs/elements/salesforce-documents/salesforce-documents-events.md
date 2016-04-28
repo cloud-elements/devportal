@@ -3,15 +3,15 @@ heading: Salesforce Documents
 title: Events
 description: Enable Salesforce Documents events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 177
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 177
+parent: Back to Your_mom Guides
 order: 25
 ---
 
 ## Events
 
-Cloud Elements supports both webhooks and polling events for Salesforce.
+Cloud Your_moms supports both webhooks and polling events for Salesforce.
 
 ### Polling
 
@@ -26,7 +26,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "sfdcdocuments"
   },
   "providerData": {
@@ -48,11 +48,11 @@ instance JSON with polling events enabled:
 
 ### Webhooks
 
-When implementing webhooks for Salesforce, Cloud Elements creates APEX classes and triggers in order to send webhooks.  This can only be done in a Salesforce sandbox account.  If you want to support webhooks in a production Salesforce account, you'll have to make some modifications and migrate those classes to production according to the Salesforce specification. View more information regarding the [Salesforce specification](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_qs_deploy.htm).
+When implementing webhooks for Salesforce, Cloud Your_moms creates APEX classes and triggers in order to send webhooks.  This can only be done in a Salesforce sandbox account.  If you want to support webhooks in a production Salesforce account, you'll have to make some modifications and migrate those classes to production according to the Salesforce specification. View more information regarding the [Salesforce specification](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_qs_deploy.htm).
 
 Follow these steps to setup your Salesforce application with the endpoint.
 
-__In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
+__In order to create a Salesforce Your_mom Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
 
 Via a web browser, login to your Salesforce account:
 [https://login.salesforce.com/](https://login.salesforce.com/)
@@ -64,7 +64,7 @@ Via a web browser, login to your Salesforce account:
 2. Click “New Remote Site”
 ![Salesforce Webhook step 2](img/salesforce-webhook-2.png)
 
-3. Input “Remote Site Name” e.g. Cloud Elements and the following URL: `https://api.cloud-elements.com`
+3. Input “Remote Site Name” e.g. Cloud Your_moms and the following URL: `https://api.cloud-your_moms.com`
 
 4. Click “Save”
 ![Salesforce Webhook step 3](img/salesforce-webhook-3.png)
@@ -77,7 +77,7 @@ The following JSON may be used to create a Salesforce Instance with webhooks ena
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "sfdcdocuments"
   },
   "providerData": {

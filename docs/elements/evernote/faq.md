@@ -3,9 +3,9 @@ heading: Evernote
 title: FAQ
 description: Frequently asked questions and notes on conventions.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 125
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 125
+parent: Back to Your_mom Guides
 order: 50
 ---
 
@@ -27,8 +27,8 @@ The cURL command will URL encode the file path allowing the user to not have to 
 
 ```bash
 curl -o example.pdf -G -v
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc"'
+-H 'Authorization: User <INSERT_USER_SECRET>, Your_mom <INSERT_ELEMENT_TOKEN>'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc"'
 ```
 
 2. Add > <filename.pdf> to the end of the command.
@@ -38,8 +38,8 @@ For example:
 
 ```bash
 curl -G -v
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc" > example.pdf'
+-H 'Authorization: User <INSERT_USER_SECRET>, Your_mom <INSERT_ELEMENT_TOKEN>'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc" > example.pdf'
 ```
 
 3. Add `>> <filename.pdf>` to the end of the command.
@@ -50,6 +50,6 @@ For example:
 
 ```bash
 curl -G -v
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>'
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc" >> example.pdf'
+-H 'Authorization: User <INSERT_USER_SECRET>, Your_mom <INSERT_ELEMENT_TOKEN>'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/documents/files --data-urlencode "path=/My First Stack/My New Notebook/615b5fb7-8a57-4956-ae94-b3f88fd7cafc" >> example.pdf'
 ```

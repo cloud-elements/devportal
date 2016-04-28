@@ -3,9 +3,9 @@ heading: Volusion
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 51
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 51
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -14,30 +14,30 @@ order: 5
 Follow these steps to create a New Volusion Application for API integration. Via a web browser go to: [http://www.volusion.com/](http://www.volusion.com/) and setup a store. Once setup, please login.
 
 1. From the Dashboard, click “Manage Store”
-![Volusion Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI1.png)
+![Volusion Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI1.png)
 
 2. Login to your storefront.
-![Volusion Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI2.png)
+![Volusion Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI2.png)
 
 3. From the dashboard, click “Inventory” and then click “Import/Export”.
-![Volusion Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI3.png)
+![Volusion Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI3.png)
 
 4. Click “Volusion API”
-![Volusion Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI4.png)
+![Volusion Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI4.png)
 
 5. Make sure you enable public XML for both “Featured Products” and “All Products”
 
 6. Click “Save
-![Volusion Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI5.png)
+![Volusion Connected App step 5](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI5.png)
 
 7. Next, scroll down to the Generic orders section, under Accounts and click “Run”.
-![Volusion Connected App step 6](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI6.png)
+![Volusion Connected App step 6](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI6.png)
 
 8. Click “Run”
-![Volusion Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI7.png)
+![Volusion Connected App step 7](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI7.png)
 
-9. Copy the URL returned from the “Run” command.  It will be needed to provision the Volusion Element.
-![Volusion Connected App step 8](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI8.png)
+9. Copy the URL returned from the “Run” command.  It will be needed to provision the Volusion Your_mom.
+![Volusion Connected App step 8](http://cloud-your_moms.com/wp-content/uploads/2015/09/VolusionAPI8.png)
 
 An example of the URL copied in the previous step can be seen below:
 

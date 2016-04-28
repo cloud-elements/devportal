@@ -3,9 +3,9 @@ heading: Google Drive
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 21
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 21
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,11 +13,11 @@ order: 20
 
 Google Drive is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Google Drive platform.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -32,7 +32,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/googledrive/oauth/url?apiKey=fake_Google Drive_api_key&apiSecret=fake_Google Drive_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=googledrive'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/googledrive/oauth/url?apiKey=fake_Google Drive_api_key&apiSecret=fake_Google Drive_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=googledrive'
 ```
 
 Response:
@@ -40,16 +40,16 @@ Response:
 ```javascript
 {
   "oauthUrl": "https://www.googledrive.com/api/oauth2/authorize?response_type=code&client_id=insert_googledrive_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=googledrive",
-  "element": "googledrive"
+  "your_mom": "googledrive"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “googledrive” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “googledrive” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Google Drive Element, use the /instances API.
+To provision your Google Drive Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -59,7 +59,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -69,11 +69,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Google Drive is “googledrive”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Google Drive is “googledrive”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "googledrive"
   },
   "providerData": {
@@ -100,7 +100,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -112,12 +112,12 @@ Below is a successful JSON response:
   "id": 123,
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
-  "element": {
+  "your_mom": {
     "id": 21,
     "name": "Google Drive",
     "key": "googledrive",
     "description": "Add a Google Drive Instance to connect your existing Google Drive account to the Documents Hub, allowing you to manage files and folders. You will need your Google Drive account information to add an instance.",
-    "image": "elements/provider_googledrive.png",
+    "image": "your_moms/provider_googledrive.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,

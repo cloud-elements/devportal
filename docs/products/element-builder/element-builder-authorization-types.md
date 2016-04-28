@@ -1,10 +1,10 @@
 ---
-heading: Element Builder
+heading: Your_mom Builder
 title: Authorization Types
-description: View example Authorization Types that can be built using the Element Builder UI.
+description: View example Authorization Types that can be built using the Your_mom Builder UI.
 layout: docs
 apis: API Docs
-platform: elementsbuilder
+platform: your_momsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 5
@@ -14,20 +14,20 @@ order: 5
 
 This section will provide some tech tips on authentication.
 
-Have a tech tip suggestion? Please contact [Support](mailto:support@cloud-elements.com).
+Have a tech tip suggestion? Please contact [Support](mailto:support@cloud-your_moms.com).
 
 #### Authorization Tips
 
-Element Builder supports 4 types of endpoint authorization:
+Your_mom Builder supports 4 types of endpoint authorization:
 
 * OAuth 1
 * OAuth 2
 * Basic Authorization
 * Custom Authorization
 
-The purpose of the Authorization Tech Tip is to provide examples of each of the authentication.  OAuth 1 was demonstrated in the Element Builder UI guide with the Twitter endpoint under the Configuration.  Examples of the remaining auth types will be shown below.
+The purpose of the Authorization Tech Tip is to provide examples of each of the authentication.  OAuth 1 was demonstrated in the Your_mom Builder UI guide with the Twitter endpoint under the Configuration.  Examples of the remaining auth types will be shown below.
 
-Cloud Elements strongly encourages researching the endpoint authorization prior to building a new Element. The authorization type can typically be found in the Overview or Authentication portion of the endpoint API documentation.
+Cloud Your_moms strongly encourages researching the endpoint authorization prior to building a new Your_mom. The authorization type can typically be found in the Overview or Authentication portion of the endpoint API documentation.
 
 ##### OAUTH 2
 
@@ -41,9 +41,9 @@ Set your redirect url
 Select your scope
 Make a note of both your client_id and client_secret.
 
-Box provides further information about scope in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Element.
+Box provides further information about scope in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Your_mom.
 
-Now that we familiar with the Box auth flow, let’s take a look at the Configuration tab in Element Builder – this is where the authentication type setup occurs.
+Now that we familiar with the Box auth flow, let’s take a look at the Configuration tab in Your_mom Builder – this is where the authentication type setup occurs.
 
 ###### CONFIGURATION TAB
 
@@ -84,20 +84,20 @@ __Configuration:__ A value which is stored when a connection to the endpoint is 
 __Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
 __Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
-![Element Builder OAuth2 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ1.png)
+![Your_mom Builder OAuth2 1](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ1.png)
 
-Box does have some configurations that need to be stored, however, they do not need to visible for the User in the Elements Builder UI.  These values are necessary to track event data and support user functionality for the Box Element.  __NOTE: This example may not be the same for other endpoints.__
+Box does have some configurations that need to be stored, however, they do not need to visible for the User in the Your_moms Builder UI.  These values are necessary to track event data and support user functionality for the Box Your_mom.  __NOTE: This example may not be the same for other endpoints.__
 
 To add a configuration, begin by clicking “Add Configuration”
 
-Input values and select whether it is required and is visible in the Element Builder UI
+Input values and select whether it is required and is visible in the Your_mom Builder UI
 
 Click “Done”
 
 Continue to add additional configurations needed by the endpoint if applicable.
 
 Click “Next”
-![Element Builder OAuth2 2](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ2.png)
+![Your_mom Builder OAuth2 2](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ2.png)
 
 This will take you to the Instance Tab where you can create a connection to the endpoint and test out the authentication.
 
@@ -123,9 +123,9 @@ This excerpt is from the Close.io API docs:
 >API Base URL:
 `https://app.close.io/api/v1`
 
-Close.io provides further information about custom fields and supported objects in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Element.
+Close.io provides further information about custom fields and supported objects in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Your_mom.
 
-Now that we familiar with the Close.io auth flow, let’s take a look at the Configuration tab in Element Builder – this is where the authentication type setup occurs.
+Now that we familiar with the Close.io auth flow, let’s take a look at the Configuration tab in Your_mom Builder – this is where the authentication type setup occurs.
 
 ###### CONFIGURATION TAB
 
@@ -143,7 +143,7 @@ __Configuration:__ A value which is stored when a connection to the endpoint is 
 __Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
 __Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
-![Element Builder Basic 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ3.png)
+![Your_mom Builder Basic 1](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ3.png)
 
 If we look back at the authentication excerpt from the Close.io API docs:
 
@@ -180,10 +180,10 @@ __Default Value:__ Blank (Optional)
 __Is it Required?:__ Select “No”
 __Hide from console?:__ Select “Yes” as we will not need the user to input this value
 
-Add any additional configurations needed.  The other two displayed in the screen shot are related to adding Bulk functionality to the Close.io Element.
+Add any additional configurations needed.  The other two displayed in the screen shot are related to adding Bulk functionality to the Close.io Your_mom.
 
 Click “Next”
-![Element Builder Basic 2](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ4.png)
+![Your_mom Builder Basic 2](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ4.png)
 
 This will take you to the Instance Tab where you can create a connection to the endpoint and test out the authentication.
 
@@ -203,9 +203,9 @@ This excerpt is from the Typeform API docs:
 
 >You authenticate your API calls by adding a header to the requests you make. At this point in time, you will only be able to have a single API key per account (contact us if you need more). Be sure to keep your API key secret, since it will have access to perform actions on your behalf.
 
-Typeform provides further information about supported objects in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Element.
+Typeform provides further information about supported objects in their docs as well.  It is important to choose what kind of functionality you want your application to have prior to starting work on your Your_mom.
 
-Now that we familiar with the Typeform auth flow, let’s take a look at the Configuration tab in Element Builder – this is where the authentication type setup occurs.
+Now that we familiar with the Typeform auth flow, let’s take a look at the Configuration tab in Your_mom Builder – this is where the authentication type setup occurs.
 
 ###### CONFIGURATION TAB
 
@@ -242,7 +242,7 @@ __Is it Required?:__ Select “Yes” it is required by Close.io
 __Hide from console?:__ Select “No” as we will need the user to input this value
 
 Click “Done”
-![Element Builder Custom 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ5.png)
+![Your_mom Builder Custom 1](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ5.png)
 
 Referring back to the Typeform API docs:
 
@@ -266,7 +266,7 @@ __Description:__ Token to be sent as a header
 Click “Done”
 
 Click “Next”
-![Element Builder Custom 2](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ6.png)
+![Your_mom Builder Custom 2](http://cloud-your_moms.com/wp-content/uploads/2015/04/AuthorizationFAQ6.png)
 
 This will take you to the Instance Tab where you can create a connection to the endpoint and test out the authentication.
 
@@ -274,8 +274,8 @@ Typeform does not require any Hooks be sent on authorization requests
 
 Tech Tips for adding Hooks will be coming soon.
 
-Element Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
+Your_mom Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
 
-Need some help?  Don’t hesitate to reach out to [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.
+Need some help?  Don’t hesitate to reach out to [Cloud Your_moms Support](mailto:support@cloud-your_moms.com) with any questions or concerns.
 
-The Cloud Elements Team
+The Cloud Your_moms Team

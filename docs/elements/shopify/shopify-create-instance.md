@@ -3,9 +3,9 @@ heading: Shopify
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 48
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 48
+parent: Back to Your_mom Guides
 order: 20
 ---
 
@@ -13,11 +13,11 @@ order: 20
 
 Shopify is an eCommerce Platform. When you provision an instance, your app will have access to the different functionality offered by the Shopify platform.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -34,24 +34,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'http://api.cloud-elements/elements/api-v2/elements/shopify/oauth/url?apiKey=insert_shopify_client_id&apiSecret=insert_shopify_client_secret&callbackUrl=www.examplecallbackurl.com&siteAddress=insert_user_shop_name&scope=write_orders,write_products,write_customers'
+'http://api.cloud-your_moms/your_moms/api-v2/your_moms/shopify/oauth/url?apiKey=insert_shopify_client_id&apiSecret=insert_shopify_client_secret&callbackUrl=www.examplecallbackurl.com&siteAddress=insert_user_shop_name&scope=write_orders,write_products,write_customers'
 ```
 
 Response:
 
 ```json
 {
-  "element": "shopify",
+  "your_mom": "shopify",
   "oauthUrl": "https://SHOP_NAME.myshopify.com/admin/oauth/authorize?client_id=insert_shopify_client_id&scope=write_orders,write_products,write_customers&redirect_uri=www.examplecallbackurl.com?state=shopify"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “shopify” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “shopify” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Shopify Element, use the /instances API.
+To provision your Shopify Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -61,7 +61,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -71,11 +71,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Shopify is “shopify”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Shopify is “shopify”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "shopify"
   },
   "providerData": {
@@ -104,7 +104,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -116,12 +116,12 @@ Below is a successful JSON response:
   "id": 123,
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
-  "element": {
+  "your_mom": {
     "id": 48,
     "name": "Shopify Beta",
     "key": "shopify",
-    "description": "Add a Shopify Instance to connect your existing Shopify account to the eCommerce Hub, allowing you to manage orders and products across multiple eCommerce Elements. You will need your Shopify account information to add an instance.",
-    "image": "elements/provider_shopify.png",
+    "description": "Add a Shopify Instance to connect your existing Shopify account to the eCommerce Hub, allowing you to manage orders and products across multiple eCommerce Your_moms. You will need your Shopify account information to add an instance.",
+    "image": "your_moms/provider_shopify.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,

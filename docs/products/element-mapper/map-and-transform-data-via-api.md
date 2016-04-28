@@ -1,7 +1,7 @@
 ---
-heading: Element Mapper
-title: Map and Transform Data via the Element Mapper API
-description: Get up and running with Element Mapper API.
+heading: Your_mom Mapper
+title: Map and Transform Data via the Your_mom Mapper API
+description: Get up and running with Your_mom Mapper API.
 apis: API Docs
 layout: docs
 breadcrumbs: /docs/products/api-toolkit.html
@@ -24,30 +24,30 @@ The Transformation APIs allow you to:
 __The objects referenced in your transform must exist (i.e. have been registered via the process outlined above), before registering the transform. Otherwise the transform registration will fail.
 Below is an example of the Supplemental Address Object defined in Salesforce and SugarCRM, and what it would look like in your application by utilizing the Transformation APIs.__
 
-In order to access the Organizations APIs, you must sign up for Cloud Elements Service.  You will need your __Organization__ and __User Secrets__ to make successful Transformations API calls.  These are generated for you when you sign up for our service.  __Details on how to sign up and where to find your Organization and User Secrets are documented in the next section.__
-![Element Mapper APIs 1](http://cloud-elements.com/wp-content/uploads/2014/10/transformGrahpic1.png)
+In order to access the Organizations APIs, you must sign up for Cloud Your_moms Service.  You will need your __Organization__ and __User Secrets__ to make successful Transformations API calls.  These are generated for you when you sign up for our service.  __Details on how to sign up and where to find your Organization and User Secrets are documented in the next section.__
+![Your_mom Mapper APIs 1](http://cloud-your_moms.com/wp-content/uploads/2014/10/transformGrahpic1.png)
 
-#### Signup for the Cloud Elements Service
+#### Signup for the Cloud Your_moms Service
 
-To sign up for the Cloud Elements service, using a web browser, go to: [https://console.cloud-elements.com/elements/jsp/signup.jsp](https://console.cloud-elements.com/elements/jsp/signup.jsp).
+To sign up for the Cloud Your_moms service, using a web browser, go to: [https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp](https://console.cloud-your_moms.com/your_moms/jsp/signup.jsp).
 
-You can create a new account with Cloud Elements using the “Sign Up” link shown here, or sign up for Cloud Elements service using your Google or GitHub account. When signing up via GitHub, you must set a public email address in GitHub profile. Screen shots on how to set a public email are below. If you choose not to use GitHub to sign up, you will then be required to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
-![CRM Hub Quick Start Guide 3](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuideSignup.png)
+You can create a new account with Cloud Your_moms using the “Sign Up” link shown here, or sign up for Cloud Your_moms service using your Google or GitHub account. When signing up via GitHub, you must set a public email address in GitHub profile. Screen shots on how to set a public email are below. If you choose not to use GitHub to sign up, you will then be required to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
+![CRM Hub Quick Start Guide 3](http://cloud-your_moms.com/wp-content/uploads/2014/10/quickGuideSignup.png)
 
 ##### Setting a Public Email in GitHub
 
 Navigate to your settings in GitHub.
-![Element Mapper APIs 2](http://cloud-elements.com/wp-content/uploads/2014/08/gitHub2.gif)
+![Your_mom Mapper APIs 2](http://cloud-your_moms.com/wp-content/uploads/2014/08/gitHub2.gif)
 
 Type in your public email in the designated field and click “Update Profile”.
 
 All set!
 
-The first step is to sign up for Cloud Elements Service.
-![Element Mapper APIs 3](http://cloud-elements.com/wp-content/uploads/2014/08/gitHub21.gif)
+The first step is to sign up for Cloud Your_moms Service.
+![Your_mom Mapper APIs 3](http://cloud-your_moms.com/wp-content/uploads/2014/08/gitHub21.gif)
 
-After completing this process, click “Secrets” in the top right corner. Make note of the Org and User secrets as they needed to provision an Element Instance. The Secrets option is available from the top ribbon at all times.
-![Element Mapper APIs 4](http://cloud-elements.com/wp-content/uploads/2016/04/CloudElementsSecrets.png)
+After completing this process, click “Secrets” in the top right corner. Make note of the Org and User secrets as they needed to provision an Your_mom Instance. The Secrets option is available from the top ribbon at all times.
+![Your_mom Mapper APIs 4](http://cloud-your_moms.com/wp-content/uploads/2016/04/CloudYour_momsSecrets.png)
 
 #### How to Use the Transformation APIs
 
@@ -68,7 +68,7 @@ curl -X POST
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
 -d @account.json
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/account/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/account/definitions'
 ```
 
 account.json – JSON file needed to create object
@@ -108,7 +108,7 @@ Below is an example cURL command demonstrating the `GET /organizations/objects/d
 curl -X GET
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/definitions'
 ```
 
 Example of Successful Response:
@@ -187,7 +187,7 @@ Below is an example cURL command demonstrating the `DELETE /organizations/object
 curl -X DELETE
 -H 'Authorization: User , Organization '
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/objects/definitions'
 ```
 
 Example of Successful Response:
@@ -200,18 +200,18 @@ Transformations allow you to map an endpoint’s object to the custom object tha
 
 ##### Example Transformations API Calls
 
-`POST /organizations/elements/{key}/transformations/{objectName}`
+`POST /organizations/your_moms/{key}/transformations/{objectName}`
 
-Update the default transformation for an element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc (Salesforce).
+Update the default transformation for an your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc (Salesforce).
 
-Below is an example cURL command demonstrating the `POST /organizations/elements/{key}/transformations/{objectName}`API call and successful response. The `-d `is the data needed for a successful update of a transformation. This is test data that was created for this demonstration. Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the `POST /organizations/your_moms/{key}/transformations/{objectName}`API call and successful response. The `-d `is the data needed for a successful update of a transformation. This is test data that was created for this demonstration. Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X POST
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
 -d @posttransform.json
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 createtransform.json: – JSON file needed to update transformation
@@ -244,17 +244,17 @@ Example of Successful Response:
 }
 ```
 
-`GET /organizations/elements/{key}/transformations/{objectName}`
+`GET /organizations/your_moms/{key}/transformations/{objectName}`
 
-Retrieve the default transformation for a specific element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc (Salesforce).
+Retrieve the default transformation for a specific your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc (Salesforce).
 
-Below is an example cURL command demonstrating the `GET /organizations/elements/{key}/transformations/{objectName}` API call and successful response.  Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the `GET /organizations/your_moms/{key}/transformations/{objectName}` API call and successful response.  Please make sure your quotes are straight in the cURL command.
 
 ```bash
 curl -X GET
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 Example of Successful Response:
@@ -273,16 +273,16 @@ Example of Successful Response:
 }
 ```
 
-`DELETE /organizations/elements/{key}/transformations/{objectName}`
+`DELETE /organizations/your_moms/{key}/transformations/{objectName}`
 
-Delete the default transformation for an element within an organization. The key field denotes the Element being referenced in the API call, i.e. sfdc (Salesforce).
+Delete the default transformation for an your_mom within an organization. The key field denotes the Your_mom being referenced in the API call, i.e. sfdc (Salesforce).
 
-Below is an example cURL command demonstrating the `DELETE /organizations/elements/{key}/transformations/{objectName}` API call and successful response. Please make sure your quotes are straight in the cURL command.
+Below is an example cURL command demonstrating the `DELETE /organizations/your_moms/{key}/transformations/{objectName}` API call and successful response. Please make sure your quotes are straight in the cURL command.
 
 ```curl -X DELETE
 -H 'Authorization: User , Organization '
 -H 'Content-Type:application/json'
-'https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/account'
+'https://api.cloud-your_moms.com/your_moms/api-v2/organizations/your_moms/sfdc/transformations/account'
 ```
 
 Example of Successful Response:
@@ -293,6 +293,6 @@ HTTP 200 on success
 
 #### Support
 
-If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-elements.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
+If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-your_moms.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
 
-Looking to take a deeper dive into Transformations? Check out our [TechTip](http://support.cloud-elements.com/hc/en-us/articles/203746359-Data-Collection-Steps-for-Troubleshooting-Objects-and-Transforms) for more in-depth look into Transformations.
+Looking to take a deeper dive into Transformations? Check out our [TechTip](http://support.cloud-your_moms.com/hc/en-us/articles/203746359-Data-Collection-Steps-for-Troubleshooting-Objects-and-Transforms) for more in-depth look into Transformations.

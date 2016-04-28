@@ -3,9 +3,9 @@ heading: NetSuite ERP
 title: API Docs
 description: NetSuite ERP API Documentation.
 layout: apidocs
-breadcrumbs: /docs/elements.html
-elementId: 155
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 155
+parent: Back to Your_mom Guides
 order: 90
 ---
 

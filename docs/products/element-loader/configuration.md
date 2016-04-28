@@ -1,14 +1,14 @@
 ---
-heading: Element Loader
+heading: Your_mom Loader
 title: Configuration
-description: Element Loader Configuration.
+description: Your_mom Loader Configuration.
 layout: docs
 order: 5
 ---
 
 ### Configuration
 
-Element Loader is able to push data via:
+Your_mom Loader is able to push data via:
 
 * a single source to a single target
 * a single source to multiple targets

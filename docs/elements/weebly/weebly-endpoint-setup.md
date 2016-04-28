@@ -3,9 +3,9 @@ heading: Weebly
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 449
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 449
+parent: Back to Your_mom Guides
 order: 5
 ---
 
@@ -50,7 +50,7 @@ Example `manifest.json`
 	////WITH WEBHOOKS (OPTIONAL)////
 	////////////////////////////////
 	"webhooks": {
-		"callback_url": "https://console.cloud-elements.com/elements/api-v2/weebly/events",
+		"callback_url": "https://console.cloud-your_moms.com/your_moms/api-v2/weebly/events",
 		"events": ["store.product.create", "store.product.update", "store.product.delete",
 		"store.cart.create", "store.cart.update"]
 	}
@@ -60,44 +60,44 @@ Example `manifest.json`
 Review how to [configure the Manifest for OAuth](https://dev.weebly.com/authentication-using-oauth2.html).
 
 1. Click “Create New App”.
-![Weebly Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI1.png)
+![Weebly Connected App step 1](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI1.png)
 
 2. Name the App and select category
 
 3. Click “Save”
-![Weebly Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI2.png)
+![Weebly Connected App step 2](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI2.png)
 
 4. Copy the Client ID and Secret
 
 5. Click "Upload New Version"
-![Weebly Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI3.png)
+![Weebly Connected App step 3](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI3.png)
 
 6. Input App Store Listing Info
 
 7. Click "Upload New Zip" > the compressed `manifest.json`
 
 8. Click "Submit for Review"
-![Weebly Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI4.png)
+![Weebly Connected App step 4](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI4.png)
 
 9. From the Admin Dashboard, select the app
-![Weebly Connected App step 5](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI5.png)
+![Weebly Connected App step 5](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI5.png)
 
 10. Select the appropriate version
-![Weebly Connected App step 6](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI6.png)
+![Weebly Connected App step 6](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI6.png)
 
 11. Click the App Card
-![Weebly Connected App step 7](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI7.png)
+![Weebly Connected App step 7](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI7.png)
 
 12. Click "Add"
-![Weebly Connected App step 8](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI8.png)
+![Weebly Connected App step 8](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI8.png)
 
 13. Select A Site
 
 14. Click "Continue"
-![Weebly Connected App step 9](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI9.png)
+![Weebly Connected App step 9](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI9.png)
 
 15. Click "Connect"
-![Weebly Connected App step 10](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI10.png)
+![Weebly Connected App step 10](http://cloud-your_moms.com/wp-content/uploads/2016/04/WeeblyAPI10.png)
 
 This Connection will kick off the [reverse OAuth](https://dev.weebly.com/authentication-using-oauth2.html) process needed to provision a Weebly Instance.
 

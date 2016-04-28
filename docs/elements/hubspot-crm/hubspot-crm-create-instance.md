@@ -3,9 +3,9 @@ heading: HubSpot CRM
 title: Create Instance
 description: Create Instance
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 168
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 168
+parent: Back to Your_mom Guides
 order: 15
 ---
 
@@ -15,17 +15,17 @@ HubSpot is a Customer Success Platform. When you provision an instance, your app
 
 Optionally, you may provision an instance to specific features like Marketing and CRM. Below are examples of each method beginning with HubSpot Marketing.
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
 * __apiKey–__ the __Client ID__
 * __apiSecret__ – the __Portal ID__
-* __scopes__ – scopes you defined in HubSpot application setup. To use the Cloud Elements API, you must at least provide the following scopes: “contacts-rw+offline”
+* __scopes__ – scopes you defined in HubSpot application setup. To use the Cloud Your_moms API, you must at least provide the following scopes: “contacts-rw+offline”
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
@@ -43,25 +43,25 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/hubspot/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456&scope=contacts-rw%20offline&callbackUrl=http://demonstrab.ly'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/hubspot/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456&scope=contacts-rw%20offline&callbackUrl=http://demonstrab.ly'
 ```
 
 Response:
 
 ```json
 {
-  "element": "hubspotcrm",
+  "your_mom": "hubspotcrm",
   "oauthUrl": "https://app.hubspot.com/auth/authenticate?client_id=123456789d-1234-12e4-bda9-12345b8bf20&portalId=123456&redirect_uri=http%3A%2F%2Fdemonstrab.ly&scope=contacts-rw%20offline"
 }
 ```
 
 Handle Callback from the Endpoint:
-The URL returned in the GET /elements/{key}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
-Once the user has successful authorized the app, HubSpot will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Elements to create a HubSpot Element Instance.
+The URL returned in the GET /your_moms/{key}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
+Once the user has successful authorized the app, HubSpot will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Your_moms to create a HubSpot Your_mom Instance.
 
 ### Step 2. Create an Instance
 
-To provision your HubSpot Element, use the /instances API.
+To provision your HubSpot Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -71,7 +71,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -81,11 +81,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot is “hubspotcrm”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms HubSpot is “hubspotcrm”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "hubspotcrm"
   },
   "providerData": {
@@ -116,7 +116,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -128,12 +128,12 @@ Below is a successful JSON response:
   "id": 12345,
   "name": "Test",
   "token": "dsPr6AheKIS8pt7rp8E81bSRINFgeEkx9Ftr+7t",
-  "element": {
+  "your_mom": {
     "id": 43,
     "name": "HubSpot CRM",
     "key": "hubspotcrm",
     "description": "HubSpot is an inbound marketing software platform that helps companies attract visitors, convert leads, and close customers.",
-    "image": "elements/provider_hubspot.png",
+    "image": "your_moms/provider_hubspot.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,

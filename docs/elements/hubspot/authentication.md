@@ -1,11 +1,11 @@
 ---
 heading: HubSpot
 title: Authentication
-description: Integrate HubSpot into your application via the Cloud Elements APIs.
+description: Integrate HubSpot into your application via the Cloud Your_moms APIs.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 43
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 43
+parent: Back to Your_mom Guides
 order: 10
 ---
 

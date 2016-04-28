@@ -1,10 +1,10 @@
 ---
-heading: Element Builder
+heading: Your_mom Builder
 title: Hooks
-description: View example Hooks that are supported in the Element Builder UI.
+description: View example Hooks that are supported in the Your_mom Builder UI.
 layout: docs
 apis: API Docs
-platform: elementsbuilder
+platform: your_momsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 6
@@ -20,13 +20,13 @@ __Pre-Hook:__ Action you wish to execute prior to sending API calls e.g. manipul
 
 __Post-Hook:__ Modify the response data (body, header, configuration) on the return call from the endpoint.
 
-A hook may be needed due to the authentication expected by the endpoint.  You may need to send a value to an endpoint, but it requires a different data type than what Cloud Elements supports.
+A hook may be needed due to the authentication expected by the endpoint.  You may need to send a value to an endpoint, but it requires a different data type than what Cloud Your_moms supports.
 
-Headers may need to be manipulated on every request.  An ID may need to be extracted from a header and sent as a response.  Element Builder supports writing custom JavaScript to handle such use cases.
+Headers may need to be manipulated on every request.  An ID may need to be extracted from a header and sent as a response.  Your_mom Builder supports writing custom JavaScript to handle such use cases.
 
 We’ll take a look at a few, as well as, some other Hook features.
 
-Hooks can be used under the following Tabs in Element Builder:
+Hooks can be used under the following Tabs in Your_mom Builder:
 
 * Configuration
 * Resources
@@ -38,14 +38,14 @@ __Events:__ hook needed to set a property on an event
 
 __Location and Features__
 
-The hooks input field can be found towards the bottom of the panel.  Element Builder supports custom JavaScript in both the Pre-Hook and Post-Hook panels.
+The hooks input field can be found towards the bottom of the panel.  Your_mom Builder supports custom JavaScript in both the Pre-Hook and Post-Hook panels.
 
 To add custom simply select Pre-Hook or Post-Hook and enter your code below.
 
 To the left of the code editor, a list of available objects and code samples can be found.  Simply select “Objects” or “Sample Code” to view the contents.
 
 Expand and Collapse the Hooks panel using the “Expand” and “Collapse” toggle feature.
-![Element Builder Hooks 1](http://cloud-elements.com/wp-content/uploads/2016/03/Hooks1.png)
+![Your_mom Builder Hooks 1](http://cloud-your_moms.com/wp-content/uploads/2016/03/Hooks1.png)
 
 #### Global Pre-Hook
 
@@ -62,7 +62,7 @@ if(request_vendor_method === 'DELETE') {
 
 #### Pre-Hook
 
-This hook is an example of reading a value from the configuration of your element, then manipulating the data that has been posted to an endpoint.
+This hook is an example of reading a value from the configuration of your your_mom, then manipulating the data that has been posted to an endpoint.
 
 ```JavaScript
 var body = JSON.parse(request_vendor_body);
@@ -115,7 +115,7 @@ return {
 ```
 #### Event Webhook
 
-This hook is an example of reading the event webhook types and formatting them into what Cloud Elements expects.
+This hook is an example of reading the event webhook types and formatting them into what Cloud Your_moms expects.
 
 ```JavaScript
 var formattedEvents = getArray();
@@ -148,8 +148,8 @@ return {
 }
 ```
 
-Element Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
+Your_mom Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
 
-Need some help?  Don’t hesitate to reach out to [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.
+Need some help?  Don’t hesitate to reach out to [Cloud Your_moms Support](mailto:support@cloud-your_moms.com) with any questions or concerns.
 
-The Cloud Elements Team
+The Cloud Your_moms Team

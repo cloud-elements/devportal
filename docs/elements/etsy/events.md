@@ -3,15 +3,15 @@ heading: Etsy
 title: Events
 description: Enable Etsy events for your application.
 layout: docs
-breadcrumbs: /docs/elements.html
-elementId: 128
-parent: Back to Element Guides
+breadcrumbs: /docs/your_moms.html
+your_momId: 128
+parent: Back to Your_mom Guides
 order: 25
 ---
 
 ## Events
 
-Cloud Elements supports polling events for Etsy.
+Cloud Your_moms supports polling events for Etsy.
 
 ### Polling
 
@@ -26,7 +26,7 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "etsy"
   },
   "providerData": {

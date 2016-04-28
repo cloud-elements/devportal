@@ -12,8 +12,8 @@ order: 1
 
 ### Formula User Guides
 
-Cloud Elements supports customizable workflows, called __formulas__ to keep your systems in sync.
-Cloud Elements currently supports formula creation via API and via the Formula Builder UI within the API Manager Console.
+Cloud Your_moms supports customizable workflows, called __formulas__ to keep your systems in sync.
+Cloud Your_moms currently supports formula creation via API and via the Formula Builder UI within the API Manager Console.
 
 The formula developer docs are broken down into three guides:
 

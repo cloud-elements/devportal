@@ -1,7 +1,7 @@
 ---
 heading: Event Management
 title: Event Management
-description: View the Event Management Guide explaining the Cloud Elements Events Framework.
+description: View the Event Management Guide explaining the Cloud Your_moms Events Framework.
 layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
@@ -9,60 +9,60 @@ order: 2
 ---
 
 ## Event Management:
-### Cloud Elements Events Framework
+### Cloud Your_moms Events Framework
 
-Cloud Elements Events Framework provides a uniform mechanism for subscribing to events from Endpoints (e.g. Salesforce, HubSpot, QuickBooks, Dropbox). Our Framework gives you the flexibility to receive notifications to your app regarding user activity by having our Elements subscribe to Endpoint Events. Endpoints publish changes to notify the elements that events have occurred. For example, a user uploads a file to her Dropbox account using the Dropbox user interface. This change would be published to our Dropbox Element. The Dropbox Element would then notify your app that a new file has been uploaded. Your app can then be updated with the most current data making it that much more cooperative and powerful.
-![Cloud Elements Events 1](http://cloud-elements.com/wp-content/uploads/2015/01/DocumentManagementWorkflow1.png)
+Cloud Your_moms Events Framework provides a uniform mechanism for subscribing to events from Endpoints (e.g. Salesforce, HubSpot, QuickBooks, Dropbox). Our Framework gives you the flexibility to receive notifications to your app regarding user activity by having our Your_moms subscribe to Endpoint Events. Endpoints publish changes to notify the your_moms that events have occurred. For example, a user uploads a file to her Dropbox account using the Dropbox user interface. This change would be published to our Dropbox Your_mom. The Dropbox Your_mom would then notify your app that a new file has been uploaded. Your app can then be updated with the most current data making it that much more cooperative and powerful.
+![Cloud Your_moms Events 1](http://cloud-your_moms.com/wp-content/uploads/2015/01/DocumentManagementWorkflow1.png)
 
 ### Events
 
-Cloud Elements currently supports building integrations with __polling__ or __webhooks__ capability.
+Cloud Your_moms currently supports building integrations with __polling__ or __webhooks__ capability.
 
-__Polling__ is a mechanism where Cloud Elements executes the configured query every __n minutes__ and capture the changed information.
+__Polling__ is a mechanism where Cloud Your_moms executes the configured query every __n minutes__ and capture the changed information.
 
-__Webhooks__ are when the provider lets Cloud Elements know what information has changed.
-NOTE: Some Application Endpoints require some additional configuration setup for Event Management. Instructions and screen shots for these configurations can be found in the [Element Guides](/docs/elements.html) under Events for each endpoint.
+__Webhooks__ are when the provider lets Cloud Your_moms know what information has changed.
+NOTE: Some Application Endpoints require some additional configuration setup for Event Management. Instructions and screen shots for these configurations can be found in the [Your_mom Guides](/docs/your_moms.html) under Events for each endpoint.
 
 #### Provision
 
 ##### Create an Instance with Events via API Manager Console
 
-Elements can be provisioned with Event Management Integration via the Elements Manager or API. Instructions on provisioning with the Elements Manager will be shown first followed by provisioning via the `POST /instances API`.
+Your_moms can be provisioned with Event Management Integration via the Your_moms Manager or API. Instructions on provisioning with the Your_moms Manager will be shown first followed by provisioning via the `POST /instances API`.
 
-__Dropbox__ will be used for this demonstration.  However the majority of our Elements support events.
+__Dropbox__ will be used for this demonstration.  However the majority of our Your_moms support events.
 
-Sign into the Elements Manager and click Elements Catalog
-![Cloud Elements Events 2](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide1.png)
+Sign into the Your_moms Manager and click Your_moms Catalog
+![Cloud Your_moms Events 2](http://cloud-your_moms.com/wp-content/uploads/2014/10/quickGuide1.png)
 
 Click Documents
-![Cloud Elements Events 3](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide2.png)
+![Cloud Your_moms Events 3](http://cloud-your_moms.com/wp-content/uploads/2014/10/quickGuide2.png)
 
 Click Create Instance for Dropbox
-![Cloud Elements Events 4](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide3.png)
+![Cloud Your_moms Events 4](http://cloud-your_moms.com/wp-content/uploads/2014/10/quickGuide3.png)
 
 Click +
-![Cloud Elements Events 5](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide4.png)
+![Cloud Your_moms Events 5](http://cloud-your_moms.com/wp-content/uploads/2014/10/quickGuide4.png)
 
 Name your Instance
 Tagging is optional so You may leave it set to “No”
 Select “True” to enable Event Notifications
 Input the callback URL to your application
 Click Next
-![Cloud Elements Events 6](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance11.png)
+![Cloud Your_moms Events 6](http://cloud-your_moms.com/wp-content/uploads/2015/01/DropboxCreateInstance11.png)
 
 Login to your Dropbox Account and click “Allow”
-![Cloud Elements Events 7](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance22.png)
+![Cloud Your_moms Events 7](http://cloud-your_moms.com/wp-content/uploads/2015/01/DropboxCreateInstance22.png)
 
 Click Done
-![Cloud Elements Events 8](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance31.png)
+![Cloud Your_moms Events 8](http://cloud-your_moms.com/wp-content/uploads/2015/01/DropboxCreateInstance31.png)
 
 ##### Create an Instance with Events via API
 
-### Step 1. Get Elements OAuth Information
+### Step 1. Get Your_moms OAuth Information
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /your_moms/{key}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -77,7 +77,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/dropbox/oauth/url?apiKey=fake_Dropbox_api_key&apiSecret=fake_Dropbox_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=dropbox'
+'https://api.cloud-your_moms.com/your_moms/api-v2/your_moms/dropbox/oauth/url?apiKey=fake_Dropbox_api_key&apiSecret=fake_Dropbox_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=dropbox'
 ```
 
 Response:
@@ -85,16 +85,16 @@ Response:
 ```javascript
 {
   "oauthUrl": "https://www.dropbox.com/api/oauth2/authorize?response_type=code&client_id=insert_dropbox_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=dropbox",
-  "element": "dropbox"
+  "your_mom": "dropbox"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “dropbox” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “dropbox” in our example, and the value for the “code” parameter is the code required by Cloud Your_moms to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Dropbox Element, use the /instances API.
+To provision your Dropbox Your_mom, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -104,7 +104,7 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+Description: An Your_mom token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this your_mom instance.
 
 A sample request illustrating the /instances API is shown below.
 
@@ -114,11 +114,11 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Dropbox is “dropbox”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Your_moms Dropbox is “dropbox”.  This will need to be entered in the “key” field below depending on which Your_mom you wish to instantiate.
 
 ```json
 {
-  "element": {
+  "your_mom": {
     "key": "dropbox"
   },
   "providerData": {
@@ -128,7 +128,7 @@ This instance.json file must be included with your instance request.  Please fil
     "oauth.api.key": "<SAMPLE_API_KEY>",
     "oauth.api.secret": "<SAMPLE_API_SECRET>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "https://console.cloud-elements.com/elements/api-v2/events/dropbox",
+    "event.notification.callback.url": "https://console.cloud-your_moms.com/your_moms/api-v2/events/dropbox",
     "document.tagging": false
   },
   "tags": [
@@ -147,7 +147,7 @@ curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+'https://api.cloud-your_moms.com/your_moms/api-v2/instances'
 ```
 
 If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
@@ -159,12 +159,12 @@ Below is a successful JSON response:
   "id": 123,
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
-  "element": {
+  "your_mom": {
       "id": 22,
       "name": "Dropbox",
       "key": "dropbox",
       "description": "Add a Dropbox Instance to connect your existing Dropbox account to the Documents Hub, allowing you to manage files and folders. You will need your Dropbox account information to add an instance.",
-      "image": "elements/provider_dropbox.png",
+      "image": "your_moms/provider_dropbox.png",
       "active": true,
       "deleted": false,
       "typeOauth": true,
@@ -202,10 +202,10 @@ Query Parameters: None
 
 ```bash
 curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>'
+-H 'Authorization: User <INSERT_USER_SECRET>, Your_mom <INSERT_ELEMENT_SECRET>'
 -H 'Content-Type: application/json'
 -d @TestFolderCreate.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders?path=/testfoldercreate'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/documents/folders?path=/testfoldercreate'
 ```
 
 TestFolderCreate JSON needed to create the folder.
@@ -247,7 +247,7 @@ Example of Webhook Callback
 
 ###### A note about Webhooks
 
-When a change is made at Dropbox or other Endpoint, whether through the Cloud Elements API, via the Dropbox web app or Dropbox desktop app, a webhook call will be generated. In other words, it’s not just calls made through our API that will generate webhooks.
+When a change is made at Dropbox or other Endpoint, whether through the Cloud Your_moms API, via the Dropbox web app or Dropbox desktop app, a webhook call will be generated. In other words, it’s not just calls made through our API that will generate webhooks.
 
 ##### Asynchronous API Requests
 
@@ -256,19 +256,19 @@ Asynchronous API Requests gives you the flexibility to start a job that may take
 Performing an Asynchronous API Request:
 
 Additional Required Header:
-__Elements-Async-Request__ – this must be set to `True`
+__Your_moms-Async-Request__ – this must be set to `True`
 
 Optional Header:
-__Elements-Async-Callback-URL__ – if not included in request, then the app will use the callback URL associated with the instance. If you do not have a callback URL associated with the instance configuration or supply one in the request, then an error will be returned.
+__Your_moms-Async-Callback-URL__ – if not included in request, then the app will use the callback URL associated with the instance. If you do not have a callback URL associated with the instance configuration or supply one in the request, then an error will be returned.
 
 ```bash
 curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>'
+-H 'Authorization: User <INSERT_USER_SECRET>, Your_mom <INSERT_ELEMENT_SECRET>'
 -H 'Content-Type: application/json'
--H 'Elements-Async-Request: True'
--H 'Elements-Async-Callback-Url: <www.samplecallbackurl.com>'
+-H 'Your_moms-Async-Request: True'
+-H 'Your_moms-Async-Callback-Url: <www.samplecallbackurl.com>'
 -d @copy-folder.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders/copy?path=/TestFolderCreate'
+'https://api.cloud-your_moms.com/your_moms/api-v2/hubs/documents/folders/copy?path=/TestFolderCreate'
 ```
 
 Copy-folder JSON needed to copy the folder

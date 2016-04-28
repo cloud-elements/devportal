@@ -1,7 +1,7 @@
 ---
 heading: Typeform
-title: Cloud Elements Query Language
-description: Make database queries using Cloud Elements Query Language.
+title: Cloud Your_moms Query Language
+description: Make database queries using Cloud Your_moms Query Language.
 layout: docs
 order: 45
 ---
