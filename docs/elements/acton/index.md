@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Act-On Element
+## Welcome to the Act-On Element
 
 
 #### At a Glance
