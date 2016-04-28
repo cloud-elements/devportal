@@ -8,7 +8,7 @@ parent: Back to API Toolkit
 order: 6
 ---
 
-## Installing Tightrope
+## Installing Ground2Cloud
 
 ### Choosing an Installer
 
@@ -16,11 +16,15 @@ As mentioned in the previous section, you need to choose which installer program
 
 ### Downloading the Installer
 
-Click on the “Download” button for the installer of your choice, and your download will begin.
+Select the appropriate Ground2Cloud Installer:
+
+[Download Ground2Cloud](https://github.com/cloud-elements/g2c-releases/releases)
+
+[Download Ground2Cloud for QuickBooks Only](https://github.com/cloud-elements/g2c-releases/releases)
 
 ### Starting the Installer
 
-Double-click on the installer, where ever you have installed it. Alternately, some browsers will let you run a program as soon as it’s completed it’s download, so that will work, too. You need to be logged in as a user with administrator privileges to install the Tightrope Client. You should also pause or disable your Anti-Virus software while running the installation program.
+Double-click on the installer, where ever you have installed it. Alternately, some browsers will let you run a program as soon as it’s completed it’s download, so that will work, too. You need to be logged in as a user with administrator privileges to install the Ground2Cloud Client. You should also pause or disable your Anti-Virus software while running the installation program.
 
 Once started, the installer will walk you through some installation prompts, asking if you want to authorize the installation ...
 ![Cloud Elements Ground2Cloud Install 1](/assets/img/ground2cloud/installing1.png)
@@ -38,10 +42,10 @@ Once started, the installer will walk you through some installation prompts, ask
 
 ![Cloud Elements Ground2Cloud Install 5](/assets/img/ground2cloud/installing5.png)
 
-Once the installer is finished, you’re done! The Tightrope Client is now installed and running on your Windows Desktop or Windows Server machine, and is forwarding all tunneled requests to your Client Service. You can go about your business, confident that your service is being utilized to its fullest, via integration with the Cloud Elements Platform. Or, you can read the next section “Managing Tightrope”, and use the installed GUI to view and manage your Tightrope installation.
+Once the installer is finished, you’re done! The Ground2Cloud Client is now installed and running on your Windows Desktop or Windows Server machine, and is forwarding all tunneled requests to your Client Service. You can go about your business, confident that your service is being utilized to its fullest, via integration with the Cloud Elements Platform. Or, you can read the next section “Managing Ground2Cloud”, and use the installed GUI to view and manage your Ground2Cloud installation.
 
 ### QuickBooks Only
-The following sections are only applicable for the Tightrope Bundled Installer For QuickBooks. Skip this section if you’re using the Standalone Installer, or if you’re using a different flavor of Bundled Installer.
+The following sections are only applicable for the Ground2Cloud Bundled Installer For QuickBooks. Skip this section if you’re using the Standalone Installer, or if you’re using a different flavor of Bundled Installer.
 Installing the QuickBooks SDK
 The Bundled Installer For QuickBooks will attempt to install or upgrade your version of the QuickBooks Software Development Kit (SDK), a set of routines that Intuit provides to grant programs access to your QuickBooks data.
 

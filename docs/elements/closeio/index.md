@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Close.io Element
+## Welcome to the Close.io Element
 
 
 #### At a Glance

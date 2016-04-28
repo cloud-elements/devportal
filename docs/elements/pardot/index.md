@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Pardot Element
+## Welcome to the Pardot Element
 
 
 #### At a Glance

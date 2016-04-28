@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Pipedrive Element
+## Welcome to the Pipedrive Element
 
 
 #### At a Glance

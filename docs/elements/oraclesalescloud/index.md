@@ -9,7 +9,7 @@ parent: Back to Element Guides
 order: 1
 ---
 
-### Welcome to the Oracle Sales Cloud Element
+## Welcome to the Oracle Sales Cloud Element
 
 
 #### At a Glance
