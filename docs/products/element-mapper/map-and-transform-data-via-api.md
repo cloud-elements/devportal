@@ -2,8 +2,9 @@
 heading: Element Mapper
 title: Map and Transform Data via the Element Mapper API
 description: Get up and running with Element Mapper API.
-apis: API Docs
 layout: docs
+apis: API Docs
+platform: organizations
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 4
