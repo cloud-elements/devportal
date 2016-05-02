@@ -10,7 +10,7 @@ order: 4
 
 This guide is here to get you up and running with Cloud Elements Service in 4 minutes or less. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
 
-This guide reviews the minimum number of steps to get you working with the Finance Hub APIs. If you have not set up a new Application with QuickBooks to connect with Cloud Elements, please see our [Create New QuickBooks App](/elements/quickbooks/quickbooks-endpoint-setup.html) for directions on this process.
+This guide reviews the minimum number of steps to get you working with the Finance Hub APIs. If you have not set up a new Application with QuickBooks to connect with Cloud Elements, please see our [Create New QuickBooks App](/docs/elements/quickbooks/quickbooks-endpoint-setup.html) for directions on this process.
 
 {% include padding-all.html %}
 

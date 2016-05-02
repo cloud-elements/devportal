@@ -10,7 +10,7 @@ order: 4
 
 This guide is here to get you up and running with Cloud Elements Service in 4 minutes or less. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
 
-This guide reviews the minimum number of steps to get you working with the Marketing Hub APIs. If you have not set up a new Application with Salesforce to connect with Cloud Elements, please see our [Create New Salesforce App](/elements/salesforce/salesforce-endpoint-setup.html) for directions on this process.
+This guide reviews the minimum number of steps to get you working with the Marketing Hub APIs. If you have not set up a new Application with Salesforce to connect with Cloud Elements, please see our [Create New Salesforce App](/docs/elements/salesforce/salesforce-endpoint-setup.html) for directions on this process.
 
 __NOTE: In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
 
@@ -70,7 +70,7 @@ Once you are logged in to the console, click on “Elements Catalog”.
 Click “Marketing” from the list of Elements.
 ![Marketing Hub Quick Start Guide 5](http://cloud-elements.com/wp-content/uploads/2014/10/QuickGuideMarketing1.png)
 
-Click “Add Instance” Salesforce Marketing Cloud..
+Click “Add Instance” for Salesforce Marketing Cloud.
 ![Marketing Hub Quick Start Guide 6](http://cloud-elements.com/wp-content/uploads/2014/10/QuickGuideMarketing2.png)
 
 Type a name for the Instance and click “Next”.
