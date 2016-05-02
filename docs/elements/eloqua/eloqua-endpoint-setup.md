@@ -23,39 +23,25 @@ Via a web browser, login to your Eloqua account:
 ![Eloqua Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI2.png)
 
 3. Click “Settings”
-![Eloqua Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI3.png)
+![Eloqua Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI1.png)
 
 4. Click “AppCloud Developer”
-![Eloqua Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI4.png)
+![Eloqua Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI2.png)
 
-5. Click “Provider”
-![Eloqua Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPIProvider.png)
+5. Click “Create App”.
+![Eloqua Connected App step 5](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI3.png)
 
-6. Input Provider Details
+6. Input your App details.
 
-7. Click “Save”
-![Eloqua Connected App step 6](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPIProvider2.png)
+7. Under Authentication to Eloqua, input your “callback URL” and click “Save”
+![Eloqua Connected App step 6](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI4.png)
 
-8. Click “Apps”.
-![Eloqua Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI5.png)
+8. Copy the “Client Id”
 
-9. Click “Create New App”.
-![Eloqua Connected App step 8](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI6.png)
+9. Click Eye to view the “Client Secret”
+![Eloqua Connected App step 7](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI5.png)
 
-10. Input your App details. ![Eloqua Connected App step 9](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI7.png)
-
-11. Under OAuth, input your “callback URL” and click “Save”
-![Eloqua Connected App step 10](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI8.png)
-
-12. Click “Name” of newly created app
-![Eloqua Connected App step 11](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI9.png)
-
-13. Copy the “Client Id”
-
-14. Click “Show” to view the “Client Secret”
-![Eloqua Connected App step 12](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI10.png)
-
-15. Copy the Client Secret and then click “Close”
-![Eloqua Connected App step 13](http://cloud-elements.com/wp-content/uploads/2015/01/EloquaAPI11.png)
+10. Copy the Client Secret and then click “Close”
+![Eloqua Connected App step 8](http://cloud-elements.com/wp-content/uploads/2016/05/EloquaAPI6.png)
 
 Next [create an instance](eloqua-create-instance.html).
