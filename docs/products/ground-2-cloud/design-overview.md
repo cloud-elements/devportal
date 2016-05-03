@@ -48,5 +48,5 @@ The Ground2Cloud Client is installed on the same machine or subnet as the Client
 Clients can be controlled using the “petit-client” node library in the same way that “petit-server” can be used to control the server, communicating with its command port on 3015. See [https://github.com/cloud-elements/petit](https://github.com/cloud-elements/petit) for a full selection of petit client commands. Alternately, a GUI is available that serves the same purpose, as show below. See the associated git repository [https://github.com/cloud-elements/petit-gui](https://github.com/cloud-elements/petit-gui) for details on how to build and run this GUI.
 ![Cloud Elements Ground2Cloud Client Control 1](/assets/img/ground2cloud/client-control1.png)
 
-When installed via the Windows self-installer, coarse-grained control (start / stop / pause) is available via normal windows services under the “CloudElementsConnect” name.
+When installed via the Windows self-installer, coarse-grained control (start / stop / pause) is available via normal windows services under the “Ground2Cloud” name.
 ![Cloud Elements Ground2Cloud Client Control 2](/assets/img/ground2cloud/client-control2.png)
