@@ -12,7 +12,7 @@ order: 6
 
 ### Choosing an Installer
 
-As mentioned in the previous section, you need to choose which installer program you want to run. Download the Standalone Installer (named `CloudElementsConnectSetup.exe`) if you use a service that doesn’t require additional software, or for which you’ve already installed all the required software. Download a Bundled Installer (named, for example, `CloudElementsConnectQbSetup.exe` for the Bundled Installer For QuickBooks) if you also want to install additional software specific for your service.
+As mentioned in the previous section, you need to choose which installer program you want to run. Download the Unbundled Installer (named `Ground2CloudSetup.exe`) if you use a service that doesn’t require additional software, or for which you’ve already installed all the required software. Download a Bundled Installer (named, for example, `Ground2CloudQbSetup.exe` for the Bundled Installer For QuickBooks) if you also want to install additional software specific for your service.
 
 ### Downloading the Installer
 
