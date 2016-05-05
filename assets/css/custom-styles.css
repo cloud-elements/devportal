@@ -685,14 +685,18 @@ hr {
   }
 }
 
-@media (min-width: 480px) and (max-width: 991px) {
-}
+@media (min-width: 300px) and (max-width: 768px) {
+  .docs-header h1 {
+    padding-left: 10px;
+  }
 
-/*	Mobile
-*/
-
-@media (max-width: 768px) {
-
-}
-@media (max-width : 690px) {
+  .docs-header p {
+    padding-left: 10px !important;
+  }
+  .apidocs-button {
+    padding-left: 10px;
+  }
+  .search-bar-wrapper .flextable .flextable-item .form-control:focus {
+    width: 68%;
+  }
 }
