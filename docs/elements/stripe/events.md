@@ -4,7 +4,7 @@ title: Events
 description: Enable Stripe events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 483
+elementId: 475
 parent: Back to Element Guides
 order: 30
 ---
