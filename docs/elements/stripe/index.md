@@ -4,7 +4,7 @@ title: Overview
 description: Integrate Stripe into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 483
+elementId: 475
 parent: Back to Element Guides
 order: 1
 ---
