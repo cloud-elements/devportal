@@ -1,10 +1,10 @@
 ---
-heading: Typeform
+heading: Brandfolder
 title: Authentication
-description: Integrate Typeform into your application via the Cloud Elements APIs.
+description: Integrate Brandfolder into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 339
+elementId: 489
 parent: Back to Element Guides
 order: 10
 ---

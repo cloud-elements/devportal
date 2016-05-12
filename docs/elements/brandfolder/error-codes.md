@@ -1,10 +1,10 @@
 ---
-heading: Typeform
+heading: Brandfolder
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 339
+elementId: 489
 parent: Back to Element Guides
 order: 40
 ---
