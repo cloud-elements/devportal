@@ -63,6 +63,7 @@ layout: elements
 * [![OneDrive Business](/assets/img/element-logos/onedrivebusiness.png)OneDrive Business](./elements/onedrivebusiness/index.html)
 * [![OneNote](/assets/img/element-logos/onenote.png)OneNote](./elements/onenote/index.html)
 * [![Salesforce Documents](/assets/img/element-logos/salesforce.png)Salesforce Documents](./elements/salesforce-documents/index.html)
+* [![Salesforce Libraries](/assets/img/element-logos/salesforce.png)Salesforce Libraries](./elements/salesforce-libraries/index.html)
 * [![ShareFile](/assets/img/element-logos/sharefile.png)ShareFile](./elements/sharefile/index.html)
 * [![Sharepoint](/assets/img/element-logos/sharepoint.png)Sharepoint 2013 Online](./elements/sharepoint/index.html)
 * [![NetSuite Human Capital](/assets/img/element-logos/netsuite.png)NetSuite Human Capital](./elements/netsuite-human-capital/index.html)
