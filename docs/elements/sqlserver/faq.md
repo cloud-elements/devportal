@@ -1,10 +1,10 @@
 ---
-heading: MySQL
+heading: SQLServer
 title: FAQ
 description: FAQ and troubleshooting tips.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 479
+elementId: 490
 parent: Back to Element Guides
 order: 50
 ---

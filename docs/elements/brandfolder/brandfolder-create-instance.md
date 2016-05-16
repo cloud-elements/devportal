@@ -1,23 +1,19 @@
 ---
-heading: Typeform
+heading: Brandfolder
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 339
+elementId: 489
 parent: Back to Element Guides
-order: 20
+order: 15
 ---
 
 ## Create Instance
 
-Typeform is a Help Desk Platform. When you provision an instance, your app will have access to the different functionality offered by the Typeform platform.
+To provision your Brandfolder Element, use the /instances API.
 
-### Step 1. Create an Instance
-
-To provision your Typeform Element, use the /instances API.
-
-Below is an example of the provisioning API call.
+### Step 1. Call the /instances API
 
 * __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
 * __HTTP Verb__: POST
@@ -35,20 +31,20 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Typeform is "typeform".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Brandfolder is "brandfolder".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
-```JSON
+```json
 {
   "element": {
-    "key": "typeform"
+    "key": "brandfolder"
   },
   "configuration": {
-    "api.key": "<INSERT_TYPEFORM_API_KEY>"
+    "api-token": "&lt;INSERT_BRANDFOLDER_USER_TOKEN&gt;"
   },
   "tags": [
-    "<INSERT_TAGS>"
+    "&lt;INSERT_TAGS&gt;"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
+  "name": "&lt;INSERT_INSTANCE_NAME&gt;"
 }
 ```
 
@@ -68,17 +64,18 @@ If the user does not specify a required config entry, an error will result notif
 
 Below is a successful JSON response:
 
-```JSON
+```json
 {
-  "id": 1234,
+  "id": 12,
   "name": "Test",
-  "token": "YT70SDqDVrhw/TMD5oV831Yurfjk6E=",
+  "token": "cuED0/DezalhhzK2OtO6kMP7NvPnMyNcRDZc=",
   "element": {
-    "id": 845,
-    "name": "typeform",
-    "key": "typeform",
-    "description": "Add a Typeform Instance to connect your existing Typeform account to the Cloud Storage and Documents Hub, allowing you to manage forms. You will need your Typeform account information to add an instance.",
-    "image": "http://cloud-elements.com/wp-content/uploads/2016/01/provider_typeform.png",
+    "id": 489,
+    "name": "Brandfolder",
+    "hookName": "Brandfolder",
+    "key": "brandfolder",
+    "description": "Add an Brandfolder Instance to connect your existing Brandfolder account to the General Hub, allowing you to manage assets and attachments across multiple Elements. You will need your Brandfolder account information to add an instance.",
+    "image": "https://assets.brandfolder.com/6xnhmr5n/original/brandfolder_logo_black.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
@@ -91,21 +88,22 @@ Below is a successful JSON response:
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
   "configuration": {
-    "base.url": "https://api.typeform.io/v0.4",
+    "base.url": "https://api.brandfolder.com/v2",
     "event.notification.subscription.id": null,
-    "api.key": "TYPFORM_API_KEY",
     "event.notification.instance.finder": "",
-    "pagination.type": null,
-    "event.notification.callback.url": "false",
-    "pagination.max": "100",
-    "event.notification.signature.key": null,
+    "pagination.type": "cursor",
+    "event.poller.refresh_interval": "15",
+    "event.notification.callback.url": null,
+    "api-token": "BRANDFOLDER_USER_TOKEN",
+    "pagination.max": "50",
     "event.vendor.type": "webhooks",
-    "authentication.time": null,
+    "authentication.time": "",
+    "event.poller.configuration": "{\"brandfolders\":{\"url\":\"/hubs/general/brandfolders?where=updated_dt>'${date:yyyy-MM-dd'T'HH:mm:ssXXX}'\",\"idField\":\"id\"},\"organizations\":{\"url\":\"/hubs/general/organizations?where=updated_dt>'${date:yyyy-MM-dd'T'HH:mm:ssXXX}'\",\"idField\":\"id\"}}",
     "event.notification.enabled": "false"
   },
   "eventsEnabled": false,
-  "eventsNotificationCallbackUrl": "false",
   "traceLoggingEnabled": false,
+  "externalAuthentication": "none",
   "cachingEnabled": false
 }
 ```

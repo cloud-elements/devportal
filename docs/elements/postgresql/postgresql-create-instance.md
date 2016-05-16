@@ -17,6 +17,7 @@ The following is required to create a PostgreSQL Element Instance:
 * Database Name
 * Database Username
 * Database Password
+* Database Tables (__OPTIONAL:__ Can connect a set of tables i.e. contacts, accounts or prefixed tables, i.e. `data_*` via comma separated list)
 
 ### Step 1. Create an Instance
 
@@ -53,7 +54,8 @@ __CONNECTING DIRECTLY VIA IP ADDRESS AND PORT NUMBER__
       "db.host": "<INSERT_DATABASE_HOST_EG_123.123.1.123:3306>",
       "db.name": "<INSERT_DATABASE_NAME>",
       "username": "<INSERT_DATABASE_USERNAME>",
-      "password":  "<INSERT_DATABASE_PASSWORD>"
+      "password":  "<INSERT_DATABASE_PASSWORD>",
+      "db.table.names": "<OPTIONAL:_INSERT_DATABASE_TABLES>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -122,6 +124,7 @@ The following is required to create a PostgreSQL Element Instance:
 * Database Name
 * Database Username
 * Database Password
+* Database Tables (__OPTIONAL:__ Can connect a set of tables i.e. contacts, accounts or prefixed tables, i.e. `data_*` via comma separated list)
 
 ### Step 1. Create an Instance
 
@@ -158,7 +161,8 @@ __CONNECTING DIRECTLY VIA GROUND2CLOUD__
       "db.host": "<INSERT_DATABASE_HOST_EG_g2c.cloud-elements.com:12345>",
       "db.name": "<INSERT_DATABASE_NAME>",
       "username": "<INSERT_DATABASE_USERNAME>",
-      "password":  "<INSERT_DATABASE_PASSWORD>"
+      "password":  "<INSERT_DATABASE_PASSWORD>",
+      "db.table.names": "<OPTIONAL:_INSERT_DATABASE_TABLES>"
   },
   "tags": [
     "<INSERT_TAGS>"
