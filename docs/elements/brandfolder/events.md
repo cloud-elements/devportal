@@ -4,7 +4,7 @@ title: Events
 description: Enable Brandfolder events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 489
+elementId: 492
 parent: Back to Element Guides
 order: 30
 ---
