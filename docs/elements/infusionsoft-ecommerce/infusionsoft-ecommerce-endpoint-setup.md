@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft eCommerce
+seo: Endpoint Setup | Infusionsoft eCommerce | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

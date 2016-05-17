@@ -1,5 +1,6 @@
 ---
 heading: Flickr
+seo: API Docs | Flickr | Cloud Elements API Docs
 title: API Docs
 description: Flickr API Documentation.
 layout: apidocs

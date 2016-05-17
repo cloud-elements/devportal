@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft CRM
+seo: API Docs | Infusionsoft CRM | Cloud Elements API Docs
 title: API Docs
 description: Infusionsoft CRM API Documentation.
 layout: apidocs

@@ -1,5 +1,6 @@
 ---
 heading: Facebook
+seo: Overview | Facebook | Cloud Elements API Docs
 title: Overview
 description: Integrate Facebook into your application via the Cloud Elements APIs.
 layout: docs

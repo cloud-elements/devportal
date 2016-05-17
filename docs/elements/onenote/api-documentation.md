@@ -1,5 +1,6 @@
 ---
 heading: OneNote
+seo: API Docs | OneNote | Cloud Elements API Docs
 title: API Docs
 description: OneNote API Documentation.
 layout: apidocs

@@ -1,5 +1,6 @@
 ---
 heading: WooCommerce
+seo: Endpoint Setup | WooCommerce | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: Create Instance | Marketo | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Authentication | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Authentication
 description: Integrate Salesforce Marketing Cloud into your application via the Cloud Elements APIs.
 layout: docs

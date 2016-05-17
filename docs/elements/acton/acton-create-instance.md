@@ -1,5 +1,6 @@
 ---
 heading: Act-On
+seo: Create Instance | Act-On | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Marketing Hub Quick Start Guide | Cloud Elements API Docs
 title: Marketing Hub Quick Start Guide
 description: Get up and running with the Marketing Hub.
 layout: docs

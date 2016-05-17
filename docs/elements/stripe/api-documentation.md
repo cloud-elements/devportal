@@ -1,5 +1,6 @@
 ---
 heading: Stripe
+seo: API Docs | Stripe | Cloud Elements API Docs
 title: API Docs
 description: Stripe API Documentation.
 layout: apidocs

@@ -1,5 +1,6 @@
 ---
 heading: OneDrive
+seo: Endpoint Setup | OneDrive | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate OneDrive into your application via the Cloud Elements APIs.
 layout: docs

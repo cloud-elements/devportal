@@ -1,5 +1,6 @@
 ---
 heading: Adobe eSign
+seo: Events | Adobe eSign | Cloud Elements API Docs
 title: Events
 description: Enable Adobe eSign events for your application.
 layout: docs

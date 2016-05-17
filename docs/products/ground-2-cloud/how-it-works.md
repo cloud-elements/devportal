@@ -1,5 +1,6 @@
 ---
 heading: Ground2Cloud
+seo: How It Works | Ground2Cloud | Cloud Elements API Docs
 title: How It Works
 description: Information about how Ground2Cloud works.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Platform APIs
+seo: Platform APIs | Cloud Elements API Docs
 title: Platform APIs
 description: Find API documentation on all of the currently supported Platform features.
 layout: platform

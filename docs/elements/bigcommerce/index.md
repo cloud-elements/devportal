@@ -1,5 +1,6 @@
 ---
 heading: BigCommerce
+seo: Overview | BigCommerce | Cloud Elements API Docs
 title: Overview
 description: Integrate BigCommerce into your application via the Cloud Elements APIs.
 layout: docs

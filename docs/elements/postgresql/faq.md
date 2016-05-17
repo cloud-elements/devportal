@@ -1,5 +1,6 @@
 ---
 heading: PostgreSQL
+seo: FAQ | PostgreSQL | Cloud Elements API Docs
 title: FAQ
 description: FAQ and troubleshooting tips.
 layout: docs

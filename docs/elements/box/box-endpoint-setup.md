@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: Endpoint Setup | Box | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Box into your application via the Cloud Elements APIs.
 layout: docs

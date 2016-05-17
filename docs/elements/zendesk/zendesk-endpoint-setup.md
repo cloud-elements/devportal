@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Endpoint Setup | Zendesk | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

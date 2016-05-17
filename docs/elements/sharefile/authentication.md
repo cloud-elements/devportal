@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: Authentication | ShareFile | Cloud Elements API Docs
 title: Authentication
 description: Integrate ShareFile into your application via the Cloud Elements APIs.
 layout: docs

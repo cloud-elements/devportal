@@ -1,5 +1,6 @@
 ---
 heading: Zoho CRM
+seo: Error Codes | Zoho CRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

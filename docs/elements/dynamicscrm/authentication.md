@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics CRM
+seo: Authentication | MS Dynamics CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate Microsoft Dynamics CRM into your application via the Cloud Elements APIs.
 layout: docs

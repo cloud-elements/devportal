@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise CRM
+seo: API Docs | ConnectWise CRM | Cloud Elements API Docs
 title: API Docs
 description: ConnectWise CRM API Documentation.
 layout: apidocs

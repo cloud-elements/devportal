@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Overview | Element Builder | Cloud Elements API Docs
 title: Overview
 description: Learn how to build your own integrations with Element Builder.
 layout: docs

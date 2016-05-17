@@ -1,5 +1,6 @@
 ---
 heading: Xero
+seo: Create Instance | Xero | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

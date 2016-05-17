@@ -1,5 +1,6 @@
 ---
 heading: Element Loader
+seo: Scheduling | Element Loader | Cloud Elements API Docs
 title: Scheduling
 description: Element Loader Job Scheduling.
 layout: docs

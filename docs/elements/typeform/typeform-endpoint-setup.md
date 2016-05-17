@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: Endpoint Setup | Typeform | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

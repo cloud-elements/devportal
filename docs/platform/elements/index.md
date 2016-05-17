@@ -1,5 +1,6 @@
 ---
 heading: Element APIs
+seo: Element APIs Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
 layout: docs

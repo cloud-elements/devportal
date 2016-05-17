@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise Help Desk
+seo: Events | ConnectWise Help Desk | Cloud Elements API Docs
 title: Events
 description: Enable ConnectWise Help Desk events for your application.
 layout: docs

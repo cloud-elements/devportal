@@ -1,5 +1,6 @@
 ---
 heading: Volusion
+seo: Authentication | Volusion | Cloud Elements API Docs
 title: Authentication
 description: Integrate Volusion into your application via the Cloud Elements APIs.
 layout: docs

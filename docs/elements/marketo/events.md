@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: Events | Marketo | Cloud Elements API Docs
 title: Events
 description: Enable Marketo events for your application.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Element Mapper
+seo: Map and Transform Data | Element Mapper | Cloud Elements API Docs
 title: Map and Transform Data via the Element Mapper API
 description: Get up and running with Element Mapper API.
 layout: docs

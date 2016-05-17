@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Human Capital Hub Quick Start Guide | Cloud Elements API Docs
 title: Human Capital Hub Quick Start Guide
 description: Get up and running with the Human Capital Hub.
 layout: docs

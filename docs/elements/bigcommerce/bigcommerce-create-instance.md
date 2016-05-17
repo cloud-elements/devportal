@@ -1,5 +1,6 @@
 ---
 heading: BigCommerce
+seo: Create Instance | BigCommerce | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

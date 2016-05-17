@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: ERP Hub Quick Start Guide | Cloud Elements API Docs
 title: ERP Hub Quick Start Guide
 description: Get up and running with the ERP Hub.
 layout: docs

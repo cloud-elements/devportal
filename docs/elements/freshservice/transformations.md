@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: Transform Data | Freshservice | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: Overview | ShareFile | Cloud Elements API Docs
 title: Overview
 description: Integrate ShareFile into your application via the Cloud Elements APIs.
 layout: docs

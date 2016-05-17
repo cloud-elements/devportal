@@ -1,5 +1,6 @@
 ---
 heading: Dropbox
+seo: Create Instance | Dropbox | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

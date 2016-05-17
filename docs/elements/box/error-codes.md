@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: Error Codes | Box | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

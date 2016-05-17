@@ -1,5 +1,6 @@
 ---
 heading: Brandfolder
+seo: Overview | Brandfolder | Cloud Elements API Docs
 title: Overview
 description: Integrate Brandfolder into your application via the Cloud Elements APIs.
 layout: docs

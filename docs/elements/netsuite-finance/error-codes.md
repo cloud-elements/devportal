@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Finance
+seo: Error Codes | NetSuite Finance | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

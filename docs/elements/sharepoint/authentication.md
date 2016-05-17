@@ -1,5 +1,6 @@
 ---
 heading: Sharepoint 2013
+seo: Authentication | Sharepoint 2013 | Cloud Elements API Docs
 title: Authentication
 description: Integrate Sharepoint 2013 into your application via the Cloud Elements APIs.
 layout: docs

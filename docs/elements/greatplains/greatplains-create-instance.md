@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics Great Plains
+seo: Create Instance | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

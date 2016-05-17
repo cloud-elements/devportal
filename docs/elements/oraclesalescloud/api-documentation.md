@@ -1,5 +1,6 @@
 ---
 heading: Oracle Sales Cloud
+seo: API Docs | Oracle Sales Cloud | Cloud Elements API Docs
 title: API Docs
 description: Oracle Sales Cloud API Documentation.
 layout: apidocs

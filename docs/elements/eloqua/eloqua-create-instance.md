@@ -1,5 +1,6 @@
 ---
 heading: Eloqua
+seo: Create Instance | Eloqua | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

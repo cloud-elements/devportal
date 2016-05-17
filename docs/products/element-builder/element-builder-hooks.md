@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Hooks | Element Builder | Cloud Elements API Docs
 title: Hooks
 description: View example Hooks that are supported in the Element Builder UI.
 layout: docs

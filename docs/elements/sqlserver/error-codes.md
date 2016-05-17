@@ -1,5 +1,6 @@
 ---
 heading: SQLServer
+seo: Error Codes | SQLServer | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

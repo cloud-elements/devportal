@@ -1,5 +1,6 @@
 ---
 heading: Weebly
+seo: Events | Weebly | Cloud Elements API Docs
 title: Events
 description: Enable Weebly events for your application.
 layout: docs

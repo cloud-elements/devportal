@@ -1,5 +1,6 @@
 ---
 heading: Oracle Service Cloud
+seo: Query Language | Oracle Service Cloud | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

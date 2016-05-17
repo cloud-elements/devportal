@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Finance Hub Quick Start Guide | Cloud Elements API Docs
 title: Finance Hub Quick Start Guide
 description: Get up and running with the Finance Hub.
 layout: docs

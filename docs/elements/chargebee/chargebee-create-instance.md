@@ -1,5 +1,6 @@
 ---
 heading: Chargebee
+seo: Create Instance | Chargebee | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

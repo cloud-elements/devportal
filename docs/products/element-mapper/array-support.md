@@ -1,5 +1,6 @@
 ---
 heading: Element Mapper
+seo: Array Support | Element Mapper | Cloud Elements API Docs
 title: Element Mapper Array Support
 description: Learn about Element Mapper's array support.
 layout: docs

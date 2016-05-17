@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: Events | ShareFile | Cloud Elements API Docs
 title: Events
 description: Enable ShareFile events for your application.
 layout: docs

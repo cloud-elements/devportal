@@ -1,5 +1,6 @@
 ---
 heading: PostgreSQL
+seo: Overview | PostgreSQL | Cloud Elements API Docs
 title: Overview
 description: Integrate PostgreSQL into your application via the Cloud Elements APIs.
 layout: docs

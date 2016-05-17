@@ -1,5 +1,6 @@
 ---
 heading: OneNote
+seo: Create Instance | OneNote | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

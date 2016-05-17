@@ -1,5 +1,6 @@
 ---
 heading: Amazon S3
+seo: Endpoint Setup | Amazon S3 | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Amazon S3 into your application via the Cloud Elements APIs.
 layout: docs

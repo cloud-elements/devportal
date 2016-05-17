@@ -1,5 +1,6 @@
 ---
 heading: QuickBooks Enterprise
+seo: Query Language | QuickBooks Enterprise | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

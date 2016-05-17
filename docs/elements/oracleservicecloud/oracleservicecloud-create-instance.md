@@ -1,5 +1,6 @@
 ---
 heading: Oracle Service Cloud
+seo: Create Instance | Oracle Service Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

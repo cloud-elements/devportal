@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: API Docs | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: API Docs
 description: Salesforce Marketing Cloud API Documentation.
 layout: apidocs

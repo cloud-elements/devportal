@@ -1,5 +1,6 @@
 ---
 heading: Ground2Cloud
+seo: F.A.Q. | Ground2Cloud | Cloud Elements API Docs
 title: F.A.Q.
 description: Ground2Cloud Frequently Asked Questions
 layout: docs

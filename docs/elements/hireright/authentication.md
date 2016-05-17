@@ -1,5 +1,6 @@
 ---
 heading: HireRight
+seo: Authentication | HireRight | Cloud Elements API Docs
 title: Authentication
 description: Integrate HireRight into your application via the Cloud Elements APIs.
 layout: docs

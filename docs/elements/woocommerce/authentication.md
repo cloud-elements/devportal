@@ -1,5 +1,6 @@
 ---
 heading: WooCommerce
+seo: Authentication | WooCommerce | Cloud Elements API Docs
 title: Authentication
 description: Integrate WooCommerce into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Freshdesk
+seo: Create Instance | Freshdesk | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

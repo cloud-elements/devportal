@@ -1,5 +1,6 @@
 ---
 heading: Autotask CRM
+seo: Error Codes | Autotask CRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

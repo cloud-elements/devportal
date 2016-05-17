@@ -1,5 +1,6 @@
 ---
 heading: Xero
+seo: Overview | Xero | Cloud Elements API Docs
 title: Overview
 description: Integrate Xero into your application via the Cloud Elements APIs.
 layout: docs

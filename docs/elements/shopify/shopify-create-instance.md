@@ -1,5 +1,6 @@
 ---
 heading: Shopify
+seo: Create Instance | Shopify | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Etsy
+seo: Error Codes | Etsy | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

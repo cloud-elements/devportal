@@ -1,5 +1,6 @@
 ---
 heading: SQLServer
+seo: Create Instance | SQLServer | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

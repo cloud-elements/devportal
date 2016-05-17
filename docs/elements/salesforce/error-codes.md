@@ -1,5 +1,6 @@
 ---
 heading: Salesforce CRM
+seo: Error Codes | Salesforce CRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

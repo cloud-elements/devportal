@@ -1,5 +1,6 @@
 ---
 heading: Adobe eSign
+seo: Endpoint Setup | Adobe eSign | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Adobe eSign into your application via the Cloud Elements APIs.
 layout: docs

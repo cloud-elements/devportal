@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: API Docs | Element Builder | Cloud Elements API Docs
 title: Platform Documentation
 description: Element Builder API Documentation.
 layout: apidocs

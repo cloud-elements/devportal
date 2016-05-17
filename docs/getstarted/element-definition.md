@@ -1,5 +1,6 @@
 ---
 heading: Element
+seo: Element defined | Cloud Elements API Docs
 title: Element defined
 description: Definition of a Element
 layout: docs

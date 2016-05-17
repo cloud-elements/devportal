@@ -1,5 +1,6 @@
 ---
 heading: Element Mapper
+seo: Create Custom Objects | Element Mapper | Cloud Elements API Docs
 title: Create Element Mapper Custom Objects
 description: Create Custom Objects to be mapped and synced between services
 layout: docs

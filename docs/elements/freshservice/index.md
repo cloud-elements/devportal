@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: Overview | Freshservice | Cloud Elements API Docs
 title: Overview
 description: Integrate Freshservice into your application via the Cloud Elements APIs.
 layout: docs

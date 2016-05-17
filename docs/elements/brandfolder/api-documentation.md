@@ -1,5 +1,6 @@
 ---
 heading: Brandfolder
+seo: API Docs | Brandfolder | Cloud Elements API Docs
 title: API Docs
 description: Brandfolder API Documentation.
 layout: apidocs

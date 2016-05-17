@@ -1,5 +1,6 @@
 ---
 heading: NetSuite CRM
+seo: Authentication | NetSuite CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate NetSuite CRM into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: PostgreSQL
+seo: Endpoint Setup | PostgreSQL | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate a PostgreSQL Database via the Cloud Elements APIs.
 layout: docs

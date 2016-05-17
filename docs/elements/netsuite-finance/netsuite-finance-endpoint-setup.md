@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Finance
+seo: Endpoint Setup | NetSuite Finance | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

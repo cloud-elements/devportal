@@ -1,5 +1,6 @@
 ---
 heading: Google Drive
+seo: Events | Google Drive | Cloud Elements API Docs
 title: Events
 description: Enable Google Drive events for your application.
 layout: docs

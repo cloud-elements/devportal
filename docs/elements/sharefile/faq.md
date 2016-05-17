@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: FAQ | ShareFile | Cloud Elements API Docs
 title: FAQ
 description: ShareFile FAQ.
 layout: docs

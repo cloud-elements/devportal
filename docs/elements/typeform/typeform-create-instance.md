@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: Create Instance | Typeform | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

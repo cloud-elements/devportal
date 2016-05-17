@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: Endpoint Setup | Marketo | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

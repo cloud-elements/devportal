@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: Events | Box | Cloud Elements API Docs
 title: Events
 description: Enable Box events for your application.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Documents
+seo: Events | Salesforce Documents | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce Documents events for your application.
 layout: docs

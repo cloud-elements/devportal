@@ -1,5 +1,6 @@
 ---
 heading: Platform Overview
+seo: Platform Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation, guides, and more on all of the currently supported Platform features.
 layout: docs

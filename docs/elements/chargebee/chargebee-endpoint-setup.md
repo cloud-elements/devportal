@@ -1,5 +1,6 @@
 ---
 heading: Chargebee
+seo: Endpoint Setup | Chargebee | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Chargebee into your application via the Cloud Elements APIs.
 layout: docs

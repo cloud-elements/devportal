@@ -1,5 +1,6 @@
 ---
 heading: Pardot
+seo: Create Instance | Pardot | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

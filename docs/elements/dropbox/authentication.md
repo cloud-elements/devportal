@@ -1,5 +1,6 @@
 ---
 heading: Dropbox
+seo: Authentication | Dropbox | Cloud Elements API Docs
 title: Authentication
 description: Integrate Dropbox into your application via the Cloud Elements APIs.
 layout: docs

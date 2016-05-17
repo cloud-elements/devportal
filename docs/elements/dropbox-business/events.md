@@ -1,5 +1,6 @@
 ---
 heading: Dropbox Business
+seo: Events | Dropbox Business | Cloud Elements API Docs
 title: Events
 description: Enable Dropbox Business events for your application.
 layout: docs

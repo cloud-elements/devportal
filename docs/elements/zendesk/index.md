@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Overview | Zendesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Zendesk into your application via the Cloud Elements APIs.
 layout: docs

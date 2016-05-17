@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft CRM
+seo: Endpoint Setup | Infusionsoft CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

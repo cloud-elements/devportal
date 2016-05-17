@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: Authentication | HubSpot CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate HubSpot CRM into your application via the Cloud Elements APIs.
 layout: docs

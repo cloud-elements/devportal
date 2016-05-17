@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Transform Data | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

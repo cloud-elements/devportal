@@ -1,5 +1,6 @@
 ---
 heading: WooCommerce
+seo: Events | WooCommerce | Cloud Elements API Docs
 title: Events
 description: Enable WooCommerce events for your application.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: NetSuite ERP
+seo: Create Instance | NetSuite ERP | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

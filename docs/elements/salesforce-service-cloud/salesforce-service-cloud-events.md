@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Service Cloud
+seo: Events | Salesforce Service Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce Service Cloud events for your application.
 layout: docs

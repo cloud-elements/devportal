@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: API Docs | Marketo | Cloud Elements API Docs
 title: API Docs
 description: Marketo API Documentation.
 layout: apidocs

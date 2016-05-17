@@ -1,5 +1,6 @@
 ---
 heading: Twilio SMS
+seo: Error Codes | Twilio SMS | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

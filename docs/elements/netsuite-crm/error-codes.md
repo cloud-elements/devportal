@@ -1,5 +1,6 @@
 ---
 heading: NetSuite CRM
+seo: Error Codes | NetSuite CRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

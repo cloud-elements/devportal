@@ -1,5 +1,6 @@
 ---
 heading: Google Drive
+seo: FAQ | Google Drive | Cloud Elements API Docs
 title: FAQ
 description: Frequently asked questions and notes on conventions.
 layout: docs

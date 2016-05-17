@@ -1,5 +1,6 @@
 ---
 heading: Facebook
+seo: Endpoint Setup | Facebook | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Facebook into your application via the Cloud Elements APIs.
 layout: docs

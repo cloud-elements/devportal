@@ -1,5 +1,6 @@
 ---
 heading: Sharepoint 2013
+seo: API Docs | Sharepoint 2013 | Cloud Elements API Docs
 title: API Docs
 description: Sharepoint 2013 API Documentation.
 layout: apidocs

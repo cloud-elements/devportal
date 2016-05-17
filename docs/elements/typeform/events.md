@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: Events | Typeform | Cloud Elements API Docs
 title: Events
 description: Enable Typeform events for your application.
 layout: docs

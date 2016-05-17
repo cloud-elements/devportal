@@ -1,5 +1,6 @@
 ---
 heading: Brandfolder
+seo: Create Instance | Brandfolder | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

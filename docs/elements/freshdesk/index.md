@@ -1,5 +1,6 @@
 ---
 heading: Freshdesk
+seo: Overview | Freshdesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Freshdesk into your application via the Cloud Elements APIs.
 layout: docs

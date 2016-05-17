@@ -1,5 +1,6 @@
 ---
 heading: OneDrive Business
+seo: Endpoint Setup | OneDrive Business | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate OneDrive Business into your application via the Cloud Elements APIs.
 layout: docs

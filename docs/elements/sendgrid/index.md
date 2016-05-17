@@ -1,5 +1,6 @@
 ---
 heading: SendGrid
+seo: Overview | SendGrid | Cloud Elements API Docs
 title: Overview
 description: Integrate SendGrid into your application via the Cloud Elements APIs.
 layout: docs

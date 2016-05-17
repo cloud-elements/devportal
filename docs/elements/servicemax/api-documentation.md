@@ -1,5 +1,6 @@
 ---
 heading: ServiceMax
+seo: API Docs | ServiceMax | Cloud Elements API Docs
 title: API Docs
 description: ServiceMax API Documentation.
 layout: apidocs

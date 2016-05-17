@@ -1,5 +1,6 @@
 ---
 heading: Ground2Cloud
+seo: Who This Manual is For | Ground2Cloud | Cloud Elements API Docs
 title: Who This Manual is For
 description: Information about when Ground2Cloud can be used.
 layout: docs

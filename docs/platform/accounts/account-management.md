@@ -1,6 +1,7 @@
 ---
 heading: Account APIs
-title: Overview of Cloud Elements Account APIs
+seo: Account APIs Overview | Cloud Elements API Docs
+title: Overview
 description: Find API documentation, account management guides, and more on all of the currently supported Account APIs.
 layout: docs
 platform: accounts

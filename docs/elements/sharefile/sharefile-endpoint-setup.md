@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: Endpoint Setup | ShareFile | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

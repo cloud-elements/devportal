@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: Authentication | Box | Cloud Elements API Docs
 title: Authentication
 description: Integrate Box into your application via the Cloud Elements APIs.
 layout: docs

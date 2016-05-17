@@ -1,5 +1,6 @@
 ---
 heading: FreshBooks
+seo: Authentication | FreshBooks | Cloud Elements API Doc
 title: Authentication
 description: Integrate FreshBooks into your application via the Cloud Elements APIs.
 layout: docs

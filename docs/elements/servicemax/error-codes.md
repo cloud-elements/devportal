@@ -1,5 +1,6 @@
 ---
 heading: ServiceMax
+seo: Error Codes | ServiceMax | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

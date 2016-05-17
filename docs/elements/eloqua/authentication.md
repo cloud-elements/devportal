@@ -1,5 +1,6 @@
 ---
 heading: Eloqua
+seo: Authentication | Eloqua | Cloud Elements API Docs
 title: Authentication
 description: Integrate Eloqua into your application via the Cloud Elements APIs.
 layout: docs

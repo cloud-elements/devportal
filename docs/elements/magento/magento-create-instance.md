@@ -1,5 +1,6 @@
 ---
 heading: Magento
+seo: Create Instance | Magento | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

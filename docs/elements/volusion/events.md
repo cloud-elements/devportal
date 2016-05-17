@@ -1,5 +1,6 @@
 ---
 heading: Volusion
+seo: Events | Volusion | Cloud Elements API Docs
 title: Events
 description: Enable Volusion events for your application.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: DocuSign
+seo: Query Language | DocuSign | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

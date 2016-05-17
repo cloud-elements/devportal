@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Create Instance | Close.io | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

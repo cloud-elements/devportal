@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Transform Data | Close.io | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

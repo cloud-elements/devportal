@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: Create Instance | HubSpot CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

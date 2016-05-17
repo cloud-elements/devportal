@@ -1,5 +1,6 @@
 ---
 heading: QuickBooks Enterprise
+seo: Events | QuickBooks Enterprise | Cloud Elements API Docs
 title: Events
 description: Enable QuickBooks Enterprise events for your application.
 layout: docs

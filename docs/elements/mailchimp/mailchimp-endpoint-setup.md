@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: Endpoint Setup | MailChimp | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

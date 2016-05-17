@@ -1,5 +1,6 @@
 ---
 heading: Oracle Sales Cloud
+seo: Error Codes | Oracle Sales Cloud | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

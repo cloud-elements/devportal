@@ -1,5 +1,6 @@
 ---
 heading: Salesforce CRM
+seo: Endpoint Setup | Salesforce CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

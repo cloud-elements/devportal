@@ -1,5 +1,6 @@
 ---
 heading: PostgreSQL
+seo: Create Instance | PostgreSQL | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

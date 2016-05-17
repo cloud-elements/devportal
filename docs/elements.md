@@ -1,6 +1,6 @@
 ---
 heading: Elements
-title: Currently Supported Elements
+title: Currently Supported Elements | Cloud Elements
 description: Find API documentation, guides, and more on all of the currently supported Elements.
 layout: elements
 ---

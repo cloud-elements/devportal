@@ -1,5 +1,6 @@
 ---
 heading: HireRight
+seo: Create Instance | HireRight | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

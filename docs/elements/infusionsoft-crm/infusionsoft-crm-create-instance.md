@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft CRM
+seo: Create Instance | Infusionsoft CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

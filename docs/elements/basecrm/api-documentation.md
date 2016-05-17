@@ -1,5 +1,6 @@
 ---
 heading: Base CRM
+seo: API Docs | Base CRM | Cloud Elements API Docs
 title: API Docs
 description: Base CRM API Documentation.
 layout: apidocs

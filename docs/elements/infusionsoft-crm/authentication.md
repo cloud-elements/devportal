@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft CRM
+seo: Authentication | Infusionsoft CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate Infusionsoft CRM into your application via the Cloud Elements APIs.
 layout: docs

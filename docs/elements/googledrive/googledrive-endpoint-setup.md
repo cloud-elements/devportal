@@ -1,5 +1,6 @@
 ---
 heading: Google Drive
+seo: Endpoint Setup | Google Drive | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Google Drive into your application via the Cloud Elements APIs.
 layout: docs
