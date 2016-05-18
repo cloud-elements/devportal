@@ -1,6 +1,6 @@
 ---
 heading: Element APIs
-title: Element API Docs | Cloud Elements API Docs
+seo: Element API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Element API Documentation.
 layout: apidocs
