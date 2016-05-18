@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: API Docs | Typeform | Cloud Elements API Docs
 title: API Docs
 description: Typeform API Docs
 layout: apidocs

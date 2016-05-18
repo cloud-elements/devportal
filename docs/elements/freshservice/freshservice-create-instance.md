@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: Create Instance | Freshservice | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

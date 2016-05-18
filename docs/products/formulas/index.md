@@ -1,5 +1,6 @@
 ---
 heading: Formulas
+seo: Overview | Formulas | Cloud Elements API Docs
 title: Overview
 description: Learn how to sync objects and create formulas between cloud services.
 layout: docs

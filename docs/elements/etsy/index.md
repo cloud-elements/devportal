@@ -1,5 +1,6 @@
 ---
 heading: Etsy
+seo: Overview | Etsy | Cloud Elements API Docs
 title: Overview
 description: Integrate Etsy into your application via the Cloud Elements APIs.
 layout: docs

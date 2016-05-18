@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Service Cloud
+seo: Authentication | Salesforce Service Cloud | Cloud Elements API Docs
 title: Authentication
 description: Integrate Salesforce Service Cloud into your application via the Cloud Elements APIs.
 layout: docs

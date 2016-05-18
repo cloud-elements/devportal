@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: Create Instance | JIRA | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

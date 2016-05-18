@@ -1,5 +1,6 @@
 ---
 heading: Salesforce CRM
+seo: Bulk APIs | Salesforce CRM | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs

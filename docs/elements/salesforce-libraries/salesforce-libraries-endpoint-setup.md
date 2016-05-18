@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Libraries
+seo: Endpoint Setup | Salesforce Libraries | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise Help Desk
+seo: Create Instance | ConnectWise Help Desk | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

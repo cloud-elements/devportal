@@ -1,5 +1,6 @@
 ---
 heading: HireRight
+seo: Overview | HireRight | Cloud Elements API Docs
 title: Overview
 description: Integrate HireRight into your application via the Cloud Elements APIs.
 layout: docs

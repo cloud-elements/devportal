@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Events | Zendesk | Cloud Elements API Docs
 title: Events
 description: Enable Zendesk events for your application.
 layout: docs

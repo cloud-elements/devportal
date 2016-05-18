@@ -1,5 +1,6 @@
 ---
 heading: Element Mapper
+seo: Quick Start Guide | Element Mapper | Cloud Elements API Docs
 title: Element Mapper Quick Start Guide
 description: Get up and running with Element Mapper UI.
 layout: docs

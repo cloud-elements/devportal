@@ -1,5 +1,6 @@
 ---
 heading: Freshdesk
+seo: Events | Freshdesk | Cloud Elements API Docs
 title: Events
 description: Enable Freshdesk events for your application.
 layout: docs

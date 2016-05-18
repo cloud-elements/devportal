@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Help Desk Hub Quick Start Guide | Cloud Elements API Docs
 title: Help Desk Hub Quick Start Guide
 description: Get up and running with the Help Desk Hub.
 layout: docs

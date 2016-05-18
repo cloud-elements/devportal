@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft Marketing
+seo: Create Instance | Infusionsoft Marketing | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

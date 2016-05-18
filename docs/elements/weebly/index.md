@@ -1,5 +1,6 @@
 ---
 heading: Weebly
+seo: Overview | Weebly | Cloud Elements API Docs
 title: Overview
 description: Integrate Weebly into your application via the Cloud Elements APIs.
 layout: docs

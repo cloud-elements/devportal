@@ -1,5 +1,6 @@
 ---
 heading: Element Loader
+seo: Authentication | Element Loader | Cloud Elements API Docs
 title: Authentication
 description: Element Loader Authentication.
 layout: docs

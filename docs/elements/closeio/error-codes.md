@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Error Codes | Close.io | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

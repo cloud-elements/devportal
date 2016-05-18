@@ -1,5 +1,6 @@
 ---
 heading: Formulas
+seo: Formula Debugging | Formulas | Cloud Elements API Docs
 title: Formula Debugging
 description: View debugging tips when working with formulas.
 layout: docs

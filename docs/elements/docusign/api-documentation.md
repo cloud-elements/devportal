@@ -1,5 +1,6 @@
 ---
 heading: DocuSign
+seo: API Docs | DocuSign | Cloud Elements API Docs
 title: API Docs
 description: DocuSign API Documentation.
 layout: apidocs

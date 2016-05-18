@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: Authentication | JIRA | Cloud Elements API Docs
 title: Authentication
 description: Integrate JIRA into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: ServiceNow
+seo: Create Instance | ServiceNow | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

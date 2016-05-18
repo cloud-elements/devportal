@@ -1,5 +1,6 @@
 ---
 heading: SQLServer
+seo: Authentication | SQLServer | Cloud Elements API Docs
 title: Authentication
 description: Integrate SQLServer into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Xero
+seo: API Docs | Xero | Cloud Elements API Docs
 title: API Docs
 description: Xero API Documentation.
 layout: apidocs

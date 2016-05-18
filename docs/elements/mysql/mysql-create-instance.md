@@ -1,5 +1,6 @@
 ---
 heading: MySQL
+seo: Create Instance | MySQL | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: InfoBip
+seo: API Docs | InfoBip | Cloud Elements API Docs
 title: API Docs
 description: InfoBip API Documentation.
 layout: apidocs

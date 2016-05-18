@@ -1,5 +1,6 @@
 ---
 heading: Eloqua
+seo: API Docs | Eloqua | Cloud Elements API Docs
 title: API Docs
 description: Eloqua API Documentation.
 layout: apidocs

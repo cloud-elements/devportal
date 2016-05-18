@@ -1,5 +1,6 @@
 ---
 heading: Sharepoint 2013
+seo: Create Instance | Sharepoint 2013 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Chargebee
+seo: API Docs | Chargebee | Cloud Elements API Docs
 title: API Docs
 description: Chargebee API Documentation.
 layout: apidocs

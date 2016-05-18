@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise CRM
+seo: Authentication | ConnectWise CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate ConnectWise CRM into your application via the Cloud Elements APIs.
 layout: docs

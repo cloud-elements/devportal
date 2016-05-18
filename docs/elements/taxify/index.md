@@ -1,5 +1,6 @@
 ---
 heading: Taxify
+seo: Overview | Taxify | Cloud Elements API Docs
 title: Overview
 description: Integrate Taxify into your application via the Cloud Elements APIs.
 layout: docs

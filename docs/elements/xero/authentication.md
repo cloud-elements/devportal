@@ -1,5 +1,6 @@
 ---
 heading: Xero
+seo: Authentication | Xero | Cloud Elements API Docs
 title: Authentication
 description: Integrate Xero into your application via the Cloud Elements APIs.
 layout: docs

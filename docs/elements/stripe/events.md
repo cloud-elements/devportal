@@ -1,5 +1,6 @@
 ---
 heading: Stripe
+seo: Events | Stripe | Cloud Elements API Docs
 title: Events
 description: Enable Stripe events for your application.
 layout: docs

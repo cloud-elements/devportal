@@ -1,5 +1,6 @@
 ---
 heading: Eloqua
+seo: Overview | Eloqua | Cloud Elements API Docs
 title: Overview
 description: Integrate Eloqua into your application via the Cloud Elements APIs.
 layout: docs

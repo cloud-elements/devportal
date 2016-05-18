@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Endpoint Setup | Close.io | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

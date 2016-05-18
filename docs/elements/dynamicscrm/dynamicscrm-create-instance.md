@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics CRM
+seo: Create Instance | MS Dynamics CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

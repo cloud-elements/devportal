@@ -1,5 +1,6 @@
 ---
 heading: Volusion
+seo: Query Language | Volusion | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

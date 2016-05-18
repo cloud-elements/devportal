@@ -1,5 +1,6 @@
 ---
 heading: InfoBip
+seo: Create Instance | InfoBip | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

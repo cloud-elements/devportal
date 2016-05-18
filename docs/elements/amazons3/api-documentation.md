@@ -1,5 +1,6 @@
 ---
 heading: Amazon S3
+seo: API Docs | Amazon S3 | Cloud Elements API Docs
 title: API Docs
 description: Amazon S3 API Documentation.
 layout: apidocs

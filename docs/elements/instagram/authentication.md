@@ -1,5 +1,6 @@
 ---
 heading: Instagram
+seo: Authentication | Instagram | Cloud Elements API Docs
 title: Authentication
 description: Integrate Instagram into your application via the Cloud Elements APIs.
 layout: docs

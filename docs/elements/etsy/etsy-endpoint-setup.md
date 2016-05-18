@@ -1,5 +1,6 @@
 ---
 heading: Etsy
+seo: Endpoint Setup | Etsy | Cloud Elements API Docs
 title: Register as a Consumer
 description: Register as a Consumer
 layout: docs

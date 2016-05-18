@@ -1,5 +1,6 @@
 ---
 heading: Pipedrive
+seo: Overview | Pipedrive | Cloud Elements API Docs
 title: Overview
 description: Integrate Pipedrive into your application via the Cloud Elements APIs.
 layout: docs

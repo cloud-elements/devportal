@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: Overview | Box | Cloud Elements API Docs
 title: Overview
 description: Integrate Box into your application via the Cloud Elements APIs.
 layout: docs

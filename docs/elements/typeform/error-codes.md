@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: Error Codes | Typeform | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

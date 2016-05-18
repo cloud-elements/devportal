@@ -1,5 +1,6 @@
 ---
 heading: Oracle Sales Cloud
+seo: Bulk APIs | Oracle Sales Cloud | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs

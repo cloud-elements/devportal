@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise CRM
+seo: Create Instance | ConnectWise CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

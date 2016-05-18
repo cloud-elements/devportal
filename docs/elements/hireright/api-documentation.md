@@ -1,5 +1,6 @@
 ---
 heading: HireRight
+seo: API Docs | HireRight | Cloud Elements API Docs
 title: API Docs
 description: HireRight API Documentation.
 layout: apidocs

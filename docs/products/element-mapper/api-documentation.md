@@ -1,5 +1,6 @@
 ---
 heading: Element Mapper
+seo: API Docs | Element Mapper | Cloud Elements API Docs
 title: Platform Documentation
 description: Element Mapper API Documentation.
 layout: apidocs

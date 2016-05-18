@@ -1,5 +1,6 @@
 ---
 heading: Base CRM
+seo: Create Instance | Base CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

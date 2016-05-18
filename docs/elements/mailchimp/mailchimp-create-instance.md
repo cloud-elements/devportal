@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: Create Instance | MailChimp | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

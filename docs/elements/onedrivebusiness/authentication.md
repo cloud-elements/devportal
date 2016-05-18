@@ -1,5 +1,6 @@
 ---
 heading: OneDrive Business
+seo: Authentication | OneDrive Business | Cloud Elements API Docs
 title: Authentication
 description: Integrate One Drive Business into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Twilio SMS
+seo: Overview | Twilio SMS | Cloud Elements API Docs
 title: Overview
 description: Integrate Twilio SMS into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Google Drive
+seo: Create Instance | Google Drive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

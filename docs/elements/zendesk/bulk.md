@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Bulk APIs | Zendesk | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs

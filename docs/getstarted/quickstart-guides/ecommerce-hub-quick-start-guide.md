@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: eCommerce Hub Quick Start Guide | Cloud Elements API Docs
 title: eCommerce Hub Quick Start Guide
 description: Get up and running with the eCommerce Hub.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: Overview | JIRA | Cloud Elements API Docs
 title: Overview
 description: Integrate JIRA into your application via the Cloud Elements APIs.
 layout: docs

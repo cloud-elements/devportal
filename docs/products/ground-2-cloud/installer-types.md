@@ -1,5 +1,6 @@
 ---
 heading: Ground2Cloud
+seo: Installer Types | Ground2Cloud | Cloud Elements API Docs
 title: Installer Types
 description: Information about Ground2Cloud installer types.
 layout: docs

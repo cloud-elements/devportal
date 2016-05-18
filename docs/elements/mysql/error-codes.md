@@ -1,5 +1,6 @@
 ---
 heading: MySQL
+seo: Error Codes | MySQL | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

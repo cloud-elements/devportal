@@ -1,5 +1,6 @@
 ---
 heading: Dropbox Business
+seo: Endpoint Setup | Dropbox Business | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Dropbox Business into your application via the Cloud Elements APIs.
 layout: docs

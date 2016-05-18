@@ -1,5 +1,6 @@
 ---
 heading: Stripe
+seo: Query Language | Stripe | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

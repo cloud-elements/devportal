@@ -1,5 +1,6 @@
 ---
 heading: Shopify
+seo: Transform Data | Shopify | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

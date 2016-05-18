@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Human Capital
+seo: API Docs | NetSuite Human Capital | Cloud Elements API Docs
 title: API Docs
 description: NetSuite Human Capital API Documentation.
 layout: apidocs

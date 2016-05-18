@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Overview | Close.io | Cloud Elements API Docs
 title: Overview
 description: Integrate Close.io into your application via the Cloud Elements APIs.
 layout: docs

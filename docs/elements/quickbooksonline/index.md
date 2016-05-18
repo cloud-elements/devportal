@@ -1,5 +1,6 @@
 ---
 heading: QuickBooks Online
+seo: Overview | QuickBooks Online | Cloud Elements API Docs
 title: Overview
 description: Integrate QuickBooks Online into your application via the Cloud Elements APIs.
 layout: docs

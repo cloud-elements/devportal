@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Endpoint Setup | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

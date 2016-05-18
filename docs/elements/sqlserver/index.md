@@ -1,5 +1,6 @@
 ---
 heading: SQLServer
+seo: Overview | SQLServer | Cloud Elements API Docs
 title: Overview
 description: Integrate SQLServer into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Service Cloud
+seo: Create Instance | Salesforce Service Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

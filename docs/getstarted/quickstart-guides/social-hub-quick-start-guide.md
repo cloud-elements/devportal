@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Social Hub Quick Start Guide | Cloud Elements API Docs
 title: Social Hub Quick Start Guide
 description: Get up and running with the Social Hub.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: MailJet Messaging
+seo: Create Instance | MailJet Messaging | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

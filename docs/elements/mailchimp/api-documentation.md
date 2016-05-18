@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: API Docs | MailChimp | Cloud Elements API Docs
 title: API Docs
 description: MailChimp API Documentation.
 layout: apidocs

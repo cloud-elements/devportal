@@ -1,5 +1,6 @@
 ---
 heading: Xero
+seo: Endpoint Setup | Xero | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

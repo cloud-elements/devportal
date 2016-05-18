@@ -1,5 +1,6 @@
 ---
 heading: MySQL
+seo: FAQ | MySQL | Cloud Elements API Docs
 title: FAQ
 description: FAQ and troubleshooting tips.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Formulas
+seo: Create Formula via API | Formulas | Cloud Elements API Docs
 title: Create Formula via API
 description: Learn how to create formulas via API and start syncing cloud services.
 layout: docs

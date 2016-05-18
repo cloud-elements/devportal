@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Events | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce events for your application.
 layout: docs

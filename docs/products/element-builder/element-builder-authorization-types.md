@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Authorization Types | Element Builder | Cloud Elements API Docs
 title: Authorization Types
 description: View example Authorization Types that can be built using the Element Builder UI.
 layout: docs

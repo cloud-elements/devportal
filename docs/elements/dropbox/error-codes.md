@@ -1,5 +1,6 @@
 ---
 heading: Dropbox
+seo: Error Codes | Dropbox | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

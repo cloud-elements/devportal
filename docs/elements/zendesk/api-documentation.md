@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: API Docs | Zendesk | Cloud Elements API Docs
 title: API Docs
 description: Zendesk API Documentation.
 layout: apidocs

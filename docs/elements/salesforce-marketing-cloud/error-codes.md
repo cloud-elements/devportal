@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Error Codes | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

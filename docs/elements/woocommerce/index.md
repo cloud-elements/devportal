@@ -1,5 +1,6 @@
 ---
 heading: WooCommerce
+seo: Overview | WooCommerce | Cloud Elements API Docs
 title: Overview
 description: Integrate WooCommerce into your application via the Cloud Elements APIs.
 layout: docs

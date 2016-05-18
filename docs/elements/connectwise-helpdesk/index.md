@@ -1,5 +1,6 @@
 ---
 heading: ConnectWise Help Desk
+seo: Overview | ConnectWise Help Desk | Cloud Elements API Docs
 title: Overview
 description: Integrate ConnectWise Help Desk into your application via the Cloud Elements APIs.
 layout: docs

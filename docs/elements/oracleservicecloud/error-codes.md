@@ -1,5 +1,6 @@
 ---
 heading: Oracle Service Cloud
+seo: Error Codes | Oracle Service Cloud | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

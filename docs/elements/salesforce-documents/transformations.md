@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Documents
+seo: Transform Data | Salesforce Documents | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

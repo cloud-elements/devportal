@@ -1,5 +1,6 @@
 ---
 heading: Weebly
+seo: Create Instance | Weebly | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

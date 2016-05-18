@@ -1,5 +1,6 @@
 ---
 heading: Pipedrive
+seo: Create Instance | Pipedrive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

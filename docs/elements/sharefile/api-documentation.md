@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: API Docs | ShareFile | Cloud Elements API Docs
 title: API Docs
 description: ShareFile API Documentation.
 layout: apidocs

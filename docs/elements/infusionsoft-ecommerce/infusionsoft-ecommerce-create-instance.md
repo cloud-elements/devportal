@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft eCommerce
+seo: Create Instance | Infusionsoft eCommerce | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

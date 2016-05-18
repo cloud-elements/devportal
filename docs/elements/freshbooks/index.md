@@ -1,5 +1,6 @@
 ---
 heading: FreshBooks
+seo: Overview | FreshBooks | Cloud Elements API Docs
 title: Overview
 description: Integrate FreshBooks into your application via the Cloud Elements APIs.
 layout: docs

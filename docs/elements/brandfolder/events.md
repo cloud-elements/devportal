@@ -1,5 +1,6 @@
 ---
 heading: Brandfolder
+seo: Events | Brandfolder | Cloud Elements API Docs
 title: Events
 description: Enable Brandfolder events for your application.
 layout: docs

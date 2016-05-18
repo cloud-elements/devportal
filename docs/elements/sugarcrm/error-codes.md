@@ -1,5 +1,6 @@
 ---
 heading: SugarCRM
+seo: Error Codes | SugarCRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

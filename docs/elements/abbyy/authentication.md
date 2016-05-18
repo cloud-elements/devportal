@@ -1,5 +1,6 @@
 ---
 heading: ABBYY
+seo: Authentication | ABBYY | Cloud Elements API Docs
 title: Authentication
 description: Integrate ABBYY into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Hub Level Documentation
+seo: Cloud Storage Hub Quick Start Guide | Cloud Elements API Docs
 title: Cloud Storage Hub Quick Start Guide
 description: Get up and running with the Cloud Storage Hub.
 layout: docs

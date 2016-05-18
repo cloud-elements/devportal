@@ -1,5 +1,6 @@
 ---
 heading: Salesforce CRM
+seo: Create Instance | Salesforce CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Facebook
+seo: Authentication | Facebook | Cloud Elements API Docs
 title: Authentication
 description: Integrate Facebook into your application via the Cloud Elements APIs.
 layout: docs

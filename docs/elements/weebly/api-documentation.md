@@ -1,5 +1,6 @@
 ---
 heading: Weebly
+seo: API Docs | Weebly | Cloud Elements API Docs
 title: API Docs
 description: Weebly API Documentation.
 layout: apidocs

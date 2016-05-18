@@ -1,5 +1,6 @@
 ---
 heading: Event Management
+seo: Event Management | Cloud Elements API Docs
 title: Event Management
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
 layout: docs

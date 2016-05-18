@@ -1,5 +1,6 @@
 ---
 heading: BigCommerce
+seo: Events | BigCommerce | Cloud Elements API Docs
 title: Events
 description: Enable BigCommerce events for your application.
 layout: docs

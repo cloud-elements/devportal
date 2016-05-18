@@ -1,5 +1,6 @@
 ---
 heading: Stripe
+seo: Overview | Stripe | Cloud Elements API Docs
 title: Overview
 description: Integrate Stripe into your application via the Cloud Elements APIs.
 layout: docs

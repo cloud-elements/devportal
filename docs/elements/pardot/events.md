@@ -1,5 +1,6 @@
 ---
 heading: Pardot
+seo: Events | Pardot | Cloud Elements API Docs
 title: Events
 description: Enable Pardot events for your application.
 layout: docs

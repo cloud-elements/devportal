@@ -1,5 +1,6 @@
 ---
 heading: Element Loader
+seo: Overview | Element Loader | Cloud Elements API Docs
 title: Overview
 description: Learn how to bulk transfer data from different cloud services.
 layout: docs

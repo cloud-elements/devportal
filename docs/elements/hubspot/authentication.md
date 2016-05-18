@@ -1,5 +1,6 @@
 ---
 heading: HubSpot
+seo: Authentication | HubSpot | Cloud Elements API Docs
 title: Authentication
 description: Integrate HubSpot into your application via the Cloud Elements APIs.
 layout: docs

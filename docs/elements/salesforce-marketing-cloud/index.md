@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Marketing Cloud
+seo: Overview | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Marketing Cloud into your application via the Cloud Elements APIs.
 layout: docs

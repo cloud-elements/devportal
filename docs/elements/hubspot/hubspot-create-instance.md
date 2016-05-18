@@ -1,5 +1,6 @@
 ---
 heading: HubSpot
+seo: Create Instance | HubSpot | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

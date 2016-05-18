@@ -1,5 +1,6 @@
 ---
 heading: Organization APIs
+seo: Organization API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Organization API Documentation.
 layout: apidocs

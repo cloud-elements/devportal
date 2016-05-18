@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: Error Codes | MailChimp | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

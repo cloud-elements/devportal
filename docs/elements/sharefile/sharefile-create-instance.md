@@ -1,5 +1,6 @@
 ---
 heading: ShareFile
+seo: Create Instance | ShareFile | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

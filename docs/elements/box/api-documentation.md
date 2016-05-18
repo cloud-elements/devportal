@@ -1,5 +1,6 @@
 ---
 heading: Box
+seo: API Docs | Box | Cloud Elements API Docs
 title: API Docs
 description: Box API Documentation.
 layout: apidocs

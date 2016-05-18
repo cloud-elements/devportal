@@ -1,5 +1,6 @@
 ---
 heading: SugarCRM
+seo: API Docs | SugarCRM | Cloud Elements API Docs
 title: API Docs
 description: SugarCRM API Documentation.
 layout: apidocs

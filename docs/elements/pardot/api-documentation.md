@@ -1,5 +1,6 @@
 ---
 heading: Pardot
+seo: API Docs | Pardot | Cloud Elements API Docs
 title: API Docs
 description: Pardot API Documentation.
 layout: apidocs

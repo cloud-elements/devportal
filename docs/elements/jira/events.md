@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: Events | JIRA | Cloud Elements API Docs
 title: Events
 description: Enable JIRA events for your application.
 layout: docs

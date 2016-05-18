@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: Transform Data | HubSpot CRM | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

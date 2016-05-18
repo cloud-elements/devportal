@@ -1,5 +1,6 @@
 ---
 heading: QuickBooks Online
+seo: API Docs | QuickBooks Online | Cloud Elements API Docs
 title: API Docs
 description: QuickBooks Online API Documentation.
 layout: apidocs

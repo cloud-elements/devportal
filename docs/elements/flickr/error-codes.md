@@ -1,5 +1,6 @@
 ---
 heading: Flickr
+seo: Error Codes | Flickr | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

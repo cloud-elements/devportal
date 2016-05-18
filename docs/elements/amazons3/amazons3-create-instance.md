@@ -1,5 +1,6 @@
 ---
 heading: Amazon S3
+seo: Create Instance | Amazon S3 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

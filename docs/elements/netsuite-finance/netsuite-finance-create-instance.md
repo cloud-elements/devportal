@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Finance
+seo: Create Instance | NetSuite Finance | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

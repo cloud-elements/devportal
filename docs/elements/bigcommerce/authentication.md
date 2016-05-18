@@ -1,5 +1,6 @@
 ---
 heading: BigCommerce
+seo: Authentication | BigCommerce | Cloud Elements API Docs
 title: Authentication
 description: Integrate BigCommerce into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: InfoBip
+seo: Overview | InfoBip | Cloud Elements API Docs
 title: Overview
 description: Integrate InfoBip into your application via the Cloud Elements APIs.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: Transform Data | MailChimp | Cloud Elements API Doc
 title: Transform Data
 description: Transform and map data.
 layout: docs

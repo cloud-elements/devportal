@@ -1,5 +1,6 @@
 ---
 heading: Ecwid
+seo: API Docs | Ecwid | Cloud Elements API Docs
 title: API Docs
 description: Ecwid API Documentation.
 layout: apidocs

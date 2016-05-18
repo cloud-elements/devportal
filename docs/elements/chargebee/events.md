@@ -1,5 +1,6 @@
 ---
 heading: Chargebee
+seo: Events | Chargebee | Cloud Elements API Docs
 title: Events
 description: Enable Chargebee events for your application.
 layout: docs

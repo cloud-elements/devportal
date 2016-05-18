@@ -1,5 +1,6 @@
 ---
 heading: Magento
+seo: API Docs | Magento | Cloud Elements API Docs
 title: API Docs
 description: Magento API Documentation.
 layout: apidocs

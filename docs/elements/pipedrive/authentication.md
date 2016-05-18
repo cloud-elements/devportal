@@ -1,5 +1,6 @@
 ---
 heading: Pipedrive
+seo: Authentication | Pipedrive | Cloud Elements API Docs
 title: Authentication
 description: Integrate Pipedrive into your application via the Cloud Elements APIs.
 layout: docs

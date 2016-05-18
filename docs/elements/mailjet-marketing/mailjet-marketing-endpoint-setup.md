@@ -1,5 +1,6 @@
 ---
 heading: MailJet Marketing
+seo: Endpoint Setup | MailJet Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

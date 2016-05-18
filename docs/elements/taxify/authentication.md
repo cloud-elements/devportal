@@ -1,5 +1,6 @@
 ---
 heading: Taxify
+seo: Authentication | Taxify | Cloud Elements API Docs
 title: Authentication
 description: Integrate Taxify into your application via the Cloud Elements APIs.
 layout: docs

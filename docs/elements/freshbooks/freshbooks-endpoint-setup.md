@@ -1,5 +1,6 @@
 ---
 heading: FreshBooks
+seo: Endpoint Setup | FreshBooks | Cloud Elements API Docs
 title: Register as a Consumer
 description: Register as a Consumer
 layout: docs

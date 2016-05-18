@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: Authentication | Freshservice | Cloud Elements API Docs
 title: Authentication
 description: Integrate Freshservice into your application via the Cloud Elements APIs.
 layout: docs

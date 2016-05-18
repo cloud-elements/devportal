@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: Error Codes | JIRA | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

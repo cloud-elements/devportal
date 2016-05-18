@@ -1,5 +1,6 @@
 ---
 heading: Salesforce CRM
+seo: Authentication | Salesforce CRM | Cloud Elements API Docs
 title: Authentication
 description: Integrate Salesforce into your application via the Cloud Elements APIs.
 layout: docs

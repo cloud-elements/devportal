@@ -1,5 +1,6 @@
 ---
 heading: Typeform
+seo: Authentication | Typeform | Cloud Elements API Docs
 title: Authentication
 description: Integrate Typeform into your application via the Cloud Elements APIs.
 layout: docs

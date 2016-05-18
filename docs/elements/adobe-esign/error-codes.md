@@ -1,5 +1,6 @@
 ---
 heading: Adobe eSign
+seo: Error Codes | Adobe eSign | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

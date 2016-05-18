@@ -1,5 +1,6 @@
 ---
 heading: Magento
+seo: Overview | Magento | Cloud Elements API Docs
 title: Overview
 description: Integrate Magento into your application via the Cloud Elements APIs.
 layout: docs

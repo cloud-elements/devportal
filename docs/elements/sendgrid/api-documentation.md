@@ -1,5 +1,6 @@
 ---
 heading: SendGrid
+seo: API Docs | SendGrid | Cloud Elements API Docs
 title: API Docs
 description: SendGrid API Documentation.
 layout: apidocs

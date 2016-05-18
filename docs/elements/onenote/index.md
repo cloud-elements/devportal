@@ -1,5 +1,6 @@
 ---
 heading: OneNote
+seo: Overview | OneNote | Cloud Elements API Docs
 title: Overview
 description: Integrate OneNote into your application via the Cloud Elements APIs.
 layout: docs

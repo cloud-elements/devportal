@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Libraries
+seo: Error Codes | Salesforce Libraries | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

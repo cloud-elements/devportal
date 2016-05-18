@@ -1,5 +1,6 @@
 ---
 heading: Freshdesk
+seo: Authentication | Freshdesk | Cloud Elements API Docs
 title: Authentication
 description: Integrate Freshdesk into your application via the Cloud Elements APIs.
 layout: docs
