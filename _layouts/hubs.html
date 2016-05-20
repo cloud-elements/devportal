@@ -36,6 +36,17 @@
   </div>
   </div>
   <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <p>
+          Hubs map resources from a collection of endpoints (What we call Elements) into a uniform set of APIs. With Hubs you can integrate an entire category of services (e.g., CRM, Cloud Storage, Finance) through a single set of APIs.
+
+          We normalize our API calls for all endpoints, to enable calls between services (e.g. Salesforce to HubSpot). We standardize resources as much as possible across Elements in a Hub, but the Hub APIs are not the least common denominator. For Elements that are more feature rich, that functionality will be explained in the Element specific documentation. We will always provide more features where possible within the Hub. Here are some of the endpoints that are common within Hubs:
+          accounts, agents, contacts, documents, files, incidents, leads, opportunities
+        </p>
+      </div>
+    </div>
+
       {% include filter.html %}
 
       {{content | column}}

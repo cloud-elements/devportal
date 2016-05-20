@@ -55,7 +55,17 @@
           </a>
         </li>
 
-        {% if page.url == '/docs/platform/index.html' %}
+        {% if page.url == '/docs/hubs/hub-docs.html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="/docs/hubs/hub-docs.html">
+            HUB API DOCS
+          </a>
+        </li>
+
+        {% if page.url == '/docs/platform/platform-docs.html' %}
           <li class="active">
         {% else %}
           <li>

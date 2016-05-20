@@ -95,7 +95,7 @@ a {
 }
 .nav > li > a{
   padding: 7px 0 5px 0;
-  margin: 0 25px;
+  margin: 0 20px;
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     font-weight: bold;
@@ -139,7 +139,7 @@ hr {
 }
 
 .try-it {
-  margin: 0 35px 0 25px;
+  /*margin: 0 35px 0 25px;*/
   font-family: "Open Sans", sans-serif;
   font-size: 97%;
   font-weight: 700;
@@ -681,11 +681,22 @@ hr {
     margin: 0;
   }
   .try-it{
-    margin: 10px;
+    /*margin: 10px;*/
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1160px) {
+  .try-it {
+    display: none;
   }
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
+  .try-it {
+    display: none;
+  }
+
   .docs-header h1 {
     padding-left: 10px;
   }
