@@ -22,6 +22,7 @@ The Ground2Cloud developer docs are broken down into three guides:
 * [Installer Types](installer-types.html)
 * [Installing Ground2Cloud](installing-ground2cloud.html)
 * [Managing Ground2Cloud](managing-ground2cloud.html)
+* [Creating an Element](creating-an-element.html)
 * [F.A.Q.](faq.html)
 
 If you have any questions regarding the Ground2Cloud integration, please don't hesitate to [contact us](mailto:support@cloud-elements.com).
