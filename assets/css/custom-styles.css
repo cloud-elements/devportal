@@ -19,6 +19,10 @@ a {
   color: #40b6e4;
 }
 
+a:hover, a:focus, a:visited {
+  text-decoration: none;
+}
+
 .red-button {
   background-color: #ff4e4e;
 }
@@ -242,6 +246,12 @@ hr {
   margin-top: 5px;
   line-height: 1em;
 }
+
+.status-link {
+  margin: 2px;
+  color: #40b6e4;
+}
+
 /*///////////////////////////////
 ///  Custom CSS for Jumbotron ///
 ///////////////////////////////*/
@@ -710,4 +720,11 @@ hr {
   .search-bar-wrapper .flextable .flextable-item .form-control:focus {
     width: 68%;
   }
+}
+
+@media (max-width: 600px) {
+  .status-link {
+    display: none;
+  }
+
 }
