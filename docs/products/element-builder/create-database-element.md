@@ -18,7 +18,7 @@ Element Builder gives you the ability to create custom integrations to cloud ser
 This guide will demonstrate how to build a __Database Element only__.
 Please view the [Element Builder Documentation](index.html) for more information on how to build Elements for endpoints with a REST API.
 
-__For this guide, a sample database was created called `mydb`.  This database contains two tables: `customers` and `addresses`.  This guide will demonstrate creating CRUD (Create, Read, Update, and Delete) customer API calls, as well as, creating a C addresses API call and complex query API call.__
+__For this guide, a sample database was created called `mydb`.  This database contains two tables: `customers` and `addresses`.  This guide will demonstrate creating `CRUD` (Create, Read, Update, and Delete) customer API calls, as well as, creating a `C` addresses API call and complex query API call.__
 
 - [Element Builder Tabs](#element-builder-tabs])
     - [Info Tab](#info-tab)
