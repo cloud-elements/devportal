@@ -151,9 +151,9 @@ __Let’s update our values__.
 
 Input the correct values for the following:
 
-__Path:__ `/hubs/finance/expenses`
-__Response Root Key:__ `response.expenses.expense`
-__Description:__ Search for expenses
+* __Path:__ `/hubs/finance/expenses`
+* __Response Root Key:__ `response.expenses.expense`
+* __Description:__ Search for expenses
 ![Element Builder UI Resources 4](http://cloud-elements.com/wp-content/uploads/2016/02/AddResourceClone5.png)
 
 The parameters will need to be edited next.  A parameter must be defined on the Cloud Elements side and the vendor side.
@@ -165,15 +165,15 @@ Click the pencil icon or “Edit” to view the parameter:
 
 The column on the left is what Cloud Elements expects.  The column on the right is what the endpoint expects, in this case, FreshBooks.  Let’s take a look at the fields:
 
-__Name:__ Cloud Elements uses a JSON payload to indicate the FreshBooks method, as well as, FreshBooks paging parameters – the paging parameters can be found here: [https://www.freshbooks.com/developers/pagination](https://www.freshbooks.com/developers/pagination)
-__Vendor Name:__ What the endpoint expects.  In our example, FreshBooks expects the method and paging parameters to be sent in the body of the request, hence ‘body’ is the Vendor Name – this is based on the FreshBooks expense API documentation.
-__Type:__ Value – Cloud Elements is sending the endpoint this exact value.
-__Vendor Type:__ Body – the endpoint expects the resource as a parameter in the body of the request.
-__Data Type:__ string – the data type (string, integer, etc)
-__Vendor Data Type:__ string – data type the endpoint expects
-__Parameter Source:__ Request – the request is coming from Cloud Elements to the endpoint.  The reverse is also possible, Cloud Elements receives a response from the endpoint.  In our example, we are sending a `GET` request to FreshBooks.
-__Is it Required?:__  If the endpoint expects this parameter on every API call, select “yes”.  If it is optional, select “no”.  In our example, it is required.
-__Description:__  input a description of the parameter, e.g. the request body.
+* __Name:__ Cloud Elements uses a JSON payload to indicate the FreshBooks method, as well as, FreshBooks paging parameters – the paging parameters can be found here: [https://www.freshbooks.com/developers/pagination](https://www.freshbooks.com/developers/pagination)
+* __Vendor Name:__ What the endpoint expects.  In our example, FreshBooks expects the method and paging parameters to be sent in the body of the request, hence ‘body’ is the Vendor Name – this is based on the FreshBooks expense API documentation.
+* __Type:__ Value – Cloud Elements is sending the endpoint this exact value.
+* __Vendor Type:__ Body – the endpoint expects the resource as a parameter in the body of the request.
+* __Data Type:__ string – the data type (string, integer, etc)
+* __Vendor Data Type:__ string – data type the endpoint expects
+* __Parameter Source:__ Request – the request is coming from Cloud Elements to the endpoint.  The reverse is also possible, Cloud Elements receives a response from the endpoint.  In our example, we are sending a `GET` request to FreshBooks.
+* __Is it Required?:__  If the endpoint expects this parameter on every API call, select “yes”.  If it is optional, select “no”.  In our example, it is required.
+* __Description:__  input a description of the parameter, e.g. the request body.
 ![Element Builder UI Resources 6](http://cloud-elements.com/wp-content/uploads/2016/02/AddResourceClone7.png)
 
 The only field that requires updating is the Name field.  It currently has
@@ -248,15 +248,15 @@ FreshBooks expects the resource to be sent in the body of the request so we need
 
 Input values for the following fields:
 
-__Name:__ expenses
-__Vendor Name:__ expenses
-__Type:__ BODY
-__Vendor Type:__ BODY_TOKEN
-__Data Type:__ expenses
-__Vendor Data Type:__ expenses
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The expense
+* __Name:__ expenses
+* __Vendor Name:__ expenses
+* __Type:__ BODY
+* __Vendor Type:__ BODY_TOKEN
+* __Data Type:__ expenses
+* __Vendor Data Type:__ expenses
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The expense
 
 Click “Done”
 
@@ -265,15 +265,15 @@ Click “Add Parameter”
 
 Input values for the following fields:
 
-__Name:__ `{“request”:{“@method”:”expense.create”, “expense”: {expenses}}}`
-__Vendor Name:__ body
-__Type:__ VALUE
-__Vendor Type:__ BODY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The request body
+* __Name:__ `{“request”:{“@method”:”expense.create”, “expense”: {expenses}}}`
+* __Vendor Name:__ body
+* __Type:__ VALUE
+* __Vendor Type:__ BODY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The request body
 
 Click “Done”
 
@@ -319,28 +319,28 @@ Click “Add”
 
 Input values for the following fields:
 
-__Resource Type:__  API
-__Path:__ `/hubs/finance/expenses/{expenseId}`
-__Vendor Path:__ `/xml-in`
-__Method:__ `PATCH`
-__Vendor Method:__ `POST`
-__Request Root Key:__ blank
-__Response Root Key:__  response
-__Description:__ Update an expense
+* __Resource Type:__  API
+* __Path:__ `/hubs/finance/expenses/{expenseId}`
+* __Vendor Path:__ `/xml-in`
+* __Method:__ `PATCH`
+* __Vendor Method:__ `POST`
+* __Request Root Key:__ blank
+* __Response Root Key:__  response
+* __Description:__ Update an expense
 
 Click Add Parameter
 
 Input the following values:
 
-__Name:__ expenseId
-__Vendor Name:__ expense_id
-__Type:__ PATH
-__Vendor Type:__ QUERY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The expense ID
+* __Name:__ expenseId
+* __Vendor Name:__ expense_id
+* __Type:__ PATH
+* __Vendor Type:__ QUERY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The expense ID
 
 Click “Done”
 
@@ -348,15 +348,15 @@ Click Add Parameter
 
 Input the following values:
 
-__Name:__ expenses
-__Vendor Name:__ expenses
-__Type:__ BODY
-__Vendor Type:__ BODY_TOKEN
-__Data Type:__ expenses
-__Vendor Data Type:__ expenses
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The expense
+* __Name:__ expenses
+* __Vendor Name:__ expenses
+* __Type:__ BODY
+* __Vendor Type:__ BODY_TOKEN
+* __Data Type:__ expenses
+* __Vendor Data Type:__ expenses
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The expense
 
 Click “Done”
 
@@ -364,15 +364,15 @@ Click Add Parameter
 
 Input the following values:
 
-__Name:__ `{“request”:{“@method”:”expense.update”, “expense”: {expenses}}}`
-__Vendor Name:__ body
-__Type:__ VALUE
-__Vendor Type:__ BODY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The request body
+* __Name:__ `{“request”:{“@method”:”expense.update”, “expense”: {expenses}}}`
+* __Vendor Name:__ body
+* __Type:__ VALUE
+* __Vendor Type:__ BODY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The request body
 
 Click “Done”
 
@@ -382,28 +382,28 @@ Click “Add”
 
 Input values for the following fields:
 
-__Resource Type:__  API
-__Path:__ `/hubs/finance/expenses/{expenseId}`
-__Vendor Path:__ `/xml-in`
-__Method:__ `DELETE`
-__Vendor Method:__ `POST`
-__Request Root Key:__ blank
-__Response Root Key:__  response
-__Description:__ Delete an expense
+* __Resource Type:__  API
+* __Path:__ `/hubs/finance/expenses/{expenseId}`
+* __Vendor Path:__ `/xml-in`
+* __Method:__ `DELETE`
+* __Vendor Method:__ `POST`
+* __Request Root Key:__ blank
+* __Response Root Key:__  response
+* __Description:__ Delete an expense
 
 Click Add Parameter
 
 Input the following values:
 
-__Name:__ expenseId
-__Vendor Name:__ expense_id
-__Type:__ PATH
-__Vendor Type:__ QUERY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The expense ID
+* __Name:__ expenseId
+* __Vendor Name:__ expense_id
+* __Type:__ PATH
+* __Vendor Type:__ QUERY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The expense ID
 
 Click “Done”
 
@@ -411,15 +411,15 @@ Click Add Parameter
 
 Input the following values:
 
-__Name:__ `{“request”:{“@method”:”expense.delete, “expense”: {expenses}}}`
-__Vendor Name:__ body
-__Type:__ VALUE
-__Vendor Type:__ BODY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The request body
+* __Name:__ `{“request”:{“@method”:”expense.delete, “expense”: {expenses}}}`
+* __Vendor Name:__ body
+* __Type:__ VALUE
+* __Vendor Type:__ BODY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The request body
 
 Click “Done”
 
@@ -429,28 +429,28 @@ Click “Add”
 
 Input values for the following fields:
 
-__Resource Type:__  API
-__Path:__ `/hubs/finance/expenses/{expenseId}`
-__Vendor Path:__ `/xml-in`
-__Method:__ `GET`
-__Vendor Method:__ `POST`
-__Request Root Key:__ blank
-__Response Root Key:__  response
-__Description:__ Retrieve an expense by ID
+* __Resource Type:__  API
+* __Path:__ `/hubs/finance/expenses/{expenseId}`
+* __Vendor Path:__ `/xml-in`
+* __Method:__ `GET`
+* __Vendor Method:__ `POST`
+* __Request Root Key:__ blank
+* __Response Root Key:__  response
+* __Description:__ Retrieve an expense by ID
 
 Click Add Parameter
 
 Input the following values:
 
-__Name:__ expenseId
-__Vendor Name:__ expense_id
-__Type:__ PATH
-__Vendor Type:__ QUERY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The expense ID
+* __Name:__ expenseId
+* __Vendor Name:__ expense_id
+* __Type:__ PATH
+* __Vendor Type:__ QUERY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The expense ID
 
 Click “Done”
 
@@ -458,15 +458,15 @@ Click Add Parameter
 
 Input the following values:
 
-__Name:__ `{“request”:{“@method”:”expense.get, “expense”: {expenses}}}`
-__Vendor Name:__ body
-__Type:__ VALUE
-__Vendor Type:__ BODY
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ REQUEST
-__Is it Required?:__  YES
-__Description:__  The request body
+* __Name:__ `{“request”:{“@method”:”expense.get, “expense”: {expenses}}}`
+* __Vendor Name:__ body
+* __Type:__ VALUE
+* __Vendor Type:__ BODY
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__  YES
+* __Description:__  The request body
 
 Click “Done”
 
@@ -536,11 +536,11 @@ Events:  Cloud Elements currently supports building integrations with polling or
 
 Webhooks are when the provider lets Cloud Elements know what information has changed.
 
-__NOTE: 90% of the time polling will be used as the mechanism for capturing events.__  Cloud Elements recommends not using webhook type events if the endpoint does not have an API for creating webhooks.
+* __NOTE: 90% of the time polling will be used as the mechanism for capturing events.__  Cloud Elements recommends not using webhook type events if the endpoint does not have an API for creating webhooks.
 
-__Polling:__  In order to enable polling, the endpoint must support querying an object by last updated date.
+* __Polling:__  In order to enable polling, the endpoint must support querying an object by last updated date.
 
-__Webhooks:__ In order to enable webhooks, the endpoint must support them.  Note additional endpoint setup may be required prior to creating your Element.  An event hook script must be defined that transforms the inbound event data to a format that Cloud Elements supports.
+* __Webhooks:__ In order to enable webhooks, the endpoint must support them.  Note additional endpoint setup may be required prior to creating your Element.  An event hook script must be defined that transforms the inbound event data to a format that Cloud Elements supports.
 
 While FreshBooks supports webhooks, they do not have an API to create them.  Polling will be used as our event mechanism in this case.
 
@@ -614,9 +614,9 @@ Cloud Elements supports bulk download of objects in JSON format if the endpoint 
 
 The following fields are required to enable bulk download:
 
-__Bulk Query Time Format:__ Select a time format from the dropdown list. The time format must match the endpoint’s supported time format for queries.
-__Bulk Query Field Name:__ Provide an object and an operator in the Bulk Query Field Name, e.g. where orders >= “{time_format}”. This field may be left blank if you wish to include bulk download on all objects.
-__Bulk Query Operator:__ The Bulk Query Operator can be set to “=” or “>=”.
+* __Bulk Query Time Format:__ Select a time format from the dropdown list. The time format must match the endpoint’s supported time format for queries.
+* __Bulk Query Field Name:__ Provide an object and an operator in the Bulk Query Field Name, e.g. where orders >= “{time_format}”. This field may be left blank if you wish to include bulk download on all objects.
+* __Bulk Query Operator:__ The Bulk Query Operator can be set to “=” or “>=”.
 
 Let’s take a look at the FreshBooks API documentation: [https://www.freshbooks.com/developers/docs/expenses#expense.list](https://www.freshbooks.com/developers/docs/expenses#expense.list)
 
@@ -690,10 +690,10 @@ Continue to view resources as desired, then click “Done”.
 
 Within the in Admin Dashboard, the following functions are available to exercise on all Elements created using Element Builder:
 
-__Edit an Element:__ change a URL, add a resource, edit configurations
-__Deactivate:__ deactivates an Element, temporarily removing it from the catalog
-__Delete:__ deletes an Element, permanently removing it from the catalog
-__Export:__ exports Element JSON, this JSON can be imported at a later time
+* __Edit an Element:__ change a URL, add a resource, edit configurations
+* __Deactivate:__ deactivates an Element, temporarily removing it from the catalog
+* __Delete:__ deletes an Element, permanently removing it from the catalog
+* __Export:__ exports Element JSON, this JSON can be imported at a later time
 
 To access the Element admin functions, click on the gear.
 
