@@ -18,7 +18,7 @@ Element Builder gives you the ability to create custom integrations to cloud ser
 This guide will demonstrate how to build a __Database Element only__.
 Please view the [Element Builder Documentation](index.html) for more information on how to build Elements for endpoints with a REST API.
 
-PostGreSQL will be used for this demonstration.
+__For this guide, a sample database was created called `mydb`.  This database contains two tables: `customers` and `addresses`.  This guide will demonstrate creating CRUD (Create, Read, Update, and Delete) customer API calls, as well as, creating a C addresses API call and complex query API call.__
 
 - [Element Builder Tabs](#element-builder-tabs])
     - [Info Tab](#info-tab)
@@ -33,12 +33,14 @@ PostGreSQL will be used for this demonstration.
     - [Import our Sample Element](#import-out-sample-element)
 - [Support](#support)
 
+PostGreSQL will be used for this demonstration.
+
 In order to create a PostgreSQL Database Element, the following steps are required:
 
 1. Create a Database
 2. Obtain the following for creating a connection to that Database:
 
-* Database Host: e.g. `localhost:5432`
+* Database Host: e.g. `123.123.1.123:5432`
 * Database Name
 * Database Username
 * Database Password
@@ -159,7 +161,7 @@ Click “+ Add” > API
 
 Input the Path: `/customers`
 
-Input the Vendor Path: `select * from customer offset :offset limit :limit` – this can be any valid SQL query
+Input the Vendor Path: `select * from customer offset :offset limit :limit` – this can be any valid named SQL query
 
 Input the Method: `GET`
 
@@ -231,7 +233,7 @@ values
       :email,
       :mobile_phone
   )
-returning first_name, last_name, email, mobile_phone, customer_id, created_dt` – this can be any valid SQL query
+returning first_name, last_name, email, mobile_phone, customer_id, created_dt` – this can be any valid named SQL query
 
 Input the Method: `POST`
 
@@ -293,7 +295,7 @@ Click “+ Add” > API
 
 Input the Path: `/customers/{id}`
 
-Input the Vendor Path: `select * from customer where customer_id = :id` – this can be any valid SQL query
+Input the Vendor Path: `select * from customer where customer_id = :id` – this can be any valid named SQL query
 
 Input the Method: `GET`
 
@@ -338,7 +340,7 @@ Input the Path: `/customers/{id}`
 
 Input the Vendor Path: `update customer set first_name = :first_name, last_name = :last_name, email= :email,
   mobile_phone =:mobile_phone where customer_id = :customer_id
-returning first_name, last_name, email, mobile_phone, customer_id;` – this can be any valid SQL query
+returning first_name, last_name, email, mobile_phone, customer_id;` – this can be any valid named SQL query
 
 Input the Method: `PUT`
 
@@ -407,7 +409,7 @@ Click “+ Add” > API
 
 Input the Path: `/customers/{id}`
 
-Input the Vendor Path: `select * from customer where customer_id = :id` – this can be any valid SQL query
+Input the Vendor Path: `select * from customer where customer_id = :id` – this can be any valid named SQL query
 
 Input the Method: `DELETE`
 
@@ -463,7 +465,7 @@ values
       :country,
       :customer_id
   )
-returning street1, street2, state, postal_code, country, customer_id, address_id, created_dt` – this can be any valid SQL query
+returning street1, street2, state, postal_code, country, customer_id, address_id, created_dt` – this can be any valid named SQL query
 
 Input the Method: `POST`
 
@@ -519,7 +521,7 @@ View the response on the left hand side panel.
 ```
 
 View the vendor request and response on the right hand side panel.  This is very useful when debugging and API call.
-__NOTE:  Since we did not populate all customer values, i.e. `postal_code`, the value will be captured as `null`__
+__NOTE:  Since we did not populate all customer values, i.e. `address`, the value will be captured as `null`__
 Click the 'X' in the corner to close the sliding panel.
 ![Database Resources 15](http://cloud-elements.com/wp-content/uploads/2016/05/DatabaseResources15.png)
 
@@ -532,7 +534,7 @@ Input the Path: `/customersDetails`
 Input the Vendor Path: `select c.*, a.* from customer c
   inner join address a on a.customer_id = c.customer_id
 {where}
-offset :offset limit :limit` – this can be any valid SQL query
+offset :offset limit :limit` – this can be any valid named SQL query
 __NOTE The `{where}` indicates a place holder.  This will replace the placeholder with an empty value so the script works correctly on our side.  The `where` is a standard Cloud Elements placeholder.  If a where does not exist, this will satisfy that requirement.__
 
 Input the Method: `GET`
@@ -775,6 +777,33 @@ Below is the JSON needed to create our sample DB Element.
 [1]:{{ site.url }}/download/sampleDbElement.json
 
 ![Element Builder Import Element](http://cloud-elements.com/wp-content/uploads/2016/05/ImportElement1.png)
+
+#### Ground2Cloud Connector
+
+Cloud Elements supports two ways of connecting a Database:
+* Connect Directly via IP Address and Port Number
+* Use Cloud Elements [Ground2Cloud](/docs/products/ground-2-cloud/index.html) service
+
+{% include padding-all.html %}
+
+###  Option 1: Connecting Directly via IP Address and Port Number
+
+This method would require a port be exposed so a connection can be made with Cloud Elements.
+When creating an instance, the user would input the IP Address and Port Number exposed publicly.
+
+{% include padding-all.html %}
+
+###  Option 2: Connecting via Ground2Cloud
+
+The Ground2Cloud integration consists of two parts: Client and Server.
+The Ground2Cloud Client creates a tunnel to a public Ground2Cloud Server, and enables requests from the Cloud Elements Production Cloud to transparently pass through that tunnel to reach the Client Service.
+![Cloud Elements Ground2Cloud 1](/assets/img/ground2cloud/how-it-works.png)
+
+The Ground2Cloud Client installation program is a self-unpacking executable. Once it finishes running, the Ground2Cloud Client is installed as Windows Service which constantly runs to keep this tunnel open. You generally don’t have to worry about this; once installed, the service automatically restarts in case of failure, or when your Windows machine is rebooted.
+
+The installer also installs a GUI (Graphical User Interface) program, which can be used to monitor and manage the Ground2Cloud Client. When launched, it opens a window with simple dialogs that let you browse logs files, change configuration, and perform other management operations. Details on how to use the GUI is described in the [User’s Manual](/docs/products/ground-2-cloud/index.html).
+
+If you are interested in using our Ground2Cloud Service, please [contact us](info@cloud-elements.com) for details.
 
 #### Support
 
