@@ -25,7 +25,6 @@ PostGreSQL will be used for this demonstration.
     - [Configuration Tab](#configuration-tab)
     - [Instance Tab](#instance-tab)
     - [Resources Tab](#resources-tab)
-    - [ADDING COMPLEX QUERIES: GET /customersDetails](#adding-complext-quieries:-get-/customerdetails)
     - [Models Tab](#models-tab)
     - [Events Tab](#events-tab)
     - [Bulk Tab](#bulk-tab)
