@@ -16,14 +16,14 @@ Cloud Elements supports two ways of connecting a Database:
 * Connect Directly via IP Address and Port Number
 * Use Cloud Elements [Ground2Cloud](/docs/products/ground-2-cloud/index.html) service
 
-{% include favicon.html %}
+{% include padding-all.html %}
 
 ###  Option 1: Connecting Directly via IP Address and Port Number
 
 This method would require a port be exposed so a connection can be made with Cloud Elements.
 When creating an instance, the user would input the IP Address and Port Number exposed publicly.
 
-{% include favicon.html %}
+{% include padding-all.html %}
 
 ###  Option 2: Connecting via Ground2Cloud
 

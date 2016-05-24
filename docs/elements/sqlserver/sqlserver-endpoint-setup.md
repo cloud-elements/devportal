@@ -16,14 +16,14 @@ Cloud Elements supports two ways of connecting a Database:
 * Connect Directly via IP Address and Port Number
 * Use Cloud Elements [Ground2Cloud](/docs/products/ground-2-cloud/index.html) service
 
-{% include favicon.html %}
+{% include padding-all.html %}
 
 ###  Option 1: Connecting Directly via IP Address and Port Number
 
 This method would require a port be exposed so a connection can be made with Cloud Elements.
 When creating an instance, the user would input the IP Address and Port Number exposed publicly.
 
-{% include favicon.html %}
+{% include padding-all.html %}
 
 ###  Option 2: Connecting via Ground2Cloud
 
@@ -37,6 +37,6 @@ The installer also installs a GUI (Graphical User Interface) program, which can 
 
 If you are interested in using our Ground2Cloud Service, please [contact us](info@cloud-elements.com) for details.
 
-{% include favicon.html %}
+{% include padding-all.html %}
 
 Next [create an instance](sqlserver-create-instance.html).
