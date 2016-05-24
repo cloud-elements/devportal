@@ -770,9 +770,9 @@ To import Element JSON, click “Import Element” and follow the prompts.  All 
 
 Below is the JSON needed to create our sample DB Element.
 
-[Download][1]
+[Download Sample JSON][1]
 
-[1]:{{ site.url }}/download/sampleDbElement.json the file and import the Element from the Admin Dashboard
+[1]:{{ site.url }}/download/sampleDbElement.json
 
 ![Element Builder Import Element](http://cloud-elements.com/wp-content/uploads/2016/05/ImportElement1.png)
 
