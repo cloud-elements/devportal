@@ -521,7 +521,7 @@ View the response on the left hand side panel.
 ```
 
 View the vendor request and response on the right hand side panel.  This is very useful when debugging and API call.
-__NOTE:  Since we did not populate all customer values, i.e. `address`, the value will be captured as `null`__
+__NOTE:  Since we did not populate all address values, i.e. `postal_code `, the value will be captured as `null`__
 Click the 'X' in the corner to close the sliding panel.
 ![Database Resources 15](http://cloud-elements.com/wp-content/uploads/2016/05/DatabaseResources15.png)
 
