@@ -8,7 +8,7 @@ apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 6
+order: 7
 ---
 
 ## Hooks
@@ -33,9 +33,9 @@ Hooks can be used under the following Tabs in Element Builder:
 * Resources
 * Events
 
-__Configuration:__ hook needed to set a global property to the endpoint
-__Resources:__ hook needed to set a property on a particular resource
-__Events:__ hook needed to set a property on an event
+* __Configuration:__ hook needed to set a global property to the endpoint
+* __Resources:__ hook needed to set a property on a particular resource
+* __Events:__ hook needed to set a property on an event
 
 __Location and Features__
 
