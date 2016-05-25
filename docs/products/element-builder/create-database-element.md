@@ -13,7 +13,7 @@ order: 5
 
 ## Create a Database Element BETA
 
-Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  We are currently testing our BETA version.  __Currently only endpoints with a REST API can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you are interested in participating in our round of BETA testing.
+Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  We are currently testing our BETA version.  __Currently only endpoints with a REST API, PostgreSql, MySql and SqlServer database elements can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you are interested in participating in our round of BETA testing.
 
 This guide will demonstrate how to build a __Database Element only__.
 Please view the [Element Builder Documentation](index.html) for more information on how to build Elements for endpoints with a REST API.

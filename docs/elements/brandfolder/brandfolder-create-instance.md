@@ -40,12 +40,12 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "brandfolder"
   },
   "configuration": {
-    "api-token": "&lt;INSERT_BRANDFOLDER_USER_TOKEN&gt;"
+    "api-token": "<INSERT_BRANDFOLDER_USER_TOKEN>"
   },
   "tags": [
-    "&lt;INSERT_TAGS&gt;"
+    "<INSERT_TAGS>"
   ],
-  "name": "&lt;INSERT_INSTANCE_NAME&gt;"
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 
