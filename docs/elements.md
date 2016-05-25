@@ -84,6 +84,7 @@ layout: elements
 * [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/index.html)
 * [![ServiceMax](/assets/img/element-logos/servicemax.png)ServiceMax](./elements/servicemax/index.html)
 * [![Chargebee](/assets/img/element-logos/chargebee.png)Chargebee](./elements/chargebee/index.html)
+* [![Chargify](/assets/img/element-logos/chargify.png)Chargify](./elements/chargify/index.html)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/index.html)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/index.html)
 * [![SQLServer](/assets/img/element-logos/sqlserver.png)SQLServer](./elements/sqlserver/index.html)

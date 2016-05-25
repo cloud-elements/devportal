@@ -40,14 +40,14 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "chargebee"
   },
   "configuration": {
-    "site":"&lt;INSERT_CHARGEBEE_SUBDOMAIN&gt;",
-    "username":"&lt;INSERT_CHARGEBEE_API_KEY&gt;",
-    "password":"&lt;INSERT_CHARGEBEE_PASSWORD&gt;"
+    "site":"<INSERT_CHARGEBEE_SUBDOMAIN>",
+    "username":"<INSERT_CHARGEBEE_API_KEY>",
+    "password":"<INSERT_CHARGEBEE_PASSWORD>"
   },
   "tags": [
-    "&lt;INSERT_TAGS&gt;"
+    "<INSERT_TAGS>"
   ],
-  "name": "&lt;INSERT_INSTANCE_NAME&gt;"
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 
