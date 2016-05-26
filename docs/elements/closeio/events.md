@@ -12,6 +12,39 @@ order: 30
 
 ## Events
 
+Cloud Elements supports both polling and webhook events for Close.io.
+
+### Polling
+
+In order to enable polling, add these two extra configurations to your instance JSON:
+
+```
+"event.notification.enabled": "true",
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+```
+
+instance JSON with polling events enabled:
+
+```json
+{
+  "element": {
+    "key": "closeio"
+  },
+  "configuration": {
+    "username": "<INSERT_CLOSE_IO_API_KEY>",
+    "password": "<INSERT_CLOSE_IO_PASSWORD>",
+    "event.notification.enabled": "true",
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+  },
+  "tags": [
+    "<INSERT_TAGS>"
+  ],
+  "name": "<INSERT_INSTANCE_NAME>"
+}
+```
+
+### Webhooks
+
 Close.io requires an extra specification to be entered once an Element instance has been created. The Close.io Instance ID must be 64 base encoded, then included in the webhook callback URL. This document will walk you through the entire workflow:
 
 * create an instance

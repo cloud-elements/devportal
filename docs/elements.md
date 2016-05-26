@@ -19,6 +19,7 @@ layout: elements
 * [![SugarCRM](/assets/img/element-logos/sugarcrm.png)SugarCRM](./elements/sugarcrm/index.html)
 * [![ZohoCRM](/assets/img/element-logos/zohocrm.png)ZohoCRM](./elements/zohocrm/index.html)
 * [![Act-On](/assets/img/element-logos/acton.png)Act-On](./elements/acton/index.html)
+* [![Autopilot](/assets/img/element-logos/autopilot.png)Autopilot](./elements/autopilot/index.html)
 * [![Eloqua](/assets/img/element-logos/eloqua.png)Eloqua](./elements/eloqua/index.html)
 * [![HubSpot](/assets/img/element-logos/hubspot.png)HubSpot](./elements/hubspot/index.html)
 * [![Infusionsoft Marketing](/assets/img/element-logos/infusionsoft.png)Infusionsoft Marketing](./elements/infusionsoft-marketing/index.html)
