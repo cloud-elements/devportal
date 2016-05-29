@@ -1,18 +1,18 @@
 ---
-heading: Chargebee
-seo: Events | Chargebee | Cloud Elements API Docs
+heading: Chargify
+seo: Events | Chargify | Cloud Elements API Docs
 title: Events
-description: Enable Chargebee events for your application.
+description: Enable Chargify events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 451
+elementId: 498
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-Cloud Elements supports polling events for Chargebee.
+Cloud Elements supports polling events for Chargify.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -26,12 +26,12 @@ instance JSON with polling events enabled:
 ```json
 {
   "element": {
-    "key": "chargebee"
+    "key": "chargify"
   },
   "configuration": {
-    "site":"<INSERT_CHARGEBEE_SUBDOMAIN>",
-    "username":"<INSERT_CHARGEBEE_API_KEY>",
-    "password":"<INSERT_CHARGEBEE_PASSWORD>",
+    "username":  "<INSERT_CHARGIFY_API_KEY>",
+    "password": "<INSERT_CHARGIFY_PASSWORD>",
+    "site": "<INSERT_CHARGIFY_SUBDOMAIN>",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },

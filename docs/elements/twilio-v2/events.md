@@ -1,18 +1,16 @@
 ---
-heading: Chargebee
-seo: Events | Chargebee | Cloud Elements API Docs
+heading: Twilio SMS V2
+seo: Events | Twilio SMS V2 | Cloud Elements API Docs
 title: Events
-description: Enable Chargebee events for your application.
+description: Enable Twilio SMS V2 events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 451
+elementId: 503
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
-
-Cloud Elements supports polling events for Chargebee.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
@@ -26,12 +24,11 @@ instance JSON with polling events enabled:
 ```json
 {
   "element": {
-    "key": "chargebee"
+    "key": "twiliov2"
   },
   "configuration": {
-    "site":"<INSERT_CHARGEBEE_SUBDOMAIN>",
-    "username":"<INSERT_CHARGEBEE_API_KEY>",
-    "password":"<INSERT_CHARGEBEE_PASSWORD>",
+    "username":  "<INSERT_TWILIO_ACCOUNT_SID>",
+    "password": "<INSERT_TWILIO_AUTHTOKEN>",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },

@@ -45,14 +45,14 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "brandfolder"
   },
   "configuration": {
-    "api-token": "&lt;INSERT_BRANDFOLDER_USER_TOKEN&gt;",
+    "api-token": "<INSERT_BRANDFOLDER_USER_TOKEN>",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_EVENT_CALLBACK_URL>"
   },
   "tags": [
-    "&lt;INSERT_TAGS&gt;"
+    "<INSERT_TAGS>"
   ],
-  "name": "&lt;INSERT_INSTANCE_NAME&gt;"
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 
@@ -163,7 +163,7 @@ instance JSON with polling events enabled:
     "key": "brandfolder"
   },
   "configuration": {
-    "api-token": "&lt;INSERT_BRANDFOLDER_USER_TOKEN&gt;",
+    "api-token": "<INSERT_BRANDFOLDER_USER_TOKEN>",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },

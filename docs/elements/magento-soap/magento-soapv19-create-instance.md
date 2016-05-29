@@ -1,20 +1,24 @@
 ---
-heading: Chargebee
-seo: Create Instance | Chargebee | Cloud Elements API Docs
+heading: Magento SOAP V1.9
+seo: Create Instance | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 451
+elementId: 499
 parent: Back to Element Guides
 order: 15
 ---
 
 ## Create Instance
 
-To provision your Chargebee Element, use the /instances API.
+Magento SOAP V1.9 is a Finance Platform. When you provision an instance, your app will have access to the different functionality offered by the Magento SOAP V1.9 platform.
 
-### Step 1. Call the /instances API
+### Step 1. Create an Instance
+
+To provision your Magento SOAP V1.9 Element, use the /instances API.
+
+Below is an example of the provisioning API call.
 
 * __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
 * __HTTP Verb__: POST
@@ -32,17 +36,17 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Chargebee is "chargebee".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Magento SOAP V1.9 is "magentosoapv19".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
-```json
+```JSON
 {
   "element": {
-    "key": "chargebee"
+    "key": "magentosoapv19"
   },
   "configuration": {
-    "site":"<INSERT_CHARGEBEE_SUBDOMAIN>",
-    "username":"<INSERT_CHARGEBEE_API_KEY>",
-    "password":"<INSERT_CHARGEBEE_PASSWORD>"
+    "userName": "<INSERT_MAGENTO_USERNAME>",
+    "password": "<INSERT_MAGENTO_PASSWORD>",
+    "store.url": "<INSERT_MAGENTO_STORE_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -67,44 +71,23 @@ If the user does not specify a required config entry, an error will result notif
 
 Below is a successful JSON response:
 
-```json
+```JSON
 {
-  "id": 12,
+  "id": 1234,
   "name": "Test",
-  "token": "cuED0/DezalhhzK2OtO6kMP7NvPnMyNcRDZc=",
-
-"element": {
-    "id": 451,
-    "name": "Chargebee",
-    "key": "chargebee",
-    "description": "Chargebee API",
-    "image": "https://hfweb-assets.s3.amazonaws.com/integrations/chargebee.png",
-    "active": false,
+  "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
+  "element": {
+    "id": 499,
+    "name": "Magento SOAP v1.9",
+    "hookName": "MagentoSoap",
+    "key": "magentosoapv19",
+    "description": "Magento Commerce is the leading provider of open omnichannel innovation. Our open source digital commerce platform and cloud-based omnichannel solutions empower merchants to integrate digital and physical shopping experiences.",
+    "image": "https://upload.wikimedia.org/wikipedia/en/c/c2/Magento_logo.png",
+    "active": true,
     "deleted": false,
     "typeOauth": false,
     "trialAccount": false,
-    "resources": [    ],
-    "transformationsEnabled": true,
-    "bulkDownloadEnabled": true,
-    "bulkUploadEnabled": true,
-    "cloneable": true,
-    "authentication": {
-      "type": "basic"
-    },
-    "hub": "payment",
-    "parameters": [
-      {
-        "id": 209,
-        "createdDate": "2016-04-25T01:20:30Z",
-        "name": "site",
-        "vendorName": "site",
-        "type": "configuration",
-        "vendorType": "path",
-        "source": "request",
-        "elementId": 451,
-        "required": false
-      }
-    ]
+    "resources": []
   },
   "provisionInteractions": [],
   "valid": true,
@@ -112,28 +95,32 @@ Below is a successful JSON response:
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
   "configuration": {
-    "base.url": "https://{site}.chargebee.com/api/v1",
+    "base.url": "{store.url}/index.php/api/v2_soap/index/",
     "bulk.add_metadata": null,
-    "bulk.query.field_name": "start_time",
-    "pagination.max": "100",
+    "bulk.query.field_name": "created_at",
+    "pagination.max": "200",
     "event.vendor.type": "polling",
+    "store.url": "https://magento.my-store.com",
+    "userName": "MAGENTO_USERNAME",
     "bulk.query.operator": ">=",
-    "bulk.query.date_mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+    "bulk.query.date_mask": "yyyy-MM-dd HH:mm:ss",
     "bulk.query.download_format": "JSON",
     "bulk.attribute.created_time": "created_at",
-    "site": "CHARGEBEE_SUBDOMAIN",
-    "password": "CHARGEBEE_PASSWORD",
+    "password": "MAGENTO_PASSWORD",
     "bulk.relations": null,
-    "pagination.type": "offset",
+    "pagination.type": "page",
     "event.poller.refresh_interval": "15",
     "event.notification.callback.url": null,
-    "event.poller.configuration": "{\"events\":{\"url\":\"/hubs/payment/events?where=start_time='${epoch}'\",\"idField\":\"\"}}",
-    "username": "CHARGEEBEE_USERNAME",
+    "authentication.time": "1464195352093",
+    "expires_in": "3600",
+    "session.id": "6c4a640c66e1d0d52f95d0f4e5677da8",
+    "pagination.page.startindex": "1",
     "event.notification.enabled": "false"
   },
   "eventsEnabled": false,
   "traceLoggingEnabled": false,
-  "cachingEnabled": false
+  "cachingEnabled": false,
+  "externalAuthentication": "none"
 }
 ```
 
