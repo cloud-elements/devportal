@@ -5,7 +5,7 @@ title: Events
 description: Enable Magento SOAP V1.9 events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 499
+elementId: 526
 parent: Back to Element Guides
 order: 30
 ---

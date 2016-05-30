@@ -5,7 +5,7 @@ title: API Docs
 description: Magento SOAP V1.9 API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
-elementId: 499
+elementId: 526
 parent: Back to Element Guides
 order: 90
 ---
