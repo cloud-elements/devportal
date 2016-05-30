@@ -5,7 +5,7 @@ title: Authentication
 description: Integrate Magento SOAP V1.9 into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 499
+elementId: 526
 parent: Back to Element Guides
 order: 10
 ---
