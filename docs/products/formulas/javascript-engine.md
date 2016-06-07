@@ -86,7 +86,7 @@ Script steps return a Javascript object containing all of the step execution val
 done({
   payload: {
     "subject": "Frozen Yogurt",
-    "to": "frank.ricard@old-school.com",
+    "to": "joseph.pulaski@old-school.com",
     "from": "frank.ricard@old-school.com",
     "message": `Contact '${trigger.event.objectId}' was updated!`
   }
