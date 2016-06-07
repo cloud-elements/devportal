@@ -23,7 +23,7 @@ The function signature for all Javascript-related steps looks like:
  * @param  info    Some metadata about this formula
  * @param  done    The callback function that you will need to call at the end of your script step
  */
-function(trigger, steps, info, done) {
+function (trigger, steps, info, done) {
   // your Javascript will go here
 }
 ```
@@ -31,6 +31,8 @@ function(trigger, steps, info, done) {
 > __PROTIP:__ For all scripts, Javascript `strict` mode is enforced.
 
 > __PROTIP:__ You can use `console.log` to log things in your formula and help debug.
+
+> __PROTIP:__ ES6 is supported.
 
 #### `trigger`
 Example Javascript object for an `event` trigger type:
