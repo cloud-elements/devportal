@@ -18,7 +18,7 @@ Certain types of formula steps allow you to write custom Javascript in order to 
 ### Function Signature
 The function signature for all Javascript-related steps looks like:
 
-```JavaScript
+```javascript
 /**
  * @param  trigger The trigger that started this execution
  * @param  steps   The list of steps that have been executed up until this point for this execution
@@ -39,43 +39,44 @@ function (trigger, steps, info, done) {
 #### `trigger`
 Example Javascript object for an `event` trigger type:
 
-```JavaScript
+```json
 {
-  eventId: 11211123,
-  instanceId: 231232132,
-  type: 'event',
-  event: {
-    date: '2016-06-01T04:09:10Zn',
-    elementKey: 'sfdc',
-    eventType: 'UPDATED',
-    objectId: 'n005i000003sgTd0AAE',
-    objectType: 'Contact'
+  "eventId": 11211123,
+  "instanceId": 231232132,
+  "type": "event",
+  "event": {
+    "date": "2016-06-01T04:09:10Z",
+    "elementKey": "sfdc",
+    "eventType": "UPDATED",
+    "objectId": "n005i000003sgTd0AAE",
+    "objectType": "Contact"
   }
 }
 ```
 
 #### `steps`
 
-```JavaScript
+```json
 {
-  PreviousStepName: {
-    // all of the step execution values from that step
+  "PreviousStepName": {
+    "StepExecutionKey":  "StepExecutionValue",
+    "AnotherStepExecutionKey":  "AnotherStepExecutionValue"
   },
-  AnotherPreviousStepName: {
-    // ...
+  "AnotherPreviousStepName": {
+    "StepExecutionKey":  "StepExecutionValue"
   }
 }
 ```
 
 #### `info`
 
-```JavaScript
+```json
 {
-  formulaId: 123,
-  formulaName: 'my formula name',
-  formulaInstanceId: 456,
-  formulaInstanceName: 'my formula instance name',
-  formulaExecutionId: 789
+  "formulaId": 123,
+  "formulaName": "my formula name",
+  "formulaInstanceId": 456,
+  "formulaInstanceName": "my formula instance name",
+  "formulaExecutionId": 789
 }
 ```
 
@@ -88,13 +89,13 @@ Simply a callback function that should be called to terminate the given step.  F
 ### `script`
 Script steps return a Javascript object containing all of the step execution values that should be made available to future formula steps during the current execution.  Here is an example script step that is building our JSON payload we need in order to send an email in a later step:
 
-```JavaScript
+```javascript
 done({
   payload: {
     subject: 'Frozen Yogurt',
     to: 'joseph.pulaski@old-school.com',
     from: 'frank.ricard@old-school.com',
-    message: `Contact '${trigger.event.objectId}' was updated!`
+    message: 'Contact ' + ${trigger.event.objectId} + ' was updated!'
   }
 });
 ```
@@ -102,7 +103,7 @@ done({
 ### `filter`
 Filter steps return a `boolean` indicating whether or not the `onSuccess` or `onFailure` step of the formula should run next.  Below is an example `filter` step that will return `true` if the event we received in our trigger is because a `Contact` was updated in the service that we are listening for events.
 
-```JavaScript
+```javascript
 done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Contact');
 ```
 
