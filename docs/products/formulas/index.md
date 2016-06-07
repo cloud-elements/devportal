@@ -17,10 +17,11 @@ Cloud Elements supports customizable workflows, called __formulas__ to keep your
 Cloud Elements currently supports formula creation via API and via the Formula Builder UI within the API Manager Console.
 
 The formula developer docs are broken down into the following:
+
 * [Formula Creation via API](formulas-via-api.html)
 * [Example Formula Use Cases](formula-use-cases.html)
 * [Formula Debugging Tips](formula-debugging.html)
-* [Using Javascript in Formulas](javascript-engine.html)
+* [Javascript in Formulas](javascript-engine.html)
 
 If working with APIs is your preferred method, view the [Formula Creation via API](formulas-via-api.html) Guide.
 
@@ -30,4 +31,4 @@ View our [Formulas Debugging Tips](formula-debugging.html) for suggestions on de
 
 View the [Formulas API Documentation](api-documentation.html) to see all of the available endpoints currently supported.
 
-View the [Using Javascript in Formulas Documentation](javascript-engine.html) to see some examples of
+View the [Javascript in Formulas Documentation](javascript-engine.html) to see some examples of

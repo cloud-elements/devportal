@@ -1,7 +1,7 @@
 ---
 heading: Formulas
 seo: Formula Script | Formulas | Formulas Javascript
-title: Using Javascript in Formulas
+title: Javascript in Formulas
 description: How to use Javascript throughout your formulas
 layout: docs
 apis: API Docs
@@ -11,11 +11,13 @@ parent: Back to API Toolkit
 order: 25
 ---
 
-## Using Javascript in Formulas
+## Javascript in Formulas
 Certain types of formula steps allow you to write custom Javascript in order to go about accomplishing whatever you may need to in your formula.  Below is a guide on how to go about writing your custom Javascript, as well as some pro-tips and FAQs.
 
+<br/>
 ### Function Signature
 The function signature for all Javascript-related steps looks like:
+
 ```javascript
 /**
  * @param  trigger The trigger that started this execution
@@ -36,6 +38,7 @@ function (trigger, steps, info, done) {
 
 #### `trigger`
 Example Javascript object for an `event` trigger type:
+
 ```javascript
 {
   eventId: 11211123,
@@ -50,20 +53,22 @@ Example Javascript object for an `event` trigger type:
   }
 }
 ```
+
 #### `steps`
 
 ```javascript
 {
-  previous-step-name: {
+  PreviousStepName: {
     // all of the step execution values from that step
   },
-  another-previous-step-name: {
+  AnotherPreviousStepName: {
     // ...
   }
 }
 ```
 
 #### `info`
+
 ```javascript
 {
   formulaId: 123,
@@ -78,10 +83,12 @@ Example Javascript object for an `event` trigger type:
 #### `done`
 Simply a callback function that should be called to terminate the given step.  For `script` type steps, this `done` callback takes a Javascript object whereas for `filter` steps, the `done` callback just takes a `boolean`.
 
+<br/>
 ### Examples
 
 ### `script`
 Script steps return a Javascript object containing all of the step execution values that should be made available to future formula steps during the current execution.  Here is an example script step that is building our JSON payload we need in order to send an email in a later step:
+
 ```javascript
 done({
   payload: {
@@ -95,10 +102,12 @@ done({
 
 ### `filter`
 Filter steps return a `boolean` indicating whether or not the `onSuccess` or `onFailure` step of the formula should run next.  Below is an example `filter` step that will return `true` if the event we received in our trigger is because a `Contact` was updated in the service that we are listening for events.
+
 ```javascript
 done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Contact');
 ```
 
+<br/>
 ### FAQs:
 
 * ** Can I use external Javascript libraries in my Javascript?**
