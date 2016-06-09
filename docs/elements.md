@@ -34,7 +34,6 @@ layout: elements
 * [![QuickBooks Enterprise](/assets/img/element-logos/quickbooksenterprise.png)QuickBooks Enterprise](./elements/quickbooksenterprise/index.html)
 * [![QuickBooks Online](/assets/img/element-logos/quickbooksonline.png)QuickBooks Online](./elements/quickbooksonline/index.html)
 * [![Taxify](/assets/img/element-logos/taxify.png)Taxify](./elements/taxify/index.html)
-* [![Xero](/assets/img/element-logos/xero.png)Xero](./elements/xero/index.html)
 * [![Autotask Help Desk](/assets/img/element-logos/autotask.png)Autotask Help Desk](./elements/autotask-helpdesk/index.html)
 * [![ConnectWise Help Desk](/assets/img/element-logos/connectwise.png)ConnectWise Help Desk](./elements/connectwise-helpdesk/index.html)
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/index.html)
