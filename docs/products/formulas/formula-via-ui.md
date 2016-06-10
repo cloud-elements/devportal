@@ -1,8 +1,8 @@
 ---
 heading: Formulas
-seo: Create Formula via Formulas UI | Formulas | Cloud Elements API Docs
+seo: Create Formula via Formula Builder UI | Formulas | Cloud Elements API Docs
 title: Create Formula via UI
-description: Learn how to create formulas via the Formula UI and start syncing cloud services.
+description: Learn how to create formulas via the Formula Builder UI and start syncing cloud services.
 layout: docs
 apis: UI Docs
 platform: formulas
@@ -62,7 +62,7 @@ __CREATE SENDGRID ELEMENT INSTANCE__
 
 Once Element Instances for the desired services have been instantiated, a formula template can be created.
 
-There are 4 parts that make up a formula template:
+There are 3 parts that make up a formula template:
 
 * Configuration
 * Variables
@@ -215,3 +215,47 @@ We will edit the steps in the same fashion, by clicking the gear icon and select
 Our formula template is now complete.  From the steps panel, view which step comes next by clicking an individual step.  The `onSuccess` will change to green and the `onFailure` will change to red.
 This view also provides options to edit, copy, and delete any trigger or step.
 ![Fromula UI](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUI16.png)
+
+#### TRY IT OUT
+
+Want to try your formula template out prior to putting into production?
+
+* Select "Try It Out"
+* Name the Formula Instance
+* Input a Notification Email
+* Click "Save"
+![Fromula UI](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUI17.png)
+
+* Select the Formula Instance
+![Fromula UI](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUI18.png)
+
+
+#### CREATE FORMULA INSTANCE
+
+Now that the formula template is complete, it’s time to activate or instantiate it.
+
+Instantiate Formula Template:
+Close the Formula Template Window by clicking the “X” in the top right corner
+
+* Under “Formula Catalog” locate the formula that was just created and click “Add Instance”
+![Fromula UI Create Instance](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUIInstance1.png)
+
+* Input the Formula Instance Name: `SFDC Contact > SendGrid Prod`
+* Check "Active"
+* Input an email: a notification message will be sent when the formula is done
+* Click "Done"
+![Fromula UI Create Instance](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUIInstance2.png)
+
+Once complete, head over to Salesforce and log in to your account.
+Create a contact and watch for an email.
+
+* Click the gear icon to Edit, Clone, Delete, and Export the Formula Template
+![Fromula UI Create Instance](http://cloud-elements.com/wp-content/uploads/2016/06/CloudElementsFormulaUIInstance3.png)
+
+Feel free to import the sample JSON of the Formula template we just created and experiment with it.
+
+[Download Sample Formula Template JSON][2]
+
+[2]:{{ site.url }}/download/SFDCContactSendGridEmail.json
+
+We want to hear from you.  Please do not hesitate to contact [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.  We appreciate your feedback.
