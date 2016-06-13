@@ -50,4 +50,4 @@ All API calls to Cloud Elements should be made to the `https://api.cloud-element
 
 __NOTE:  API Docs are not available for viewing as they are generated based on the information contained in the Database Table.__
 
-Get started by [selecting how to connect your database](mysql-endpoint-setup.html).
+Get started by [selecting how to connect your database](sqlserver-endpoint-setup.html).
