@@ -42,6 +42,7 @@ layout: elements
 * [![Oracle Service Cloud](/assets/img/element-logos/oracleservicecloud.png)Oracle Service Cloud](./elements/oracleservicecloud/index.html)
 * [![Salesforce Service Cloud](/assets/img/element-logos/salesforce.png)Salesforce Service Cloud](./elements/salesforce-service-cloud/index.html)
 * [![ServiceNow](/assets/img/element-logos/servicenow.png)ServiceNow](./elements/servicenow/index.html)
+* [![ServiceNow OAuth](/assets/img/element-logos/servicenow.png)ServiceNow OAuth](./elements/servicenow-oauth/index.html)
 * [![Wrike](/assets/img/element-logos/wrike.png)Wrike](./elements/wrike/index.html)
 * [![Zendesk](/assets/img/element-logos/zendesk.png)Zendesk](./elements/zendesk/index.html)
 * [![BigCommerce](/assets/img/element-logos/bigcommerce.png)BigCommerce](./elements/bigcommerce/index.html)
