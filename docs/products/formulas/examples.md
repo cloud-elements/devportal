@@ -2,7 +2,7 @@
 heading: Formulas
 seo: Formula Examples | Formulas | Cloud Elements API Docs
 title: Examples
-description: View examples of all of the different types of triggers and steps.
+description: View JSON examples of all of the different types of triggers and steps.
 layout: docs
 apis: API Docs
 platform: formulas
@@ -12,7 +12,7 @@ order: 6
 ---
 
 # Examples
-Below are some examples of all of the different types of triggers and steps that are currently available:
+Below are some JSON examples of all of the different types of triggers and steps that are currently available:
 
 # Triggers
 

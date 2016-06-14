@@ -29,7 +29,7 @@ As always, everything we do is API-first, so you can always use the formula plat
 
 That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
 
-![ExecutionsScreen](/assets/img/formulas/executions.png)
+![ExecutionsScreen](/assets/img/formulas/executions.gif)
 
 ## **What step execution values are available?**
 Each different type of step produces different step execution values that you can use in subsequent steps in your formula.  Below are the different values that each different type produces:

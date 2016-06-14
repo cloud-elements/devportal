@@ -17,10 +17,9 @@ To get started creating your own formulas, you can use the Formula Builder UI or
 > **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
 
 # Creating Formulas via UI
+To get started, we are going to demonstrate how to create a very simple formula that leverages a few of the different step types.  This formula will listen for events from a CRM element, and when a contact is created or updated, an email will be sent using the Messaging hub.
 
-For this documentation, Salesforce and SendGrid will be used to show an example formula. The use case presented is when a contact is created or updated in Salesforce, an email will be sent notifying the user of the origination or change. An Element Instance must be created for both of these endpoints prior to creating the following formula. Events must be enabled for Salesforce as well.
-
-## Building a Formula
+> **NOTE:** For this documentation, it is assumed you have an instance of Salesforce and SendGrid already provisioned, and events *must* be enabled for Salesforce.
 
 Creating the formula described above using the Formula Builder UI:
 

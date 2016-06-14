@@ -11,8 +11,10 @@ parent: Back to API Toolkit
 order: 5
 ---
 
+// TODO - JJW - re-work this page using the Formula Builder UI.  I think defining this as a place for "more complex use cases" would be good and then have a video as well as the example JSON available for download at the bottom.
+
 # Example Use Cases
-To better understand formulas, lets go through a few common use cases.
+Now that you are familiar with what a formula is and how to go about creating one, lets talk through some more complex, real-world use cases.
 
 The first use case that will be discussed is when a contact is created in the CRM system e.g Salesforce, SugarCRM, etc., the same contact is created in the Marketing System e.g. HubSpot, MailJet, etc.
 
@@ -134,16 +136,23 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
     }
   ]
 }
+```
+
 We use the POST /formulas API to create the template. An example request can be seen below. Be sure to include your formula-template JSON (the Formula Template shown above) in your request.
 
+```
 curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @formula-template.json
 'https://api.cloud-elements.com/elements/api-v2/formulas'
+```
+
 Example of Successful Response:
 
-{
+```json
+[
+  {
     "id": 190,
     "name": "SFDC Contact to HubSpot",
     "description": "When a contact is created or updated in Salesforce, create or update the contact in HubSpot.",
