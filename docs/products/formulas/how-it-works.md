@@ -19,12 +19,14 @@ There are a few different terms you should become familiar with in order to bett
 There are a few different pieces that make up a formula:
 
 ## Variables
-A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an element you may need to provide things like "username" or "password" in order to materialize that element, in the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.
+A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an element you may need to provide things like "username" or "password" in order to materialize that element.  In the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.
 
 We currently support the following types of variables:
 
 * `value`: Any free text input
 * `elementInstance`: A specific element instance
+
+> **PROTIP:** Variables allow you to create generic formulas that are not tied to specific endpoints.  For example, variables would allow you to create one formula and then each of your customers could have their own instance of that formula with their own endpoints plugged in.
 
 ## Trigger
 A trigger is what will cause the formula to begin executing.  We currently support the following types of triggers:
@@ -33,9 +35,11 @@ A trigger is what will cause the formula to begin executing.  We currently suppo
 * `elementRequest`: An API call is made to a specific element instance.
 * `scheduled`: Runs based on a given cron string.
 
+Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the `onSuccess` step in your trigger.
+
 > **NOTE:** Minimum `scheduled` frequency is 15 minutes.
 
-Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the `onSuccess` step in your trigger.
+> **NOTE:** If you have an `event` type trigger and that trigger's element instance is setup for polling (as opposed to webhooks) then each object that is found while polling will trigger a separate execution.  So, for example, if the poller finds five changes then you will have five different formula instance executions kick off.
 
 ## Steps
 A formula is typically made up of many different types of steps that, when combined, accomplish some specific workflow.  Steps are laid out as a binary tree, with one branch being what step to run upon success and the other branch being what step to run upon failure.  A formula execution comes to an end when no next step is defined.
@@ -53,7 +57,7 @@ We currently support the following types of steps:
 
 Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you just simply populate all of the defined "variables" for the formula.
 
-> **PROTIP:** Cloud Elements currently supports formula and/or formula instance creation via API and via the Formula Builder UI, which can be found in the Cloud Elements Console.
+> **PROTIP:** Cloud Elements currently supports formula and/or formula instance creation via API and via the Formula Builder UI.
 
 # Terminology: Formula Instance Execution
 
@@ -61,4 +65,4 @@ An execution is a single time that a formula instance ran.  Each execution has a
 
 > **PROTIP:** Each execution and step execution have an associated `status`.  This `status` can be `pending`, `success` or `failed`.
 
-> **PROTIP:** The step execution values are also what can be referenced throughout your formula in order to chain steps together and reference previous logic in your formula.
+> **PROTIP:** The step execution values are what can be referenced throughout your formula in order to chain steps together and reference previous data in your formula.  The step execution values make up, what we call, the formula "context".
