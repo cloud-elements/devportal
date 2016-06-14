@@ -232,8 +232,6 @@ Below are some examples of all of the different types of triggers and steps that
 }
 ```
 
-> **NOTE:** The `loop` step is a little more complicated than other step types, but is extremely valuable when needing to perform an action on a list of items.
-
 > **NOTE:** The above JSON snippet is for an entire formula and not just a loop step, so you can see how steps interact with each other when using a `loop` step type.
 
 > **NOTE:** Executes the following steps in a loop. You must provide it with a list of objects to loop over. Set the `onSuccess` field to the first step in the loop. When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object. If you need to continue on after the loop is completed, you can set the loop step `onFailure` to the next step to execute after the loop is completed. For a loop step `onFailure` is executed when the loop has been executed for all objects in the list.

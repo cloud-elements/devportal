@@ -2,7 +2,7 @@
 heading: Formulas
 seo: How It Works | Formulas | Cloud Elements API Docs
 title: How It Works
-description: How Formulas Work
+description: What are formulas and how do they work?
 layout: docs
 apis: API Docs
 platform: formulas
@@ -35,8 +35,10 @@ A trigger is what will cause the formula to begin executing.  We currently suppo
 
 > **NOTE:** Minimum `scheduled` frequency is 15 minutes.
 
+Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the `onSuccess` step in your trigger.
+
 ## Steps
-A formula is typically made up of many different types of steps that, when combined, accomplish some specific workflow.  Steps are laid out as a binary tree, with one branch being what step to run upon success and the other branch being what step to run upon failure.
+A formula is typically made up of many different types of steps that, when combined, accomplish some specific workflow.  Steps are laid out as a binary tree, with one branch being what step to run upon success and the other branch being what step to run upon failure.  A formula execution comes to an end when no next step is defined.
 
 We currently support the following types of steps:
 
@@ -45,7 +47,7 @@ We currently support the following types of steps:
 * `script`: Custom Javascript that *must* return a valid JSON object.
 * `filter`: Custom Javascript that *must* return a boolean.  If true is returned, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
 * `notification`: Custom Javascript that *must* return a boolean.  If true is returned, an email will be sent to the registered "notification email" address for the formula instance.
-* `loop`: Loops over a list of objects from a previous step or trigger.
+* `loop`: Loops over a list of objects from a previous step or trigger and calls the defined "on success" step for each item in the list.  Once each item has been processed, the "on failure" step is then called to continue executing the formula.
 
 # Terminology: Formula Instances
 
@@ -55,7 +57,7 @@ Once a formula has been created, in order to have that formula begin executing, 
 
 # Terminology: Formula Instance Execution
 
-An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the, potential, inputs and outputs for each of these steps.  
+An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the potential inputs and outputs for each of these steps.  
 
 > **PROTIP:** Each execution and step execution have an associated `status`.  This `status` can be `pending`, `success` or `failed`.
 
