@@ -15,6 +15,7 @@ order: 7
 
 * [Javascript](#javascript)
 * [Debugging](#debugging)
+* [Performance](#performance)
 
 # Javascript
 
@@ -122,3 +123,12 @@ As always, everything we do is API-first, so you can always use the formula plat
 That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
 
 // TODO - JJW - screenshot or video here?
+
+# Performance
+## **How fast do formulas usually run?**
+Unfortunately, this is a nearly *impossible* question to answer.  The speed of a given formula is dependent upon a lot of things such as
+* How many steps does it have?  
+* What type of steps are running?
+* How fast are the `elementRequest` step endpoints' APIs?
+* How many concurrent formulas does your Cloud Elements' account have running?
+* Other things I can't currently think of ...
