@@ -21,8 +21,9 @@ First off, that's not a question.  Secondly, if your formula is not running, che
 * Have you created a formula instance of the formula?
 * Is the trigger's element instance active?
 * If the trigger is an event type, are events enabled for the trigger's element instance?
+* If you click on "Events" in the LHS of the Console UI, can you see that we are receiving events for this element instance?
 * Are both the formula and formula instance set to "active"?
-* If you click on "Executions" in the RHS of the Console UI, can you see that it's running but failing somewhere?
+* If you click on "Executions" in the LHS of the Console UI, can you see that it's running but failing somewhere?
 
 ## **How do I go about debugging a formula instance execution?**
 As always, everything we do is API-first, so you can always use the formula platform APIs to retrieve details about an execution including all of that execution's step executions and step execution values.  To view all platform APIs for formulas, click on "API Docs" in the right-hand panel.
@@ -128,12 +129,12 @@ done({
     subject: 'Frozen Yogurt',
     to: 'joseph.pulaski@old-school.com',
     from: 'frank.ricard@old-school.com',
-    message: 'Contact ' + ${trigger.event.objectId} + ' was updated!'
+    message: 'Contact ' + trigger.event.objectId + ' was updated!'
   }
 });
 ```
 
-> **NOTE:** This is an example script step that is building our JSON payload in order to send an email in a later step.
+> **NOTE:** This is an example script step that is building a JSON payload in order to send an email in a later step.
 
 ## **What does an example `filter` step look like?**
 

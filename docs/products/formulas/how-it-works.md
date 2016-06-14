@@ -12,41 +12,41 @@ order: 2
 ---
 
 # How It Works
-There are a few different terms you should become familiar with in order to better grasp formulas.  First off, just like there are elements and then instances of those elements, our platform supports formulas and then instances of those formulas.  An instance is a materialized formula, with all of the necessary inputs (variables) that are needed for that formula to go about executing.  Once you have a formula instance, that instance will then have a list of executions.  An execution represents a single time that a specific formula instance ran.
+There are a few different terms you should become familiar with in order to better grasp formulas.  First off, just like there are Elements and then instances of those Elements, our platform supports formulas and then instances of those formulas.  An instance is a materialized formula, with all of the necessary inputs (variables) that are needed for that formula to go about executing.  Once you have a formula instance, that instance will then have a list of executions.  An execution represents a single time that a specific formula instance ran.
 
 # Terminology: Formula
 
 There are a few different pieces that make up a formula:
 
 ## Variables
-A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an element you may need to provide things like "username" or "password" in order to materialize that element.  In the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.
+A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an Element you may need to provide things like "username" or "password" in order to materialize that Element.  In the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.
 
 We currently support the following types of variables:
 
-* `value`: Any free text input
-* `elementInstance`: A specific element instance
+* `value`: Any free text input.
+* `elementInstance`: A specific Element Instance.
 
-> **PROTIP:** Variables allow you to create generic formulas that are not tied to specific endpoints.  For example, variables would allow you to create one formula and then each of your customers could have their own instance of that formula with their own endpoints plugged in.
+> **PROTIP:** Variables allow you to create generic formulas that are not tied to specific endpoints.  For example, variables would allow you to create one formula, where each of your customers could have their own instance with their own endpoints plugged in.
 
 ## Trigger
 A trigger is what will cause the formula to begin executing.  We currently support the following types of triggers:
 
-* `event`: An event is received for a specific element instance.
-* `elementRequest`: An API call is made to a specific element instance.
+* `event`: An event is received for a specific Element Instance.
+* `elementRequest`: An API call is made to a specific Element Instance.
 * `scheduled`: Runs based on a given cron string.
 
-Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the `onSuccess` step in your trigger.
+Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the "on success" step in your trigger.
 
 > **NOTE:** Minimum `scheduled` frequency is 15 minutes.
 
-> **NOTE:** If you have an `event` type trigger and that trigger's element instance is setup for polling (as opposed to webhooks) then each object that is found while polling will trigger a separate execution.  So, for example, if the poller finds five changes then you will have five different formula instance executions kick off.
+> **NOTE:** If you have an `event` type trigger and that trigger's Element Instance is setup for polling (as opposed to webhooks) then each object that is found while polling will trigger a separate execution.  So, for example, if the poller finds five changes then you will have five different executions kick off.
 
 ## Steps
 A formula is typically made up of many different types of steps that, when combined, accomplish some specific workflow.  Steps are laid out as a binary tree, with one branch being what step to run upon success and the other branch being what step to run upon failure.  A formula execution comes to an end when no next step is defined.
 
 We currently support the following types of steps:
 
-* `elementRequest`: Makes an API call to a specific element instance.
+* `elementRequest`: Makes an API call to a specific Element Instance.
 * `request`: Makes an API call to one of our platform APIs.
 * `script`: Custom Javascript that *must* pass a valid JSON object to the `done` callback.
 * `filter`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
@@ -55,7 +55,7 @@ We currently support the following types of steps:
 
 # Terminology: Formula Instances
 
-Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you just simply populate all of the defined "variables" for the formula.
+Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you just simply give it a name, and populate all of the required "variables".
 
 > **PROTIP:** Cloud Elements currently supports formula and/or formula instance creation via API and via the Formula Builder UI.
 
