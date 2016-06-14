@@ -149,4 +149,4 @@ As always, everything we do is API-first, so you can always use the formula plat
 
 That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
 
-// TODO - JJW - screenshot or video here?
+![ExecutionsScreen](/assets/img/formulas/executions.png)
