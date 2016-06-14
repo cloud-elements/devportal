@@ -13,10 +13,6 @@ order: 7
 
 # FAQs
 
-* [General](#general)
-* [Javascript](#javascript)
-* [Debugging](#debugging)
-
 # General
 
 ## **My formula is not running.**
@@ -27,6 +23,13 @@ First off, that's not a question.  Secondly, if your formula is not running, che
 * If the trigger is an event type, are events enabled for the trigger's element instance?
 * Are both the formula and formula instance set to "active"?
 * If you click on "Executions" in the RHS of the Console UI, can you see that it's running but failing somewhere?
+
+## **How do I go about debugging a formula instance execution?**
+As always, everything we do is API-first, so you can always use the formula platform APIs to retrieve details about an execution including all of that execution's step executions and step execution values.  To view all platform APIs for formulas, click on "API Docs" in the right-hand panel.
+
+That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
+
+![ExecutionsScreen](/assets/img/formulas/executions.png)
 
 ## **What step execution values are available?**
 Each different type of step produces different step execution values that you can use in subsequent steps in your formula.  Below are the different values that each different type produces:
@@ -142,11 +145,3 @@ done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Cont
 
 ## **Can I use external Javascript libraries in my Javascript?**
 Some external Javascript libraries are supported.  For the most up-to-date list, or to request a new library be supported, contact [Cloud Elements Support](mailto:support@cloud-elements.com).
-
-# Debugging
-## **How do I go about debugging a formula instance execution?**
-As always, everything we do is API-first, so you can always use the formula platform APIs to retrieve details about an execution including all of that execution's step executions and step execution values.  To view all platform APIs for formulas, click on "API Docs" in the right-hand panel.
-
-That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
-
-![ExecutionsScreen](/assets/img/formulas/executions.png)
