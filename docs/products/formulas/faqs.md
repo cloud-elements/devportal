@@ -13,15 +13,41 @@ order: 7
 
 # FAQs
 
+* [General](#general)
 * [Javascript](#javascript)
 * [Debugging](#debugging)
-* [Performance](#performance)
+
+# General
+
+## **My formula is not running.**
+First off, that's not a question.  Secondly, if your formula is not running, check the following:
+
+* Have you created a formula instance of the formula?
+* Is the trigger's element instance active?
+* If the trigger is an event type, are events enabled for the trigger's element instance?
+* Are both the formula and formula instance set to "active"?
+* If you click on "Executions" in the RHS of the Console UI, can you see that it's running but failing somewhere?
+
+## **What step execution values are available?**
+Each different type of step produces different step execution values that you can use in subsequent steps in your formula.  Below are the different values that each different type produces:
+
+### `elementRequest` or `request` step:
+// TODO - JJW
+
+### `script` step:
+// TODO - JJW
+
+## **How fast do formulas run?**
+Unfortunately, this is a *very* difficult question to answer.  That being said, the speed of a given formula is dependent upon things like:
+
+* How many steps does it have?  
+* What type of steps are running?
+* How fast are the `elementRequest` step endpoints' APIs?
+* How many concurrent formulas does your Cloud Elements' account have running?
 
 # Javascript
 
 ## **What is the function signature for Javascript-related steps?**
-
-The function signature for all Javascript-related steps looks like:
 
 ```javascript
 /**
@@ -43,7 +69,8 @@ function (trigger, steps, info, done) {
 
 ## **What do each of the parameters in the function signature above look like?**
 
-### `trigger`
+
+Example `trigger` object:
 
 ```json
 {
@@ -60,7 +87,9 @@ function (trigger, steps, info, done) {
 }
 ```
 
-### `steps`
+> **NOTE:** The above `trigger` example is for an `event` type trigger.
+
+Example `steps` object:
 
 ```json
 {
@@ -74,7 +103,7 @@ function (trigger, steps, info, done) {
 }
 ```
 
-### `info`
+Example `info` object:
 
 ```json
 {
@@ -86,9 +115,7 @@ function (trigger, steps, info, done) {
 }
 ```
 
-### `done`
-
-Simply a callback function that should be called to terminate the given step.  For `script` type steps, this `done` callback takes a Javascript object whereas for `filter` steps, the `done` callback just takes a `boolean`.
+The `done` function is simply a callback function that should be called to terminate the given step.  For `script` type steps, this `done` callback takes a Javascript object whereas for `filter` or `notification` steps, the `done` callback just takes a `boolean`.
 
 ## **What does an example `script` step look like?**
 
@@ -111,7 +138,7 @@ done({
 done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Contact');
 ```
 
-> **NOTE:** This is an example `filter` step that will return `true` if the event we received in our trigger is from a `Contact` that was updated in the service that we are listening for events.
+> **NOTE:** This is an example `filter` step that will pass `true` to our `done` callback if the event we received in our trigger is from a `Contact` that was updated in the service that we are listening for events.
 
 ## **Can I use external Javascript libraries in my Javascript?**
 Some external Javascript libraries are supported.  For the most up-to-date list, or to request a new library be supported, contact [Cloud Elements Support](mailto:support@cloud-elements.com).
@@ -123,12 +150,3 @@ As always, everything we do is API-first, so you can always use the formula plat
 That being said, our Console UI leverages those APIs for you so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
 
 // TODO - JJW - screenshot or video here?
-
-# Performance
-## **How fast do formulas usually run?**
-Unfortunately, this is a nearly *impossible* question to answer.  The speed of a given formula is dependent upon a lot of things such as
-* How many steps does it have?  
-* What type of steps are running?
-* How fast are the `elementRequest` step endpoints' APIs?
-* How many concurrent formulas does your Cloud Elements' account have running?
-* Other things I can't currently think of ...

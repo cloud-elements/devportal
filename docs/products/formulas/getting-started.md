@@ -22,19 +22,18 @@ For this documentation, Salesforce and SendGrid will be used to show an example 
 
 ## Building a Formula
 
-Prior to inputting any triggers or steps, it is advisable to think about the desired outcome of the formula. In our example, the desired outcome is to be notified via email when a new contact has been added or updated in Salesforce. The contact being created in __Salesforce__ will serve as the `trigger` putting our formula into action and ultimately ending with an email being sent via __SendGrid__.
-
-As we go through the creation of the formula, the variables will be done first.  Then a trigger will be created, as well as, the steps needed by the formula.  Finally we will connect the trigger and all of our steps into our desired workflow.  Once the formula is complete, we will create an instance of it and run it.
+Prior to inputting any triggers or steps, it is helpful to think about the desired outcome of the formula. In our example, the desired outcome is to be notified via email when a new contact has been added or updated in Salesforce. The contact being created in __Salesforce__ will serve as the `trigger` putting our formula into action and ultimately ending with an email being sent via __SendGrid__.
 
 Below is a short video, walking through using the Formula Builder UI to accomplish what is described above:
 
 // TODO - JJW - make video of this formula here
+
+// TODO - JJW - make video not hard-coding endpoints but instead creating variables
+
+// TODO - JJW - make JSON available for formula, instance and an execution
 
 # Creating Formulas via API
 
 In order to go about creating formulas and formula instances via the API, please reference our "API Docs" section on the right side panel.
 
 > **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via the Console UI.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
-
-> **PROTIP:** To see the JSON representation of the formula that is built in the video above, click the link below:
-[click here]:{{site.url}}/download/SFDCContactSendGridEmail.json

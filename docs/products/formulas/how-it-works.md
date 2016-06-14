@@ -44,9 +44,9 @@ We currently support the following types of steps:
 
 * `elementRequest`: Makes an API call to a specific element instance.
 * `request`: Makes an API call to one of our platform APIs.
-* `script`: Custom Javascript that *must* return a valid JSON object.
-* `filter`: Custom Javascript that *must* return a boolean.  If true is returned, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
-* `notification`: Custom Javascript that *must* return a boolean.  If true is returned, an email will be sent to the registered "notification email" address for the formula instance.
+* `script`: Custom Javascript that *must* pass a valid JSON object to the `done` callback.
+* `filter`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
+* `notification`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.
 * `loop`: Loops over a list of objects from a previous step or trigger and calls the defined "on success" step for each item in the list.  Once each item has been processed, the "on failure" step is then called to continue executing the formula.
 
 # Terminology: Formula Instances
