@@ -1,5 +1,5 @@
 ---
-heading: Formulas
+heading: Formulas: Examples
 seo: Formula Examples | Formulas | Cloud Elements API Docs
 title: Examples
 description: View JSON examples of all of the different types of triggers and steps.
@@ -8,7 +8,7 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 6
+order: 7
 ---
 
 # Examples

@@ -523,3 +523,8 @@ td, th {
     padding-left: 30px;
     width: 300px;
 }
+
+#vimeo-iframe {
+  width: 100%;
+  min-height: 350px;
+}
