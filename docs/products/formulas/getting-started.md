@@ -17,17 +17,24 @@ To get started creating your own formulas, you can use the Formula Builder UI or
 > **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
 
 # Creating Formulas via UI
-To get started, we are going to demonstrate how to create a very simple formula that leverages a few of the different step types.  This formula will listen for events from a CRM element, and when a contact is created or updated, an email will be sent using the Messaging hub.
+To get started, we are going to demonstrate how to create a very simple formula that leverages a few of the different step types.  This formula will listen for events from a CRM element, and then send an email using the Messaging hub.
 
 > **NOTE:** For this documentation, it is assumed you have an instance of Salesforce and SendGrid already provisioned, and events *must* be enabled for Salesforce.
 
 Creating the formula described above using the Formula Builder UI:
 
 // TODO - JJW - make video of this formula here
+![FormulaBuilderUIIntroduction](/assets/img/formulas/formula-builder-ui-introduction.mov)
+
+Modifying the original formula to filter out events that are not Contact UPDATED events.
+
+// TODO - JJW - make video
+![FormulaBuilderUIFilter](/assets/img/formulas/formula-builder-ui-filter.mov)
 
 Modifying our original formula to leverage variables:
 
 // TODO - JJW - make video not hard-coding endpoints but instead creating variables
+![FormulaBuilderUIVariables](/assets/img/formulas/formula-builder-ui-variables.mov)
 
 JSON snippets for everything that was done in the videos above:
 

@@ -1,3 +1,5 @@
+// TODO - JJW - re-work this page using the Formula Builder UI.  I think defining this as a place for "more complex use cases" would be good and then have a video as well as the example JSON available for download at the bottom.
+
 ---
 heading: Formulas
 seo: Formula Use Cases | Formulas | Cloud Elements API Docs
@@ -10,8 +12,6 @@ breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 5
 ---
-
-// TODO - JJW - re-work this page using the Formula Builder UI.  I think defining this as a place for "more complex use cases" would be good and then have a video as well as the example JSON available for download at the bottom.
 
 # Example Use Cases
 Now that you are familiar with what a formula is and how to go about creating one, lets talk through some more complex, real-world use cases.

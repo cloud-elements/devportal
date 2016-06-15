@@ -14,6 +14,8 @@ order: 6
 # Examples
 Below are some JSON examples of all of the different types of triggers and steps that are currently available:
 
+> **NOTE:** When creating a formula using the Formula Builder UI, these JSON snippets are abstracted and generated for you.
+
 # Triggers
 
 ## Example `elementRequest` triggers:
@@ -33,8 +35,6 @@ Below are some JSON examples of all of the different types of triggers and steps
 > **NOTE:** The `${crm.instance.id}` refers to a formula variable that will be assigned to a specific element instance when creating an instance of this formula.
 
 > **NOTE:** This trigger will listen for calls to `GET /hubs/crm/accounts` on the `${crm.instance.id}` element instance and then call the step named `step1`.
-
-> **NOTE:** When creating a formula using the Formula Builder UI, this JSON is abstracted and generated for you.
 
 ## Example `event` triggers:
 
