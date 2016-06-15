@@ -13,7 +13,7 @@ order: 1
 
 # Overview
 
-Cloud Elements supports customizable workflows, called **Formulas**.  Formulas are a user-defined workflow that has a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.  Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
+Cloud Elements supports customizable workflows, called **Formulas**.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.  Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
 
 > **NOTE:** The Formula documentation assumes knowledge of how Elements and Element Instances work in our platform.  If you are new to Cloud Elements, please visit the "Quick Start" section in the developer portal or play around in the Cloud Elements Console UI before proceeding with Formulas.
 

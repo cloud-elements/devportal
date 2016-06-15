@@ -55,7 +55,7 @@ We currently support the following types of steps:
 
 # Terminology: Formula Instances
 
-Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you just simply give it a name, and populate all of the required "variables".
+Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you simply give it a name, and populate all of the required "variables".
 
 > **PROTIP:** Cloud Elements currently supports formula and/or formula instance creation via API and via the Formula Builder UI.
 
