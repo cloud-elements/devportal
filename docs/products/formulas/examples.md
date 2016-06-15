@@ -48,7 +48,7 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** This trigger will listening for events on the `${crm.instance.id}` element instance and then call the step named `step1`.
+> **NOTE:** This trigger will listen for events on the `${crm.instance.id}` element instance and then call the step named `step1`.
 
 ## Example `scheduled` triggers:
 
