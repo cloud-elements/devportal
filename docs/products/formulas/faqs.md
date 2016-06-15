@@ -13,8 +13,6 @@ order: 8
 
 # FAQs
 
-# General
-
 ## **How do I go about debugging a formula instance execution?**
 As always, everything we do is API-first, so you can always use the formula platform APIs to retrieve details about an execution including all of that execution's step executions and step execution values.  To view all platform APIs for formulas, click on "API Docs" in the right-hand panel.
 

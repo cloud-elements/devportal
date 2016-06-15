@@ -22,15 +22,15 @@ To get started, we are going to demonstrate how to create a very simple formula 
 > **NOTE:** For this documentation, it is assumed you have an instance of Salesforce and SendGrid already provisioned, and events *must* be enabled for Salesforce.
 
 ## Formula Builder I: Creating Your First Formula
-{% include vimeo-player-full-width.html id=170849137 %}
+{% include vimeo-player-full-width.html id=170863091 %}
 {% include padding-all.html %}
 
 ## Formula Builder II: Using Filter Steps In Your Formula
-{% include vimeo-player-full-width.html id=170848975 %}
+{% include vimeo-player-full-width.html id=170861196 %}
 {% include padding-all.html %}
 
 ## Formula Builder III: Using Variables In Your Formula
-{% include vimeo-player-full-width.html id=170849203 %}
+{% include vimeo-player-full-width.html id=170862318 %}
 {% include padding-all.html %}
 
 > **NOTE:** Sample JSON available from the videos above:
