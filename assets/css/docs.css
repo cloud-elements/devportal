@@ -524,7 +524,11 @@ td, th {
     width: 300px;
 }
 
-#vimeo-iframe {
+/*/////////////////////////////////
+/// Custom CSS for Vimeo Videos ///
+/////////////////////////////////*/
+
+iframe.full-width {
   width: 100%;
-  min-height: 350px;
+  min-height: 550px;
 }

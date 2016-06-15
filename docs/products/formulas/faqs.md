@@ -1,5 +1,5 @@
 ---
-heading: Formulas: FAQs
+heading: Formulas
 seo: Formula FAQs | Formulas | Cloud Elements API Docs
 title: FAQs
 description: Frequently Asked Questions

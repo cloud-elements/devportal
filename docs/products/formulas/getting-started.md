@@ -1,5 +1,5 @@
 ---
-heading: Formulas: Getting Started
+heading: Formulas
 seo: Formulas Getting Started | Formulas | Cloud Elements API Docs
 title: Getting Started
 description: Learn how to create formulas in Cloud Elements.

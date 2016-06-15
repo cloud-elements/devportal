@@ -1,5 +1,5 @@
 ---
-heading: Formulas: How It Works
+heading: Formulas
 seo: How It Works | Formulas | Cloud Elements API Docs
 title: How It Works
 description: What are formulas and how do they work?

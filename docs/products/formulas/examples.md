@@ -1,5 +1,5 @@
 ---
-heading: Formulas: Examples
+heading: Formulas
 seo: Formula Examples | Formulas | Cloud Elements API Docs
 title: Examples
 description: View JSON examples of all of the different types of triggers and steps.

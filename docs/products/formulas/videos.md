@@ -1,5 +1,5 @@
 ---
-heading: Formulas: Videos
+heading: Formulas
 seo: Formula Videos | Formulas | Cloud Elements API Docs
 title: Videos
 description: Videos walking through the different features of Formula Builder.
@@ -33,22 +33,12 @@ To get started, we are going to demonstrate how to create a very simple formula 
 {% include vimeo-player-full-width.html id=170849203 %}
 {% include padding-all.html %}
 
-JSON snippets for everything that was done in the videos above:
-
-Sample JSON available from the videos above:
-
-[Formula JSON][1]
-
-[Formula Instance JSON][2]
-
-[Formula Instance Execution JSON][3]
+> **NOTE:** Sample JSON available from the videos above:
+[Formula JSON][1], [Formula Instance JSON][2], [Formula Instance Execution JSON][3].
 
 [1]:{{ site.url }}/download/crm-to-messaging-formula.json
-
 [2]:{{ site.url }}/download/crm-to-messaging-formula-instance.json
-
 [3]:{{ site.url }}/download/crm-to-messaging-formula-instance-execution.json
-
 
 # Creating Formulas via API
 
