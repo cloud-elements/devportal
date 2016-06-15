@@ -36,7 +36,7 @@ Unfortunately, this is a *very* difficult question to answer.  That being said, 
 * How many steps does it have?  
 * What type of steps are running?
 * How fast are the `elementRequest` step endpoints' APIs?
-* How many concurrent formulas does your Cloud Elements' account have running?
+* How many concurrent formulas does your Cloud Elements account have running?
 
 ## **Can I use external Javascript libraries in my Javascript?**
 Some external Javascript libraries are supported.  For the most up-to-date list, or to request a new library be supported, contact [Cloud Elements Support](mailto:support@cloud-elements.com).
