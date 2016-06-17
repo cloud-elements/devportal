@@ -13,9 +13,9 @@ order: 9
 
 ## About this F.A.Q.
 
-This is the **Frequently Asked Questions** listing for Ground2Cloud.
-It's a compiliation of many of the questions (and their answers) asked
-about Ground2Cloud. You should read the rest of the [Ground2Cloud
+This is the **Frequently Asked Questions** listing for Ground2Cloud
+(G2C). It's a compiliation of many of the questions (and their answers)
+asked about Ground2Cloud. You should read the rest of the [Ground2Cloud
 Manual](http://developers.cloud-elements.com/docs/products/ground-2-cloud/index.html)
 before reading this F.A.Q.
 
@@ -45,6 +45,7 @@ Devportal
     - [What endpoint / hostname do I use?](#what-endpoint-hostname-do-i-use)
     - [How do I connect to the Cloud Elements API?](#how-do-i-connect-to-the-cloud-elements-api)
 - [Security and Firewalls](#security-and-firewalls)
+    - [What security features are in G2C?](#what-security-features-are-in-g2c)
     - [How are my keys created / used?](#how-are-my-keys-created-used)
     - [Is key rotation supported?](#is-key-rotation-supported)
     - [Do I need to change my firewall settings?](#do-i-need-to-change-my-firewall-settings)
@@ -252,6 +253,27 @@ Elements [devportal](http://developers.cloud-elements.com/).
 
 ## Security and Firewalls
 
+### What security features are in G2C?
+
+G2C is a port forwarding mechanism that uses an SSH reverse tunnel to
+forward connections to a private hosted service, and provides a simple
+HTTP/HTTPS proxy to make forwarding those requests easier. In addition
+to whatever application-level authorization / authentication mechanism
+the service itself provides, G2C adds the following security features:
+
+- Secure generation and storage of individual private keys on the client.
+- TLS 1.2 protection of the data stream through the tunnel.
+  - Uses elliptic curve25519 cipher, allowing for perfect forward secrecy.
+  - This is done in addition to whatever encryption (if any) is
+    supported by the service.
+- Server validation via certificate authentication.
+- Client validation via certificate authentication
+- Standard HTTPS on the proxy with a certificate signed by a trusted
+  public authority.
+- Server multi-tenant enforcement to prevent cross-client contamination.
+- The client installer, uninstaller, and updater(s) are signed by a
+  trusted public authority.
+
 ### How are my keys created / used?
 
 During Ground2Cloud registration, the client on your machine generates a
@@ -391,20 +413,24 @@ registration ID, and the connection to the server will be established.
 content is stored (or "queued"), to be automatically re-sent at a later
 time when the service becomes available.
 
-Unfortunately, neither Ground2Cloud nor the Cloud Elements Platform
-supports general-purpose retries at this time. Instead, when a service
-is unavailable, Ground2Cloud returns with a predictable response that
-can be parsed by applications to perform any further actions deemed
-necessary, which may include the user or application retrying the
-request.
+We are planning to add this feature to Ground2Cloud in the future: stay
+tuned to this devportal site, and Cloud Elements press releases to be
+alerted when we roll out this feature. Contact your Cloud Elements
+service representative, or inquire at support@cloud-elements.com to
+learn more.
+
+Until the queueing feature is complete, when a service is unavailable,
+Ground2Cloud returns with a predictable response that can be parsed by
+applications to perform any further actions deemed necessary, which may
+include the user or application retrying the request.
 
 The Cloud Elements API Toolkit provides
 [formulas](http://developers.cloud-elements.com/docs/products/formulas/index.html)
 and
 [events](http://developers.cloud-elements.com/docs/products/element-builder/enhance-existing-elements.html)
-which might help construct retry scenarios for specific use cases.
-Contact our service team if you want assistance using these
-technologies.
+which might help construct simple or complex retry scenarios for
+specific use cases. Contact our service team if you want assistance
+using these technologies.
 
 
 ## Troubleshooting
