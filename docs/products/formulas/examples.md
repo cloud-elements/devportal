@@ -136,8 +136,6 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** The `${crm.instance.id}` refers to a formula variable that will be assigned to a specific element instance when creating an instance of this formula.
-
 > **NOTE:** There must be a field called `objectId` in the `trigger.event` JSON object for the above API call to work.
 
 ```json
@@ -154,9 +152,27 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** The `${crm.instance.id}` refers to a formula variable that will be assigned to a specific element instance when creating an instance of this formula.
-
 > **NOTE:** The above API call will pass any key/values returned from a previous step named `buildQuery` as query parameters to `GET /hubs/crm/contacts`.
+
+```json
+{
+  "name": "search-contacts",
+  "type": "elementRequest",
+  "onSuccess": [ "some-other-step" ],
+  "properties": {
+     "elementInstanceId": "${crm.instance.id}",
+     "method": "GET",
+     "api": "/hubs/crm/contacts",
+     "query": "${steps.buildQuery}",
+     "retry": "true",
+     "retryAttempts": "3",
+     "retryDelay": "500",
+     "retryStatusCodes": "500,502,503"
+  }
+}
+```
+
+> **NOTE:** The above API call leverages the optional retry properties.  With the above properties, if the API call fails with a `500`, `502` or `503` then we will retry that API call up to 3 times.
 
 ## Example `request` steps:
 

@@ -13,7 +13,7 @@ order: 1
 
 # Overview
 
-**ALERT:** Formula Builder UI is currently in private beta.  Official release coming soon.
+**NOTICE:** Formula Builder UI is currently in private beta.  Official release coming soon.
 
 Cloud Elements supports customizable workflows, called **Formulas**.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.  Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
 
