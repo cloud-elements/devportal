@@ -1,19 +1,22 @@
+// TODO - JJW - re-work this page using the Formula Builder UI.  I think defining this as a place for "more complex use cases" would be good and then have a video as well as the example JSON available for download at the bottom.
+
 ---
 heading: Formulas
 seo: Formula Use Cases | Formulas | Cloud Elements API Docs
-title: Formula Use Cases
+title: Use Cases
 description: View common example use cases demonstrating the functionality of formulas.
 layout: docs
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 15
+order: 5
 ---
 
-## Example Formula Use Cases
+# Example Use Cases
+Now that you are familiar with what a formula is and how to go about creating one, lets talk through some more complex, real-world use cases.
 
-This section will demonstrate some common Formula use cases. The first use case that will be discussed is when a contact is created in the CRM system e.g Salesforce, SugarCRM, etc., the same contact is created in the Marketing System e.g. HubSpot, MailJet, etc.
+The first use case that will be discussed is when a contact is created in the CRM system e.g Salesforce, SugarCRM, etc., the same contact is created in the Marketing System e.g. HubSpot, MailJet, etc.
 
 In this example, a contact will be created in Salesforce, then created in HubSpot via a Formula. This example will also show how to create a custom contact that will take custom values out of Salesforce and map them to create the new contact in HubSpot using Cloud Elements Transformations Service. This document will show screen shots with step by step directions on how to create the custom contact, map the appropriate fields for that contact,and create a Formula defining the steps needed to create a contact from a CRM System in a Marketing System.
 
@@ -65,96 +68,65 @@ Click ‘Save’.
 
 Below is the JSON needed to create a template of this formula. Please don’t forget to view the comments in the JSON as they provide quick hints about flow. If you are unfamiliar with formula templates, please view the Formula Templates section of this document.
 
-```JSON
+```json
 {
-
-    ///////////////////////////////////////
-    //      Name and Description         //
-    ///////////////////////////////////////
-
   "name": "SFDC Contact to HubSpot",
   "description": "When a contact is created in Salesforce, create the contact in HubSpot.",
-
-    ///////////////////////////////////////
-    // Trigger needed to start formula  //
-    ///////////////////////////////////////
-
   "triggers": [
     {
       "type": "event",
       "properties": {
         "elementInstanceId": "${sfdc.instance.id}"
       },
-      "onSuccess": [
-        "1-contact-filter-step"
-      ]
+      "onSuccess": [ "1-contact-filter-step" ]
     }
   ],
-
-    ///////////////////////////////////////
-    //       Steps of the Formula       //
-    ///////////////////////////////////////
-
   "steps": [
     {
-	  "name": "1-contact-filter-step",     //Name of first step
-		"type": "filter",                  //Type of trigger - filter
-		"onSuccess": [
-			"2-create-filter-step"  //Action taken on success
-		],
+	  "name": "1-contact-filter-step",
+		"type": "filter",
+		"onSuccess": [ "2-create-filter-step" ],
       "properties": {
-        "mimeType": "application/javascript",
-        "body": "var object = trigger.body.message.events[0].objectType;\nif (object.toUpperCase() == 'CONTACT'){ return true; } else { return false; }"  //If the object being returned is a contact return true and move to the next step, else stop the formula
+        "body": "var object = trigger.body.message.events[0].objectType;\nif (object.toUpperCase() == 'CONTACT'){ return true; } else { return false; }"
       }
     },
     {
       "name": "2-create-filter-step",
       "type": "filter",
-      "onSuccess": [
-        "3-get-formulaContact"
-      ],
+      "onSuccess": [ "3-get-formulaContact" ],
       "properties": {
-        "mimeType": "application/javascript",
-        "body": "var action = trigger.body.message.events[0].eventType;\nif (action.toUpperCase() == 'CREATED'){ return true; } else { return false; }"  //If the object returned is a contact and the state is CREATED, return true and move to the next step else stop the formula
+        "body": "var action = trigger.body.message.events[0].eventType;\nif (action.toUpperCase() == 'CREATED'){ return true; } else { return false; }"
       }
     },
     {
-      "name": "3-get-formulaContact", //Going to make a request from Salesforce for the contact that was just created
-      "type": "elementRequest",  //Type is elementRequest because I need to make an API call
-      "onSuccess": [
-        "4-create-formulaContact-hubspot"
-      ],
+      "name": "3-get-formulaContact",
+      "type": "elementRequest",
+      "onSuccess": [ "4-create-formulaContact-hubspot" ],
       "properties": {
         "elementInstanceId": "${sfdc.instance.id}",
-        "path": "${trigger.body.message.events[0]}",  //Path is the response body of previous step
-        "mimeType": "application/javascript",
+        "path": "${trigger.body.message.events[0]}",
         "method": "GET",
-        "api": "/hubs/crm/contacts/{objectId}"  //Not be confused with the path.  Need to grab the objectID from the response body of the contact in previous step
+        "api": "/hubs/crm/contacts/{objectId}"
       }
     },
     {
-      "name": "4-create-formulaContact-hubspot",  //Creating the Contact in HubSpot
+      "name": "4-create-formulaContact-hubspot",
       "type": "elementRequest",
       "properties": {
-        "elementInstanceId": "${hubspot.instance.id}",  //Need HubSpot ID here in form of variable
+        "elementInstanceId": "${hubspot.instance.id}",
         "mimeType": "application/javascript",
         "method": "POST",
-        "api": "/hubs/marketing/formulaContact",  //Referencing the formulaContact Object created in the 'My Objects' feature of the API Manager Console
-        "body": "${3-get-formulaContact.response.body}"  //Using the response body from previous step as the body for the POST API call to HubSpot
+        "api": "/hubs/marketing/formulaContact",
+        "body": "${3-get-formulaContact.response.body}"
       }
     }
   ],
-
-    ///////////////////////////////////////
-    //     Configuration: Instance IDs   //
-    ///////////////////////////////////////
-
   "configuration": [
     {
       "name": "sfdcInstance",
       "description": "The SFDC CRM element instance",
       "type": "elementInstance",
-      "key": "sfdc.instance.id"  //Leave this value as is, the actual instance id will be inputted when the formula is instantiated
+      "key": "sfdc.instance.id"
     },
     {
       "name": "hubspotInstance",
@@ -164,16 +136,23 @@ Below is the JSON needed to create a template of this formula. Please don’t fo
     }
   ]
 }
+```
+
 We use the POST /formulas API to create the template. An example request can be seen below. Be sure to include your formula-template JSON (the Formula Template shown above) in your request.
 
+```
 curl -X POST
 -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
 -H 'Content-Type: application/json'
 -d @formula-template.json
 'https://api.cloud-elements.com/elements/api-v2/formulas'
+```
+
 Example of Successful Response:
 
-{
+```json
+[
+  {
     "id": 190,
     "name": "SFDC Contact to HubSpot",
     "description": "When a contact is created or updated in Salesforce, create or update the contact in HubSpot.",
@@ -191,7 +170,6 @@ Example of Successful Response:
         "formulaId": 155,
         "type": "filter",
         "properties": {
-          "mimeType": "application/javascript",
           "body": "var object = trigger.body.message.events[0].objectType;\nif (object.toUpperCase() == 'CONTACT'){ return true; } else { return false; }"
         }
       },
@@ -205,7 +183,6 @@ Example of Successful Response:
         "formulaId": 155,
         "type": "filter",
         "properties": {
-          "mimeType": "application/javascript",
           "body": "var action = trigger.body.message.events[0].eventType;\nif (action.toUpperCase() == 'CREATED'){ return true; } else { return false; }"
         }
       },
@@ -219,7 +196,6 @@ Example of Successful Response:
         "formulaId": 155,
         "type": "elementRequest",
         "properties": {
-          "mimeType": "application/javascript",
           "method": "GET",
           "elementInstanceId": "${sfdc.instance.id}",
           "api": "/hubs/crm/contacts/{objectId}",
@@ -234,7 +210,6 @@ Example of Successful Response:
         "formulaId": 155,
         "type": "elementRequest",
         "properties": {
-          "mimeType": "application/javascript",
           "body": "${3-get-formulaContact.response.body}",
           "method": "POST",
           "elementInstanceId": "${hubspot.instance.id}",
@@ -289,11 +264,7 @@ Below is the instance-formula JSON needed to create a Formula Instance:
 
 ```json
 {
-    "formula": {
-        "active": true
-    },
     "name": "Demo",
-    "active": true,
     "configuration": {
         "sfdc.instance.id": "123",
         "hubspot.instance.id": "345"

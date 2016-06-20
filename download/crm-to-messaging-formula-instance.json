@@ -1,0 +1,7 @@
+{
+  "name": "my formula instance",
+  "configuration": {
+    "crm.instance": "INSERT_CRM_ELEMENT_INSTANCE_ID_HERE",
+    "messaging.instance": "INSERT_MESSAGING_ELEMENT_INSTANCE_ID_HERE"
+  }
+}
