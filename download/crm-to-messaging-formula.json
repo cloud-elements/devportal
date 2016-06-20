@@ -1,0 +1,49 @@
+{
+  "name": "CRM ==> Email",
+  "description": "Listens for event on a CRM element and then sends an email with that event information using a messaging element.",
+  "configuration": [{
+      "name": "crm.instance",
+      "type": "elementInstance",
+      "key": "crm.instance"
+    },
+    {
+      "name": "messaging.instance",
+      "type": "elementInstance",
+      "key": "messaging.instance"
+    }
+  ],
+  "triggers": [{
+    "type": "event",
+    "properties": {
+      "elementInstanceId": "${crm.instance}"
+    },
+    "onSuccess": ["filter-events"]
+  }],
+  "steps": [{
+      "name": "filter-events",
+      "type": "filter",
+      "properties": {
+        "body": "done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Contact');"
+      },
+      "onSuccess": [ "construct-email-body" ]
+    },
+    {
+      "name": "construct-email-body",
+      "type": "script",
+      "properties": {
+        "body": "done({\n  \"subject\": \"CRM Event Occurred\",\n  \"to\": \"josh@cloud-elements.com\",\n  \"from\": \"josh@cloud-elements.com\",\n  \"message\": `${trigger.event.objectType} with ID ${trigger.event.objectId} was ${trigger.event.eventType}`\n});"
+      },
+      "onSuccess": ["send-email"]
+    },
+    {
+      "name": "send-email",
+      "type": "elementRequest",
+      "properties": {
+        "method": "POST",
+        "elementInstanceId": "${messaging.instance}",
+        "api": "/hubs/messaging/messages",
+        "body": "${steps.construct-email-body}"
+      }
+    }
+  ]
+}
