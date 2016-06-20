@@ -134,7 +134,7 @@ This instance.json file must be included with your instance request.  Please fil
   "configuration": {
   	"oauth.api.key":"<INSERT_FRESHBOOKS_API_KEY>",
   	"oauth.api.secret":"<INSERT_FRESHBOOKS_API_SECRET>",
-        "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>"
+    "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>"
   },
   "tags": [
     "<INSERT_TAGS>"

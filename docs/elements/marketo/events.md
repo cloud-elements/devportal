@@ -12,7 +12,7 @@ order: 30
 
 ## Events
 
-Cloud Elements supports both polling and webhook events for Salesforce.
+Cloud Elements supports both polling and webhook events for Marketo.
 
 ### Polling
 
