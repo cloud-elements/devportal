@@ -28,6 +28,7 @@ Devportal
     - [What is Ground2Cloud, really?](#what-is-ground2cloud-really)
     - [How does Ground2Cloud work with Cloud Elements?](#how-does-ground2cloud-work-with-cloud-elements)
     - [How do I install Ground2Cloud?](#how-do-i-install-ground2cloud)
+    - [What are these security warnings?](#what-are-these-security-warnings)
 - [Platforms](#platforms)
     - [What platforms (Windows, MacOS, etc) does Ground2Cloud support?](#what-platforms-windows-macos-etc-does-ground2cloud-support)
 - [QuickBooks](#quickbooks)
@@ -126,6 +127,34 @@ instructions](http://developers.cloud-elements.com/docs/products/ground-2-cloud/
 on Cloud Elements devportal to learn how to use these installers to
 install Ground2Cloud.
 
+### What are these security warnings?
+
+If you're installing Ground2Cloud and you see security warnings, it's
+generally a result of normal admininstrator verification, or firewall,
+anti-virus, or other security applications being over-zealous. Either
+click on "Run anyway" (or equivalent) if it's available, or disable your
+anti-virus or security program(s) and try again.
+
+Recently, Microsoft has disavowed certain certification schemes that it
+previously acknowledged, which may affect you if you are installing
+Ground2Cloud using Microsoft Windows desktop, Microsoft Edge, or
+Microsoft Explorer 11.
+
+If the following message (or similar) shows up in Microsoft Edge or
+Microsoft Explorer: "The signature for Ground2CloudSetup.exe is
+corrupt or invalid". Click on "View Downloads", then on "Open Folder",
+and finally double-click on the Ground2CloudSetup.exe
+
+If a dialog shows up in Windows that says "Windows protected your PC ...
+Running this app might put your PC at risk." Click "More Info" and then
+click "Run anyway".
+
+When you run Ground2Cloud, you should see a verification window that
+says "Do you want to allow this app to make changes to your PC?". It
+should list the Verified Publisher as "Cloud Elements, Inc." If you do
+not see this dialog, or if you see a different message or publisher on
+this dialog, please try to re-download Ground2Cloud, or contact
+support@cloud-elements.com.
 
 ## Platforms
 
