@@ -42,6 +42,46 @@ Each different type of step produces different step execution values that are ad
 }
 ```
 
+### `httpRequest` step:
+```json
+{
+  "my-step-name": {
+    "request": {
+        "query": "{}",
+        "body": "{\"Name\":\"New Account Name\"}",
+        "method": "POST",
+        "path": "{}",
+        "scheme": "https",
+        "host": "api.myservice.com",
+        "port": "443",
+        "api": "/myresource",
+        "headers": "{\"authorization\":\"mysessionid\",\"content-type\":\"application/json}"
+    },
+    "response": {
+      "code": "200",
+      "headers": "{\"Set-Cookie\": \"CESESSIONID=2CA15552EE56EAF65BF1102F6CACEACC;Path=/elements/;HttpOnly\"}",
+      "body": "{\"id\": \"237648\", \"name\": \"My New Resource Name\"}"
+    }
+  }
+}
+```
+> **Note:** The `scheme` and `host` attributes are required. The supported schemes are `http` and `https`.
+
+### `amqpRequest` step:
+```json
+{
+  "my-step-name": {
+    "request": {
+        "body": "{\"message\":\"This is a test message.\"}",
+        "url": "amqp://otqaqsml:tPpXwTl7-iMtezRmyJmD-y2U_XbroYpW@jaguar.rmq.cloudamqp.com/otqaqsml",
+        "exchange": "main",
+        "queue": "myqueue"
+    }
+  }
+}
+```
+> **Note:** The `url` and `queue` attributes are required. The AMQP URL has to adhere to the conventions described in the following document - https://www.rabbitmq.com/uri-spec.html. If the AMQP request succeeds, the associated `onSuccess` step is executed, else the `onFailure` step.
+
 ### `script` step:
 A script step adds whatever object is passed to the JS `done` callback onto the formula "context".  For example, if you have a step named `my-script-step` that looks like:
 

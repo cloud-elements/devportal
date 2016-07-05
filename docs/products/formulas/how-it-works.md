@@ -48,6 +48,8 @@ We currently support the following types of steps:
 
 * `elementRequest`: Makes an API call to a specific Element Instance.
 * `request`: Makes an API call to one of our platform APIs.
+* `httpRequest`: Makes an HTTP/S call to any URL/endpoint.
+* `amqpRequest`: Makes a call via the AMQP protocol to any supported AMQP server. The currently supported AMQP servers are `RabbitMQ`.
 * `script`: Custom Javascript that *must* pass a valid JSON object to the `done` callback.
 * `filter`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
 * `notification`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.

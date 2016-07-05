@@ -190,6 +190,60 @@ Below are some JSON examples of all of the different types of triggers and steps
 
 > **NOTE:** These steps will look the same as any `elementRequest` except they do *not* need an `elementInstanceId` property since these API calls are not element instance API calls but instead just calls to one of our platform APIs.
 
+## Example `httpRequest` steps:
+
+```json
+{
+  "id": 372,
+  "onSuccess": [ "some-other-step" ],
+  "onFailure": [ "some-step-to-handle-failure" ],
+  "name": "send-event",
+  "type": "httpRequest",
+  "properties": {
+    "method": "POST",
+    "query": {},
+    "path": {},
+    "headers": {},
+    "body": "${steps.transform-event.response}",
+    "port": "2222",
+    "api": "/events",
+    "host": "localhost",
+    "scheme": "http"
+  }
+}
+```
+> **NOTE:** The `httpRequest` step is primarily the same as any `request` step with the following exceptions.
+>
+> * The `scheme` indicating whether the request is HTTP or HTTPS is required.
+> * The `host` for the HTTP/S request is required.
+> * The optional `port` may be specified. If the port is omitted, then it defaults to `80` for `HTTP` requests and `443` for `HTTPS` requests.
+> * The `api` attribute is used to specify the `URI` for the `request` invocation. The `api` parameter must start with a leading `/`.
+
+
+## Example `amqpRequest` steps:
+
+```json
+{
+  "id": 373,
+  "onSuccess": [ "some-other-step" ],
+  "onFailure": [ "some-step-to-handle-failure" ],
+  "name": "send-amqp-event",
+  "type": "amqpRequest",
+  "properties": {
+    "body": "${steps.transform-event.response}",
+    "url": "amqp://otqaqsml:tPpXwTl7-iMtezRmyJmD-y2U_XbroYpW@jaguar.rmq.cloudamqp.com/otqaqsml",
+    "exchange": "",
+    "queue": "myqueue"
+  }
+}
+```
+> **NOTE:** The `amqpRequest` uses the `AMQP` protocol to post a message to an MQ server, e.g., `RabbitMQ`, etc.
+>
+> * The `url` parameter is required, and is used to specify the `AMQP` URL endpoint of the MQ Server. The structure of the URL is as specified in the following documentation - https://www.rabbitmq.com/uri-spec.html
+> * The `exchange` parameter is optional, and indicates the name of the MQ server exchange to which the message should be posted.
+> * The `queue` attribute is required and indicates the name of queue of the MQ server to which the message should be posted.
+> * The `body`, as for the other request types, is the `JSON` payload to post to the MQ server.
+
 ## Example `loop` steps:
 
 ```json
