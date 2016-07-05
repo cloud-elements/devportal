@@ -41,3 +41,50 @@ Unfortunately, this is a *very* difficult question to answer.  That being said, 
 
 ## **Can I use external Javascript libraries in my Javascript?**
 Some external Javascript libraries are supported.  For the most up-to-date list, or to request a new library be supported, contact [Cloud Elements Support](mailto:support@cloud-elements.com).
+
+## **Can I do file uploads and downloads in a formula?**
+Yes.
+
+## **How can I do file uploads and downloads in a formula?**
+If you have an elementRequest step that calls an API which downloads a file, the response body will have the 
+following format:
+
+```json
+{
+        "filename": "myFile.pdf",
+        "type": "workflow-file-attachment",
+        "content": "base64 encoded string of file"
+}
+```
+
+You can then use that same body (or modify the filename first, if you would like) as the body of an elementRequest 
+step for an API that posts a file. You do not need to add any additional headers or parameters, 
+just the body in this format. 
+
+## **How can I make a multipart request in a formula?**
+If you have downloaded a file in a previous step and want to make a multipart request with that file you can do that 
+using an elementRequest step with a body in the following format. In this example the call takes 2 form parameters, 
+one of which is a file and the other is JSON metadata. Again, you do not need to add any additional headers or 
+parameters to this call.
+ 
+```json
+{
+    "parts": [
+        {
+            "name": "metaData",
+            "content": {
+                "your": "json"
+            },
+            "Content-Type": "text/plain"
+        },
+        {
+            "name": "file",
+            "filename": "myfile.jpg",
+            "content": "the encoded string that you got when you downloaded the file",
+            "Content-Type": "application/octet-stream"
+        }
+    ],
+    "type": "workflow-multipart"
+}
+```
+
