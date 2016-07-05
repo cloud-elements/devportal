@@ -56,6 +56,8 @@ layout: elements
 * [![Weebly](/assets/img/element-logos/weebly.png)Weebly](./elements/weebly/index.html)
 * [![WooCommerce](/assets/img/element-logos/woocommerce.png)WooCommerce](./elements/woocommerce/index.html)
 * [![NetSuite ERP](/assets/img/element-logos/netsuite.png)NetSuite ERP](./elements/netsuite-erp/index.html)
+* [![Sage Live](/assets/img/element-logos/sagelive.png)Sage Live](./elements/sagelive/index.html)
+* [![Sage One US](/assets/img/element-logos/sageoneus.png)Sage One US](./elements/sageoneus/index.html)
 * [![Amazon S3](/assets/img/element-logos/amazons3.png)Amazon S3](./elements/amazons3/index.html)
 * [![Box](/assets/img/element-logos/box.png)Box](./elements/box/index.html)
 * [![Dropbox](/assets/img/element-logos/dropbox.png)Dropbox](./elements/dropbox/index.html)
