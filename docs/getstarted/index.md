@@ -6,6 +6,7 @@ description: FAQs, General Info. Get a Head Start!
 layout: docs
 order: 1
 categories: [gettingstarted]
+sitemap: false
 ---
 
 ## What we do

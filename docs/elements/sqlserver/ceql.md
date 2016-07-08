@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 490
 parent: Back to Element Guides
 order: 45
+sitemap: false
 ---
 
 ## Cloud Elements Query Language (CEQL)

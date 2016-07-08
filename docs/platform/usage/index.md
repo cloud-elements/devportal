@@ -8,6 +8,7 @@ platform: usage
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
+sitemap: false
 ---
 
 ## Usage APIs

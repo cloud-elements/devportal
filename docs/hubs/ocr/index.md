@@ -8,6 +8,7 @@ platform: ocr
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs
 order: 1
+sitemap: false
 ---
 
 ## OCR Hub APIs

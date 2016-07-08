@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 526
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Magento SOAP V1.9 Element
