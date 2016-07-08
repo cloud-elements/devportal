@@ -7,6 +7,7 @@ layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 2
+sitemap: false
 ---
 
 ## Event Management:

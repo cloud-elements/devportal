@@ -7,6 +7,7 @@ layout: docs
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 1
+sitemap: false
 ---
 
 ## Overview

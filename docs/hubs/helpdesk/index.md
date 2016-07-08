@@ -8,6 +8,7 @@ platform: helpdesk
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs
 order: 1
+sitemap: false
 ---
 
 ## Help Desk Hub APIs

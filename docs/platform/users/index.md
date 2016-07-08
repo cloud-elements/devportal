@@ -8,6 +8,7 @@ platform: users
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
+sitemap: false
 ---
 
 ## User APIs
