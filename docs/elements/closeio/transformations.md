@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 166
 parent: Back to Element Guides
 order: 20
+sitemap: false
 ---
 
 {% include transformations.md %}

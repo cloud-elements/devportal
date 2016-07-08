@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides
 order: 10
+sitemap: false
 ---
 
 {% include authentication.md %}

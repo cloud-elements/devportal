@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 414
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Dropbox Business Element
