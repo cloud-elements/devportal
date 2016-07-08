@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 29
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Salesforce Service Cloud Element

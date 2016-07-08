@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 6
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the SendGrid Element

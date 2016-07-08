@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 526
 parent: Back to Element Guides
 order: 45
+sitemap: false
 ---
 
 {% include ceql.md %}
