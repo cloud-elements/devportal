@@ -82,6 +82,7 @@ layout: elements
 * [![Instagram](/assets/img/element-logos/instagram.png)Instagram](./elements/instagram/index.html)
 * [![ABBYY](/assets/img/element-logos/abbyy.png)ABBYY](./elements/abbyy/index.html)
 * [![Typeform](/assets/img/element-logos/typeform.png)Typeform](./elements/typeform/index.html)
+* [![Wufoo](/assets/img/element-logos/wufoo.png)Wufoo](./elements/wufoo/index.html)
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/index.html)
 * [![Brandfolder](/assets/img/element-logos/brandfolder.png)Brandfolder](./elements/brandfolder/index.html)
 * [![DocuSign](/assets/img/element-logos/docusign.png)DocuSign](./elements/docusign/index.html)

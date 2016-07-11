@@ -1,22 +1,22 @@
 ---
-heading: Typeform
-seo: Create Instance | Typeform | Cloud Elements API Docs
+heading: Wufoo
+seo: Create Instance | Wufoo | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 339
+elementId: 685
 parent: Back to Element Guides
 order: 20
 ---
 
 ## Create Instance
 
-When you provision an instance, your app will have access to the different functionality offered by the Typeform platform.
+When you provision an instance, your app will have access to the different functionality offered by the Wufoo platform.
 
 ### Step 1. Create an Instance
 
-To provision your Typeform Element, use the /instances API.
+To provision your Wufoo Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -36,15 +36,17 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Typeform is "typeform".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Wufoo is "wufoo".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```JSON
 {
   "element": {
-    "key": "typeform"
+    "key": "wufoo"
   },
   "configuration": {
-    "api.key": "<INSERT_TYPEFORM_API_KEY>"
+    "username": "<INSERT_WUFOO_API_KEY>",
+    "password": "<INSERT_WUFOO_PASSWORD>",
+    "site": "<INSERT_WUFOO_SUBDOMAIN>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -75,11 +77,12 @@ Below is a successful JSON response:
   "name": "Test",
   "token": "YT70SDqDVrhw/TMD5oV831Yurfjk6E=",
   "element": {
-    "id": 845,
-    "name": "typeform",
-    "key": "typeform",
-    "description": "Add a Typeform Instance to connect your existing Typeform account to the Cloud Storage and Documents Hub, allowing you to manage forms. You will need your Typeform account information to add an instance.",
-    "image": "http://cloud-elements.com/wp-content/uploads/2016/01/provider_typeform.png",
+    "id": 685,
+    "name": "Wufoo",
+    "hookName": "Wufoo",
+    "key": "wufoo",
+    "description": "Add a Wufoo Instance to connect your existing Wufoo account to the General Hub, allowing you to manage forms, entries, reports and fields across multiple Elements. You will need your Wufoo account information to add an instance.",
+    "image": "elements/provider_wufoo.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
@@ -92,21 +95,31 @@ Below is a successful JSON response:
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
   "configuration": {
-    "base.url": "https://api.typeform.io/v0.4",
+    "base.url": "https://{site}.wufoo.com/api/v3",
+    "bulk.add_metadata": null,
     "event.notification.subscription.id": null,
-    "api.key": "TYPFORM_API_KEY",
-    "event.notification.instance.finder": "",
-    "pagination.type": null,
-    "event.notification.callback.url": "false",
+    "bulk.query.field_name": "",
     "pagination.max": "100",
-    "event.notification.signature.key": null,
     "event.vendor.type": "webhooks",
-    "authentication.time": null,
+    "bulk.query.operator": null,
+    "bulk.query.date_mask": "yyyy-MM-dd HH:mm:ss",
+    "bulk.query.download_format": "JSON",
+    "site": "WUFOO_SUBDOMAIN",
+    "bulk.attribute.created_time": "DateCreated",
+    "password": "********",
+    "event.notification.instance.finder": "",
+    "pagination.type": "page",
+    "bulk.relations": null,
+    "event.notification.callback.url": "false",
+    "webhook.hash": "",
+    "pagination.page.startindex": "0",
+    "username": "M7HH-IUI8-TUO0-4RY6",
     "event.notification.enabled": "false"
   },
   "eventsEnabled": false,
   "eventsNotificationCallbackUrl": "false",
   "traceLoggingEnabled": false,
+  "externalAuthentication": "none",
   "cachingEnabled": false
 }
 ```
