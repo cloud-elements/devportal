@@ -205,19 +205,13 @@ Below are some JSON examples of all of the different types of triggers and steps
     "path": {},
     "headers": {},
     "body": "${steps.transform-event.response}",
-    "port": "2222",
-    "api": "/events",
-    "host": "localhost",
-    "scheme": "http"
+    "url": "http://localhost:2222/events"
   }
 }
 ```
 > **NOTE:** The `httpRequest` step is primarily the same as any `request` step with the following exceptions.
 >
-> * The `scheme` indicating whether the request is HTTP or HTTPS is required.
-> * The `host` for the HTTP/S request is required.
-> * The optional `port` may be specified. If the port is omitted, then it defaults to `80` for `HTTP` requests and `443` for `HTTPS` requests.
-> * The `api` attribute is used to specify the `URI` for the `request` invocation. The `api` parameter must start with a leading `/`.
+> * The `url` attribute, with a valid `HTTP` or `HTTPS` URL, is required.
 
 
 ## Example `amqpRequest` steps:

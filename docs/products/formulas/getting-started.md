@@ -50,11 +50,8 @@ Each different type of step produces different step execution values that are ad
         "query": "{}",
         "body": "{\"Name\":\"New Account Name\"}",
         "method": "POST",
+        "url": "https://api.myservice.com:443/myresource",
         "path": "{}",
-        "scheme": "https",
-        "host": "api.myservice.com",
-        "port": "443",
-        "api": "/myresource",
         "headers": "{\"authorization\":\"mysessionid\",\"content-type\":\"application/json}"
     },
     "response": {
@@ -65,7 +62,7 @@ Each different type of step produces different step execution values that are ad
   }
 }
 ```
-> **Note:** The `scheme` and `host` attributes are required. The supported schemes are `http` and `https`.
+> **Note:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
 
 ### `amqpRequest` step:
 ```json
