@@ -62,7 +62,7 @@ Each different type of step produces different step execution values that are ad
   }
 }
 ```
-> **Note:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
+> **NOTE:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
 
 ### `amqpRequest` step:
 ```json
@@ -77,7 +77,7 @@ Each different type of step produces different step execution values that are ad
   }
 }
 ```
-> **Note:** The `url` and `queue` attributes are required. The AMQP URL has to adhere to the conventions described in the following document - https://www.rabbitmq.com/uri-spec.html. If the AMQP request succeeds, the associated `onSuccess` step is executed, else the `onFailure` step.
+> **NOTE:** The `url` and `queue` attributes are required. The AMQP URL has to adhere to the conventions described in the following document - https://www.rabbitmq.com/uri-spec.html. If the AMQP request succeeds, the associated `onSuccess` step is executed, else the `onFailure` step.
 
 ### `script` step:
 A script step adds whatever object is passed to the JS `done` callback onto the formula "context".  For example, if you have a step named `my-script-step` that looks like:
@@ -99,6 +99,8 @@ A loop step makes available the current object being processed and the index to 
 ### `filter` or `notification` steps:
 These steps simply pass a boolean into the JS `done` callback function and therefore, do not add any step execution values to the formula "context".
 
+### `formula` step:
+These steps execute a sub-formula from the current formula.  The only property required on a `formula` step type is the `formulaId` property which is the ID of the formula to execute as a sub-formula.  The other optional property is the `args` property, which allows you to pass arguments to the sub-formula that will be made available to that sub-formula under the `trigger.args` context.  
 
 ## Javascript
 There are many step types that allow you to write your own custom Javascript.  The function signature for all JS-related step types looks like:
