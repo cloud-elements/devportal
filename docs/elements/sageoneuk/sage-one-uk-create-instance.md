@@ -1,18 +1,18 @@
 ---
-heading: Sage One US
-seo: Create Instance | Sage One US | Cloud Elements API Docs
+heading: Sage One UK
+seo: Create Instance | Sage One UK | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 653
+elementId: 686
 parent: Back to Element Guides
 order: 20
 ---
 
 ## Create Instance
 
-When you provision an instance, your app will have access to the different functionality offered by the Sage One US platform.
+When you provision an instance, your app will have access to the different functionality offered by the Sage One UK platform.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -34,24 +34,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sageoneus/oauth/url?apiKey=fake_SageOneUS_api_key&apiSecret=fake_SageOneUS_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sageoneus'
+'https://api.cloud-elements.com/elements/api-v2/elements/sageoneuk/oauth/url?apiKey=fake_SageOneUK_api_key&apiSecret=fake_SageOneUK_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sageoneuk'
 ```
 
 Response:
 
 ```javascript
 {
-  "oauthUrl": "https://www.sageone.com/oauth2/auth?response_type=code&client_id=insert_sageoneus_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=sageoneus",
-  "element": "sageoneus"
+  "oauthUrl": "https://www.sageone.com/oauth2/auth?response_type=code&client_id=insert_sageoneuk_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=sageoneuk",
+  "element": "sageoneuk"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., `sageoneus` in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., `sageoneuk` in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Sage One US Element, use the /instances API.
+To provision your Sage One UK Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -71,20 +71,20 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Sage One US is `sageoneus`.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Sage One UK is `sageoneuk`.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```JSON
 {
   "element": {
-    "key": "sageoneus"
+    "key": "sageoneuk"
   },
   "providerData": {
     "code": "Code on Return the URL"
   },
   "configuration": {
-    "oauth.api.key": "<INSERT_SAGEONE_US_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_SAGEONE_US_CLIENT_SECRET>",
-    "signature": "<INSERT_SAGEONE_US_SIGNATURE>",
+    "oauth.api.key": "<INSERT_SAGEONE_UK_CLIENT_ID>",
+    "oauth.api.secret": "<INSERT_SAGEONE_UK_CLIENT_SECRET>",
+    "signature": "<INSERT_SAGEONE_UK_SIGNATURE>",
     "oauth.callback.url": "https://www.mycoolapp.com/auth"
   },
   "tags": [
@@ -116,10 +116,10 @@ Below is a successful JSON response:
   "name": "test",
   "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
   "element": {
-    "id": 676,
-    "name": "Sage One US Beta",
-    "key": "sageoneus",
-    "description": "Add a Sage One US Instance to connect your existing Sage account to the Sage Hub, allowing you to manage customers, journals, ledger accounts, etc. across multiple Sage Elements. You will need your Sage One US account information to add an instance.",
+    "id": 686,
+    "name": "Sage One UK Beta",
+    "key": "sageoneuk",
+    "description": "Add a Sage One UK Instance to connect your existing Sage account to the Sage Hub, allowing you to manage customers, journals, ledger accounts, etc. across multiple Sage Elements. You will need your Sage One UK account information to add an instance.",
     "image": "http://images.go.sage.com/EloquaImages/clients/SageGlobalInstance/%7b3e60c666-8177-4c78-b101-1ca2387cd431%7d_Qualification_Email_1_RealTimeAccounting_logo.png",
     "active": true,
     "deleted": false,
