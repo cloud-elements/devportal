@@ -100,7 +100,7 @@ A loop step makes available the current object being processed and the index to 
 These steps simply pass a boolean into the JS `done` callback function and therefore, do not add any step execution values to the formula "context".
 
 ### `formula` step:
-These steps execute a sub-formula from the current formula.  The only property required on a `formula` step type is the `formulaId` property which is the ID of the formula to execute as a sub-formula.  The other optional property is the `args` property, which allows you to pass arguments to the sub-formula that will be made available to that sub-formula under the `trigger.args` context.  
+These steps execute a sub-formula from the current formula.  The values that are added to the formula context after a `formula` step finishes executing are whatever the last step that executed in the sub-formula makes available.  Therefore, it's common practice to have a specific step in the sub-formula that basically aggregates and "returns" whatever data is needed in the parent's formula context.
 
 ## Javascript
 There are many step types that allow you to write your own custom Javascript.  The function signature for all JS-related step types looks like:
