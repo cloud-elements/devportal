@@ -97,7 +97,27 @@ You could now reference `steps.my-script-step.foo`, `steps.my-script-step.object
 A loop step makes available the current object being processed and the index to each step executed inside of that loop.  For example, if we have a `loop` step named `looper`, any steps that are run inside of that loop would have access to `looper.index` and `looper.entry`.
 
 ### `filter` or `notification` steps:
-These steps simply pass a boolean into the JS `done` callback function and therefore, do not add any step execution values to the formula "context".
+These steps simply pass a boolean into the JS `done` callback function.  That boolean is made available under the key titled `continue`, for example:
+
+```json
+{
+  "my-step-name": {
+    "continue": "true"
+  }
+}
+```
+
+> **NOTE:** In the above example, `true` was passed to the `done` callback.
+
+```json
+{
+  "my-step-name": {
+    "continue": "false"
+  }
+}
+```
+
+> **NOTE:** In the above example, `false` was passed to the `done` callback.
 
 ### `formula` step:
 These steps execute a sub-formula from the current formula.  The values that are added to the formula context after a `formula` step finishes executing are whatever the last step that executed in the sub-formula makes available.  Therefore, it's common practice to have a specific step in the sub-formula that basically aggregates and "returns" whatever data is needed in the parent's formula context.
