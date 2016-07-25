@@ -7,6 +7,7 @@ layout: hubs
 order: 90
 ---
 
+* [![Sage Accounting APIs](/assets/img/hub-icons/sageaccounting.png)Sage Accounting](/docs/hubs/sageaccounting/index.html)
 * [![CRM APIs](/assets/img/hub-icons/crm.png)CRM](/docs/hubs/crm/index.html)
 * [![Marketing APIs](/assets/img/hub-icons/marketing.png)Marketing](/docs/hubs/marketing/index.html)
 * [![Messaging APIs](/assets/img/hub-icons/messaging.png)Messaging](/docs/hubs/messaging/index.html)
