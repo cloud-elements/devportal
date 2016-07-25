@@ -4,7 +4,7 @@ seo: Sage Accounting Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
 layout: docs
-platform: finance
+platform: sageaccounting
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs
 order: 1
@@ -28,7 +28,3 @@ accounts, agents, contacts, documents, files, incidents, leads, opportunities
 We’ve categorized the leading cloud applications into Hubs (e.g. Sage Accounting, Documents, and Messaging). You integrate to a Cloud Elements “Hub” via a single RESTful API and your app is instantly connected to all the leading services in that category, no need to do custom and costly integration to each service.
 
 If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-elements.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
-
-{% include padding-all.html %}
-
-{% include padding-all.html %}
