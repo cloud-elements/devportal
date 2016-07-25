@@ -29,3 +29,7 @@ The Sage One UK Element is a collection of resources providing a pre-built integ
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
 Get started by [setting up the endpoint](sage-one-uk-endpoint-setup.html).
+
+{% include padding-all.html %}
+
+{% include padding-all.html %}
