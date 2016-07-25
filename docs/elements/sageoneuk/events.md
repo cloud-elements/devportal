@@ -49,3 +49,5 @@ instance JSON with polling events enabled:
 {% include padding-all.html %}
 
 {% include padding-all.html %}
+
+{% include padding-all.html %}
