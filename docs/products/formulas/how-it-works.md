@@ -54,6 +54,7 @@ We currently support the following types of steps:
 * `filter`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, the "on success" step will be executed.  Upon false, the "on failure" step will be executed.
 * `notification`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.
 * `loop`: Loops over a list of objects from a previous step or trigger and calls the defined "on success" step for each item in the list.  Once each item has been processed, the "on failure" step is then called to continue executing the formula.
+* `formula`: Executes a sub-formula from the current formula.
 
 # Terminology: Formula Instances
 

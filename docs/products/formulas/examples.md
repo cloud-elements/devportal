@@ -301,3 +301,34 @@ Below are some JSON examples of all of the different types of triggers and steps
 > **NOTE:** Executes the following steps in a loop. You must provide it with a list of objects to loop over. Set the `onSuccess` field to the first step in the loop. When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object. If you need to continue on after the loop is completed, you can set the loop step `onFailure` to the next step to execute after the loop is completed. For a loop step `onFailure` is executed when the loop has been executed for all objects in the list.
 
 > **NOTE:** For a step that is running inside of a loop you can access `loopStep.entry`, which is the current object in the list you are looping over and `loopStep.index`, which is the the index of the object in the list.
+
+### Example `formula` step:
+
+```json
+{
+  "name": "a-sub-formula-step",
+  "type": "formula",
+  "properties": {
+    "formulaId": "SUB_FORMULA_ID"
+  }
+}
+```
+
+> **NOTE:** The `formulaId` property is abstracted in the Formula Builder UI, allowing you to just select the sub-formula by its name.
+
+> **NOTE:** The `onSuccess` or `onFailure` of a `formula` type step is based around whether the *entire* sub-formula was successful or failed and not just the final step of the sub-formula.
+
+> **NOTE:** The step execution values available to your parent formula are based on the *last* step of that sub-formula.  So whatever values the last step in your sub-formula makes available, those will be available in the parent formula's context.
+
+```json
+{
+  "name": "a-sub-formula-step",
+  "type": "formula",
+  "properties": {
+    "formulaId": "SUB_FORMULA_ID",
+    "args": "steps.build-args"
+  }
+}
+```
+
+> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`.

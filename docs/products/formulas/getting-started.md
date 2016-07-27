@@ -62,7 +62,7 @@ Each different type of step produces different step execution values that are ad
   }
 }
 ```
-> **Note:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
+> **NOTE:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
 
 ### `amqpRequest` step:
 ```json
@@ -77,7 +77,7 @@ Each different type of step produces different step execution values that are ad
   }
 }
 ```
-> **Note:** The `url` and `queue` attributes are required. The AMQP URL has to adhere to the conventions described in the following document - https://www.rabbitmq.com/uri-spec.html. If the AMQP request succeeds, the associated `onSuccess` step is executed, else the `onFailure` step.
+> **NOTE:** The `url` and `queue` attributes are required. The AMQP URL has to adhere to the conventions described in the following document - https://www.rabbitmq.com/uri-spec.html. If the AMQP request succeeds, the associated `onSuccess` step is executed, else the `onFailure` step.
 
 ### `script` step:
 A script step adds whatever object is passed to the JS `done` callback onto the formula "context".  For example, if you have a step named `my-script-step` that looks like:
@@ -97,8 +97,30 @@ You could now reference `steps.my-script-step.foo`, `steps.my-script-step.object
 A loop step makes available the current object being processed and the index to each step executed inside of that loop.  For example, if we have a `loop` step named `looper`, any steps that are run inside of that loop would have access to `looper.index` and `looper.entry`.
 
 ### `filter` or `notification` steps:
-These steps simply pass a boolean into the JS `done` callback function and therefore, do not add any step execution values to the formula "context".
+These steps simply pass a boolean into the JS `done` callback function.  That boolean is made available under the key titled `continue`, for example:
 
+```json
+{
+  "my-step-name": {
+    "continue": "true"
+  }
+}
+```
+
+> **NOTE:** In the above example, `true` was passed to the `done` callback.
+
+```json
+{
+  "my-step-name": {
+    "continue": "false"
+  }
+}
+```
+
+> **NOTE:** In the above example, `false` was passed to the `done` callback.
+
+### `formula` step:
+These steps execute a sub-formula from the current formula.  The values that are added to the formula context after a `formula` step finishes executing are whatever the last step that executed in the sub-formula makes available.  Therefore, it's common practice to have a specific step in the sub-formula that basically aggregates and "returns" whatever data is needed in the parent's formula context.
 
 ## Javascript
 There are many step types that allow you to write your own custom Javascript.  The function signature for all JS-related step types looks like:
