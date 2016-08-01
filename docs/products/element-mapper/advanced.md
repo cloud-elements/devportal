@@ -1,8 +1,8 @@
 ---
 heading: Element Mapper
-seo: Element Mapper Examples | Element Mapper | Cloud Elements API Docs
-title: Examples
-description: View different examples of Element Mapper in action.
+seo: Element Mapper Advanced Examples | Element Mapper | Cloud Elements API Docs
+title: Advanced
+description: View different advanced examples of Element Mapper in action.
 layout: docs
 apis: API Docs
 platform: organizations
@@ -11,8 +11,8 @@ parent: Back to API Toolkit
 order: 5
 ---
 
-# Examples
-Below are a handful of examples of different uses cases and examples of leveraging Element Mapper.
+# Advanced Examples
+Below are a handful of advanced examples of leveraging Element Mapper.
 
 # Create Custom Objects
 
