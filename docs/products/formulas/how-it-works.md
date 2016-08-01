@@ -2,7 +2,7 @@
 heading: Formulas
 seo: How It Works | Formulas | Cloud Elements API Docs
 title: How It Works
-description: What are formulas and how do they work?
+description: What are Formulas and how do they work?
 layout: docs
 apis: API Docs
 platform: formulas
@@ -34,6 +34,7 @@ A trigger is what will cause the formula to begin executing.  We currently suppo
 * `event`: An event is received for a specific Element Instance.
 * `elementRequest`: An API call is made to a specific Element Instance.
 * `scheduled`: Runs based on a given cron string.
+* `manual`: Is only kicked off manually (via an API call to `POST /formulas/instances/:id/executions`).
 
 Once the formula is triggered, the sequence of steps will begin executing.  The first step that will be run is whatever step you have defined as the "on success" step in your trigger.
 

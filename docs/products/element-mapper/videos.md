@@ -1,29 +1,29 @@
 ---
 heading: Element Mapper
-seo: Quick Start Guide | Element Mapper | Cloud Elements API Docs
-title: Element Mapper Quick Start Guide
-description: Get up and running with Element Mapper UI.
+seo: Videos | Element Mapper | Cloud Elements API Docs
+title: Videos
+description: Videos walking through the different features of Element Mapper.
 layout: docs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 2
+order: 4
 ---
 
-### Element Mapper Quick Start Guide
+# First Time Using Element Mapper
+To get started using Element Mapper, you can use the Element Mapper UI or our platform object definition/transformation APIs.  If you are just getting started, we would recommend using the UI to help familarize yourself with the different pieces that make up Element Mapper and how they work.
+
+# Using Element Mapper UI
 
 This guide is here to get you up and running with Element Mapper. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
 
 This guide reviews the minimum number of steps to get you mapping your data with the leading Cloud Services using Element Mapper. If you have not signed up for Cloud Elements Service or Provisioned an Element with us, please see our [CRM Quick Start Guide](/getstarted/quickstart-guides/crm-hub-quick-start-guide.html)
 
+{% include vimeo-player-full-width.html id=116909693%}
 {% include padding-all.html %}
 
-{% include vimeo-player.html id=116909693 %}
-
-{% include padding-all.html %}
-
-#### What you will need:
+## What you will need:
 
 * Cloud Elements Account
 * A Provisioned CRM Element (Salesforce, SugarCRM, ZohoCRM)
@@ -33,7 +33,7 @@ Check out our CRM Quick Start Guide to get set up in under 4 minutes.
 
 *Salesforce will be used for this demonstration*
 
-#### What we’ll do:
+## What we’ll do:
 
 1. Sign in to the Elements Manager
 

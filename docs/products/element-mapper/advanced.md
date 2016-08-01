@@ -1,17 +1,196 @@
 ---
 heading: Element Mapper
-seo: Map and Transform Data | Element Mapper | Cloud Elements API Docs
-title: Map and Transform Data via the Element Mapper API
-description: Get up and running with Element Mapper API.
+seo: Element Mapper Advanced Examples | Element Mapper | Cloud Elements API Docs
+title: Advanced
+description: View different advanced examples of Element Mapper in action.
 layout: docs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 4
+order: 5
 ---
 
-### Transformations Usage Guide
+# Advanced Examples
+Below are a handful of advanced examples of leveraging Element Mapper.
+
+# Create Custom Objects
+
+### My Object
+
+Add object definitions to resources like accounts and contacts so they can be mapped to other cloud service applications.
+
+#### Currently Supported Services
+
+The My Object resource can be used with Elements in all of our Hubs with the exception of Documents and Messaging.
+
+This guide will walk you through the creation of an Object via the Cloud Elements API Manager Console.
+
+Log in to the [Cloud Elements API Manager Console](https://console.cloud-elements.com/elements/jsp/login.jsp)
+
+Click “My Objects”
+![Element Mapper My Object 1](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject1.png)
+
+Click “Add/Edit Object”
+![Element Mapper My Object 2](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject2.png)
+
+Click “New Object”
+![Element Mapper My Object 3](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject3.png)
+
+Name the Object
+
+Select Object Level: Organization will include your company and your customers.
+
+Click “Add Field”
+![Element Mapper My Object 4](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject4.png)
+
+Name your field to map.
+
+Select which data type, e.g. string, number, etc.
+
+Click “green check mark”
+![Element Mapper My Object 5](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject5.png)
+
+Click “Save” when you have finished entering the fields you wish to map to the resource.
+![Element Mapper My Object 6](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject6.png)
+
+Click “X” to close.
+![Element Mapper My Object 7](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject7.png)
+
+Click “My Instances”
+
+Click “Transformations”
+(Salesforce will be used for this demonstration)
+![Element Mapper My Object 8](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject8.png)
+
+Click “My Objects”
+
+Select “MyContact”
+(The object you created earlier in the workflow)
+![Element Mapper My Object 9](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject9.png)
+
+Click the drop down menu on the right.
+
+Select “Contact” from the list of Salesforce resources
+![Element Mapper My Object 10](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject10.png)
+
+Drag and drop the fields you wish to map to Salesforce on top of the fields you created for the object.
+![Element Mapper My Object 11](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject11.png)
+
+Optionally decide whether or not to ignore the unmapped fields from Salesforce.  We will ignore unmapped fields for this demonstration.
+
+Click “Save”
+![Element Mapper My Object 12](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject12.png)
+
+Click “X” to close
+![Element Mapper My Object 13](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject13.png)
+
+Click “Documentation” to open API docs for the Salesforce instance
+
+Scroll down towards the bottom of the list and select “GET /{objectName} to expand the docs.
+![Element Mapper My Object 14](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject14.png)
+
+Input “MyContact” in the objectName field
+
+Click “Try it out!”
+![Element Mapper My Object 15](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject15.png)
+
+View the contact data displaying the fields mapped to that object.
+![Element Mapper My Object 16](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject16.png)
+
+# Array Support
+
+#### Mapping Arrays to Flat Fields
+
+Regular expressions are now available within an object via Element Mapper.
+These expressions will give you the ability to map an array to a flat field.
+Custom objects can be formatted in JSON, then created via the transformation APIs or via the Element Mapper UI.
+
+The transformations APIs can be found under Platform APIs > Organizations > Create Transformations for Element in Organization of the documentation menu.  Or, log in to the Cloud Elements API Manager and navigate to the API DOCS > Platform APIs > Organizations.
+
+Let’s take a look at an example:
+
+```JSON
+{
+  "account": {
+    "vendorName": "Account",
+    "fields": [
+      {
+        "path": "AppleIpadName",
+        "vendorPath": "Products[id=4].name" //Get the value of the name field from the Products array where id = 4
+      },
+      {
+        "path": "AppleProductName",
+        "vendorPath": "Products[?(@.id==2)].name" //Get the value of the name field from the Products array where id = 2
+      },
+      {
+        "path": "AppleNewProductName",
+        "vendorPath": "details.Products[?(@.id==2)].name" //Get the details of an object from the Products array where id = 2
+      },
+      {
+        "path": "AppleProductTouchId",
+        "vendorPath": "Products[?(@.id==2)].features.touchId" // Get the touchId value from the Products array with id=2 which is inside the features object
+      },
+      {
+        "path": "AppleTouchProductId",
+        "vendorPath": "Products[?(@.features.touchId==true)].id" //Get the Id of the array where touchId = true
+      },
+      {
+        "path": "AppleProductId",
+        "vendorPath": "Products[0].id" //Id value of the Products array at index 0
+      },
+      {
+        "path": "AppleProductsCount",
+        "vendorPath": "Products[*].size()" //Count of the Products array
+      }
+    ]
+  }
+}
+```
+
+Mapping flat fields to an array can also be done via the Element Mapper UI.
+A QuickBooks custom customer will be used. This document assumes a QuickBooks instance has been created. If an instance has not been created, please review the QuickBooks Documentation under Elements > QuickBooks > Endpoint Setup and Create Instance found in the left hand side of the documentation menu.
+
+Log in to the [Cloud Elements API Manger Console](https://console.cloud-elements.com/elements/jsp/login.jsp).
+
+Navigate to ‘My Instances’
+
+Navigate to the QuickBooks Instance and select ‘Transformations’ to open the Element Mapper UI
+![Element Mapper Array Support 1](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays1.png)
+
+Select ‘customer’ from the dropdown list of objects
+![Element Mapper Array Support 2](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays2.png)
+
+Select ‘New Object’
+![Element Mapper Array Support 3](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays3.png)
+
+Name the object, myCustomers will be used for this example
+
+Check ‘Yes’ for IGNORE UNMAPPED – this will only display the fields mapped to the myCustomers object. NOTE: A few fields have already been dragged and dropped from the right column for this example.
+
+Click ‘+ Add Field’ A phone number will be added to this object and mapped to an array
+
+Complete the following
+
+* Name the field: myPhone
+* Select data type: string
+* Select the field to map: primaryPhone.freeFormNumber
+
+Click the green check mark to save field
+
+Click ‘Save’ to save the object
+
+Click ‘Try it out’ to see your newly created object
+![Element Mapper Array Support 4](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays4.png)
+
+View the transformed object and the original object
+
+The primaryPhone.freeFormNumber field was mapped to the myPhone field – an array mapped to a flat field.
+![Element Mapper Array Support 5](http://cloud-elements.com/wp-content/uploads/2015/10/FlatArrays5.png)
+
+If you have any questions regarding mapping flat fields to an array, please contact [Cloud Elements Support](mailto:support@cloud-elements.com).
+
+# Transformations API Usage
 
 The purpose of the Transformation APIs (Beta) is to give you the option of defining what an object would look like in your app.
 
