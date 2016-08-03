@@ -11,9 +11,20 @@ parent: Back to API Toolkit
 order: 7
 ---
 
-## Hooks
+# Hooks
 
-This Tech Tip is focused on Hooks.  Some examples of a Global Pre-Hook, Pre-Hook, Post-Hook, and Web-Hook Event will be shown.
+Hooks allow you to execute custom Javascript before and/or after an API call takes place.  Element Builder supports two types of hooks: global hooks and API resource hooks.  Global hooks are executed before and/or after every single API call to an Element, while API resource hooks are executed before and/or after API calls to a specific API resource on an Element.
+
+# Javascript
+The function signature for all JS in Element Builder looks like:
+
+```javascript
+function(request_body, request_headers, request_path, request_parameters, request_vendor_method, request_vendor_path, request_vendor_headers, request_vendor_body, request_vendor_url, meta_data, configuration, done) {
+	// your Javascript goes here
+}
+```
+
+Some examples of a Global Pre-Hook, Pre-Hook, Post-Hook, and Web-Hook Event will be shown.
 
 Hooks are defined as:
 
