@@ -19,10 +19,43 @@ Hooks allow you to execute custom Javascript before and/or after an API call tak
 The function signature for all JS in Element Builder looks like:
 
 ```javascript
+/**
+ * @param  {Object}   request_body           The incoming request HTTP  body
+ * @param  {Object}   request_headers        The incoming request headers for this API call
+ * @param  {Object}   request_path           The incoming request path for this API call
+ * @param  {Object}   request_parameters     The incoming query parameters for this API request
+ * @param  {Object}   request_vendor_method  The request vendor HTTP method
+ * @param  {Object}   request_vendor_path    The request path
+ * @param  {Object}   request_vendor_headers The request vendor HTTP headers
+ * @param  {Object}   request_vendor_body    The request vendor HTTP body
+ * @param  {Object}   request_vendor_url     The request vendor URL
+ * @param  {Object}   meta_data              Metadata about the object
+ * @param  {Object}   configuration          The Element's configuration object
+ * @param  {Function} done                   The callback function that you will need to call at the end of your JS
+ */
 function(request_body, request_headers, request_path, request_parameters, request_vendor_method, request_vendor_path, request_vendor_headers, request_vendor_body, request_vendor_url, meta_data, configuration, done) {
 	// your Javascript goes here
 }
 ```
+
+> __PROTIP:__ For all scripts, Javascript `strict` mode is enforced.
+
+> __PROTIP:__ ES6 is supported.
+
+The `done` function is simply a callback function that should be called to end the function.  This can pass a `continue` object, indicating whether the API request should continue to be processed through Element Builder and any new objects that should overwrite the existing incoming objects to this function.  An example might be:
+
+```javascript
+done({
+	"continue": true,
+	"request_vendor_parameters": new_request_vendor_parameters
+});
+```
+
+> **NOTE:** By sending `false` as the `continue` value in the pre hook, it stops the execution at this and returns the response
+
+> **NOTE:**  In the above example, the `request_vendor_parameters` that are returned will overwrite the request vendor parameters that needs to be sent to the endpoint
+
+# Examples
 
 Some examples of a Global Pre-Hook, Pre-Hook, Post-Hook, and Web-Hook Event will be shown.
 
