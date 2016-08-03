@@ -82,6 +82,7 @@ layout: elements
 * [![Flickr](/assets/img/element-logos/flickr.png)Flickr](./elements/flickr/index.html)
 * [![Instagram](/assets/img/element-logos/instagram.png)Instagram](./elements/instagram/index.html)
 * [![ABBYY](/assets/img/element-logos/abbyy.png)ABBYY](./elements/abbyy/index.html)
+* [![Act Premium](/assets/img/element-logos/actpremium.png)Act Premium](./elements/actpremium/index.html)
 * [![Typeform](/assets/img/element-logos/typeform.png)Typeform](./elements/typeform/index.html)
 * [![Wufoo](/assets/img/element-logos/wufoo.png)Wufoo](./elements/wufoo/index.html)
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/index.html)
