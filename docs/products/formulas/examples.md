@@ -331,4 +331,4 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`.
+> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`. The args can be accessed in the sub-formula using `trigger.args`.
