@@ -30,11 +30,11 @@ For the complete article from Intuit, please [click here](https://developer.intu
 
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/token
+* Request Body: None
+* Query Parameters:
 
 * __key__ - quickbooks
 * __apiKey–__ - the key obtained from registering your app with the provider
@@ -66,11 +66,11 @@ QuickBooks Online expects a token and secret. These are contained in the respons
 
 ### Step 2. Get Elements OAuth URL
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - quickbooks
 * __apiKey–__ - the key obtained from registering your app with the provider

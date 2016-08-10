@@ -16,11 +16,11 @@ Etsy is an eCommerce Platform. When you provision an instance, your app will hav
 
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - etsy
 * __apiKey–__ - KEYSTRING
