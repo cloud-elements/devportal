@@ -16,11 +16,11 @@ Act-On is a Marketing Platform. When you provision an instance, your app will ha
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __apiKey–__ the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider
@@ -33,7 +33,7 @@ Example cURL Command:
 ```bash
 curl -X GET \
 -H 'Content-Type: application/json' \
-'https://api-v2/elements/acton/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
+'https://api.cloud-elements.com/elements/api-v2/elements/acton/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
 ```
 
 Response:
