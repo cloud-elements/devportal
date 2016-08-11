@@ -13,7 +13,17 @@ sitemap: false
 ## Event Management:
 ### Cloud Elements Events Framework
 
-Cloud Elements Events Framework provides a uniform mechanism for subscribing to events from Endpoints (e.g. Salesforce, HubSpot, QuickBooks, Dropbox). Our Framework gives you the flexibility to receive notifications to your app regarding user activity by having our Elements subscribe to Endpoint Events. Endpoints publish changes to notify the elements that events have occurred. For example, a user uploads a file to her Dropbox account using the Dropbox user interface. This change would be published to our Dropbox Element. The Dropbox Element would then notify your app that a new file has been uploaded. Your app can then be updated with the most current data making it that much more cooperative and powerful.
+Cloud Elements Events Framework provides a uniform mechanism for
+subscribing to events from Endpoints (e.g. Salesforce, HubSpot,
+QuickBooks, Dropbox). Our Framework gives you the flexibility to receive
+notifications to your app regarding user activity by having our Elements
+subscribe to Endpoint Events. Endpoints publish changes to notify the
+Elements that events have occurred. For example, a user uploads a file
+to her Dropbox account using the Dropbox user interface. This change
+would be published to our Dropbox Element. The Dropbox Element would
+then notify your app that a new file has been uploaded. Your app can
+then be updated with the most current data making it that much more
+cooperative and powerful.
 ![Cloud Elements Events 1](http://cloud-elements.com/wp-content/uploads/2015/01/DocumentManagementWorkflow1.png)
 
 ### Events
@@ -25,78 +35,124 @@ __Polling__ is a mechanism where Cloud Elements executes the configured query ev
 __Webhooks__ are when the provider lets Cloud Elements know what information has changed.
 NOTE: Some Application Endpoints require some additional configuration setup for Event Management. Instructions and screen shots for these configurations can be found in the [Element Guides](/docs/elements.html) under Events for each endpoint.
 
-#### Provision
-
-##### Create an Instance with Events via API Manager Console
+### Provisioning
 
 Elements can be provisioned with Event Management Integration via the Elements Manager or API. Instructions on provisioning with the Elements Manager will be shown first followed by provisioning via the `POST /instances API`.
 
-__Dropbox__ will be used for this demonstration.  However the majority of our Elements support events.
+#### **Provisioning via Manager Console**
 
-Sign into the Elements Manager and click Elements Catalog
+__Dropbox__ will be used for most of this demonstration.  However the
+majority of our Elements support events.
+
+To start, sign into the Elements Manager and click "Elements Catalog"
 ![Cloud Elements Events 2](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide1.png)
 
-Click Documents
+Click "Documents"
 ![Cloud Elements Events 3](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide2.png)
 
-Click Create Instance for Dropbox
+Click "Create Instance for Dropbox"
 ![Cloud Elements Events 4](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide3.png)
 
-Click +
+Click "+"
 ![Cloud Elements Events 5](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide4.png)
 
-Name your Instance
-Tagging is optional so You may leave it set to “No”
-Select “True” to enable Event Notifications
-Input the callback URL to your application
-Click Next
+The "Provision It" tab is where you set the event configuration. In the
+Box example, you provide a name and tagging selection as normal (tagging
+is optional so you may leave it set to “No”). To enable notifications,
+select “True” on the "Enable/Disable Event Notifications" option, and
+enter the callback URL to your application. Once your event
+configuration is to your liking, click "Next".
 ![Cloud Elements Events 6](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance11.png)
 
-Login to your Dropbox Account and click “Allow”
+**Sidenote**: If an Element supports polling, then you may be asked for
+the event poller refresh internal (in minutes). Depending on the
+Element, you may also be asked for one of the the following: (1) Polling
+objects: a comma-separated list of objects to poll for, as shown in the
+Salesforce Element ...
+![Cloud Elements Event Config GUI](/assets/img/events/events-objects-console.png)
+
+... (2) polling URLs: a line-by-line list of objects, pipe-separated
+with a URL template that retrieves that object; demonstrated in this
+Sharepoint Element ...
+![Cloud Elements Event Config GUI](/assets/img/events/events-urls-console.png)
+
+... or (3) a polling configuration JSON block, which allows for even
+tighter control over polling. Here you can see the start of that
+configuration in this Stripe Element configuration.
+![Cloud Elements Event Config GUI](/assets/img/events/events-config-console.png)
+The details of the configuration JSON are described below in the section
+titled "Polling Configuration": it's the same JSON format used when creating an instance via our APIs.
+
+**Let's return** now to the Dropbox demo, where we've been redirected to
+the Dropbox Login page. As per the typical OAuth Web Flow, login to your
+Dropbox Account and click "Allow":
 ![Cloud Elements Events 7](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance22.png)
 
-Click Done
+And finally, click "Done". (As always, you can enter some tag
+information here to help track your Element instances.)
 ![Cloud Elements Events 8](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance31.png)
 
-##### Create an Instance with Events via API
+And that's it! You've successfully provisioned a new Element instance
+with notifications via our Console UI.
 
-### Step 1. Get Elements OAuth Information
+#### **Provisioning via APIs**
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+In order to provision an instance via the API, we must first make a
+request to the Element's `/oauth` url with the necessary keys. (Note,
+you can skip to the `/instances` call description below if your Element
+doesn't use OAuth authentication.)
 
-* __apiKey–__ the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
+    * __apiKey–__ the key obtained from registering your app with the
+      provider
+    * __apiSecret__ – the secret obtained from registering your app with the
+      provider
+    * __callbackUrl__ – the URL that you supplied to the provider when
+      registering your app
+    * __state__ – any custom value that you want passed to the callback
+      handler listening at the provided callback URL.
 
-Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
+The result of this API invocation is an OAuth redirect URL from the
+endpoint. Your application should now redirect to this URL, which in
+turn will present the OAuth authentication and authorization page to the
+user. When the provided callback URL is executed, a code value will be
+returned, which is required to create a new instance.
 
 Example cURL Command:
 
 ```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/dropbox/oauth/url?apiKey=fake_Dropbox_api_key&apiSecret=fake_Dropbox_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=dropbox'
+curl -X GET -H 'Content-Type: application/json' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/dropbox/oauth/url?apiKey=fake_Dropbox_api_key&apiSecret=fake_Dropbox_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=dropbox'
 ```
 
 Response:
 
-```javascript
+```json
 {
   "oauthUrl": "https://www.dropbox.com/api/oauth2/authorize?response_type=code&client_id=insert_dropbox_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=dropbox",
   "element": "dropbox"
 }
 ```
 
-Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “dropbox” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the
+endpoint will redirect to the callback URL you provided when you setup
+your application with the endpoint, in our example,
+`https://www.mycoolapp.com/auth`. The endpoint will also provide two query
+string parameters: “state” and “code”. The value for the “state”
+parameter will be the name of the endpoint, e.g., “dropbox” in our
+example, and the value for the “code” parameter is the code required by
+Cloud Elements to retrieve the OAuth access and refresh tokens from the
+endpoint. If the user denies authentication and/or authorization, there
+will be a query string parameter called “error” instead of the “code”
+parameter. In this case, your application can handle the error
+gracefully.
 
-### Step 2. Create an Instance
-
-To provision your Dropbox Element, use the /instances API.
+Once you have the necessary authorization values, you can make a call to
+the `/instances` API to actually create a new instance.
 
 Below is an example of the provisioning API call.
 
@@ -106,17 +162,22 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+An Element token is returned upon successful execution of this API. This
+token needs to be retained by the application for all subsequent
+requests involving this Element instance.
 
-A sample request illustrating the /instances API is shown below.
+A sample request illustrating the `/instances` API is shown below.
 
 HTTP Headers:
 
 ```bash
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Dropbox is “dropbox”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+
+Below is an example of the body that must be included in your instance
+request, which would provision a new Dropbox Element instance. Note the
+`event` configuration properties are similar to what we specify in the
+GUI:
 
 ```json
 {
@@ -124,13 +185,14 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "dropbox"
   },
   "providerData": {
-    "code": "Code on Return the URL"
+    "code": "'code' from the oauth call (required for OAuth only)"
   },
-  "oauth.callback.url": "<SAMPLE_CALLLBACK_URL>",
+  "configuration": {
+    "oauth.callback.url": "<SAMPLE_CALLLBACK_URL>",
     "oauth.api.key": "<SAMPLE_API_KEY>",
     "oauth.api.secret": "<SAMPLE_API_SECRET>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "https://console.cloud-elements.com/elements/api-v2/events/dropbox",
+    "event.notification.callback.url": "http://my-cool-site/callback",
     "document.tagging": false
   },
   "tags": [
@@ -140,21 +202,24 @@ This instance.json file must be included with your instance request.  Please fil
 }
 ```
 
-Here is an example cURL command to create an instance using /instances API.
+If your element supports polling, you would need to provide additional
+configuration values to enable it: see the "Polling Configuration"
+section below for details.
 
-Example Request:
+If this JSON was saved in a file named `instance.json`, then we could
+make the following cURL command to create an instance:
 
 ```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+curl -X POST \
+  -H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>' \
+  -H 'Content-Type: application/json' \
+  -d @instance.json \
+  'https://api.cloud-elements.com/elements/api-v2/instances'
 ```
 
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
-
-Below is a successful JSON response:
+Below is an example of a successful JSON response that might result:
+note the "token" property, which is required to make any API requests to
+the new Element instance.
 
 ```json
 {
@@ -162,57 +227,59 @@ Below is a successful JSON response:
   "name": "Test",
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
   "element": {
-      "id": 22,
-      "name": "Dropbox",
-      "key": "dropbox",
-      "description": "Add a Dropbox Instance to connect your existing Dropbox account to the Documents Hub, allowing you to manage files and folders. You will need your Dropbox account information to add an instance.",
-      "image": "elements/provider_dropbox.png",
-      "active": true,
-      "deleted": false,
-      "typeOauth": true,
-      "trialAccount": false,
-      "existingAccountDescription": "Give your application access to your existing
-   Dropbox accountEnter your credentials and details for your Dropbox Account",
-      "configDescription": "If you do not have an Dropbox.net account, you can create one at Dropbox.Net Signup",
-      "transformationsEnabled": false,
-      "authentication": {
-        "type": "oauth2"
-      },
-      "hub": "documents"
+    "id": 22,
+    "name": "Dropbox",
+    "key": "dropbox",
+    "description": "Add a Dropbox instance to connect your existing Dropbox account to the Documents Hub, allowing you to manage files and folders. You will need your Dropbox account information to add an instance.",
+    "image": "elements/provider_dropbox.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "existingAccountDescription": "Give your application access to your existing Dropbox accountEnter your credentials and details for your Dropbox Account",
+    "configDescription": "If you do not have an Dropbox.net account, you can create one at Dropbox.Net Signup",
+    "transformationsEnabled": false,
+    "authentication": {
+      "type": "oauth2"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "eventsEnabled": false,
-    "cachingEnabled": false
-  }
+    "hub": "documents"
+  },
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "eventsEnabled": false,
+  "cachingEnabled": false
+}
 ```
 
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+And that's it: you've used our APIs to provision a new Element instance
+with notifications enabled.
 
-##### Example Call to kick off Event
+### **Triggering Events**
 
-`POST /folder`
+To kick off an event, you generally need to do something in the service.
+Here, we'll make a `POST /folders` request to create a new folder, and
+expect to get a notification:
 
-HTTP Headers: `Authorization- User <user secret>, Organization <organization secret>`
-HTTP Verb: `POST`
-Request URL: `/folders`
-Request Body: Required – see below
-Query Parameters: None
+* HTTP Headers: `Authorization- User <user secret>, Organization <organization secret>`
+* HTTP Verb: `POST`
+* Request URL: `/folders`
+* Request Body: Required – see below
+* Query Parameters: None
 
 ```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>'
--H 'Content-Type: application/json'
--d @TestFolderCreate.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders?path=/testfoldercreate'
+curl -X POST \
+  -H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>' \
+  -H 'Content-Type: application/json' \
+  -d @TestFolderCreate.json \
+  'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders?path=/testfoldercreate'
 ```
 
-TestFolderCreate JSON needed to create the folder.
+with the following in `TestFolderCreate.json`:
 
-```JSON
+```json
 {
   "path": "/testfoldercreate",
   "tags": [
@@ -225,57 +292,74 @@ TestFolderCreate JSON needed to create the folder.
 }
 ```
 
-Example of Webhook Callback
+Once that's done, we would expect to eventually see the following
+webhook content made to the endpoint we specified in the instance's
+"event.notification.callback.url" configuration
+("http://my-cool-site/callback" in our example):
 
-```JSON
+```json
 {
-   "eventId": 1088,
-   "instanceId": 31,
-   "response": {
-       "events": [
-           {
-               "path": "/testfoldercreate",
-               "metadata": {
-                   "path": "/TestFolderCreate",
-                   "name": "TestFolderCreate",
-                   "type": "folder"
-               }
-           }
-       ]
-   },
-   "notificationId": 1047
+  "eventId": 1088,
+  "instanceId": 31,
+  "response": {
+    "events": [
+      {
+        "path": "/testfoldercreate",
+        "metadata": {
+          "path": "/TestFolderCreate",
+          "name": "TestFolderCreate",
+          "type": "folder"
+        }
+      }
+    ]
+  },
+  "notificationId": 1047
 }
 ```
 
-###### A note about Webhooks
+Note that **any** change made on the service end will trigger a
+notification, not just changes initiated from Cloud Elements. In this
+example, if a user of this Dropbox account were to add a folder via the
+Dropbox Web UI, then a webhook would still be delivered to the
+instance's callback URL.
 
-When a change is made at Dropbox or other Endpoint, whether through the Cloud Elements API, via the Dropbox web app or Dropbox desktop app, a webhook call will be generated. In other words, it’s not just calls made through our API that will generate webhooks.
+### **Asynchronous API Requests**
 
-##### Asynchronous API Requests
+Asynchronous API Requests gives you the flexibility to start a job that
+may take some time to complete and be notified when it has completed.
+For example, a user makes a request to copy a folder to her account.
+This request may take some time to process. With an Asynchronous API
+Request, your app will receive a notification that job has started, as
+well as, a notification when the job has processed.
 
-Asynchronous API Requests gives you the flexibility to start a job that may take some time to complete and be notified when it has completed. For example, a user makes a request to copy a folder to her account. This request may take some time to process. With an Asynchronous API Request, your app will receive a notification that job has started, as well as, a notification when the job has processed.
-
-Performing an Asynchronous API Request:
+**Performing an Asynchronous API Request:**
 
 Additional Required Header:
-__Elements-Async-Request__ – this must be set to `True`
+
+* __Elements-Async-Request__ – this must be set to `True`
 
 Optional Header:
-__Elements-Async-Callback-URL__ – if not included in request, then the app will use the callback URL associated with the instance. If you do not have a callback URL associated with the instance configuration or supply one in the request, then an error will be returned.
+
+* __Elements-Async-Callback-URL__ – if not included in request, then the
+  app will use the callback URL associated with the instance. If you do
+  not have a callback URL associated with the instance configuration or
+  supply one in the request, then an error will be returned.
+
+For example, this request is asynchronous:
 
 ```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>'
--H 'Content-Type: application/json'
--H 'Elements-Async-Request: True'
--H 'Elements-Async-Callback-Url: <www.samplecallbackurl.com>'
--d @copy-folder.json
-'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders/copy?path=/TestFolderCreate'
+curl -X POST \
+  -H 'Authorization: User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_SECRET>' \
+  -H 'Content-Type: application/json' \
+  -H 'Elements-Async-Request: True' \
+  -H 'Elements-Async-Callback-Url: <www.samplecallbackurl.com>' \
+  -d @copy-folder.json \
+  'https://api.cloud-elements.com/elements/api-v2/hubs/documents/folders/copy?path=/TestFolderCreate'
 ```
 
-Copy-folder JSON needed to copy the folder
+with the following `copy-folder.json`:
 
-```JSON
+```json
 {
   "path": "/testfoldercopy",
   "tags": [
@@ -285,41 +369,130 @@ Copy-folder JSON needed to copy the folder
 }
 ```
 
-Example Message stating the Asynchronous Call has started
+The immediate response from this call will have content like this:
 
-```JSON
+```json
 {
-"eventId": 1028,
-"eventStatus": "dispatched"
+  "eventId": 1028,
+  "eventStatus": "dispatched"
 }
 ```
 
-Example of Webhook Callback stating job has completed.
+When the copy is complete, a webhook will be delivered to the
+notification callback URL that looks like this:
 
-```JSON
+```json
 {
-   "eventId": 1028,
-   "instanceId": 30,
-   "response": {
-       "events": [
-           {
-               "path": "/testfoldercopy",
-               "metadata": {
-                   "path": "/TestFolderCopy",
-                   "name": "TestFolderCopy",
-                   "type": "folder"
-               }
-           },
-           {
-               "path": "/testfoldercopy/testuploadfile.txt",
-               "metadata": {
-                   "path": "/TestFolderCopy/testUploadFile.txt",
-                   "name": "testUploadFile.txt",
-                   "type": "file"
-               }
-           }
-       ]
-   },
-   "notificationId": 1084
+  "eventId": 1028,
+  "instanceId": 30,
+  "response": {
+    "events": [
+      {
+        "path": "/testfoldercopy",
+        "metadata": {
+          "path": "/TestFolderCopy",
+          "name": "TestFolderCopy",
+          "type": "folder"
+        }
+      },
+      {
+        "path": "/testfoldercopy/testuploadfile.txt",
+        "metadata": {
+          "path": "/TestFolderCopy/testUploadFile.txt",
+          "name": "testUploadFile.txt",
+          "type": "file"
+        }
+      }
+    ]
+  },
+  "notificationId": 1084
+}
+```
+
+### **Polling Configuration**
+
+If you're using an Element that supports polling, in addition to the
+`"event.notification.enabled"` and `"event.notification.callback.url"`
+configuration, you need to provide the following values, which are the
+same as those entered in the Console UI (`event.objects` and
+`event.poller.urls` are no longer recommended via API, as they are both
+strictly superceded by `event.poller.configuration` for all Elements):
+
+* `event.poller.refresh_interval` A value (in minutes) to determine how
+  often to run the poll.
+* `event.poller.configuration`: This should be a JSON object that
+  describes what objects to poll for, and how to poll for them. Each key
+  of this object is an object name, and the value is a JSON object with
+  the following keys:
+  * `url`: The find API URL to fetch records for the resource. The url
+    typically has a where clause to fetch the records since the last
+    time the endpoint was polled. The date/time format is important to
+    specify in the where clause so that the comparison between the
+    updated date/time and the last polled date time will be accurate.
+    This field is required.
+  * `filterByUpdateDate`: A boolean indicating whether the poller should
+    filter by updated date or not. This field defaults to true and must
+    be explicitly set to false if such filtering is not required.
+  * `idField`: The JSON path to ID field in the returned payload. This
+    configuration parameter is used to set the objectId in the
+    normalized event payload
+  * `datesConfiguration`: A JSON object which has the following keys:
+      * `updatedDateField`: This parameter, when specified, is used to
+        retrieve the updated date value from the payload to filter out the
+        non-updated or records that haven't changed since the last poll
+        date/time.
+      * `updatedDateFormat`: This parameter is used to ensure that any date
+        comparison occurs with dates in the same timezone for accuracy.
+      * `createdDateField`: This field is used when the event type, UPDATED
+        or CREATED needs to be determined by comparing the updated date and
+        the created date.
+      * `createdDateFormat`: This parameter is used to ensure that any date
+        comparison occurs with dates in the same timezone for accuracy.
+  * `createdCheckTolerance`: An integer indicating the number of seconds
+    to use as a tolerance for the comparison between created and updated
+    date to determine if the record was CREATED or UPDATED.
+  * `pageSize`: The number of records to retrieve per page. When not
+    specified, the default page size is used.
+  * `updatedDateTimezone`: The abbreviation of the timezone if not
+    supplied in the updated date format
+  * `pollDelay`: The number of seconds to subtract from the last poll
+    date to ensure that records created but not yet available for
+    search, are also included in the poller search run. If omitted, the
+    value of this attribute defaults to 0
+
+Here's an example of what you might see for the
+`event.poller.configuration` value:
+
+```json
+{
+  "contacts": {
+    "url": "/hubs/crm/contacts?where=update_time >= '${gmtDate:yyyy-MM-dd HH:mm:ss}'",
+    "filterByUpdatedDate": false,
+    "idField": "user.id",
+    "datesConfiguration": {
+      "updatedDateField": "update_time",
+      "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+      "createdDateField": "add_time",
+      "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+    },
+    "createdCheckTolerance": 2,
+    "pageSize": 10000,
+    "updatedDateTimezone": "MST",
+    "pollDelay": 30
+  },
+  "accounts": {
+    "url": "/hubs/crm/accounts?where=update_time >= '${gmtDate:yyyy-MM-dd HH:mm:ss}'",
+    "filterByUpdatedDate": false,
+    "idField": "user.id",
+    "datesConfiguration": {
+      "updatedDateField": "update_time",
+      "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+      "createdDateField": "add_time",
+      "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+    },
+    "createdCheckTolerance": 2,
+    "pageSize": 10000,
+    "updatedDateTimezone": "MST"
+  }
 }
 ```
