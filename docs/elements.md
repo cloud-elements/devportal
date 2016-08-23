@@ -38,6 +38,7 @@ layout: elements
 * [![ConnectWise Help Desk](/assets/img/element-logos/connectwise.png)ConnectWise Help Desk](./elements/connectwise-helpdesk/index.html)
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/index.html)
 * [![Freshservice](/assets/img/element-logos/freshservice.png)Freshservice](./elements/freshservice/index.html)
+* [![Help Scout](/assets/img/element-logos/helpscout.png)Help Scout](./elements/helpscout/index.html)
 * [![JIRA](/assets/img/element-logos/jira.png)JIRA](./elements/jira/index.html)
 * [![Oracle Service Cloud](/assets/img/element-logos/oracleservicecloud.png)Oracle Service Cloud](./elements/oracleservicecloud/index.html)
 * [![Salesforce Service Cloud](/assets/img/element-logos/salesforce.png)Salesforce Service Cloud](./elements/salesforce-service-cloud/index.html)
