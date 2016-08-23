@@ -18,7 +18,7 @@ sitemap: false
 
 In order to create a connection to Help Scout the following steps are required:
 
-1. Retrieve your [Help Scout API Key, Password, and Mailbox](helpscout-create-instance.html)
+1. Retrieve your [Help Scout API Key, Password, and Mailbox](helpscout-endpoint-setup.html)
 2. Call the `POST /instances` API to instantiate your Help Scout connected app
 
 #### In Depth
