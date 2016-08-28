@@ -31,7 +31,7 @@ Follow these steps to setup webhooks.
 
 For more information on Help Scout webhooks, please see the [Help Scout developer documentation](http://developer.helpscout.net/help-desk-api/webhooks/).
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+In order to enable events, add these two extra configurations to your instance JSON:
 
 ```
 "event.notification.enabled": "true",
