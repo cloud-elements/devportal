@@ -1,5 +1,6 @@
 ---
 heading: Ecwid
+seo: Create Instance | Ecwid | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Facebook
+seo: API Docs | Facebook | Cloud Elements API Docs
 title: API Docs
 description: Facebook API Documentation.
 layout: apidocs

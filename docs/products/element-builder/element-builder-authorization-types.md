@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Authorization Types | Element Builder | Cloud Elements API Docs
 title: Authorization Types
 description: View example Authorization Types that can be built using the Element Builder UI.
 layout: docs
@@ -7,7 +8,7 @@ apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 5
+order: 6
 ---
 
 ## Authorization Types
@@ -80,9 +81,9 @@ Select the type that the endpoint expects.
 
 Let’s define what a __Configuration, Parameter, and Hook__ are prior to moving on.
 
-__Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
-__Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
-__Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
+* __Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
+* __Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
+* __Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
 ![Element Builder OAuth2 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ1.png)
 
@@ -139,9 +140,9 @@ Select __Header__ and __Content-Type:__ `application/json`
 
 Let’s define what a __Configuration, Parameter, and Hook__ are prior to moving on.
 
-__Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
-__Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
-__Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
+* __Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
+* __Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
+* __Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
 ![Element Builder Basic 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ3.png)
 
@@ -157,12 +158,12 @@ The user will need to provide an API key.  This will be sent as a configuration.
 To add a configuration, begin by clicking “Add Configuration”
 
 Input values the endpoint expects:
-__Key:__ username
-__Name:__ API Key
-__Type:__ Select TEXTFIELD_32
-__Description:__ The API key, needed to make API requests to Close.io
-__Default Value:__ Blank (Optional)
-__Is it Required?:__ Select “Yes” it is required by Close.io
+* __Key:__ username
+* __Name:__ API Key
+* __Type:__ Select TEXTFIELD_32
+* __Description:__ The API key, needed to make API requests to Close.io
+* __Default Value:__ Blank (Optional)
+* __Is it Required?:__ Select “Yes” it is required by Close.io
 Hide from console?: Select “No” as we will need the user to input this value
 
 Click “Done”
@@ -172,13 +173,13 @@ Referring back to the Close.io API docs, the password will be sent as a blank fi
 Click “Add Configuration”
 
 Input values the endpoint expects:
-__Key:__ password
-__Name:__ Password
-__Type:__ Select TEXTFIELD_32
-__Description:__ This should always be blank for Close.io
-__Default Value:__ Blank (Optional)
-__Is it Required?:__ Select “No”
-__Hide from console?:__ Select “Yes” as we will not need the user to input this value
+* __Key:__ password
+* __Name:__ Password
+* __Type:__ Select TEXTFIELD_32
+* __Description:__ This should always be blank for Close.io
+* __Default Value:__ Blank (Optional)
+* __Is it Required?:__ Select “No”
+* __Hide from console?:__ Select “Yes” as we will not need the user to input this value
 
 Add any additional configurations needed.  The other two displayed in the screen shot are related to adding Bulk functionality to the Close.io Element.
 
@@ -219,9 +220,9 @@ Select __Header__ and __Content-Type:__ application/json
 
 Let’s define what a __Configuration, Parameter, and Hook__ are prior to moving on.
 
-__Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
-__Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
-__Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
+* __Configuration:__ A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
+* __Parameter:__ A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
+* __Hooks:__ Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
 
 If we look back at the authentication excerpt from the Typeform API docs:
@@ -233,13 +234,13 @@ The user will need to provide an API key.  This will be sent as a configuration.
 To add a configuration, begin by clicking “Add Configuration”
 
 Input values the endpoint expects:
-__Key:__ api.key
-__Name:__ API Key
-__Type:__ Select TEXTFIELD_128
-__Description:__ Typeform API Key
-__Default Value:__ Blank (Optional)
-__Is it Required?:__ Select “Yes” it is required by Close.io
-__Hide from console?:__ Select “No” as we will need the user to input this value
+* __Key:__ api.key
+* __Name:__ API Key
+* __Type:__ Select TEXTFIELD_128
+* __Description:__ Typeform API Key
+* __Default Value:__ Blank (Optional)
+* __Is it Required?:__ Select “Yes” it is required by Close.io
+* __Hide from console?:__ Select “No” as we will need the user to input this value
 
 Click “Done”
 ![Element Builder Custom 1](http://cloud-elements.com/wp-content/uploads/2015/04/AuthorizationFAQ5.png)
@@ -253,15 +254,15 @@ Since the API Key will need to be sent as a header, it must also be added as a p
 Click “Add Parameter”
 
 Input the following Fields:
-__Name:__ api.key
-__Vendor Name:__ X-API-TOKEN
-__Type:__ CONFIGURATION
-__Vendor Type:__ HEADER
-__Data Type:__ String, Integer, etc
-__Vendor Data Type:__ String, Integer, etc
-__Parameter Source:__ REQUEST
-__Is it Required?:__ Select “NO”
-__Description:__ Token to be sent as a header
+* __Name:__ api.key
+* __Vendor Name:__ X-API-TOKEN
+* __Type:__ CONFIGURATION
+* __Vendor Type:__ HEADER
+* __Data Type:__ String, Integer, etc
+* __Vendor Data Type:__ String, Integer, etc
+* __Parameter Source:__ REQUEST
+* __Is it Required?:__ Select “NO”
+* __Description:__ Token to be sent as a header
 
 Click “Done”
 

@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Human Capital
+seo: Create Instance | NetSuite Human Capital | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

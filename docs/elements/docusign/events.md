@@ -1,5 +1,6 @@
 ---
 heading: DocuSign
+seo: Events | DocuSign | Cloud Elements API Docs
 title: Events
 description: Enable DocuSign events for your application.
 layout: docs

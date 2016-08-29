@@ -1,5 +1,6 @@
 ---
 heading: BigCommerce
+seo: API Docs | BigCommerce | Cloud Elements API Docs
 title: API Docs
 description: BigCommerce API Documentation.
 layout: apidocs

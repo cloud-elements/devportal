@@ -1,5 +1,6 @@
 ---
 heading: Oracle Sales Cloud
+seo: Create Instance | Oracle Sales Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

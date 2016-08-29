@@ -1,5 +1,6 @@
 ---
 heading: Element APIs
+seo: Element APIs Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
 layout: docs
@@ -7,6 +8,7 @@ platform: elements
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
+sitemap: false
 ---
 
 ## Element APIs

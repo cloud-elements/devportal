@@ -1,5 +1,6 @@
 ---
 heading: Autotask CRM
+seo: Events | Autotask CRM | Cloud Elements API Docs
 title: Events
 description: Enable Autotask CRM events for your application.
 layout: docs

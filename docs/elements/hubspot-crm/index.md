@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: Overview | HubSpot CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate HubSpot CRM into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 168
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the HubSpot CRM Element

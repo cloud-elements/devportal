@@ -1,5 +1,6 @@
 ---
 heading: Oracle Sales Cloud
+seo: Overview | Oracle Sales Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Oracle Sales Cloud into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 204
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Oracle Sales Cloud Element
+## Welcome to the Oracle Sales Cloud Element
 
 
 #### At a Glance

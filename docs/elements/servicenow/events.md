@@ -1,5 +1,6 @@
 ---
 heading: ServiceNow
+seo: Events | ServiceNow | Cloud Elements API Docs
 title: Events
 description: Enable ServiceNow events for your application.
 layout: docs

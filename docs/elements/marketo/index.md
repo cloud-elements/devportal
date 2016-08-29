@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: Overview | Marketo | Cloud Elements API Docs
 title: Overview
 description: Integrate Marketo into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 85
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Marketo Element
+## Welcome to the Marketo Element
 
 
 #### At a Glance

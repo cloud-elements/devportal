@@ -1,29 +1,21 @@
 ---
 heading: Element Mapper
+seo: Overview | Element Mapper | Cloud Elements API Docs
 title: Overview
-description: Learn how to map and transfer data from different cloud services.
+description: Element Mapper Overview
 layout: docs
+apis: API Docs
+platform: organizations
+breadcrumbs: /docs/products/api-toolkit.html
+parent: Back to API Toolkit
 order: 1
+sitemap: false
 ---
 
-### Overview
+# Overview
 
-Element Mapper is an API and Data Mapping Application to map and transform data across leading cloud services.
+Cloud Element supports mapping and transforming data between your application and any of the cloud services you're leveraging through our **Element Mapper**.  Element Mapper is an API and Data Mapping Application to map and transform data across different Elements. This allows you to define how you want your resource to look and then go about mapping and transforming that resource for each Element, as needed.
 
-#### Easily Define and Map Data
+> **NOTE:** The Element Mapper documentation assumes knowledge of how Elements and Element Instances work in our platform.  If you are new to Cloud Elements, please visit the "Quick Start" section in the developer portal or play around in the Cloud Elements Console UI before proceeding with Element Mapper.
 
-* Using Element Mapper is the easiest way to normalize objects across cloud services.
-* To start, simply select the object you want to map and name the object with your custom name (e.g. “My Contacts”).
-* Powerful UI: use our drag-and-drop UI to easily map services across the cloud services you are using.
-
-The Element Mapper UI can be found in the Cloud Elements API Manger or you can call the APIs right from your app.
-
-The Element Mapper developer docs are broken down into three guides:
-
-* [Quick Start Guide](quick-start-guide.html)
-* [Create Objects](create-objects.html)
-* [Map and Transform Data via API](map-and-transform-data-via-api.html)
-* [Customized JavaScript](customized-javascript.html)
-* [Array Support](array-support.html)
-
-View the [Quick Start Guide](quick-start-guide.html) to get familiar with the Element Mapper UI.
+> **QUESTIONS/COMMENTS?** Please don't hesitate to [contact us](mailto:support@cloud-elements.com).

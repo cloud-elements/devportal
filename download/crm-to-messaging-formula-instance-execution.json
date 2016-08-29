@@ -1,0 +1,35 @@
+{
+  "id": 1,
+  "formulaInstanceId": 1,
+  "status": "success",
+  "createdDate": "2016-06-15T19:24:27Z",
+  "updatedDate": "2016-06-15T19:24:29Z",
+  "stepExecutions": [{
+      "id": 1,
+      "status": "success",
+      "createdDate": "2016-06-15 13:24:27.814224",
+      "stepName": "trigger"
+    },
+    {
+      "id": 2,
+      "status": "success",
+      "createdDate": "2016-06-15 13:24:27.83749",
+      "updatedDate": "2016-06-15 13:24:27.956616",
+      "stepName": "filter-events"
+    },
+    {
+      "id": 3,
+      "status": "success",
+      "createdDate": "2016-06-15 13:24:27.961604",
+      "updatedDate": "2016-06-15 13:24:28.041718",
+      "stepName": "construct-email-body"
+    },
+    {
+      "id": 4,
+      "status": "success",
+      "createdDate": "2016-06-15 13:24:28.109344",
+      "updatedDate": "2016-06-15 13:24:29.019776",
+      "stepName": "send-email"
+    }
+  ]
+}

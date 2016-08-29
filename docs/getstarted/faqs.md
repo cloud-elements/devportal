@@ -1,5 +1,6 @@
 ---
 heading: FAQs
+seo: FAQs | Cloud Elements API Docs
 title: FAQs
 description: Frequently Asked Questions
 layout: docs

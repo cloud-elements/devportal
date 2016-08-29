@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Service Cloud
+seo: API Docs | Salesforce Service Cloud | Cloud Elements API Docs
 title: API Docs
 description: Salesforce Service Cloud API Documentation.
 layout: apidocs

@@ -1,5 +1,6 @@
 ---
 heading: Twilio SMS
+seo: API Docs | Twilio SMS | Cloud Elements API Docs
 title: API Docs
 description: Twilio SMS API Documentation.
 layout: apidocs

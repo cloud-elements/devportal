@@ -1,5 +1,6 @@
 ---
 heading: QuickBooks Online
+seo: Endpoint Setup | QuickBooks Online | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
 layout: docs

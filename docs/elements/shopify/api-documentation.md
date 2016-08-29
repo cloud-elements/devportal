@@ -1,5 +1,6 @@
 ---
 heading: Shopify
+seo: API Docs | Shopify | Cloud Elements API Docs
 title: API Docs
 description: Shopify API Documentation.
 layout: apidocs

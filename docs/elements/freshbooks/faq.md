@@ -1,5 +1,6 @@
 ---
 heading: FreshBooks
+seo: FAQ | FreshBooks | Cloud Elements API Docs
 title: FAQ
 description: FreshBooks FAQ.
 layout: docs

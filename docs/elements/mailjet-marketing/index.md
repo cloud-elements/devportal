@@ -1,5 +1,6 @@
 ---
 heading: MailJet Marketing
+seo: Overview | MailJet Marketing | Cloud Elements API Docs
 title: Overview
 description: Integrate MailJet Marketing into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 197
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the MailJet Marketing Element

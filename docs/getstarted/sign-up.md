@@ -1,5 +1,6 @@
 ---
 heading: Sign Up
+seo: Sign up for Cloud Elements Service | Cloud Elements API Docs
 title: Sign up for Cloud Elements Service
 description:  Sign up for Cloud Elements Service
 layout: docs

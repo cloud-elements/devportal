@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: API Debugging | Element Builder | Cloud Elements API Docs
 title: API Debugging
 description: Tips for debugging APIs within the Element Builder UI.
 layout: docs
@@ -7,7 +8,7 @@ apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
-order: 7
+order: 8
 ---
 
 ## Debugging Tips

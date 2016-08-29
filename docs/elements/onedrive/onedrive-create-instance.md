@@ -1,5 +1,6 @@
 ---
 heading: OneDrive
+seo: Create Instance | OneDrive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ OneDrive is a Cloud Storage Platform. When you provision an instance, your app w
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key–__ onedrivev2
 * __apiKey–__ the key obtained from registering your app with the provider

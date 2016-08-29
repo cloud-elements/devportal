@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Create Element via Element Builder UI | Element Builder | Cloud Elements API Docs
 title: Create Element via Element Builder UI
 description: Create a new Element via the Element Builder UI.
 layout: docs
@@ -83,10 +84,10 @@ e.g. Add a Twitter Instance to connect your existing Twitter account to the Soci
 Add a URL to an image or logo to represent the new Element.
 
 Select the type of authentication the endpoint expects. The four types supported by Cloud Elements are Basic, OAuth 1, OAuth 2, and Custom.
-__Basic__ is a type of authentication where an enduser provides a username and password. It is not always the username and password, some endpoints ask for the API key and secret without disclosing the enduser’s credentials.
-The __OAuth 1__ protocol enables authentication to the endpoint without requiring users to expose their credentials. OAuth 1 is a 3 step authentication process. It is an older protocol. The OAuth 1 protocol involves signing the payload on every request and thus is used by many financial services.
-__OAuth 2__ authentication is a newer two step process employed by many of the today’s modern cloud services like Google.
-__Custom__ authentication is completely user defined, such as a username and password exchanged for an API key with some type of expiration involved.
+* __Basic__ is a type of authentication where an enduser provides a username and password. It is not always the username and password, some endpoints ask for the API key and secret without disclosing the enduser’s credentials.
+* The __OAuth 1__ protocol enables authentication to the endpoint without requiring users to expose their credentials. OAuth 1 is a 3 step authentication process. It is an older protocol. The OAuth 1 protocol involves signing the payload on every request and thus is used by many financial services.
+* __OAuth 2__ authentication is a newer two step process employed by many of the today’s modern cloud services like Google.
+* __Custom__ authentication is completely user defined, such as a username and password exchanged for an API key with some type of expiration involved.
 
 Click “Next”
 ![Element Builder Info 3](http://cloud-elements.com/wp-content/uploads/2015/04/Info3.png)
@@ -140,9 +141,9 @@ Configurations, Parameters, and Hooks will not be covered in this guide as Twitt
 
 However, here are some definitions:
 
-__Configuration__: A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
-__Parameter__: A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
-__Hooks__: Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
+* __Configuration__: A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret.
+* __Parameter__: A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body.
+* __Hooks__: Pre-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration).
 Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint.
 ![Element Builder Configuration 1](http://cloud-elements.com/wp-content/uploads/2015/04/Configuration1.png)
 
@@ -199,15 +200,15 @@ The parameters will need to be added next.  A parameter must be defined on the C
 
 The column on the left is what Cloud Elements expects.  The column on the right is what the endpoint expects, in this case, Twitter.  Let’s take a look at the fields:
 
-__Name:__ Cloud Elements uses pageSize when getting the number of records on a page.
-__Vendor Name:__ What the endpoint expects.  In our example, Twitter refers to “count” as the number of records on a page.
-__Type:__ Query – Cloud Elements is sending the endpoint a query request.
-__Vendor Type:__ Query – the endpoint expects a query search in this API call.
-__Data Type:__ Integer – the data type (string, integer, etc)
-__Vendor Data Type:__ Integer – data type the endpoint expects
-__Parameter Source:__ Request – the request is coming from Cloud Elements to the endpoint.  The reverse is also possible, Cloud Elements receives a response from the endpoint.  In our example, we are sending a `GET` request to Twitter.
-__Is it Required?:__  If the endpoint expects this parameter on every API call, select “yes”.  If it is optional, select “no”.
-__Description:__  input a description of the parameter, e.g. the number of objects to be returned.
+* __Name:__ Cloud Elements uses pageSize when getting the number of records on a page.
+* __Vendor Name:__ What the endpoint expects.  In our example, Twitter refers to “count” as the number of records on a page.
+* __Type:__ Query – Cloud Elements is sending the endpoint a query request.
+* __Vendor Type:__ Query – the endpoint expects a query search in this API call.
+* __Data Type:__ Integer – the data type (string, integer, etc)
+* __Vendor Data Type:__ Integer – data type the endpoint expects
+* __Parameter Source:__ Request – the request is coming from Cloud Elements to the endpoint.  The reverse is also possible, Cloud Elements receives a response from the endpoint.  In our example, we are sending a `GET` request to Twitter.
+* __Is it Required?:__  If the endpoint expects this parameter on every API call, select “yes”.  If it is optional, select “no”.
+* __Description:__  input a description of the parameter, e.g. the number of objects to be returned.
 ![Element Builder Resources 2](http://cloud-elements.com/wp-content/uploads/2015/04/TwitterParameter1.png)
 
 Click “Add Parameter”
@@ -239,15 +240,15 @@ Let’s begin with the page parameter.
 Click “Add Parameter”
 
 Input each of the fields:
-__Name:__ page
-__Vendor Name:__ page – taken from the Twitter documentation
-__Type:__ Query
-__Vendor Type:__ Query
-__Data Type:__ integer
-__Vendor Data Type:__ integer – taken from the Twitter documentation
-__Parameter Source:__ request – Cloud Elements is making the request
-__Is it Required?:__ No – according the Twitter documentation it is optional
-__Description:__ Specifies the page of results to retrieve.
+* __Name:__ page
+* __Vendor Name:__ page – taken from the Twitter documentation
+* __Type:__ Query
+* __Vendor Type:__ Query
+* __Data Type:__ integer
+* __Vendor Data Type:__ integer – taken from the Twitter documentation
+* __Parameter Source:__ request – Cloud Elements is making the request
+* __Is it Required?:__ No – according the Twitter documentation it is optional
+* __Description:__ Specifies the page of results to retrieve.
 
 Click “Done”
 ![Element Builder Resources 4](http://cloud-elements.com/wp-content/uploads/2015/04/TwitterParameter2.png)
@@ -258,12 +259,12 @@ Under “where” click “Edit”
 ![Element Builder Resources 5](http://cloud-elements.com/wp-content/uploads/2015/04/TwitterParameter3.png)
 
 Input each of the vendor fields:
-__Vendor Name:__ converter:toQueryParameters – this is to convert the call from the Cloud Elements Query Language (CEQL) to a vendor query
-__Vendor Type:__ Query
-__Vendor Data Type:__ string – taken from the Twitter documentation
-__Parameter Source:__ request – Cloud Elements is making the request
+* __Vendor Name:__ converter:toQueryParameters – this is to convert the call from the Cloud Elements Query Language (CEQL) to a vendor query
+* __Vendor Type:__ Query
+* __Vendor Data Type:__ string – taken from the Twitter documentation
+* __Parameter Source:__ request – Cloud Elements is making the request
 Is it Required?: Yes – according the Twitter documentation it is required
-__Description:__ The CEQL search expression. The only valid field to search by is ‘q’ which represents the users’ username
+* __Description:__ The CEQL search expression. The only valid field to search by is ‘q’ which represents the users’ username
 
 Click “Done”
 ![Element Builder Resources 6](http://cloud-elements.com/wp-content/uploads/2015/04/TwitterParameter4.png)
@@ -310,15 +311,15 @@ Input the Description – what your users will see when they view the API docume
 Click “Add Parameter”
 
 Input the Parameter Fields:
-__Name:__ status
-__Vendor Name:__ status
-__Type:__ Query
-__Vendor Type:__ Query
-__Data Type:__ string
-__Vendor Data Type:__ string
-__Parameter Source:__ Request
-__Is it Required:__ Yes
-__Description:__ The text of your status update
+* __Name:__ status
+* __Vendor Name:__ status
+* __Type:__ Query
+* __Vendor Type:__ Query
+* __Data Type:__ string
+* __Vendor Data Type:__ string
+* __Parameter Source:__ Request
+* __Is it Required:__ Yes
+* __Description:__ The text of your status update
 
 Click “Done”
 
@@ -512,10 +513,10 @@ Click “Done”
 
 Within the in Admin Dashboard, the following functions are available to exercise on all Elements created using Element Builder:
 
-__Edit an Element:__ change a URL, add a resource, edit configurations
-__Deactivate:__ deactivates an Element, temporarily removing it from the catalog
-__Delete:__ deletes an Element, permanently removing it from the catalog
-__Export:__ exports Element JSON, this JSON can be imported at a later time
+* __Edit an Element:__ change a URL, add a resource, edit configurations
+* __Deactivate:__ deactivates an Element, temporarily removing it from the catalog
+* __Delete:__ deletes an Element, permanently removing it from the catalog
+* __Export:__ exports Element JSON, this JSON can be imported at a later time
 
 To access the Element admin functions, click on the gear.
 

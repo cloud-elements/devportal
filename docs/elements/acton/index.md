@@ -1,5 +1,6 @@
 ---
 heading: Act-On
+seo: Overview | Act-On | Cloud Elements API Docs
 title: Overview
 description: Integrate Act-On into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 45
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Act-On Element
+## Welcome to the Act-On Element
 
 
 #### At a Glance

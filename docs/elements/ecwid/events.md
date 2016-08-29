@@ -1,5 +1,6 @@
 ---
 heading: Ecwid
+seo: Events | Ecwid | Cloud Elements API Docs
 title: Events
 description: Enable Ecwid events for your application.
 layout: docs

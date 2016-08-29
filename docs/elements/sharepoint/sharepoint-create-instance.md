@@ -1,5 +1,6 @@
 ---
 heading: Sharepoint 2013
+seo: Create Instance | Sharepoint 2013 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ Sharepoint 2013 is a Cloud Storage Platform. When you provision an instance, you
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - sharepoint
 * __apiKey__ - the key obtained from registering your app with the provider

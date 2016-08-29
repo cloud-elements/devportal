@@ -1,5 +1,6 @@
 ---
 heading: NetSuite Human Capital
+seo: Endpoint Setup | NetSuite Human Capital | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

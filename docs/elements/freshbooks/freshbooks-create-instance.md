@@ -1,5 +1,6 @@
 ---
 heading: FreshBooks
+seo: Create Instance | FreshBooks | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ FreshBooks is a Finance Platform. When you provision an instance, your app will 
 
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/token
+* Request Body: None
+* Query Parameters:
 
 * __key__ - freshbooks
 * __apiKey–__ - “Your Personal Subsite e.g. for mycompany.freshbooks.com would be mycompany”
@@ -52,11 +53,11 @@ FreshBooks expects a token and secret. These are contained in the response to th
 
 ### Step 2. Get Elements OAuth URL
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - freshbooks
 * __apiKey–__ - “Your Personal Subsite e.g. for mycompany.freshbooks.com would be mycompany”
@@ -133,7 +134,7 @@ This instance.json file must be included with your instance request.  Please fil
   "configuration": {
   	"oauth.api.key":"<INSERT_FRESHBOOKS_API_KEY>",
   	"oauth.api.secret":"<INSERT_FRESHBOOKS_API_SECRET>",
-        "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>"
+    "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>"
   },
   "tags": [
     "<INSERT_TAGS>"

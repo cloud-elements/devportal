@@ -112,6 +112,7 @@ $(function() {
     url: url,
     swaggerRequestHeaders: authorizations,
     defaultParams: defaultParams,
+    validatorUrl: null,
     dom_id: "swagger-ui-container",
     sampleModel: true,
     apisSorter: "alpha",

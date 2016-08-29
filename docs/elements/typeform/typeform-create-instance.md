@@ -1,14 +1,18 @@
 ---
 heading: Typeform
+seo: Create Instance | Typeform | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
+breadcrumbs: /docs/elements.html
+elementId: 339
+parent: Back to Element Guides
 order: 20
 ---
 
 ## Create Instance
 
-Typeform is a Help Desk Platform. When you provision an instance, your app will have access to the different functionality offered by the Typeform platform.
+When you provision an instance, your app will have access to the different functionality offered by the Typeform platform.
 
 ### Step 1. Create an Instance
 

@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics CRM
+seo: Events | MS Dynamics CRM | Cloud Elements API Docs
 title: Events
 description: Enable Microsoft Dynamics CRM events for your application.
 layout: docs

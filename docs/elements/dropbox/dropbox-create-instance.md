@@ -1,5 +1,6 @@
 ---
 heading: Dropbox
+seo: Create Instance | Dropbox | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ Dropbox is a Cloud Storage Platform. When you provision an instance, your app wi
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __apiKey–__ the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider

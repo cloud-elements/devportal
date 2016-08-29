@@ -1,10 +1,12 @@
 ---
 heading: Getting Started
+seo: Overview | Cloud Elements API Docs
 title: Overview
 description: FAQs, General Info. Get a Head Start!
 layout: docs
 order: 1
 categories: [gettingstarted]
+sitemap: false
 ---
 
 ## What we do

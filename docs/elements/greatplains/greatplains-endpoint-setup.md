@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics Great Plains
+seo: Endpoint Setup | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

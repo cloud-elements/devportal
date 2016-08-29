@@ -1,5 +1,6 @@
 ---
 heading: Close.io
+seo: Overview | Close.io | Cloud Elements API Docs
 title: Overview
 description: Integrate Close.io into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 166
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Close.io Element
+## Welcome to the Close.io Element
 
 
 #### At a Glance

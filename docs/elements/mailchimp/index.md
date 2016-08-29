@@ -1,5 +1,6 @@
 ---
 heading: MailChimp
+seo: Overview | MailChimp | Cloud Elements API Docs
 title: Overview
 description: Integrate MailChimp into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 197
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the MailChimp Element

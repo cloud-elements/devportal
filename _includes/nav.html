@@ -1,6 +1,8 @@
 <!-- Main Nav -->
 <nav class="nav navbar navbar-light navbar-fixed-top">
   <div id="search-bar-wrapper" class="search-bar-wrapper">
+    <a class="icon icon-database status-link" href="http://status.cloud-elements.com/" target="_blank">STATUS</a>
+    <a class="icon icon-text-document status-link" href="http://changelog.cloud-elements.com/" target="_blank">CHANGE LOG</a>
       <div class="flextable">
         <div class="flextable-item flextable-primary">
           <form action="{{ '/search' | prepend: site.baseurl }}" method="GET">
@@ -32,7 +34,7 @@
         {% else %}
           <li>
         {% endif %}
-          <a href="/">HOME</a>
+          <a href="/">PORTAL HOME</a>
         </li>
 
         {% if page.url == '/docs/elements.html' %}
@@ -55,7 +57,17 @@
           </a>
         </li>
 
-        {% if page.url == '/docs/platform/index.html' %}
+        {% if page.url == '/docs/hubs/hub-docs.html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="/docs/hubs/hub-docs.html">
+            HUB API DOCS
+          </a>
+        </li>
+
+        {% if page.url == '/docs/platform/platform-docs.html' %}
           <li class="active">
         {% else %}
           <li>
@@ -65,7 +77,9 @@
           </a>
         </li>
         <li>
+          <a href="https://console.cloud-elements.com/elements/jsp/signup.jsp" target="_blank">
           <button type="button" class="btn btn-lg btn-danger try-it">Try it For Free! <i class="fa fa-caret-right"></i></button>
+          </a>
         </li>
       </ul>
     </div>

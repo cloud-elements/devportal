@@ -1,5 +1,6 @@
 ---
 heading: Microsoft Dynamics CRM
+seo: Overview | MS Dynamics CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Microsoft Dynamics CRM into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 190
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Microsoft Dynamics CRM Element
+## Welcome to the Microsoft Dynamics CRM Element
 
 
 #### At a Glance

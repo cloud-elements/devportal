@@ -1,7 +1,8 @@
 ---
-heading: Platform APIs
-title: Sign Up
-description:  Sign up for Cloud Elements Service
+heading: Platform Overview
+seo: Platform Overview | Cloud Elements API Docs
+title: Platform Overview
+description:  Overview of the Cloud Elements Platform APIs.
 layout: docs
 order: 5
 categories: [gettingstarted]

@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Overview | Zendesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Zendesk into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 41
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Zendesk Element
+## Welcome to the Zendesk Element
 
 
 #### At a Glance

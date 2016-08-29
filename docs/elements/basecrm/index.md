@@ -1,5 +1,6 @@
 ---
 heading: Base CRM
+seo: Overview | Base CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Base CRM into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 201
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Base CRM Element
+## Welcome to the Base CRM Element
 
 
 #### At a Glance

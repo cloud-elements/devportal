@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: API Docs | HubSpot CRM | Cloud Elements API Docs
 title: API Docs
 description: HubSpot CRM API Documentation.
 layout: apidocs

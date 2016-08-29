@@ -1,5 +1,6 @@
 ---
 heading: NetSuite ERP
+seo: API Docs | NetSuite ERP | Cloud Elements API Docs
 title: API Docs
 description: NetSuite ERP API Documentation.
 layout: apidocs

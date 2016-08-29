@@ -1,5 +1,6 @@
 ---
 heading: Magento
+seo: Create Instance | Magento | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ Magento is a Finance Platform. When you provision an instance, your app will hav
 
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/token
+* Request Body: None
+* Query Parameters:
 
 * __key__ - magento
 * __apiKey__ - the API key obtained from registering your app with the provider
@@ -52,11 +53,11 @@ Magento expects a token and secret. These are contained in the response to the i
 
 ### Step 2. Get Elements OAuth URL
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - magento
 * __apiKey__ - the API key obtained from registering your app with the provider

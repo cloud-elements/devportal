@@ -523,3 +523,12 @@ td, th {
     padding-left: 30px;
     width: 300px;
 }
+
+/*/////////////////////////////////
+/// Custom CSS for Vimeo Videos ///
+/////////////////////////////////*/
+
+iframe.full-width {
+  width: 100%;
+  min-height: 550px;
+}

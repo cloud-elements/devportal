@@ -1,5 +1,6 @@
 ---
 heading: Ecwid
+seo: Endpoint Setup | Ecwid | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

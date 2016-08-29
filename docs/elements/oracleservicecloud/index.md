@@ -1,5 +1,6 @@
 ---
 heading: Oracle Service Cloud
+seo: Overview | Oracle Service Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Oracle Service Cloud into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,9 +8,10 @@ breadcrumbs: /docs/elements.html
 elementId: 88
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
-### Welcome to the Oracle Service Cloud Element
+## Welcome to the Oracle Service Cloud Element
 
 
 #### At a Glance

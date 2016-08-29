@@ -1,5 +1,6 @@
 ---
 heading: NetSuite ERP
+seo: Overview | NetSuite ERP | Cloud Elements API Docs
 title: Overview
 description: Integrate NetSuite  ERP into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 157
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the NetSuite ERP Element

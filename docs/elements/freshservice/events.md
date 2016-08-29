@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: Events | Freshservice | Cloud Elements API Docs
 title: Events
 description: Enable Freshservice events for your application.
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Hub
+seo: Hub defined | Cloud Elements API Docs
 title: Hub defined
 description: Definition of a Hub
 layout: docs

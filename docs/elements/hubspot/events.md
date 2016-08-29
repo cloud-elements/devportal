@@ -1,5 +1,6 @@
 ---
 heading: HubSpot
+seo: Events | HubSpot | Cloud Elements API Docs
 title: Events
 description: Enable HubSpot events for your application.
 layout: docs

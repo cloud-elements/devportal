@@ -1,5 +1,6 @@
 ---
 heading: Taxify
+seo: API Docs | Taxify | Cloud Elements API Docs
 title: API Docs
 description: Taxify API Documentation.
 layout: apidocs

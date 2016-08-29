@@ -1,5 +1,6 @@
 ---
 heading: Etsy
+seo: API Docs | Etsy | Cloud Elements API Docs
 title: API Docs
 description: Etsy API Documentation.
 layout: apidocs

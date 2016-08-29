@@ -1,5 +1,6 @@
 ---
 heading: Eloqua
+seo: Create Instance | Eloqua | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -17,11 +18,11 @@ Optionally, you may provision an instance to specific features like Marketing Cl
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __apiKey–__ the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider
@@ -34,7 +35,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/eloqua/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
+'https://api.cloud-elements.com/elements/api-v2/elements/eloqua/oauth/url?apiKey=insert_client_id&apiSecret=insert_client_secret&callbackUrl=https://www.mycoolapp.com/auth'
 ```
 
 Response:

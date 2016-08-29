@@ -1,5 +1,6 @@
 ---
 heading: ServiceMax
+seo: Endpoint Setup | ServiceMax | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

@@ -1,5 +1,6 @@
 ---
 heading: Autotask CRM
+seo: API Docs | Autotask CRM | Cloud Elements API Docs
 title: API Docs
 description: Autotask CRM API Documentation.
 layout: apidocs

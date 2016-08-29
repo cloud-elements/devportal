@@ -1,5 +1,6 @@
 ---
 heading: Autotask CRM
+seo: Overview | Autotask CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Autotask CRM into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 50
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Autotask Element

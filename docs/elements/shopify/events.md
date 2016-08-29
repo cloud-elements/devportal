@@ -1,5 +1,6 @@
 ---
 heading: Shopify
+seo: Events | Shopify | Cloud Elements API Docs
 title: Events
 description: Enable Shopify events for your application.
 layout: docs

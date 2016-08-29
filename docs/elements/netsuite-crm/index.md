@@ -1,5 +1,6 @@
 ---
 heading: NetSuite CRM
+seo: Overview | NetSuite CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate NetSuite CRM into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 140
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the NetSuite CRM Element

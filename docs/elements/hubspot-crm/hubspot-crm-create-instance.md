@@ -1,5 +1,6 @@
 ---
 heading: HubSpot CRM
+seo: Create Instance | HubSpot CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -17,11 +18,11 @@ Optionally, you may provision an instance to specific features like Marketing an
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __apiKey–__ the __Client ID__
 * __apiSecret__ – the __Portal ID__
@@ -32,11 +33,11 @@ Description: The result of this API invocation is an OAuth redirect URL from the
 
 Input Query Parameters:
 
-OAuth client (apiKey): 123456789d-1234-12e4-bda9-12345b8bf20
-Portal ID (apiSecret): 123456
-The scope is notated as “scope=contacts-rw%20offline”. The API call will not work without the scope parameters.
-Callback URL: http://demonstrab.ly
-A sample request illustrating the API is shown below.
+* OAuth client (apiKey): 123456789d-1234-12e4-bda9-12345b8bf20
+* Portal ID (apiSecret): 123456
+* The scope is notated as “scope=contacts-rw%20offline”. The API call will not work without the scope parameters.
+* Callback URL: http://demonstrab.ly
+* A sample request illustrating the API is shown below.
 
 Example cURL Command:
 

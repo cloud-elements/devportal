@@ -1,5 +1,6 @@
 ---
 heading: Instance APIs
+seo: Instance API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Instance API Documentation.
 layout: apidocs

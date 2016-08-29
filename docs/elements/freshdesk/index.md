@@ -1,5 +1,6 @@
 ---
 heading: Freshdesk
+seo: Overview | Freshdesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Freshdesk into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 144
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Freshdesk Element

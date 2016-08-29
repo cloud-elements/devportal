@@ -1,30 +1,21 @@
 ---
 heading: Formulas
+seo: Overview | Formulas | Cloud Elements API Docs
 title: Overview
-description: Learn how to sync objects and create formulas between cloud services.
+description: Formula Overview
 layout: docs
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/products/api-toolkit.html
 parent: Back to API Toolkit
 order: 1
+sitemap: false
 ---
 
-### Formula User Guides
+# Overview
 
-Cloud Elements supports customizable workflows, called __formulas__ to keep your systems in sync.
-Cloud Elements currently supports formula creation via API and via the Formula Builder UI within the API Manager Console.
+Cloud Elements supports customizable workflows, called **Formulas**.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.  Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
 
-The formula developer docs are broken down into three guides:
+> **NOTE:** The Formula documentation assumes knowledge of how Elements and Element Instances work in our platform.  If you are new to Cloud Elements, please visit the "Quick Start" section in the developer portal or play around in the Cloud Elements Console UI before proceeding with Formulas.
 
-* [Formula Creation via API](formulas-via-api.html)
-* [Example Formula Use Cases](formula-use-cases.html)
-* [Formula Debugging Tips](formula-debugging.html)
-
-If working with APIs is your preferred method, view the [Formula Creation via API](formulas-via-api.html) Guide.
-
-View our [Formulas Use Cases Guide](formula-use-cases.html) for example use cases such as, when a contact is created in a CRM service, the same contact is created in the Marketing service. See screenshots and example API calls.
-
-View our [Formulas Debugging Tips](formula-debugging.html) for suggestions on debugging your formula. See screenshots and example API calls.
-
-View the [Formulas API Documentation](api-documentation.html) to see all of the available endpoints currently supported.
+> **QUESTIONS/COMMENTS?** Please don't hesitate to [contact us](mailto:support@cloud-elements.com).

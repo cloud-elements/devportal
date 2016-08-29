@@ -1,5 +1,6 @@
 ---
 heading: Taxify
+seo: Create Instance | Taxify | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs

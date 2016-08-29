@@ -1,5 +1,6 @@
 ---
 heading: OneDrive Business
+seo: Overview | OneDrive Business | Cloud Elements API Docs
 title: Overview
 description: Integrate OneDrive Business into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 178
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the OneDrive Business Element

@@ -1,5 +1,6 @@
 ---
 heading: Element Builder
+seo: Create Element via API | Element Builder | Cloud Elements API Docs
 title: Create Element via API
 description: Create a new Element via API.
 layout: docs

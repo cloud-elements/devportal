@@ -1,5 +1,6 @@
 ---
 heading: Adobe eSign
+seo: Overview | Adobe eSign | Cloud Elements API Docs
 title: Overview
 description: Integrate Adobe eSign into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 426
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Adobe eSign Element

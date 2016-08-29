@@ -1,5 +1,6 @@
 ---
 heading: Hub APIs
+seo: Hub API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Hub API Documentation.
 layout: apidocs

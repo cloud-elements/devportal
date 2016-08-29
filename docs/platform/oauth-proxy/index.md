@@ -1,11 +1,13 @@
 ---
 heading: OAuth Proxy
+seo: OAuth Proxy Documentation | Cloud Elements API Docs
 title: OAuth Proxy Documentation
 description: View the OAuth Proxy Guide with screen shots and setup instructions.
 layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 4
+sitemap: false
 ---
 
 ## OAuth Proxy (OPTIONAL Feature)

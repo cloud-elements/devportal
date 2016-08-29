@@ -6,6 +6,7 @@ dependencies:
   pre:
     - gem install jekyll
     - gem install redcarpet
+    - gem install jekyll-sitemap
 
 test:
   override:

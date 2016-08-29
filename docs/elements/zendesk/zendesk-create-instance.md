@@ -1,5 +1,6 @@
 ---
 heading: Zendesk
+seo: Create Instance | Zendesk | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ Zendesk is a Help Desk Platform. When you provision an instance, your app will h
 
 ### Step 1. Get Elements OAuth Information
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - zendesk
 * __apiKey__ - the key obtained from registering your app with the provider

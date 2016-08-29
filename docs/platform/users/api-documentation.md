@@ -1,5 +1,6 @@
 ---
 heading: User APIs
+seo: Users API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: User API Documentation.
 layout: apidocs

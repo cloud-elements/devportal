@@ -1,5 +1,6 @@
 ---
 heading: Usage APIs
+seo: Usage APIs Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
 layout: docs
@@ -7,6 +8,7 @@ platform: usage
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 1
+sitemap: false
 ---
 
 ## Usage APIs

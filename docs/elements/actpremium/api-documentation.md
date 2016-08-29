@@ -1,0 +1,13 @@
+---
+heading: Act Premium
+seo: API Docs | Act Premium | Cloud Elements API Docs
+title: API Docs
+description: Act Premium API Documentation.
+layout: apidocs
+breadcrumbs: /docs/elements.html
+elementId: 750
+parent: Back to Element Guides
+order: 90
+---
+
+{% include swagger.html %}

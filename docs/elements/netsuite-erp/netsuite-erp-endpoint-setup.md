@@ -1,5 +1,6 @@
 ---
 heading: NetSuite ERP
+seo: Endpoint Setup | NetSuite ERP | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs

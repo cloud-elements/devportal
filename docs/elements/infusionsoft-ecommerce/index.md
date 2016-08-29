@@ -1,5 +1,6 @@
 ---
 heading: Infusionsoft eCommerce
+seo: Overview | Infusionsoft eCommerce | Cloud Elements API Docs
 title: Overview
 description: Integrate Infusionsoft eCommerce into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 321
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Infusionsoft eCommerce Element

@@ -1,5 +1,6 @@
 ---
 heading: Amazon S3
+seo: Overview | Amazon S3 | Cloud Elements API Docs
 title: Overview
 description: Integrate Amazon S3 into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 16
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Amazon S3 Element

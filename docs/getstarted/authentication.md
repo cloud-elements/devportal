@@ -1,5 +1,6 @@
 ---
 heading: Authentication
+seo: Authentication | Cloud Elements API Docs
 title: Authentication
 description: How to Authenticate to our APIs
 layout: docs

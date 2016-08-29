@@ -1,5 +1,6 @@
 ---
 heading: Autotask Help Desk
+seo: Events | Autotask Help Desk | Cloud Elements API Docs
 title: Events
 description: Enable Autotask Help Desk events for your application.
 layout: docs

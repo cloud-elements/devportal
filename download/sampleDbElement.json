@@ -1,0 +1,543 @@
+{
+  "bulkUploadEnabled": false,
+  "image": "http://logonoid.com/images/postgresql-logo.png",
+  "configuration": [
+    {
+      "internal": false,
+      "defaultValue": "jdbc:postgresql://{db.host}/{db.name}",
+      "companyConfig": false,
+      "displayOrder": 1,
+      "description": "MyPostGreSQL Base URL",
+      "active": true,
+      "type": "TEXTFIELD_1000",
+      "resellerConfig": false,
+      "required": false,
+      "hideFromConsole": true,
+      "name": "Base URL",
+      "groupControl": false,
+      "key": "base.url"
+    },
+    {
+      "internal": false,
+      "defaultValue": "",
+      "companyConfig": false,
+      "displayOrder": 1,
+      "description": "MyPostGreSQL Database Host",
+      "active": true,
+      "type": "TEXTFIELD_128",
+      "resellerConfig": false,
+      "required": true,
+      "hideFromConsole": false,
+      "name": "Database Host",
+      "groupControl": false,
+      "key": "db.host"
+    },
+    {
+      "internal": false,
+      "defaultValue": "offset",
+      "companyConfig": false,
+      "displayOrder": 1,
+      "description": "MyPostGreSQL Pagination Type",
+      "active": true,
+      "type": "TEXTFIELD_32",
+      "resellerConfig": false,
+      "required": false,
+      "hideFromConsole": true,
+      "name": "Pagination Type",
+      "groupControl": false,
+      "key": "pagination.type"
+    },
+    {
+      "internal": false,
+      "defaultValue": "100",
+      "companyConfig": false,
+      "displayOrder": 1,
+      "description": "MyPostGreSQL Max Page Size (or limit)",
+      "active": true,
+      "type": "TEXTFIELD_32",
+      "resellerConfig": false,
+      "required": false,
+      "hideFromConsole": true,
+      "name": "Max Page Size (or limit)",
+      "groupControl": false,
+      "key": "pagination.max"
+    },
+    {
+      "internal": false,
+      "defaultValue": "",
+      "companyConfig": false,
+      "displayOrder": 2,
+      "description": "MyPostGreSQL Username",
+      "active": true,
+      "type": "TEXTFIELD_32",
+      "resellerConfig": false,
+      "required": true,
+      "hideFromConsole": false,
+      "name": "Username",
+      "groupControl": false,
+      "key": "username"
+    },
+    {
+      "internal": false,
+      "defaultValue": "",
+      "companyConfig": false,
+      "displayOrder": 3,
+      "description": "MyPostGreSQL Password",
+      "active": true,
+      "type": "PASSWORD",
+      "resellerConfig": false,
+      "required": true,
+      "hideFromConsole": false,
+      "name": "Password",
+      "groupControl": false,
+      "key": "password"
+    },
+    {
+      "internal": false,
+      "defaultValue": "",
+      "companyConfig": false,
+      "displayOrder": 4,
+      "description": "MyPostGreSQL Database Name",
+      "active": true,
+      "type": "TEXTFIELD_128",
+      "resellerConfig": false,
+      "required": true,
+      "hideFromConsole": false,
+      "name": "Database Name",
+      "groupControl": false,
+      "key": "db.name"
+    },
+    {
+      "internal": false,
+      "defaultValue": "org.postgresql.Driver",
+      "companyConfig": false,
+      "displayOrder": 10,
+      "description": "Driver Classname ex: Postgres:'org.postgresql.Driver' , MySql:'com.mysql.jdbc.Driver' SqlServer: 'com.microsoft.sqlserver.jdbc.SQLServerDriver'",
+      "active": true,
+      "type": "TEXTFIELD_128",
+      "resellerConfig": false,
+      "required": true,
+      "hideFromConsole": true,
+      "name": "Database Driver Classname",
+      "groupControl": false,
+      "key": "jdbc.driver.classname"
+    },
+    {
+      "internal": true,
+      "defaultValue": "",
+      "companyConfig": false,
+      "displayOrder": 100,
+      "description": "MyPostGreSQL Time of Getting Token or Performing Authentication",
+      "active": true,
+      "type": "TEXTFIELD_32",
+      "resellerConfig": false,
+      "required": false,
+      "hideFromConsole": true,
+      "name": "Time of Getting Token or Performing Authentication",
+      "groupControl": false,
+      "key": "authentication.time"
+    }
+  ],
+  "description": "My PostGreSQL Custom Element",
+  "active": true,
+  "resources": [
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customers",
+      "vendorMethod": "GET",
+      "method": "GET",
+      "description": "Retrieve a list of customers",
+      "model": {
+        "transform": false,
+        "name": "customerList",
+        "rawSwagger": {},
+        "swagger": {}
+      },
+      "type": "api",
+      "vendorPath": "select * from customer offset :offset limit :limit",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "offset,limit",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "page",
+          "description": "The page number of resources to retrieve",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "offset",
+          "type": "query",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "pageSize",
+          "description": "The number of resources to return in a given page",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "limit",
+          "type": "query",
+          "required": false
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customers/{id}",
+      "vendorMethod": "DELETE",
+      "method": "DELETE",
+      "description": "Delete a customer by ID",
+      "model": {
+        "transform": false,
+        "name": "customers",
+        "rawSwagger": {
+          "customers": {
+            "id": "customers",
+            "properties": {
+              "count": {
+                "format": "int32",
+                "type": "integer"
+              }
+            }
+          }
+        },
+        "swagger": {
+          "customers": {
+            "id": "customers",
+            "properties": {
+              "count": {
+                "format": "int32",
+                "type": "integer"
+              }
+            }
+          }
+        }
+      },
+      "type": "api",
+      "vendorPath": "delete from customer where customer_id = :id",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "number",
+          "name": "id",
+          "description": "The whatever ID",
+          "vendorDataType": "number",
+          "source": "request",
+          "vendorName": "id",
+          "type": "path",
+          "required": true
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "id",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customers",
+      "vendorMethod": "POST",
+      "method": "POST",
+      "description": "Create a customer",
+      "type": "api",
+      "vendorPath": "insert into customer \n(\n  first_name, last_name, email, mobile_phone\n)\nvalues \n  (\n      :first_name, \n      :last_name, \n      :email, \n      :mobile_phone\n  ) \nreturning first_name, last_name, email, mobile_phone, customer_id, created_dt",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "customers",
+          "name": "body",
+          "description": "The customer body",
+          "vendorDataType": "customers",
+          "source": "request",
+          "vendorName": "body",
+          "type": "body",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "first_name,last_name,email,mobile_phone",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customers/{id}",
+      "vendorMethod": "PUT",
+      "method": "PUT",
+      "description": "Update a customer",
+      "model": {
+        "transform": false,
+        "name": "customers",
+        "rawSwagger": {
+          "customers": {
+            "id": "customers",
+            "properties": {
+              "mobile_phone": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "customer_id": {
+                "format": "int64",
+                "type": "integer"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "swagger": {
+          "customers": {
+            "id": "customers",
+            "properties": {
+              "mobile_phone": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "customer_id": {
+                "format": "int32",
+                "type": "integer"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "type": "api",
+      "vendorPath": "update customer set first_name = :first_name, last_name = :last_name, email= :email,   \n  mobile_phone =:mobile_phone where customer_id = :customer_id\nreturning first_name, last_name, email, mobile_phone, customer_id;",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "customers",
+          "name": "body",
+          "description": "The customer object",
+          "vendorDataType": "customers",
+          "source": "request",
+          "vendorName": "body",
+          "type": "body",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "first_name,last_name,email,mobile_phone,customer_id",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "number",
+          "name": "id",
+          "description": "The customer ID",
+          "vendorDataType": "number",
+          "source": "request",
+          "vendorName": "customer_id",
+          "type": "path",
+          "required": true
+        }
+      ],
+      "hooks": [],
+      "rootKey": ""
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customers/{id}",
+      "vendorMethod": "GET",
+      "method": "GET",
+      "description": "Get a customer by ID",
+      "type": "api",
+      "vendorPath": "select * from customer where customer_id = :id ",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "number",
+          "name": "id",
+          "description": "The whatever ID",
+          "vendorDataType": "number",
+          "source": "request",
+          "vendorName": "id",
+          "type": "path",
+          "required": true
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "id",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        }
+      ],
+      "hooks": [],
+      "rootKey": ""
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/customersDetails",
+      "vendorMethod": "GET",
+      "method": "GET",
+      "description": "Retrieve a list of customer details including address",
+      "type": "api",
+      "vendorPath": "select c.*, a.* from customer c \n  inner join address a on a.customer_id = c.customer_id\n{where}\noffset :offset limit :limit",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "offset,limit",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "page",
+          "description": "The page number of resources to retrieve",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "offset",
+          "type": "query",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "pageSize",
+          "description": "The number of resources to return in a given page",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "limit",
+          "type": "query",
+          "required": false
+        },
+        {
+          "vendorType": "path",
+          "dataType": "string",
+          "name": "where",
+          "description": "The CEQL search expression.",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "where",
+          "type": "query",
+          "required": false
+        }
+      ],
+      "hooks": []
+    },
+    {
+      "nextPageKey": "",
+      "path": "/hubs/db/addresses",
+      "vendorMethod": "POST",
+      "method": "POST",
+      "description": "Create an address",
+      "type": "api",
+      "vendorPath": "insert into address \n(\n  street1, street2, state, postal_code, country, customer_id\n)\nvalues \n  (\n      :street1,\n      :street2, \n      :state, \n      :postal_code, \n      :country,\n      :customer_id\n  ) \nreturning street1, street2, state, postal_code, country, customer_id, address_id, created_dt",
+      "parameters": [
+        {
+          "vendorType": "query",
+          "dataType": "addresses",
+          "name": "body",
+          "description": "The address body",
+          "vendorDataType": "addresses",
+          "source": "request",
+          "vendorName": "body",
+          "type": "body",
+          "required": false
+        },
+        {
+          "vendorType": "query",
+          "dataType": "string",
+          "name": "street1,street2,state,postal_code,country,customer_id",
+          "description": "Comma separated named parameters",
+          "vendorDataType": "string",
+          "source": "request",
+          "vendorName": "namedParameters",
+          "type": "value",
+          "required": false
+        }
+      ],
+      "hooks": []
+    }
+  ],
+  "protocolType": "jdbc",
+  "cloneable": true,
+  "transformationsEnabled": true,
+  "bulkDownloadEnabled": false,
+  "deleted": false,
+  "hub": "db",
+  "typeOauth": false,
+  "name": "MyPostGreSQL",
+  "trialAccount": false,
+  "hooks": [],
+  "parameters": [
+    {
+      "vendorType": "path",
+      "name": "db.host",
+      "source": "request",
+      "vendorName": "db.host",
+      "type": "configuration",
+      "required": false
+    },
+    {
+      "vendorType": "path",
+      "name": "db.name",
+      "source": "request",
+      "vendorName": "db.name",
+      "type": "configuration",
+      "required": false
+    }
+  ],
+  "key": "mypostgresql",
+  "authentication": {
+    "type": "custom"
+  }
+}

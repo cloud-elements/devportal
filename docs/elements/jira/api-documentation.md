@@ -1,5 +1,6 @@
 ---
 heading: JIRA
+seo: API Docs | JIRA | Cloud Elements API Docs
 title: API Docs
 description: JIRA API Documentation.
 layout: apidocs

@@ -1,5 +1,6 @@
 ---
 heading: Marketo
+seo: Events | Marketo | Cloud Elements API Docs
 title: Events
 description: Enable Marketo events for your application.
 layout: docs
@@ -11,7 +12,7 @@ order: 30
 
 ## Events
 
-Cloud Elements supports both polling and webhook events for Salesforce.
+Cloud Elements supports both polling and webhook events for Marketo.
 
 ### Polling
 

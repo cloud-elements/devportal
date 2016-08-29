@@ -1,5 +1,6 @@
 ---
 heading: OneDrive Business
+seo: Events | OneDrive Business | Cloud Elements API Docs
 title: Events
 description: Enable OneDrive Business events for your application.
 layout: docs

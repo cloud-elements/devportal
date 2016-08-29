@@ -1,5 +1,6 @@
 ---
 heading: HubSpot
+seo: API Docs | HubSpot | Cloud Elements API Docs
 title: API Docs
 description: HubSpot API Documentation.
 layout: apidocs

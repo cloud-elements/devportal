@@ -1,5 +1,6 @@
 ---
 heading: Freshservice
+seo: API Docs | Freshservice | Cloud Elements API Docs
 title: API Docs
 description: Freshservice API Documentation.
 layout: apidocs

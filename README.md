@@ -5,7 +5,7 @@
 ```bash
 $ git clone git@github.com:cloud-elements/devportal.git
 $ cd devportal
-$ sudo gem install jekyll redcarpet
+$ sudo gem install jekyll redcarpet jekyll-sitemap
 ```
 
 ## Usage
@@ -39,4 +39,5 @@ Other Product docs like Element Builder, Mapper, Loader, Formulas are located at
 ```
 ## Conventions
 
-All documents are composed in markdown.  HTMl can be used right in the markdown docs.
+All documents are composed in markdown.  HTML can be used right in the markdown docs.
+

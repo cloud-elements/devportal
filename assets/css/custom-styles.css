@@ -19,6 +19,10 @@ a {
   color: #40b6e4;
 }
 
+a:hover, a:focus, a:visited {
+  text-decoration: none;
+}
+
 .red-button {
   background-color: #ff4e4e;
 }
@@ -95,7 +99,7 @@ a {
 }
 .nav > li > a{
   padding: 7px 0 5px 0;
-  margin: 0 25px;
+  margin: 0 20px;
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     font-weight: bold;
@@ -139,7 +143,7 @@ hr {
 }
 
 .try-it {
-  margin: 0 35px 0 25px;
+  /*margin: 0 35px 0 25px;*/
   font-family: "Open Sans", sans-serif;
   font-size: 97%;
   font-weight: 700;
@@ -242,6 +246,12 @@ hr {
   margin-top: 5px;
   line-height: 1em;
 }
+
+.status-link {
+  margin: 2px;
+  color: #40b6e4;
+}
+
 /*///////////////////////////////
 ///  Custom CSS for Jumbotron ///
 ///////////////////////////////*/
@@ -681,18 +691,40 @@ hr {
     margin: 0;
   }
   .try-it{
-    margin: 10px;
+    /*margin: 10px;*/
+    display: none;
   }
 }
 
-@media (min-width: 480px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1160px) {
+  .try-it {
+    display: none;
+  }
 }
 
-/*	Mobile
-*/
+@media (min-width: 300px) and (max-width: 768px) {
+  .try-it {
+    display: none;
+  }
 
-@media (max-width: 768px) {
+  .docs-header h1 {
+    padding-left: 10px;
+  }
 
+  .docs-header p {
+    padding-left: 10px !important;
+  }
+  .apidocs-button {
+    padding-left: 10px;
+  }
+  .search-bar-wrapper .flextable .flextable-item .form-control:focus {
+    width: 68%;
+  }
 }
-@media (max-width : 690px) {
+
+@media (max-width: 600px) {
+  .status-link {
+    display: none;
+  }
+
 }

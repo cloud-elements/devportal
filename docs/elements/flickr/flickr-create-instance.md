@@ -1,5 +1,6 @@
 ---
 heading: Flickr
+seo: Create Instance | Flickr | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -15,11 +16,11 @@ Flickr is a Social Platform. When you provision an instance, your app will have 
 
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/token
+* Request Body: None
+* Query Parameters:
 
 * __key__ - flickr
 * __apiKey–__ - the key obtained from registering your app with the provider
@@ -51,11 +52,11 @@ Flickr expects a token and secret. These are contained in the response to the in
 
 ### Step 2. Get Elements OAuth URL
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - flickr
 * __apiKey–__ - the key obtained from registering your app with the provider

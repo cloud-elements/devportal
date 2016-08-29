@@ -1,5 +1,6 @@
 ---
 heading: Salesforce Service Cloud
+seo: Overview | Salesforce Service Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Service Cloud into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 29
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Salesforce Service Cloud Element

@@ -1,5 +1,6 @@
 ---
 heading: Instagram
+seo: Overview | Instagram | Cloud Elements API Docs
 title: Overview
 description: Integrate Instagram into your application via the Cloud Elements APIs.
 layout: docs
@@ -7,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides
 order: 1
+sitemap: false
 ---
 
 ## Welcome to the Instagram Element

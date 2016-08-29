@@ -1,5 +1,6 @@
 ---
 heading: Pardot
+seo: Endpoint Setup | Pardot | Cloud Elements API Docs
 title: Find API Key
 description: Find API Key
 layout: docs
