@@ -140,6 +140,56 @@ Below are some JSON examples of all of the different types of triggers and steps
 
 ```json
 {
+  "name": "get-object",
+  "type": "elementRequest",
+  "onSuccess": [ "some-other-step" ],
+  "properties": {
+     "elementInstanceId": "${crm.instance.id}",
+     "method": "GET",
+     "api": "/hubs/crm/${config.resource.name}/{objectId}",
+     "path": "${trigger.event}"
+  }
+}
+```
+
+> **NOTE:** There must be a configured variable called `resource.name` for the above API call to work.
+
+> **NOTE:** When context variables, i.e., variables in the configuration, previous steps or int the trigger are used in the `api` for `elementRequest` steps, the format of the reference is `${<var>}`, where `<var>` is the name of the variable.
+
+> **NOTE:** There must be a field called `objectId` in the `trigger.event` JSON object for the above API call to work.
+
+```json
+{
+  "name": "get-object",
+  "type": "elementRequest",
+  "onSuccess": [ "some-other-step" ],
+  "properties": {
+     "elementInstanceId": "${crm.instance.id}",
+     "method": "GET",
+     "api": "/hubs/crm/${config.resource.name}/${trigger.event.objectId}"
+  }
+}
+```
+
+> **NOTE:** Context variables, including those in the `trigger` object can be referenced directly in the `api` without the need to provide these as a map/object in the `path`. In the above example, the `${trigger.event.objectId}` can be used instead of what was demonstrated in the previous example.
+
+```json
+{
+  "name": "get-object",
+  "type": "elementRequest",
+  "onSuccess": [ "some-other-step" ],
+  "properties": {
+     "elementInstanceId": "${crm.instance.id}",
+     "method": "GET",
+     "api": "${config.api.uri}"
+  }
+}
+```
+
+> **NOTE:** The entire `api` can also be configured as a variable as shown above via the `${config.api.uri}` variable, which means there is a configuration variable called `api.uri` that needs to exist.
+
+```json
+{
   "name": "search-contacts",
   "type": "elementRequest",
   "onSuccess": [ "some-other-step" ],
@@ -174,6 +224,22 @@ Below are some JSON examples of all of the different types of triggers and steps
 
 > **NOTE:** The above API call leverages the optional retry properties.  With the above properties, if the API call fails with a `500`, `502` or `503` then we will retry that API call up to 3 times.
 
+```json
+{
+  "name": "search-contacts",
+  "type": "elementRequest",
+  "onSuccess": [ "some-other-step" ],
+  "properties": {
+     "elementInstanceId": "${crm.instance.id}",
+     "method": "GET",
+     "api": "/hubs/crm/contacts?param1=${config.param1.value}"
+  }
+}
+```
+
+> **NOTE:** Instead of configuring a map via a `script` step to provide query parameters and values, these can be provided on the URI via configuration variables as demonstrated above via the `${config.param1.value}` configuration variable. This is *not* a best practice, i.e., adding query parameters directly to the URI, but can be done if absolutely necessary.
+
+
 ## Example `request` steps:
 
 ```json
@@ -189,6 +255,8 @@ Below are some JSON examples of all of the different types of triggers and steps
 ```
 
 > **NOTE:** These steps will look the same as any `elementRequest` except they do *not* need an `elementInstanceId` property since these API calls are not element instance API calls but instead just calls to one of our platform APIs.
+
+> **NOTE:** Variables for the `api` attribute can be used similar to that in the `elementRequest` step type.
 
 ## Example `httpRequest` steps:
 
@@ -212,6 +280,9 @@ Below are some JSON examples of all of the different types of triggers and steps
 > **NOTE:** The `httpRequest` step is primarily the same as any `request` step with the following exceptions.
 >
 > * The `url` attribute, with a valid `HTTP` or `HTTPS` URL, is required.
+
+
+> **NOTE:** Variables for the `url` attribute can be used similar to that in the `elementRequest` and `request` step types.
 
 
 ## Example `amqpRequest` steps:
