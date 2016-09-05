@@ -26,6 +26,8 @@ We currently support the following types of variables:
 * `value`: Any free text input.
 * `elementInstance`: A specific Element Instance.
 
+Defined variables live under the `config` context and can be accessed via the `${config.<var>}` syntax, where `<var>` is replaced with the name of the variable. For example, if a variable named `max.count` is defined, then it can be accessed using `${config.max.count}`.
+
 > **PROTIP:** Variables allow you to create generic formulas that are not tied to specific endpoints.  For example, variables would allow you to create one formula, where each of your customers could have their own instance with their own endpoints plugged in.
 
 ## Trigger
@@ -65,7 +67,7 @@ Once a formula has been created, in order to have that formula begin executing, 
 
 # Terminology: Formula Instance Execution
 
-An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the potential inputs and outputs for each of these steps.  
+An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the potential inputs and outputs for each of these steps.
 
 > **PROTIP:** Each execution and step execution have an associated `status`.  This `status` can be `pending`, `success` or `failed`.
 
