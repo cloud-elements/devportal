@@ -19,7 +19,8 @@ sitemap: false
 In order to create a connection to Magento SOAP V1.9 the following steps are required:
 
 1. Retrieve your Magento Store URL, username, and password
-4. Call the `POST /instances` API to instantiate your Magento SOAP V1.9 connected app
+2. Enable [Web Services](magento-soapv19-endpoint-setup.html)
+3. Call the `POST /instances` API to instantiate your Magento SOAP V1.9 connected app
 
 #### In Depth
 
@@ -27,4 +28,4 @@ The Magento SOAP V1.9 Element is a collection of resources providing a pre-built
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
-Get started by [creating an instance](magento-soapv19-create-instance.html).
+Get started by [enabling web services](magento-soapv19-endpoint-setup.html).
