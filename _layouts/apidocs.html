@@ -63,7 +63,7 @@
           {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
           {% assign pElementName = pPath | pop | last %}
           {% assign elementName = page.url | split:"#" | last %}
-          {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
+          {% if pathMinusFileName == pPathMinusFileName or elementName == pElementName %}
             {% if p.title == "API Docs" %}
               <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
             {% elsif p.title == "Platform Documentation" %}
@@ -90,7 +90,7 @@
         {% assign pathMinusFileNameMinusParentDirectory = path | pop | pop | join:"/" %}
         {% assign pElementName = pPath | pop | last %}
         {% assign elementName = page.url | split:"#" | last %}
-        {% if pathMinusFileName == pPathMinusFileName || elementName == pElementName %}
+        {% if pathMinusFileName == pPathMinusFileName or elementName == pElementName %}
             {% if page.url == p.url %}
               <li class="active actived">
             {% else %}

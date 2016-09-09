@@ -97,7 +97,7 @@ $(function() {
 
   function expandDocs(uParams) {
       var urlRes = getResource(urlParams);
-      if(urlRes =='all_platform' || urlRes =='all_hubs' || urlRes =='all') {
+      if(urlRes =='all_platform' or urlRes =='all_hubs' or urlRes =='all') {
         return null;
       }
     return "list";
@@ -129,7 +129,7 @@ $(function() {
       // rerender index.html with just the selected hub
 
       var urlRes = getResource(urlParams);
-      if(urlRes =='all_hubs' || urlRes =='all') {
+      if(urlRes =='all_hubs' or urlRes =='all') {
         //modify the hubs
         $('a[href="#!/crm"]').text("hubs/crm");
         $('#endpointListTogger_crm').text("Show/Hide");
@@ -206,7 +206,7 @@ $(function() {
     onPreRequest: function(model, map, opts) {
 
       var maintainSession = urlParams['maintainSession'];
-      if(maintainSession != null && (maintainSession == true || maintainSession == "true")) {
+      if(maintainSession != null && (maintainSession == true or maintainSession == "true")) {
         //Added the session header to map
         map['Elements-Session'] = true;
         //Added the session header to model parameters
@@ -219,7 +219,7 @@ $(function() {
       }
 
       var saveAsDefault = urlParams['saveAsDefault'];
-      if(saveAsDefault != null && (saveAsDefault == true || saveAsDefault == "true")) {
+      if(saveAsDefault != null && (saveAsDefault == true or saveAsDefault == "true")) {
         //Added the saveAsDefault to map
         map['saveAsDefault'] = true;
         //Added the saveAsDefault to model parameters

@@ -45,7 +45,7 @@
         if(resource != null) {
           return "/elements/api-v2/docs/" + resource;
         }
-        else if(hubName != null && (hubName === 'all_hubs' || hubName === 'all_platform')) {
+        else if(hubName != null && (hubName === 'all_hubs' or hubName === 'all_platform')) {
           return "/elements/api-docs2/json/" + hubName;
         } else if(hubName != null && hubName != undefined) {
           return "/elements/api-v2/docs/" + hubName;
@@ -138,7 +138,7 @@
         onPreRequest: function(model, map, opts) {
 
           var maintainSession = urlParams['maintainSession'];
-          if(maintainSession != null && (maintainSession == true || maintainSession == "true")) {
+          if(maintainSession != null && (maintainSession == true or maintainSession == "true")) {
             //Added the session header to map
             map['Elements-Session'] = true;
             //Added the session header to model parameters
@@ -151,7 +151,7 @@
           }
 
           var saveAsDefault = urlParams['saveAsDefault'];
-          if(saveAsDefault != null && (saveAsDefault == true || saveAsDefault == "true")) {
+          if(saveAsDefault != null && (saveAsDefault == true or saveAsDefault == "true")) {
             //Added the saveAsDefault to map
             map['saveAsDefault'] = true;
             //Added the saveAsDefault to model parameters
