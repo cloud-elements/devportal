@@ -10,4 +10,4 @@ markdown_ext: markdown,mkdown,mkdn,mkd,md
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
 
-url: http://developers.cloud-elements.com
+url: https://developers.cloud-elements.com
