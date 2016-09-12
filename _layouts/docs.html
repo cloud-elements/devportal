@@ -1,7 +1,5 @@
-{% assign path = page.path | split:"/" %}
-{% assign pathMinusFileName = path | pop | join:"/" %}
-{% assign elementName = page.url | split:"#" | last %}
-{% assign sorted = site.pages | sort:"order" %}
+{% assign id = page.path | shard_id %}
+{% assign shard = site.shards[id] | sort:"order" %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -35,19 +33,13 @@
       <h1>{{page.heading}}</h1>
       <p class="p-t">{{page.description}}</p>
       <div class="apidocs-button">
-        {% for p in sorted %}
-          {% assign pPath = p.path | split:"/" %}
-          {% assign pPathMinusFileName = pPath | pop | join:"/" %}
-          {% assign pElementName = pPath | pop | last %}
-
-          {% if pathMinusFileName == pPathMinusFileName or elementName == pElementName %}
-            {% case p.title %}
-              {% when 'API Docs' %}
-                <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
-              {% when 'Platform Documentation' %}
-                <a class="btn btn-danger apidocs" href="{{ p.url }}?resource={{ page.platform }}">View API Docs</a>
-            {% endcase %}
-          {% endif %}
+        {% for p in shard %}
+          {% case p.title %}
+            {% when 'API Docs' %}
+              <a class="btn btn-danger apidocs" href="{{ p.url }}?elementId={{ page.elementId }}">View API Docs</a>
+            {% when 'Platform Documentation' %}
+              <a class="btn btn-danger apidocs" href="{{ p.url }}?resource={{ page.platform }}">View API Docs</a>
+          {% endcase %}
         {% endfor %}
       </div>
     </div>
@@ -57,28 +49,22 @@
     <!-- Sub Nav -->
     <ul id="markdown-toc">
       <li><strong>{{ page.heading }} Docs</strong></li>
-      {% for p in sorted %}
-        {% assign pPath = p.path | split:"/" %}
-        {% assign pPathMinusFileName = pPath | pop | join:"/" %}
-        {% assign pElementName = pPath | pop | last %}
-
-        {% if pathMinusFileName == pPathMinusFileName or elementName == pElementName %}
-            {% if page.url == p.url %}
-              <li class="active actived">
-            {% else %}
-              <li>
-            {% endif %}
-
-            {% case p.title %}
-              {% when 'API Docs' %}
-                <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
-              {% when 'Platform Documentation' %}
-                <a href="{{ p.url }}?resource={{ page.platform }}">{{ p.apis }}</a>
-              {% else %}
-                <a href="{{ p.url }}">{{ p.title }}</a>
-            {% endcase %}
-          </li>
+      {% for p in shard %}
+        {% if page.url == p.url %}
+          <li class="active actived">
+        {% else %}
+          <li>
         {% endif %}
+
+        {% case p.title %}
+          {% when 'API Docs' %}
+            <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+          {% when 'Platform Documentation' %}
+            <a href="{{ p.url }}?resource={{ page.platform }}">{{ p.apis }}</a>
+          {% else %}
+            <a href="{{ p.url }}">{{ p.title }}</a>
+        {% endcase %}
+        </li>
       {% endfor %}
       {% if page.breadcrumbs %}
         <a href="{{ page.breadcrumbs }}"> {{ page.parent }}</a>
