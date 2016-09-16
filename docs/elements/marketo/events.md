@@ -215,8 +215,9 @@ Input the following URL:
 Select “POST” as the Request Type
 Input your desired template, example below:
 
+{% assign esc = '{"first_name":{{lead.First Name}},"last_name":{{lead.Last Name}},"email":{{lead.Email Address}}}' %}
 ```json
-{"first_name":{{lead.First Name}},"last_name":{{lead.Last Name}},"email":{{lead.Email Address}}}
+{{esc}}
 ```
 
 Select JSON for “Request Token Encoding” as well as “Response Type”
