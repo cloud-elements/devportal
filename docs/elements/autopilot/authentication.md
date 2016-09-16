@@ -5,7 +5,7 @@ title: Authentication
 description: Integrate Autopilot into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 503
+elementId: 528
 parent: Back to Element Guides
 order: 10
 sitemap: false
