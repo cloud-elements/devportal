@@ -215,7 +215,7 @@ Input the following URL:
 Select “POST” as the Request Type
 Input your desired template, example below:
 
-```json
+```JSON
 {"first_name":{{lead.First Name}},"last_name":{{lead.Last Name}},"email":{{lead.Email Address}}}
 ```
 
