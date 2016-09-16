@@ -4,6 +4,9 @@ exclude:
   - circle.yml
   - README.md
 
+liquid:
+  error_mode: strict
+
 markdown: redcarpet
 markdown_ext: markdown,mkdown,mkdn,mkd,md
 
