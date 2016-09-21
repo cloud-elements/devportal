@@ -1,14 +1,14 @@
 ---
 heading: HireRight
 seo: Error Codes | HireRight | Cloud Elements API Docs
-title: Cloud Elements Query Language
-description: Make database queries using Cloud Elements Query Language.
+title: Error Codes
+description: Cloud Elements Error Codes.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 277
 parent: Back to Element Guides
-order: 45
+order: 40
 sitemap: false
 ---
 
-{% include ceql.md %}
+{% include error-codes.md %}

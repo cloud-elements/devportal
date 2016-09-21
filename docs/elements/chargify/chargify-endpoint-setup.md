@@ -5,7 +5,7 @@ title: Endpoint Setup
 description: Integrate Chargify into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 498
+elementId: 525
 parent: Back to Element Guides
 order: 2
 ---
