@@ -1,11 +1,11 @@
 ---
-heading: Autopilot
-seo: Query Language | Autopilot | Cloud Elements API Docs
+heading: NetSuite 2016 Finance
+seo: Query Language | NetSuite 2016 Finance | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 528
+elementId: 988
 parent: Back to Element Guides
 order: 45
 sitemap: false

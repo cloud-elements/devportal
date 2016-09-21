@@ -1,11 +1,11 @@
 ---
-heading: Autopilot
-seo: Bulk APIs | Autopilot | Cloud Elements API Docs
+heading: NetSuite 2016 Finance
+seo: Bulk APIs | NetSuite 2016 Finance | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 528
+elementId: 988
 parent: Back to Element Guides
 order: 35
 sitemap: false

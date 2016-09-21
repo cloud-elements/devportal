@@ -16,30 +16,30 @@ Follow these steps to set up a Google Sheets Application with the endpoint.  Fur
 Via a web browser, go to [https://console.developers.google.com](https://console.developers.google.com).
 
 1. Click “Create Project”
-![Google Sheets Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI1.png)
+![Google Sheets Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI1.png)
 
 2. Name your project
 
 3. Click create
-![Google Sheets Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI2.png)
+![Google Sheets Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI2.png)
 
 4. Click “APIs and auth”
-![Google Sheets Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI3.png)
+![Google Sheets Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI3.png)
 
 5. Click “Credentials”
 
 6. Click “Create new Client ID”
-![Google Sheets Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI4.png)
+![Google Sheets Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI4.png)
 
 7. Click “Web Application”
 
 8. Click “Configure consent screen”
-![Google Sheets Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI5.png)
+![Google Sheets Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI5.png)
 
 9. Name your product and fill out other information.
 
 10. Click “Save”
-![Google Sheets Connected App step 6](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI6.png)
+![Google Sheets Connected App step 6](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI6.png)
 
 11. Enter your product’s website.
 
@@ -50,11 +50,11 @@ This URL will be in your application’s address space. You will be required to 
 For our example, we’ll use a callback URL of https://www.mycompanyapp.com/oauth2callback.
 
 13. Click “Create Client ID” - This will take you back to the “Credentials” Screen.
-![Google Sheets Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI7.png)
+![Google Sheets Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI7.png)
 
 14. Copy the “Client ID”.
 
 15. Copy the “Client Secret”.
-![Google Sheets Connected App step 8](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleSheetsAPI8.png)
+![Google Sheets Connected App step 8](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI8.png)
 
 Next [create an instance](googlesheets-create-instance.html).
