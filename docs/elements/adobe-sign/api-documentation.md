@@ -1,8 +1,8 @@
 ---
-heading: Adobe eSign
-seo: API Docs | Adobe eSign | Cloud Elements API Docs
+heading: Adobe Sign
+seo: API Docs | Adobe Sign | Cloud Elements API Docs
 title: API Docs
-description: Adobe eSign API Documentation.
+description: Adobe Sign API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 426

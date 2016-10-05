@@ -93,7 +93,7 @@ layout: elements
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/)
 * [![Brandfolder](/assets/img/element-logos/brandfolder.png)Brandfolder](./elements/brandfolder/)
 * [![DocuSign](/assets/img/element-logos/docusign.png)DocuSign](./elements/docusign/)
-* [![Adobe eSign](/assets/img/element-logos/adobeesign.png)Adobe eSign](./elements/adobe-esign/)
+* [![Adobe Sign](/assets/img/element-logos/adobesign.png)Adobe Sign](./elements/adobe-sign/)
 * [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/)
 * [![ServiceMax](/assets/img/element-logos/servicemax.png)ServiceMax](./elements/servicemax/)
 * [![Chargebee](/assets/img/element-logos/chargebee.png)Chargebee](./elements/chargebee/)
