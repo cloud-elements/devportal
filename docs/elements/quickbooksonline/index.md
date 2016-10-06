@@ -19,8 +19,8 @@ sitemap: false
 In order to create a connection to QuickBooks Online the following steps are required:
 
 1. Set up the [endpoint](quickbooksonline-endpoint-setup.html)
-2. Call the `GET /elements/freshbooks/oauth/token` with your QuickBooks Online API key, secret, and siteAddress
-3. Call the `GET /elements/freshbooks/oauth/url` with your QuickBooks Online API key and secret, requestToken, and siteAddress
+2. Call the `GET /elements/quickbooks/oauth/token` with your QuickBooks Online API key, secret, and siteAddress
+3. Call the `GET /elements/quickbooks/oauth/url` with your QuickBooks Online API key and secret, requestToken, and siteAddress
 4. Call the `POST /instances` API to instantiate your QuickBooks Online connected app
 
 #### In Depth
