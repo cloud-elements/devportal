@@ -42,6 +42,8 @@ function(request_body, request_headers, request_path, request_parameters, reques
 
 > __PROTIP:__ ES6 is supported.
 
+> __PROTIP:__ The function parameters are immutable, meaning they cannot be assigned to directly. In order to change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
+
 The `done` function is simply a callback function that should be called to end the function.  This can pass a `continue` object, indicating whether the API request should continue to be processed through Element Builder and any new objects that should overwrite the existing incoming objects to this function.  An example might be:
 
 ```javascript
@@ -51,9 +53,9 @@ done({
 });
 ```
 
-> **NOTE:** By sending `false` as the `continue` value in the pre hook, it stops the execution at this and returns the response
+> **NOTE:** By sending `false` as the `continue` value in the pre hook, it stops the execution at this point and returns the response
 
-> **NOTE:**  In the above example, the `request_vendor_parameters` that are returned will overwrite the request vendor parameters that needs to be sent to the endpoint
+> **NOTE:**  In the above example, the `request_vendor_parameters` that are returned will overwrite the request vendor parameters that need to be sent to the endpoint
 
 # Examples
 
@@ -85,7 +87,7 @@ __Location and Features__
 
 The hooks input field can be found towards the bottom of the panel.  Element Builder supports custom JavaScript in both the Pre-Hook and Post-Hook panels.
 
-To add custom simply select Pre-Hook or Post-Hook and enter your code below.
+To add a custom hook, simply select Pre-Hook or Post-Hook and enter your code below.
 
 To the left of the code editor, a list of available objects and code samples can be found.  Simply select “Objects” or “Sample Code” to view the contents.
 
