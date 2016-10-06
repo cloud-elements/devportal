@@ -143,6 +143,8 @@ function (trigger, steps, info, done) {
 
 > __PROTIP:__ ES6 is supported.
 
+> __PROTIP:__ The function parameters are immutable, meaning they cannot be assigned to directly. In order to change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
+
 Example `trigger` object:
 
 ```json
