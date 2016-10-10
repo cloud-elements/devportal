@@ -42,6 +42,23 @@ Unfortunately, this is a *very* difficult question to answer.  That being said, 
 ## **Can I use external Javascript libraries in my Javascript?**
 Some external Javascript libraries are supported.  For the most up-to-date list, or to request a new library be supported, contact [Cloud Elements Support](mailto:support@cloud-elements.com).
 
+## **How can I monitor for errors that occur in my formula?**
+You can set up a formula instance to send notifications for any errors via email or webhooks. This is done by setting the optional `notification.email` and/or `notification.webhook.url` settings when creating or updating the formula instance. You can do this via the formula instances UI or API. Both fields can be set to a single value or a comma separated list. The formula instances API payload should look like this:
+
+```json
+{
+    "name": "Formula Instance Name",
+    "active": true,
+    "configuration": {
+        "<key>": "<value>"
+    },
+    "settings": {
+        "notification.email": "email1@test.com, email2@test.com",
+        "notification.webhook.url": "http://listener.com"
+    }
+}
+```
+
 ## **Can I do file uploads and downloads in a formula?**
 Yes.
 
