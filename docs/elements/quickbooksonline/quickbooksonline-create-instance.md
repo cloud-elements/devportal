@@ -204,3 +204,33 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+
+#### QuickBooks Quick Provision
+
+It is now possible to directly provision a Quickbooks instance via API if the data for all necessary fields is available. This means that it is not required to go through the OAuth flow if the OAuth info is already available.
+
+For example:
+
+```json
+{
+  "element": {
+    "key": "quickbooks"
+  },
+  "configuration": {
+    "oauth.callback.url":"<INSERT_CALLBACK_URL>",
+    "quickbooks.datasource": "<INSERT_DATASOURCE>",
+    "oauth.user.refresh_interval": "<INSERT_REFRESH_INTERVAL>",
+    "quickbooks.realm.id" : "<INSERT_REALM_ID>",
+    "oauth.user.token":"<INSERT_USER_TOKEN>",
+    "oauth.user.token.secret":"<INSERT_USER_TOKEN_SECRET>",
+    "oauth.api.key": "<INSERT_API_KEY>",
+    "oauth.api.secret": "<INSERT_API_SECRET>",
+    "oauth.user.refresh_time":"<INSERT_REFRESH_TIME>"
+  },
+  "tags": [
+    "QBO Token"
+  ],
+  "name": "QBO Token",
+  "externalAuthentication": "initial"
+}
+```
