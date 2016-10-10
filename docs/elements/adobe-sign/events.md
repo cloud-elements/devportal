@@ -1,8 +1,8 @@
 ---
-heading: Adobe eSign
-seo: Events | Adobe eSign | Cloud Elements API Docs
+heading: Adobe Sign
+seo: Events | Adobe Sign | Cloud Elements API Docs
 title: Events
-description: Enable Adobe eSign events for your application.
+description: Enable Adobe Sign events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 426
@@ -12,7 +12,7 @@ order: 30
 
 ## Events
 
-Cloud Elements supports polling events for Adobe eSign.
+Cloud Elements supports polling events for Adobe Sign.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 

@@ -34,6 +34,8 @@ function (originalObject, transformedObject, fromVendor, done) {
 
 > __PROTIP:__ ES6 is supported.
 
+> __PROTIP:__ The function parameters are immutable, meaning they cannot be assigned to directly. In order to change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
+
 The `done` function is simply a callback function that should be called to terminate the given step.  For `script` type steps, this `done` callback takes a Javascript object whereas for `filter` or `notification` steps, the `done` callback just takes a `boolean`.
 
 ### Examples

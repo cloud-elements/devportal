@@ -1,6 +1,6 @@
 ---
-heading: Adobe eSign
-seo: Create Instance | Adobe eSign | Cloud Elements API Docs
+heading: Adobe Sign
+seo: Create Instance | Adobe Sign | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance
 
-Adobe eSign is an eSignature Platform. When you provision an instance, your app will have access to the different functionality offered by the Adobe eSign platform.
+Adobe Sign is an Signature Platform. When you provision an instance, your app will have access to the different functionality offered by the Adobe Sign platform.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -51,7 +51,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your Adobe eSign Element, use the /instances API.
+To provision your Adobe Sign Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -71,7 +71,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Adobe eSign is "adobe-esign".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Adobe Sign is "adobe-esign".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
@@ -117,7 +117,7 @@ Below is a successful JSON response:
   "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
   "element": {
     "id": 22,
-    "name": "Adobe eSign",
+    "name": "Adobe Sign",
     "key": "adobe-esign",
     "description": "The future of business is digital. Adobe Esign helps businesses of all sizes easily and securely sign, send, and manage documents in the cloud, with unmatched availability and legal enforceability.",
     "image": "elements/provider_adobeesign.png",
