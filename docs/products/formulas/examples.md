@@ -403,3 +403,5 @@ Below are some JSON examples of all of the different types of triggers and steps
 ```
 
 > **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`. The args can be accessed in the sub-formula using `trigger.args`.
+
+> **NOTE:** If the sub-formula requires variables to be set, then those variables must be set in the parent formula instance. Create variables in the parent formula that match exactly with the sub-formula variables in order for those to be populated correctly upon running the sub-formula.
