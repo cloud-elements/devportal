@@ -1,0 +1,13 @@
+---
+heading: Act Essentials
+seo: API Docs | Act Essentials | Cloud Elements API Docs
+title: API Docs
+description: Act Essentials API Documentation.
+layout: apidocs
+breadcrumbs: /docs/elements.html
+elementId: 1160
+parent: Back to Element Guides
+order: 90
+---
+
+{% include swagger.html %}
