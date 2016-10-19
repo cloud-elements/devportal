@@ -140,6 +140,7 @@ This instance.json file must be included with your instance request.  Please fil
   "providerData": {
     "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
     "realmId": "<REALMID_RETURNED_IN_OAUTH_EXCHANGE>",
+    "oauth_verifier": "<OAUTH_VERIFIER_RETURNED_IN_OAUTH_EXCHANGE>",
     "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>",
     "state": "quickbooks",
     "dataSource": "<RETURNED_IN_OAUTH_EXCHANGE>"
