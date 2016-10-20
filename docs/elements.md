@@ -98,6 +98,7 @@ layout: elements
 * [![DocuSign](/assets/img/element-logos/docusign.png)DocuSign](./elements/docusign/)
 * [![Adobe Sign](/assets/img/element-logos/adobesign.png)Adobe Sign](./elements/adobe-sign/)
 * [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/)
+* [![FieldAware](/assets/img/element-logos/fieldaware.png)FieldAware](./elements/fieldaware/)
 * [![ServiceMax](/assets/img/element-logos/servicemax.png)ServiceMax](./elements/servicemax/)
 * [![Chargebee](/assets/img/element-logos/chargebee.png)Chargebee](./elements/chargebee/)
 * [![Chargify](/assets/img/element-logos/chargify.png)Chargify](./elements/chargify/)

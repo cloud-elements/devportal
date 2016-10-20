@@ -111,7 +111,9 @@ __oauth_verifier__
 __realmId__
 __dataSource__
 
-`http://demonstrab.ly/?state=quickbooks&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&realmId=12345678910&dataSource=QBO`
+```bash
+http://demonstrab.ly/?state=quickbooks&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&realmId=12345678910&dataSource=QBO
+```
 
 These values will be used to create an Instance. An example of this process along with sample JSON will be shown in the next section.
 
