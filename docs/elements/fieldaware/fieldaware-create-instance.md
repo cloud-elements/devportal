@@ -41,7 +41,7 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "fieldawarev2"
   },
   "configuration": {
-    "api_key":"<INSERT_FIELDAWARE_API_KEY>"
+    "api_key": "<INSERT_FIELDAWARE_API_KEY>"
   },
   "tags": [
     "<INSERT_TAGS>"

@@ -32,6 +32,7 @@ instance JSON with polling events enabled:
     "apikey.user.name":  "<INSERT_PARDOT_USERNAME>",
     "apikey.user.password": "<INSERT_PARDOT_PASSWORD>",
     "apikey.user.key": "<INSERT_PARDOT_API_USER_KEY>",
+    "provider.version": "4",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
   },
