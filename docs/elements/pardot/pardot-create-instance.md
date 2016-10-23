@@ -46,7 +46,8 @@ This instance.json file must be included with your instance request.  Please fil
   "configuration": {
     "apikey.user.name":  "<INSERT_PARDOT_USERNAME>",
     "apikey.user.password": "<INSERT_PARDOT_PASSWORD>",
-    "apikey.user.key": "<INSERT_PARDOT_API_USER_KEY>"
+    "apikey.user.key": "<INSERT_PARDOT_API_USER_KEY>",
+    "provider.version": "4"
   },
   "tags": [
     "<INSERT_TAGS>"
