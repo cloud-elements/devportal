@@ -20,6 +20,13 @@ That being said, our Console UI leverages those APIs for you, so sometimes it ca
 
 ![ExecutionsScreen](/assets/img/formulas/executions.gif)
 
+The `GET /formulas/instances/executions/{executionId}/errors` API allows you to retrieve errors for a formula instance execution.
+This API returns any steps that failed and the step execution value containing the error message.
+
+This can also be accessed via our Console UI within the "Executions" Screen:
+
+![ExecutionErrorsScreen](https://cloud.githubusercontent.com/assets/7445993/19490597/037c8d34-952d-11e6-8c96-c2280ff329a2.gif)
+
 ## **My formula is not running.**
 First off, that's not a question.  Secondly, if your formula is not running, check the following:
 
