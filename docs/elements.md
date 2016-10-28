@@ -105,5 +105,6 @@ layout: elements
 * [![Expensify](/assets/img/element-logos/expensify.png)Expensify](./elements/expensify/)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
+* [![QuickBase](/assets/img/element-logos/quickbase.png)QuickBase](./elements/quickbase/)
 * [![SQLServer](/assets/img/element-logos/sqlserver.png)SQLServer](./elements/sqlserver/)
 * [![PostgreSQL](/assets/img/element-logos/postgresql.png)PostgreSQL](./elements/postgresql/)
