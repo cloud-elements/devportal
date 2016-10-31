@@ -38,7 +38,8 @@ instance JSON with polling events enabled:
     "oauth.callback.url": "www.samplecallbackurl.com",
     "oauth.scope": "contacts-rw+offline",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.urls": "contacts|accounts"
   },
   "tags": [
     "<Add_Your_Tag>"

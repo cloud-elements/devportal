@@ -17,7 +17,7 @@ In order to enable polling, add these extra configurations to your instance JSON
 ```JSON
 "event.notification.enabled": "true",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.configuration": "<SEE_BELOW>"
+"event.poller.urls": "bill-payments|bills|classes|credit-memos|credit-terms|currencies|customers|employees|invoices|journal-entries|ledger-accounts|payment-methods|payments|products|purchase-orders|refund-receipts|sales-receipts|tax-codes|tax-rates|time-activities|vendor-credits|vendors"
 ```
 
 instance JSON with polling events enabled:
@@ -149,7 +149,8 @@ This instance.json file must be included with your instance request.  Please fil
     "oauth.api.secret": "<INSERT_QUICKBOOKS_API_SECRET>",
     "oauth.callback.url": "<SAME CALLBACK URL USED IN STEP 2>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.urls": "bill-payments|bills|classes|credit-memos|credit-terms|currencies|customers|employees|invoices|journal-entries|ledger-accounts|payment-methods|payments|products|purchase-orders|refund-receipts|sales-receipts|tax-codes|tax-rates|time-activities|vendor-credits|vendors"
   },
   "tags": [
     "<INSERT_TAGS>"

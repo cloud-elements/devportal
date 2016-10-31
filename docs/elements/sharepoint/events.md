@@ -38,7 +38,8 @@ instance JSON with polling events enabled:
     "sharepoint.site.address": "<INSERT_SHAREPOINT_SITE_ADDRESS_NAME>",
     "document.tagging": false,
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.urls": "documents"
   },
   "tags": [
     "<INSERT_TAGS>"

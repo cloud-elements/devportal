@@ -12,14 +12,14 @@ order: 25
 
 ## Events
 
-In order to enable polling, add these extra configurations to your instance JSON:
+In order to enable events, add these extra configurations to your instance JSON:
 
 ```JSON
 "event.notification.enabled": "true",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
-instance JSON with polling events enabled:
+instance JSON with webhook events enabled:
 
 ```json
 {

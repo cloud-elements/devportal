@@ -36,6 +36,7 @@ instance JSON with polling events enabled:
     "password": "<INSERT_CLOSE_IO_PASSWORD>",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "polling",
     "event.poller.configuration": {
       "contacts": {
         "url": "/hubs/crm/contacts?where=date_updated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSSSSSXXX}'",
@@ -96,7 +97,10 @@ This instance.json file must be included with your instance request.  Please fil
   },
   "configuration": {
     "username": "<INSERT_CLOSE_IO_API_KEY>",
-    "password": "<INSERT_CLOSE_IO_PASSWORD>"
+    "password": "<INSERT_CLOSE_IO_PASSWORD>",
+    "event.notification.enabled": "true",
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "webhook",
   },
   "tags": [
     "<INSERT_TAGS>"

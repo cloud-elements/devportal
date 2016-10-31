@@ -20,7 +20,8 @@ In order to enable polling, add these two extra configurations to your instance 
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.urls": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -38,7 +39,9 @@ instance JSON with polling events enabled:
     "oauth.api.key": "<Insert_Client_ID>",
     "oauth.api.secret": "<Insert_Client_Secret>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "polling",
+    "event.poller.urls": "<INSERT_OBJECTS_YOU_WISH_TO_POLL_SEPARATED_BY_A_|_>" // Account|Contact
   },
   "tags": [
     "<Add_Your_Tag>"
@@ -89,7 +92,9 @@ The following JSON may be used to create a Salesforce Instance with webhooks ena
     "oauth.api.key": "<Insert_Client_ID>",
     "oauth.api.secret": "<Insert_Client_Secret>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "webhook",
+    "event.objects": "<INSERT_COMMA_SEPARATED_LIST_OF_OBJECTS_e.g_Account,Contact>"
   },
   "tags": [
     "<Add_Your_Tag>"

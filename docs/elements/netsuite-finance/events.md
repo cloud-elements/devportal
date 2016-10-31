@@ -20,7 +20,7 @@ In order to enable polling, add these extra configurations to your instance JSON
 "event.poller.configuration": "<SEE_BELOW>"
 ```
 
-### CRM
+NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
 instance JSON with polling events enabled:
 
