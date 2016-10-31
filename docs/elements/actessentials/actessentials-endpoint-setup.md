@@ -5,24 +5,22 @@ title: Endpoint Setup
 description: Integrate Act Essentials into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 1160
+elementId: 1251
 parent: Back to Element Guides
 order: 2
 ---
+
 ## Endpoint Setup
 
+Follow these instructions to create a new Act Essentials Connected App.
 
-Follow these instructions to create a new Act Essentials Developer and API Key.
+* Sign up for a [Developer Plan](https://actessentials.3scale.net/)
+![Act Essentials Connected App step 1](img/actessentialsoauth1.png)
 
-* Get your development key
-You need a development key to send with every API request. [Get my development key](http://actcloud.3scale.net/)
+* Complete Form
+![Act Essentials Connected App step 2](img/actessentialsoauth2.png)
 
-* Get your API key
-To authenticate as a Act! Essentials user, you need to use an API key. You'll also be sending this along on every API request. [Get my API key](https://mycloud.act.com/#/account/integration)
-
-* Develop
-You can now authenticate and develop against the Act! Essentials API!
-
-For more information please refer to the [ACT! Essentials API Docs](https://mycloud.act.com/act/).
+* Under API Credentials > Edit App to input the OAuth Redirect URL
+![Act Essentials Connected App step 3](img/actessentialsoauth3.png)
 
 Next [create an instance](actessentials-create-instance.html).

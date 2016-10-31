@@ -5,7 +5,7 @@ title: Overview
 description: Integrate Act Essentials into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 1160
+elementId: 1251
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -19,7 +19,8 @@ sitemap: false
 In order to create a connection to Act Essentials the following steps are required:
 
 1. Set up the [endpoint](actessentials-endpoint-setup.html)
-2. Call the `POST /instances` API to instantiate your Act Essentials connected app
+2. Call the `GET /elements/actessentialsoauth/oauth/url` with your Adobe Sign API key and secret
+3. Call the `POST /instances` API to instantiate your Act Essentials connected app
 
 #### In Depth
 
