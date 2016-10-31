@@ -12,15 +12,11 @@ order: 30
 
 ## Events
 
-There are no extra configurations needed to enable ConnectWise Help Desk events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-ConnectWise Help Desk Files and Folders are currently supported within the Events Framework.
-
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 ##### Help Desk
@@ -38,7 +34,7 @@ instance JSON with polling events enabled:
     "helpdesk.connectwise.server.url": "<INSERT_CONNECTWISE_SERVER_URL>",
     "helpdesk.connectwise.company": "<INSERT_CONNECTWISE_COMPANY>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

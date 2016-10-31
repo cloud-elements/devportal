@@ -83,7 +83,7 @@ In order to enable events, add these two extra configurations to your instance J
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -101,7 +101,7 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<INSERT_BOX_CLIENT_SECRET>",
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

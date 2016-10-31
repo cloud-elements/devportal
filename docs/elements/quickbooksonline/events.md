@@ -12,13 +12,12 @@ order: 30
 
 ## Events
 
-There are no extra configurations with the endpoint needed to enable QuickBooks Online events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -150,7 +149,7 @@ This instance.json file must be included with your instance request.  Please fil
     "oauth.api.secret": "<INSERT_QUICKBOOKS_API_SECRET>",
     "oauth.callback.url": "<SAME CALLBACK URL USED IN STEP 2>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

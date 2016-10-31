@@ -14,11 +14,11 @@ order: 30
 
 Cloud Elements supports webhook events for Autopilot.
 
-In order to enable webhook, add these two extra configurations to your instance JSON:
+In order to enable webhooks, add these extra configurations to your instance JSON:
 
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with webhook events enabled:
@@ -31,7 +31,7 @@ instance JSON with webhook events enabled:
   "configuration": {
     "api.key":  "<INSERT_AUTOPILOT_API_KEY>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

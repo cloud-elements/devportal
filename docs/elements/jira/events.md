@@ -68,7 +68,7 @@ To provision your JIRA Element with webhooks enabled, use the following JSON whe
     "jira.password": "<INSERT_JIRA_PASSWORD>",
     "jira.api.url": "<INSERT_JIRA_SUBDOMAIN_URL>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

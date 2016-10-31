@@ -12,13 +12,12 @@ order: 30
 
 ## Events
 
-Cloud Elements supports polling events for Autotask.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -29,11 +28,43 @@ instance JSON with polling events enabled:
     "key": "autotaskcrm"
   },
   "configuration": {
-    "crm.autotask.username":  "<INSERT_AUTOTASK_USERNAME>",
+    "crm.autotask.username": "<INSERT_AUTOTASK_USERNAME>",
     "crm.autotask.password": "<INSERT_AUTOTASK_PASSWORD>",
     "crm.autotask.server.url": "<INSERT_AUTOTASK_SERVER_URL>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "accounts": {
+        "url": "/hubs/crm/accounts?where=lastActivityDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastActivityDate",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDate",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      },
+      "contacts": {
+        "url": "/hubs/crm/contacts?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastModifiedDate",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDate",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      },
+      "tasks": {
+        "url": "/hubs/crm/tasks?where=lastActivityDateTime>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastActivityDateTime",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDateTime",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"

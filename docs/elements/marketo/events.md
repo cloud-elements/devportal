@@ -16,11 +16,11 @@ Cloud Elements supports both polling and webhook events for Marketo.
 
 ### Polling
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+In order to enable polling, add these extra configurations to your instance JSON:
 
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -40,7 +40,7 @@ instance JSON with polling events enabled:
       "marketo.identity.url":  "<INSERT_YOUR_IDENTITY_URL>",
       "marketo.rest.url": "<INSERT_YOUR_REST_URL>",
       "event.notification.enabled": "true",
-      "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+      "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -126,7 +126,7 @@ This instance.json file must be included with your instance request.  Please fil
       "marketo.identity.url":  "<INSERT_YOUR_IDENTITY_URL>",
       "marketo.rest.url": "<INSERT_YOUR_REST_URL>",
       "event.notification.enabled": "true",
-      "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+      "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

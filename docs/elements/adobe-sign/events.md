@@ -14,11 +14,12 @@ order: 30
 
 Cloud Elements supports polling events for Adobe Sign.
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+In order to enable polling, add these extra configurations to your instance JSON:
 
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -37,11 +38,17 @@ instance JSON with polling events enabled:
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.scope": "agreement_read:account agreement_send:account agreement_write:account library_read:account library_write:account user_login:account user_read:account user_write:account widget_read:account widget_write:account workflow_read:account workflow_write:account",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
-  },
-  "tags": [
-    "<INSERT_TAGS>"
-  ],
-  "name": "<INSERT_INSTANCE_NAME>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "agreementAssetEvents": {
+        "url": "/hubs/esignature/agreementAssetEvents?where=startDate='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "agreementAssetId"
+      }
+    },
+    "tags": [
+      "<INSERT_TAGS>"
+    ],
+    "name": "<INSERT_INSTANCE_NAME>"
+  }
 }
 ```

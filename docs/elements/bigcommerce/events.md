@@ -12,28 +12,59 @@ order: 30
 
 ## Events
 
-Cloud Elements supports polling events for BigCommerce.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
 
 ```json
 {
-  "element" : {
-    "key" : "bigcommerce"
+  "element": {
+    "key": "bigcommerce"
   },
-  "configuration" : {
+  "configuration": {
     "store.url": "https://store-{INSERT_STORE_HASH}.mybigcommerce.com/api/v2/",
     "username": "<INSERT_BIGCOMMERCE_USERNAME>",
     "password": "<INSERT_BIGCOMMERCE_API_KEY>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "orders": {
+        "url": "/hubs/ecommerce/orders?where=min_date_modified='${date:EEE, dd MMM yyyy HH:mm:ss Z}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "date_modified",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateField": "date_created",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z"
+        }
+      },
+      "products": {
+        "url": "/hubs/ecommerce/products?where=min_date_modified='${date:EEE, dd MMM yyyy HH:mm:ss Z}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "date_modified",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateField": "date_created",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z"
+        }
+      },
+      "customers": {
+        "url": "/hubs/ecommerce/customers?where=min_date_modified='${date:EEE, dd MMM yyyy HH:mm:ss Z}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "date_modified",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateField": "date_created",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"

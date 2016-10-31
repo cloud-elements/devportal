@@ -12,15 +12,11 @@ order: 25
 
 ## Events
 
-Cloud Elements supports polling events for WooCommerce.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-### Polling
-
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -36,7 +32,7 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<INSERT_WOOCOMMERCE_CLIENT_SECRET>",
     "store.url": "<INSERT_WOOCOMMERCE_STORE_URL>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<Add_Your_Tag>"

@@ -16,9 +16,10 @@ Cloud Elements supports polling events for Act Essentials.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -33,7 +34,7 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<INSERT_ACT_ESSENTIALS_API_SECRET>",
     "oauth.callback.url": "<INSERT_OAUTH_CALLBACK_URL>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>",
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
     "event.poller.configuration": {
       "campaigns": {
         "url": "/hubs/crm/campaigns?where=sendDate>'${date:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",

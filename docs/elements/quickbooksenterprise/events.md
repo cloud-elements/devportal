@@ -12,13 +12,12 @@ order: 30
 
 ## Events
 
-There are no extra configurations with the endpoint needed to enable QuickBooks Enterprise events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -29,10 +28,23 @@ instance JSON with polling events enabled:
     "key": "quickbooksonprem"
   },
   "configuration": {
-    "app.name":"<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
-	  "host.ip":"<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
+    "app.name": "<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
+    "host.ip": "<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "documents": {
+        "url": "/hubs/documents/changes",
+        "idField": "id",
+        "filterByUpdatedDate": true,
+        "datesConfiguration": {
+          "updatedDateField": "modifiedDate",
+          "updatedDateFormat": "milliseconds",
+          "createdDateField": "createdDate",
+          "createdDateFormat": "milliseconds"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"

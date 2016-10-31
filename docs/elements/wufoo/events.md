@@ -18,7 +18,7 @@ In order to enable webhooks, add these two extra configurations to your instance
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -33,7 +33,7 @@ instance JSON with polling events enabled:
     "password": "<INSERT_WUFOO_PASSWORD>",
     "site": "<INSERT_WUFOO_SUBDOMAIN>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

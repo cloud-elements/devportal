@@ -12,15 +12,14 @@ order: 25
 
 ## Events
 
-Cloud Elements supports polling events for Zendesk.
-
 ### Polling
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+In order to enable polling, add these extra configurations to your instance JSON:
 
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -39,7 +38,20 @@ instance JSON with polling events enabled:
     "oauth.callback.url": "https://www.my_cool_app.com",
     "zendesk.subdomain": "<INSERT_ZENDESK_SUB_DOMAIN>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "users": {
+        "url": "/hubs/helpdesk/users",
+        "idField": "id",
+        "pageSize": 100,
+        "datesConfiguration": {
+          "updatedDateField": "updated_at",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "createdDateField": "created_at",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -53,6 +65,31 @@ instance JSON with polling events enabled:
 After you create an instance with webhooks enabled, your app will receive event notifications from Zendesk based on our default settings
 
 Customization is an option based on your specific needs. See customization instructions below.
+
+#### Webhook JSON
+
+```json
+{
+  "element": {
+    "key": "zendesk"
+  },
+  "providerData": {
+    "code": "Code on Return the URL"
+  },
+  "configuration": {
+    "oauth.api.key": "<INSERT_ZENDESK_UNIQUE_IDENTIFIER>",
+    "oauth.api.secret": "<INSERT_ZENDESK_CLIENT_SECRET>",
+    "oauth.callback.url": "https://www.my_cool_app.com",
+    "zendesk.subdomain": "<INSERT_ZENDESK_SUB_DOMAIN>",
+    "event.notification.enabled": "true",
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+  },
+  "tags": [
+    "<INSERT_TAGS>"
+  ],
+  "name": "<INSERT_INSTANCE_NAME>"
+}
+```
 
 NOTE: To begin all changes to tickets, your app will be notified.
 
