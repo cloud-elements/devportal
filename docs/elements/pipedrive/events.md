@@ -15,14 +15,15 @@ Cloud Elements supports both Polling and Webhook events for Pipedrive.
 
 ### Polling
 
-There are no extra configurations needed to enable Pipedrive events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
+
+NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
 instance JSON with polling events enabled:
 
@@ -35,7 +36,40 @@ instance JSON with polling events enabled:
     "pipedrive.email": "<INSERT_PIPEDRIVE_EMAIL>",
     "pipedrive.password": "<INSERT_PIPEDRIVE_PASSWORD>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "polling",
+    "event.poller.configuration": {
+      "accounts": {
+        "url": "/hubs/crm/accounts?where=update_time>'${date:yyyy-MM-dd HH:mm:ss}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "update_time",
+          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+          "createdDateField": "add_time",
+          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+        }
+      },
+      "contacts": {
+        "url": "/hubs/crm/contacts?where=update_time>'${date:yyyy-MM-dd HH:mm:ss}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "update_time",
+          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+          "createdDateField": "add_time",
+          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+        }
+      },
+      "opportunities": {
+        "url": "/hubs/crm/opportunities?where=update_time>'${date:yyyy-MM-dd HH:mm:ss}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "update_time",
+          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+          "createdDateField": "add_time",
+          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -84,7 +118,10 @@ This instance.json file must be included with your instance request.  Please fil
   },
   "configuration": {
     "pipedrive.email": "<INSERT_PIPEDRIVE_EMAIL>",
-    "pipedrive.password": "<INSERT_PIPEDRIVE_PASSWORD>"
+    "pipedrive.password": "<INSERT_PIPEDRIVE_PASSWORD>",
+    "event.notification.enabled": "true",
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.vendor.type": "webhook"
   },
   "tags": [
     "<INSERT_TAGS>"

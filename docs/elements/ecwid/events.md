@@ -47,7 +47,7 @@ In order to enable webhooks, add these two extra configurations to your instance
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with webhook events enabled:
@@ -62,7 +62,7 @@ instance JSON with webhook events enabled:
     "ecwid.product.key": "<INSERT_API_PRODUCT_KEY>",
     "ecwid.store.id": "<INSERT_STORE_ID>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<Add_Your_Tag>"

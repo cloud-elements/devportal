@@ -12,15 +12,11 @@ order: 30
 
 ## Events
 
-There are no extra configurations needed to enable Eloqua Help Desk events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-Eloqua Help Desk Files and Folders are currently supported within the Events Framework.
-
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -38,7 +34,7 @@ instance JSON with polling events enabled:
     "oauth.api.key": "<INSERT_ELOQUA_CLIENT_ID>",
     "oauth.api.secret": "<INSERT_ELOQUA_CLIENT_SECRET>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<add your tag>"

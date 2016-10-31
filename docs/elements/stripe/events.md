@@ -12,13 +12,12 @@ order: 30
 
 ## Events
 
-There are no extra configurations needed to enable Stripe events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -29,10 +28,16 @@ instance JSON with polling events enabled:
     "key": "stripe"
   },
   "configuration": {
-    "username":  "<INSERT_STRIPE_API_KEY>",
+    "username": "<INSERT_STRIPE_API_KEY>",
     "password": "<INSERT_STRIPE_PASSWORD>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "events": {
+        "url": "/hubs/payment/events?where=created >'${epoch:s}'",
+        "idField": "id"
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"

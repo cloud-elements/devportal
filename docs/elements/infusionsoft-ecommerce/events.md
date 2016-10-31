@@ -12,13 +12,12 @@ order: 30
 
 ## Events
 
-There are no extra configurations needed to enable Infusionsoft eCommerce events.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 ### eCommerce
@@ -39,7 +38,19 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<INSERT_INFUSIONSOFT_CLIENT_SECRET>",
     "document.tagging": false,
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "orders": {
+        "url": "/hubs/ecommerce/orders?where=since='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "modification_date",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+          "createdDateField": "creation_date",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+        }
+      }
+    }
   },
   "tags": [
     "<Add_Your_Tag>"

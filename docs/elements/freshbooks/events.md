@@ -12,13 +12,11 @@ order: 30
 
 ## Events
 
-FreshBooks customers, invoices, and payments are currently supported within the Events Framework.
+In order to enable events, add these extra configurations to your instance JSON:
 
-In order to enable events, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with events enabled:
@@ -38,7 +36,7 @@ instance JSON with events enabled:
   	"oauth.api.secret":"<INSERT_FRESHBOOKS_API_SECRET>",
     "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

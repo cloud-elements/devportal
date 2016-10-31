@@ -50,7 +50,7 @@ Add the following two configurations to the `instance.json`:
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -68,7 +68,7 @@ instance JSON with polling events enabled:
 		"oauth.api.secret": "<INSERT_ZENDESK_CLIENT_SECRET>",
 		"site.id": "<FROM_OAUTH_EXCHANGE>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

@@ -12,16 +12,15 @@ order: 30
 
 ## Events
 
-Cloud Elements supports polling events for Autotask.
+In order to enable polling, add these extra configurations to your instance JSON:
 
-Autotask Help Desk Files and Folders are currently supported within the Events Framework.
-
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.configuration": "<SEE_BELOW>"
 ```
+
+NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
 instance JSON with polling events enabled:
 
@@ -31,11 +30,43 @@ instance JSON with polling events enabled:
     "key": "autotaskhelpdesk"
   },
   "configuration": {
-    "helpdesk.autotask.username":  "<INSERT_AUTOTASK_USERNAME>",
+    "helpdesk.autotask.username": "<INSERT_AUTOTASK_USERNAME>",
     "helpdesk.autotask.password": "<INSERT_AUTOTASK_PASSWORD>",
     "helpdesk.autotask.server.url": "<INSERT_AUTOTASK_SERVER_URL>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.poller.configuration": {
+      "attachments": {
+        "url": "/hubs/helpdesk/attachments?where=lastActivityDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastActivityDate",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDate",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      },
+      "comments": {
+        "url": "/hubs/helpdesk/comments?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastModifiedDate",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDate",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      },
+      "incidents": {
+        "url": "/hubs/helpdesk/tasks?where=lastActivityDateTime>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "lastActivityDateTime",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "createdDateField": "createDateTime",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"

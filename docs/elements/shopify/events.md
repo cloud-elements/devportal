@@ -12,15 +12,11 @@ order: 25
 
 ## Events
 
-Cloud Elements supports polling events for Shopify.
+In order to enable events, add these extra configurations to your instance JSON:
 
-### Polling
-
-In order to enable polling, add these two extra configurations to your instance JSON:
-
-```
+```JSON
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -40,7 +36,7 @@ instance JSON with polling events enabled:
     "shopify.site.address":"<INSERT_SHOPIFY_USER_SHOP_NAME>",
     "oauth.scope":"write_orders,write_products,write_customers",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<Add_Your_Tag>"

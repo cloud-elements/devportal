@@ -35,7 +35,7 @@ In order to enable events, add these two extra configurations to your instance J
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
 
 instance JSON with polling events enabled:
@@ -50,7 +50,7 @@ instance JSON with polling events enabled:
     "password": "<INSERT_HELPSCOUT_PASSWORD>",
     "mailbox.name": "<INSERT_HELPSCOUT_MAILBOX>",
     "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACL_URL>"
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"
