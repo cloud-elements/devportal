@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Wufoo supports webhook events.
 
 In order to enable webhooks, add these two extra configurations to your instance JSON:

@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 JIRA requires an extra configurations to the endpoint in order to enable webhooks.
 
 ### Step 1. Endpoint setup

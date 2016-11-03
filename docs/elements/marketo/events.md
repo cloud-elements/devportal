@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports both polling and webhook events for Marketo.
 
 ### Polling

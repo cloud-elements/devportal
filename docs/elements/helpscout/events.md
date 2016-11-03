@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports webhook events for Help Scout.
 
 Follow these steps to setup webhooks.

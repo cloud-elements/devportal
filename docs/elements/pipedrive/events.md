@@ -11,6 +11,9 @@ order: 30
 ---
 
 ## Events
+
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports both Polling and Webhook events for Pipedrive.
 
 ### Polling
