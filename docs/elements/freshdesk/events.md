@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Freshdesk requires an extra specification to be entered once an Element instance has been created. The Freshdesk Instance ID must be 64 base encoded, then included in the webhook callback URL. This document will walk you through the entire workflow:
 
 * create an instance

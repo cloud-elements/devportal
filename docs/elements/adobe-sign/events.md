@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports polling events for Adobe Sign.
 
 In order to enable polling, add these extra configurations to your instance JSON:

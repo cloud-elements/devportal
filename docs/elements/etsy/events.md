@@ -12,6 +12,8 @@ order: 25
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports polling events for Etsy.
 
 ### Polling

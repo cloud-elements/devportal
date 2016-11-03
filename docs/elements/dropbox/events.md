@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Dropbox supports webhooks.  Follow these directions to configure your application to accept webhooks.
 
 ### Endpoint Setup

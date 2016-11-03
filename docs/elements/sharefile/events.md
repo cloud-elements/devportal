@@ -12,7 +12,7 @@ order: 30
 
 ## Events
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+{% include polling_and_webhooks_defined.md %}
 
 In order to enable polling, add these extra configurations to your instance JSON:
 

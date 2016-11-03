@@ -12,6 +12,8 @@ order: 30
 
 ### Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports polling and webhook events for DocuSign.
 
 DocuSign Documents and Envelopes are currently supported within the Events Framework.
@@ -38,6 +40,7 @@ instance JSON with polling events enabled:
     "oauth.api.key": "<INSERT_DOCUSIGN_INTEGRATOR_KEY>",
     "docusign.environment": "<INSERT_DOCUSIGN_ENVIRONMENT>",
     "event.notification.enabled": "true",
+    "vendor.event.type": "polling",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [

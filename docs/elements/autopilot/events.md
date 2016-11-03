@@ -12,6 +12,8 @@ order: 30
 
 ## Events
 
+{% include polling_and_webhooks_defined.md %}
+
 Cloud Elements supports webhook events for Autopilot.
 
 In order to enable webhooks, add these extra configurations to your instance JSON:
