@@ -16,7 +16,7 @@ Follow these steps to setup your Salesforce application with the endpoint.
 
 __In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
 
-Via a web browser, login to your Salesforce account:
+Via a web browser, log in to your Salesforce account:
 [https://login.salesforce.com/](https://login.salesforce.com/)
 
 

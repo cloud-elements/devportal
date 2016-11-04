@@ -104,6 +104,7 @@ layout: elements
 * [![Chargify](/assets/img/element-logos/chargify.png)Chargify](./elements/chargify/)
 * [![Expensify](/assets/img/element-logos/expensify.png)Expensify](./elements/expensify/)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/)
+* [![Slack](/assets/img/element-logos/slack.png)Slack](./elements/slack/)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
 * [![QuickBase](/assets/img/element-logos/quickbase.png)QuickBase](./elements/quickbase/)
 * [![SQLServer](/assets/img/element-logos/sqlserver.png)SQLServer](./elements/sqlserver/)
