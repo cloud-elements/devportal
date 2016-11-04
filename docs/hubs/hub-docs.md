@@ -24,6 +24,7 @@ order: 90
 * [![Monitoring](/assets/img/hub-icons/monitoring.png)Monitoring](/docs/hubs/monitoring/)
 * [![ERP](/assets/img/hub-icons/erp.png)ERP](/docs/hubs/erp/)
 * [![FSA](/assets/img/hub-icons/fsa.png)FSA](/docs/hubs/fsa/)
+* [![Collaboration](/assets/img/hub-icons/collaboration.png)Collaboration](/docs/hubs/collaboration/)
 * [![Human Capital](/assets/img/hub-icons/humancapital.png)Human Capital](/docs/hubs/human-capital/)
 * [![Screening](/assets/img/hub-icons/screening.png)Screening](/docs/hubs/screening/)
 * [![General](/assets/img/hub-icons/general.png)General](/docs/hubs/general/)
