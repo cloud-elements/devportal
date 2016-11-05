@@ -148,10 +148,17 @@ function (trigger, steps, info, config, done) {
 
 ### Additional functionality
 
+__Functions__
+
 * `console.log`: Log something from the script. This logged value will be returned in an array called `console`, which will be available to see as a step execution value. Takes an `object` as a parameter.
 * `throw`: Force a script to exit with an error message. The error message will be available to see as a step execution value. Takes a `string` as a parameter.
-* `CE.md5`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
-* `CE.b64`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
+
+__Libraries__
+
+* CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
+ * `CE.md5`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
+ * `CE.b64`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
+* Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 
 ### Examples
 
