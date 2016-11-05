@@ -159,6 +159,7 @@ __Libraries__
  * `CE.md5`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
  * `CE.b64`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
+* Util: The standard Node `util` library. To use, `require` it in your script.
 
 ### Examples
 
