@@ -130,9 +130,10 @@ There are many step types that allow you to write your own custom Javascript.  T
  * @param  trigger The trigger that started this execution
  * @param  steps   The list of steps that have been executed up until this point for this execution and all of their step execution values
  * @param  info    Metadata about this formula
+ * @param  config  The configuration values set on the formula instance (config variables)
  * @param  done    The callback function that you will need to call at the end of your script step
  */
-function (trigger, steps, info, done) {
+function (trigger, steps, info, config, done) {
   // your Javascript will be executed here
 }
 ```
@@ -144,6 +145,23 @@ function (trigger, steps, info, done) {
 > __PROTIP:__ ES6 is supported.
 
 > __PROTIP:__ The function parameters are immutable, meaning they cannot be assigned to directly. In order to change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
+
+### Additional functionality
+
+__Functions__
+
+* `console.log`: Log something from the script. This logged value will be returned in an array called `console`, which will be available to see as a step execution value. Takes an `object` as a parameter.
+* `throw`: Force a script to exit with an error message. The error message will be available to see as a step execution value. Takes a `string` as a parameter.
+
+__Libraries__
+
+* CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
+ * `CE.md5`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
+ * `CE.b64`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
+* Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
+* Util: The standard Node `util` library. To use, `require` it in your script.
+
+### Examples
 
 Example `trigger` object:
 
