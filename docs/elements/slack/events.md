@@ -160,7 +160,7 @@ Below is a successful JSON response:
     "pagination.max": "100",
     "event.vendor.type": "webhooks",
     "oauth.scope": "users:write, users:read, users.profile:read, users.profile:write, search:read, files:read, files:write:user",
-    "oauth.user.token": "xoxp-2190175537-2457252319-99845548065-3df640f4b74a86416895b3f9af42bc2b",
+    "oauth.user.token": "99845548065-3df640f4b74a86416895b3f9af42bc2b",
     "oauth.authorization.url": "https://slack.com/oauth/authorize",
     "event.notification.instance.finder": "",
     "pagination.type": "page",
