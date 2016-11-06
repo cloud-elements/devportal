@@ -5,7 +5,7 @@ title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 39
+elementId: 1359
 parent: Back to Element Guides
 order: 15
 ---
@@ -38,7 +38,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly'
+'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https://www.mycoolapp.com/oauth&state=twitter'
 ```
 
 Response:
@@ -73,7 +73,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_fake_request_token&state=twitter'
+'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https://www.mycoolapp.com/oauth&requestToken=insert_fake_request_token&state=twitter'
 ```
 
 Response:
@@ -96,11 +96,9 @@ After the user successfully authenticates, the provided callback URL is executed
 The parameters that you will need to parse from the callback URL are listed below, along with an example of what the callback URL should look like.
 __oauth_token__
 __oauth_verifier__
-__realmId__
-__dataSource__
 
 ```bash
-http://demonstrab.ly/?state=twitter&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&realmId=12345678910&dataSource=QBO
+https://www.mycoolapp.com/oauth?state=twitter&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk
 ```
 
 These values will be used to create an Instance. An example of this process along with sample JSON will be shown in the next section.
@@ -134,11 +132,8 @@ This instance.json file must be included with your instance request.  Please fil
   },
   "providerData": {
     "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
-    "realmId": "<REALMID_RETURNED_IN_OAUTH_EXCHANGE>",
     "oauth_verifier": "<OAUTH_VERIFIER_RETURNED_IN_OAUTH_EXCHANGE>",
-    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>",
-    "state": "twitter",
-    "dataSource": "<RETURNED_IN_OAUTH_EXCHANGE>"
+    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>"
   },
   "configuration": {
     "oauth.api.key": "<INSERT_QUICKBOOKS_API_KEY>",
@@ -170,27 +165,63 @@ Below is a successful JSON response:
 
 ```json
 {
-    "id": 1234,
-    "name": "test",
-    "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
-    "element": {
-        "id": 1234,
-        "name": "QuickBooks",
-        "key": "twitter",
-        "description": "Run your entire business with QuickBooks. Track your sales and expenses, get paid faster, and even run payroll with it.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have an QuickBooks account, you can create one at QuickBooks Signup",
-        "signupURL": "http://twitter.intuit.com/signup"
+  "id": 1234,
+  "name": "test",
+  "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
+  "element": {
+    "id": 1359,
+    "name": "Twitter",
+    "key": "twitter",
+    "description": "Add a Twitter Instance to connect your existing Twitter account to the Social Hub, allowing you to manage statuses and followers across multiple Social Elements. You will need your Twitter account information to add an instance.",
+    "image": "https://abs.twimg.com/a/1426096855/images/oauth_application.png",
+    "active": false,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "authentication": {
+      "type": "oauth1"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+    "hub": "social",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+  },
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "https://api.twitter.com/1.1",
+    "oauth.api.secret": "API_SECRET",
+    "oauth.token.url": "https://api.twitter.com/oauth/access_token",
+    "oauth.user.token.secret": "API_SECRET",
+    "pagination.max": "100",
+    "event.vendor.type": "polling",
+    "oauth.request.url": "https://api.twitter.com/oauth/request_token",
+    "oauth.user.token": "794566698309472260-XXX",
+    "oauth.authorization.url": "https://api.twitter.com/oauth/authorize",
+    "pagination.type": "page",
+    "event.poller.refresh_interval": "15",
+    "event.notification.callback.url": null,
+    "oauth.request.authorization.type": "query",
+    "oauth.callback.url": "http://localhost:8080/elements/jsp/home.jsp",
+    "oauth.api.key": "API_KEY",
+    "pagination.page.startindex": "0",
+    "event.notification.enabled": "false"
+  },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+    "id": 9723
+  }
 }
 ```
 

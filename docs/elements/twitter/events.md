@@ -5,7 +5,7 @@ title: Events
 description: Enable Twitter events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 39
+elementId: 1359
 parent: Back to Element Guides
 order: 30
 ---
@@ -14,23 +14,33 @@ order: 30
 
 {% include polling_and_webhooks_defined.md %}
 
+Things to be aware of when enabling events for Twitter:
+
+1. There are no updated dates so all `event_types` are `CREATED`
+2. For `statuses` and `users`, there are some things you have to specify the username or screenname
+3. And you can’t query by `created_time` so we are just querying the full thing and then parsing through the response, (potentially super messy)
+
 In order to enable polling, add these extra configurations to your instance JSON:
 
 ```JSON
 "event.notification.enabled": "true",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.urls": "<SEE_BELOW>"
+"event.poller.configuration": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
 
+Twitter Follows the OAuth1 Authorization protocol.
+
+For more information about the Twitter API, please view their [API documentation](https://dev.twitter.com/overview/api).
+
 ### Step 1. Get Elements OAuth Token
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/token
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/token
+* Request Body: None
+* Query Parameters:
 
 * __key__ - twitter
 * __apiKey–__ - the key obtained from registering your app with the provider
@@ -46,7 +56,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly'
+'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https://www.mycoolapp.com/oauth&state=twitter'
 ```
 
 Response:
@@ -62,11 +72,11 @@ Twitter expects a token and secret. These are contained in the response to the i
 
 ### Step 2. Get Elements OAuth URL
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
-Request Body: None
-Query Parameters:
+* HTTP Header: None
+* HTTP Verb: GET
+* Request URL: /elements/{key}/oauth/url
+* Request Body: None
+* Query Parameters:
 
 * __key__ - twitter
 * __apiKey–__ - the key obtained from registering your app with the provider
@@ -81,7 +91,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_fake_request_token&state=twitter'
+'https://api.cloud-elements.com/elements/api-v2/elements/twitter/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=https://www.mycoolapp.com/oauth&requestToken=insert_fake_request_token&state=twitter'
 ```
 
 Response:
@@ -104,10 +114,10 @@ After the user successfully authenticates, the provided callback URL is executed
 The parameters that you will need to parse from the callback URL are listed below, along with an example of what the callback URL should look like.
 __oauth_token__
 __oauth_verifier__
-__realmId__
-__dataSource__
 
-`http://demonstrab.ly/?state=twitter&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&realmId=12345678910&dataSource=QBO`
+```bash
+https://www.mycoolapp.com/oauth?state=twitter&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk
+```
 
 These values will be used to create an Instance. An example of this process along with sample JSON will be shown in the next section.
 
@@ -140,19 +150,75 @@ This instance.json file must be included with your instance request.  Please fil
   },
   "providerData": {
     "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
-    "realmId": "<REALMID_RETURNED_IN_OAUTH_EXCHANGE>",
     "oauth_verifier": "<OAUTH_VERIFIER_RETURNED_IN_OAUTH_EXCHANGE>",
-    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>",
-    "state": "twitter",
-    "dataSource": "<RETURNED_IN_OAUTH_EXCHANGE>"
+    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>"
   },
   "configuration": {
     "oauth.api.key": "<INSERT_QUICKBOOKS_API_KEY>",
     "oauth.api.secret": "<INSERT_QUICKBOOKS_API_SECRET>",
     "oauth.callback.url": "<SAME CALLBACK URL USED IN STEP 2>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.poller.urls": "bill-payments|bills|classes|credit-memos|credit-terms|currencies|customers|employees|invoices|journal-entries|ledger-accounts|payment-methods|payments|products|purchase-orders|refund-receipts|sales-receipts|tax-codes|tax-rates|time-activities|vendor-credits|vendors"
+    "event.poller.configuration": {
+      "direct-messages/received-messages": {
+        "url": "/hubs/social/direct-messages/received-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
+        "idField": "id_str",
+        "datesConfiguration": {
+          "updatedDateField": "created_at",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "updatedDateTimezone": "GMT",
+          "createdDateField": "created_at",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateTimezone": "GMT"
+        }
+      },
+      "direct-messages/sent-messages": {
+        "url": "/hubs/social/direct-messages/sent-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
+        "idField": "id_str",
+        "datesConfiguration": {
+          "updatedDateField": "created_at",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "updatedDateTimezone": "GMT",
+          "createdDateField": "created_at",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateTimezone": "GMT"
+        }
+      },
+      "lists": {
+        "url": "/hubs/social/lists?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
+        "idField": "id_str",
+        "datesConfiguration": {
+          "updatedDateField": "created_at",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "updatedDateTimezone": "GMT",
+          "createdDateField": "created_at",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateTimezone": "GMT"
+        }
+      },
+      "statuses": {
+        "url": "/hubs/social/statuses?where=q='Example Screen Name'",
+        "idField": "id_str",
+        "datesConfiguration": {
+          "updatedDateField": "created_at",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "updatedDateTimezone": "GMT",
+          "createdDateField": "created_at",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateTimezone": "GMT"
+        }
+      },
+      "users": {
+        "url": "/hubs/social/users?where=q='example'",
+        "idField": "id_str",
+        "datesConfiguration": {
+          "updatedDateField": "created_at",
+          "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "updatedDateTimezone": "GMT",
+          "createdDateField": "created_at",
+          "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
+          "createdDateTimezone": "GMT"
+        }
+      }
+    }
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -179,96 +245,65 @@ Below is a successful JSON response:
 
 ```json
 {
-    "id": 1234,
-    "name": "test",
-    "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
-    "element": {
-        "id": 1234,
-        "name": "QuickBooks",
-        "key": "twitter",
-        "description": "Run your entire business with QuickBooks. Track your sales and expenses, get paid faster, and even run payroll with it.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have an QuickBooks account, you can create one at QuickBooks Signup",
-        "signupURL": "http://twitter.intuit.com/signup"
+  "id": 1234,
+  "name": "test",
+  "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
+  "element": {
+    "id": 1359,
+    "name": "Twitter",
+    "key": "twitter",
+    "description": "Add a Twitter Instance to connect your existing Twitter account to the Social Hub, allowing you to manage statuses and followers across multiple Social Elements. You will need your Twitter account information to add an instance.",
+    "image": "https://abs.twimg.com/a/1426096855/images/oauth_application.png",
+    "active": false,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "authentication": {
+      "type": "oauth1"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+    "hub": "social",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+  },
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "https://api.twitter.com/1.1",
+    "oauth.api.secret": "DYLgpG9rFNzW34X0LU4Ik2ZSgvK0rkltOniDKk4GzAy6kqrsXi",
+    "oauth.token.url": "https://api.twitter.com/oauth/access_token",
+    "oauth.user.token.secret": "lPibXGVLtgURx9TwJcstN9dZkGBEriO2VyT7aicXbmWex",
+    "pagination.max": "100",
+    "event.vendor.type": "polling",
+    "oauth.request.url": "https://api.twitter.com/oauth/request_token",
+    "oauth.user.token": "794566698309472260-Ro9v0o4q8HXgmyS5aoOqs2mwQHK3Bga",
+    "oauth.authorization.url": "https://api.twitter.com/oauth/authorize",
+    "pagination.type": "page",
+    "event.poller.refresh_interval": "15",
+    "event.notification.callback.url": null,
+    "oauth.request.authorization.type": "query",
+    "oauth.callback.url": "http://localhost:8080/elements/jsp/home.jsp",
+    "oauth.api.key": "kN7fdmMLD0XMU2Fqvbadww8mi",
+    "event.poller.configuration": "{\"direct-messages/received-messages\":{\"url\":\"/hubs/social/direct-messages/received-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'\",\"idField\":\"id_str\",\"datesConfiguration\":{\"updatedDateField\":\"created_at\",\"updatedDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created_at\",\"createdDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"createdDateTimezone\":\"GMT\"}},\"direct-messages/sent-messages\":{\"url\":\"/hubs/social/direct-messages/sent-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'\",\"idField\":\"id_str\",\"datesConfiguration\":{\"updatedDateField\":\"created_at\",\"updatedDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created_at\",\"createdDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"createdDateTimezone\":\"GMT\"}},\"lists\":{\"url\":\"/hubs/social/lists?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'\",\"idField\":\"id_str\",\"datesConfiguration\":{\"updatedDateField\":\"created_at\",\"updatedDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created_at\",\"createdDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"createdDateTimezone\":\"GMT\"}},\"statuses\":{\"url\":\"/hubs/social/statuses?where=q='Example Screen Name'\",\"idField\":\"id_str\",\"datesConfiguration\":{\"updatedDateField\":\"created_at\",\"updatedDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created_at\",\"createdDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"createdDateTimezone\":\"GMT\"}},\"users\":{\"url\":\"/hubs/social/users?where=q='example'\",\"idField\":\"id_str\",\"datesConfiguration\":{\"updatedDateField\":\"created_at\",\"updatedDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"updatedDateTimezone\":\"GMT\",\"createdDateField\":\"created_at\",\"createdDateFormat\":\"EEE, dd MMM yyyy HH:mm:ss Z\",\"createdDateTimezone\":\"GMT\"}}}",
+    "pagination.page.startindex": "0",
+    "event.notification.enabled": "false"
+  },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+    "id": 9723
+  }
 }
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-
-1. There are no updated dates so all `event_types` are `CREATED`
-2. For `statuses` and `users`, there are some things you have to specify the username or screenname
-3. And you can’t query by `created_time` so we are just querying the full thing and then parsing through the response, (potentially super messy)
-
-{
-    "direct-messages/received-messages": {
-        "url": "/hubs/social/direct-messages/received-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
-        "idField": "id_str",
-        "datesConfiguration": {
-            "updatedDateField": "created_at",
-            "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "updatedDateTimezone": "GMT",
-            "createdDateField": "created_at",
-            "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "createdDateTimezone": "GMT"
-        }
-    },
-    "direct-messages/sent-messages": {
-        "url": "/hubs/social/direct-messages/sent-messages?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
-        "idField": "id_str",
-        "datesConfiguration": {
-            "updatedDateField": "created_at",
-            "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "updatedDateTimezone": "GMT",
-            "createdDateField": "created_at",
-            "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "createdDateTimezone": "GMT"
-        }
-    },
-    "lists": {
-        "url": "/hubs/social/lists?where=created_at='${date:MM/dd/yyy'T'HH:mm:ssXXX}'",
-        "idField": "id_str",
-        "datesConfiguration": {
-            "updatedDateField": "created_at",
-            "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "updatedDateTimezone": "GMT",
-            "createdDateField": "created_at",
-            "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "createdDateTimezone": "GMT"
-        }
-    },
-    "statuses": {
-        "url": "/hubs/social/statuses?where=q='Example Screen Name'",
-        "idField": "id_str",
-        "datesConfiguration": {
-            "updatedDateField": "created_at",
-            "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "updatedDateTimezone": "GMT",
-            "createdDateField": "created_at",
-            "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "createdDateTimezone": "GMT"
-        }
-    },
-    "users": {
-        "url": "/hubs/social/users?where=q='example'",
-        "idField": "id_str",
-        "datesConfiguration": {
-            "updatedDateField": "created_at",
-            "updatedDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "updatedDateTimezone": "GMT",
-            "createdDateField": "created_at",
-            "createdDateFormat": "EEE, dd MMM yyyy HH:mm:ss Z",
-            "createdDateTimezone": "GMT"
-        }
-    }
-}
