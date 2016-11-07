@@ -1,6 +1,6 @@
 ---
-heading: OneDrive Business
-seo: Create Instance | OneDrive Business | Cloud Elements API Docs
+heading: Microsoft OneDrive for Business Beta
+seo: Create Instance | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,13 +12,13 @@ order: 20
 
 ## Create Instance
 
-OneDrive Business is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the OneDrive Business platform.
+Microsoft OneDrive for Business Beta is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Microsoft OneDrive for Business Beta platform.
 
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -51,7 +51,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your OneDrive Business Element, use the /instances API.
+To provision your Microsoft OneDrive for Business Beta Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -71,7 +71,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements OneDrive Business is “onedrivebusiness”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Microsoft OneDrive for Business Beta is “onedrivebusiness”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {

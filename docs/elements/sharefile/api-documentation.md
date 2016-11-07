@@ -1,8 +1,8 @@
 ---
-heading: ShareFile
-seo: API Docs | ShareFile | Cloud Elements API Docs
+heading: Citrix ShareFile
+seo: API Docs | Citrix ShareFile | Cloud Elements API Docs
 title: API Docs
-description: ShareFile API Documentation.
+description: Citrix ShareFile API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 450

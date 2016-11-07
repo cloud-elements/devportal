@@ -1,6 +1,6 @@
 ---
-heading: SQLServer
-seo: Query Language | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Query Language | Microsoft SQL Server | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs
@@ -94,7 +94,7 @@ Select from accounts where the estimated value of the AnnualRevenue is greater t
 * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=AnnualRevenue >= 100000
 * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=AnnualRevenue%20%3E%3D%20100000
 
-The SQLServer Element does support Complex Queries:
+The Microsoft SQL Server Element does support Complex Queries:
 
 Example Query:
 

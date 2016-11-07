@@ -20,7 +20,7 @@ Optionally, you may provision an instance to specific features like Marketing an
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -57,7 +57,7 @@ Response:
 ```
 
 Handle Callback from the Endpoint:
-The URL returned in the GET /elements/{key}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
+The URL returned in the GET /elements/{keyOrId}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
 Once the user has successful authorized the app, HubSpot will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Elements to create a HubSpot Element Instance.
 
 ### Step 2. Create an Instance

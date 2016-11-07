@@ -18,7 +18,7 @@ Cloud Elements recommends visiting the Slack API Documentation and reviewing the
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 

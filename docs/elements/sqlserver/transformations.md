@@ -1,6 +1,6 @@
 ---
-heading: SQLServer
-seo: Transform Data | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Transform Data | Microsoft SQL Server | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: docs

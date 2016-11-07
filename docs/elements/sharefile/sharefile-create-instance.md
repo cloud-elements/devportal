@@ -1,6 +1,6 @@
 ---
-heading: ShareFile
-seo: Create Instance | ShareFile | Cloud Elements API Docs
+heading: Citrix ShareFile
+seo: Create Instance | Citrix ShareFile | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,13 +12,13 @@ order: 20
 
 ## Create Instance
 
-ShareFile is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the ShareFile platform.
+Citrix ShareFile is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Citrix ShareFile platform.
 
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -26,7 +26,7 @@ ShareFile is a Cloud Storage Platform. When you provision an instance, your app 
 * __apiKey__ - the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
-* __siteAddress__ – Your ShareFile Subdomain
+* __siteAddress__ – Your Citrix ShareFile Subdomain
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
@@ -52,7 +52,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your ShareFile Element, use the /instances API.
+To provision your Citrix ShareFile Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -72,7 +72,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements ShareFile is “sharefile”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Citrix ShareFile is “sharefile”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {

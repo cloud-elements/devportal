@@ -1,6 +1,6 @@
 ---
-heading: ShareFile
-seo: Error Codes | ShareFile | Cloud Elements API Docs
+heading: Citrix ShareFile
+seo: Error Codes | Citrix ShareFile | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs
