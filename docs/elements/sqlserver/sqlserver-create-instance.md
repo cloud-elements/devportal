@@ -1,6 +1,6 @@
 ---
-heading: SQLServer
-seo: Create Instance | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Create Instance | Microsoft SQL Server | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance Directly via IP Address and Port Number
 
-The following is required to create a SQLServer Element Instance:
+The following is required to create a Microsoft SQL Server Element Instance:
 
 * Database Host: e.g. `123.123.1.123:3306`
 * Database Name
@@ -23,7 +23,7 @@ The following is required to create a SQLServer Element Instance:
 
 ### Step 1. Create an Instance
 
-To provision your SQLServer Element, use the /instances API.
+To provision your Microsoft SQL Server Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -43,7 +43,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements SQLServer is "sqlserver".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Microsoft SQL Server is "sqlserver".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 __CONNECTING DIRECTLY VIA IP ADDRESS AND PORT NUMBER__
 
@@ -121,7 +121,7 @@ Note:  Make sure you have straight quotes in your JSON files and cURL commands. 
 
 ## Create Instance Directly via Ground2Cloud
 
-The following is required to create a SQLServer Element Instance:
+The following is required to create a Microsoft SQL Server Element Instance:
 
 * Database Host: e.g. `g2c.cloud-elements.com:12345`
 * Database Name
@@ -132,7 +132,7 @@ The following is required to create a SQLServer Element Instance:
 
 ### Step 1. Create an Instance
 
-To provision your SQLServer Element, use the /instances API.
+To provision your Microsoft SQL Server Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -152,7 +152,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements SQLServer is "sqlserver".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Microsoft SQL Server is "sqlserver".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 __CONNECTING DIRECTLY VIA GROUND2CLOUD__
 

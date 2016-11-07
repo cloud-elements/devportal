@@ -1,6 +1,6 @@
 ---
-heading: ShareFile
-seo: Query Language | ShareFile | Cloud Elements API Docs
+heading: Citrix ShareFile
+seo: Query Language | Citrix ShareFile | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

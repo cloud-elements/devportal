@@ -1,8 +1,8 @@
 ---
-heading: SQLServer
-seo: Overview | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Overview | Microsoft SQL Server | Cloud Elements API Docs
 title: Overview
-description: Integrate SQLServer into your application via the Cloud Elements APIs.
+description: Integrate Microsoft SQL Server into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 490
@@ -11,21 +11,21 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the SQLServer Element
+## Welcome to the Microsoft SQL Server Element
 
 
 #### At a Glance
 
-In order to create a connection to a SQLServer Database, the following steps are required:
+In order to create a connection to a Microsoft SQL Server Database, the following steps are required:
 
 1. Choose how to connect:
   * Directly via an IP Address and Port Number, e.g. `123.123.1.123:3306`
   * Use Cloud Elements [Ground2Cloud](/docs/products/ground-2-cloud/index.html) service to connect your Database
-2. Call the `POST /instances` API to instantiate your SQLServer Database
+2. Call the `POST /instances` API to instantiate your Microsoft SQL Server Database
 
 #### In Depth
 
-The SQLServer Element leverages the tables contained within your SQLServer database and transforms them into a collection of resources. RESTful methods (POST, GET, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files). The columns in the table become the modeling attributes used to send payloads with each API call.
+The Microsoft SQL Server Element leverages the tables contained within your Microsoft SQL Server database and transforms them into a collection of resources. RESTful methods (POST, GET, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files). The columns in the table become the modeling attributes used to send payloads with each API call.
 For example a database with the following columns of data:
 
 | name    | phone        | address  |

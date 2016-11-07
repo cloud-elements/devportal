@@ -1,6 +1,6 @@
 ---
-heading: OneDrive Business
-seo: Error Codes | OneDrive Business | Cloud Elements API Docs
+heading: Microsoft OneDrive for Business Beta
+seo: Error Codes | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs

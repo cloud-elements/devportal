@@ -421,6 +421,9 @@ hr {
     transition: all 0.5s ease-out;
     color: #40b6e4;
     margin-bottom: 10px;
+    min-height: 210px;
+    font-size: 1em;
+    line-height: 1.1em;
     /*max-width: 200px;*/
     /*margin: 0 0 10px 70px;*/
 }

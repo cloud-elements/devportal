@@ -18,7 +18,7 @@ Marketo is a Marketing Platform. When you provision an instance, your app will h
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
