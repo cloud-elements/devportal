@@ -62,6 +62,8 @@ done({
 __Libraries__
 
 * CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
+ * `CE.randomString()`: Generate a random string (approx. 10 characters long).
+ * `CE.randomEmail()`: Generate a random email address.
  * `CE.md5(str)`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
  * `CE.b64(str)`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
  * `CE.hmac(algo)(enc)(secret, str)`: HMAC hash a string (_str_) using the provided secret (_secret_), algorithm (_algo_), and encoding (_enc_). See https://nodejs.org/api/crypto.html#crypto_class_hmac for more information about the algorithm and encoding parameters.
