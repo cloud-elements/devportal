@@ -16,6 +16,15 @@ HubSpot is a Customer Success Platform. When you provision an instance, your app
 
 Optionally, you may provision an instance to specific features like Marketing and CRM. Below are examples of each method beginning with HubSpot Marketing.
 
+Cloud Elements supports instantiating Hubspot CRM via __OAuth 2__ and __API Token Based__ authentication.
+
+- [OAuth 2](#oauth-2)
+- [API Token Based Authentication](#hubspot-crm-quick-provision)
+
+## OAuth 2
+
+{% include padding-all.html %}
+
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None
@@ -153,3 +162,26 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+
+## HubSpot CRM Quick Provision
+
+{% include padding-all.html %}
+
+### Token Based Authentication
+
+```json
+{
+  "element": {
+    "key": "hubspotcrm"
+  },
+   "configuration": {
+       "hubspot.authorization.apikey": "<INSERT_HUBSPOT_CRM_OAUTH_CLIENT_ID>",
+       "authentication.type": "apiKey",
+       "create.bulk.properties": "<INSERT_TRUE_TO_CREATE_BULK_PROPERTIES_OTHERWISE_FALSE>"
+   },
+  "tags": [
+    "<ADD_YOUR_TAG>"
+  ],
+  "name": "<INSERT_INSTANCE_NAME>"
+}
+```
