@@ -12,6 +12,11 @@ order: 15
 
 ## Create Instance
 
+Cloud Elements supports instantiating QuickBooks Online via __OAuth 1a__ and __Token Based__ authentication.
+
+- [OAuth 1a](#oauth-1a)
+- [Token Based Authentication](#quickbooks-quick-provision)
+
 __Note from Intuit:__
 
 With the introduction of sandboxes, there have been some changes to app tokens. Previously, your development app tokens could connect to any kind of QuickBooks Online account – trial subscriptions, paid subscriptions, or 1 year developer subscriptions. You can now only connect your development app tokens to your single US sandbox. There is no limit on the number of connections to your sandbox from your development app token.
@@ -27,6 +32,10 @@ Error code : invalid_database. Error message : Development application can only 
 To summarize, development app tokens will work only for sandbox companies and production app tokens will work for all other cases. You do not need to publish your application to use your production app tokens.
 
 For the complete article from Intuit, please [click here](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes).
+
+## OAuth 1a
+
+{% include padding-all.html %}
 
 ### Step 1. Get Elements OAuth Token
 
@@ -208,7 +217,11 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-#### QuickBooks Quick Provision
+## QuickBooks Quick Provision
+
+{% include padding-all.html %}
+
+### Token Based Authentication
 
 It is now possible to directly provision a Quickbooks instance via API if the data for all necessary fields is available. This means that it is not required to go through the OAuth flow if the OAuth info is already available.
 
