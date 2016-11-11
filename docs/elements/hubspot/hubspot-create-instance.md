@@ -16,11 +16,20 @@ HubSpot is a Customer Success Platform. When you provision an instance, your app
 
 Optionally, you may provision an instance to specific features like Marketing and CRM. Below are examples of each method beginning with HubSpot Marketing.
 
+Cloud Elements supports instantiating Hubspot via __OAuth 2__ and __API Token Based__ authentication.
+
+- [OAuth 2](#oauth-2)
+- [API Token Based Authentication](#hubspot-quick-provision)
+
+## OAuth 2
+
+{% include padding-all.html %}
+
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -57,7 +66,7 @@ Response:
 ```
 
 Handle Callback from the Endpoint:
-The URL returned in the GET /elements/{key}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
+The URL returned in the GET /elements/{keyOrId}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
 Once the user has successful authorized the app, HubSpot will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Elements to create a HubSpot Element Instance.
 
 ### Step 2. Create an Instance
@@ -153,3 +162,26 @@ Below is a successful JSON response:
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+
+## HubSpot Quick Provision
+
+{% include padding-all.html %}
+
+### Token Based Authentication
+
+```json
+{
+  "element": {
+    "key": "hubspot"
+  },
+   "configuration": {
+       "hubspot.authorization.apikey": "<INSERT_HUBSPOT_CRM_OAUTH_CLIENT_ID>",
+       "authentication.type": "apiKey",
+       "create.bulk.properties": "<INSERT_TRUE_TO_CREATE_BULK_PROPERTIES_OTHERWISE_FALSE>"
+   },
+  "tags": [
+    "<ADD_YOUR_TAG>"
+  ],
+  "name": "<INSERT_INSTANCE_NAME>"
+}
+```

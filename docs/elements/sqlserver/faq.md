@@ -1,6 +1,6 @@
 ---
-heading: SQLServer
-seo: FAQ | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: FAQ | Microsoft SQL Server | Cloud Elements API Docs
 title: FAQ
 description: FAQ and troubleshooting tips.
 layout: docs

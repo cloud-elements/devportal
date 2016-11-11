@@ -18,7 +18,7 @@ Shopify is an eCommerce Platform. When you provision an instance, your app will 
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 

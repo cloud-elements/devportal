@@ -18,7 +18,7 @@ Etsy is an eCommerce Platform. When you provision an instance, your app will hav
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -27,7 +27,7 @@ Etsy is an eCommerce Platform. When you provision an instance, your app will hav
 * __apiSecret__ – SHARED SECRET
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{keyOrId}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -48,13 +48,13 @@ Response:
 }
 ```
 
-Etsy expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+Etsy expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
 
 ### Step 2. Get Elements OAuth URL
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /elements/{keyOrId}/oauth/url
 Request Body: None
 Query Parameters:
 

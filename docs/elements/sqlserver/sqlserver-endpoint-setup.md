@@ -1,8 +1,8 @@
 ---
-heading: SQLServer
-seo: Endpoint Setup | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Endpoint Setup | Microsoft SQL Server | Cloud Elements API Docs
 title: Endpoint Setup
-description: Integrate a SQLServer Database via the Cloud Elements APIs.
+description: Integrate a Microsoft SQL Server Database via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 490

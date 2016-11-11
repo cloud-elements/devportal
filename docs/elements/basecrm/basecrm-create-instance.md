@@ -18,7 +18,7 @@ Base CRM is a Customer Success Platform. When you provision an instance, your ap
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 

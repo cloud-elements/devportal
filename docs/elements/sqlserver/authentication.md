@@ -1,8 +1,8 @@
 ---
-heading: SQLServer
-seo: Authentication | SQLServer | Cloud Elements API Docs
+heading: Microsoft SQL Server
+seo: Authentication | Microsoft SQL Server | Cloud Elements API Docs
 title: Authentication
-description: Integrate SQLServer into your application via the Cloud Elements APIs.
+description: Integrate Microsoft SQL Server into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 490

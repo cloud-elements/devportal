@@ -19,7 +19,7 @@ sitemap: false
 In order to create a connection to Act Essentials the following steps are required:
 
 1. Set up the [endpoint](actessentials-endpoint-setup.html)
-2. Call the `GET /elements/actessentialsoauth/oauth/url` with your Adobe Sign API key and secret
+2. Call the `GET /elements/actessentialsoauth/oauth/url` with your Act Essentials API key and secret
 3. Call the `POST /instances` API to instantiate your Act Essentials connected app
 
 #### In Depth

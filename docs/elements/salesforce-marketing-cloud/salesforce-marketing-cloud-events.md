@@ -5,9 +5,10 @@ title: Events
 description: Enable Salesforce events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 42
+elementId: 1357
 parent: Back to Element Guides
 order: 25
+published: false
 ---
 
 ## Events

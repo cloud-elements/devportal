@@ -1,8 +1,8 @@
 ---
-heading: ShareFile
-seo: Events | ShareFile | Cloud Elements API Docs
+heading: Citrix ShareFile
+seo: Events | Citrix ShareFile | Cloud Elements API Docs
 title: Events
-description: Enable ShareFile events for your application.
+description: Enable Citrix ShareFile events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 450

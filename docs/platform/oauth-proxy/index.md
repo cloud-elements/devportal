@@ -64,14 +64,14 @@ Example Regular Expressions:
 
 __Performing a GET__
 
-While calling the `GET /elements/{key}/oauth/url` to get the provider `URL`, please make sure the fields below are included in your parameters:
+While calling the `GET /elements/{keyOrId}/oauth/url` to get the provider `URL`, please make sure the fields below are included in your parameters:
 `isOauthProxy` – Should be set to true
 `oauthProxyName` – Name of the proxy e.g. “TestApp”
 `state` – should be the application callback URL which was provided during the creation of the Proxy
 
 From here the OAuth Provisioning Process would follow the same instructions as shown in our Provisioning Instructions below.
 
-The Callback URL retrieved by the initial `GET /elements/{key}/oauth/url` will be the OAuth Proxy URL that we created via the steps outlined above.
+The Callback URL retrieved by the initial `GET /elements/{keyOrId}/oauth/url` will be the OAuth Proxy URL that we created via the steps outlined above.
 
 ## Create Instance
 
@@ -81,7 +81,7 @@ Box is a Cloud Storage Platform. When you provision an instance, your app will h
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /elements/{keyOrId}/oauth/url
 Request Body: None
 Query Parameters:
 
@@ -260,14 +260,14 @@ Example Regular Expressions:
 
 __Performing a GET__
 
-While calling the `GET /elements/{key}/oauth/url` to get the provider `URL`, please make sure the fields below are included in your parameters:
+While calling the `GET /elements/{keyOrId}/oauth/url` to get the provider `URL`, please make sure the fields below are included in your parameters:
 `isOauthProxy` – Should be set to true
 `oauthProxyName` – Name of the proxy e.g. “TestApp”
 `state` – Your application callback URL
 
 From here the OAuth Provisioning Process would follow the same instructions as shown in our Provisioning Instructions below.
 
-The Callback URL retrieved by the initial `GET /elements/{key}/oauth/url` will be the OAuth Proxy URL that we created via the steps outlined above.
+The Callback URL retrieved by the initial `GET /elements/{keyOrId}/oauth/url` will be the OAuth Proxy URL that we created via the steps outlined above.
 
 ## Create Instance
 
@@ -277,7 +277,7 @@ Box is a Cloud Storage Platform. When you provision an instance, your app will h
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /elements/{keyOrId}/oauth/url
 Request Body: None
 Query Parameters:
 

@@ -59,7 +59,7 @@ Create a Marketo instance with events enabled and supply your event notification
 
 HTTP Header: None
 HTTP Verb: GET
-Request URL: /elements/{key}/oauth/url
+Request URL: /elements/{keyOrId}/oauth/url
 Request Body: None
 Query Parameters:
 

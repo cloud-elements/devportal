@@ -20,7 +20,7 @@ Optionally, you may provision an instance to specific features like Marketing Cl
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 

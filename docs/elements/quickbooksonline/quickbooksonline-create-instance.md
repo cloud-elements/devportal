@@ -12,6 +12,11 @@ order: 15
 
 ## Create Instance
 
+Cloud Elements supports instantiating QuickBooks Online via __OAuth 1a__ and __Token Based__ authentication.
+
+- [OAuth 1a](#oauth-1a)
+- [Token Based Authentication](#quickbooks-quick-provision)
+
 __Note from Intuit:__
 
 With the introduction of sandboxes, there have been some changes to app tokens. Previously, your development app tokens could connect to any kind of QuickBooks Online account – trial subscriptions, paid subscriptions, or 1 year developer subscriptions. You can now only connect your development app tokens to your single US sandbox. There is no limit on the number of connections to your sandbox from your development app token.
@@ -28,11 +33,15 @@ To summarize, development app tokens will work only for sandbox companies and pr
 
 For the complete article from Intuit, please [click here](https://developer.intuit.com/blog/2014/10/24/intuit-developer-now-offers-quickbooks-sandboxes).
 
+## OAuth 1a
+
+{% include padding-all.html %}
+
 ### Step 1. Get Elements OAuth Token
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/token
+* Request URL: /elements/{keyOrId}/oauth/token
 * Request Body: None
 * Query Parameters:
 
@@ -41,7 +50,7 @@ For the complete article from Intuit, please [click here](https://developer.intu
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{keyOrId}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -62,13 +71,13 @@ Response:
 }
 ```
 
-QuickBooks Online expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+QuickBooks Online expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
 
 ### Step 2. Get Elements OAuth URL
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -76,7 +85,7 @@ QuickBooks Online expects a token and secret. These are contained in the respons
 * __apiKey–__ - the key obtained from registering your app with the provider
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
-* __requestToken__ - the token obtained from the GET /elements/{key}/oauth/token call (previous step).
+* __requestToken__ - the token obtained from the GET /elements/{keyOrId}/oauth/token call (previous step).
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
@@ -208,7 +217,11 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-#### QuickBooks Quick Provision
+## QuickBooks Quick Provision
+
+{% include padding-all.html %}
+
+### Token Based Authentication
 
 It is now possible to directly provision a Quickbooks instance via API if the data for all necessary fields is available. This means that it is not required to go through the OAuth flow if the OAuth info is already available.
 

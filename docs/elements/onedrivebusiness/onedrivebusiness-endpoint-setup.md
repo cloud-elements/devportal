@@ -1,8 +1,8 @@
 ---
-heading: OneDrive Business
-seo: Endpoint Setup | OneDrive Business | Cloud Elements API Docs
+heading: Microsoft OneDrive for Business Beta
+seo: Endpoint Setup | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Endpoint Setup
-description: Integrate OneDrive Business into your application via the Cloud Elements APIs.
+description: Integrate Microsoft OneDrive for Business Beta into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 178
@@ -11,9 +11,9 @@ order: 2
 ---
 ## Endpoint Setup
 
-Follow these steps to set up a OneDrive Business application with the endpoint.
+Follow these steps to set up a Microsoft OneDrive for Business Beta application with the endpoint.
 
-1. Login to your OneDrive Business account at [https://manage.windowsazure.com/](https://manage.windowsazure.com/).
+1. Login to your Microsoft OneDrive for Business Beta account at [https://manage.windowsazure.com/](https://manage.windowsazure.com/).
 ![OneDrive Business Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/06/OneDriveBusinessAPI1.png)
 
 2. Select your Tenant Directory.

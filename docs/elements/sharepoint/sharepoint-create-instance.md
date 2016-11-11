@@ -18,7 +18,7 @@ Sharepoint 2013 is a Cloud Storage Platform. When you provision an instance, you
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 

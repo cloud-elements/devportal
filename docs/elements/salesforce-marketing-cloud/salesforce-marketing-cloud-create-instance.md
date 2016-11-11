@@ -5,7 +5,7 @@ title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 42
+elementId: 1357
 parent: Back to Element Guides
 order: 20
 ---
@@ -14,43 +14,7 @@ order: 20
 
 Salesforce is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Salesforce platform.
 
-Optionally, you may provision an instance to specific features like CRM, Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
-
-### Step 1. Get Elements OAuth Information
-
-* HTTP Header: None
-* HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
-* Request Body: None
-* Query Parameters:
-
-* __apiKey–__ the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
-
-Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
-
-Example cURL Command:
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
-```
-
-Response:
-
-```json
-{
-"element": "sfdcmarketingcloud",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdcmarketingcloud"
-}
-```
-
-Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "sfdcmarketingcloud" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
-
-### Step 2. Create an Instance
+### Step 1. Create an Instance
 
 To provision your Salesforce Element, use the /instances API.
 
@@ -72,25 +36,21 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is "sfdcmarketingcloud".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is "salesforcemarketingcloud".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "sfdcmarketingcloud"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
+    "key": "salesforcemarketingcloud"
   },
   "configuration": {
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
+    "clientId": "<INSERT_CLIENT_ID>",
+    "clientSecret": "<INSERT_CLIENT_SECRET>"
   },
   "tags": [
-    "<Add_Your_Tag>"
+    "<ADD_YOUR_TAG>"
   ],
-  "name": "<Insert_Instance_Name>"
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 
@@ -112,149 +72,71 @@ Below is a successful JSON response:
 
 ```json
 {
-    "id": 123,
-    "name": "test",
-    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
-    "element": {
-        "id": 39,
-        "name": "Salesforce.com",
-        "key": "sfdcmarketingcloud",
-        "description": "The Salesforce.com allows you to deliver revolutionary Marketing automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have a Salesforce.com account, you can create one at <a href="http://www.salesforce.com" target="_blank">Salesforce.com Signup</a>",
-        "signupURL": "http://www.salesforce.com"
+  "id": 123,
+  "name": "test",
+  "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+  "element": {
+    "id": 2102,
+    "name": "Salesforce Marketing Cloud",
+    "key": "salesforcemarketingcloud",
+    "description": "Add a Salesforce Marketing Cloud Instance to connect your existing Salesforce Marketing Cloud account to the Marketing Hub, allowing you to manage activities, campaigns, and contacts across multiple Marketing Elements and other Salesforce services. You will need your Salesforce Marketing Cloud account information to add an instance.",
+    "image": "elements/provider_sfdcmarketingcloud.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "authentication": {
+      "type": "custom"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "eventsEnabled": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [
+      {
+        "id": 1672,
+        "createdDate": "2016-11-04T04:26:24Z",
+        "name": "requestToken",
+        "vendorName": "Authorization",
+        "type": "configuration",
+        "vendorType": "header",
+        "source": "request",
+        "elementId": 2102,
+        "required": false
+      }
+    ],
+    "private": false
+  },
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "https://www.exacttargetapis.com/",
+    "bulk.add_metadata": null,
+    "clientId": "CLIENT_ID",
+    "bulk.query.field_name": "modifiedDate",
+    "pagination.max": "50",
+    "bulk.query.operator": ">",
+    "bulk.query.date_mask": "yyyy-MM-dd'T'HH:mm:ssXXX",
+    "bulk.query.download_format": "JSON",
+    "pagination.type": "page",
+    "bulk.relations": null,
+    "clientSecret": "CLIENT_SECRET",
+    "authentication.time": "1478271074092",
+    "requestToken": "1234MCAIDADAL",
+    "expires_in": "3477",
+    "pagination.page.startindex": "1"
+  },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none"
 }
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-##### CRM
-
-Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcmarketingcloud'
-```
-
-Response:
-
-```bash
-{
-"element": "sfdc",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdc"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdc"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
-
-##### Service Cloud
-
-Provision an instance to Service Cloud functions only. Use the following JSON, the key value (sfdcservicecloud instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdcservicecloud/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcservicecloud'
-```
-
-Response:
-
-```bash
-{
-  "element": "sfdcservicecloud",
-  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcservicecloud"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdcservicecloud"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
-
-##### Documents
-
-Provision an instance to Documents functions only. Use the following JSON, the key value (sfdcdocuments instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdcdocuments/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcdocuments'
-```
-
-Response:
-
-```bash
-{
-  "element": "sfdcservicecloud",
-  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcdocuments"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdcdocuments"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```

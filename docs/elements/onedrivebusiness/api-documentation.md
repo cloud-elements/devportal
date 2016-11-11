@@ -1,8 +1,8 @@
 ---
-heading: OneDrive Business
-seo: API Docs | OneDrive Business | Cloud Elements API Docs
+heading: Microsoft OneDrive for Business Beta
+seo: API Docs | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: API Docs
-description: OneDrive Business API Documentation.
+description: Microsoft OneDrive for Business Beta API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 178

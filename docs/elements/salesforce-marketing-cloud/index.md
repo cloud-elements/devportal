@@ -5,7 +5,7 @@ title: Overview
 description: Integrate Salesforce Marketing Cloud into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 42
+elementId: 1357
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -16,11 +16,10 @@ sitemap: false
 
 #### At a Glance
 
-In order to create a connection to Salesforce the following steps are required:
+In order to create a connection to Salesforce Marketing Cloud the following steps are required:
 
 1. Set up the [endpoint](salesforce-marketing-cloud-endpoint-setup.html)
-2. Call the `GET /elements/sfdcmarketingcloud/oauth/url` with your Salesforce API key and secret
-3. Call the `POST /instances` API to instantiate your Salesforce connected app
+2. Call the `POST /instances` API to instantiate your Salesforce connected app
 
 #### In Depth
 

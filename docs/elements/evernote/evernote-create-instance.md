@@ -18,7 +18,7 @@ Evernote is a Cloud Storage Platform. When you provision an instance, your app w
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/token
+* Request URL: /elements/{keyOrId}/oauth/token
 * Request Body: None
 * Query Parameters:
 
@@ -28,7 +28,7 @@ Evernote is a Cloud Storage Platform. When you provision an instance, your app w
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
 * __sandbox__ - FALSE if connecting to your Evernote Production Environment, TRUE if connecting to your Evernote Sandbox Environment
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{key}/oauth/url call.
+Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{keyOrId}/oauth/url call.
 
 Each of the OAuth API calls will be shown below.
 
@@ -49,13 +49,13 @@ Response:
 }
 ```
 
-Evernote expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{key}/oauth/url call which is shown below.
+Evernote expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
 
 ### Step 2. Get Elements OAuth URL
 
 * HTTP Header: None
 * HTTP Verb: GET
-* Request URL: /elements/{key}/oauth/url
+* Request URL: /elements/{keyOrId}/oauth/url
 * Request Body: None
 * Query Parameters:
 
@@ -63,7 +63,7 @@ Evernote expects a token and secret. These are contained in the response to the 
 * __apiKey–__ - EVERNOTE CONSUMER KEY
 * __apiSecret__ – EVERNOTE CONSUMER SECRET
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app
-* __requestToken__ - the token obtained from the GET /elements/{key}/oauth/token call (previous step).
+* __requestToken__ - the token obtained from the GET /elements/{keyOrId}/oauth/token call (previous step).
 * __scope__ - must be set to FALSE
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
