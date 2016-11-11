@@ -11,3 +11,12 @@ categories: [gettingstarted]
 # FAQs
 
 Check back later, Content Coming Soon.
+
+
+## New Questions
+
+Content to answer Questions
+
+```bash
+yourmom
+```
