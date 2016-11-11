@@ -348,6 +348,8 @@ accounts|/hubs/crm/accounts?where=LastModifiedDate>=${date}||LastModifiedDate|yy
 contacts|/hubs/crm/contacts?where=LastModifiedDate>=${date}||LastModifiedDate|yyyy-MM-dd'T'HH:mm:ssZ||CreatedDate|yyyy-MM-dd'T'HH:mm:ssZ
 ```
 
+The above poller configuration will allow the element instance to poll for accounts and contacts, sequentially, at the specified poller interval, with the given URL.
+
 #### JSON Poller Configuration
 
 User should use the JSON poller configuration format, as the URL poller configuration format will be deprecated and decommissioned at some point in the near future. **Note: Cloud Elements will automatically migrate the `Poller URL` format to the `Poller JSON` format for all customer instances, so customers are not expected to reprovision their element instances.
