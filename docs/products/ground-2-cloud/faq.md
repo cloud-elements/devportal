@@ -34,6 +34,7 @@ Devportal
 - [QuickBooks](#quickbooks)
     - [Why is there a separate QuickBooks installer?](#why-is-there-a-separate-quickbooks-installer)
     - [What is the QuickBooks SDK?](#what-is-the-quickbooks-sdk)
+    - [What versions of QuickBooks are supported?](#what-versions-of-quickbooks-are-supported)
     - [What is the QuickBooks Connector?](#what-is-the-quickbooks-connector)
     - [Does the Connector need to be running for Ground2Cloud to work with QuickBooks?](#does-the-connector-need-to-be-running-for-ground2cloud-to-work-with-quickbooks)
     - [Does QuickBooks have to be running?](#does-quickbooks-have-to-be-running)
@@ -188,6 +189,12 @@ additional programs that are needed to communicate with QuickBooks.
 The QuickBooks SDK is provided by Intuit Software, the makers of
 QuickBooks. It is a special set of routines that is used to access
 QuickBooks data.
+
+### What versions of QuickBooks are supported?
+
+Ground2Cloud uses the QuickBooks SDK, and supports every version of
+QuickBooks that is supported by that SDK. This includes all United
+States, Canada and UK versions of QuickBooks since 2012.
 
 ### What is the QuickBooks Connector?
 
