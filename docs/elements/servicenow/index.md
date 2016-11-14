@@ -13,15 +13,18 @@ sitemap: false
 
 ## Welcome to the ServiceNow Element
 
+The ServiceNow element uses `Basic` authentication, i.e., authentication with a username, password and your ServiceNow sub-domain URL.
 
-#### At a Glance
+__Note:__ If you're looking for the ServiceNow element with OAuth based authentication, please visit the [ServiceNow OAuth](/docs/elements/servicenow-oauth/) documentation.
+
+### At a Glance
 
 In order to create a connection to ServiceNow the following steps are required:
 
 1. Retrieve your ServiceNow Username, Password, and Subdomain URL
 2. Call the `POST /instances` API to instantiate your ServiceNow connected app
 
-#### In Depth
+### In Depth
 
 The ServiceNow Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
 
