@@ -13,13 +13,18 @@ sitemap: false
 
 ## Welcome to the ServiceNow OAuth Element
 
+The ServiceNow OAuth element, as the name suggests, uses `OAuth 2.0` based authentication.
+
+__Note:__ If you're looking for the ServiceNow element with `Basic` authentication, please visit the [ServiceNow](/docs/elements/servicenow/) documentation.
+
 
 #### At a Glance
 
 In order to create a connection to ServiceNow OAuth the following steps are required:
 
 1. Retrieve your ServiceNow OAuth Username, Password, Client ID, Client Secret, and Subdomain URL when you register your connected app
-2. Call the `POST /instances` API to instantiate your ServiceNow OAuth connected app
+2. Use the OAuth authentication flow as shown [here](/docs/getstarted/authentication.html) to complete the authentication and then,
+3. Call the `POST /instances` API to instantiate your ServiceNow OAuth connected app
 
 #### In Depth
 
