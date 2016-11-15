@@ -84,7 +84,9 @@ This instance.json file must be included with your instance request.  Please fil
   "configuration": {
     "oauth.api.key": "<INSERT_ONEDRIVE_BUSINESS_CLIENT_ID>",
      "oauth.api.secret": "<INSERT_ONEDRIVE_BUSINESS_CLIENT_SECRET>",
-     "oauth.callback.url": "https://www.yourcallbackurl.com/oauth2callback"
+     "oauth.callback.url": "https://www.yourcallbackurl.com/oauth2callback",
+     "document.tagging": true
+
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -105,7 +107,7 @@ curl -X POST
 'https://api.cloud-elements.com/elements/api-v2/instances'
 ```
 
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
+If the user does not specify a required config entry, an error will result notifying her of which entries she is missing. The `document.tagging` parameter is optional and will default to `false` when unspecified.
 
 Below is a successful JSON response:
 
@@ -146,7 +148,7 @@ Below is a successful JSON response:
       "oauth.user.refresh_token": "<OAUTH_REFRESH_TOKEN>",
       "oauth.user.refresh_interval": "3599",
       "oauth.api.key": "<ONEDRIVEBUSINESS_CLIENT_ID>",
-      "document.tagging": "false",
+      "document.tagging": "true",
       "oauth.user.refresh_time": "1434646531161",
       "event.notification.enabled": "false"
     },
