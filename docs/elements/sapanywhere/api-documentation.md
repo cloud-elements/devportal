@@ -1,8 +1,8 @@
 ---
-heading: Salesforce CRM
-seo: API Docs | Salesforce CRM | Cloud Elements API Docs
+heading: SAP Anywhere
+seo: API Docs | SAP Anywhere | Cloud Elements API Docs
 title: API Docs
-description: Salesforce CRM API Documentation.
+description: SAP Anywhere API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 23

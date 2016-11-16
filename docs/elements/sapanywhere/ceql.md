@@ -1,6 +1,6 @@
 ---
-heading: Salesforce CRM
-seo: Query Language | Salesforce CRM | Cloud Elements API Docs
+heading: SAP Anywhere
+seo: Query Language | SAP Anywhere | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
 layout: docs

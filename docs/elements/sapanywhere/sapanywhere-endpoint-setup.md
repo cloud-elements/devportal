@@ -1,6 +1,6 @@
 ---
-heading: Salesforce CRM
-seo: Endpoint Setup | Salesforce CRM | Cloud Elements API Docs
+heading: SAP Anywhere
+seo: Endpoint Setup | SAP Anywhere | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
@@ -12,35 +12,31 @@ order: 5
 
 ## Endpoint Setup
 
-Follow these steps to setup your Salesforce application with the endpoint.
+Follow these steps to setup your SAP Anywhere application with the endpoint.
 
-__In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
+The screen shots below assume you have signed up with SAP Anywhere as a developer.
+Information this process is in the next section and includes a link to the [SAP Anywhere Documentation](https://doc-eu.sapanywhere.com/api/app/public_app).
 
-Via a web browser, log in to your Salesforce account:
-[https://login.salesforce.com/](https://login.salesforce.com/)
+### Register Developer Account and Create Your Test Tenant
 
+To start developing your app for SAP Anywhere, you need a developer account to become an SAP Anywhere developer. So far the developer account registration is not opened to all users. You can contact us and then we will send you an invitation email. You can follow the instructions in this invitation email and register your developer account.
 
-Select "Setup" if not taken there by default:
+As a developer, you are able to access SAP Anywhere developer center dashboard and you can create your own testing tenant. Testing tenant is an area for app development where you can create data to test out the functionality of your app.
 
-1. In left hand nav menu, under create, select "Apps"
+To create a testing tenant, you need to navigate to the Testing sandbox tab and click Create button to create your own testing tenant.
 
-2. Click "New"
-![Salesforce Connected App step 1](img/salesforce-connected-app-1.png)
+[Get a developer account](https://doc-eu.sapanywhere.com/api/app/public_app#register)
 
-3. Fill out the basic information about the app
+Via a web browser, log in to your SAP Anywhere account:
+[https://dev-us.sapanywhere.com/portal/apps?locale=en_US](https://dev-us.sapanywhere.com/portal/apps?locale=en_US)
 
-4. Make sure to select "Enable OAuth Settings"
+1. My Apps > Add a new App
+![SAP Anywhere Connected App step 1](img/sapanywhere-api-connected-app-1.png)
 
-5. You’ll be required to enter a callback URL from the endpoint. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint. For our example,we’ll use a callback URL of https://mycoolapp.com/auth
+2. Input app info and click "Create"
+![SAP Anywhere Connected App step 2](img/sapanywhere-api-connected-app-2.png)
 
-6. Choose from the "Selected OAuth Scopes". "Full Access" and "Perform requests on your behalf at any time (refresh_token_, offline_access)" are the minimum needed scopes.
+3. Make note of the API Key and Secret
+![SAP Anywhere Connected App step 3](img/sapanywhere-api-connected-app-3.png)
 
-7. Add the selected scopes
-
-8. Click "Save" at the bottom of the window ![Salesforce Connected App step 2](img/salesforce-connected-app-2.png)
-
-9. Please make a note of the "Consumer Key"
-
-10. Please make a note of the "Consumer Secret" ![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
-
-Next [create an instance](salesforce-create-instance.html).
+Next [create an instance](sapanywhere-create-instance.html).

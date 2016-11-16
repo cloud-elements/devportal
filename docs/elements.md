@@ -58,6 +58,7 @@ layout: elements
 * [![Magento](/assets/img/element-logos/magento.png)Magento](./elements/magento/)
 * [![Magento SOAP](/assets/img/element-logos/magento.png)Magento SOAP V1.9](./elements/magento-soap/)
 * [![Magento 2.0](/assets/img/element-logos/magento.png)Magento 2.0](./elements/magentov2/)
+* [![SAP Anywhere](/assets/img/element-logos/sapanywhere.png)SAP Anywhere](./elements/sapanywhere/)
 * [![Shopify](/assets/img/element-logos/shopify.png)Shopify](./elements/shopify/)
 * [![Volusion](/assets/img/element-logos/volusion.png)Volusion](./elements/volusion/)
 * [![Weebly](/assets/img/element-logos/weebly.png)Weebly](./elements/weebly/)

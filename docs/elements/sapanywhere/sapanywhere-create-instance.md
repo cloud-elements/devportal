@@ -1,6 +1,6 @@
 ---
-heading: Salesforce CRM
-seo: Create Instance | Salesforce CRM | Cloud Elements API Docs
+heading: SAP Anywhere
+seo: Create Instance | SAP Anywhere | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,9 +12,7 @@ order: 20
 
 ## Create Instance
 
-Salesforce is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Salesforce platform.
-
-Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
+When you provision an instance, your app will have access to the different functionality offered by the SAP Anywhere platform.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -35,24 +33,24 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sfdc'
+'https://api.cloud-elements.com/elements/api-v2/elements/sapanywhere/oauth/url?apiKey=fake_sapanywhere_api_key&apiSecret=fake_sapanywhere_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sapanywhere'
 ```
 
 Response:
 
 ```json
 {
-"element": "sfdc",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=sfdc"
+  "oauthUrl": "https://app1-us.sapanywhere.com/sbo/oauth2/authorize?scope=BusinessData_RW&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=sapanywhere&client_id=https://api.cloud-elements.com/elements/api-v2/elements/sapanywhere/oauth/url?apiKey=fake_sapanywhere_api_key&apiSecret=fake_sapanywhere_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sapanywhere_client_id",
+  "element": "sapanywhere"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “sfdc” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "sapanywhere" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
-To provision your Salesforce Element, use the /instances API.
+To provision your SAP Anywhere Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -72,25 +70,25 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Salesforce is “sfdc”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements SAP Anywhere is "sapanywhere".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "sfdc"
+    "key": "sapanywhere"
   },
   "providerData": {
-    "code": "<Code_On_The_Return_URL>"
+    "code": "<CODE_ON_THE_RETURN_URL>"
   },
   "configuration": {
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
+    "oauth.api.key": "<INSERT_CLIENT_ID>",
+    "oauth.api.secret": "<INSERT_CLIENT_SECRET>"
   },
   "tags": [
-    "<Add_Your_Tag>"
+    "<ADD_YOUR_TAG>"
   ],
-  "name": "<Insert_Instance_Name>"
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 
@@ -112,149 +110,75 @@ Below is a successful JSON response:
 
 ```json
 {
-    "id": 123,
-    "name": "test",
-    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
-    "element": {
-        "id": 39,
-        "name": "Salesforce.com",
-        "key": "sfdc",
-        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have a Salesforce.com account, you can create one at <a href="http://www.salesforce.com" target="_blank">Salesforce.com Signup</a>",
-        "signupURL": "http://www.salesforce.com"
-    },
-    "provisionInteractions": [],
-    "valid": true,
-    "eventsEnabled": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+  "id": 123,
+  "name": "test",
+  "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+  "element": {
+    "id": 2198,
+    "name": "SAP Anywhere",
+    "key": "sapanywhere",
+    "description": "Add an SAP Anywhere Instance to connect your existing SAP Anywhere account to the eCommerce Hub, allowing you to manage customers, orders and products across multiple eCommerce Elements. You will need your SAP Anywhere account information to add an instance.",
+    "image": "elements/provider_sapanywhere.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [],
+    "private": false
+  },
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "https://api-us.sapanywhere.com/v1/",
+    "bulk.add_metadata": null,
+    "event.notification.subscription.id": null,
+    "sapanywhere.hooks.ordersupdated.id": "",
+    "sapanywhere.hooks.productsdeleted.id": "",
+    "event.vendor.type": "webhooks",
+    "filter.response.nulls": "true",
+    "bulk.query.date_mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+    "bulk.attribute.created_time": "creationTime",
+    "sapanywhere.hooks.customersupdated.id": "",
+    "bulk.relations": null,
+    "pagination.type": "offset",
+    "sapanywhere.hooks.productsupdated.id": "",
+    "oauth.callback.url": "https://www.mycoolapp.com/auth",
+    "oauth.user.refresh_token": "74aa707d-b7692ecc4a55",
+    "oauth.user.refresh_interval": "43199",
+    "oauth.api.key": "API_KEY",
+    "sapanywhere.hooks.orderscancelled.id": "",
+    "event.notification.enabled": "false",
+    "oauth.api.secret": "API_SECRET",
+    "bulk.query.field_name": "creationTime",
+    "oauth.token.url": "https://app1-us.sapanywhere.com/sbo/oauth2/token",
+    "pagination.max": "100",
+    "sapanywhere.hooks.ordersadded.id": "",
+    "sapanywhere.hooks.customersadded.id": "",
+    "oauth.scope": "BusinessData_RW",
+    "sapanywhere.hooks.customersdeleted.id": "",
+    "oauth.user.token": "eee1db172c126639e29e",
+    "bulk.query.operator": ">=",
+    "sapanywhere.hooks.ordersdeleted.id": "",
+    "oauth.authorization.url": "https://app1-us.sapanywhere.com/sbo/oauth2/authorize",
+    "bulk.query.download_format": "JSON",
+    "event.notification.instance.finder": "",
+    "event.notification.callback.url": "false",
+    "sapanywhere.hooks.productsadded.id": "",
+    "oauth.user.refresh_time": "147931541",
+    "oauth.basic.header": "true"
+  },
+  "eventsEnabled": false,
+  "eventsNotificationCallbackUrl": "false",
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+    "id": 123
+  }
 }
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-##### Marketing Cloud
-
-Provision an instance to Marketing Cloud functions only. Use the following JSON, the key value (sfdcmarketingcloud instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdc/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcmarketingcloud'
-```
-
-Response:
-
-```bash
-{
-"element": "sfdcmarketingcloud",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdc"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdcmarketingcloud"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
-
-##### Service Cloud
-
-Provision an instance to Service Cloud functions only. Use the following JSON, the key value (sfdcservicecloud instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdcservicecloud/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcservicecloud'
-```
-
-Response:
-
-```bash
-{
-  "element": "sfdcservicecloud",
-  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcservicecloud"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdcservicecloud"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
-
-##### Documents
-
-Provision an instance to Documents functions only. Use the following JSON, the key value (sfdcdocuments instead of sfdc) is the only difference in the JSON in the first example.
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sfdcdocuments/oauth/url?apiKey=fake_salesforce_api_key&apiSecret=fake_salesforce_api_secret&callbackUrl=https://www.demonstrab.ly/home&state=sfdcdocuments'
-```
-
-Response:
-
-```bash
-{
-  "element": "sfdcservicecloud",
-  "oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.demonstrab.ly/home&state=sfdcdocuments"
-}
-```
-Create Instance JSON:
-
-```json
-{
-  "element": {
-    "key": "sfdcdocuments"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.demonstrab.ly/home",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>"
-  },
-  "tags": [
-    "<Add_Your_Tag>"
-  ],
-  "name": "<Insert_Instance_Name>"
-}
-```
