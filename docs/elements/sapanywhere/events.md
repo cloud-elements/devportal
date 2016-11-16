@@ -1,11 +1,11 @@
 ---
-heading: Salesforce Documents
-seo: Events | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce CRM
+seo: Events | Salesforce CRM | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce Documents events for your application.
+description: Enable Salesforce CRM events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 177
+elementId: 23
 parent: Back to Element Guides
 order: 25
 ---
@@ -22,7 +22,8 @@ In order to enable polling, add these two extra configurations to your instance 
 
 ```
 "event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.poller.urls": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:
@@ -30,7 +31,7 @@ instance JSON with polling events enabled:
 ```json
 {
   "element": {
-    "key": "sfdcdocuments"
+    "key": "sfdc"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
@@ -42,7 +43,7 @@ instance JSON with polling events enabled:
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
     "event.vendor.type": "polling",
-    "event.objects": "<INSERT_OBJECTS_YOU_WISH_TO_POLL_SEPARATED_BY_A_|_>" // Account|Contact
+    "event.poller.urls": "<INSERT_OBJECTS_YOU_WISH_TO_POLL_SEPARATED_BY_A_|_>" // Account|Contact
   },
   "tags": [
     "<Add_Your_Tag>"
@@ -83,7 +84,7 @@ The following JSON may be used to create a Salesforce Instance with webhooks ena
 ```json
 {
   "element": {
-    "key": "sfdcdocuments"
+    "key": "sfdc"
   },
   "providerData": {
     "code": "<Code_On_The_Return_URL>"
