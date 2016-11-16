@@ -42,7 +42,7 @@ instance JSON with polling events enabled:
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
     "event.vendor.type": "polling",
-    "event.poller.urls": "<INSERT_OBJECTS_YOU_WISH_TO_POLL_SEPARATED_BY_A_|_>" // Account|Contact
+    "event.objects": "<INSERT_COMMA_SEPARATED_LIST_OF_OBJECTS_e.g_Account,Contact>"
   },
   "tags": [
     "<Add_Your_Tag>"
