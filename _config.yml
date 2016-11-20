@@ -3,6 +3,7 @@ exclude:
   - .gitignore
   - circle.yml
   - README.md
+  - doc-templates
 
 liquid:
   error_mode: strict
