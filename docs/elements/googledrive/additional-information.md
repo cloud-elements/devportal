@@ -1,7 +1,7 @@
 ---
 heading: Google Drive
-seo: FAQ | Google Drive | Cloud Elements API Docs
-title: FAQ
+seo: Additional Information | Google Drive | Cloud Elements API Docs
+title: Additional Information
 description: Frequently asked questions and notes on conventions.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## FAQ
+## Additional Information
 
 A note about Google Drive regarding folder naming conventions. Currently, users can have the same name for multiple folders. This could provide a potential challenge as the API call may be unsure of what path to take on some calls.
 

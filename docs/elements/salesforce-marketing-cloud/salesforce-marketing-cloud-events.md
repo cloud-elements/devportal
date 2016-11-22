@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud
+heading: Salesforce Marketing Cloud BETA
 seo: Events | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce events for your application.

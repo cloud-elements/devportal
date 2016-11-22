@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud
+heading: Salesforce Marketing Cloud BETA
 seo: Endpoint Setup | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup

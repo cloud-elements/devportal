@@ -29,7 +29,7 @@ layout: elements
 * [![MailJet Marketing](/assets/img/element-logos/mailjet.png)MailJet Marketing](./elements/mailjet-marketing/)
 * [![Marketo](/assets/img/element-logos/marketo.png)Marketo](./elements/marketo/)
 * [![Pardot](/assets/img/element-logos/pardot.png)Pardot](./elements/pardot/)
-* [![Salesforce Marketing Cloud](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud](./elements/salesforce-marketing-cloud/)
+* [![Salesforce Marketing Cloud BETA](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud BETA](./elements/salesforce-marketing-cloud/)
 * [![FreshBooks](/assets/img/element-logos/freshbooks.png)FreshBooks](./elements/freshbooks/)
 * [![Great Plains](/assets/img/element-logos/greatplains.png)MS Great Plains](./elements/greatplains/)
 * [![Intacct](/assets/img/element-logos/intacct.png)Intacct](./elements/intacct/)

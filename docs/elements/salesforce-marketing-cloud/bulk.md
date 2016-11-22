@@ -1,13 +1,13 @@
 ---
-heading: Salesforce Marketing Cloud
+heading: Salesforce Marketing Cloud BETA
 seo: Bulk APIs | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 42
+elementId: 1357
 parent: Back to Element Guides
-order: 1357
+order: 30
 sitemap: false
 ---
 
