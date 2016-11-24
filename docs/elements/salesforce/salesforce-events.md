@@ -23,7 +23,7 @@ In order to enable polling, add these two extra configurations to your instance 
 ```
 "event.notification.enabled": "true",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.urls": "<SEE_BELOW>"
+"event.objects": "<SEE_BELOW>"
 ```
 
 instance JSON with polling events enabled:

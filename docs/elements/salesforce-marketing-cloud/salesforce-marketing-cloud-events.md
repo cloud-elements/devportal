@@ -19,7 +19,7 @@ Cloud Elements supports both webhooks and polling events for Salesforce.
 
 ### Polling
 
-In order to enable polling, add these two extra configurations to your instance JSON:
+In order to enable polling, add these extra configurations to your instance JSON:
 
 ```
 "event.notification.enabled": "true",
