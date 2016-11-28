@@ -23,7 +23,7 @@ In order to create a connection to QuickBase the following steps are required:
 
 #### In Depth
 
-The SQLServer Element leverages the tables contained within your SQLServer database and transforms them into a collection of resources. RESTful methods (POST, GET, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files). The columns in the table become the modeling attributes used to send payloads with each API call.
+The QuickBase Element leverages the tables contained within your QuickBase database and transforms them into a collection of resources. RESTful methods (POST, GET, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files). The columns in the table become the modeling attributes used to send payloads with each API call.
 For example a database with the following columns of data:
 
 | name    | phone        | address  |
