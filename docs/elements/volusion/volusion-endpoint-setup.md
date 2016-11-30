@@ -46,4 +46,30 @@ An example of the URL copied in the previous step can be seen below:
 
 The beginning portion of the URL is your store URL – `http://otnqw.rakrt.servertrust.com`. Then the login email – volusion@acmedata.com, and finally the EncryptedPassword – `64F3C0572DB54CB36951010E7200418E79AC678214B366FBD4E&EDI`
 
+### Need Help finding your Encrypted Password?
+
+1. From the Dashboard, click "Manage Store"
+![Volusion Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI1.png)
+
+2. Login to your storefront.
+![Volusion Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI2.png)
+
+3. From the dashboard, click "Inventory" and then click "Import/Export".
+![Volusion Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI3.png)
+
+4. Click "Volusion API"
+![Volusion Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/09/VolusionAPI4.png)
+
+5. Click "Get Help" then "Get help with this page" in the top right corner.
+![Volusion Encrypted Password 1](img/encrypted-password-1.png)
+
+6. In the pop up window, click "Volusion API Integration Help".
+![Volusion Encrypted Password 2](img/encrypted-password-2.png)
+
+7. In the new window, click on the lower box labeled "URL with Query String and General Information for Importing and Exporting".
+![Volusion Encrypted Password 3](img/encrypted-password-3.png)
+
+8. In this box, you will find your encrypted password.
+![Volusion Encrypted Password 4](img/encrypted-password-4.png)
+
 Next [create an instance](volusion-create-instance.html).
