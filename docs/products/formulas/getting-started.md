@@ -64,7 +64,7 @@ Each different type of step produces different step execution values that are ad
 ```
 > **NOTE:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
 
-### `stream` step:
+### `elementRequestStream` step:
 ```json
 {
   "my-step-name": {

@@ -284,7 +284,7 @@ Below are some JSON examples of all of the different types of triggers and steps
 
 > **NOTE:** Variables for the `url` attribute can be used similar to that in the `elementRequest` and `request` step types.
 
-## Example `stream` steps:
+## Example `elementRequestStream` steps:
 
 ```json
 {
@@ -292,7 +292,7 @@ Below are some JSON examples of all of the different types of triggers and steps
   "onSuccess": [ "some-other-step" ],
   "onFailure": [ "some-step-to-handle-failure" ],
   "name": "bulk-download-upload",
-  "type": "stream",
+  "type": "elementRequestStream",
   "properties": {
     "downloadElementInstanceId": "${config.source}",
     "downloadMethod": "GET",
@@ -316,7 +316,7 @@ Below are some JSON examples of all of the different types of triggers and steps
   "onSuccess": [ "some-other-step" ],
   "onFailure": [ "some-step-to-handle-failure" ],
   "name": "move-file",
-  "type": "stream",
+  "type": "elementRequestStream",
   "properties": {
     "downloadElementInstanceId": "${config.source}",
     "downloadMethod": "GET",
@@ -330,7 +330,7 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** The `stream` step is primarily the same as any `request` step with the following exceptions.
+> **NOTE:** The `elementRequestStream` step is primarily the same as any `request` step with the following exceptions.
 >
 > * In this step you are outlining two API calls instead of just one. These are separated by using `download` to refer to the first API that will download the data and `upload` to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
 
