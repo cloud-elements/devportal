@@ -64,6 +64,39 @@ Each different type of step produces different step execution values that are ad
 ```
 > **NOTE:** The `url` attribute is required, the value of which must be a valid `http` or `https` URL.
 
+### `stream` step:
+```json
+{
+  "my-step-name": {
+    "download": {
+        "request": {
+              "query": "{}",
+              "method": "POST",
+              "uri": "/elements/api-v2/hubs/crm/accounts",
+              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"jjwyse.ngrok.io\",\"content-type\":\"application/json}"
+          },
+          "response": {
+              "code": "200",
+              "headers": "{\"Set-Cookie\": \"CESESSIONID=2CA15552EE56EAF65BF1102F6CACEACC;Path=/elements/;HttpOnly\"}"
+          }
+      },
+      "upload": {
+          "request": {
+              "query": "{}",
+              "method": "POST",
+              "uri": "/elements/api-v2/hubs/crm/accounts",
+              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"jjwyse.ngrok.io\",\"content-type\":\"application/json}"
+            ,
+            "response": {
+                "code": "200",
+                "headers": "{\"Set-Cookie\": \"CESESSIONID=2CA15552EE56EAF65BF1102F6CACEACC;Path=/elements/;HttpOnly\"}",
+                "body": "{\"Id\": \"001tx3WcAAI\", \"Name\": \"New Account Name\"}"
+            }
+        }
+    }
+}
+```
+
 ### `amqpRequest` step:
 ```json
 {
