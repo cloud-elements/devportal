@@ -93,3 +93,5 @@ Below is a successful JSON response:
 }
 ```
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.
+
+{% include common-instance-config.md %}

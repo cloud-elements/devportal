@@ -143,3 +143,5 @@ Enter your credentials and asscoiated company details for Eloqua Account.",
 ```
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
+
+{% include common-instance-config.md %}

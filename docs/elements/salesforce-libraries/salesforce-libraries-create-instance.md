@@ -258,3 +258,5 @@ Create Instance JSON:
   "name": "<Insert_Instance_Name>"
 }
 ```
+
+{% include common-instance-config.md %}
