@@ -143,6 +143,8 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
+{% include common-instance-config.md %}
+
 Once you have instantiated your Element Instance, ServiceNow requires to be "woken up".
 
 To wake a Cloud Elements ServiceNow Element instance perform the following:

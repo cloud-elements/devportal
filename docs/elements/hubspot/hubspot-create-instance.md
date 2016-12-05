@@ -185,3 +185,5 @@ Note:  Make sure you have straight quotes in your JSON files and cURL commands. 
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+
+{% include common-instance-config.md %}
