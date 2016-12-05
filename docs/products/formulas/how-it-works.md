@@ -58,6 +58,7 @@ We currently support the following types of steps:
 * `notification`: Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.
 * `loop`: Loops over a list of objects from a previous step or trigger and calls the defined "on success" step for each item in the list.  Once each item has been processed, the "on failure" step is then called to continue executing the formula.
 * `formula`: Executes a sub-formula from the current formula.
+* `retryFormulaExecution`: Retries a formula instance execution with the same input data. The number of retry attempts can be configured, with a maximum of 5 attempts, and the retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backof is `round(e^x)` where `x` is the retry attempt number.
 
 # Terminology: Formula Instances
 
@@ -69,6 +70,6 @@ Once a formula has been created, in order to have that formula begin executing, 
 
 An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the potential inputs and outputs for each of these steps.
 
-> **PROTIP:** Each execution and step execution have an associated `status`.  This `status` can be `pending`, `success` or `failed`.
+> **PROTIP:** Each execution and step execution have an associated `status`.  This `status` for formula step executions can be `pending`, `success` or `failed`, while that for formula instance executions can be one of `pending`, `success`, `failed` or `retry`.
 
 > **PROTIP:** The step execution values are what can be referenced throughout your formula in order to chain steps together and reference previous data in your formula.  The step execution values make up, what we call, the formula "context".
