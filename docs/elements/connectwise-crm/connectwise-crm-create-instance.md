@@ -112,3 +112,5 @@ Below is a successful JSON response:
   "cachingEnabled": false
 }
 ```
+
+{% include common-instance-config.md %}

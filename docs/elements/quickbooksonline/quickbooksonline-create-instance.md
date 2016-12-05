@@ -250,3 +250,5 @@ For example:
   "externalAuthentication": "initial"
 }
 ```
+
+{% include common-instance-config.md %}
