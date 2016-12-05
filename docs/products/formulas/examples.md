@@ -419,3 +419,5 @@ Below are some JSON examples of all of the different types of triggers and steps
 ```
 
 > **NOTE:** The above snippet shows an example of a `retryFormulaExecution` step. In this example, the formula is set to attempt up to `3` retries. If the condition that required a formula execution retry, e.g., a service endpoint used by the formula being down for an extended period of time, is resolved between retries, then upon execution retry, the above step will NOT get executed and the formula should complete execution successfully.
+
+> **NOTE:** The *maximum* allowable number of retries for a given formula instance execution is `5`.
