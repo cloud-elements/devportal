@@ -179,3 +179,5 @@ Provision an instance to the Human Capital functions only. Use the following JSO
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+
+{% include common-instance-config.md %}
