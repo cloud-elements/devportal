@@ -175,6 +175,8 @@ function (trigger, steps, info, config, done) {
 
 > __PROTIP:__ You can use `console.log` to log things in your formula and help debug.
 
+> __PROTIP:__ You can use `notify.email` to send an email notification.  
+
 > __PROTIP:__ ES6 is supported.
 
 > __PROTIP:__ The function parameters are immutable, meaning they cannot be assigned to directly. In order to change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
@@ -185,6 +187,10 @@ __Functions__
 
 * `console.log(str)`: Log something from the script. This logged value will be returned in an array called `console`, which will be available to see as a step execution value. Takes a `string` as a parameter.
 * `throw(str)`: Force a script to exit with an error message. The error message will be available to see as a step execution value. Takes a `string` as a parameter.
+* `notify.email(to, subject, body)`: Send an email notification directly from a Javascript step.  `to` can be a single email or a comma separated list of emails, `subject` is the subject of the email and `body` is the body of the email. A value will be returned in an array called `notify`, which will be available to see as a step execution value. Takes three `string` parameters. You can reference anything from the context when passing in `to`, `subject` or `body` in the same way you can access these variables elsewhere in the Javascript. For example:
+```
+notify.email(steps.previous-step.email, steps.previous-step.subject, steps.previous-step.emailPrefix + '<br>This is the main body.');
+```
 
 __Libraries__
 
