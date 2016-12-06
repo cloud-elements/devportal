@@ -304,8 +304,8 @@ Below are some JSON examples of all of the different types of triggers and steps
     "uploadApi": "/hubs/crm/bulk/${config.object.name}",
     "uploadHeaders": "",
     "uploadQuery": "",
-    "uploadFormData": "${steps.build.targetMetadata}",
-    "uploadFormDataName": "${steps.build.targetMetadataName}"
+    "uploadFormData": "${steps.previous-step.targetMetadata}",
+    "uploadFormDataName": "${steps.previous-step.targetMetadataName}"
   }
 }
 ```
@@ -321,11 +321,11 @@ Below are some JSON examples of all of the different types of triggers and steps
     "downloadElementInstanceId": "${config.source}",
     "downloadMethod": "GET",
     "downloadApi": "/hubs/documents/files",
-    "downloadQuery": "${build.sourceQuery}",
+    "downloadQuery": "${steps.previous-step.sourceQuery}",
     "uploadElementInstanceId": "${config.target}",
     "uploadApi": "/hubs/documents/files",
     "uploadMethod": "POST",
-    "uploadQuery": "${build.targetQuery}"
+    "uploadQuery": "${steps.previous-step.targetQuery}"
   }
 }
 ```
