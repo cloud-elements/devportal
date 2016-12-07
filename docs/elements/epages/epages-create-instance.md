@@ -37,11 +37,11 @@ This instance.json file must be included with your instance request.  Please fil
 ```json
 {
   "element" : {
-      "key" : "abbyy"
+      "key" : "epages"
     },
     "configuration" : {
-      "username": "<INSERT_ePages_APPLICATION_NAME>",
-      "password": "<INSERT_ePages_APPLICATION_PASSWORD>"
+      "epages.access.token": "<INSERT_EPAGES_ACCESS_TOKEN>",
+      "base.url": "<INSERT_EPAGES_BASE_URL>" //The full base URL and shop of the store, (i.e. https://devshop.epages.com/rs /shops/{fullShopId} )"
   },
   "tags": [
     "<INSERT_TAGS>"

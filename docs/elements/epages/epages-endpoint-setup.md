@@ -13,28 +13,19 @@ order: 2
 
 
 Follow these instructions to create a new ePages Connected App.
-Register for an account at: [https://cloud.ocrsdk.com/Account/Register](https://cloud.ocrsdk.com/Account/Register)
+Register as a developer: [http://www.epages.cloud/developer/](http://www.epages.cloud/developer/)
 
-1. Complete form
+1. Within the administration area of your test shop, click the tab Apps & Themes. In the drop down menu, choose the field Developer apps.
 
-2. Click “Sign Up”
-![ePages Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/01/ePagesAPI1.png)
+2. In the Developer apps view, click the button Add.
 
-3. Complete form
+3. Fill out the input field App name. Specify the Application Callback URL. Make sure the URL is https and publicly accessible. Note: HTTP Application Callback URLs can be used for developer apps, but you need to provide an HTTPS URL once you want to submit the app to the App Store. Once the input fields are filled out, click the button Generate access data.
 
-4. Click “Submit”
-![ePages Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/01/ePagesAPI2.png)
-
-5. Name Application
-
-6. Click “Create Application”
-![ePages Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/01/ePagesAPI3.png)
-
-7. Click “Proceed”
-![ePages Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/01/ePagesAPI4.png)
+4. You will be assigned a Client ID, a Client Secret as well as an Access token. The Access token is granted by your test shop, so that you can start accessing the ePages API immediately.
+![ePages Connected App step 1](https://cl.ly/2n1k0a0a1Y3M)
 
 Check your email for the application password.
 
-The application name and password are needed for provisioning.
+The application Access Token and your store URL are needed for provisioning.
 
 Next [create an instance](epages-create-instance.html).
