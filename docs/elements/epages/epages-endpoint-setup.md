@@ -9,6 +9,7 @@ elementId: 260
 parent: Back to Element Guides
 order: 2
 ---
+
 ## Endpoint Setup
 
 
@@ -22,9 +23,9 @@ Register as a developer: [http://www.epages.cloud/developer/](http://www.epages.
 3. Fill out the input field App name. Specify the Application Callback URL. Make sure the URL is https and publicly accessible. Note: HTTP Application Callback URLs can be used for developer apps, but you need to provide an HTTPS URL once you want to submit the app to the App Store. Once the input fields are filled out, click the button Generate access data.
 
 4. You will be assigned a Client ID, a Client Secret as well as an Access token. The Access token is granted by your test shop, so that you can start accessing the ePages API immediately.
-![ePages Connected App step 1](https://cl.ly/2n1k0a0a1Y3M)
+![ePages Connected App step 1](img/epages-create-app.png)
 
-Check your email for the application password.
+You may view the [ePages docs](https://developer.epages.com/apps/create-app) for more detailed information.
 
 The application Access Token and your store URL are needed for provisioning.
 

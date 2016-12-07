@@ -53,6 +53,7 @@ layout: elements
 * [![Zendesk](/assets/img/element-logos/zendesk.png)Zendesk](./elements/zendesk/)
 * [![BigCommerce](/assets/img/element-logos/bigcommerce.png)BigCommerce](./elements/bigcommerce/)
 * [![Ecwid](/assets/img/element-logos/ecwid.png)Ecwid](./elements/ecwid/)
+* [![ePages](/assets/img/element-logos/epages.png)ePages](./elements/epages/)
 * [![Etsy](/assets/img/element-logos/etsy.png)Etsy](./elements/etsy/)
 * [![Infusionsoft eCommerce](/assets/img/element-logos/infusionsoft.png)Infusionsoft eCommerce](./elements/infusionsoft-ecommerce/)
 * [![Magento](/assets/img/element-logos/magento.png)Magento](./elements/magento/)

@@ -41,7 +41,7 @@ This instance.json file must be included with your instance request.  Please fil
     },
     "configuration" : {
       "epages.access.token": "<INSERT_EPAGES_ACCESS_TOKEN>",
-      "base.url": "<INSERT_EPAGES_BASE_URL>" //The full base URL and shop of the store, (i.e. https://devshop.epages.com/rs /shops/{fullShopId} )"
+      "base.url": "<INSERT_EPAGES_BASE_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -49,6 +49,8 @@ This instance.json file must be included with your instance request.  Please fil
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+
+__NOTE: the `base.url` config is the full base URL and shop of the store, (i.e. `https://devshop.epages.com/rs /shops/{fullShopId}` )__
 
 Here is an example cURL command to create an instance using /instances API.
 
