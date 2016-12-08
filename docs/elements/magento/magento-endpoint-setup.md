@@ -13,6 +13,7 @@ order: 5
 ## Endpoint Setup
 
 Follow these steps to create a new Magento Connected app.
+    You will need to create an OAuth Consumer which gives you the API key and secret to be used during provisioning and you will need to give access to make API calls to a User or Users
 
 Log in to the admin dashboard of your store.
 
@@ -37,23 +38,24 @@ Log in to the admin dashboard of your store.
 8. Click “Add Admin Role”
 ![Magento Connected App step 5](http://i67.tinypic.com/zjaqo9.png)
 
-9. Enter Name to Role (e.g. Administrator, API User, Name of Integration)
+9. Enter Name of Role (e.g. Administrator, API User, Name of Integration)
 
 10. Select “Role API Resources” on left
 ![Magento Connected App step 6](http://i67.tinypic.com/2myytrs.png)
 
 11. Either assign what resources you’d like to access via API or select “All” from the “Resource Access” dropdown menu
-![Magento Connected App step 7](http://i67.tinypic.com/o9iebq.png)
+
 12. Select “Save Role”
+![Magento Connected App step 7](http://i67.tinypic.com/o9iebq.png)
 
 13. Select “Role Users” from side menu
 
 14. Assign specific users (the user or users that will be used to authenticate on provisioning) to this REST role by checking the box next to the user name.
-![Magento Connected App step 8](http://i63.tinypic.com/30b05rb.png)
 
 15. Select "Save Role"
+![Magento Connected App step 8](http://i63.tinypic.com/30b05rb.png)
 
-16. If there are no users displayed change the drop down filter on the checkbox column to “Any” and click “Search”
+16. If there are no users displayed change the drop down filter on the checkbox column to “Any” and click “Search” and then go back to step 14
 ![Magento Connected App step 9](http://i67.tinypic.com/e8s4cl.png)
 
 
