@@ -31,4 +31,30 @@ Log in to the admin dashboard of your store.
 6. Input Admin Password and click “Save”
 ![Magento Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/03/MagentoAPI3.png)
 
+7. Select System > Web Services > REST - Roles
+![Magento Connected App step 4](http://i65.tinypic.com/10hqgew.png)
+
+8. Click “Add Admin Role”
+![Magento Connected App step 5](http://i67.tinypic.com/zjaqo9.png)
+
+9. Enter Name to Role (e.g. Administrator, API User, Name of Integration)
+
+10. Select “Role API Resources” on left
+![Magento Connected App step 6](http://i67.tinypic.com/2myytrs.png)
+
+11. Either assign what resources you’d like to access via API or select “All” from the “Resource Access” dropdown menu
+![Magento Connected App step 7](http://i67.tinypic.com/o9iebq.png)
+12. Select “Save Role”
+
+13. Select “Role Users” from side menu
+
+14. Assign specific users (the user or users that will be used to authenticate on provisioning) to this REST role by checking the box next to the user name.
+![Magento Connected App step 8](http://i63.tinypic.com/30b05rb.png)
+
+15. Select "Save Role"
+
+16. If there are no users displayed change the drop down filter on the checkbox column to “Any” and click “Search”
+![Magento Connected App step 9](http://i67.tinypic.com/e8s4cl.png)
+
+
 Next [create an instance](magento-create-instance.html).
