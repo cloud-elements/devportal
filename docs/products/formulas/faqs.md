@@ -67,9 +67,17 @@ You can set up a formula instance to send notifications for any errors via email
 ```
 
 ## **Can I do file uploads and downloads in a formula?**
-Yes.
+Yes. There are two ways to do this, but the preferred way is using a `elementRequestStream` step. The second option, using an elementRequest or httpRequest step is only supported for smaller files. If you are using our bulk APIs or downloading another large file, you need to use the `elementRequestStream` step.
 
 ## **How can I do file uploads and downloads in a formula?**
+#### Option #1: The `elementRequestStream` step (the far superior option)
+
+In a `elementRequestStream` step you can move a file from one place to another. This is done in a stream and the file content is not stored in the context of the formula. In the step you will specify all the necessary parameters for both an upload and a download API call. The step will execute the download API call and stream the response body of that request to the upload API.
+
+#### Option #2: The other option
+
+> **NOTE:** You should not use this unless the file is very small and option #1 will not work for you.
+
 If you have an elementRequest or an httpRequest step that calls an API which downloads a file, the response body will have the
 following format:
 
