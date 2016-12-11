@@ -455,3 +455,19 @@ Below are some JSON examples of all of the different types of triggers and steps
 > **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`. The args can be accessed in the sub-formula using `trigger.args`.
 
 > **NOTE:** If the sub-formula requires variables to be set, then those variables must be set in the parent formula instance. Create variables in the parent formula that match exactly with the sub-formula variables in order for those to be populated correctly upon running the sub-formula.
+
+## Example `retryFormulaExecution` steps:
+
+```json
+{
+  "name": "retry",
+  "type": "retryFormulaExecution",
+  "properties": {
+    "retryAttempts": "3"
+  }
+}
+```
+
+> **NOTE:** The above snippet shows an example of a `retryFormulaExecution` step. In this example, the formula is set to attempt up to `3` retries. If the condition that required a formula execution retry, e.g., a service endpoint used by the formula being down for an extended period of time, is resolved between retries, then upon execution retry, the above step will NOT get executed and the formula should complete execution successfully.
+
+> **NOTE:** The *maximum* allowable number of retries for a given formula instance execution is `5`.
