@@ -23,7 +23,7 @@ layout: elements
 * [![Act-On](/assets/img/element-logos/acton.png)Act-On](./elements/acton/)
 * [![Autopilot](/assets/img/element-logos/autopilot.png)Autopilot](./elements/autopilot/)
 * [![Eloqua](/assets/img/element-logos/eloqua.png)Eloqua](./elements/eloqua/)
-* [![HubSpot](/assets/img/element-logos/hubspot.png)HubSpot](./elements/hubspot/)
+* [![HubSpot Marketing](/assets/img/element-logos/hubspot.png)HubSpot Marketing](./elements/hubspot/)
 * [![Infusionsoft Marketing](/assets/img/element-logos/infusionsoft.png)Infusionsoft Marketing](./elements/infusionsoft-marketing/)
 * [![MailChimp](/assets/img/element-logos/mailchimp.png)MailChimp](./elements/mailchimp/)
 * [![MailJet Marketing](/assets/img/element-logos/mailjet.png)MailJet Marketing](./elements/mailjet-marketing/)

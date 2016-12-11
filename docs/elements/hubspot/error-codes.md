@@ -1,6 +1,6 @@
 ---
-heading: HubSpot
-seo: Error Codes | HubSpot | Cloud Elements API Docs
+heading: HubSpot Marketing
+seo: Error Codes | HubSpot Marketing | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs
