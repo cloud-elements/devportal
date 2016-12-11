@@ -41,7 +41,7 @@ First off, that's not a question.  Secondly, if your formula is not running, che
 ## **How fast do formulas run?**
 Unfortunately, this is a *very* difficult question to answer.  That being said, the speed of a given formula is dependent upon things like:
 
-* How many steps does it have?  
+* How many steps does it have?
 * What type of steps are running?
 * How fast are the `elementRequest` step endpoints' APIs?
 * How many concurrent formulas does your Cloud Elements account have running?
@@ -119,3 +119,11 @@ parameters to this call.
     "type": "workflow-multipart"
 }
 ```
+
+## **What are some uses cases to use the `retryFormulaExecution` step type?**
+The typical use cases to use a `retryFormulaExecution` step type are -
+
+1. If an endpoint that the formula uses is going to be down for an extended period of time, i.e., the endpoint is down for maintenance and not due to a network hiccup. In such a scenario, retry attempts of the `request`, `elementRequest` or `httpRequest` step are not enough as such attempts will retry in a second or less. The formula execution as a whole needs to truncated and retried with the same input data (event, manual trigger, etc.), minutes or even hours later.
+2. If an event triggers a formula execution, but the object at the source endpoint does have all the data in the required state yet, perhaps because there is an asynchronous workflow in place at the source service endpoint. This will require that the formula be re-executed in a few minutes, so that the necessary data condition of the object for which the event was triggered, has now occurred at the endpoint.
+
+Basically, any use case where the formula execution needs to wait for a few minutes or more, and retry the execution, can be accomplished using a `retryFormulaExecution` step.
