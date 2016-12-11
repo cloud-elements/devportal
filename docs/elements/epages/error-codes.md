@@ -1,11 +1,11 @@
 ---
-heading: HubSpot Marketing
-seo: Error Codes | HubSpot Marketing | Cloud Elements API Docs
+heading: ePages
+seo: Error Codes | ePages | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 43
+elementId: 1595
 parent: Back to Element Guides
 order: 40
 sitemap: false
