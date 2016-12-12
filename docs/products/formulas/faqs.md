@@ -67,7 +67,7 @@ You can set up a formula instance to send notifications for any errors via email
 ```
 
 ## **What if I need my formula to run only one execution at a time?**
-If you need to run your executions in a queue so only one execution is running per formula instance at any point in time you can set the `singleTreaded` flag to `true` on the formula. This is not recommended unless it is absolutely required by your use case as it will increase the overall execution time.
+If you need to run your executions in a queue so only one execution is running per formula instance at any point in time, you can set the `singleTreaded` flag to `true` on the formula. This is not recommended unless it is absolutely required by your use case as it will increase the overall execution time.
 
 ## **Can I do file uploads and downloads in a formula?**
 Yes. There are two ways to do this, but the preferred way is using a `elementRequestStream` step. The second option, using an elementRequest or httpRequest step is only supported for smaller files. If you are using our bulk APIs or downloading another large file, you need to use the `elementRequestStream` step.
