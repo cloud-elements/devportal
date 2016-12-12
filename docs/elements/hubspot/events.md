@@ -1,8 +1,8 @@
 ---
-heading: HubSpot
-seo: Events | HubSpot | Cloud Elements API Docs
+heading: HubSpot Marketing
+seo: Events | HubSpot Marketing | Cloud Elements API Docs
 title: Events
-description: Enable HubSpot events for your application.
+description: Enable HubSpot Marketing events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 43

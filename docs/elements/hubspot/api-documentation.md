@@ -1,8 +1,8 @@
 ---
-heading: HubSpot
-seo: API Docs | HubSpot | Cloud Elements API Docs
+heading: HubSpot Marketing
+seo: API Docs | HubSpot Marketing | Cloud Elements API Docs
 title: API Docs
-description: HubSpot API Documentation.
+description: HubSpot Marketing API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 43

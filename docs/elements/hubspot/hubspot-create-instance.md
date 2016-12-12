@@ -1,6 +1,6 @@
 ---
-heading: HubSpot
-seo: Create Instance | HubSpot | Cloud Elements API Docs
+heading: HubSpot Marketing
+seo: Create Instance | HubSpot Marketing | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: docs
@@ -12,9 +12,9 @@ order: 15
 
 ## Create Instance
 
-HubSpot is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the HubSpot platform.
+HubSpot Marketing is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the HubSpot Marketing platform.
 
-Optionally, you may provision an instance to specific features like Marketing and CRM. Below are examples of each method beginning with HubSpot Marketing.
+Optionally, you may provision an instance to specific features like Marketing and CRM. Below are examples of each method beginning with HubSpot Marketing Marketing.
 
 Cloud Elements supports instantiating Hubspot via __OAuth 2__ and __API Token Based__ authentication.
 
@@ -35,7 +35,7 @@ Cloud Elements supports instantiating Hubspot via __OAuth 2__ and __API Token Ba
 
 * __apiKey–__ the __Client ID__
 * __apiSecret__ – the __Portal ID__
-* __scopes__ – scopes you defined in HubSpot application setup. To use the Cloud Elements API, you must at least provide the following scopes: “contacts-rw+offline”
+* __scopes__ – scopes you defined in HubSpot Marketing application setup. To use the Cloud Elements API, you must at least provide the following scopes: “contacts-rw+offline”
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
@@ -67,11 +67,11 @@ Response:
 
 Handle Callback from the Endpoint:
 The URL returned in the GET /elements/{keyOrId}/oauth/url call is where you need to send your user. When that URL is executed, an authorization screen will render.
-Once the user has successful authorized the app, HubSpot will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Elements to create a HubSpot Element Instance.
+Once the user has successful authorized the app, HubSpot Marketing will provide three query string parameters: “access token”, “refresh token”, and “time expiration”. The value for the “access token”, “refresh token”, and “time expiration” parameters are required by Cloud Elements to create a HubSpot Marketing Element Instance.
 
 ### Step 2. Create an Instance
 
-To provision your HubSpot Element, use the /instances API.
+To provision your HubSpot Marketing Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -91,7 +91,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot is “hubspot”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements HubSpot Marketing is “hubspot”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
@@ -140,17 +140,17 @@ Below is a successful JSON response:
   "token": "dsPr6AheKIS8pt7rp8E81bSRINFgeEkx9Ftr+7t",
   "element": {
     "id": 43,
-    "name": "HubSpot",
+    "name": "HubSpot Marketing",
     "key": "hubspot",
-    "description": "HubSpot is an inbound marketing software platform that helps companies attract visitors, convert leads, and close customers.",
+    "description": "HubSpot Marketing is an inbound marketing software platform that helps companies attract visitors, convert leads, and close customers.",
     "image": "elements/provider_hubspot.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,
     "trialAccount": false,
     "existingAccountDescription": "Give your application access to your existing
- HubSpot accountEnter your credentials and details for your HubSpot Account",
-    "configDescription": "If you do not have a HubSpot account, you can create one at HubSpot Signup"
+ HubSpot Marketing accountEnter your credentials and details for your HubSpot Marketing Account",
+    "configDescription": "If you do not have a HubSpot Marketing account, you can create one at HubSpot Marketing Signup"
   },
   "provisionInteractions": [],
   "valid": true,
@@ -163,7 +163,7 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-## HubSpot Quick Provision
+## HubSpot Marketing Quick Provision
 
 {% include padding-all.html %}
 

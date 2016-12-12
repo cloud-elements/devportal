@@ -1,6 +1,6 @@
 ---
-heading: HubSpot
-seo: Endpoint Setup | HubSpot | Cloud Elements API Docs
+heading: HubSpot Marketing
+seo: Endpoint Setup | HubSpot Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: docs
