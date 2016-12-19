@@ -15,7 +15,7 @@ sitemap: false
 
 Cloud Elements is an API Integration Platform for application providers. Our 100% API based service can be embedded seamlessly into your app, making it easy to build and offer an integration marketplace to your customers.
 
-Cloud Elements provides pre-built connectors to the leading cloud applications such as Salesforce, QuickBooks, and Microsoft Dynamics CRM.  We've categorized these applications into `Hubs` (e.g. `CRM`, `Cloud Storage`, and `Finace`).
+Cloud Elements provides pre-built connectors to the leading cloud applications such as Salesforce, QuickBooks, and Microsoft Dynamics CRM.  We've categorized these applications into `Hubs` (e.g. `CRM`, `Cloud Storage`, and `Finance`).
 The pre-built connectors are referred to as `Elements`.  You integrate to a Cloud Elements `Hub` via a single RESTful API and your app is instantly connected to all the leading services in that category.to cloud services.
 [comment]: <> (I DON'T THINK THIS IS QUITE RIGHT: You integrate to a Cloud Elements `Hub` via a single RESTful API and your app is instantly connected to all the leading services in that category.to cloud services)
 
@@ -95,6 +95,8 @@ Each vendor’s OAuth implementation varies slightly, but these details are hand
 `Instances` are an authenticated connection to a cloud service.  When you provision an `instance`, your app will have access to the different functionality offered by the application platform.
 
 For example, provisioning an `instance` to Salesforce.com will give you the ability to create, retrieve, update, and delete data like `accounts`.
+
+An `instance` is always connected to a single account.  For every customer or account you wish to connect, an `instance` will need to be created.  For example, if five different customers need to access the data in my Salesforce account, I must create 5 different instances for those customers.
 
 As mentioned in the Authentication section, each Element requires authentication.  In order to provision an `instance`, the Cloud Elements tokens are required along with the Element requirements.
 
