@@ -11,3 +11,8 @@ order: 50
 ---
 
 ## Additional Information
+
+What should I do if I receive the following error message:
+![HubSpot Scope](img/scope.png)
+
+Verify that the scopes selected in registered app are aligned with the permissions allowed under the selected Portal ID.
