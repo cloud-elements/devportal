@@ -46,7 +46,7 @@ Scope is required.  For more information on HubSpot CRM scope, please the the [d
 * __apiKey–__ the __Client ID__
 * __apiSecret__ – the __Client Secret__
 * __scopes__ – Scopes have to match what was set up in their OAuth application exactly
-paid Marketing HubSpotters can use all:  `contacts timeline`
+paid CRM HubSpotters can use all:  `contacts timeline`
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
@@ -58,7 +58,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/hubspotcrm/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456&scope=&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth'
+'https://api.cloud-elements.com/elements/api-v2/elements/hubspotcrm/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456789d-1234-12e4-bda9-12345b8bf20&scope=&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth'
 ```
 
 Here's an example with all objects granted in scope:
@@ -68,7 +68,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/hubspotcrm/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456&scope=contacts%20%20timeline&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth'
+'https://api.cloud-elements.com/elements/api-v2/elements/hubspotcrm/oauth/url?apiKey=123456789d-1234-12e4-bda9-12345b8bf20&apiSecret=123456789d-1234-12e4-bda9-12345b8bf20&scope=contacts%20%20timeline&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth'
 ```
 
 Response:
@@ -76,7 +76,7 @@ Response:
 ```json
 {
   "element": "hubspotcrm",
-  "oauthUrl": "https://app.hubspot.com/auth/authenticate?client_id=123456789d-1234-12e4-bda9-12345b8bf20&portalId=123456&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&scope=contacts-rw%20offline"
+  "oauthUrl": "https://app.hubspot.com/oauth/authorize?client_id=123456789d-1234-12e4-bda9-12345b8bf20&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com&scope=contacts%20timeline"
 }
 ```
 
@@ -117,8 +117,8 @@ This `instance.json` file must be included with your instance request.  Please f
   },
   "configuration": {
     "oauth.api.key": "<INSERT HUBSPOT_OAUTH_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT HUBSPOT_OAUTH_PORTAL_ID>",
-    "oauth.callback.url": "www.samplecallbackurl.com"
+    "oauth.api.secret": "<INSERT HUBSPOT_OAUTH_CLIENT_SECRET>",
+    "oauth.callback.url": "https://www.mycoolapp.com/auth"
   },
   "tags": [
     "<ADD_YOUR_TAG>"
