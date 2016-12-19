@@ -96,6 +96,8 @@ Each vendor’s OAuth implementation varies slightly, but these details are hand
 
 For example, provisioning an `instance` to Salesforce.com will give you the ability to create, retrieve, update, and delete data like `accounts`.
 
+An `instance` is always connected to a single account.  For every customer or account you wish to connect, an `instance` will need to be created.  For example,
+
 As mentioned in the Authentication section, each Element requires authentication.  In order to provision an `instance`, the Cloud Elements tokens are required along with the Element requirements.
 
 Example `cURL` request using Basic Authentication:
