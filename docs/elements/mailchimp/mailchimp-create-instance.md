@@ -5,7 +5,7 @@ title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 197
+elementId: 527
 parent: Back to Element Guides
 order: 15
 ---
@@ -33,20 +33,20 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/mailchimp3/oauth/url?apiKey=INSERT_CLIENT_ID&apiSecret=INSERT_CLIENT_SECRET&callbackUrl=https://www.mycoolapp.com/auth'
+'https://api.cloud-elements.com/elements/api-v2/elements/mailchimpv3/oauth/url?apiKey=INSERT_CLIENT_ID&apiSecret=INSERT_CLIENT_SECRET&callbackUrl=https://www.mycoolapp.com/auth'
 ```
 
 Response:
 
 ```json
 {
-  "element": "mailchimp3",
-  "oauthUrl": "https://login.mailchimp.com/oauth2/authorize?response_type=code&client_id=INSERT_CLIENT_ID&redirect_uri=http%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=mailchimp"
+  "element": "mailchimpv3",
+  "oauthUrl": "https://login.mailchimp.com/oauth2/authorize?response_type=code&client_id=INSERT_CLIENT_ID&redirect_uri=http%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=mailchimpv3"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “mailchimp3” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “mailchimpv3” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 ### Step 2. Create an Instance
 
@@ -70,12 +70,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements MailChimp is “mailchimp3”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements MailChimp is “mailchimpv3”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "mailchimp3"
+    "key": "mailchimpv3"
   },
   "providerData": {
     "code": "<INSERT_CODE_ON_THE_RETURN_URL>"
@@ -115,8 +115,8 @@ Below is a successful JSON response:
   "token": "TVZSABK59NX8yK/uwvCKmoDxdGMSK2IZKE=",
   "element": {
     "id": 1234,
-    "name": "MailChimp",
-    "key": "mailchimp3",
+    "name": "MailChimp v3.0",
+    "key": "mailchimpv3",
     "description": "Send better email. MailChimp is a leading online email marketing solution. More than 6 million people use MailChimp to design and send email marketing campaigns.",
     "image": "elements/provider_mailchimp.png",
     "active": true,
