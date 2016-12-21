@@ -19,7 +19,7 @@ sitemap: false
 In order to create a connection to MailChimp the following steps are required:
 
 1. Set up the [endpoint](mailchimp-endpoint-setup.html)
-2. Call the `GET /elements/mailchimp3/oauth/url` with your MailChimp API key and secret
+2. Call the `GET /elements/mailchimpv3/oauth/url` with your MailChimp API key and secret
 3. Call the `POST /instances` API to instantiate your MailChimp connected app
 
 #### In Depth
