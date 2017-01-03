@@ -6,7 +6,7 @@ description: Event Hash Verification Guide
 layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
-order: 90
+order: 6
 sitemap: false
 ---
 
@@ -14,11 +14,11 @@ sitemap: false
 
 All Element Instances containing an Event Notification Signature Key will include the `Elements-Webhook-Signature` header field.
 The value of this field will contain a unique SHA256 hash that corresponds to the event (ie. `sha256=jHdbRx5EZAsOfTwAPJOGkNUzQMVVdu5VJlxcsk+G6jQ=`).
-This hash is calculated by creating a SHA256 hash of the payload using the Event Notification Signature Key as the key. In order to verify Event Notifications originate from Cloud Elements please regenerate the SHA256 hash and test it against the value of the `Elements-Webhook-Signature` header. 
+This hash is calculated by creating a SHA256 hash of the payload using the Event Notification Signature Key as the key. In order to verify Event Notifications originate from Cloud Elements please regenerate the SHA256 hash and test it against the value of the `Elements-Webhook-Signature` header.
 
 Cloud Elements has provided sample code for re-generating the SHA256 hash for event notifications:
 
-`Java`: 
+`Java`:
 
 ```java
 import org.apache.commons.codec.binary.Base64;
@@ -60,7 +60,7 @@ public class SecurityEventKey {
 ```
 
 `Javascript`:
-  
+
 ```javascript
 // Using Stanford JavaScript Cryptography Library (https://crypto.stanford.edu/sjcl/)
 
@@ -72,7 +72,7 @@ console.log("sha256="hmac)
 // sha256=jHdbRx5EZAsOfTwAPJOGkNUzQMVVdu5VJlxcsk+G6jQ=
 ```
 
-`Ruby`: 
+`Ruby`:
 
 ```ruby
 require 'openssl'
