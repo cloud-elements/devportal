@@ -6,7 +6,7 @@ description: Event Hash Verification Guide
 layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
-order: 6
+order: 40
 sitemap: false
 ---
 

@@ -6,7 +6,7 @@ description: View the Event Management Guide explaining the Cloud Elements Event
 layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
-order: 7
+order: 50
 sitemap: false
 ---
 
