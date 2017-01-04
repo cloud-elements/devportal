@@ -6,7 +6,7 @@ description: Event Hash Verification Guide
 layout: docs
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 90
+order: 40
 sitemap: false
 ---
 
