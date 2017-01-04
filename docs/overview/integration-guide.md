@@ -4,7 +4,7 @@ seo: Integration Guide | Cloud Elements API Docs
 title: Integration Guide
 description: A walkthrough of an example integration
 layout: docs
-order: 3
+order: 10
 published: true
 sitemap: false
 ---

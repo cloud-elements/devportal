@@ -37,13 +37,23 @@
           <a href="/">PORTAL HOME</a>
         </li>
 
+        {% if page.url == '/docs/overview/index.html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="/docs/overview/index.html">
+            OVERVIEW
+          </a>
+        </li>
+
         {% if page.url == '/docs/elements.html' %}
           <li class="active">
         {% else %}
           <li>
         {% endif %}
           <a href="/docs/elements.html">
-            DOCS
+            ELEMENT DOCS
           </a>
         </li>
 
@@ -53,7 +63,7 @@
           <li>
         {% endif %}
           <a href="/docs/products/api-toolkit.html">
-            API TOOLKIT
+            GUIDES
           </a>
         </li>
 
@@ -67,15 +77,6 @@
           </a>
         </li>
 
-        {% if page.url == '/docs/platform/platform-docs.html' %}
-          <li class="active">
-        {% else %}
-          <li>
-        {% endif %}
-          <a href="/docs/platform/platform-docs.html">
-            PLATFORM
-          </a>
-        </li>
         <li>
           <a href="https://console.cloud-elements.com/elements/jsp/signup.jsp" target="_blank">
           <button type="button" class="btn btn-lg btn-danger try-it">Try it For Free! <i class="fa fa-caret-right"></i></button>
