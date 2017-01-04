@@ -20,3 +20,4 @@ Once you get logged into the Console, locate the `ADMINISTRATION` menu on the le
 The Administration menu allows you to create accounts and user logins for your customers.
 
 By clicking on the Accounts menu, you will get a list of each account that has been set up.  A single account would represent one of your customers.  Each account could then have multiple users, each belonging to that organization.
+![Add Account](/assets/img/integration-guide/add-account.png)
