@@ -15,9 +15,8 @@ sitemap: false
 
 Cloud Elements is an API Integration Platform for application providers. Our 100% API based service can be embedded seamlessly into your app, making it easy to build and offer an integration marketplace to your customers.
 
-Cloud Elements provides pre-built connectors to the leading cloud applications such as Salesforce, QuickBooks, and Microsoft Dynamics CRM.  We've categorized these applications into `Hubs` (e.g. `CRM`, `Cloud Storage`, and `Finace`).
+Cloud Elements provides pre-built connectors to the leading cloud applications such as Salesforce, QuickBooks, and Microsoft Dynamics CRM.  We've categorized these applications into `Hubs` (e.g. `CRM`, `Cloud Storage`, and `Finance`).
 The pre-built connectors are referred to as `Elements`.  You integrate to a Cloud Elements `Hub` via a single RESTful API and your app is instantly connected to all the leading services in that category.to cloud services.
-[comment]: <> (I DON'T THINK THIS IS QUITE RIGHT: You integrate to a Cloud Elements `Hub` via a single RESTful API and your app is instantly connected to all the leading services in that category.to cloud services)
 
 ### Common Terms
 
@@ -63,7 +62,6 @@ Our tokens and secrets are passed as Basic HTTP Header Values. For example, to m
 `Authorization: User 7OpR4MRo7wnPoVKkKFXHhHBUPRzqutoem/d+WEnR1kY=, Organization ce7f1f9be0d2a8b1f37bcfa6d71eda20`
 
 Separate authentication is required for each of our Elements based on the endpoint requirements, e.g. Basic, OAuth 1, OAuth 2, and Custom.
-[comment]: <> (NEED HELP HERE PLEASE)
 
 ##### Base URL
 
@@ -94,7 +92,9 @@ Each vendor’s OAuth implementation varies slightly, but these details are hand
 
 `Instances` are an authenticated connection to a cloud service.  When you provision an `instance`, your app will have access to the different functionality offered by the application platform.
 
-For example, provisioning an `instance` to Salesforce.com will give you the ability to create, retrieve, update, and delete data like `accounts`.
+For example, provisioning an `instance` to Salesforce.com will give you the ability to create, retrieve, update, and delete data like `accounts`.  An instance must be created in order to execute APIs within a cloud service.
+
+An `instance` is always connected to a single account.  For every customer or account you wish to connect, an `instance` will need to be created.  For example, if five different customers need to access the data in my Salesforce account, I must create 5 different instances for those customers.
 
 As mentioned in the Authentication section, each Element requires authentication.  In order to provision an `instance`, the Cloud Elements tokens are required along with the Element requirements.
 
@@ -123,6 +123,21 @@ curl -X POST
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+
+__Instance Management__
+
+Instances can be managed via API or our API Management Console.
+
+Management via API:
+
+Using our RESTful APIs, easily create, retrieve, update, and delete using the `/instances` endpoint.
+
+Management via the Console:
+
+From the left hand navigation menu, Elements > select My Instances.
+This action will render a list of your current instances.
+From this screen click the settings gear to edit, clone, or delete an instance.
+API docs for the Element can also be viewed along with creating a transformation (more about this in the transformations defined section).
 
 #### EVENTS DEFINED
 
@@ -155,8 +170,6 @@ The Transformation APIs allow you to:
 * manage custom object and custom data fields
 * map custom data fields to and from the format that your application uses and expects
 * programmatically persist and maintain transformations for each of your client’s CRM, Marketing, and Help Desk services
-
-[comment]: <> (WHAT ELSE DO WE NEED?)
 
 #### BULK APIS DEFINED
 

@@ -33,14 +33,14 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/slack/oauth/url?apiKey=slack_client_id&apiSecret=slack_client_secret&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&scope=scope=users%3Awrite%2C+users%3Aread%2C+users.profile%3Aread%2C+users.profile%3Awrite%2C+search%3Aread%2C+files%3Aread%2C+files%3Awrite%3Auser%2C+channels%3Aread%2C+groups%3Aread&response_type'
+'https://api.cloud-elements.com/elements/api-v2/elements/slack/oauth/url?apiKey=slack_client_id&apiSecret=slack_client_secret&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&scope=users%3Awrite%2C%20users%3Aread%2C%20users%3Aread.email%2C%20users.profile%3Aread%2C%20users.profile%3Awrite%2C%20chat%3Awrite%3Auser%2C%20search%3Aread%2C%20files%3Aread%2C%20files%3Awrite%3Auser%2C%20channels%3Aread%2C%20channels%3Awrite%2C%20channels%3Ahistory%2C%20groups%3Aread%2C%20groups%3Awrite%2C%20groups%3Ahistory'
 ```
 
 Response:
 
 ```javascript
 {
-  "oauthUrl": "https://slack.com/oauth/authorize?scope=users%3Awrite%2C+users%3Aread%2C+users.profile%3Aread%2C+users.profile%3Awrite%2C+search%3Aread%2C+files%3Aread%2C+files%3Awrite%3Auser&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=slack&client_id=slack_client_id",
+  "oauthUrl": "https://slack.com/oauth/authorize?scope=users%3Awrite%2C+users%3Aread%2C+users%3Aread.email%2C+users.profile%3Aread%2C+users.profile%3Awrite%2C+chat%3Awrite%3Auser%2C+search%3Aread%2C+files%3Aread%2C+files%3Awrite%3Auser%2C+channels%3Aread%2C+channels%3Awrite%2C+channels%3Ahistory%2C+groups%3Aread%2C+groups%3Awrite%2C+groups%3Ahistory&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=slack&client_id=slack_client_id",
   "element": "slack"
 }
 ```
@@ -84,7 +84,7 @@ This instance.json file must be included with your instance request.  Please fil
     "oauth.api.key": "<INSERT_CLIENT_ID>",
     "oauth.api.secret": "<INSERT_CLIENT_SECRET>",
     "oauth.callback.url": "<INSERT_CALLBACK_URL>",
-    "oauth.scope": "users:write, users:read, users.profile:read, users.profile:write, search:read, files:read, files:write:user, channels:read, groups:read"
+    "oauth.scope": "users:write, users:read, users:read.email, users.profile:read, users.profile:write, chat:write:user, search:read, files:read, files:write:user, channels:read, channels:write, channels:history, groups:read, groups:write, groups:history"
   },
   "tags": [
     "<ADD_YOUR_TAG>"
@@ -148,14 +148,14 @@ Below is a successful JSON response:
     "oauth.token.url": "https://slack.com/api/oauth.access",
     "pagination.max": "100",
     "event.vendor.type": "webhooks",
-    "oauth.scope": "users:write, users:read, users.profile:read, users.profile:write, search:read, files:read, files:write:user",
+    "oauth.scope": "users:write, users:read, users:read.email, users.profile:read, users.profile:write, chat:write:user, search:read, files:read, files:write:user, channels:read, channels:write, channels:history, groups:read, groups:write, groups:history",
     "oauth.user.token": "xoxp-99845548065-3df640f4b74a86416895b3f9af42bc2b",
     "oauth.authorization.url": "https://slack.com/oauth/authorize",
     "event.notification.instance.finder": "",
     "pagination.type": "page",
     "event.notification.callback.url": "false",
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "scope": "users:write, users:read, users.profile:read, users.profile:write, search:read, files:read, files:write:user",
+    "scope": "users:write, users:read, users:read.email, users.profile:read, users.profile:write, chat:write:user, search:read, files:read, files:write:user, channels:read, channels:write, channels:history, groups:read, groups:write, groups:history",
     "oauth.user.refresh_token": null,
     "oauth.token.revoke_url": "https://slack.com/api/auth.revoke",
     "oauth.user.refresh_interval": "3600",

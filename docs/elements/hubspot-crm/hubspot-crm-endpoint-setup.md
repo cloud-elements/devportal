@@ -28,9 +28,8 @@ Via a web browser, login to your HubSpot account:
 4. Click on the newly created app from the dashboard
 ![HubSpot Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/01/HubSpotAPI3.png)
 
-5. Fill out App info and make note of the "Client ID" and "Client Secret" (NOTE: your HubSpot Portal ID is also required for provisioning)
-
-6. Click "Save"
-![HubSpot Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/01/HubSpotAPI4.png)
+5. Fill out App info and make note of the "Client ID" and "Client Secret" (NOTE: your HubSpot Portal ID is also required for provisioning via the Legacy OAuth spec)
+Click the EDIT button at the top of the page to fill out your scope.
+![HubSpot Connected App step 4](img/hubspot-connected-app.png)
 
 Next [create an instance](hubspot-crm-create-instance.html).
