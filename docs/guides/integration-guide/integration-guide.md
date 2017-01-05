@@ -5,8 +5,6 @@ title: Integration Guide
 description: A walkthrough of an example integration
 layout: docs
 order: 10
-breadcrumbs: /docs/guides/home.html
-parent: Back to Guides
 published: true
 sitemap: false
 ---
