@@ -8,20 +8,20 @@ layout: guides
 
 {% include product-guides.html %}
 
-* [![Integration Guide](/assets/img/integration-guide.png)Integration Guide](/docs/guides/integration-guide/integration-guide.html)
-* [![Element Builder](/assets/img/element-builder-icon.png)Element Builder](/docs/guides/element-builder/)
-* [![Element Mapper](/assets/img/element-mapper-icon.png)Element Mapper](/docs/guides/element-mapper/)
-* [![Formulas](/assets/img/formulas-icon.png)Formulas](/docs/guides/formulas/)
-* [![Ground2Cloud](/assets/img/ground-2-cloud-icon.png)Ground2Cloud](/docs/guides/ground-2-cloud/)
+* [Integration Guide![Sample Integration](/assets/img/integration-guide.png)See Sample Integration](/docs/guides/integration-guide/integration-guide.html)
+* [Element Builder![Element Builder](/assets/img/element-builder-icon.png)Build Custom Elements](/docs/guides/element-builder/)
+* [Element Mapper![Element Mapper](/assets/img/element-mapper-icon.png)Map and Transform Data](/docs/guides/element-mapper/)
+* [Formulas![Formulas](/assets/img/formulas-icon.png)Build Workflows](/docs/guides/formulas/)
+* [Ground2Cloud![Ground2Cloud](/assets/img/ground-2-cloud-icon.png)On Prem Connector](/docs/guides/ground-2-cloud/)
 
-#### Platform Guides
+{% include platform-guides.html %}
 
-* [![Account APIs](/assets/img/platform-icons/accounts.png)Accounts](/docs/guides/accounts/account-management.html)
-* [![Element APIs](/assets/img/platform-icons/elements.png)Elements](/docs/guides/elements/)
-* [![Hub APIs](/assets/img/platform-icons/hubs.png)Hubs](/docs/guides/hubs/)
-* [![Instance APIs](/assets/img/platform-icons/instances.png)Instances](/docs/guides/instances/)
-* [![Organization APIs](/assets/img/platform-icons/organizations.png)Organizations](/docs/guides/organizations/)
-* [![Usage APIs](/assets/img/platform-icons/usage.png)Usage](/docs/guides/usage/)
-* [![Users APIs](/assets/img/platform-icons/users.png)Users](/docs/guides/users/)
-* [![Event Management](/assets/img/platform-icons/events.png)Event Management](/docs/guides/event-management/)
-* [![OAuth Proxy](/assets/img/platform-icons/oauth-proxy.png)OAuth Proxy](/docs/guides/oauth-proxy/)
+* [Account Management![Account APIs](/assets/img/platform-icons/accounts.png)Create Accounts](/docs/guides/accounts/account-management.html)
+* [Event Management![Event Management](/assets/img/platform-icons/events.png)Event Documentation](/docs/guides/event-management/)
+* [OAuth Proxy![OAuth Proxy](/assets/img/platform-icons/oauth-proxy.png)Setup OAuth Proxy](/docs/guides/oauth-proxy/)
+* [Instances![Instance APIs](/assets/img/platform-icons/instances.png)Instances Overview](/docs/guides/instances/)
+* [Organizations![Organization APIs](/assets/img/platform-icons/organizations.png)Organizations Overview](/docs/guides/organizations/)
+* [Elements![Element APIs](/assets/img/platform-icons/elements.png)Elements Overview](/docs/guides/elements/)
+* [Hubs![Hub APIs](/assets/img/platform-icons/hubs.png)Hubs Overview](/docs/guides/hubs/)
+* [Usage![Usage APIs](/assets/img/platform-icons/usage.png)Usage Overview](/docs/guides/usage/)
+* [Users![Users APIs](/assets/img/platform-icons/users.png)Users Overview](/docs/guides/users/)

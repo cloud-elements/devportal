@@ -31,16 +31,15 @@
   {% include nav.html %}
   <div class="jumbotron">
     <div class="container text-xs-center p-a-lg title">
-    <h2>Cloud Elements <span>Product Guides</span></h2>
-    <p>Find documentation on all of the tools needed <br>to get started building your own integration.</p>
-    {% include filter.html %}
+    <h2>Cloud Elements <span>Integration Guides</span></h2>
+    <p>Find documentation on all of our <br> <b>Product Features</b> and <b>Platform Features</b> below.</p>
   </div>
-  </div>
+</div>
   <div class="container-fluid">
 
-      
+      {% include filter.html %}
 
-      {{content | column}}
+      {{content | guides}}
 
       <a class="docs-top" style="display: none" href="#">Back to top</a>
 
