@@ -36,7 +36,7 @@ We normalize our API calls for all endpoints, to enable calls between services e
 
 We’ve categorized the leading cloud applications into Hubs (e.g. CRM, Documents, and Messaging). You integrate to a Cloud Elements “Hub” via a single RESTful API and your app is instantly connected to all the leading services in that category, no need to do custom and costly integration to each service.
 
-### Instance
+#### Instance
 
 An Instance is your personalized version of an Element or formula.  An Element Instance allows you to access your data, custom objects, and fields for an Element.
 
@@ -93,7 +93,7 @@ API docs for the Element can also be viewed along with creating a transformation
 
 {% include padding-all.html %}
 
-### FORMULAS
+#### FORMULAS
 
 Formulas are the automated workflows that sync data between Elements.  For example, if your integration use case calls for syncing `/contacts` between your CRM and Helpdesk Elements, you would build a formula to accomplish the movement of this data.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.
 
@@ -119,7 +119,7 @@ __The Cloud Elements Query Language (CEQL)__ is a query language used by Cloud E
 
 #### OAUTH PROXY
 
-The OAuth Proxy feature gives you the capability to have multiple environments, such as development, QA, etc, with one endpoint application. For example some vendors only allow one callback URL per application. The proxy will allow for the same callback URL to be used with multiple application endpoints. You would then use the proxy address as the Callback URL instead of your own Callback URL. This permits multiple endpoint applications to one callback URL.
+The __OAuth Proxy__ feature gives you the capability to have multiple environments, such as development, QA, etc, with one endpoint application. For example some vendors only allow one callback URL per application. The proxy will allow for the same callback URL to be used with multiple application endpoints. You would then use the proxy address as the Callback URL instead of your own Callback URL. This permits multiple endpoint applications to one callback URL.
 
 We offer two forms of the proxy.
 Standard OAuth Proxy Configuration: requires an API key and secret to be passed as URL parameters or in the JSON payload needed to create an instance.

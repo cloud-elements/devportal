@@ -5,6 +5,8 @@ title: Console Tour
 description: A Brief Tour of the Console
 layout: docs
 order: 4
+breadcrumbs: /docs/guides/home.html
+parent: Back to Guides
 published: true
 sitemap: false
 ---

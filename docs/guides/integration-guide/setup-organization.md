@@ -5,6 +5,8 @@ title: Setup Organization
 description: Instructions on how to set up your Organization and add Accounts with Cloud Elements.
 layout: docs
 order: 3
+breadcrumbs: /docs/guides/home.html
+parent: Back to Guides
 published: true
 sitemap: false
 ---

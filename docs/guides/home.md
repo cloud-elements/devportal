@@ -8,7 +8,7 @@ layout: guides
 
 {% include product-guides.html %}
 
-* [Integration Guide![Sample Integration](/assets/img/integration-guide.png)See Sample Integration](/docs/guides/integration-guide/integration-guide.html)
+* [Integration Guide![Sample Integration](/assets/img/integration-guide.png)See Sample Integration](/docs/guides/integration-guide/overview.html)
 * [Element Builder![Element Builder](/assets/img/element-builder-icon.png)Build Custom Elements](/docs/guides/element-builder/)
 * [Element Mapper![Element Mapper](/assets/img/element-mapper-icon.png)Map and Transform Data](/docs/guides/element-mapper/)
 * [Formulas![Formulas](/assets/img/formulas-icon.png)Build Workflows](/docs/guides/formulas/)

@@ -1,7 +1,7 @@
 ---
-heading: Cloud Elements Platform Overview
+heading: Platform Overview
 seo: Cloud Elements Platform Overview | Cloud Elements API Docs
-title: Platform Overview
+title: Overview
 description: Overview of the Cloud Elements Platform and how to integrate it into your application.
 layout: docs
 order: 1
@@ -9,11 +9,11 @@ published: true
 sitemap: false
 ---
 
-### Who is Cloud Elements?
+## Who is Cloud Elements?
 
 Cloud Elements is an API Integration Platform for application providers. Our 100% API based service can be embedded seamlessly into your app, making it easy to build and offer an integration marketplace to your customers.
 
-### How does Cloud Elements solve your Integration problem?
+## How does Cloud Elements solve your Integration problem?
 
 We architected our platform from the ground-up to support the deployment option that’s best for your business. Our platform provides these features that will save you time and money in developing the integrations your customers are demanding.
 

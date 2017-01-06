@@ -1,7 +1,7 @@
 ---
 heading: Creating Your First Integration
 seo: Creating Your First Integration | Cloud Elements API Docs
-title: Creating Your First Integration
+title: Creating First Integration
 description: How to Build Your First API Integration with Cloud Elements
 layout: docs
 order: 5
@@ -12,6 +12,8 @@ sitemap: false
 ## Creating Your First Integration
 
 To help guide you through the Cloud Elements platform, we will build an example integration. Our use case will be to sync new Contacts from Salesforce to Shopify Customers.
+
+__NOTE:__ if you have not reviewed our [Definitions section](definitions.html), please do so before viewing this guide.
 
 #### Create Element Instances
 
