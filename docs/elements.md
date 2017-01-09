@@ -69,6 +69,7 @@ layout: elements
 * [![Sage Live](/assets/img/element-logos/sagelive.png)Sage Live](./elements/sagelive/)
 * [![Sage One US](/assets/img/element-logos/sageoneus.png)Sage One US](./elements/sageoneus/)
 * [![Sage One UK](/assets/img/element-logos/sageoneus.png)Sage One UK](./elements/sageoneuk/)
+* [![GoToWebinar](/assets/img/element-logos/gotowebinar.png)GoToWebinar](./elements/gotowebinar/)
 * [![Amazon S3](/assets/img/element-logos/amazons3.png)Amazon S3](./elements/amazons3/)
 * [![Box](/assets/img/element-logos/box.png)Box](./elements/box/)
 * [![Dropbox](/assets/img/element-logos/dropbox.png)Dropbox](./elements/dropbox/)
