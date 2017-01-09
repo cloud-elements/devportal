@@ -9,6 +9,7 @@ layout: elements
 * [![Act Premium CRM](/assets/img/element-logos/actpremium.png)Act Premium CRM](./elements/actpremiumcrm/)
 * [![Autotask CRM](/assets/img/element-logos/autotask.png)Autotask CRM](./elements/autotask-crm/)
 * [![BaseCRM](/assets/img/element-logos/basecrm.png)BaseCRM](./elements/basecrm/)
+* [![Bullhorn CRM](/assets/img/element-logos/bullhorn.png)Bullhorn](./elements/bullhorn/)
 * [![Close.io](/assets/img/element-logos/closeio.png)Close.io](./elements/closeio/)
 * [![ConnectWise CRM](/assets/img/element-logos/connectwise.png)ConnectWise CRM](./elements/connectwise-crm/)
 * [![Dynamics CRM](/assets/img/element-logos/dynamicscrm.png)Microsoft Dynamics CRM](./elements/dynamicscrm/)
