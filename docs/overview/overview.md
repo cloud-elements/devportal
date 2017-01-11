@@ -7,6 +7,8 @@ layout: docs
 order: 1
 published: true
 sitemap: false
+redirect_from:
+  - /docs/getstarted/
 ---
 
 ## Who is Cloud Elements?

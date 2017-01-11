@@ -4,6 +4,9 @@ seo: Cloud Elements Integration Guides | Cloud Elements API Docs
 title: Cloud Elements Integration Guides
 description: Find documentation on all of the currently supported products.
 layout: guides
+redirect_from:
+  - /docs/platform/platform-docs.html
+  - /docs/products/api-toolkit.html
 ---
 
 {% include product-guides.html %}

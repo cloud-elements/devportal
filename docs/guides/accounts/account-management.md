@@ -8,6 +8,8 @@ platform: accounts
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1
+redirect_from:
+  - /docs/platform/accounts/account-management.html
 ---
 
 ## Account Usage and Management Guide

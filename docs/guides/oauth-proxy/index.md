@@ -8,6 +8,8 @@ breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 4
 sitemap: false
+redirect_from:
+  - /docs/platform/oauth-proxy/
 ---
 
 ## OAuth Proxy (OPTIONAL Feature)

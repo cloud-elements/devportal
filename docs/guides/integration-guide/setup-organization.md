@@ -8,7 +8,7 @@ order: 3
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
-sitemap: false
+sitemap: true
 ---
 
 

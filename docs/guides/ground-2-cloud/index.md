@@ -8,6 +8,8 @@ breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1
 sitemap: false
+redirect_from:
+  - /docs/products/ground-2-cloud/
 ---
 
 ## Overview
