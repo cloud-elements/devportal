@@ -82,6 +82,7 @@ layout: elements
 * [![Salesforce Documents](/assets/img/element-logos/salesforce.png)Salesforce Documents](./elements/salesforce-documents/)
 * [![Salesforce Libraries](/assets/img/element-logos/salesforce.png)Salesforce Libraries](./elements/salesforce-libraries/)
 * [![Citrix ShareFile](/assets/img/element-logos/sharefile.png)Citrix ShareFile](./elements/sharefile/)
+* [![SFTP](/assets/img/element-logos/sftp.png)SFTP](./elements/sftp/)
 * [![Sharepoint](/assets/img/element-logos/sharepoint.png)Sharepoint 2013 Online](./elements/sharepoint/)
 * [![NetSuite Human Capital](/assets/img/element-logos/netsuite.png)NetSuite Human Capital](./elements/netsuite-human-capital/)
 * [![Infobip](/assets/img/element-logos/infobip.png)Infobip](./elements/infobip/)

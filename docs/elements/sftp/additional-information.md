@@ -21,3 +21,11 @@ This will translate into having to put a full `path` when trying to access a fil
 Instances may be created to a specific file path e.g. `/home/documents/test`
 
 Only files in the `/home/documents/test` folder can be accessed using this specific instance.
+
+{% include padding-all.html %}
+
+{% include padding-all.html %}
+
+{% include padding-all.html %}
+
+{% include padding-all.html %}

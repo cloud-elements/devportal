@@ -5,7 +5,6 @@ exclude:
   - README.md
   - doc-templates
   - docs/guides/quickstart-guides/
-  - docs/elements/sftp/
 
 liquid:
   error_mode: strict
