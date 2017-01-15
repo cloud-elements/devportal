@@ -60,6 +60,8 @@ a:hover, a:focus, a:visited {
 }
 .nav .navbar-nav{
   padding: 1.5em 0;
+  align-items: center;
+  display: flex;
 }
 
 .navbar-default .navbar-brand-emphasized,
@@ -80,7 +82,7 @@ a:hover, a:focus, a:visited {
   font-weight: normal;
   color: #fff;
   text-transform: uppercase;
-  width: 350px;
+  width: 280px;
 }
 .nav .filler{
   -webkit-flex: 1;
@@ -99,12 +101,12 @@ a:hover, a:focus, a:visited {
 }
 .nav > li > a{
   padding: 7px 0 5px 0;
-  margin: 0 20px;
+  margin: 0 10px;
 }
 .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
     font-weight: bold;
     color: #000;
-    border-bottom: 2px solid #40b4e5;
+    border-bottom: 2px solid #40b4e5 !important;
 }
 
 .nav > li > a:hover, .nav > li > a:focus {
@@ -127,6 +129,8 @@ a:hover, a:focus, a:visited {
 
 .nav.navbar-light .navbar-nav > li > a {
   color: #000;
+  font-size: 90%;
+  border-bottom: 2px solid #FFF;
 }
 
 .navbar-default .navbar-nav > li > a .active{
@@ -147,11 +151,11 @@ hr {
   font-family: "Open Sans", sans-serif;
   font-size: 97%;
   font-weight: 700;
-  width: 160px;
+  width: 125px;
   text-align: left;
   background-color: #ff4e4e;
-  padding-left: 15px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 13px;
   padding-bottom: 13px;
   -webkit-transition: all 200ms ease-in; */
@@ -160,7 +164,7 @@ hr {
 }
 .try-it:hover{
   background-color: #ff4e4e;
-  padding-left: 27px;
+  padding-left: 15px;
 }
 .try-it i{
   position: absolute;
@@ -688,6 +692,7 @@ hr {
   }
   .nav .navbar-nav{
     padding: 0;
+    display: block;
   }
   .nav > li > a {
     padding: 15px;
@@ -699,7 +704,7 @@ hr {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1160px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .try-it {
     display: none;
   }
