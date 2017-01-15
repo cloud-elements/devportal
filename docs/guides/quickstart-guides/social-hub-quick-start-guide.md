@@ -5,6 +5,8 @@ title: Social Hub Quick Start Guide
 description: Get up and running with the Social Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/social-hub-quick-start-guide.html
 ---
 
 ### Social Hub Quick Start Guide

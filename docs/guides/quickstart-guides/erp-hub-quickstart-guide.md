@@ -5,6 +5,8 @@ title: ERP Hub Quick Start Guide
 description: Get up and running with the ERP Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/erp-hub-quick-start-guide.html
 ---
 
 ## ERP Hub Quick Start Guide

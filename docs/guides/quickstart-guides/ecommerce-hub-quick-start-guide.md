@@ -5,6 +5,8 @@ title: eCommerce Hub Quick Start Guide
 description: Get up and running with the eCommerce Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/ecommerce-hub-quick-start-guide.html
 ---
 
 ### eCommerce Hub Quick Start Guide
