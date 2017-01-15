@@ -5,7 +5,7 @@ title: API Docs
 description: Citrix GoToWebinar API Documentation.
 layout: apidocs
 breadcrumbs: /docs/elements.html
-elementId: 450
+elementId: 1743
 parent: Back to Element Guides
 order: 90
 ---

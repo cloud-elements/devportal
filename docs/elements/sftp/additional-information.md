@@ -5,7 +5,7 @@ title: Additional Information
 description: SFTP FAQ.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 450
+elementId: 1742
 parent: Back to Element Guides
 order: 50
 ---

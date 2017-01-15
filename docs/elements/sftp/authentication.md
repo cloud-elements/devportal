@@ -5,7 +5,7 @@ title: Authentication
 description: Integrate SFTP into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 478
+elementId: 1742
 parent: Back to Element Guides
 order: 10
 sitemap: false

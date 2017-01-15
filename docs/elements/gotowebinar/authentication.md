@@ -5,7 +5,7 @@ title: Authentication
 description: Integrate Citrix GoToWebinar into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 450
+elementId: 1743
 parent: Back to Element Guides
 order: 10
 sitemap: false
