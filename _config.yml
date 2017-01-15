@@ -4,7 +4,6 @@ exclude:
   - circle.yml
   - README.md
   - doc-templates
-  - docs/guides/quickstart-guides/
 
 liquid:
   error_mode: strict

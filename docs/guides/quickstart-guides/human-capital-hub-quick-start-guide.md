@@ -5,6 +5,8 @@ title: Human Capital Hub Quick Start Guide
 description: Get up and running with the Human Capital Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/human-capital-hub-quick-start-guide.html
 ---
 
 ## Human Capital Hub Quick Start Guide

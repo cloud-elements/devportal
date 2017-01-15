@@ -5,6 +5,8 @@ title: Messaging Hub Quick Start Guide
 description: Get up and running with the Messaging Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/messaging-hub-quick-start-guide.html
 ---
 
 ## Messaging Hub Quick Start Guide

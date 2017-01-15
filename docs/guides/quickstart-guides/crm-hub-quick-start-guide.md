@@ -5,6 +5,8 @@ title: CRM Hub Quick Start Guide
 description: Get up and running with the CRM Hub.
 layout: docs
 order: 2
+redirect_from:
+  - /docs/getstarted/quickstart-guides/crm-hub-quick-start-guide.html
 ---
 
 ### CRM Hub Quick Start Guide

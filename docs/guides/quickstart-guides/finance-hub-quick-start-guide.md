@@ -5,6 +5,8 @@ title: Finance Hub Quick Start Guide
 description: Get up and running with the Finance Hub.
 layout: docs
 order: 4
+redirect_from:
+  - /docs/getstarted/quickstart-guides/finance-hub-quick-start-guide.html
 ---
 
 ## Finance Hub Quick Start Guide

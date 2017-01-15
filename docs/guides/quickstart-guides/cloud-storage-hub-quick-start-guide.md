@@ -5,6 +5,8 @@ title: Cloud Storage Hub Quick Start Guide
 description: Get up and running with the Cloud Storage Hub.
 layout: docs
 order: 3
+redirect_from:
+  - /docs/getstarted/quickstart-guides/cloud-storage-hub-quick-start-guide.html
 ---
 
 ### Cloud Storage Hub Quick Start Guide
