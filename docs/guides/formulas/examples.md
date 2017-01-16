@@ -447,14 +447,15 @@ Below are some JSON examples of all of the different types of triggers and steps
   "type": "formula",
   "properties": {
     "formulaId": "SUB_FORMULA_ID",
-    "args": "steps.build-args"
+    "args": "previous-step.build-args",
+    "subFormulaConfigs": "previous-step.build-configs"
   }
 }
 ```
 
-> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` property, which points to a value that was constructed from a previous step named `build-args`. The args can be accessed in the sub-formula using `trigger.args`.
+> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` and `subFormulaConfigs` properties. Both point to a value that was constructed from a previous step. The args can be accessed in the sub-formula using `trigger.args`. The subFormulaConfigs can be accessed in the sub-formula using `config` for example: `config.crmInstanceId`. 
 
-> **NOTE:** If the sub-formula requires variables to be set, then those variables must be set in the parent formula instance. Create variables in the parent formula that match exactly with the sub-formula variables in order for those to be populated correctly upon running the sub-formula.
+> **NOTE:** If the sub-formula requires variables to be set, then those variables can either be set in the parent formula instance using the same config names or passed in via the `subFormulaConfigs` property. All sub-formulas inherit their parent formula's configuration values. If you pass in the `subFormulaConfigs` these are added to the list of existing configs from the parent and the sub-formula has access to the parent's configs and those passed in with the values in `subFormulaConfigs` taking precedence.
 
 ## Example `retryFormulaExecution` steps:
 
