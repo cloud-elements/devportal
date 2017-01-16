@@ -8,7 +8,7 @@ order: 1
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
-sitemap: true
+sitemap: false
 ---
 
 ## Who is Cloud Elements?
