@@ -36,12 +36,6 @@ For Shopify, our Instance configuration looks like this:
 Since our example Formula is just one-directional from Salesforce, we don’t need to enable `Events` for Shopify.  If we conducting doing bi-directional syncs, then we we would enable `Events`.
 
 
-{% include padding-all.html %}
-
-{% youtube 7D4wyIpUUhw %}
-
-{% include padding-all.html %}
-
 #### Transformations
 
 One of the most powerful features of the Cloud Elements platform is the ability to create Transformations on the data you receive from an Element.  
@@ -82,13 +76,6 @@ When we have finished creating our Transformation, we can add it to the Swagger 
 We also want to map our common ``/MyContacts`` resource to `Shopify /Customer`.  Following the same process as Salesforce, our mappings look like this:
 
 ![MyContact Mappings](img/mycontact-mappings.png)
-
-
-{% include padding-all.html %}
-
-{% youtube WutATxFfML0 %}
-
-{% include padding-all.html %}
 
 ### Formulas
 
@@ -179,13 +166,6 @@ For a single execution you can see each step of the Formula and whether or not t
 For failures, you can select a step and see the response body from the element to help debug and troubleshoot any issues.
 
 ![Executions2](img/executions2.png)
-
-
-{% include padding-all.html %}
-
-{% youtube xj4_QXnPEZk %}
-
-{% include padding-all.html %}
 
 For more Quickstart videos, follow the link below:
 
