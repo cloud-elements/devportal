@@ -37,6 +37,11 @@ For Shopify, our Instance configuration looks like this:
 
 Since our example Formula is just one-directional from Salesforce, we don’t need to enable `Events` for Shopify.  If we conducting doing bi-directional syncs, then we we would enable `Events`.
 
+{% include padding-all.html %}
+
+{% youtube "https://www.youtube.com/embed/7D4wyIpUUhw?color=white&theme=light" %}
+
+{% include padding-all.html %}
 
 #### Transformations
 
