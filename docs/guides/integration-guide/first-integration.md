@@ -84,6 +84,12 @@ We also want to map our common ``/MyContacts`` resource to `Shopify /Customer`. 
 
 ![MyContact Mappings](img/mycontact-mappings.png)
 
+{% include padding-all.html %}
+
+{% youtube "https://www.youtube.com/embed/WutATxFfML0?color=white&theme=light" %}
+
+{% include padding-all.html %}
+
 ### Formulas
 
 Formulas are the automated workflows you can build to sync data between Elements. Formulas start with a Trigger, or event that starts the workflow. Whether or not a specific integration needs a Formula depends on several factors, but as a rule of thumb, if data needs to be synced automatically, it’s best done with a Formula.
@@ -173,6 +179,12 @@ For a single execution you can see each step of the Formula and whether or not t
 For failures, you can select a step and see the response body from the element to help debug and troubleshoot any issues.
 
 ![Executions2](img/executions2.png)
+
+{% include padding-all.html %}
+
+{% youtube "https://www.youtube.com/embed/xj4_QXnPEZk?color=white&theme=light" %}
+
+{% include padding-all.html %}
 
 For more Quickstart videos, follow the link below:
 
