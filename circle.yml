@@ -8,6 +8,7 @@ dependencies:
     - gem install redcarpet
     - gem install jekyll-sitemap
     - gem install jekyll-redirect-from
+    - gem install jekyll-youtube
 
 test:
   override:
