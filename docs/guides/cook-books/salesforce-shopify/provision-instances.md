@@ -18,11 +18,13 @@ redirect_from:
 
 In order to move data between Salesforce and Hubspot accounts, we will need to create an instance of each.
 
+Its helpful to think of **Elements** and **Instances** like Object Oriented Classes. An Element is like an abstract class or template. An Instance is an instantiation of the Element or template.
+
 Checkout out [definitions section](https://developers.cloud-elements.com/docs/overview/definitions.html) to better understand the difference between an element and an element instance.
 
 ## Add a Hubspot Instance
 
-Under the elements catalog, find the *Hubspot CRM instance and add and instance of it.
+Under the elements catalog, find the **Hubspot CRM** element and add an instance of it.
 
 ![Element Catalog](https://cl.ly/241Z2l3T3l01/Screen%20Shot%202017-01-26%20at%2012.18.19%20PM.png)
 
@@ -39,7 +41,7 @@ We can ignore the other fields in the configuration.
 
 ## Add a Salesforce Instance
 
-Follow the same steps as above to provision a Salesforce instance. 
+Follow the same steps as above to provision a Salesforce instance.
 
 In the case of Salesforce `Objects to Monitor for Changes` should be set to `Contact`. Note that this is a different field from Hubspot. When creating instances of different Elements, the configuration settings will differ slightly. 
 
