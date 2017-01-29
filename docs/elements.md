@@ -110,6 +110,7 @@ layout: elements
 * [![Chargify](/assets/img/element-logos/chargify.png)Chargify](./elements/chargify/)
 * [![Expensify](/assets/img/element-logos/expensify.png)Expensify](./elements/expensify/)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/)
+* [![Cisco Spark](/assets/img/element-logos/ciscospark.png)Cisco Spark](./elements/cisco-spark/)
 * [![Slack](/assets/img/element-logos/slack.png)Slack](./elements/slack/)
 * [![GoodData](/assets/img/element-logos/gooddata.png)GoodData](./elements/gooddata/)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
