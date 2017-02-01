@@ -4,9 +4,6 @@ seo: Cloud Elements Cook Books | Cloud Elements API Docs | Integration Cook Book
 title: Cloud Elements Cook Books
 description: Integration 
 layout: guides
-redirect_from:
-  - /docs/platform/platform-docs.html
-  - /docs/products/api-toolkit.html
 ---
 
 {% include product-guides.html %}

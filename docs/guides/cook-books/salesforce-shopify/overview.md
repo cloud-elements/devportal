@@ -6,12 +6,12 @@ description: Overview
 layout: docs
 apis: API Docs
 platform: elementsbuilder
-breadcrumbs: /docs/guides/cook-books
+breadcrumbs: /docs/guides/cook-books/overview
 parent: Back to Cook Books
 order: 1
 sitemap: false
 redirect_from:
-  - /docs/products/element-builder/
+  - /docs/guides/cook-books
 ---
 
 # Overview
@@ -24,7 +24,7 @@ If this is your first time using our platform, checkout our [Platform Overview](
 
 There are four steps to create the two way flow of Contacts between Salesforce and Hubspot.
 
-1. Provision an instance of Salesforce and Hubspot
-2. Create a Common Object to transform the data
+1. [Provision an instance of Salesforce and Hubspot](https://developers.cloud-elements.com/docs/guides/cook-books/salesforce-shopify/provision-instances.html)
+2. [Create a Common Object to transform the data](https://developers.cloud-elements.com/docs/guides/cook-books/salesforce-shopify/transformations.html)
 3. Create a template formula
 4. Provision two instances of the formula
