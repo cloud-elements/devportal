@@ -11,4 +11,4 @@ redirect_from:
 
 {% include product-guides.html %}
 
-* [Contact Syncing![Sample Integration](/assets/img/integration-guide.png)Shopify and Salesforce](/docs/guides/cook-books/salesforce-shopify/salesforce-shopify)
+* [Contact Syncing![Sample Integration](/assets/img/integration-guide.png)Shopify and Salesforce](/docs/guides/cook-books/salesforce-shopify/overview)
