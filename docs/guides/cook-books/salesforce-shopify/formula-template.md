@@ -24,7 +24,8 @@ Under the Formulas tab, select the green build formula button to create a new fo
 
 ![Formula Tab](https://cl.ly/3e3g0l00351B/Screen%20Shot%202017-02-01%20at%204.06.42%20PM.png)
 
-## Creating Variables
+
+# Creating Variables
 
 Just like any function, a formula can take in variables as arguments. A formula can contain two kinds of variables.
 
@@ -33,13 +34,13 @@ Just like any function, a formula can take in variables as arguments. A formula 
 
  Create **four variables**:
 
- - Two **Value** variables called 'hub' and 'objectName'
+ - Two **Value** variables called 'hub' and 'object'
  - Two **Instance** variables called 'DestinationInstance' and 'OriginInstance'
 
  ![Variables](https://cl.ly/3d3M0t283j3K/[d9c4aeb603c40889c04f4a1aa1b45030]_Screen%2520Shot%25202017-02-01%2520at%25204.16.02%2520PM.png)
 
 
-## Formula Trigger
+# Formula Trigger
 
 A formula trigger is what kicks off a formula.
 
@@ -51,7 +52,8 @@ Create an **Event Trigger** and set Element Instance to `OriginInstance`. This s
 
 This will create the first step in the formula.
 
-## Building the Formula
+
+# Building the Formula
 
 Now that we have all our variables and an Event to kickoff our formula, we can created the logic of our formula.
 
@@ -61,7 +63,8 @@ This can be accomplished in a few steps.
 2. Check if that contact exists in the **Destination Instance**.
 3. If the contact does exist, **update it**. Else **create it**.
 
-### 1. Get the Original Contact
+
+## 1. Get the Original Contact
 
 First check to make sure that the trigger is an event, and the object updated was a contact.
 
@@ -108,7 +111,8 @@ The configured step looks like this:
 
 Link the new step to the filter step, by selecting the green checkmark under isEvent and selecting getOriginalObject.
 
-### 2. Check if the contact exists in the destination
+
+## 2. Check if the contact exists in the destination
 
 To check the destination instance for an exsiting contact, we need to create a query.
 
@@ -140,12 +144,16 @@ The **element request** should be configured as follows:
 `API` : `/hubs/${config.hub}/${config.object}`  
 `Query` : `steps.createQuery.query`
 
-### 1. Update or Create a new Contact
+
+## 3. Update or Create a new Contact
 
 Here we will create a branch in our formula. 
 
  - If a contact exists in the destination, **update** that contact.
  - If a contact does not exist in the destination, **create** a new one.  
+
+<br>
+### Update a Contact
 
 First create a filter to determine if the **findContact** returned any contacts.
 
@@ -159,19 +167,43 @@ Create a step called `doesExist`, that contains the following:
 
 This step will branch two ways, if a contact exits it will return true, if not it will return false.
 
-Now lets create the update contact branch.
+Now lets create the update contact branch. This will require **two steps**
 
-Create and **Element Request*** step with the following configuration:
+**First** create a filter step called `shouldUpdate` with the following code:
+
+    let _ = require('lodash');
+
+    let originObject = steps.getOriginalObject.response.body;
+    let destinationObject = steps.findContact.response.body;
+
+    delete originObject.lastModifiedDate;
+    delete originObject.Id;
+
+    delete destinationObject.lastModifiedDate;
+    delete destinationObject.Id;
+
+    if(_.isEqual(originObject, destinationObject)) {
+      done(false);
+    }
+
+    done(true);
+
+Since update should only happen when the `doesExist` step returns true, link `shouldUpdate` to on success of `doesExist`.
+
+![Should Update](https://cl.ly/2d2r073v1o3I/[549b616fb289ca9a09d8201b2f081a90]_Screen%2520Shot%25202017-02-02%2520at%25202.53.10%2520PM.png)
+
+**Second** Create an **Element Request** step with the following configuration:
 
 `Name` : `updateContact`  
 `Element Instance` : `config.destinationinstance`  
 `METHOD` : `PATCH`  
-`API` : `/hubs/${config.hub}/${config.objectname}/${steps.findContact.response.body[0].AccountId}`  
+`API` : `/hubs/${config.hub}/${config.object}/${steps.findContact.response.body[0].Id}`  
 `Body` : `steps.getOriginalObject.response.body`  
 
-Since update should only happen when the `doesExist` step returns true, link `updateContact` to on success of `doesExist`.
+Link `updateContact` to the on success of `shouldUpdate`
 
-![Update Contact](https://cl.ly/3P3l3l0m0a1A/[69e726f2f9a837cacbd519763dfc772a]_Screen%2520Shot%25202017-02-02%2520at%25201.35.02%2520PM.png)
+<br>
+### Create a new Contact
 
 Lastly we need to create a new contact if one doesn't exist.
 
@@ -180,7 +212,7 @@ Create an **Element Request** step with the following configuration.
 `Name` : `createNewContact`  
 `Element Instance` : `config.destinationinstance`  
 `Method`: `POST`  
-`API` : `/hubs/${config.hub}/${config.objectname}`  
+`API` : `/hubs/${config.hub}/${config.object}`  
 `Body` : `steps.getOriginalObject.response.body`  
 
 Since a new contact is created when `doesExist` returns false, link `createNewContact` to on failure of `doesExist`.
@@ -189,6 +221,6 @@ Since a new contact is created when `doesExist` returns false, link `createNewCo
 
 The completed branch will now look like this:
 
-![Completed Branch](https://cl.ly/1G2z0Q1W2214/Screen%20Shot%202017-02-02%20at%201.48.31%20PM.png)
+![Completed Branch](https://cl.ly/44273D0F1u2H/Screen%20Shot%202017-02-02%20at%203.03.18%20PM.png)
 
-Now we can test our completed formula. 
+You can now test your completed formula. 
