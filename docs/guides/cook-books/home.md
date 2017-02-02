@@ -8,4 +8,4 @@ layout: guides
 
 {% include product-guides.html %}
 
-* [Contact Syncing![Sample Integration](/assets/img/integration-guide.png)Shopify and Salesforce](/docs/guides/cook-books/salesforce-shopify/overview)
+* [Contact Syncing![Sample Integration](/assets/img/cookbook.png)Shopify and Salesforce](/docs/guides/cook-books/salesforce-shopify/overview)
