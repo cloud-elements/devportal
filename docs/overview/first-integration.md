@@ -3,7 +3,7 @@ heading: Creating Your First Integration
 seo: Creating Your First Integration | Cloud Elements API Docs
 title: Creating First Integration
 description: How to Build Your First API Integration with Cloud Elements
-layout: docs
+layout: sidebarleft
 order: 5
 published: true
 sitemap: false

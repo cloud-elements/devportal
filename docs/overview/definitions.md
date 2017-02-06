@@ -3,7 +3,7 @@ heading: Cloud Elements Definitions
 seo: Cloud Elements Definitions | Cloud Elements API Docs
 title: Definitions
 description: Overview of common terms within the Cloud Elements Platform.
-layout: docs
+layout: sidebarleft
 order: 2
 published: true
 sitemap: false

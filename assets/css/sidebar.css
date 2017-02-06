@@ -1,0 +1,33 @@
+.sidebarLayoutWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar {
+  flex: 3;
+}
+
+.sidebar a {
+  color: #9198aa;
+}
+
+.activeMenuItem a {
+  color: #3bb6e5;
+  border-left: 2px solid #3bb6e5;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+}
+
+.contentWrapper {
+  flex: 9;
+}
+
+.submenu {
+  color: ;
+}
