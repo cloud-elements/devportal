@@ -1,4 +1,4 @@
-.sidebarLayoutWrapper {
+.sidebarWrapper {
   display: flex;
   justify-content: flex-end;
 }
@@ -21,7 +21,7 @@
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin: 10px;
+  margin: 5px 10px;
 }
 
 .contentWrapper {
