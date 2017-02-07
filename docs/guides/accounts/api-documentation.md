@@ -3,7 +3,7 @@ heading: Account APIs
 seo: Account API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Account API Documentation.
-layout: sidebarleft
+layout: sidebarapidocs
 apis: API Docs
 platform: accounts
 breadcrumbs: /docs/guides/home.html
