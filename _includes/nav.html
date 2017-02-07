@@ -47,6 +47,16 @@
           </a>
         </li>
 
+        {% if page.url == '/docs/overview/overview.html' %}
+          <li class="active">
+        {% else %}
+          <li>
+        {% endif %}
+          <a href="/docs/overview/overview.html">
+            TUTORIALS
+          </a>
+        </li>
+
         {% if page.url == '/docs/elements.html' %}
           <li class="active">
         {% else %}
@@ -57,7 +67,7 @@
           </a>
         </li>
 
-        {% if page.url == '/docs/guides/home.html' %}
+       <!--  {% if page.url == '/docs/guides/home.html' %}
           <li class="active">
         {% else %}
           <li>
@@ -65,9 +75,9 @@
           <a href="/docs/guides/home.html">
             INTEGRATION GUIDES
           </a>
-        </li>
+        </li> -->
 
-        {% if page.url == '/docs/hubs/hub-docs.html' %}
+        <!-- {% if page.url == '/docs/hubs/hub-docs.html' %}
           <li class="active">
         {% else %}
           <li>
@@ -75,7 +85,7 @@
           <a href="/docs/hubs/hub-docs.html">
             HUB API DOCS
           </a>
-        </li>
+        </li> -->
 
         <li>
           <a href="https://console.cloud-elements.com/elements/jsp/signup.jsp" target="_blank">
