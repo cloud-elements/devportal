@@ -1,10 +1,7 @@
 .sidebarWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-}
-
-.sidebar {
-  flex: 3;
 }
 
 .sidebar a {
@@ -18,16 +15,8 @@
   margin-bottom: 10px;
 }
 
-.sidebar ul {
+.sidebarWrapper ul {
   list-style: none;
   padding: 0;
   margin: 5px 10px;
-}
-
-.contentWrapper {
-  flex: 9;
-}
-
-.submenu {
-  color: ;
 }

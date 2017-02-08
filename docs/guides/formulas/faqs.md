@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula FAQs | Formulas | Cloud Elements API Docs
 title: FAQs
 description: Frequently Asked Questions
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

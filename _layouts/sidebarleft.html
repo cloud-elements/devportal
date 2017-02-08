@@ -1,8 +1,6 @@
 {% assign id = page.path | shard_id %}
 {% assign shard = site.shards[id] | sort:"order" %}
 
-{% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,53 +35,11 @@
   {% include nav.html %}
 
   <div class="container-fluid">
-
-    <div class="sidebarWrapper">
-      <div class="col-md-3 sidebar">
-        <h4> Getting Started </h3>
-          <ul>
-            {% for i in overviewshard %}
-              {% if i.url == page.url %}
-                <li>
-                  <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
-                </li>
-              {% else %}
-                <li>
-                  <a href={{i.url}}> {{i.title}} </a>
-                </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-        <h4> Advanced Guides </h3>
-          <ul>
-            {% for folder in site.shards %}
-              {% assign key = folder[0] %}
-              {% if key contains "docs_guides" %}
-              {% assign pages = site.shards[key] | sort:"order" %}
-              <li>
-                <a href={{pages[0].url}}> {{pages[0].heading}} </a>
-                  {% if key == id %}
-                  <ul>
-                    {% for p in pages %}
-                    <li>
-                      {% if page.url == p.url %}
-                        <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
-                      {% else %}
-                        <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a>
-                      {% endif %}
-                    </li>
-                    {% endfor %}
-                  </ul>
-                  {% endif %}
-              </li>
-              {% endif %}
-            {% endfor %}
-          </ul>
-      </div>
-
-      <div class="col-md-9 contentWrapper">
+    <div class="col-md-3 sidebar">
+    {% include sidebar.html %}
+    </div>
+    <div class="col-md-9 contentWrapper">
         {{content}}
-      </div>
     </div>
 
     {%inspect%}

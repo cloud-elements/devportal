@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Videos | Formulas | Cloud Elements API Docs
 title: Videos
 description: Videos walking through the different features of Formula Builder.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

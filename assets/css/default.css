@@ -1,12 +1,14 @@
 .button-row {
-  height: 20vh;
+  height: auto;
   width: 100%;
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
 }
 
 .section-button{
   display: flex;
+  flex: 0 0 auto;
   justify-content: center;
   align-items: center;
   font-size: 2.5rem;

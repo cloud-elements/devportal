@@ -3,7 +3,7 @@ heading: Formulas
 seo: How It Works | Formulas | Cloud Elements API Docs
 title: How It Works
 description: What are Formulas and how do they work?
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

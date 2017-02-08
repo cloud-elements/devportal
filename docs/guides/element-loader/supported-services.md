@@ -3,7 +3,7 @@ heading: Element Loader
 seo: Supported Services | Element Loader | Cloud Elements API Docs
 title: Supported Services
 description: Element Loader Supported Services.
-layout: docs
+layout: sidebarleft
 order: 4
 ---
 

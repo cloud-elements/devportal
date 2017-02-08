@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Migrate Object Definitions and Transformations | Element Mapper | Cloud Elements API Docs
 title: Migrate Object Definitions and Transformations
 description: How to move Objects and Transformations from one account to another
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

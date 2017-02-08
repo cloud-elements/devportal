@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Examples | Formulas | Cloud Elements API Docs
 title: Examples
 description: View JSON examples of all of the different types of triggers and steps.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

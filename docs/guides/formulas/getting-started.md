@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formulas Getting Started | Formulas | Cloud Elements API Docs
 title: Getting Started
 description: Learn how to create formulas in Cloud Elements.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

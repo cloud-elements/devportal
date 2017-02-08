@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Getting Started | Element Mapper | Cloud Elements API Docs
 title: Getting Started
 description: Get up and running with Element Mapper UI.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
