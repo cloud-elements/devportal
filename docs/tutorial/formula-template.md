@@ -116,7 +116,7 @@ Link the new step to the filter step, by selecting the green checkmark under isE
 
 To check the destination instance for an existing contact, we need to create a query.
 
-Start by adding a **script** step.
+Start by adding a **script** step called `createQuery`.
 
 ![script step](https://cl.ly/2l2z1f150U33/Screen%20Shot%202017-02-02%20at%201.00.25%20PM.png)
 
@@ -138,12 +138,13 @@ Next, add another **element request** step. This step will use the query we just
 
 The **element request** should be configured as follows:
 
-`Name` : `findContact`
+`Name` : `findContact`  
 `Element Instance` : `config.destinationinstance`  
 `Method` : `GET`  
 `API` : `/hubs/${config.hub}/${config.object}`  
 `Query` : `steps.createQuery.query`
 
+Then link findContact to On Success of createQuery.
 
 ## 3. Update or Create a new Contact
 
@@ -155,9 +156,9 @@ Here we will create a branch in our formula.
 <br>
 ### Update a Contact
 
-First, create a filter to determine if the **findContact** returned any contacts.
+First, determine if findContact returned a matching contact.
 
-Create a step called `doesExist`, that contains the following:
+Create a step a **filter step** called `doesExist`, that contains the following:
 
     if (steps.findContact.response.body.length >= 1) {
       done(true);
@@ -165,9 +166,11 @@ Create a step called `doesExist`, that contains the following:
 
     done(false);
 
+Link doesExist to On Success of findContact.
+
 This step will branch two ways if a contact exists it will return true, if not it will return false.
 
-Now let's create the update contact branch. This will require **two steps**
+Now create the update contact branch. This will require **two steps**
 
 **First**, create a filter step called `shouldUpdate` with the following code:
 
@@ -176,11 +179,17 @@ Now let's create the update contact branch. This will require **two steps**
     let originObject = steps.getOriginalObject.response.body;
     let destinationObject = steps.findContact.response.body;
 
+    originObject = Array.isArray(originObject) ? originObject[0] : originObject;
+    destinationObject = Array.isArray(destinationObject) ? destinationObject[0] : destinationObject;
+
     delete originObject.lastModifiedDate;
     delete originObject.Id;
 
     delete destinationObject.lastModifiedDate;
     delete destinationObject.Id;
+
+    console.log(originObject);
+    console.log(destinationObject);
 
     if(_.isEqual(originObject, destinationObject)) {
       done(false);
@@ -215,7 +224,7 @@ Create an **Element Request** step with the following configuration.
 `API` : `/hubs/${config.hub}/${config.object}`  
 `Body` : `steps.getOriginalObject.response.body`  
 
-Since a new contact is created when `doesExist` returns false, link `createNewContact` to on failure of `doesExist`.
+Link createNewContact to On Failure of doesExist.
 
 ![Create Contact](https://cl.ly/2f2w1f310y3y/[89e8b20be455e009cb09e6d17e442942]_Screen%2520Shot%25202017-02-02%2520at%25201.47.12%2520PM.png)
 
