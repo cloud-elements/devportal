@@ -19,16 +19,20 @@ Once setup, please login.
 1. Make note of your Store ID as it will be needed to provision an Element Instance.
 ![Ecwid Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI1.png)
 
-2. Navigate to “System Settings” in the top right of your menu, underneath your username.
-![Ecwid Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI2.png)
+2. Next the Legacy API keys will need to be retrieved.  In order to do retrieve them, you must be logged in to your store then navigate to a Legacy API Key URL
 
-3. Click “Apps”
-![Ecwid Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI3.png)
+__NOTE:  Your store ID is required in the Legacy API Key URL - replace `INSERT_STORE_ID` in the URL with your actual store ID.__
 
-4. Scroll down to bottom of page and click “Legacy API keys”
-![Ecwid Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI4.png)
+Legacy API Key URL (Don't forget to insert your store ID):
 
-5. Make note of the Order API Secret and the Product API Secret as they will be needed to create an Element Instance.
-![Ecwid Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI5.png)
+`https://my.ecwid.com/store/INSERT_STORE_ID#legacy_api`
 
-Next [create an instance](closeio-create-instance.html).
+Copy the Order and Product API secrets
+![Ecwid Legacy API](img/ecwid-legacy-api-1.png)
+
+The Legacy API values provide the minimum required configuration needed to create an Instance.
+
+If you wish to add event functionality then please enter the following URL in the ION Cannon endpoint URL: `https://api.cloud-elements.com/elements/api-v2/events/ecwid`
+![Ecwid Legacy API ION Cannon URL](img/ecwid-legacy-api-events.png)
+
+Next [create an instance](ecwid-create-instance.html).
