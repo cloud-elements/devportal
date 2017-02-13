@@ -19,13 +19,11 @@ Once setup, please login.
 1. Make note of your Store ID as it will be needed to provision an Element Instance.
 ![Ecwid Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/02/EcwidAPI1.png)
 
-2. Next the Legacy API keys will need to be retrieved.  In order to do retrieve them, you must be logged in to your store then navigate to a Legacy API Key URL
+2. Next the Legacy API keys will need to be retrieved.  In order to do retrieve them, you must be __logged in__ to your store.
 
-__NOTE:  Your store ID is required in the Legacy API Key URL - replace `INSERT_STORE_ID` in the URL with your actual store ID.__
+Once you are logged in, navigate to a Legacy API Key URL:
 
-Legacy API Key URL (Don't forget to insert your store ID):
-
-`https://my.ecwid.com/store/INSERT_STORE_ID#legacy_api`
+https://my.ecwid.com/cp/CP.html#legacy_api
 
 Copy the Order and Product API secrets
 ![Ecwid Legacy API](img/ecwid-legacy-api-1.png)
