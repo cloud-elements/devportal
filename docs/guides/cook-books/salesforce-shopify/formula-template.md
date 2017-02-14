@@ -6,7 +6,7 @@ description: Create a Template Formula
 layout: docs
 apis: API Docs
 platform: elementsbuilder
-breadcrumbs: /docs/guides/cook-books/formula-template
+breadcrumbs: /docs/guides/cook-books/home
 parent: Back to Cook Books
 order: 4
 sitemap: false
@@ -16,7 +16,7 @@ redirect_from:
 
 # Creating a Formula
 
-A formula is workflow that contains some kind of business logic. In this case, we are using a forumla to move data between instances of Salesforce and Hubspot. 
+A formula is a workflow that contains some kind of business logic. In this case, we are using a formula to move data between instances of Salesforce and Hubspot. 
 
 When designing formulas, its best to make them reusable where possible.
 
@@ -55,7 +55,7 @@ This will create the first step in the formula.
 
 # Building the Formula
 
-Now that we have all our variables and an Event to kickoff our formula, we can created the logic of our formula.
+Now that we have all our variables and an Event to kick off our formula, we can create the logic of our formula.
 
 This can be accomplished in a few steps.
 
@@ -66,7 +66,7 @@ This can be accomplished in a few steps.
 
 ## 1. Get the Original Contact
 
-First check to make sure that the trigger is an event, and the object updated was a contact.
+First, check to make sure that the trigger is an event, and the object updated was a contact.
 
 Create a filter step. Select the blue add step button and select **filter**.
 
@@ -114,9 +114,9 @@ Link the new step to the filter step, by selecting the green checkmark under isE
 
 ## 2. Check if the contact exists in the destination
 
-To check the destination instance for an exsiting contact, we need to create a query.
+To check the destination instance for an existing contact, we need to create a query.
 
-Start by adding a **script** step.
+Start by adding a **script** step called `createQuery`.
 
 ![script step](https://cl.ly/2l2z1f150U33/Screen%20Shot%202017-02-02%20at%201.00.25%20PM.png)
 
@@ -134,16 +134,17 @@ This script uses `steps.getOriginalObject` to get the response from the step get
 
 Now link the step to the **getOriginalObject** step
 
-Next add another **element request** step. This step will use the query we just created to look for contacts in the destination with the same email address as the new contact.
+Next, add another **element request** step. This step will use the query we just created to look for contacts in the destination with the same email address as the new contact.
 
 The **element request** should be configured as follows:
 
-`Name` : `findContact`
+`Name` : `findContact`  
 `Element Instance` : `config.destinationinstance`  
 `Method` : `GET`  
 `API` : `/hubs/${config.hub}/${config.object}`  
 `Query` : `steps.createQuery.query`
 
+Then link findContact to On Success of createQuery.
 
 ## 3. Update or Create a new Contact
 
@@ -155,9 +156,9 @@ Here we will create a branch in our formula.
 <br>
 ### Update a Contact
 
-First create a filter to determine if the **findContact** returned any contacts.
+First, determine if findContact returned a matching contact.
 
-Create a step called `doesExist`, that contains the following:
+Create a step a **filter step** called `doesExist`, that contains the following:
 
     if (steps.findContact.response.body.length >= 1) {
       done(true);
@@ -165,22 +166,30 @@ Create a step called `doesExist`, that contains the following:
 
     done(false);
 
-This step will branch two ways, if a contact exits it will return true, if not it will return false.
+Link doesExist to On Success of findContact.
 
-Now lets create the update contact branch. This will require **two steps**
+This step will branch two ways if a contact exists it will return true, if not it will return false.
 
-**First** create a filter step called `shouldUpdate` with the following code:
+Now create the update contact branch. This will require **two steps**
+
+**First**, create a filter step called `shouldUpdate` with the following code:
 
     let _ = require('lodash');
 
     let originObject = steps.getOriginalObject.response.body;
     let destinationObject = steps.findContact.response.body;
 
+    originObject = Array.isArray(originObject) ? originObject[0] : originObject;
+    destinationObject = Array.isArray(destinationObject) ? destinationObject[0] : destinationObject;
+
     delete originObject.lastModifiedDate;
     delete originObject.Id;
 
     delete destinationObject.lastModifiedDate;
     delete destinationObject.Id;
+
+    console.log(originObject);
+    console.log(destinationObject);
 
     if(_.isEqual(originObject, destinationObject)) {
       done(false);
@@ -205,7 +214,7 @@ Link `updateContact` to the on success of `shouldUpdate`
 <br>
 ### Create a new Contact
 
-Lastly we need to create a new contact if one doesn't exist.
+Lastly, we need to create a new contact if one doesn't exist.
 
 Create an **Element Request** step with the following configuration.
 
@@ -215,7 +224,7 @@ Create an **Element Request** step with the following configuration.
 `API` : `/hubs/${config.hub}/${config.object}`  
 `Body` : `steps.getOriginalObject.response.body`  
 
-Since a new contact is created when `doesExist` returns false, link `createNewContact` to on failure of `doesExist`.
+Link createNewContact to On Failure of doesExist.
 
 ![Create Contact](https://cl.ly/2f2w1f310y3y/[89e8b20be455e009cb09e6d17e442942]_Screen%2520Shot%25202017-02-02%2520at%25201.47.12%2520PM.png)
 

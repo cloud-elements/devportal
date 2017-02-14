@@ -6,7 +6,7 @@ description: Create a Common Object for Transformations
 layout: docs
 apis: API Docs
 platform: elementsbuilder
-breadcrumbs: /docs/guides/cook-books/transformations
+breadcrumbs: /docs/guides/cook-books/home
 parent: Back to Cook Books
 order: 3
 sitemap: false
@@ -24,9 +24,9 @@ Under the **MyInstances Tab** find the Salesforce Instance, select the blue tran
 
 ![Create Instance](https://cl.ly/0j190d1z3f32/[6dace52b0f3a01275a7ba7af5ba01ea0]_Screen%2520Shot%25202017-01-27%2520at%252011.50.13%2520AM.png)
 
-This will bring up the transformation window. On the right side there is a drop down with all the available resources in Salesforce.
+This will bring up the transformation window. On the right side, there is a drop down with all the available resources in Salesforce.
 
-After selecting a resource from Salesforce, you can then create a **Common Object**. A Common Object is how a resource in an Element can be reused across many different different Elements. In this case we are going to create a common object called MyContact.
+After selecting a resource from Salesforce, you can then create a **Common Object**. A Common Object is how a resource in an Element can be reused across many different Elements. In this case, we are going to create a common object called MyContact.
 
 Select **Contact** from the Salesforce dropdown and then create a new object called **MyContact**.
 
@@ -38,9 +38,9 @@ You can now start mapping fields from Salesforce to MyContact. First find the em
 
 Now select the blue edit button on the email field under MyContact. This will bring up the field configuration.
 
-The **top text box** is the name of the fiel in MyContact, this name can be anything you like, in this case change it to lower case 'email'. 
+The **top text box** is the name of the field in MyContact, this name can be anything you like, in this case, change it to lower case 'email'. 
 
-The **middle box** is the data type of this field, the drop down menu shows all the available data types.
+The **middle box** is the data type of this field, the drop-down menu shows all the available data types.
 
 The **last box** is the fields of Contact in Salesforce.
 
@@ -59,13 +59,13 @@ The MyContact object should look like it does below:
 
 ![My Contact](https://cl.ly/0f3T362i0A1d/Screen%20Shot%202017-02-01%20at%2011.06.42%20AM.png)
 
-Now lets configure some settings for MyContact. Above the field mapping are three setting toggles.
+Now, configure some settings for MyContact. Above the field mappings, there are three setting toggles.
 
 - **Add to Docs** will add MyContact to the swagger docs for this instance of Salesforce.
 - **Inherit Config** will inherit the configuration of a MyContact object at the Organization level
 - **Ignore Unmapped** will strip any fields out of the original object that haven't been mapped to the common object. Trying saving your object and hitting the try it out button to see the difference with it off and on.
 
-For this example, turn **Add to Docs** and **Ingnore Unmapped** on and leave inherit config off.
+For this example, turn **Add to Docs** and **Ignore Unmapped** on and leave inherit config off.
 
 ![Transform Config](https://cl.ly/3E1s1h0B1t0W/Screen%20Shot%202017-02-01%20at%2011.23.07%20AM.png)
 
@@ -92,7 +92,7 @@ Once all the fields of MyContact have been mapped to a field in Hubspot, check t
 
 Also be sure the **Ignore To** is set on the id field.
 
-The transformation for Hubspot shoud look like it does below:
+The transformation for Hubspot should look like it does below:
 
 ![Mapped Hubspot](https://cl.ly/062S2K180f1k/Screen%20Shot%202017-02-01%20at%203.08.30%20PM.png)
  

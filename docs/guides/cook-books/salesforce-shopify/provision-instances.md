@@ -6,7 +6,7 @@ description: Provisioning Salesforce and Hubspot Instances
 layout: docs
 apis: API Docs
 platform: elementsbuilder
-breadcrumbs: /docs/guides/cook-books/provision-instances
+breadcrumbs: /docs/guides/cook-books/home
 parent: Back to Cook Books
 order: 2
 sitemap: false
@@ -18,7 +18,7 @@ redirect_from:
 
 In order to move data between Salesforce and Hubspot accounts, we will need to create an instance of each.
 
-It's helpful to think of **Elements** and **Instances** like Object-Oriented Classes. An Element is like an abstract class or template. An Instance is an instantiation of the Element or template.
+It's helpful to think of **Elements** and **Instances** like Object-Oriented Classes. An Element is similar to a class or template. An Instance is an instantiation of the Element or template.
 
 Checkout out [definitions section](https://developers.cloud-elements.com/docs/overview/definitions.html) to better understand the difference between an element and an element instance.
 
