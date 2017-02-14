@@ -37,6 +37,6 @@ When creating users, the email and password will be the Cloud Elements login tha
 
 {% include padding-all.html %}
 
-{% youtube qRCz9TdvksM %}
+{% youtube "https://www.youtube.com/embed/qRCz9TdvksM?color=white&theme=light" %}
 
 {% include padding-all.html %}

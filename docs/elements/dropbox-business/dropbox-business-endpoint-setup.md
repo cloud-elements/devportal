@@ -5,7 +5,7 @@ title: Endpoint Setup
 description: Integrate Dropbox Business into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 414
+elementId: 1780
 parent: Back to Element Guides
 order: 2
 ---
