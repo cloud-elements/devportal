@@ -7,6 +7,7 @@ layout: docs
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/cook-books/home
+parent: Back to Cook Books
 order: 5
 sitemap: false
 redirect_from:
