@@ -1,0 +1,13 @@
+# pack-refs with: peeled fully-peeled 
+310dfc21a252273587f939c8466b74a54e763adf refs/heads/add-documenttagging-onedrive
+71b49b5b4fcd6c0414ada3e1c8fa9a2558928b6e refs/heads/dev-284
+f8dae3790c216464974e95cd24519b5bd7b798e8 refs/heads/dev-286-int-guide
+ce3ed8343772d9f86a1df5196dbb0aa62d3ece0f refs/heads/dev-290
+58a37a9dd68ddca3dafab6d320599d616da0663b refs/heads/dynamicsEventsUpdate
+e913e6dbbad456c6742bc494a1b4dec8c30d44c2 refs/heads/formula-scripts
+50c98bd095573eb1338a8f993dc61c2a3e9c4811 refs/heads/hierarchy
+b41232d1a6bb764a08d3feaf8c227ccaea5a9787 refs/heads/jsearch
+170b0f0f34ec5f6f1709cb9924c6f981529d079b refs/heads/master
+82428ac1f3562a63e02b047d4561e090b9264f68 refs/heads/quickstart
+38b648d97724234ad954c57ffd4751322f4463d4 refs/heads/stream-step
+9c7906e1ac1246b6721660585a5474f0ce434e17 refs/heads/update-onedrive-createinstance-params
