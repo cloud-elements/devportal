@@ -49,7 +49,7 @@ The Salesforce configuration should like this:
 ![Salesforce configuration](https://cl.ly/3O0i2v0U0E25/Screen%20Shot%202017-01-26%20at%201.15.50%20PM.png)
 
 
-Under the **MyInstances** tab of **Elements**, there should be an instance of Salesforce and an Instance of Hubspot.
+Under the **My Instances** tab of **Elements**, there should be an instance of Salesforce and an Instance of Hubspot.
 
 ![My Instances](https://cl.ly/1L032D022s3W/Screen%20Shot%202017-01-26%20at%201.19.41%20PM.png)
 
