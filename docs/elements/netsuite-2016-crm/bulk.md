@@ -5,7 +5,7 @@ title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 988
+elementId: 1687
 parent: Back to Element Guides
 order: 35
 sitemap: false

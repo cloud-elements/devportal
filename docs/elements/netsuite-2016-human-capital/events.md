@@ -5,7 +5,7 @@ title: Events
 description: Enable NetSuite 2016 Human Capital events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 988
+elementId: 1688
 parent: Back to Element Guides
 order: 30
 ---

@@ -5,7 +5,7 @@ title: Endpoint Setup
 description: Endpoint setup
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 988
+elementId: 1687
 parent: Back to Element Guides
 order: 5
 ---
