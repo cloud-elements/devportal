@@ -24,7 +24,7 @@ If this is your first time using our platform, checkout our [Platform Overview](
 
 There are four steps to create the two-way flow of Contacts between Salesforce and Hubspot.
 
-1. [Provision an instance of Salesforce and Hubspot]({{site.url}}/docs/tutorial/provision-instances.html)
-2. [Create a Common Object to transform the data]({{site.url}}/docs/tutorial/transformations.html)
-3. [Create a template formula]({{site.url}}/docs/tutorial/formula-template.html)
-4. [Provision two instances of the formula]({{site.url}}/docs/tutorial/formula-instances.html)
+1. [Provision an instance of Salesforce and Hubspot]({{site.url}}/docs/guides/cook-books/salesforce-shopify/provision-instances.html)
+2. [Create a Common Object to transform the data]({{site.url}}/docs/guides/cook-books/salesforce-shopify/transformations.html)
+3. [Create a template formula]({{site.url}}/docs/guides/cook-books/salesforce-shopify/formula-template.html)
+4. [Provision two instances of the formula]({{site.url}}/docs/guides/cook-books/salesforce-shopify/formula-instances.html)
