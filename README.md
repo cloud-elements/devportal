@@ -23,7 +23,7 @@ _Please_, feel free to make any contributions you feel will make Cloud Elements 
 ```bash
 $ git clone git@github.com:cloud-elements/devportal.git
 $ cd devportal
-$ sudo gem install jekyll redcarpet jekyll-sitemap
+$ sudo gem install jekyll redcarpet jekyll-sitemap jekyll-redirect-from jekyll-youtube
 ```
 
 ## Usage

@@ -5,12 +5,18 @@ title: Create Instance
 description: Create Instance
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 414
+elementId: 1780
 parent: Back to Element Guides
 order: 20
 ---
 
 ## Create Instance
+
+**NOTE:  Dropbox Business V2 API is now supported within the Cloud Elements Platform.  We want to give customers a chance to test the Dropbox Business V2 Element within their application.  To access the new Element, please create an Instance using the key `dropboxbusinessv2`.  Please let [support](mailto:support@cloud-elements.com) know if you have any questions.**
+
+**The V2 Element includes a `refId` for certain APIs.  This is the actual ID of the file sent back from Dropbox Business.  It can be used as the `ID` with all API calls with the exception of `GET /folders/{id}/contents`.**
+
+**The `GET /folders/{id}/contents` does not support the `refId` at this time.**
 
 Dropbox Business is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Dropbox Business platform.
 

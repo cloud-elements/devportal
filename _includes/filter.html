@@ -1,7 +1,11 @@
 <div class="row">
   <div class="col-md-12 text-xs-center">
     <div class="input-with-icon">
-      <input type="text" id='txtList' class="form-control">
+      {% if page.url == '/docs/guides/home.html' %}
+        <input type="text" id='txtList' class="form-control" placeholder="ex. Formulas or Events">
+      {% else %}
+        <input type="text" id='txtList' class="form-control">
+      {% endif %}
       <span class="icon icon-magnifying-glass"></span>
     </div>
   </div>

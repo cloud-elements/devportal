@@ -15,3 +15,7 @@ redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
 
 url: https://developers.cloud-elements.com
+
+gems:
+  - jekyll-redirect-from
+  - jekyll-youtube

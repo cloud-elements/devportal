@@ -5,7 +5,7 @@ title: Events
 description: Enable Dropbox events for your application.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 14
+elementId: 1779
 parent: Back to Element Guides
 order: 30
 ---
