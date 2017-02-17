@@ -85,8 +85,10 @@ Basic Authentication requires four fields:
 
 Copy the Netsuite Account ID from the steps at the top of this page.
 
-Next create a new Integration record for Cloud Elements.
-Go to Setup > Integration > Mange Integrations > New. Enable State and Token-Based Authentication.
-On the confirmation screen, note the **Application ID**.
+Next, create a new Integration record for Cloud Elements. 
+ 
+  - Go to **Setup > Integration > Mange Integrations > New**.  
+  - Enable State and Token-Based Authentication.  
+  - On the confirmation screen, note the **Application ID**.
 ![New Integration](https://cl.ly/0k233S343a1T/[4cd37d33c04aeb3b90cbc77731c605a2]_Screen%2520Shot%25202017-02-17%2520at%252012.12.12%2520PM.png)
 
