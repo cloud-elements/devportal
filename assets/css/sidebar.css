@@ -20,3 +20,32 @@
   padding: 0;
   margin: 5px 10px;
 }
+
+@keyframes expand {
+  from: {opacity:0; max-height: 0px}
+  to: {opacity:0; max-height: 600px}
+}
+
+.accordionList {
+  max-height: 0px;
+  /*transform: scaleY(0);*/
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.accordionListActive {
+  transition: all 0.3s ease-in;
+  /*transform: scaleY(1);*/
+  max-height: 600px;
+  opacity: 1s;
+}
+
+.headerButton {
+  text-align: left;
+  font-size: 2rem;
+  display: block;
+  background-color: #fff;
+  border: none;
+  outline: none;
+}

@@ -1,10 +1,30 @@
 {% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
 {% assign allshards = site.shards %}
+<link href="/assets/css/sidebar.css" rel="stylesheet">
+<script type="text/javascript">
+  let currentSelection="";
+  // Initialize the expanded menu
+  function setCurrentSelection(selection){
+    currentSelection = selection;
+    document.getElementById(selection).className = "accordionListActive";
+  }
+  // Accordion List toggle
+  function selectAccordion(selection) {
+    if(currentSelection != ""){
+      document.getElementById(currentSelection).className = "accordionList";
+    }
+    document.getElementById(selection).className = "accordionListActive";
+    currentSelection = selection;
+  }
+</script>
 <div class="sidebarWrapper">
-  <h4> Getting Started </h3>
-    <ul>
+  <button class="headerButton" onClick="selectAccordion('home')"> Home </button>
+  <button class="headerButton" onClick="selectAccordion('gettingStarted')"> Getting Started </button>
+    <ul class="accordionList" id="gettingStarted">
       {% for i in overviewshard %}
         {% if i.url == page.url %}
+          <!-- The Script tag sets the high level menu to be expanded -->
+          <script> setCurrentSelection("gettingStarted") </script>
           <li>
             <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
           </li>
@@ -15,8 +35,8 @@
         {% endif %}
       {% endfor %}
     </ul>
-  <h4> Feature Reference </h3>
-    <ul>
+  <button class="headerButton" onClick="selectAccordion('featureReference')">Feature Reference</button>
+    <ul class="accordionList" id="featureReference">
       {% for folder in site.shards %}
         {% assign key = folder[0] %}
         {% if key contains "docs_guides" and key != "docs_guides" and key != "" %}
@@ -28,6 +48,7 @@
               {% for p in pages %}
               <li>
                 {% if page.url == p.url %}
+                  <script> setCurrentSelection("featureReference") </script>
                   <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
                 {% else %}
                   <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
@@ -40,9 +61,8 @@
         {% endif %}
       {% endfor %}
     </ul>
-
-    <h4> Cloud Elements API </h3>
-    <ul>
+    <button class="headerButton" onClick="selectAccordion('ceApi')">Cloud Elements API</button>
+    <ul class="accordionList" id="ceApi">
       {% for folder in site.shards %}
         {% assign key = folder[0] %}
         {% if key contains "platform_api" %}
@@ -54,6 +74,7 @@
               {% for p in pages %}
               <li>
                 {% if page.url == p.url %}
+                  <script> setCurrentSelection("ceApi") </script>
                   <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
                 {% else %}
                   <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a>
@@ -66,5 +87,7 @@
         {% endif %}
       {% endfor %}
     </ul>
+    <button class="headerButton" onClick="selectAccordion('elementDocs')">Element Docs</button>
+    <button class="headerButton" onClick="selectAccordion('tutorial')">Tutorials</button>
 </div>
 {% inspect %}
