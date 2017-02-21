@@ -19,6 +19,7 @@
 </script>
 <div class="sidebarWrapper">
   <button class="headerButton" onClick="selectAccordion('home')"> Home </button>
+  <ul class="accordionList" id="home"> </ul>
   <button class="headerButton" onClick="selectAccordion('gettingStarted')"> Getting Started </button>
     <ul class="accordionList" id="gettingStarted">
       {% for i in overviewshard %}
@@ -32,32 +33,6 @@
           <li>
             <a href={{i.url}}> {{i.title}} </a>
           </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  <button class="headerButton" onClick="selectAccordion('featureReference')">Feature Reference</button>
-    <ul class="accordionList" id="featureReference">
-      {% for folder in site.shards %}
-        {% assign key = folder[0] %}
-        {% if key contains "docs_guides" and key != "docs_guides" and key != "" %}
-        {% assign pages = site.shards[key] | sort:"order" %}
-        <li>
-          <a href={{pages[0].url}}> {{pages[0].heading}}</a>
-            {% if key == id %}
-            <ul>
-              {% for p in pages %}
-              <li>
-                {% if page.url == p.url %}
-                  <script> setCurrentSelection("featureReference") </script>
-                  <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
-                {% else %}
-                  <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-        </li>
         {% endif %}
       {% endfor %}
     </ul>
@@ -88,6 +63,34 @@
       {% endfor %}
     </ul>
     <button class="headerButton" onClick="selectAccordion('elementDocs')">Element Docs</button>
+    <ul class="accordionList" id="elementDocs"> </ul>
+    <button class="headerButton" onClick="selectAccordion('featureReference')">Toolkit</button>
+    <ul class="accordionList" id="featureReference">
+      {% for folder in site.shards %}
+        {% assign key = folder[0] %}
+        {% if key contains "docs_guides" and key != "docs_guides" and key != "" %}
+        {% assign pages = site.shards[key] | sort:"order" %}
+        <li>
+          <a href={{pages[0].url}}> {{pages[0].heading}}</a>
+            {% if key == id %}
+            <ul>
+              {% for p in pages %}
+              <li>
+                {% if page.url == p.url %}
+                  <script> setCurrentSelection("featureReference") </script>
+                  <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
+                {% else %}
+                  <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
     <button class="headerButton" onClick="selectAccordion('tutorial')">Tutorials</button>
+    <ul class="accordionList" id="tutorial"> </ul>
 </div>
 {% inspect %}

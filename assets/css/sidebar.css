@@ -18,7 +18,7 @@
 .sidebarWrapper ul {
   list-style: none;
   padding: 0;
-  margin: 5px 10px;
+  margin: 0px 10px;
 }
 
 @keyframes expand {
@@ -43,7 +43,7 @@
 
 .headerButton {
   text-align: left;
-  font-size: 2rem;
+  font-size: 1.6rem;
   display: block;
   background-color: #fff;
   border: none;
