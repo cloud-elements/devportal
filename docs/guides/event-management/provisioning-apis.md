@@ -118,9 +118,9 @@ GUI:
 }
 ```
 
-If your element supports polling, you would need to provide additional
-configuration values to enable it: see the "Polling Configuration"
-section below for details.
+If the element supports polling additional
+configuration values will need to be provided to receive events: see the [Polling Configuration](polling.html)
+section of the Event Management Guide.
 
 If this JSON was saved in a file named `instance.json`, then we could
 make the following cURL command to create an instance:
