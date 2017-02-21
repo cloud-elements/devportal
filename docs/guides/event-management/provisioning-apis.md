@@ -118,8 +118,7 @@ GUI:
 }
 ```
 
-If your element supports polling additional
-configuration values will need to be provided to enable the polling framework: see the [Polling Configuration](polling
+If your element supports polling, additional configuration values will need to be provided to enable the polling framework: see the [Polling Configuration](polling
 .html) section of the Event Management Guide.
 
 If this JSON was saved in a file named `instance.json`, then we could
