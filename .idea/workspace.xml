@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c8f0ec8-4ef5-4331-9acd-d52062a606ef" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/guides/event-management/index.md" afterPath="$PROJECT_DIR$/docs/guides/event-management/index.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md" afterPath="$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md" />
     </list>
     <ignored path="devportal.iws" />
@@ -24,7 +23,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/guides/event-management/index.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="610">
@@ -34,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="provisioning-apis.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="provisioning-apis.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1810">
-              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
+            <state relative-caret-position="-230">
+              <caret line="121" column="77" selection-start-line="121" selection-start-column="77" selection-end-line="121" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -57,8 +56,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md" />
         <option value="$PROJECT_DIR$/docs/guides/event-management/index.md" />
+        <option value="$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md" />
       </list>
     </option>
   </component>
@@ -340,12 +339,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1487701003910</updated>
-      <workItem from="1487701005503" duration="303000" />
+      <workItem from="1487701005503" duration="582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303000" />
+    <option name="totallyTimeSpent" value="582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -393,18 +392,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1810">
-          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="176" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/guides/event-management/index.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/guides/event-management/provisioning-apis.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="121" column="77" selection-start-line="121" selection-start-column="77" selection-end-line="121" selection-end-column="77" />
           <folding />
         </state>
       </provider>
