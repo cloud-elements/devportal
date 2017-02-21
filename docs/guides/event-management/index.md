@@ -36,3 +36,10 @@ __Polling__ is a mechanism where Cloud Elements executes the configured query ev
 
 __Webhooks__ are when the provider lets Cloud Elements know what information has changed.
 NOTE: Some Application Endpoints require some additional configuration setup for Event Management. Instructions and screen shots for these configurations can be found in the [Element Guides](/docs/elements.html) under Events for each endpoint.
+
+### **Receiving Events**
+Events can be sent to your application by setting the Event Notification Callback URL (`event.notification.callback.url`) configuration value to your application's URL during provisioning.
+
+(e.g. `"event.notification.callback.url": "https://mycoolapp.com/callback"`)
+
+To update an active instance use the __PATCH__ __/instances__ or __PATCH__ __/instances/{id}/configuration/{configurationId}__ endpoints to add an Event Notification Callback URL.
