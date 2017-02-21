@@ -1,4 +1,5 @@
 {% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
+{% assign allshards = site.shards %}
 <div class="sidebarWrapper">
   <h4> Getting Started </h3>
     <ul>
@@ -66,3 +67,4 @@
       {% endfor %}
     </ul>
 </div>
+{% inspect %}
