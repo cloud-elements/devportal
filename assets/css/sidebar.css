@@ -1,7 +1,8 @@
 .sidebarWrapper {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  background-color: #FFF;
 }
 
 .sidebar a {
@@ -45,7 +46,7 @@
   text-align: left;
   font-size: 1.6rem;
   display: block;
-  background-color: #fff;
+  background-color: #FFF;
   border: none;
   outline: none;
 }

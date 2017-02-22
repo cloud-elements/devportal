@@ -7769,27 +7769,27 @@ body {
   padding-bottom: 30px !important;
 }
 .p-a-lg {
-  padding: 60px !important;
+  padding: 10px !important;
 }
 .p-t-lg {
-  padding-top: 60px !important;
+  padding-top: 10px !important;
 }
 .p-r-lg {
-  padding-right: 60px !important;
+  padding-right: 10px !important;
 }
 .p-b-lg {
-  padding-bottom: 60px !important;
+  padding-bottom: 10px !important;
 }
 .p-l-lg {
-  padding-left: 60px !important;
+  padding-left: 10px !important;
 }
 .p-x-lg {
-  padding-right: 60px !important;
-  padding-left: 60px !important;
+  padding-right: 10px !important;
+  padding-left: 10px !important;
 }
 .p-y-lg {
-  padding-top: 60px !important;
-  padding-bottom: 60px !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
 }
 .text-inherit,
 .text-inherit:hover,
