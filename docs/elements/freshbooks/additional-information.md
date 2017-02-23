@@ -1,7 +1,7 @@
 ---
 heading: FreshBooks
 seo: FAQ | FreshBooks | Cloud Elements API Docs
-title: FAQ
+title: Additional Information
 description: FreshBooks FAQ.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 17
 ---
 
-## FreshBooks FAQ
+## Additional Information
 
 FRESHBOOKS RESPONSE PAYLOAD FAQ
 
