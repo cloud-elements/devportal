@@ -3,7 +3,7 @@ heading: Syncing Contacts
 seo: Contact Sync | API Integrations Cook Book | Cloud Elements API Docs
 title: Create Transformations
 description: Create a Common Object for Transformations
-layout: tutorial
+layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/cook-books/transformations

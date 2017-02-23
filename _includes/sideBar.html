@@ -62,7 +62,7 @@
         {% endif %}
       {% endfor %}
     </ul>
-    <button class="headerButton" onClick="location.href = '{{site.url}}/docs/elements.html';">Element Docs</button>
+    <button class="headerButton" onClick="location.href='{{site.url}}/docs/elements.html';">Element Docs</button>
     <ul class="accordionList" id="elementDocs"> </ul>
     <button class="headerButton" onClick="selectAccordion('featureReference')">Toolkit</button>
     <ul class="accordionList" id="featureReference">
@@ -90,7 +90,21 @@
         {% endif %}
       {% endfor %}
     </ul>
-    <button class="headerButton" onClick="selectAccordion('tutorial')">Tutorials</button>
-    <ul class="accordionList" id="tutorial"> </ul>
+    <button class="headerButton" onClick="selectAccordion('tutorial')">Tutorial</button>
+    <ul class="accordionList" id="tutorial"> 
+      {% assign overviewshard = site.shards['docs_tutorial'] | sort:"order" %}
+      {% for i in overviewshard %}
+        {% if i.url == page.url %}
+          <script> setCurrentSelection("tutorial") </script>
+          <li>
+            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
+          </li>
+        {% else %}
+          <li>
+            <a href={{i.url}}> {{i.title}} </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
 </div>
 {% inspect %}

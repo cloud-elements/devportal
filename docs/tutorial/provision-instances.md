@@ -3,7 +3,7 @@ heading: Syncing Contacts
 seo: Contact Sync | API Integrations Cook Book | Cloud Elements API Docs
 title: Provision Element Instances
 description: Provisioning Salesforce and Hubspot Instances
-layout: tutorial
+layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/cook-books/provision-instances
