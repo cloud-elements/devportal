@@ -3,7 +3,7 @@ heading: Evernote
 seo: Create Instance | Evernote | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 125
 parent: Back to Element Guides

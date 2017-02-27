@@ -3,7 +3,7 @@ heading: NetSuite ERP
 seo: Query Language | NetSuite ERP | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 157
 parent: Back to Element Guides

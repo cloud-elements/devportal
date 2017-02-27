@@ -3,7 +3,7 @@ heading: Payments and Billing APIs
 seo: Payments and Billing Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: docs
+layout: sidebarelementdoc
 platform: payment
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs

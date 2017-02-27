@@ -3,7 +3,7 @@ heading: Intacct
 seo: Overview | Intacct | Cloud Elements API Docs
 title: Overview
 description: Integrate Intacct into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 921
 parent: Back to Element Guides

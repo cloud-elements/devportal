@@ -3,7 +3,7 @@ heading: Microsoft Dynamics Great Plains
 seo: Create Instance | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 46
 parent: Back to Element Guides

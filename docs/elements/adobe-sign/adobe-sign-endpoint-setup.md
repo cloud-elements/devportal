@@ -3,7 +3,7 @@ heading: Adobe Sign
 seo: Endpoint Setup | Adobe Sign | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Adobe Sign into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 426
 parent: Back to Element Guides

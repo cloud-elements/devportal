@@ -3,7 +3,7 @@ heading: Eloqua
 seo: Events | Eloqua | Cloud Elements API Docs
 title: Events
 description: Enable Eloqua events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides

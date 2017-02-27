@@ -3,7 +3,7 @@ heading: Pipedrive
 seo: Events | Pipedrive | Cloud Elements API Docs
 title: Events
 description: Enable Pipedrive events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 167
 parent: Back to Element Guides

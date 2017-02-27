@@ -3,7 +3,7 @@ heading: Base CRM
 seo: Query Language | Base CRM | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 201
 parent: Back to Element Guides

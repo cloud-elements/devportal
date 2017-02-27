@@ -3,7 +3,7 @@ heading: ConnectWise Help Desk
 seo: Create Instance | ConnectWise Help Desk | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 142
 parent: Back to Element Guides

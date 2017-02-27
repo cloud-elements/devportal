@@ -3,7 +3,7 @@ heading: Slack
 seo: Authentication | Slack | Cloud Elements API Docs
 title: Authentication
 description: Integrate Slack into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1358
 parent: Back to Element Guides

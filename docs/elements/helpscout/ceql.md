@@ -3,7 +3,7 @@ heading: Help Scout
 seo: Query Language | Help Scout | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 338
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: ePages
 seo: Query Language | ePages | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

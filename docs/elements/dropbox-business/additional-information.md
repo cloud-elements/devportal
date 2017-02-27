@@ -3,7 +3,7 @@ heading: Dropbox Business
 seo: Additional Information | Dropbox Business | Cloud Elements API Docs
 title: Additional Information
 description: Additional Information regarding the Dropbox Business Element.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1780
 parent: Back to Element Guides

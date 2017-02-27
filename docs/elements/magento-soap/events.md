@@ -3,7 +3,7 @@ heading: Magento SOAP V1.9
 seo: Events | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Events
 description: Enable Magento SOAP V1.9 events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 526
 parent: Back to Element Guides

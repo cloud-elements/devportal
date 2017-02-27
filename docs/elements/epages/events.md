@@ -3,7 +3,7 @@ heading: ePages
 seo: Events | ePages | Cloud Elements API Docs
 title: Events
 description: Enable ePages events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Dropbox
 seo: Additional Information | Dropbox | Cloud Elements API Docs
 title: Additional Information
 description: Additional Information regarding the Dropbox Element.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides

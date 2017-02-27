@@ -3,7 +3,7 @@ heading: SFTP
 seo: Additional Information | SFTP | Cloud Elements API Docs
 title: Additional Information
 description: SFTP FAQ.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1742
 parent: Back to Element Guides

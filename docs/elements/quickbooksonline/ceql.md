@@ -3,7 +3,7 @@ heading: QuickBooks Online
 seo: Query Language | QuickBooks Online | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
 parent: Back to Element Guides

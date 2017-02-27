@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud BETA
 seo: Additional Information | Salesforce Marketing Cloud BETA | Cloud Elements API Docs
 title: Additional Information
 description: Salesforce Marketing Cloud BETA FAQ.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

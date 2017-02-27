@@ -3,7 +3,7 @@ heading: Stripe
 seo: Endpoint Setup | Stripe | Cloud Elements API Docs
 title: Find API Key
 description: Find API Key
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides

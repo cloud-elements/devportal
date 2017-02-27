@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud BETA
 seo: Events | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

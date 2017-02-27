@@ -3,7 +3,7 @@ heading: Database APIs
 seo: Database Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: docs
+layout: sidebarelementdoc
 platform: db
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs

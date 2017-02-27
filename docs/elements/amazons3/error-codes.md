@@ -3,7 +3,7 @@ heading: Amazon S3
 seo: Error Codes | Amazon S3 | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 16
 parent: Back to Element Guides

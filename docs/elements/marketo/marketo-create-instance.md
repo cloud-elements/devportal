@@ -3,7 +3,7 @@ heading: Marketo
 seo: Create Instance | Marketo | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 85
 parent: Back to Element Guides

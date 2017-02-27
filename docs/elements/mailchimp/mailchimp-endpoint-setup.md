@@ -3,7 +3,7 @@ heading: MailChimp
 seo: Endpoint Setup | MailChimp | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 527
 parent: Back to Element Guides

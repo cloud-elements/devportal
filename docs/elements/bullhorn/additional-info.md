@@ -3,7 +3,7 @@ heading: Bullhorn CRM
 seo: Additional Information | Bullhorn CRM | Cloud Elements API Docs
 title: Additional Information
 description: Additional Information and frequently asked questions
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1702
 parent: Back to Element Guides

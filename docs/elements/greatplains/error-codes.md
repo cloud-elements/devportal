@@ -3,7 +3,7 @@ heading: Microsoft Dynamics Great Plains
 seo: Error Codes | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 46
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Eloqua
 seo: Create Instance | Eloqua | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides

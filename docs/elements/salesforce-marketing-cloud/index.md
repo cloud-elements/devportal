@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud BETA
 seo: Overview | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Marketing Cloud into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides
