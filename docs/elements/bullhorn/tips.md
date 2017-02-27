@@ -1,8 +1,8 @@
 ---
 heading: Bullhorn CRM
-seo: Additional Information | Bullhorn CRM | Cloud Elements API Docs
-title: Additional Information
-description: Additional Information and frequently asked questions
+seo: Tips | Bullhorn CRM | Cloud Elements API Docs
+title: Tips
+description: Tips and frequently asked questions
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1702
@@ -11,7 +11,7 @@ order: 50
 sitemap: false
 ---
 
-## Additional Information
+## Tips
 
 When creating an instance, the `GET oauth/bullhorn/url` API call takes me to the Bullhorn authorization page.  Sometimes the `LOGIN` button is disabled on the Bullhorn auth page.
 What should I do?

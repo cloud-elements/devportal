@@ -1,7 +1,7 @@
 ---
 heading: Citrix ShareFile
-seo: Additional Information | Citrix ShareFile | Cloud Elements API Docs
-title: Additional Information
+seo: Tips | Citrix ShareFile | Cloud Elements API Docs
+title: Tips
 description: Citrix ShareFile FAQ.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Additional Information
+## Tips
 
 What's the difference between the `/root` and `/top` folders?
 
