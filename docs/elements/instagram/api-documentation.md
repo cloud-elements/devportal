@@ -3,7 +3,7 @@ heading: Instagram
 seo: API Docs | Instagram | Cloud Elements API Docs
 title: API Docs
 description: Instagram API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides

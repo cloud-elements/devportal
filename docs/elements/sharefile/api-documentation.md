@@ -3,7 +3,7 @@ heading: Citrix ShareFile
 seo: API Docs | Citrix ShareFile | Cloud Elements API Docs
 title: API Docs
 description: Citrix ShareFile API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 450
 parent: Back to Element Guides

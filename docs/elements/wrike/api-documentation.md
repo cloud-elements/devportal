@@ -3,7 +3,7 @@ heading: Wrike
 seo: API Docs | Wrike | Cloud Elements API Docs
 title: API Docs
 description: Wrike API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 551
 parent: Back to Element Guides

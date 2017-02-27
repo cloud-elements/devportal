@@ -3,7 +3,7 @@ heading: Pipedrive
 seo: API Docs | Pipedrive | Cloud Elements API Docs
 title: API Docs
 description: Pipedrive API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 167
 parent: Back to Element Guides

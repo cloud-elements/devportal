@@ -3,7 +3,7 @@ heading: Chargify
 seo: API Docs | Chargify | Cloud Elements API Docs
 title: API Docs
 description: Chargify API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

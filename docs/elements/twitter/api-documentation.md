@@ -3,7 +3,7 @@ heading: Twitter
 seo: API Docs | Twitter | Cloud Elements API Docs
 title: API Docs
 description: Twitter API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1359
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: InfoBip
 seo: API Docs | InfoBip | Cloud Elements API Docs
 title: API Docs
 description: InfoBip API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 37
 parent: Back to Element Guides

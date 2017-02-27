@@ -3,7 +3,7 @@ heading: Typeform
 seo: API Docs | Typeform | Cloud Elements API Docs
 title: API Docs
 description: Typeform API Docs
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 339
 parent: Back to Element Guides

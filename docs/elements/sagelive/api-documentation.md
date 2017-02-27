@@ -3,7 +3,7 @@ heading: Sage Live
 seo: API Docs | Sage Live | Cloud Elements API Docs
 title: API Docs
 description: Sage Live API Documentation.
-layout: apidocs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 676
 parent: Back to Element Guides
