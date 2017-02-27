@@ -1,8 +1,8 @@
 ---
 heading: Dropbox
-seo: Additional Information | Dropbox | Cloud Elements API Docs
-title: Additional Information
-description: Additional Information regarding the Dropbox Element.
+seo: Tips | Dropbox | Cloud Elements API Docs
+title: Tips
+description: Tips regarding the Dropbox Element.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1779
@@ -11,7 +11,7 @@ order: 50
 sitemap: false
 ---
 
-### Additional Information
+### Tips
 
 __How can I test out the new Dropbox V2 Element?__
 
