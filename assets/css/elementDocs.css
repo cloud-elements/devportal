@@ -24,3 +24,16 @@
   border-bottom: 1px solid #247aa1;
   padding: 10px 10px 0px 10px;
 }
+
+div#swagger-ui-container {
+  font-size: 1.7rem;
+}
+
+ul#resources {
+  padding-left: 0px;
+  font-size: 1.6rem;
+}
+
+ul#resources ul{
+  padding-left: 0px;
+}
