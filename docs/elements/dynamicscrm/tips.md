@@ -1,7 +1,7 @@
 ---
 heading: Microsoft Dynamics CRM
-seo: Additional Information | Microsoft Dynamics CRM | Cloud Elements API Docs
-title: Additional Information
+seo: Tips | Microsoft Dynamics CRM | Cloud Elements API Docs
+title: Tips
 description: Frequently asked questions and notes on conventions.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Additional Information
+## Tips
 
 How can I create an incident (case) and assign it to a contact in Microsoft Dynamics CRM?
 
