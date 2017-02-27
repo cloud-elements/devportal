@@ -1,7 +1,7 @@
 ---
 heading: Evernote
 seo: FAQ | Evernote | Cloud Elements API Docs
-title: Additional Information
+title: Tips
 description: Frequently asked questions and notes on conventions.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Additional Information
+## Tips
 
 Note regarding Evernote naming conventions.
 
