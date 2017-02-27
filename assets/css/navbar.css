@@ -54,9 +54,14 @@
   z-index:1001;
   min-height: 15vh;
   font-weight: normal;
+  max-height: 80vh;
 }
 .resultsItem {
   list-style: none;
   border-bottom: 1px solid #222222;
   margin-bottom: 5px;
+}
+
+.resultsList {
+  padding: 5px;
 }
