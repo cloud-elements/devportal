@@ -42,6 +42,10 @@
   opacity: 1s;
 }
 
+.accordionListActive a:hover{
+  color: #40b4e5;
+}
+
 .headerButton {
   text-align: left;
   font-size: 1.6rem;
@@ -50,4 +54,8 @@
   background-color: #fff;
   border: none;
   outline: none;
+}
+
+.headerButton:hover {
+  color: #40b4e5;
 }
