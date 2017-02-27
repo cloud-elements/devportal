@@ -1,7 +1,7 @@
 ---
 heading: HubSpot Marketing
-seo: Additional Information | HubSpot Marketing | Cloud Elements API Docs
-title: Additional Information
+seo: Tips | HubSpot Marketing | Cloud Elements API Docs
+title: Tips
 description: Frequently asked questions and notes on conventions.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Additional Information
+## Tips
 
 What should I do if I receive the following error message:
 ![HubSpot Scope](img/scope.png)

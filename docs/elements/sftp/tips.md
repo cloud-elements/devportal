@@ -1,7 +1,7 @@
 ---
 heading: SFTP
-seo: Additional Information | SFTP | Cloud Elements API Docs
-title: Additional Information
+seo: Tips | SFTP | Cloud Elements API Docs
+title: Tips
 description: SFTP FAQ.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-### Additional Information about the SFTP Element
+### Tips about the SFTP Element
 
 __Accessing Files__
 

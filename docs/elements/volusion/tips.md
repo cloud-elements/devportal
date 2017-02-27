@@ -1,8 +1,8 @@
 ---
 heading: Volusion
-seo: Additional Information | Volusion | Cloud Elements API Docs
-title: Additional Information
-description: Additional Information regarding the Volusion Element.
+seo: Tips | Volusion | Cloud Elements API Docs
+title: Tips
+description: Tips regarding the Volusion Element.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 51
@@ -11,7 +11,7 @@ order: 50
 sitemap: false
 ---
 
-## Volusion Additional Information
+## Volusion Tips
 
 How does Volusion Pagination work?
 

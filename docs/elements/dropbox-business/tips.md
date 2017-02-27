@@ -1,8 +1,8 @@
 ---
 heading: Dropbox Business
-seo: Additional Information | Dropbox Business | Cloud Elements API Docs
-title: Additional Information
-description: Additional Information regarding the Dropbox Business Element.
+seo: Tips | Dropbox Business | Cloud Elements API Docs
+title: Tips
+description: Tips regarding the Dropbox Business Element.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1780
@@ -11,7 +11,7 @@ order: 50
 sitemap: false
 ---
 
-### Additional Information
+### Tips
 
 __How can I test out the new Dropbox Business V2 Element?__
 
