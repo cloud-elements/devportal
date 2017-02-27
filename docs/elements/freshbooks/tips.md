@@ -1,18 +1,16 @@
 ---
 heading: FreshBooks
-seo: FAQ | FreshBooks | Cloud Elements API Docs
-title: FAQ
+seo: Tips | FreshBooks | Cloud Elements API Docs
+title: Tips
 description: FreshBooks FAQ.
 layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides
-order: 17
+order: 50
 ---
 
-## FreshBooks FAQ
-
-FRESHBOOKS RESPONSE PAYLOAD FAQ
+## Tips
 
 FreshBooks response payloads are by default formatted in XML.  Cloud Elements transforms the response payloads from XML to JSON in each of the API calls.
 

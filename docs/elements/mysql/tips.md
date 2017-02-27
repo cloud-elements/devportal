@@ -1,7 +1,7 @@
 ---
 heading: MySQL
 seo: FAQ | MySQL | Cloud Elements API Docs
-title: FAQ
+title: Tips
 description: FAQ and troubleshooting tips.
 layout: docs
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## FAQ
+## Tips
 
 ### Why can't I connect my database?
 
