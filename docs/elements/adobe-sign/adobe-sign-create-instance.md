@@ -33,7 +33,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'http://api.cloud-elements/elements/api-v2/elements/adobe-esign/oauth/url?apiKey=insert_adobe-esign_app_id&apiSecret=insert_adobe-esign_app_secret&callbackUrl=www.mycoolapp.com/auth&scope=public_profile'
+'http://api.cloud-elements.com/elements/api-v2/elements/adobe-esign/oauth/url?apiKey=insert_adobe-esign_app_id&apiSecret=insert_adobe-esign_app_secret&callbackUrl=www.mycoolapp.com/auth&scope=public_profile'
 ```
 
 Response:
