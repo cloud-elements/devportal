@@ -109,6 +109,7 @@ layout: elements
 * [![Chargebee](/assets/img/element-logos/chargebee.png)Chargebee](./elements/chargebee/)
 * [![Chargify](/assets/img/element-logos/chargify.png)Chargify](./elements/chargify/)
 * [![Expensify](/assets/img/element-logos/expensify.png)Expensify](./elements/expensify/)
+* [![PayPal](/assets/img/element-logos/paypal.png)PayPal](./elements/paypal/)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/)
 * [![Cisco Spark](/assets/img/element-logos/ciscospark.png)Cisco Spark](./elements/cisco-spark/)
 * [![Slack](/assets/img/element-logos/slack.png)Slack](./elements/slack/)
