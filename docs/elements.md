@@ -117,3 +117,4 @@ layout: elements
 * [![QuickBase](/assets/img/element-logos/quickbase.png)QuickBase](./elements/quickbase/)
 * [![Microsoft SQL Server](/assets/img/element-logos/sqlserver.png)Microsoft SQL Server](./elements/sqlserver/)
 * [![PostgreSQL](/assets/img/element-logos/postgresql.png)PostgreSQL](./elements/postgresql/)
+* [![Zuora](/assets/img/element-logos/zuora-logoblue.png)Zuora](./elements/zuora/)
