@@ -28,17 +28,17 @@ To enable events, add these extra configurations to your instance JSON:
 ```
 instance JSON with polling events enabled:
 
-```JSON
+```json
 {
   "element": {
     "key": "zuorav2"
   },
   "configuration": {
-    "zuorav2.sandbox": true, // To instantiate your production account, set this to false
+    "zuorav2.sandbox": false,
     "username": "zuora_user",
     "password": "password",
-    "event.notification.enabled": false, // To enable events, set to true
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>" //Only needed for event configuration
+    "event.notification.enabled": true,
+    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
   },
   "tags": [
     "<Add_Your_Tag>"
@@ -46,6 +46,8 @@ instance JSON with polling events enabled:
   "name": "<Insert_Instance_Name>"
 }
 ```
+
+__Note:__ To instantiate a sandbox account, set `zuorav2.sandbox` to false.
 
 ### Record your Instance ID
 
