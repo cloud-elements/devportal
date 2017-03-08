@@ -11,13 +11,14 @@ published: true
 sitemap: false
 ---
 
-## Creating Your First Integration
+# Creating Your First Integration
 
 To help guide you through the Cloud Elements platform, we will build an example integration. Our use case will be to sync new Contacts from Salesforce to Shopify Customers.
 
 __NOTE:__ if you have not reviewed our [Definitions section](definitions.html), please do so before viewing this guide.
+</br>
 
-#### Create Element Instances
+## Create Element Instances
 
 Since our integration will consist of Salesforce and Shopify, we need to create Element instances of both.
 
