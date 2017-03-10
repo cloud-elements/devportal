@@ -2,7 +2,7 @@
 heading: Platform Overview
 seo: Cloud Elements Platform Overview | Cloud Elements API Docs
 title: Overview
-description: Overview of the Cloud Elements Platform and how to integrate it into your application.
+description: Getting started with Cloud Elements
 layout: docs
 order: 1
 breadcrumbs: /docs/guides/home.html
