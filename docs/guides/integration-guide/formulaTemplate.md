@@ -17,8 +17,8 @@ At a high level, Formulas are constructed of multiple API calls to Elements.  To
 
 1. A `trigger` to kick off the formula
 2. Check if `Contact` has been created, and ignore updated contacts
-3. ``GET /Contacts/{id}`` from Salesforce
-4. `POST /Contact` to Shopify
+3. ``GET /contact/{id}`` from Salesforce
+4. `POST /contact` to Shopify
 
 For a more detailed explanation, let’s discuss each step in our example Formula.
 

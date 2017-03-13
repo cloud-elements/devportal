@@ -15,5 +15,5 @@ sitemap: false
 
 To help guide you through the Cloud Elements platform, we will build an example integration. Our use case will be to sync new Contacts from Salesforce to Shopify Customers.
 
-__NOTE:__ if you have not reviewed our [Definitions section](definitions.html), please do so before viewing this guide.
+__NOTE:__ if you have not reviewed our [Definitions section](/docs/overview/definitions.html), please do so before viewing this guide.
 </br>
