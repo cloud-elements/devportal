@@ -9888,3 +9888,38 @@ fieldset[disabled] .btn-danger-outline.active {
   color: #ffffff;
   background-color: #e33145;
 }
+
+table {
+color: #333;
+font-family: Helvetica, Arial, sans-serif;
+border-collapse:
+collapse; border-spacing: 0;
+margin-top: 1em;
+margin-bottom: 2em;
+}
+
+td, th {
+border: 1px solid; /* No more visible border */
+height: 30px;
+transition: all 0.3s; /* Simple transition for hover effect */
+padding-left: 6px;
+}
+
+th {
+background: #40b4e5; /* Darken header a bit */
+font-weight: bold;
+}
+
+td {
+background: #FAFAFA;
+text-align: center;
+padding: 6px;
+}
+
+/* Cells in even rows (2,4,6...) are one color */
+tr:nth-child(even) td { background: #F1F1F1; }
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells) */
+tr:nth-child(odd) td { background: #FEFEFE; }
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
