@@ -9922,4 +9922,23 @@ tr:nth-child(even) td { background: #F1F1F1; }
 /* Cells in odd rows (1,3,5...) are another (excludes header cells) */
 tr:nth-child(odd) td { background: #FEFEFE; }
 
-tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
+tr td:hover { background: #155470; color: #FFF; } /* Hover cell effect! */
+
+.enjoy-css {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 160px;
+  padding: 20px;
+  overflow: hidden;
+  border: none;
+  font: normal 16px/1 "Times New Roman", Times, serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  background: #0199d9;
+  -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3) ;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2) ;
+}

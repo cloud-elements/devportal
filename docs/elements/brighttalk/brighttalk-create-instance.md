@@ -12,26 +12,42 @@ order: 20
 
 ## Create Instance
 
-BrightTALK is a webinar and video meeting service provider. After you provision an instance, your app will have access to the different functionality offered by the BrightTALK platform.
+You can provision instances through the API Manager Console or through APIs. This section describes both methods and includes parameter details, a request sample, and a response sample.
 
-### Parameters
+[Provision an Instance in Cloud Elements](#provision-an-instance-in-cloud-elements)
 
-| Parameter | Description     | Data Type     |
-| :------------- | :------------- | :------------- |
-| Instance Name </br>name       | The name for the instance created during provisioning.   | String       |
-| API Key </br>brighttalk.api.key       | The code that identifies the calling Element Instance to BrightTALK   | String       |
-| API Secret </br>brighttalk.api.secret       | The secret associated with the API Key that identifies the calling Element Instance to BrightTALK   | String       |
-| Staging </br>brighttalk.isstaging       | Indicates whether the instance should connect to a production or staging environment. No or `false` indicates production.  | Boolean       |
-| Bulk ignore if email not present </br>brighttalk.bulkignore.emailnotpresent       |  | Boolean       |
-| Filter null values from the response </br>filter.response.nulls      | Yes or `true` indicates that Cloud Elements will filter null values.  | Boolean       |
-| Tags | User-defined tags to further identify the instance. | object |
+[Provision an Instance via API](#provision-an-instance-via-api)
 
+[Parameters](#parameters)
 
-### Step 1. Create an Instance
+[Request Sample](#request-sample)
+
+[Response Sample](#response-sample)
+
+### Provision an Instance in Cloud Elements
+
+Use the Cloud Elements API Manager Console to provision an instance using our user interface. We provide a Provision Instance workflow that includes two steps: Provision it and Tag it.
+
+1. Sign in, and then search for the element in our Elements Catalog.
+  ![Search](../img/Element-Search.png)
+1. Click __Add Instance__.
+1. Enter your __Instance Name__.
+1. Complete the Instance Configuration parameters. See [Parameters](#parameters) or hover over the information icon for information about each parameter.
+1. Click __Next__.
+1. On the Tag It page, enter any tags that might help further define the instance.
+  * To add more than one tag, click __Add__ after each tag.
+  ![Add tag](../img/Add-Tag.png)
+1. Click __Done__.
+1. Take a look at the documentation for the element resources now available to you.
+  ![Documentation Tab](img/Element-Instance.png)
+
+### Provision an Instance via API
 
 To provision your BrightTALK Element, use the /instances API.
 
-Below is an example of the provisioning API call.
+__Note__: An Element token is returned upon successful execution of this API. Retain the token for all subsequent requests involving this element instance.
+
+The provisioning API call includes:
 
 * __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
 * __HTTP Verb__: POST
@@ -39,27 +55,24 @@ Below is an example of the provisioning API call.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+#### Request Body
 
-A sample request illustrating the /instances API is shown below.
+You must include an instance.json file with your instance request.  See [Parameters](#parameters) for information about each parameter. The Boolean parameters show default values.
 
-HTTP Headers:
+__Note__: If you don't specify a required parameter, your response results in an error.
 
-```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements BrightTALK is “BrightTALKcrm”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```JSON
 {
   "element": {
-    "key": "BrightTALKcrm"
+    "key": "brighttalk"
   },
   "configuration": {
-    "crm.BrightTALK.username":  "<INSERT_BrightTALK_USERNAME>",
-    "crm.BrightTALK.password": "<INSERT_BrightTALK_PASSWORD>",
-    "crm.BrightTALK.server.url": "<INSERT_BrightTALK_SERVER_URL>"
+    "brighttalk.api.key":  "<INSERT_BrightTALK_KEY>",
+    "brighttalk.api.secret": "<INSERT_BrightTALK_SECRET>",
+    "brighttalk.isstaging": false,
+    "brighttalk.bulkignore.emailnotpresent": true,
+    "filter.response.nulls": true
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -68,53 +81,75 @@ This instance.json file must be included with your instance request.  Please fil
 }
 ```
 
-Here is an example cURL command to create an instance using /instances API.
+__Note__:  Make sure that you use straight quotes in your JSON files and cURL commands.  Use plain text formatting in your code and ensure that you do not include spaces in the cURL command. <span style:"color:red"> The spaces part of the cURL note... what does that mean? </span>
 
-Example Request:
+### Parameters
 
-```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
-```
+The following table shows the parameters used to provision an instance. We noted optional parmamters in the table, but if you do  not specify values, the element will be provisioned with default values for the optional parameters.
 
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
+| Parameter | Description     | Data Type     |
+| :------------- | :------------- | :------------- |
+| Instance Name </br>`name`       | The name for the instance created during provisioning.   | String       |
+| API Key </br>`brighttalk.api.key`       | The code that identifies the calling Element Instance to BrightTALK   | String       |
+| API Secret </br>`brighttalk.api.secret`       | The secret associated with the API Key that identifies the calling Element Instance to BrightTALK   | String       |
+| Staging </br>`brighttalk.isstaging`     | *Optional*. Indicates whether the instance should connect to a production or staging environment. No or `false` indicates production. </br>Default: `false` | Boolean       |
+| Bulk ignore if email not present </br>`brighttalk.bulkignore.emailnotpresent`       | *Optional*. Specifies what to do with a record during bulk download if it is missing an email . Set to Yes or `true` to ignore the record during download.</br>Default: `true` | Boolean       |
+| Filter null values from the response </br>`filter.response.nulls`      | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`  | Boolean       |
+| Tags | *Optional*. User-defined tags to further identify the instance. | object |
 
-Below is a successful JSON response:
+### Sample Request
 
-```JSON
+Below is an example cURL request:
+
+    curl -X POST -H "Content-Type: application/json" -H "Authorization: User rapG956KSQJ/lZo20kdg2uurkG+wYU836miX1uQQT4k=, Organization 976c3406ee321baf50acfe6cf5eac1ac" -H "Cache-Control: no-cache" -H "Postman-Token: 5b56f6d5-e58e-d53f-a757-671f7cab58fa" -d '{
+      "element": {
+	    "key": "brighttalk"
+      },
+      "configuration": {
+	    "brighttalk.api.key": "xxxxxx",
+	    "brighttalk.api.secret": "xxxxxxxxxxxxxxxxxxxxxxx",
+	    "brighttalk.isstaging": false,
+	    "brighttalk.bulkignore.emailnotpresent": true,
+	    "filter.response.nulls": true
+      },
+      "tags": [
+	    "Docs"
+      ],
+      "name": "BrightTalkforDocs"
+    }
+    ' "https://api.cloud-elements.com/elements/api-v2/instances"
+
+
+### Sample Response
+
+Below is an abridged successful JSON response:
+
+```json
 {
-  "id": 1234,
-  "name": "Test",
-  "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
+  "id": 411183,
+  "name": "BrightTalkforDocs",
+  "createdDate": "2017-03-14T19:20:16Z",
+  "token": "xxxxxxxxxxxxxxxxxxxxxxx=",
   "element": {
-    "id": 95,
+    "id": 184,
     "name": "BrightTALK",
-    "key": "BrightTALKcrm",
-    "description": "Add an BrightTALK Instance to connect your existing BrightTALK account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your BrightTALK account information to add an instance.",
-    "image": "elements/provider_BrightTALK.png",
+    "hookName": "BrightTALK",
+    "key": "brighttalk",
+    "description": "Add an BrightTALK Instance to connect your existing BrightTALK account to the Marketing Hub, allowing you to manage your channels, subscribers, activities, etc. You will need your BrightTALK account information to add an instance.",
+    "image": "https://www.brighttalk.com/resources/images/logo_b.png?v=97373",
     "active": true,
     "deleted": false,
     "typeOauth": false,
     "trialAccount": false,
-    "configDescription": "If you do not have an BrightTALK.com account, you can create one at BrightTALK Signup",
-    "signupURL": "http://www.BrightTALK.com",
-    "transformationsEnabled": false,
-    "authentication": {},
-    "hub": "crm"
+    "signupURL": "http://www.brighttalk.com",
+    "defaultTransformations": []
   },
-  "provisionInteractions": [],
-  "valid": true,
-  "disabled": false,
-  "maxCacheSize": 0,
-  "cacheTimeToLive": 0,
-  "eventsEnabled": false,
-  "cachingEnabled": false
+  "configuration": {
+   "brighttalk.api.secret": "xxxxxxxxxxxxxxxxxxxxxxx",
+   "filter.response.nulls": "true",
+   "brighttalk.bulkignore.emailnotpresent": "true",
+   "brighttalk.isstaging": "false",
+   "brighttalk.api.key": "xxxxxxxxxxxxxxxxxxxxxxx"
+ }
 }
 ```
-
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-{% include common-instance-config.md %}

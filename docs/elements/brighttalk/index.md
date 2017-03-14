@@ -17,7 +17,9 @@ sitemap: false
 
 <span style="color:red">Description of the Element (currently in Create Instance). The vendor's website or programmableweb are good paces to grab a brief description. Do we have anything internally?. </span>
 
-BrightTALK is a webinar and video meeting service provider. The BrightTALK Element supports the following features:
+BrightTALK is a webinar and video meeting service provider. BrightTALK uses the web service called Bulkloader to provide connections to other services like Eloqua, HubSpot, and Salesforce.
+
+The BrightTALK Element supports the following features:
 
  * Transformations
  * Bulk
