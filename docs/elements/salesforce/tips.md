@@ -14,27 +14,35 @@ order: 75
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-* [General](#general)
-* [Accounts and Permissions](#accounts-and-permissions)
-* [Events](#events)
-* [Authentication](#authentication)
-* [Pagination](#pagination)
-* [Bulk](#bulk)
-* [Version](#version)
+[General](#general)
+
+[Accounts and Permissions](#accounts-and-permissions)
+
+[Events](#events)
+
+[Authentication](#authentication)
+
+[Pagination](#pagination)
+
+[Bulk](#bulk)
+
+[Version](#version)
 
 ### General
 
-* Cloud elements supports your custom objects and fields in the Salesforce CRM Element. use the `GET /objects` API to return all custom objects, the `GET /{objectName}` API to interact with the custom APIs, and the `GET /objects/{objectName}/metadata` API to expose metadata for fields associated with your custom object.
+* Cloud elements supports your custom objects and fields in the Salesforce CRM Element. Use the `GET /objects` API to return all custom objects, the `GET /{objectName}` API to interact with the custom APIs, and the `GET /objects/{objectName}/metadata` API to expose metadata for fields associated with your custom object.
 * There is a setting in Salesforce that may lead to an issues where calls return ``“INVALID_SESSION_ID – Session expired or invalid”``. If this is occurring, clear the  the Session Setting __Lock sessions to the IP address from which they originated__ check box.
+
+  ![Salesforce Tips Session Settings](img/Salesforce_Tips_SessionSettings.png)
 
 ### Accounts and Permissions
 
 * If you have different levels of permissions configured for users within your Salesforce application, those permissions will be inherited and remain unchanged through the OAuth flow as the Salesforce CRM element is integrated.
 * Salesforce has multiple types of accounts and editions. Only these allow you to use the API:
-1. Enterprise Edition
-2. Unlimited Edition
-3. Developer Edition
-4. Performance Edition
+  * Enterprise Edition
+  * Unlimited Edition
+  * Developer Edition
+  * Performance Edition
 Visit https://help.salesforce.com/HTViewSolution?id=000005140&language=en_US for more information
 
 ### Events
@@ -54,7 +62,7 @@ Visit https://help.salesforce.com/HTViewSolution?id=000005140&language=en_US for
 ### Bulk
 
 * Consider using the Bulk API if you are managing over 2000 records.
-* The Salesforce bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause chunking is disabled and it may take longer to get all the data. Also, be aware that Salesforce has daily upload and download limits.
+* The Salesforce bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause, chunking is disabled. If chunking is enabled, it may take longer to get all the data. Also, be aware that Salesforce has daily upload and download limits.
 
 ### Version
 
