@@ -13,27 +13,48 @@ sitemap: false
 
 ## Welcome to the BrightTALK Element
 
+<span style="color:red">What should be in an overview? Description of the element, what it supports (bulk, events, transformations), the authorization type, where to get their API docs. What else?</span>
+
+<span style="color:red">Description of the Element (currently in Create Instance). The vendor's website or programmableweb are good paces to grab a brief description. Do we have anything internally?. </span>
+
 BrightTALK is a webinar and video meeting service provider. BrightTALK uses the web service called Bulkloader to provide connections to other services like Eloqua, HubSpot, and Salesforce.
 
-This overview describes basic element details, the Base URL for API calls, and information about authenticating with Cloud Elements.  
+The BrightTALK Element supports the following features:
 
-[Element details](#element-details)
+ * Transformations
+ * Bulk
 
-[Base URL](#base-url)
+ To get started with the BrightTALK element, you should be familiar with the [BrightTALK API documentation](https://developer.brighttalk.com/docs/) and know the following information about your BrightTALK account:
 
-[Authenticating with Cloud Elements](#authenticating-with-cloud-elements)
+ * API Key
+ * API Secret
 
-### Element Details
+ Jump to any of the following sections to learn more about the element:
 
-Before you get started, review the following table to see basic information about the Element.
+ [Setup Overview](#setup-overview)
 
-| Element Information | Details     |
-| :------------- | :------------- |
-| Transformations       | Supported       |
-| Events | <span style:"color:red">Not Supported </span>|
-| Bulk | Supported |
-| API Documentation | [BrightTALK API documentation](https://developer.brighttalk.com/docs/) |
-| Authentication | To create an instance, you must know the API Key and API Secret. |
+ [About Elements](#about-elements)
+
+ [Base URL](#base-url)
+
+ [Authenticating with Cloud Elements](#authenticating-with-cloud-elements)
+
+
+
+### Setup Overview
+
+To create a connection to BrightTALK:
+
+1. Retrieve your BrightTALK API Key and API Secret.
+2. Call the `POST /instances` API to instantiate your BrightTALK connected app.
+
+### About Elements
+
+<span style="color:red">Do we need this part? it is a description of what an element is, so we could just reference the Element definition elsewhere. If we keep this section, I suggest doing so as an include.</span>
+
+An Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
+
+<span style="color:red">This part might actually be useful as a "Base URL" section...</span>
 
 ### Base URL
 

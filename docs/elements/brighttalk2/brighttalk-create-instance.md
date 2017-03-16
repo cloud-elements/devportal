@@ -81,11 +81,11 @@ __Note__: If you don't specify a required parameter, your response results in an
 }
 ```
 
-__Note__:  Make sure that you use straight quotes in your JSON files and cURL commands.  Use plain text formatting in your code and ensure that you do not include spaces in the cURL command.
+__Note__:  Make sure that you use straight quotes in your JSON files and cURL commands.  Use plain text formatting in your code and ensure that you do not include spaces in the cURL command. <span style:"color:red"> The spaces part of the cURL note... what does that mean? </span>
 
 ### Parameters
 
-The following table shows the parameters used to provision an instance. We noted optional parameters in the table, but if you do  not specify values, the element will be provisioned with default values for the optional parameters.
+The following table shows the parameters used to provision an instance. We noted optional parmamters in the table, but if you do  not specify values, the element will be provisioned with default values for the optional parameters.
 
 | Parameter | Description     | Data Type     |
 | :------------- | :------------- | :------------- |
