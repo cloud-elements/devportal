@@ -3,7 +3,7 @@ heading: Monitoring APIs
 seo: Monitoring Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: sidebarelementdoc
+layout: sidebarleft
 platform: monitoring
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs

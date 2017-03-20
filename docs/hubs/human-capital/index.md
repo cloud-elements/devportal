@@ -3,7 +3,7 @@ heading: Human Capital APIs
 seo: Human Capital Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: sidebarelementdoc
+layout: sidebarleft
 platform: humancapital
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs
