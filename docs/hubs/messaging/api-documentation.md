@@ -3,7 +3,7 @@ heading: Messaging APIs
 seo: Messaging API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Messaging Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: messaging
 breadcrumbs: /docs/hubs/hub-docs.html

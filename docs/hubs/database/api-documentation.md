@@ -3,7 +3,7 @@ heading: Database APIs
 seo: Database API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Database Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: db
 breadcrumbs: /docs/hubs/hub-docs.html
