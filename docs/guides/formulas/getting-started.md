@@ -9,6 +9,7 @@ platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 3
+restContentVersion: /docs/guides/use-cases.html
 ---
 
 # Getting Started
