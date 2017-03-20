@@ -51,7 +51,7 @@ Visit https://help.salesforce.com/HTViewSolution?id=000005140&language=en_US for
 
 ### Authentication
 
-* The console will use default application permissions when asking for access to your Salesforce applications. If you would like custom application permissions, you will need to create your own connected app and configure the application access in your custom UI. This cannot be done in the Cloud Elements console. Follow instructions on
+* The console will use default application permissions when asking for access to your Salesforce applications. If you would like custom application permissions, you will need to create your own connected app and configure the application access in your custom UI. This cannot be done in the Cloud Elements console. Follow instructions on [Endpoint Setup](https://developers.cloud-elements.com/docs/elements/salesforce/salesforce-endpoint-setup.html)
 * If you create a custom application, you will need to create instances via the APIs to use this new app. You only need to create this application once and you can use it for all of your customers.
 * Once an instance is created Cloud Elements will automatically refresh the token behind the scenes so that you will never have to connect your application again.
 
