@@ -72,7 +72,7 @@ __Libraries__
  _enc_: `Hex`, `base64`
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 * Util: The standard Node `util` library. To use, `require` it in your script.
-* http/https: The standard Node `http` and `https` library. To use, `require` it in your script.
+* http/https: The standard Node `http` and `https` library. Usage: `require` the library in your script.
 
 	Example using https:
 
