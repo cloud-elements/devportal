@@ -8,4 +8,4 @@ NOTE: additional endpoint setup may be required prior to creating your Element I
 __Note:__  Cloud Elements normalizes only the objectId, objectType, and eventType event data. Event data also contains raw data, which the provider returns. The raw data varies based on the endpoint.
 
 
-If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html)
+If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
