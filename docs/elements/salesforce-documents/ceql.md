@@ -1,7 +1,7 @@
 ---
 heading: Salesforce Documents
 seo: Query Language | Salesforce Documents | Cloud Elements API Docs
-title: Cloud Elements Query Language
+title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html

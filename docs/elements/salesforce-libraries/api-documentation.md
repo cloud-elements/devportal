@@ -3,7 +3,7 @@ heading: Salesforce Libraries
 seo: API Docs | Salesforce Libraries | Cloud Elements API Docs
 title: API Docs
 description: Salesforce Libraries API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 438
 parent: Back to Element Guides

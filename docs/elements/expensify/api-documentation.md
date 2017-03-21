@@ -3,7 +3,7 @@ heading: Expensify
 seo: API Docs | Expensify | Cloud Elements API Docs
 title: API Docs
 description: Expensify API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

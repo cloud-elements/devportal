@@ -3,7 +3,7 @@ heading: ServiceNow OAuth
 seo: API Docs | ServiceNow OAuth | Cloud Elements API Docs
 title: API Docs
 description: ServiceNow OAuth API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 566
 parent: Back to Element Guides

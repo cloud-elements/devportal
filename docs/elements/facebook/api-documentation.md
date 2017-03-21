@@ -3,7 +3,7 @@ heading: Facebook
 seo: API Docs | Facebook | Cloud Elements API Docs
 title: API Docs
 description: Facebook API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 222
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Sage One US
 seo: API Docs | Sage One US | Cloud Elements API Docs
 title: API Docs
 description: Sage One US API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 653
 parent: Back to Element Guides

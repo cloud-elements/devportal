@@ -3,7 +3,7 @@ heading: Shopify
 seo: API Docs | Shopify | Cloud Elements API Docs
 title: API Docs
 description: Shopify API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 48
 parent: Back to Element Guides

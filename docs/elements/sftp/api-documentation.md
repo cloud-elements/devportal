@@ -3,7 +3,7 @@ heading: SFTP
 seo: API Docs | SFTP | Cloud Elements API Docs
 title: API Docs
 description: SFTP API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 1742
 parent: Back to Element Guides

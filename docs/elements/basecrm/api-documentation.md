@@ -3,7 +3,7 @@ heading: Base CRM
 seo: API Docs | Base CRM | Cloud Elements API Docs
 title: API Docs
 description: Base CRM API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 201
 parent: Back to Element Guides

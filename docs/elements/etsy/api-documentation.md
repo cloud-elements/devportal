@@ -3,7 +3,7 @@ heading: Etsy
 seo: API Docs | Etsy | Cloud Elements API Docs
 title: API Docs
 description: Etsy API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 128
 parent: Back to Element Guides

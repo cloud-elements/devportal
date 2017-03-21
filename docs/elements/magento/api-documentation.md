@@ -3,7 +3,7 @@ heading: Magento
 seo: API Docs | Magento | Cloud Elements API Docs
 title: API Docs
 description: Magento API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 356
 parent: Back to Element Guides

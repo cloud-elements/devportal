@@ -4,15 +4,17 @@
   align-items: middle;
   margin: 10px 0px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .tab {
   flex: 1 0 auto;
   text-align: center;
+  margin: 0px 5px 5px 0px;
 }
 
 .tab a{
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: #222222;
 }
 

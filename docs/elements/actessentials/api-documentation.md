@@ -3,7 +3,7 @@ heading: Act Essentials
 seo: API Docs | Act Essentials | Cloud Elements API Docs
 title: API Docs
 description: Act Essentials API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 1251
 parent: Back to Element Guides

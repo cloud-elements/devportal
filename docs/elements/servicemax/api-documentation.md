@@ -3,7 +3,7 @@ heading: ServiceMax
 seo: API Docs | ServiceMax | Cloud Elements API Docs
 title: API Docs
 description: ServiceMax API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 169
 parent: Back to Element Guides

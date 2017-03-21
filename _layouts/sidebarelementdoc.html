@@ -60,19 +60,14 @@
          <div class="pageTabs">
           {% assign id = page.path | shard_id %}
           {% assign shard = site.shards[id] | sort:"order" %}
-          {% assign ignorePages = "Authentication|Transform Data|Error Codes|Cloud Elements Query Language" | split: "|" %}
           {% for p in shard %}
-            {% if ignorePages contains p.title %}
+            {% if page.url == p.url%}
+              <div class="tab activeTab">
             {% else %}
-              {% if page.url == p.url%}
-                <div class="tab activeTab">
-              {% else %}
-                <div class="tab">
-              {% endif %}
-                <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
-              </div>
+              <div class="tab">
             {% endif %}
-            
+              <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+            </div>
           {% endfor %}
         </div>
       </div>

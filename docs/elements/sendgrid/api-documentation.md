@@ -3,7 +3,7 @@ heading: SendGrid
 seo: API Docs | SendGrid | Cloud Elements API Docs
 title: API Docs
 description: SendGrid API Documentation.
-layout: sidebarelementdoc
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 6
 parent: Back to Element Guides
