@@ -119,4 +119,5 @@ layout: elements
 * [![Microsoft SQL Server](/assets/img/element-logos/sqlserver.png)Microsoft SQL Server](./elements/sqlserver/)
 * [![PostgreSQL](/assets/img/element-logos/postgresql.png)PostgreSQL](./elements/postgresql/)
 * [![Zuora](/assets/img/element-logos/zuora-logoblue.png)Zuora](./elements/zuora/)
+* [![BrightTALK](/assets/img/element-logos/BrightTALK.png)BrightTALK](./elements/brighttalk)
 * [![Facebook Lead Ads](/assets/img/element-logos/facebook.png)Facebook Lead Ads](./elements/facebookleadads/)
