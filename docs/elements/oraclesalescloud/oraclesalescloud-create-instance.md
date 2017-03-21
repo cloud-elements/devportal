@@ -5,7 +5,7 @@ title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 204
+elementId: 1948
 parent: Back to Element Guides
 order: 15
 ---
@@ -36,17 +36,17 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Oracle Sales Cloud is "salescloud".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Oracle Sales Cloud is "oraclesalescloud".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "salescloud"
+    "key": "oraclesalescloud"
   },
   "configuration": {
-    "crm.salescloud.username": "<INSERT_ORACLE_SALES_CLOUD_USERNAME>",
-    "crm.salescloud.password": "<INSERT_ORACLE_SALES_CLOUD_PASSWORD>",
-    "crm.salescloud.server.url": "<INSERT_ORACLE_SALES_CLOUD_SERVER_URL>"
+    "username": "<INSERT_ORACLE_SALES_CLOUD_USERNAME>",
+    "password": "<INSERT_ORACLE_SALES_CLOUD_PASSWORD>",
+    "site.url": "<INSERT_ORACLE_SALES_CLOUD_SERVER_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -77,36 +77,47 @@ Below is a successful JSON response:
   "name": "Test",
   "token": "OF/+1epqoOahKecYhzAjJQTFjUwWqXD+s=",
   "element": {
-    "id": 503,
-    "name": "Oracle Sales Cloud",
-    "key": "salescloud",
-    "description": "Add an Oracle Sales Cloud Instance to connect your existing Oracle Sales Cloud account to the CRM Hub, allowing you to manage your accounts, opportunities, contacts, leads, users, etc. across multiple CRM Elements. You will need your Oracle Sales Cloud account information to add an instance.",
-    "image": "elements/provider_salescloud.jpg",
-    "active": true,
-    "deleted": false,
-    "typeOauth": false,
-    "trialAccount": false,
-    "configDescription": "If you do not have an Oracle Sales Cloud account, you can find out more about them at Oracle Sales Cloud",
-    "transformationsEnabled": true,
-    "authentication": {},
-    "hub": "crm",
-    "parameters": []
-  },
-  "provisionInteractions": [],
-  "valid": true,
-  "disabled": false,
-  "maxCacheSize": 0,
-  "cacheTimeToLive": 0,
-  "configuration": {
-    "crm.salescloud.server.url": "ORACLE_SALES_CLOUD_SERVER_URL",
-    "event.notification.callback.url": null,
-    "crm.salescloud.password": "ORACLE_SALES_CLOUD_USERNAME",
-    "crm.salescloud.username": "ORACLE_SALES_CLOUD_PASSWORD",
-    "event.notification.enabled": null
-  },
-  "eventsEnabled": false,
-  "traceLoggingEnabled": false,
-  "cachingEnabled": false
+	"id": 1948,
+	"name": "Oracle Sales Cloud",
+	"key": "oraclesalescloud",
+	"description": "Add an Oracle Sales Cloud Instance to connect your existing Oracle Sales Cloud account to the CRM Hub, allowing you to manage your accounts, opportunities, contacts, leads, users, etc. across multiple CRM Elements. You will need your Oracle Sales Cloud account information to add an instance.",
+	"image": "elements/provider_salescloud.jpg",
+	"active": true,
+	"deleted": false,
+	"typeOauth": false,
+	"trialAccount": false,
+	"resources": [],
+	"private": false
+},
+"provisionInteractions": [],
+"valid": true,
+"disabled": false,
+"maxCacheSize": 0,
+"cacheTimeToLive": 0,
+"configuration": {
+	"bulk.add_metadata": null,
+	"base.url": "https://{site.url}",
+	"bulk.query.field_name": "",
+	"site.url": "MySite.oracle.com",
+	"pagination.max": "100",
+	"event.vendor.type": "polling",
+	"bulk.query.operator": ">=",
+	"bulk.query.date_mask": "yyyy-MM-dd'T'HH:mm:ss'Z'",
+	"bulk.attribute.created_time": "CreationDate",
+	"bulk.query.download_format": "JSON",
+	"password": "********",
+	"pagination.type": "page",
+	"bulk.relations": null,
+	"event.poller.refresh_interval": "15",
+	"event.notification.callback.url": null,
+	"pagination.page.startindex": "0",
+	"username": "USERNAME",
+	"event.notification.enabled": "false"
+},
+"eventsEnabled": false,
+"traceLoggingEnabled": false,
+"cachingEnabled": false,
+"externalAuthentication": "none"
 }
 ```
 

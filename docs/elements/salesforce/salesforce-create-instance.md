@@ -16,6 +16,8 @@ Salesforce is a Customer Success Platform. When you provision an instance, your 
 
 Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Salesforce Documents. Below are examples of each method.
 
+Note that Salesforce allows multiple environments, such production and sandbox environments. If you would like to connect to an alternate environment, change the endpoint address.  
+
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None

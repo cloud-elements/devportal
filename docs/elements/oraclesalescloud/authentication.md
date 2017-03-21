@@ -5,7 +5,7 @@ title: Authentication
 description: Integrate Oracle Sales Cloud into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 204
+elementId: 1948
 parent: Back to Element Guides
 order: 10
 sitemap: false

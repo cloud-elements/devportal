@@ -16,7 +16,7 @@ sitemap: false
 
 #### At a Glance
 
-In order to create a connection to Twilio SMS the following steps are required:
+To create a connection to Twilio SMS the following steps are required:
 
 1. Call the `POST /instances` API to instantiate your Twilio SMS connected app
 
