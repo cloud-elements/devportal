@@ -27,7 +27,7 @@ To create an app:
   * For the Category, select __Apps for Pages__.
     ![Facebook Add App ID](https://cl.ly/3v3L3z2n210z/Create-a-New-AppID.png)
 1. Click __Create App ID__.
-1. On the Product Setup, locate Marketing API, and then click __Get Started__ to complete the Marketing API setup for Facebook Lead Ads.
+1. On the Product Setup page, locate Marketing API, and then click __Get Started__ to complete the Marketing API setup for Facebook Lead Ads.
 1. Set up the app's platform as a website: Go to Basic Settings, click __+Add Platform__, and then click __Website__.
     ![Facebook Select Platform](https://cl.ly/0K2913290G08/select-platform.png).
 1. For OAuth authentication, add the Facebook Login product: click __+ Add Product__, find Facebook Login at the top, and then click __Get Started__.
