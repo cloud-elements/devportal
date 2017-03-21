@@ -17,8 +17,8 @@ In order to move a contact from Salesforce to Shopify, we need to map both the S
 We will start by creating a transformation for the Contact Object in Salesforce.
  
 1. Click on the blue Transformations button on the Salesforce Instance. This will open the transformations window.
-2. Select the `Contact` Object from the drop-down menu under Salesforce ![Salesforce Transform](https://cl.ly/1M3D1C1q3333/Image%202017-03-09%20at%2011.43.29%20AM.public.png)  
-3. Click the green `New Object` button to create a new Common Object and give it a name like "MyConctact"
+2. Select the `Contact` Object from the drop-down menu under Salesforce. ![Salesforce Transform](https://cl.ly/1M3D1C1q3333/Image%202017-03-09%20at%2011.43.29%20AM.public.png)  
+3. Click the green `New Object` button to create a new Common Object and give it a name like "MyConctact".
 4. You can now start mapping fields from Salesforce to the Common Object, by dragging them from the right side of the screen to the left. 
 5. Start by mapping the following fields from Salesforce:
   - `Email`  

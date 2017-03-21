@@ -18,7 +18,7 @@ The first step in setting up our contact sync from Salesforce to Shopify, is to 
 - From the Elements Catalog, find Salesforce in the CRM Hub and click `Add Instance`.  
 - Enter any value into `Instance Name` (like "Salesforce Instance 1") field.
 - Set `Enabled/Disable Event Notifications` to true and click Next.
-- Login to your Salesforce Account
+- Login to your Salesforce Account.
 
 Once provisioned, you can see your new Salesforce Element instance under My Instances in the Elements Menu.  If you click the Documentation tab of the instance, you are presented with the RESTful Swagger API docs that allow you to make live API calls to Salesforce.
 
