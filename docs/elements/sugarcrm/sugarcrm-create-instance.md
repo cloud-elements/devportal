@@ -38,6 +38,8 @@ Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECR
 ```
 This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements SugarCRM is “sugarcrmv2”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate. The site URL should be the domain to your SugarCRM only (exclude the http(s)).
 
+__Note__: `oauth.callback.url` is optional. The `oauth.callback.url` is the application URL to return to after the authentication flow at SugarCRM completes.
+
 
 ```json
 {

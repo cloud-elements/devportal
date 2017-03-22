@@ -30,7 +30,7 @@ layout: sidebarelementtile
 * [![MailJet Marketing](/assets/img/element-logos/mailjet.png)MailJet Marketing](./elements/mailjet-marketing/)
 * [![Marketo](/assets/img/element-logos/marketo.png)Marketo](./elements/marketo/)
 * [![Pardot](/assets/img/element-logos/pardot.png)Pardot](./elements/pardot/)
-* [![Salesforce Marketing Cloud BETA](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud
+* [![Salesforce Marketing Cloud BETA](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud](./elements/salesforce-marketing-cloud)
 * [![FreshBooks](/assets/img/element-logos/freshbooks.png)FreshBooks](./elements/freshbooks/)
 * [![Great Plains](/assets/img/element-logos/greatplains.png)MS Great Plains](./elements/greatplains/)
 * [![Intacct](/assets/img/element-logos/intacct.png)Intacct](./elements/intacct/)
@@ -119,4 +119,5 @@ layout: sidebarelementtile
 * [![Microsoft SQL Server](/assets/img/element-logos/sqlserver.png)Microsoft SQL Server](./elements/sqlserver/)
 * [![PostgreSQL](/assets/img/element-logos/postgresql.png)PostgreSQL](./elements/postgresql/)
 * [![Zuora](/assets/img/element-logos/zuora-logoblue.png)Zuora](./elements/zuora/)
+* [![BrightTALK](/assets/img/element-logos/BrightTALK.png)BrightTALK](./elements/brighttalk)
 * [![Facebook Lead Ads](/assets/img/element-logos/facebook.png)Facebook Lead Ads](./elements/facebookleadads/)
