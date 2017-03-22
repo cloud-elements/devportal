@@ -11,37 +11,25 @@ order: 2
 ---
 ## Endpoint Setup
 
-Log in to your Facebook developer account at [https://developers.facebook.com/](https://developers.facebook.com/).
+To set up the Facebook endpoint, you need to have a developer account and create or already have an app.
 
-1. Select “My Apps” > “Add a New App”
-![Facebook Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI1.png)
+__Note__: Facebook provides the most up-to-date and detailed setup instructions at [https://developers.facebook.com/docs/apps/register](https://developers.facebook.com/docs/apps/register).
 
-2. Select “Website”
-![Facebook Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI2.png)
+To create an app:
 
-3. Click “Create New Facebook App ID”
-![Facebook Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI3.png)
+1. Log in to your Facebook developer account at [https://developers.facebook.com/](https://developers.facebook.com/).
+1. Create a new Facebook app.
 
-4. Select “Choose a category”
-
-5. Click “Create App ID”
-![Facebook Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI4.png)
-
-6. Click “Skip Quick Start”
-![Facebook Connected App step 5](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI5.png)
-
-7. Under Settings > Under Basic: Copy the App ID
-
-8. Copy the App Secret
-![Facebook Connected App step 6](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI5.png)
-
-9. Under Settings > Under Basic > Client OAuth Settings:  Input your app’s callback URL
-![Facebook Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI7.png)
-
-10. Click “Save Changes”
-![Facebook Connected App step 8](http://cloud-elements.com/wp-content/uploads/2015/12/FacebookAPI8.png)
-
-Your app will need to be approved by Facebook prior to putting it in production.  You can create a “Test App” by selecting “Test App” in the left hand menu of the My App dashboard.
+    __Note__: The Add App button is located in several places, but an easy way to get to it is from your menu at the the top of any Facebook for developers page:
+    ![Facebook Add App](https://cl.ly/3u393Q30450G/Add%20App.png)
+1. Complete the Create a New App ID form.
+1. Click __Create App ID__.
+1. Set up the app's platform as a website: Go to Basic Settings, click __+Add Platform__, and then click __Website__.
+    ![Facebook Select Platform](https://cl.ly/0K2913290G08/select-platform.png).
+1. For OAuth authentication, add the Facebook Login product: click __+ Add Product__, find Facebook Login at the top, and then click __Get Started__.
+![Facebook Add Login](https://cl.ly/2G3R440Q0o3e/FB-Login.png)
+1. In __Valid OAuth redirect URIs__, enter your `oauth.callback.url`.
+1. Click __Save Changes__.
 
 Once you are ready to release to production, you will need to submit your app for testing.  You can read more about the process at: [https://developers.facebook.com/docs/facebook-login/review/requirements](https://developers.facebook.com/docs/facebook-login/review/requirements)
 
