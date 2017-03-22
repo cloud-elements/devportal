@@ -1,5 +1,5 @@
 {% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
-{% assign allshards = site.shards %}
+{% assign allshards = site.shards | sort %}
 <link href="/assets/css/sidebar.css" rel="stylesheet">
 <script type="text/javascript">
   let currentSelection="";
@@ -18,11 +18,26 @@
   }
 </script>
 <div class="sidebarWrapper">
-  <button class="headerButton" onClick="selectAccordion('overview')"> Overview </button>
-  <ul class="accordionList" id="overview"> </ul>
-  <button class="headerButton" onClick="selectAccordion('gettingStarted')"> Getting Started </button>
-    <ul class="accordionList" id="gettingStarted">
+    <button class="headerButton" onClick="selectAccordion('overview')"> Overview </button>
+    <ul class="accordionList" id="overview">
       {% for i in overviewshard %}
+        {% if i.url == page.url %}
+          <!-- The Script tag sets the high level menu to be expanded -->
+          <script> setCurrentSelection("overview") </script>
+          <li>
+            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
+          </li>
+        {% else %}
+          <li>
+            <a href={{i.url}}> {{i.title}} </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <button class="headerButton" onClick="selectAccordion('gettingStarted')"> Getting Started </button>
+    <ul class="accordionList" id="gettingStarted">
+        {% assign sortedShards = site.shards['docs_quickstart'] | sort:"order" %}
+        {% for i in sortedShards %}
         {% if i.url == page.url %}
           <!-- The Script tag sets the high level menu to be expanded -->
           <script> setCurrentSelection("gettingStarted") </script>
@@ -38,7 +53,7 @@
     </ul>
     <button class="headerButton" onClick="selectAccordion('ceApi')">Cloud Elements API</button>
     <ul class="accordionList" id="ceApi">
-      {% for folder in site.shards %}
+      {% for folder in allshards %}
         {% assign key = folder[0] %}
         {% if key contains "platform_api" %}
         {% assign pages = site.shards[key] | sort:"order" %}
@@ -66,7 +81,7 @@
     <ul class="accordionList" id="elementDocs"> </ul>
     <button class="headerButton" onClick="selectAccordion('featureReference')">Platform Docs</button>
     <ul class="accordionList" id="featureReference">
-      {% for folder in site.shards %}
+      {% for folder in allshards %}
         {% assign key = folder[0] %}
         {% if key contains "docs_guides" and key != "docs_guides" and key != "" and key != "docs_guides_quickstart_guides" %}
         {% assign pages = site.shards[key] | sort:"order" %}
@@ -92,7 +107,7 @@
     </ul>
     <button class="headerButton" onClick="selectAccordion('hubDocs')">Hub Docs</button>
     <ul class="accordionList" id="hubDocs">
-      {% for folder in site.shards %}
+      {% for folder in allshards  %}
         {% assign key = folder[0] %}
         {% if key contains "docs_hubs" and key != "docs_hubs" and key != ""%}
         {% assign pages = site.shards[key] | sort:"order" %}
