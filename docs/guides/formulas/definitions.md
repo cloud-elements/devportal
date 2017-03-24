@@ -1,7 +1,7 @@
 ---
 heading: Formulas
 seo: Terminology | Formulas Terminology | Cloud Elements Formula Definitions
-title: Terminology
+title: Definitions
 description: What are Formulas and how do they work?
 layout: docs
 apis: API Docs
