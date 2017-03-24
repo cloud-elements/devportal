@@ -5,7 +5,7 @@ title: Overview
 description: Integrate BrightTALK into your application via the Cloud Elements APIs.
 layout: docs
 breadcrumbs: /docs/elements.html
-elementId: 50
+elementId: 184
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -75,4 +75,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 
 
-Get started by [creating an instance](BrightTALK-crm-create-instance.html).
+Get started by [creating an instance](BrightTALK-create-instance.html).
