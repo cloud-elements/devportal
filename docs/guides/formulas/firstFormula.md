@@ -1,7 +1,7 @@
 ---
 heading: Formulas
-seo: Formula Videos | Formulas | Cloud Elements API Docs
-title: Videos
+seo: Formula Quickstart | Formulas | Cloud Elements API Docs
+title: Build Your First Formula
 description: Videos walking through the different features of Formula Builder.
 layout: docs
 apis: API Docs

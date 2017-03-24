@@ -1,22 +1,17 @@
 ---
 heading: Formulas
-seo: Formulas Getting Started | Formulas | Cloud Elements API Docs
-title: Getting Started
-description: Learn how to create formulas in Cloud Elements.
+seo: Formulas Step Scope | Formulas Scope | Cloud Elements Formulas Scope
+title: Formula Step Scope
+description: Understand the scopes different steps produce.
 layout: docs
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 3
+order: 5
 ---
 
-# Getting Started
-Before building your first formula, it is good to know a few things about the internal Formula API and how the Formula engine works.
-
-# Formulas API
-
-## Formula Context
+# Formula Scope
 Each different type of step produces different step execution values that are added to the formula "context".  The formula context is then passed from step-to-step, allowing you to use these values in any subsequent steps in your formula.  Below are the different values that each different step type produces:
 
 > **NOTE:** Any step execution values that are added to the context are always name-spaced under `steps.<your-step-name>`.
