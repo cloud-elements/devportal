@@ -12,8 +12,10 @@ order: 5
 
 ## Endpoint Setup
 
+__Note:__ You cannot create an Integrator Key with a regular DocuSign trial account. You must use a developer demo account. See the instructions in the API Quick Start section at [https://www.docusign.com/developer-center/api-overview](https://www.docusign.com/developer-center/api-overview).
+
 Follow these steps to retrieve your Integrator Key needed to create a DocuSign Element Instance.
-Via a web browser go to [https://www.docusign.net/member/MemberLogin.aspx](https://www.docusign.net/member/MemberLogin.aspx) and login to your account.
+Via a web browser go to [https://www.docusign.net/member/MemberLogin.aspx](https://www.docusign.net/member/MemberLogin.aspx) and log in to your account.
 
 1. Click your profile in the top right corner and select “Preferences”.
 ![DocuSign Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/05/DocuSignAPI1.png)
