@@ -19,7 +19,7 @@ Just like there are Elements and then instances of those Elements, our platform 
 
 ## Formula Instances
 
-Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you simply give it a name, and populate all of the required "variables".
+Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created. When creating a formula instance, you simply give it a name, and populate all of the required "variables".
 
 ## Variables
 A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an Element you may need to provide things like "username" or "password" in order to materialize that Element.  In the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.

@@ -38,19 +38,19 @@ The `amqpRequest` uses the `AMQP` protocol to post a message to an MQ server, e.
 ## Element Request Step
 This step makes an API call to a specific Element Instance.
 
-This step has three required properties:
+Required properties:
 
 * `elementInstanceId`
 * `method`
 * `path`
 
-The other optional properties are:
+Optional properties:
 
 * `headers`
 * `query`
 * `body`
 
-**Note:** These optional parameters need be references to an object from a previous step in the formula
+**Note:** These optional parameters need be references to an object from a previous step in the formula.
 
 ```json
 {
@@ -66,7 +66,7 @@ The other optional properties are:
 ```
 
 ## Element Request Stream Step
-An Element Request Stream is used to steam a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using `download` to refer to the first API that will download the data and `upload` to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
+An Element Request Stream is used to stream a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using `download` to refer to the first API that will download the data and `upload` to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
 
 Each of the two API calls in the Stream Step have the same properties as an Element Request Step.
 
@@ -89,7 +89,7 @@ Custom Javascript that *must* return true or false.
 ```
 
 ## Formula Step
-Executes a different formula instance
+Executes a different formula instance.
 
 ```json
 {
@@ -109,7 +109,7 @@ Required properties:
 * `url`, with HTTP or HTTPS 
 * `Method`
 
-Option properties:
+Optional properties:
 
 * `query`
 * `path`
@@ -139,12 +139,12 @@ Option properties:
 ## Loop Step
 Loops over a list of objects from a previous step or trigger.
 
-To Use a formula step:
+To Use a loop step:
 
 * You must provide it with a list of objects to loop over. 
-* Set the onSuccess field to the first step in the loop. 
-* When you have reached the last step in the loop set the onSuccess field to the loop step, this will restart the loop for the next object. 
-* If you need to continue on after the loop is completed, you can set the loop step onFailure to the next step to execute after the loop is completed. For a loop step, onFailure is executed when the loop has been executed for all objects in the list.
+* Set the `onSuccess` field to the first step in the loop. 
+* When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object. 
+* If you need to continue on after the loop is completed, you can set the loop step onFailure to the next step to execute after the loop is completed. For a loop step, `onFailure` is executed when the loop has been executed for all objects in the list.
 
 ## Notification Step
 Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.
@@ -152,12 +152,14 @@ Custom Javascript that *must* pass a boolean to the `done` callback.  If true, a
 ## Retry Formula Execution Step
 Retries a formula instance execution with the same input data. The number of retry attempts can be configured, with a maximum of 5 attempts, and the retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backoff is `round(e^x)` where `x` is the retry attempt number.
 
-* `retryAttempts` is a required property
+Required Property:
+
+* `retryAttempts` 
 
 ## Request Step
 Makes an API call to one of our platform APIs.
 
-These steps will look the same as any elementRequest except they do not need an elementInstanceId property since these API calls are not element instance API calls but instead just calls to one of our platform APIs.
+These steps will look the same as any elementRequest, except that they do not need an elementInstanceId property. This is because these API calls are not element instance API calls, but instead just calls to one of our platform APIs.
 
 ```json
 {
@@ -172,7 +174,7 @@ These steps will look the same as any elementRequest except they do not need an 
 ```
 
 ## Script Step
-Custom Javascript that *must* pass a valid JSON object to the `done` callback. The javascript here is powered by Node.js and has the following packages available to it
+Custom Javascript that *must* pass a valid JSON object to the `done` callback. The javascript here is powered by Node.js and has the following packages available to it:
 
 * CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
  * `CE.randomString()`: Generate a random string (approx. 10 characters long).
