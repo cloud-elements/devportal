@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Overview | SFTP | Cloud Elements API Docs
 title: Overview
 description: Integrate SFTP into your application via the Cloud Elements APIs.

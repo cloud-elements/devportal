@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Error Codes | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

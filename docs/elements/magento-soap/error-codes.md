@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Error Codes | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

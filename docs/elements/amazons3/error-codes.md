@@ -1,5 +1,5 @@
 ---
-heading: Amazon S3
+heading: Amazon S3 Beta
 seo: Error Codes | Amazon S3 | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

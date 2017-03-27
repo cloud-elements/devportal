@@ -1,5 +1,5 @@
 ---
-heading: MailJet Messaging
+heading: MailJet Messaging Beta
 seo: API Docs | MailJet Messaging | Cloud Elements API Docs
 title: API Docs
 description: MailJet Messaging API Documentation.

@@ -1,5 +1,5 @@
 ---
-heading: Amazon S3
+heading: Amazon S3 Beta
 seo: API Docs | Amazon S3 | Cloud Elements API Docs
 title: API Docs
 description: Amazon S3 API Documentation.

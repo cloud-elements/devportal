@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Events | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Events
 description: Enable Magento SOAP V1.9 events for your application.
