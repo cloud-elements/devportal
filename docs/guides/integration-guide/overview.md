@@ -2,7 +2,7 @@
 heading: Platform Overview
 seo: Cloud Elements Platform Overview | Cloud Elements API Docs
 title: Overview
-description: Overview of the Cloud Elements Platform and how to integrate it into your application.
+description: Getting started with Cloud Elements
 layout: docs
 order: 1
 breadcrumbs: /docs/guides/home.html
@@ -11,19 +11,9 @@ published: true
 sitemap: false
 ---
 
-## Who is Cloud Elements?
+# Creating Your First Integration
 
-Cloud Elements is an API Integration Platform for application providers. Our 100% API based service can be embedded seamlessly into your app, making it easy to build and offer an integration marketplace to your customers.
+To help guide you through the Cloud Elements platform, we will build an example integration. Our use case will be to sync new Contacts from Salesforce to Shopify Customers.
 
-## How does Cloud Elements solve your Integration problem?
-
-We architected our platform from the ground-up to support the deployment option that’s best for your business. Our platform provides these features that will save you time and money in developing the integrations your customers are demanding.
-
-* 100% RESTful APIs.
-* Aggregate and normalize APIs into “Hubs” for similar services to make it easy to connect entire categories of services through uniform APIs.
-* Create your own Resources and normalize data across multiple elements.
-* Create your own Elements and publish in our catalog or other marketplaces, like AWS.
-* Build Formulas to automatically sync data between services.
-* Manage your integration response times, activity levels, error rates via searchable logs or via our console.
-
-Start by familiarizing yourself with the Cloud Elements Platform by viewing our [Definitions](definitions.html) section.
+__NOTE:__ if you have not reviewed our [Definitions section](/docs/overview/definitions.html), please do so before viewing this guide.
+</br>

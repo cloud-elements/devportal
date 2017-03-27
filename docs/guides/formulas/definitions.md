@@ -1,7 +1,7 @@
 ---
 heading: Formulas
-seo: How It Works | Formulas | Cloud Elements API Docs
-title: How It Works
+seo: Terminology | Formulas Terminology | Cloud Elements Formula Definitions
+title: Definitions
 description: What are Formulas and how do they work?
 layout: docs
 apis: API Docs
@@ -11,12 +11,15 @@ parent: Back to Guides
 order: 2
 ---
 
-# How It Works
-There are a few different terms you should become familiar with in order to better grasp formulas.  First off, just like there are Elements and then instances of those Elements, our platform supports formulas and then instances of those formulas.  An instance is a materialized formula, with all of the necessary inputs (variables) that are needed for that formula to go about executing.  Once you have a formula instance, that instance will then have a list of executions.  An execution represents a single time that a specific formula instance ran.
+# Formula Definitions
+There are a few different terms you should become familiar with in order to better grasp formulas.  
 
-# Terminology: Formula
+## Formula Templates
+Just like there are Elements and then instances of those Elements, our platform supports formulas and then instances of those formulas. Another way to think of a formula is like a template, that you will later create one or more instances of.
 
-There are a few different pieces that make up a formula:
+## Formula Instances
+
+Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created. When creating a formula instance, you simply give it a name, and populate all of the required "variables".
 
 ## Variables
 A variable is something that will be populated when a formula instance is created.  Just like when creating an instance of an Element you may need to provide things like "username" or "password" in order to materialize that Element.  In the same way you can specify what inputs (or variables) are needed in order to create an instance of a formula.  You can then reference those variables in your formula trigger or throughout any of your formula steps.
@@ -61,13 +64,7 @@ We currently support the following types of steps:
 * `formula`: Executes a sub-formula from the current formula.
 * `retryFormulaExecution`: Retries a formula instance execution with the same input data. The number of retry attempts can be configured, with a maximum of 5 attempts, and the retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backof is `round(e^x)` where `x` is the retry attempt number.
 
-# Terminology: Formula Instances
-
-Once a formula has been created, in order to have that formula begin executing, at least one formula instance will need to be created.  When creating a formula instance, you simply give it a name, and populate all of the required "variables".
-
-> **PROTIP:** Cloud Elements currently supports formula and/or formula instance creation via API and via the Formula Builder UI.
-
-# Terminology: Formula Instance Execution
+## Formula Instance Execution
 
 An execution is a single time that a formula instance ran.  Each execution has a list of step executions, which represent each individual step in that formula that was executed.  Lastly, each of these step executions will have zero to many step execution values associated with it.  These step execution values are the potential inputs and outputs for each of these steps.
 
