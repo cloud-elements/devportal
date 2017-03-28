@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'json', '~> 1.8.6'
 
+gem 'rb-inotify', '~> 0.9.7'
+
 gem 'jekyll'
 
 gem 'rake'
