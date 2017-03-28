@@ -1,5 +1,5 @@
 ---
-heading: ServiceNow OAuth OAuth
+heading: ServiceNow OAuth Beta
 seo: Endpoint Setup | ServiceNow OAuth OAuth | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup

@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Create Instance | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

@@ -1,5 +1,5 @@
 ---
-heading: Instagram
+heading: Instagram Beta
 seo: Endpoint Setup | Instagram | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Instagram into your application via the Cloud Elements APIs.
