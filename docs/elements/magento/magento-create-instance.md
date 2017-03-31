@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Create Instance | Magento | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

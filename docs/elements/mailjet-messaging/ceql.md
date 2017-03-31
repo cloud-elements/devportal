@@ -1,5 +1,5 @@
 ---
-heading: MailJet Messaging
+heading: MailJet Messaging Beta
 seo: Query Language | MailJet Messaging | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.

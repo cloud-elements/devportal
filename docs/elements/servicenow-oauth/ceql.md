@@ -1,5 +1,5 @@
 ---
-heading: ServiceNow OAuth
+heading: ServiceNow OAuth Beta
 seo: Query Language | ServiceNow OAuth | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.

@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing
+heading: Infusionsoft Marketing Beta
 seo: Authentication | Infusionsoft Marketing | Cloud Elements API Docs
 title: Authentication
 description: Integrate Infusionsoft Marketing into your application via the Cloud Elements APIs.

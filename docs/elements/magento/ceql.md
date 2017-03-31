@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Query Language | Magento | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.

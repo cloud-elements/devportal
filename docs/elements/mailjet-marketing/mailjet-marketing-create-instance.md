@@ -1,5 +1,5 @@
 ---
-heading: MailJet Marketing
+heading: MailJet Marketing Beta
 seo: Create Instance | MailJet Marketing | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

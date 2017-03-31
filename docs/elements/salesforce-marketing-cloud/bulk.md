@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Bulk APIs | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
