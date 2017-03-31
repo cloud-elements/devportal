@@ -34,4 +34,8 @@ You can search on almost any attribute. However, we recommend that you keep your
 
 ### Metadata
 
-MS Dynamics provides rich metadata.
+MS Dynamics provides rich metadata. Make sure that you call `GET /objects/{objectName}/metadata` and review the metadata.
+
+### On Premise Authentication
+
+For on-premise authentication, we support Federated, but not Active Directory.
