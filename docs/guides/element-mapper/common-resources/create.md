@@ -174,8 +174,8 @@ To map fields:
 
 ### Tips
 
-* You don't have to map fields one at a time. You can add multiple fields to the Common Resources side at once, and then map them later. Use the __Filter__ button to show only those fields that haven't been mapped.
-* If you made a mistake and don't want to include a field in a common resource, click __Delete__. If you still want the field, but want to remove the mapping, click the __Red x__.
+* You don't have to map fields one at a time. You can add multiple fields to the Common Resources side at once, and then map them later. Use <img src="img/nnn.png" alt="Alt Text" class="inlineImage"> to show only those fields that haven't been mapped.
+* If you made a mistake and don't want to include a field in a common resource, click <img src="img/btn-Delete.png" alt="Delete" class="inlineImage">. If you still want the field, but want to remove the mapping, click <img src="img/btn-Clear.png" alt="Clear" class="inlineImage">.
 
 
 # Advanced Custom Resources
@@ -186,26 +186,43 @@ In addition to the basic object mapping described in [Create a New Common Resour
 
 You can use custom Javascript when the basic object mapping described in [Create a New Common Resource](#create-a-new-common-resource) does not meet your needs. For example, you might need to break a single address object into its component parts (address.city, address.state, address.street, and address.zip).
 
-The function signature for JS used with common resources is:
+To access the custom Javascript functionality:
 
-```javascript
-/**
- * @param  originalObject    The original object, with no transformations or mappings taking place on it.
- * @param  transformedObject The transformed object, with any mappings already taking place.
- * @param  fromVendor        Is this transformation being executed coming back from the vendor (on an API response) ?
- * @param  done              The callback function that you will need to call at the end of your JS
- */
-function (originalObject, transformedObject, fromVendor, done) {
-  // your Javascript will be executed here
-}
+* Click   <img src="img/btn-Custom-JS.png" alt="Custom JS" class="inlineImage">.
 
-```
+Common resource functions include the parameters and functions in the following table:
 
+### Common Resources Custom JS Parameters and Functions
 
+| Parameter | Description   |
+| :------------- | :------------- |
+| transformedObject  |  The transformed object, with any mappings already taking place.  |
+| originalObject  | The original object, with no transformations or mappings taking place on it. |
+| fromVendor  | Is the transformation being executed coming back from the vendor (on an API response) ? |
+| done |   The callback function needed to call at the end of your JS. |
 
+### Examples
 
+* Adding fields to a resource when a certain endpoint does not provide them:
 
+    ```javascript
+    function (originalObject, transformedObject, fromVendor, done) {
+    transformedObject.isCreatedThisYear = (fromVendor && transformedObject.createdDt > '2016-01-01');
+    done(transformedObject);
+    }
+    ```
 
+* Two endpoints identify priority differently: one users numbers (1 or 2) and the other descriptions (low or high).
+
+    ```javascript
+    function (originalObject, transformedObject, fromVendor, done) {
+    if (!fromVendor) done(transformedObject); // only care when returning data from the vendor
+
+    transformedObject.priority = transformedObject.priorityNumber === 1 ? 'low' : 'high'; // we prefer our priority to be the string representation, so we convert the endpoints "priorityNumber" field to the appropriate string representation here.
+
+    done(transformedObject);
+  }
+    ```
 
 ## Transforming Custom Resources
 
@@ -228,13 +245,13 @@ Cloud Elements passes all fields in the JSON through on both requests and respon
 
 To remove unmapped fields:
 
-1. On the Transformations page, click the __Advanced Settings__ button.
-1. Switch Remove Unmapped Fields to on.
+1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
+1. Switch __Remove Unmapped Fields__ to on.
 1. Click __Save__.
 
 To remove fields from requests or responses:
 
-1. On the Transformations page, click the __Field Settings__ button.
+1. On the Transformations page, click <img src="img/btn-Field-Settings.png" alt="Field Settings" class="inlineImage">.
 1. Switch on or off the sliders for the requests or responses.
 
     For example, in the following configuration, we remove the portal-id field from the response.
@@ -247,7 +264,7 @@ If no values exist for a specific field, but you do not want to remove it, you c
 
 To set a default value:
 
-1. On the Transformations page, click the __Field Settings__ button.
+1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
 1. Click __Default Value__, and then type the value.
 1. Click __Save__.
 
@@ -257,9 +274,9 @@ After you set up your mapping, you can test your transformations.
 
 To test a transformation:
 
-1. On the Transformations page, click __Try it Out__.
+1. On the Transformations page, click <img src="img/btn-Try.png" alt="Try It Out" class="inlineImage">.
 1. Review the Transformed response body. This is the response containing only the fields in your common resource.
-1. Click Original to see the entire response JSON payload.
+1. Click __Original__ to see the entire response JSON payload.
 1. Test a Put or Patch by selecting the appropriate method, and then entering the JSON request.
 
     __Tip__: Copy the JSON payload from Transformed.
@@ -272,7 +289,7 @@ You can add the common resource you create to the instances of each affected ele
 
 To add a common resource to API docs:
 
-1. On the Transformations page, click __Advanced Settings__.
+1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
 1. Switch __Add to API Docs__ on.
 1. Click __Save__.
 
@@ -284,13 +301,13 @@ Try it out:
 The list of resources is in alphabetical order, so the example myContact in this guide is after the `leads` resource:
 ![myContact in API docs](img/api-docs.png)
 
-## Nesting Objects
+## Working with Arrays
 
-You can nest objects in your common resource by using dot notation. For example, you might want to nest address properties like those shown in the example below:
+We display object arrays in dot notation. You can also use dot notaton to nest objects in your common resource. For example, you might want to nest address properties like those shown in the example below:
 
 ![Nesting Example](img/Nesting.png)
 
-The JSON result of this nesting is:
+The JSON result of this nested object:
 
 ```json
 {
@@ -302,31 +319,3 @@ The JSON result of this nesting is:
   }
 }
 ```
-
-  # Complex Resources
-
-  # Working with Transformations
-
-
-  Filter
-  Code
-
-
-  Tips
-  Add a bunch of fields at once and then go back and map them.
-
-  
-
-  Kdsfjkl
-  sdakflkl;dsa
-  ## Map Resources
-  Look at the Transformations page as an equation where each side is equal.
-  # Create a Common Resource From an Existing Resource
-
-  # Adding custom objects <span style:"color:red">Check</span>
-  # Understanding Levels <span style="color:red> Check</span>"
-  # Setting default values  <span style:"color:red">Check</span>
-  # Reviewing the data type and changing it
-  # Testing the Transformations <span style:"color:red">Check</span>
-  # Adding to API Docs <span style:"color:red">Check</span>
-  # Remove untransformed fields <span style:"color:red">Check</span>

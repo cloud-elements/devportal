@@ -16,35 +16,53 @@ redirect_from:
 
 # Overview
 
-With Common Resources, you can map data objects and fields provided by your vendor to a single, canonical resource as Cloud Elements. Common Resources enable you to take advantage of our "one to many" integration approach by creating a single, canonical resource. You then map other element instance resources to your Common Resource. We transform the fields that you map to so that the data in the Common Resource remains the same no matter where it came from.
+With Common Resources, you can map data objects and fields provided by your vendors to a single, canonical resource at Cloud Elements. Common Resources enable you to take advantage of our "one to many" integration approach by making API calls to a single resource that describes similar resources at all of your vendors. When you build an integration that uses the contatcs resource in thre different systems, you don't need to figure out how to make three different API calls.
 
-For example, you know that you want your contacts to look a certain way. You want FirstName, LastName, and Email. But some elements call FirstName something else, like FirstName, F_Name, or properties.firstname. You need to create a single, canonical Common Resource with fields named FirstName, LastName, and Email. Then you can map all of the like fields from other elements to the fields in your Common Resource.
+For example, you know that you want your contacts to look a certain way. You want FirstName, LastName, and Email. But some elements call FirstName something else, like FirstName, F_Name, or properties.firstname. You need to create a single, canonical Common Resource with fields named FirstName, LastName, and Email. Then you can map all of the like fields from other elements to the fields in your Common Resource. We transform those mapped fields so when you look at the payloads from different vednors, they look the same.
 ![Transformations Page](img/Example_MyContacts.png)
 
 You can use Common Resources to do more than normalize resource names. You can transform data types, so when a resource returns a string and you need a date, Cloud Elements transforms the data.
 
 Using our JavaScript Editor, you can create logic to manage complex problems. For example, you can write a simple script to combine fields into a single field. For example, combine FirstName and LastName as a field in your Common Resource called Name. Or tackle even more complicated issues like transforming a number based priority value (1-10) to a descriptor based value (low, medium, or high).
 
-# Working with Common Resources
-
-You can manage Common Resources through the Integration Platform or via API.
-You can create new or start with a resource that you like.
-Learn about
-
 # Definitions
+
+To understand common resources, we need a shared vocabulary. We've provided a broad definition of common resources, mappings, and transformations below with more detailed definitions following.
+
+[Common resources](#common-resources) include [canonical(#canonical)] [objects](#objects) that are [mapped(#map)] to objects within vendor [resources](#resource) and allow you to [transform](#transformation) the vendor objects to the canonical objects.
 
 ## Common Resource
 
-User-defined, standard, and canonical resources that contain only the fields needed for your integration. Leverage “one-to-many” relationships between Common Resources and multiple Elements by mapping fields in different Elements to a single field in the common resource.
+User-defined, standard, and canonical resources that contain only the fields needed for your integration. Leverage “one-to-many” relationships between common resources and multiple elements by mapping fields in different elements to a single field in the common resource.
+
+## Canonical
+
+In relation to common resources, canonical relates to adhereance to a normalized definition of an object that appears in multiple vendor APIs.
+
+## Objects
+
+Data within a resource, also described as fields during the mapping process.
+
+## Map
+
+The process of associating objects within a vendor's resource to objects in a common respource.
+
+## Resource
+
+Specific endpoints within an API that contain the objects mapped to a common resource. Similar resources, such as Accounts, Contatcs, and Customers appear in multiple APIs. Common resources at cloud elements normalize these varied resources.
 
 ## Transformation
 
-The mapping of Element Instance Resources to a Common Resource. Transformation includes the conversion of data from the source resource to the canonical Common Resource
+The conversion of objects in the vednor's resource to objects in the common resource.
+
 ## Element Instance
 
-// Pull from standard def.
+<span style="color:red">Definition needed? </span>
+
 
 ## Element Instance Resources
+
+<span style="color:red">Definition needed? </span>
 
 The resources available to the Element Instance through its API. You map the data from the Element Instance Resources to the data in your Common Resource.
 
