@@ -111,8 +111,12 @@ Note:  Make sure you have straight quotes in your JSON files and cURL commands. 
 
 ### OAUth Authentication
 
+OAUth Authentication involves two steps:
+1. Get Element OAuth Information
+2. Create an Instance
 
-#### Step 1. Get Elements OAuth Information
+
+#### Step 1. Get Element OAuth Information
 
 * HTTP Header: None
 * HTTP Verb: GET
@@ -131,7 +135,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/dynamicscrmadfs/oauth/url?apiKey=fake_dynamics_api_key&apiSecret=fake_dynamics_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=dynamicscrmadfs'
+'https://api.cloud-elements.com/elements/api-v2/elements/dynamicscrmadfs/oauth/url?apiKey=fake_dynamics_client_id&apiSecret=fake_dynamics_client_secret&siteAddress=yourdynamicssiteaddress&callbackUrl=http://fake.oauth.callback/url&state=dynamics'
 ```
 
 Response:
@@ -139,12 +143,12 @@ Response:
 ```json
 {
 "element": "dynamicscrmadfs",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_dynamics_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=dynamicscrmadfs"
+"oauthUrl": "https://cloudelements1-my.sharepoint.com/_layouts/15/OAuthAuthorize.aspx?client_id=20f1fc85-bd8a-430e-ba36-7877fd26b720&redirect_uri=https%3A%2F%2Fwww.callbackUrl%2F&response_type=code&scope=AllSites.Manage&state=dynamicscrmadfs"
 }
 ```
 
 Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you set up your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "dynaics" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you set up your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "dynamicscrmadfs" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
 
 #### Step 2. Create an Instance
 
@@ -168,7 +172,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements MS Dynamics is “dynamicscrmadfs”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  The “key” into Cloud Elements MS Dynamics is “dynamicscrmadfs”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
@@ -182,7 +186,7 @@ This instance.json file must be included with your instance request.  Please fil
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.api.key": "<Dynamics_CLIENT_ID>",
     "oauth.api.secret": "<Dynamics_Key_Value>",
-    "dynamics.tenant": "URL_of_CRM_Instance"
+    "dynamics.tenant": "<URL_of_CRM_Instance>"
   },
   "tags": [
     "<Add_Your_Tag>"

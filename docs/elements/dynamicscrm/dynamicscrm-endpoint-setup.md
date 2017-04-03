@@ -11,11 +11,11 @@ order: 2
 ---
 ## Endpoint Setup
 
-To set up the Microsoft Dynamics CRM endpoint, you need to have an account and create or already have an app.
+To set up the Microsoft Dynamics CRM endpoint, you need to have an account and create or already have an app. Also, to authenticate with OAuth 2, you need to know the Client ID and keys for the app. If you use custom authenication when you provision an element, you do not need the Client ID and keys for the app.
 
-__Note__: Facebook provides the most up-to-date and detailed setup instructions at [https://msdn.microsoft.com/en-us/library/mt593051.aspx](https://msdn.microsoft.com/en-us/library/mt593051.aspx).
+__Note__: Microsoft provides the most up-to-date and detailed setup instructions at [https://msdn.microsoft.com/en-us/library/mt593051.aspx](https://msdn.microsoft.com/en-us/library/mt593051.aspx).
 
-To create an app:
+To create an app and acquire OAuth information:
 
 1. Log in to your MS Dynamics account.
 1. Navigate to the Admin Center, expand __Admin Centers__, and then click __Azure AD__.
@@ -28,8 +28,8 @@ To create an app:
 
 2. Select your application from the list, or create a new application (click <img src="img/Add-Application.png" alt="Alt Text" class="inlineImage"> in the page footer).
 3. Complete the configuration, paying close attention to the following for OAuth authentication:
-  * __keys__: Use the key value  when you provision an element using OAuth authentication as the __OAuth Client Secret in Azure AD__.
-  * __CLIENT ID__:  Used when you provision an element using OAuth authentication as the __OAuth Client ID in Azure AD__.
+  * __keys__: Use the key value  when you provision an element using OAuth authentication as the __OAuth Client Secret in Azure AD__ or `oauth.api.secret`.
+  * __CLIENT ID__:  Used when you provision an element using OAuth authentication as the __OAuth Client ID in Azure AD__ or `oauth.api.key`.
   * __permissions to other applications__: Permissions shown when you provison an instance with OAuth authentication.
 
      __Note:__ The key value for __OAuth Client Secret in Azure AD__ appears only after you save the configuration and only one time. You will not be able to retrieve the key value later, so capture it mmediately after you save.
