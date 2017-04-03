@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing
+heading: Infusionsoft Marketing Beta
 seo: Endpoint Setup | Infusionsoft Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup

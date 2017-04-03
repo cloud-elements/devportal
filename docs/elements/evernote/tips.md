@@ -1,5 +1,5 @@
 ---
-heading: Evernote
+heading: Evernote Beta
 seo: FAQ | Evernote | Cloud Elements API Docs
 title: Tips
 description: Frequently asked questions and notes on conventions.

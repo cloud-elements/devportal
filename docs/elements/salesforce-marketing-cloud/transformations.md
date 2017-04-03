@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Transform Data | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.

@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Tips | Salesforce Marketing Cloud BETA | Cloud Elements API Docs
 title: Tips
 description: Salesforce Marketing Cloud BETA FAQ.

@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9 SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: API Docs | Magento SOAP V1.9 | Cloud Elements API Docs
 title: API Docs
 description: Magento SOAP V1.9 API Documentation.

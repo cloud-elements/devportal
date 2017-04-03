@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Create Instance | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

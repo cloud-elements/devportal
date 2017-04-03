@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Tips | SFTP | Cloud Elements API Docs
 title: Tips
 description: SFTP FAQ.

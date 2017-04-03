@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Error Codes | SFTP | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Create Instance | SFTP | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

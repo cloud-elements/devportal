@@ -1,5 +1,5 @@
 ---
-heading: OneNote
+heading: OneNote Beta
 seo: Authentication | OneNote | Cloud Elements API Docs
 title: Authentication
 description: Integrate One Drive into your application via the Cloud Elements APIs.
