@@ -1,8 +1,12 @@
+.sidebar{
+  background: #f3f3f4;
+  padding: 30px 40px;
+}
+
 .sidebarWrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: #FFF;
 }
 
 .sidebar a {
@@ -51,7 +55,7 @@
   font-size: 1.6rem;
   display: block;
   color:#19536E;
-  background-color: #fff;
+  background-color: rgba(1,1,1,0);
   border: none;
   outline: none;
 }
@@ -68,4 +72,12 @@
 
 .headerButton:hover {
   color: #40b4e5;
+}
+
+.contentWrapper {
+  padding: 30px 20px;
+}
+
+.pageContainer {
+  display: flex;
 }

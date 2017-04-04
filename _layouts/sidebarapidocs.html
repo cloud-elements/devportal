@@ -73,17 +73,21 @@
           <!-- <h4> {{page.description}} </h4> -->
         </div>
          <div class="pageTabs">
-          {% assign id = page.path | shard_id %}
-          {% assign shard = site.shards[id] | sort:"order" %}
-          {% for p in shard %}
-            {% if page.url == p.url%}
-              <div class="tab activeTab">
-            {% else %}
-              <div class="tab">
-            {% endif %}
-              <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
-            </div>
-          {% endfor %}
+          <!-- Create the tabs on the top of the screen -->
+          <!-- Hide the tabs for non element docs -->
+          {% if page.elementId != null%}
+            {% assign id = page.path | shard_id %}
+            {% assign shard = site.shards[id] | sort:"order" %}
+            {% for p in shard %}
+              {% if page.url == p.url%}
+                <div class="tab activeTab">
+              {% else %}
+                <div class="tab">
+              {% endif %}
+                <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+              </div>
+            {% endfor %}
+          {% endif %}
         </div>
       </div>
       {{content}}
