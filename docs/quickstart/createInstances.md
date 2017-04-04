@@ -17,7 +17,11 @@ The first step in setting up our contact sync from Salesforce to Shopify, is to 
 
 - From the Elements Catalog, find Salesforce in the CRM Hub and click `Add Instance`.  
 - Enter any value into `Instance Name` (like "Salesforce Instance 1") field.
-- Set `Enabled/Disable Event Notifications` to true and click Next.
+- To set up automatic contact sync, enable events for this instance:
+  - Set `Enable/Disable Event Notification` to true
+  - Set `Event poller refresh interval` to `4`, this will set the poller to check every 4 minutes
+  - Set `Objects to Monitor for Changes` to `Contacts`, this will set the poller to monitor the Contact objects for changes.
+  - Set the `Event Type` to `polling`
 - Login to your Salesforce Account.
 
 Once provisioned, you can see your new Salesforce Element instance under My Instances in the Elements Menu.  If you click the Documentation tab of the instance, you are presented with the RESTful Swagger API docs that allow you to make live API calls to Salesforce.
