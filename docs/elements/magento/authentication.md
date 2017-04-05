@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Authentication | Magento | Cloud Elements API Docs
 title: Authentication
 description: Integrate Magento into your application via the Cloud Elements APIs.

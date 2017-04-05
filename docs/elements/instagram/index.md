@@ -1,5 +1,5 @@
 ---
-heading: Instagram
+heading: Instagram Beta
 seo: Overview | Instagram | Cloud Elements API Docs
 title: Overview
 description: Integrate Instagram into your application via the Cloud Elements APIs.

@@ -1,5 +1,5 @@
 ---
-heading: OneNote
+heading: OneNote Beta
 seo: Endpoint Setup | OneNote | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate OneNote into your application via the Cloud Elements APIs.

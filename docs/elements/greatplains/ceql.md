@@ -1,5 +1,5 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: Query Language | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

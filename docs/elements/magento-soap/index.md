@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Overview | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Overview
 description: Integrate Magento SOAP V1.9 into your application via the Cloud Elements APIs.

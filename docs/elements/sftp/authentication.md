@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Authentication | SFTP | Cloud Elements API Docs
 title: Authentication
 description: Integrate SFTP into your application via the Cloud Elements APIs.

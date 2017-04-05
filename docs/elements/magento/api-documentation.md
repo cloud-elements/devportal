@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: API Docs | Magento | Cloud Elements API Docs
 title: API Docs
 description: Magento API Documentation.

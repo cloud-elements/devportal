@@ -1,5 +1,5 @@
 ---
-heading: MailJet Marketing
+heading: MailJet Marketing Beta
 seo: Overview | MailJet Marketing | Cloud Elements API Docs
 title: Overview
 description: Integrate MailJet Marketing into your application via the Cloud Elements APIs.

@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Bulk APIs | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.

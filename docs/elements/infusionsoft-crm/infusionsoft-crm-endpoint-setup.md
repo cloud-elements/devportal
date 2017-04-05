@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft CRM
+heading: Infusionsoft CRM Beta
 seo: Endpoint Setup | Infusionsoft CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup

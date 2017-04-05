@@ -1,5 +1,5 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: Error Codes | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

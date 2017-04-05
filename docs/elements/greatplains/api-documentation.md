@@ -1,5 +1,5 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: API Docs | MS Dynamics Great Plains | Cloud Elements API Docs
 title: API Docs
 description: Microsoft Dynamics Great Plains API Documentation.

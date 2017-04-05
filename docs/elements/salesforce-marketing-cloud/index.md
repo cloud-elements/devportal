@@ -1,5 +1,5 @@
 ---
-heading: Salesforce Marketing Cloud BETA
+heading: Salesforce Marketing Cloud Beta
 seo: Overview | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Marketing Cloud into your application via the Cloud Elements APIs.

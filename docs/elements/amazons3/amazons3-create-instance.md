@@ -1,5 +1,5 @@
 ---
-heading: Amazon S3
+heading: Amazon S3 Beta
 seo: Create Instance | Amazon S3 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance

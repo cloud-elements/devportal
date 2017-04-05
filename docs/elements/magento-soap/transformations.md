@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Transform Data | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.

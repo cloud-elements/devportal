@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Endpoint Setup | Magento | Cloud Elements API Docs
 title: Register as a Consumer
 description: Register as a Consumer

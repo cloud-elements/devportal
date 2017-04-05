@@ -1,5 +1,5 @@
 ---
-heading: Magento SOAP V1.9
+heading: Magento SOAP V1.9 Beta
 seo: Query Language | Magento SOAP V1.9 | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

@@ -1,5 +1,5 @@
 ---
-heading: Amazon S3
+heading: Amazon S3 Beta
 seo: Query Language | Amazon S3 | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

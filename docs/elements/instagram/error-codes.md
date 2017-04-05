@@ -1,5 +1,5 @@
 ---
-heading: Instagram
+heading: Instagram Beta
 seo: Error Codes | Instagram | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.

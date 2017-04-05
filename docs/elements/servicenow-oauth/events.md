@@ -1,5 +1,5 @@
 ---
-heading: ServiceNow OAuth
+heading: ServiceNow OAuth Beta
 seo: Events | ServiceNow OAuth | Cloud Elements API Docs
 title: Events
 description: Enable ServiceNow OAuth events for your application.

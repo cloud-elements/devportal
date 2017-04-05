@@ -1,5 +1,5 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: Authentication | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Authentication
 description: Integrate Microsoft Dynamics Great Plains into your application via the Cloud Elements APIs.

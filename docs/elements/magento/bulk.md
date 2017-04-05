@@ -1,5 +1,5 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Bulk APIs | Magento | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.

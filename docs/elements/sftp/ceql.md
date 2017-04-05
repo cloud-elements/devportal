@@ -1,5 +1,5 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Query Language | SFTP | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

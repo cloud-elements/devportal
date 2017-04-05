@@ -1,5 +1,5 @@
 ---
-heading: MailJet Messaging
+heading: MailJet Messaging Beta
 seo: Overview | MailJet Messaging | Cloud Elements API Docs
 title: Overview
 description: Integrate MailJet Messaging into your application via the Cloud Elements APIs.

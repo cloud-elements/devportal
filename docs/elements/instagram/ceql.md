@@ -1,5 +1,5 @@
 ---
-heading: Instagram
+heading: Instagram Beta
 seo: Query Language | Instagram | Cloud Elements API Doc
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

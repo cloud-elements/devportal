@@ -1,5 +1,5 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: Overview | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Overview
 description: Integrate Microsoft Dynamics Great Plains into your application via the Cloud Elements APIs.
