@@ -22,7 +22,7 @@ gems:
   - algoliasearch-jekyll
 
 algolia:
-  application_id: '4N2DJ0OEO6'
+  application_id: 'G8W6UO94HX'
   index_name:     'developer_portal_pages'
   settings:
     attributesToIndex:
