@@ -25,6 +25,25 @@ You can use Common Resources to do more than normalize resource names. You can t
 
 Using our JavaScript Editor, you can create logic to manage complex problems. For example, you can write a simple script to combine fields into a single field. For example, combine FirstName and LastName as a field in your Common Resource called Name. Or tackle even more complicated issues like transforming a number based priority value (1-10) to a descriptor based value (low, medium, or high).
 
+# Understanding Levels
+
+<span style="color:red"> This still needs some work </span>
+
+Common resources are built as part of a hierarchy that includes three levels: organization, account, and instance.
+
+* The organization is the highest level. Transformations at this level are defined the same for all customers and all elements of any users associated with your account.
+* The account is the next highest level. Accounts typically represent your customers. Transformations at the account level are shared by all users associated with a specific account.
+* The instance is the most granular level. The transformations at the instance level are associated with only the element instance.
+
+If defined at a lower level, that will override a higher level.
+
+Organization level - top level, company level. Organization will include your company and your customers.
+
+Account/ sub-account, one of your customers.
+<span style:"color:red"> There seems to be a lot an account user can't do. As an acount user I can't adjust field settings but I can adjust Advanced settings. When I changed the Advanced Settings it didn't take. </span>
+
+Instance level for transformation level. Only for the connection to the element instance.
+
 # Definitions
 
 To understand common resources, we need a shared vocabulary. We've provided a broad definition of common resources, mappings, and transformations below with more detailed definitions following.

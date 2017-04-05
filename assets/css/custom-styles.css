@@ -687,6 +687,10 @@ tr:nth-child(odd) td { background: transparent; }
 
 .inlineImage {
       display: inline;
+      padding-bottom: 2px;
+      padding-top: 2px;
+      padding-left: 0px;
+      padding-right: 0px;
 }
 
 
