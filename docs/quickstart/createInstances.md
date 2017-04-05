@@ -1,7 +1,7 @@
 ---
 heading: Create Element Instances
 seo: Create Element Instances | Create Salesforce and Shopify Instances
-title: Element Instances
+title: Authenticate
 description: Create an instance of Salesforce and Shopify
 layout: sidebarleft
 order: 2
