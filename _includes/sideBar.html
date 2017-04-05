@@ -79,11 +79,11 @@
     </ul>
     <button class="headerButton" onClick="location.href='{{site.url}}/docs/elements.html';">Element Docs</button>
     <ul class="accordionList" id="elementDocs"> </ul>
-    <button class="headerButton" onClick="selectAccordion('featureReference')">Platform Docs</button>
+    <button class="headerButton" onClick="selectAccordion('featureReference')">Guides</button>
     <ul class="accordionList" id="featureReference">
       {% for folder in allshards %}
         {% assign key = folder[0] %}
-        {% if key contains "docs_guides" and key != "docs_guides" and key != "" and key != "docs_guides_quickstart_guides" %}
+        {% if key contains "docs_guides" and key != "docs_guides" and key != "" and key != "docs_guides_quickstart_guides" and key != "docs_guides_element_loader" %}
         {% assign pages = site.shards[key] | sort:"order" %}
         <li>
           <a href={{pages[0].url}}> {{pages[0].heading}}</a>
@@ -147,5 +147,6 @@
         {% endif %}
       {% endfor %}
     </ul>
+    <button class="headerButton" onClick="location.href= 'mailto:documentation@cloud-elements.com'">Docs Feedback</button>
 </div>
 {% inspect %}
