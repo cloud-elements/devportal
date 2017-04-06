@@ -208,7 +208,7 @@ To map fields:
 
 1. Click <img src="img/btn-Add-Field.png" alt="Alt Text" class="inlineImage"> for the Organization Level Fields to add another field.
 
-    __Note__:You can add fields at the account and instance level also, but these steps focus on creating an organization level common resource. For more information, see [Mapping Account Level Transformations](#mapping-account-level-transformations) or [Mapping Instance Level transformations](#mapping-account-level-transformations).
+    __Note__:You can add fields at the account and instance level also, but these steps focus on creating an organization level common resource. For more information, see [Mapping Fields for Accounts](#mapping-fields-for-accounts) or [Mapping Instance Level transformations](#mapping-account-level-transformations).
 
 1. Enter a name for the field, and then choose the data type.
 1. Select the corresponding Instance Resource on the right to map to the new field.

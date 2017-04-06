@@ -11,4 +11,6 @@ parent: Back to Guides
 order: 30
 ---
 
+# Transforming Resources
+
 After you or an organization level user creates a common resource, any users can create transformations for their instances.
