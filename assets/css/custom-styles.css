@@ -646,7 +646,7 @@ hr {
 ///////////////////////////////*/
 
 table {
-/*color: #333;*/
+color: #333;
 font-family: Helvetica, Arial, sans-serif;
 border-collapse:
 collapse; border-spacing: 0;
@@ -656,8 +656,7 @@ border: 1px solid;
 }
 
 td, th {
-/* border: 1px solid;*/
-border: none;
+border: 1px solid;
 height: 30px;
 padding-left: 6px;
 }
@@ -677,21 +676,8 @@ padding: 6px;
 tr:nth-child(even) td { background: #F1F1F1; }
 
 /* Cells in odd rows (1,3,5...) are another (excludes header cells) */
-/* tr:nth-child(odd) td { background: #FEFEFE; }*/
+tr:nth-child(odd) td { background: #FEFEFE; }
 tr:nth-child(odd) td { background: transparent; }
-
-
-/*////////////////////////////////////////////
-/// Inline images for things like buttons  ///
-///////////////////////////////////////////*/
-
-.inlineImage {
-      display: inline;
-      padding-bottom: 2px;
-      padding-top: 2px;
-      padding-left: 0px;
-      padding-right: 0px;
-}
 
 
 /*///////////////////////////////
