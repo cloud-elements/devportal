@@ -16,9 +16,9 @@ sitemap: false
 
 In this section you will learn how to create a common resource at the organization level and map element resource data to it for transformation. You can create a common resource based on an existing resource (template, element resource, or existing common resource) or as an entirely new resource. This guide includes instructions for both methods.
 
-__Important!__Only users at the organization level can create common resources, but users at any level can create transformations at the instance level. If you are not a user at the organization level, skip to [Map Resources for Transformation](#map-resources-for-transformation).
+__Important!__ Only users at the organization level can create common resources, but users at any level can create transformations at the instance level. If you are not a user at the organization level, skip to [Map Resources for Transformation](#map-resources-for-transformation).
 
-To create a common resource, go to the steps that match how you plan to create the resource, and then follow the steps in [Map Resources for Transformation](#map-resources-for-transformation):
+To create a common resource, go to the steps that match how you plan to create the resource:
 
 * [Create a New Common Resource](#create-a-new-common-resource) for steps to create an entirely new common resource.
 * [Create a Common Resource Based on Another Common Resource](#create-a-common-resource-based-on-another-common-resource) for steps to create a resource based on an existing resource. You might create copies of resources to provide different common resources for different accounts.

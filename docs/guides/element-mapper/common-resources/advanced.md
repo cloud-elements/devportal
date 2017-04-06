@@ -17,7 +17,17 @@ order: 20
 
 In addition to the basic object mapping described in [Create a New Common Resource](#create-a-new-common-resource), you can use the transformations page to fine tune your common resources. This section describes more advanced activities that you can do to fine tune your common resources, deal with more difficult objects, manage what appears in your payloads, and more.
 
-## Use Javascript to Manage Complex objects
+In this section:
+
+* [Use Javascript to Manage Complex Objects](#usejavascript-to-manage-complex-objects)
+* [Transforming Custom Objects](#transforming-custom-objects)
+* [Removing Fields During Transformation](#removing-fields-during-transformation)
+* [Setting Default Values](#setting-default-values)
+* [Testing Your Transformations](#testing-your-transformations)
+* [Adding Your Common Resource to the API Docs](#adding-your-common-resource-to-the-api-docs)
+* [Working With Arrays](#working-with-arrays)
+
+## Use Javascript to Manage Complex Objects
 
 You can use custom Javascript when the basic object mapping described in [Create a New Common Resource](#create-a-new-common-resource) does not meet your needs. For example, you might need to break a single address object into its component parts (address.city, address.state, address.street, and address.zip).
 
@@ -59,7 +69,7 @@ Common resource functions include the parameters and functions in the following 
   }
     ```
 
-## Transforming Custom Resources
+## Transforming Custom Objects
 
 If you do not see an object that you expect in the instance resources you can still map it by entering the object name. This sometime happens for custom objects you created at the endpoint. You might not find all objects that you would expect to  you might not find a custom object.
 
@@ -129,6 +139,7 @@ To add a common resource to API docs:
 1. Click __Save__.
 
 Try it out:
+
 1. Go to an element instance.
 1. Hover over the instance card, and the click __API Docs__.
 1. Scroll to your common resource.
