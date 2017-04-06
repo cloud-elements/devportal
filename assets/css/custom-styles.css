@@ -652,7 +652,6 @@ border-collapse:
 collapse; border-spacing: 0;
 margin-top: 1em;
 margin-bottom: 2em;
-border: 1px solid;
 }
 
 td, th {
@@ -677,7 +676,6 @@ tr:nth-child(even) td { background: #F1F1F1; }
 
 /* Cells in odd rows (1,3,5...) are another (excludes header cells) */
 tr:nth-child(odd) td { background: #FEFEFE; }
-tr:nth-child(odd) td { background: transparent; }
 
 
 /*///////////////////////////////
