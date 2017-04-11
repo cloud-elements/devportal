@@ -1,8 +1,8 @@
 ---
 heading: Common Resources
-seo: Advanced | Common Resources | Cloud Elements API Docs
-title: Advanced Common Resources
-description: Advanced Common Resources
+seo: Creating Transformations | Common Resources | Cloud Elements API Docs
+title: Creating Transformation
+description: Creating Transformations
 layout: docs
 apis: API Docs
 platform: organizations
@@ -11,9 +11,10 @@ parent: Back to Guides
 order: 20
 ---
 
+# Creating Transformations
 
-
-# Advanced Custom Resources
+A transformation is the result of the process of mapping fields and objects in your element instances to existing fields and objects in a
+  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>.
 
 In addition to the basic object mapping described in [Create a New Common Resource](#create-a-new-common-resource), you can use the transformations page to fine tune your common resources. This section describes more advanced activities that you can do to fine tune your common resources, deal with more difficult objects, manage what appears in your payloads, and more.
 
@@ -149,7 +150,7 @@ The list of resources is in alphabetical order, so the example myContact in this
 
 ## Working with Arrays
 
-We display object arrays in dot notation. You can also use dot notaton to nest objects in your common resource. For example, you might want to nest address properties like those shown in the example below:
+We display object arrays in dot notation. You can also use dot notation to nest objects in your common resource. For example, you might want to nest address properties like those shown in the example below:
 
 ![Nesting Example](img/Nesting.png)
 
