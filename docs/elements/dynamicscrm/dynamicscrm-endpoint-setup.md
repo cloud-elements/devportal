@@ -3,7 +3,7 @@ heading: Microsoft Dynamics CRM
 seo: Endpoint Setup | Microsoft Dynamics CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Microsoft Dynamics CRM into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides
