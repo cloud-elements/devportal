@@ -73,6 +73,65 @@ __Libraries__
  _enc_: `Hex`, `base64`
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 * Util: The standard Node `util` library. To use, `require` it in your script.
+* http/https: The standard Node `http` and `https` library. Usage: `require` the library in your script.
+
+	Example using https:
+
+	```JavaScript
+	const https = require('https');
+	//Get SFDC element fromm CE and return the results
+	https.get('https://api.cloud-elements.com/elements/api-v2/elements/sfdc', (res) => {
+		console.log('after response');
+		  let rawData = '';
+		  res.on('data', (chunk) => rawData += chunk);
+		  res.on('end', () => {
+		    try {
+		      let parsedData = JSON.parse(rawData);
+		      done({ "response_body": parsedData });
+		    } catch (e) {
+		      console.log(e.message);
+		      done({ "response_error": e.message});
+		    }
+		  });
+	});
+	```
+
+	Example using http:
+
+	```JavaScript
+	const http = require('http');
+
+	//Call Swagger petstore
+	let options = {
+	  hostname: 'petstore.swagger.io',
+	  path: '/v2/store/inventory',
+	  headers: {
+	    'Accept': 'application/json'
+	  }
+	};
+
+	const apiCall = http.request(options);
+	apiCall.on('response', res => {
+	     console.log('after response');
+	     let rawData = '';
+	     res.on('data', (chunk) => rawData += chunk);
+	     res.on('end', () => {
+	       try {
+	         let parsedData = JSON.parse(rawData);
+	         console.log('Parsed response');
+	         done({ "response_body": parsedData });
+	       } catch (e) {
+	         done({ "response_error": e.message});
+	       }
+	     });
+	 });
+
+	apiCall.on('error', err => {
+	  done({ "response_error": err.message});
+	});
+
+	apiCall.end();
+	```
 
 # Examples
 
