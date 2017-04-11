@@ -39,3 +39,8 @@ ul#resources {
 ul#resources ul{
   padding-left: 0px;
 }
+
+.activeMenuItem a {
+  padding-left: 0px !important;
+  border-left: none !important;
+}

@@ -65,3 +65,7 @@
 .resultsList {
   padding: 5px;
 }
+
+.algolia__result-highlight {
+  font-weight: bold;
+}

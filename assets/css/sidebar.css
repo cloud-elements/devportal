@@ -81,3 +81,32 @@
 .pageContainer {
   display: flex;
 }
+
+.subHeading{
+  text-align: left;
+  display: block;
+  color:#19536E;
+  background-color: rgba(1,1,1,0);
+  border: none;
+  outline: none;
+  padding: 1px 5px;
+}
+
+.subHeading:hover {
+  color: #40b4e5;
+}
+
+.subItem{
+  max-height: 0px;
+  /*transform: scaleY(0);*/
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.subItemActive{
+  transition: all 0.3s ease-in;
+  /*transform: scaleY(1);*/
+  max-height: 50px;
+  opacity: 1s;
+}

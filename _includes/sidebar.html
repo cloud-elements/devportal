@@ -1,5 +1,3 @@
-{% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
-{% assign allshards = site.shards | sort %}
 <link href="/assets/css/sidebar.css" rel="stylesheet">
 <script type="text/javascript">
   let currentSelection="";
@@ -17,136 +15,29 @@
     currentSelection = selection;
   }
 </script>
-<div class="sidebarWrapper">
-    <button class="headerButton" onClick="selectAccordion('overview')"> Overview </button>
-    <ul class="accordionList" id="overview">
-      {% for i in overviewshard %}
-        {% if i.url == page.url %}
-          <!-- The Script tag sets the high level menu to be expanded -->
-          <script> setCurrentSelection("overview") </script>
-          <li>
-            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
-          </li>
-        {% else %}
-          <li>
-            <a href={{i.url}}> {{i.title}} </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="selectAccordion('gettingStarted')"> Getting Started </button>
-    <ul class="accordionList" id="gettingStarted">
-        {% assign sortedShards = site.shards['docs_quickstart'] | sort:"order" %}
-        {% for i in sortedShards %}
-        {% if i.url == page.url %}
-          <!-- The Script tag sets the high level menu to be expanded -->
-          <script> setCurrentSelection("gettingStarted") </script>
-          <li>
-            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
-          </li>
-        {% else %}
-          <li>
-            <a href={{i.url}}> {{i.title}} </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="selectAccordion('ceApi')">CE API Reference</button>
-    <ul class="accordionList" id="ceApi">
-      {% for folder in allshards %}
-        {% assign key = folder[0] %}
-        {% if key contains "platform_api" %}
-        {% assign pages = site.shards[key] | sort:"order" %}
-        <li>
-          <a href={{pages[0].url}}> {{pages[0].heading}} </a>
-            {% if key == id %}
-            <ul>
-              {% for p in pages %}
-              <li>
-                {% if page.url == p.url %}
-                  <script> setCurrentSelection("ceApi") </script>
-                  <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
-                {% else %}
-                  <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-        </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="location.href='{{site.url}}/docs/elements.html';">Element Docs</button>
-    <ul class="accordionList" id="elementDocs"> </ul>
-    <button class="headerButton" onClick="selectAccordion('featureReference')">Guides</button>
-    <ul class="accordionList" id="featureReference">
-      {% for folder in allshards %}
-        {% assign key = folder[0] %}
-        {% if key contains "docs_guides" and key != "docs_guides" and key != "" and key != "docs_guides_quickstart_guides" and key != "docs_guides_element_loader" %}
-        {% assign pages = site.shards[key] | sort:"order" %}
-        <li>
-          <a href={{pages[0].url}}> {{pages[0].heading}}</a>
-            {% if key == id %}
-            <ul>
-              {% for p in pages %}
-              <li>
-                {% if page.url == p.url %}
-                  <script> setCurrentSelection("featureReference") </script>
-                  <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
-                {% else %}
-                  <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-        </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="selectAccordion('hubDocs')">Hub APIs</button>
-    <ul class="accordionList" id="hubDocs">
-      {% for folder in allshards  %}
-        {% assign key = folder[0] %}
-        {% if key contains "docs_hubs" and key != "docs_hubs" and key != ""%}
-        {% assign pages = site.shards[key] | sort:"order" %}
-        <li>
-          <a href={{pages[0].url}}> {{pages[0].heading}}</a>
-            {% if key == id %}
-            <ul>
-              {% for p in pages %}
-              <li>
-                {% if page.url == p.url %}
-                  <script> setCurrentSelection("hubDocs") </script>
-                  <div class="activeMenuItem" > <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a> </div>
-                {% else %}
-                  <a href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
-                {% endif %}
-              </li>
-              {% endfor %}
-            </ul>
-            {% endif %}
-        </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="selectAccordion('tutorial')">Training</button>
-    <ul class="accordionList" id="tutorial"> 
-      {% assign overviewshard = site.shards['docs_tutorial'] | sort:"order" %}
-      {% for i in overviewshard %}
-        {% if i.url == page.url %}
-          <script> setCurrentSelection("tutorial") </script>
-          <li>
-            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
-          </li>
-        {% else %}
-          <li>
-            <a href={{i.url}}> {{i.title}} </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    <button class="headerButton" onClick="location.href= 'mailto:documentation@cloud-elements.com'">Docs Feedback</button>
+<div class="sidebarWrapper" id="sidebarWrapper">
 </div>
-{% inspect %}
+<!-- This section loads in the accordion menu from the sitemap.html file
+     Its too expensive to build the site map for each page in the portal -->
+<script>
+  $(window).on('load',(e) => {
+    $("#sidebarWrapper").load("/docs/sitemap.html", () =>{
+      let pathWithQuery = `${window.location.pathname}${window.location.search}`;
+      // Wrap the active href in a div to set blue highlighting
+      $(`a[href='${pathWithQuery}']`).wrap("<div class=\"activeMenuItem\"></div>");
+      // Expand the current high level accordion
+      let highLevelId = $(`a[href*='${pathWithQuery}']`).closest(`[class*='accordionList']`).attr("id");
+      if(highLevelId) setCurrentSelection(highLevelId);
+      // Expand the lower level heading
+      let currentSelection = $(`a[href*='${pathWithQuery}']`).closest('ul').find('.subItem');
+      if(currentSelection) currentSelection.attr('class', 'subItemActive');
+      // Create a click listener for sub items
+      $(".subHeading").click(function() {
+        let selection = $(this).parent().find(".subItem");
+        selection.attr('class', 'subItemActive');
+        if(currentSelection) currentSelection.attr('class', 'subItem');
+        currentSelection = selection;
+      })
+    });
+  });
+</script>

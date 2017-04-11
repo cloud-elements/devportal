@@ -37,8 +37,6 @@ GEM
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.0)
       sass (~> 3.4)
-    jekyll-sitemap (1.0.0)
-      jekyll (~> 3.3)
     jekyll-watch (1.5.0)
       listen (~> 3.0, < 3.1)
     jekyll-youtube (1.0.0)
@@ -74,7 +72,6 @@ DEPENDENCIES
   algoliasearch-jekyll (~> 0.8.0)
   jekyll
   jekyll-redirect-from
-  jekyll-sitemap
   jekyll-youtube
   json (~> 1.8.6)
   rake
