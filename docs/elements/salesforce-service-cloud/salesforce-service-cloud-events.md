@@ -3,7 +3,7 @@ heading: Salesforce Service Cloud
 seo: Events | Salesforce Service Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce Service Cloud events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 29
 parent: Back to Element Guides

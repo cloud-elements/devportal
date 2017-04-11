@@ -3,7 +3,7 @@ heading: BigCommerce
 seo: Endpoint Setup | BigCommerce | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate BigCommerce into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 274
 parent: Back to Element Guides

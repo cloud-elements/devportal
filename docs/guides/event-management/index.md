@@ -3,7 +3,7 @@ heading: Event Management
 seo: Event Management | Cloud Elements API Docs
 title: Event Management
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
-layout: sidebarleft
+layout: docs
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1

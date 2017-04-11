@@ -3,7 +3,7 @@ heading: Close.io
 seo: API Docs | Close.io | Cloud Elements API Docs
 title: API Docs
 description: Close.io API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 166
 parent: Back to Element Guides

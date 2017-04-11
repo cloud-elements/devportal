@@ -3,7 +3,7 @@ heading: NetSuite Finance
 seo: Events | NetSuite Finance | Cloud Elements API Docs
 title: Events
 description: Enable NetSuite Finance events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 155
 parent: Back to Element Guides

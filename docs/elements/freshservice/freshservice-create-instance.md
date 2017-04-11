@@ -3,7 +3,7 @@ heading: Freshservice
 seo: Create Instance | Freshservice | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 252
 parent: Back to Element Guides

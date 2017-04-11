@@ -3,7 +3,7 @@ heading: MySQL
 seo: Create Instance | MySQL | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 479
 parent: Back to Element Guides

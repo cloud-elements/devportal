@@ -3,7 +3,7 @@ heading: Microsoft OneDrive for Business Beta
 seo: Create Instance | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 178
 parent: Back to Element Guides

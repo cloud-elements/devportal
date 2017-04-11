@@ -3,7 +3,7 @@ heading: Help Scout
 seo: Overview | Help Scout | Cloud Elements API Docs
 title: Overview
 description: Integrate Help Scout into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 338
 parent: Back to Element Guides

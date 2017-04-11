@@ -3,7 +3,7 @@ heading: FieldAware
 seo: Events | FieldAware | Cloud Elements API Docs
 title: Events
 description: Enable FieldAware events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1062
 parent: Back to Element Guides

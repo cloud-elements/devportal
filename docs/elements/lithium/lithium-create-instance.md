@@ -3,7 +3,7 @@ heading: Lithium Response
 seo: Create Instance | Lithium Response | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 814
 parent: Back to Element Guides

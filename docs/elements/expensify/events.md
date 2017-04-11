@@ -3,7 +3,7 @@ heading: Expensify
 seo: Events | Expensify | Cloud Elements API Docs
 title: Events
 description: Enable Expensify events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

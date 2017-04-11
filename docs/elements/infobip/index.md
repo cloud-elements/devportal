@@ -3,7 +3,7 @@ heading: InfoBip
 seo: Overview | InfoBip | Cloud Elements API Docs
 title: Overview
 description: Integrate InfoBip into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 37
 parent: Back to Element Guides

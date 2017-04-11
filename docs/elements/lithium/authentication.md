@@ -3,7 +3,7 @@ heading: Lithium Response
 seo: Authentication | Lithium Response | Cloud Elements API Docs
 title: Authentication
 description: Integrate Lithium Response into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 814
 parent: Back to Element Guides

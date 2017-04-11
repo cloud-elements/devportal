@@ -3,7 +3,7 @@ heading: SugarCRM
 seo: Create Instance | SugarCRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 170
 parent: Back to Element Guides

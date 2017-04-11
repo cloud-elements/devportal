@@ -3,7 +3,7 @@ heading: Console Tour
 seo: Console Tour | Cloud Elements API Docs
 title: Console Tour
 description: A Brief Tour of the Console
-layout: sidebarleft
+layout: docs
 order: 4
 published: true
 sitemap: false

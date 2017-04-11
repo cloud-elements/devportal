@@ -3,7 +3,7 @@ heading: Sage One US
 seo: Authentication | Sage One US | Cloud Elements API Docs
 title: Authentication
 description: Integrate Sage One US into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 653
 parent: Back to Element Guides

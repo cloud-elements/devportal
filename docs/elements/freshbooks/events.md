@@ -3,7 +3,7 @@ heading: FreshBooks
 seo: Events | FreshBooks | Cloud Elements API Docs
 title: Events
 description: Enable FreshBooks events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides

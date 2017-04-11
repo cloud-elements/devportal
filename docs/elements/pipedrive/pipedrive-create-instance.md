@@ -3,7 +3,7 @@ heading: Pipedrive
 seo: Create Instance | Pipedrive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 167
 parent: Back to Element Guides

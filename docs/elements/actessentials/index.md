@@ -3,7 +3,7 @@ heading: Act Essentials
 seo: Overview | Act Essentials | Cloud Elements API Docs
 title: Overview
 description: Integrate Act Essentials into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1251
 parent: Back to Element Guides

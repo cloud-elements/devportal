@@ -3,7 +3,7 @@ heading: Infusionsoft Marketing Beta
 seo: Create Instance | Infusionsoft Marketing | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 192
 parent: Back to Element Guides

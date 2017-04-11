@@ -3,7 +3,7 @@ heading: Chargebee
 seo: Events | Chargebee | Cloud Elements API Docs
 title: Events
 description: Enable Chargebee events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 451
 parent: Back to Element Guides

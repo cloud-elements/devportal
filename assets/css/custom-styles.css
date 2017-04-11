@@ -5,7 +5,7 @@
 
 body.with-top-navbar{
   padding-bottom: 0;
-  padding-top: 90px;
+  padding-top: 130px;
   background-color: #fff;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -44,7 +44,7 @@ a:hover, a:focus, a:visited {
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
-  padding: 0px;
+  padding: 15px;
   background: #fff;
 }
 .nav {
@@ -78,12 +78,6 @@ a:hover, a:focus, a:visited {
   flex-direction: row;
   box-shadow: rgba(0, 0, 0, 0.498039) 0px 1px 3px;
 }
-
-.nav > .navbar-wraper div{
-  -webkit-flex: 1 0 auto;
-  flex: 1 0 auto;
-}
-
 .container-fluid > .navbar-header {
   font-weight: normal;
   color: #fff;

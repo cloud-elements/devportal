@@ -3,7 +3,7 @@ heading: Bullhorn CRM
 seo: Tips | Bullhorn CRM | Cloud Elements API Docs
 title: Tips
 description: Tips and frequently asked questions
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1702
 parent: Back to Element Guides

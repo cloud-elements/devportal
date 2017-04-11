@@ -3,7 +3,7 @@ heading: Sage One UK
 seo: Events | Sage One UK | Cloud Elements API Docs
 title: Events
 description: Enable Sage One UK events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 686
 parent: Back to Element Guides

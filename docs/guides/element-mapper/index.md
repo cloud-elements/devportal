@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Overview | Element Mapper | Cloud Elements API Docs
 title: Overview
 description: Element Mapper Overview
-layout: sidebarleft
+layout: docs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

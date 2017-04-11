@@ -3,7 +3,7 @@ heading: MySQL
 seo: FAQ | MySQL | Cloud Elements API Docs
 title: Tips
 description: FAQ and troubleshooting tips.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 479
 parent: Back to Element Guides

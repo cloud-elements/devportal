@@ -1,9 +1,9 @@
 ---
 heading: NetSuite 2016 Finance
 seo: Query Language | NetSuite 2016 Finance | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 988
 parent: Back to Element Guides

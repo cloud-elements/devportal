@@ -3,7 +3,7 @@ heading: Etsy
 seo: Error Codes | Etsy | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 128
 parent: Back to Element Guides

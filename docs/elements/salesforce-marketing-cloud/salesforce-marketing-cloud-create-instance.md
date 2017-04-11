@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud Beta
 seo: Create Instance | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

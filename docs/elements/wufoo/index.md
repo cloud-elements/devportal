@@ -3,7 +3,7 @@ heading: Wufoo
 seo: Overview | Wufoo | Cloud Elements API Docs
 title: Overview
 description: Integrate Wufoo into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 685
 parent: Back to Element Guides

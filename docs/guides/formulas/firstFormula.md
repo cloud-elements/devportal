@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Quickstart | Formulas | Cloud Elements API Docs
 title: Build Your First Formula
 description: Videos walking through the different features of Formula Builder.
-layout: sidebarleft
+layout: docs
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

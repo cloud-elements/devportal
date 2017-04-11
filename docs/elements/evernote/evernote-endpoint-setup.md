@@ -3,7 +3,7 @@ heading: Evernote Beta
 seo: Endpoint Setup | Evernote | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Evernote into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 125
 parent: Back to Element Guides

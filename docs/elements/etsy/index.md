@@ -3,7 +3,7 @@ heading: Etsy
 seo: Overview | Etsy | Cloud Elements API Docs
 title: Overview
 description: Integrate Etsy into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 128
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Pardot
 seo: Events | Pardot | Cloud Elements API Docs
 title: Events
 description: Enable Pardot events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides

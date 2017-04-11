@@ -3,7 +3,7 @@ heading: Expensify
 seo: Endpoint Setup | Expensify | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

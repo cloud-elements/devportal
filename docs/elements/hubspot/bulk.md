@@ -3,7 +3,7 @@ heading: HubSpot Marketing
 seo: Bulk APIs | HubSpot Marketing | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 43
 parent: Back to Element Guides

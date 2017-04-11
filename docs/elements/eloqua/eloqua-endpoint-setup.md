@@ -3,7 +3,7 @@ heading: Eloqua
 seo: Endpoint Setup | Eloqua | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Google Drive
 seo: Create Instance | Google Drive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides

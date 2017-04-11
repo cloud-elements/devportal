@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: Help Desk Hub Quick Start Guide | Cloud Elements API Docs
 title: Help Desk Hub Quick Start Guide
 description: Get up and running with the Help Desk Hub.
-layout: sidebarelementdoc
+layout: docs
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/helpdesk-hub-quick-start-guide.html

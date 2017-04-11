@@ -3,7 +3,7 @@ heading: Salesforce Libraries
 seo: Endpoint Setup | Salesforce Libraries | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 438
 parent: Back to Element Guides

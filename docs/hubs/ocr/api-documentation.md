@@ -3,7 +3,7 @@ heading: OCR APIs
 seo: OCR API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: OCR Hub API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: ocr
 breadcrumbs: /docs/hubs/hub-docs.html

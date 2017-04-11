@@ -3,7 +3,7 @@ heading: Event Management - Security
 seo: Event Management Security | Cloud Elements API Docs
 title: Security
 description: Event Hash Verification Guide
-layout: sidebarleft
+layout: docs
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 40

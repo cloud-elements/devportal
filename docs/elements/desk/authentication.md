@@ -3,7 +3,7 @@ heading: Desk.com
 seo: Authentication | Desk.com | Cloud Elements API Doc
 title: Authentication
 description: Integrate Desk.com into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 286
 parent: Back to Element Guides

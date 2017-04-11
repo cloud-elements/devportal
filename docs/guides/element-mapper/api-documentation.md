@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: API Docs | Element Mapper | Cloud Elements API Docs
 title: Platform Documentation
 description: Element Mapper API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

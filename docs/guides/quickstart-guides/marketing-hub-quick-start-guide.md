@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: Marketing Hub Quick Start Guide | Cloud Elements API Docs
 title: Marketing Hub Quick Start Guide
 description: Get up and running with the Marketing Hub.
-layout: sidebarelementdoc
+layout: docs
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/marketing-hub-quick-start-guide.html

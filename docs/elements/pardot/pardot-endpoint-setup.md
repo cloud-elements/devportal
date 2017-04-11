@@ -3,7 +3,7 @@ heading: Pardot
 seo: Endpoint Setup | Pardot | Cloud Elements API Docs
 title: Find API Key
 description: Find API Key
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides

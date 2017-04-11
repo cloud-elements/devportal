@@ -3,7 +3,7 @@ heading: Pardot
 seo: API Docs | Pardot | Cloud Elements API Docs
 title: API Docs
 description: Pardot API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides

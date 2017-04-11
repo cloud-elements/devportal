@@ -3,7 +3,7 @@ heading: Zendesk
 seo: Events | Zendesk | Cloud Elements API Docs
 title: Events
 description: Enable Zendesk events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 41
 parent: Back to Element Guides

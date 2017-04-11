@@ -3,7 +3,7 @@ heading: QuickBooks Online
 seo: Endpoint Setup | QuickBooks Online | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 39
 parent: Back to Element Guides

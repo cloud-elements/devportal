@@ -3,7 +3,7 @@ heading: Instagram Beta
 seo: Overview | Instagram | Cloud Elements API Docs
 title: Overview
 description: Integrate Instagram into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides

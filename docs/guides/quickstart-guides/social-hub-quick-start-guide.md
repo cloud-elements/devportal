@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: Social Hub Quick Start Guide | Cloud Elements API Docs
 title: Social Hub Quick Start Guide
 description: Get up and running with the Social Hub.
-layout: sidebarelementdoc
+layout: docs
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/social-hub-quick-start-guide.html

@@ -3,7 +3,7 @@ heading: WooCommerce
 seo: Overview | WooCommerce | Cloud Elements API Docs
 title: Overview
 description: Integrate WooCommerce into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 127
 parent: Back to Element Guides

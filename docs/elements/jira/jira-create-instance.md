@@ -3,7 +3,7 @@ heading: JIRA
 seo: Create Instance | JIRA | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1
 parent: Back to Element Guides

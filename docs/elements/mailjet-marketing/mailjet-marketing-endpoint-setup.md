@@ -3,7 +3,7 @@ heading: MailJet Marketing Beta
 seo: Endpoint Setup | MailJet Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 87
 parent: Back to Element Guides

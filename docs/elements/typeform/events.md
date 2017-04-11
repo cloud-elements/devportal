@@ -3,7 +3,7 @@ heading: Typeform
 seo: Events | Typeform | Cloud Elements API Docs
 title: Events
 description: Enable Typeform events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 339
 parent: Back to Element Guides

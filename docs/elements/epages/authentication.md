@@ -3,7 +3,7 @@ heading: ePages
 seo: Authentication | ePages | Cloud Elements API Docs
 title: Authentication
 description: Integrate ePages into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

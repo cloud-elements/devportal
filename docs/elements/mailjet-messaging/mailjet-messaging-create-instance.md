@@ -3,7 +3,7 @@ heading: MailJet Messaging Beta
 seo: Create Instance | MailJet Messaging | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 84
 parent: Back to Element Guides

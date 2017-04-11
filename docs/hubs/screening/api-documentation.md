@@ -3,7 +3,7 @@ heading: Screening APIs
 seo: Screening API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Screening Hub API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: screening
 breadcrumbs: /docs/hubs/hub-docs.html

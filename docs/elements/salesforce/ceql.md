@@ -1,9 +1,9 @@
 ---
 heading: Salesforce CRM
 seo: Query Language | Salesforce CRM | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides

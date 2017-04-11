@@ -3,7 +3,7 @@ heading: SFTP Beta
 seo: Overview | SFTP | Cloud Elements API Docs
 title: Overview
 description: Integrate SFTP into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1742
 parent: Back to Element Guides

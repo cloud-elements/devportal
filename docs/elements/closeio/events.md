@@ -3,7 +3,7 @@ heading: Close.io
 seo: Events | Close.io | Cloud Elements API Docs
 title: Events
 description: Enable Close.io events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 166
 parent: Back to Element Guides

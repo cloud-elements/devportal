@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Element Mapper Advanced Examples | Element Mapper | Cloud Elements API Docs
 title: Advanced
 description: View different advanced examples of Element Mapper in action.
-layout: sidebarleft
+layout: docs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

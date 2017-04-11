@@ -3,7 +3,7 @@ heading: Salesforce Libraries
 seo: Overview | Salesforce Libraries | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Libraries into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 438
 parent: Back to Element Guides

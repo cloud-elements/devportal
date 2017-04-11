@@ -3,7 +3,7 @@ heading: Dropbox
 seo: Overview | Dropbox | Cloud Elements API Docs
 title: Overview
 description: Integrate Dropbox into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides

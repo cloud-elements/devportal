@@ -3,7 +3,7 @@ heading: Twitter
 seo: Create Instance | Twitter | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1359
 parent: Back to Element Guides

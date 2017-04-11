@@ -3,7 +3,7 @@ heading: HubSpot Marketing
 seo: Tips | HubSpot Marketing | Cloud Elements API Docs
 title: Tips
 description: Frequently asked questions and notes on conventions.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 43
 parent: Back to Element Guides

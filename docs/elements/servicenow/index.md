@@ -3,7 +3,7 @@ heading: ServiceNow
 seo: Overview | ServiceNow | Cloud Elements API Docs
 title: Overview
 description: Integrate ServiceNow into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 145
 parent: Back to Element Guides

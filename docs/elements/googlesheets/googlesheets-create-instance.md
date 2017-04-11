@@ -3,7 +3,7 @@ heading: Google Sheets
 seo: Create Instance | Google Sheets | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 552
 parent: Back to Element Guides

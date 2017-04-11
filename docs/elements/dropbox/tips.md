@@ -1,9 +1,9 @@
 ---
 heading: Dropbox
-layout: sidebarelementdoc
 seo: Tips | Dropbox | Cloud Elements API Docs
 title: Tips
 description: Tips regarding the Dropbox Element.
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: NetSuite CRM
 seo: Endpoint Setup | NetSuite CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 140
 parent: Back to Element Guides

@@ -1,9 +1,9 @@
 ---
 heading: Instagram Beta
 seo: Query Language | Instagram | Cloud Elements API Doc
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides

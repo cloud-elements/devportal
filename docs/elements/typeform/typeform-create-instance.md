@@ -3,7 +3,7 @@ heading: Typeform
 seo: Create Instance | Typeform | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 339
 parent: Back to Element Guides

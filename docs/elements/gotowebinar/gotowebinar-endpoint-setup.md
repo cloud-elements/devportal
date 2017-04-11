@@ -3,7 +3,7 @@ heading: Citrix GoToWebinar
 seo: Endpoint Setup | Citrix GoToWebinar | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1743
 parent: Back to Element Guides

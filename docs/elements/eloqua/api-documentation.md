@@ -3,7 +3,7 @@ heading: Eloqua
 seo: API Docs | Eloqua | Cloud Elements API Docs
 title: API Docs
 description: Eloqua API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides

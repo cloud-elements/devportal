@@ -1,10 +1,3 @@
-{% assign id = page.path | shard_id %}
-{% assign shard = site.shards[id] | sort:"order" %}
-
-<script type="text/javascript">
-  window.location = "/docs/overview/overview.html";
-</script>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,16 +29,68 @@
 
 <body class="with-top-navbar">
   {% include nav.html %}
+  <div class="jumbotron">
+    <div class="container text-xs-center p-a-lg title">
+      <h2>Cloud Elements <span>Developer Portal</span></h2>
+      <p>You build the killer app, we'll take care of the <b>REST</b>.</p>
+      <div id="search-container" class="col-md-6 col-md-offset-3">
+        <div class="flextable">
+          <div class="flextable-item flextable-primary">
+            <input type="text" id="search-input" class="form-control" placeholder="Search Docs i.e. Salesforce">
+          </div>
+        </div>
+      </div>
+      <div class="results-container-wrapper col-md-6 col-md-offset-3">
+        <!-- Html Elements for Search -->
+        <ul id="results-container" class="flextable">
 
+        </ul>
+      </div>
+    </div>
+  </div>
   <div class="container-fluid">
-    <div class="col-md-3 sidebar">
-    {% include sidebar.html %}
+    <div class="row text-xs-center p-a-lg">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-b">
+        <a class="icon-box-home" href="/docs/guides/integration-guide/overview.html">
+          <h4>Get Started</h3>
+          <img class="center-block" src="/assets/img/quick-start-icon.png" alt="Cloud Elements Quick Start" />
+          <p>
+            Find out Where to go First!
+            <br>
+            <strong>Get up and running with Cloud Elements</strong>
+          </p>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-b">
+        <a class="icon-box-home" href="/docs/elements.html">
+          <h4>Element Docs</h3>
+          <img class="center-block" src="/assets/img/guides-icon.png" alt="Cloud Elements Documentation" />
+          <p>
+            Find documentation and API docs on our Elements
+            <br>
+            i.e. <strong>Salesforce, HubSpot</strong>
+          </p>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-b">
+        <a class="icon-box-home" href="/docs/guides/home.html">
+          <h4>Integration Guides</h3>
+          <img class="center-block" src="/assets/img/api-toolkit-icon.png" alt="Cloud Elements Integration Guides" />
+          <p>
+            Learn how to <strong>build</strong> Elements, <strong>create</strong> Formulas, <strong>map and move</strong> data, and docs on our <strong>on-prem connector</strong>
+          </p>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-b">
+        <a class="icon-box-home" href="/docs/hubs/hub-docs.html">
+          <h4>Hub Docs</h3>
+          <img class="center-block" src="/assets/img/hubs-icon.png" alt="Cloud Elements Hub Icon" />
+          <p>
+            We’ve categorized the leading cloud applications into <strong>Hubs</strong> (e.g. Marketing, Documents, and Messaging)
+          </p>
+        </a>
+      </div>
     </div>
-    <div class="col-md-9 contentWrapper">
-      
-    </div>
-
-    {%inspect%}
   </div>
 
   {% include padding-all.html %}
@@ -55,10 +100,13 @@
   {% include padding-all.html %}
 
   {% include footer.html %}
+  <!-- Script pointing to jekyll-search.js -->
+  <script src="{{ site.baseurl }}/bower_components/simple-jekyll-search/dest/jekyll-search.js" type="text/javascript"></script>
   <script src="/assets/js/chart.js"></script>
   <script src="/assets/js/tablesorter.min.js"></script>
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
+  <script type="text/javascript" src="/assets/js/simplejekyllsearch-config.js"></script>
   {% include google_analytics.html %}
   {% include hubspot-tracking.html %}
   <script>

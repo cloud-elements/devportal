@@ -7746,7 +7746,7 @@ body {
   padding-bottom: 20px !important;
 }
 .p-a-md {
-  padding: 0px;
+  padding: 30px !important;
 }
 .p-t-md {
   padding-top: 30px !important;
@@ -7769,27 +7769,27 @@ body {
   padding-bottom: 30px !important;
 }
 .p-a-lg {
-  padding: 10px !important;
+  padding: 60px !important;
 }
 .p-t-lg {
-  padding-top: 10px !important;
+  padding-top: 60px !important;
 }
 .p-r-lg {
-  padding-right: 10px !important;
+  padding-right: 60px !important;
 }
 .p-b-lg {
-  padding-bottom: 10px !important;
+  padding-bottom: 60px !important;
 }
 .p-l-lg {
-  padding-left: 10px !important;
+  padding-left: 60px !important;
 }
 .p-x-lg {
-  padding-right: 10px !important;
-  padding-left: 10px !important;
+  padding-right: 60px !important;
+  padding-left: 60px !important;
 }
 .p-y-lg {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
 }
 .text-inherit,
 .text-inherit:hover,

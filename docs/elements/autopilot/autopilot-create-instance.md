@@ -3,7 +3,7 @@ heading: Autopilot
 seo: Create Instance | Autopilot | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 528
 parent: Back to Element Guides

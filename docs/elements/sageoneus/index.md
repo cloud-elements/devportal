@@ -3,7 +3,7 @@ heading: Sage One US
 seo: Overview | Sage One US | Cloud Elements API Docs
 title: Overview
 description: Integrate Sage One US into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 653
 parent: Back to Element Guides

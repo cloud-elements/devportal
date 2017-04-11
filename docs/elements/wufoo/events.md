@@ -3,7 +3,7 @@ heading: Wufoo
 seo: Events | Wufoo | Cloud Elements API Docs
 title: Events
 description: Enable Wufoo events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 685
 parent: Back to Element Guides

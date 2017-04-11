@@ -3,7 +3,7 @@ heading: Chargify
 seo: Events | Chargify | Cloud Elements API Docs
 title: Events
 description: Enable Chargify events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

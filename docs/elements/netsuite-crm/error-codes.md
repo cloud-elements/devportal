@@ -3,7 +3,7 @@ heading: NetSuite CRM
 seo: Error Codes | NetSuite CRM | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 140
 parent: Back to Element Guides

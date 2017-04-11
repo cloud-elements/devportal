@@ -3,7 +3,7 @@ heading: Expensify
 seo: Transform Data | Expensify | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

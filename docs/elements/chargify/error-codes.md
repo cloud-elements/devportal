@@ -3,7 +3,7 @@ heading: Chargify
 seo: Error Codes | Chargify | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

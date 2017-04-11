@@ -3,7 +3,7 @@ heading: Element Loader
 seo: Configuration | Element Loader | Cloud Elements API Docs
 title: Configuration
 description: Element Loader Configuration.
-layout: sidebarleft
+layout: docs
 order: 5
 ---
 

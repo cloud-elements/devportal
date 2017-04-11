@@ -3,7 +3,7 @@ heading: HubSpot Marketing
 seo: Create Instance | HubSpot Marketing | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 43
 parent: Back to Element Guides

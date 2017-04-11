@@ -3,7 +3,7 @@ heading: Oracle Service Cloud
 seo: Events | Oracle Service Cloud | Cloud Elements API Docs
 title: Events
 description: Enable Oracle Service Cloud events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 88
 parent: Back to Element Guides

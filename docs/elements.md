@@ -2,7 +2,7 @@
 heading: Elements
 title: Currently Supported Elements | Cloud Elements
 description: Find API documentation, guides, and more on all of the currently supported Elements.
-layout: sidebarelementtile
+layout: elements
 ---
 
 * [![Act Essentials](/assets/img/element-logos/actpremium.png)Act Essentials](./elements/actessentials/)
