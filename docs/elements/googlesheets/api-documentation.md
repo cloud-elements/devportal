@@ -3,7 +3,7 @@ heading: Google Sheets
 seo: API Docs | Google Sheets | Cloud Elements API Docs
 title: API Docs
 description: Google Sheets API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 breadcrumbs: /docs/elements.html
 elementId: 552
 parent: Back to Element Guides

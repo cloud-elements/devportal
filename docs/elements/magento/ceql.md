@@ -1,9 +1,9 @@
 ---
 heading: Magento Beta
 seo: Query Language | Magento | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 356
 parent: Back to Element Guides

@@ -1,9 +1,9 @@
 ---
 heading: SAP Anywhere
 seo: Query Language | SAP Anywhere | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1468
 parent: Back to Element Guides

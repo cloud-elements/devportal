@@ -3,7 +3,7 @@ heading: Volusion
 seo: Endpoint Setup | Volusion | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 51
 parent: Back to Element Guides

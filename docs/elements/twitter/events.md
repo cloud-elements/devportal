@@ -3,7 +3,7 @@ heading: Twitter
 seo: Events | Twitter | Cloud Elements API Docs
 title: Events
 description: Enable Twitter events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1359
 parent: Back to Element Guides

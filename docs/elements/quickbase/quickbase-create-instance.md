@@ -3,7 +3,7 @@ heading: QuickBase
 seo: Create Instance | QuickBase | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides

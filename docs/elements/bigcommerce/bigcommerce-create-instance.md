@@ -3,7 +3,7 @@ heading: BigCommerce
 seo: Create Instance | BigCommerce | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 274
 parent: Back to Element Guides

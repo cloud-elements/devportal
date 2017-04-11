@@ -3,7 +3,7 @@ heading: Microsoft Dynamics CRM
 seo: Create Instance | MS Dynamics CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 190
 parent: Back to Element Guides

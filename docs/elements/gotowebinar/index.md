@@ -3,7 +3,7 @@ heading: Citrix GoToWebinar
 seo: Overview | Citrix GoToWebinar | Cloud Elements API Docs
 title: Overview
 description: Integrate Citrix GoToWebinar into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1743
 parent: Back to Element Guides

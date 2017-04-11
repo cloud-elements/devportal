@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: Finance Hub Quick Start Guide | Cloud Elements API Docs
 title: Finance Hub Quick Start Guide
 description: Get up and running with the Finance Hub.
-layout: sidebarelementdoc
+layout: docs
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/finance-hub-quick-start-guide.html

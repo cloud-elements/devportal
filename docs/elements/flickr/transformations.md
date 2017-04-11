@@ -3,7 +3,7 @@ heading: Flickr
 seo: Transform Data | Flickr | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 251
 parent: Back to Element Guides

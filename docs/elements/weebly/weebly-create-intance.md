@@ -3,7 +3,7 @@ heading: Weebly
 seo: Create Instance | Weebly | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 449
 parent: Back to Element Guides

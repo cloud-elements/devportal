@@ -3,7 +3,7 @@ heading: Citrix ShareFile
 seo: Endpoint Setup | Citrix ShareFile | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 450
 parent: Back to Element Guides

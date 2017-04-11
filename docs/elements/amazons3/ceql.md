@@ -1,9 +1,9 @@
 ---
 heading: Amazon S3 Beta
 seo: Query Language | Amazon S3 | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 16
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: HubSpot CRM
 seo: Overview | HubSpot CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate HubSpot CRM into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 168
 parent: Back to Element Guides

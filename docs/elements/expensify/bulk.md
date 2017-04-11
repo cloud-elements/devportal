@@ -3,7 +3,7 @@ heading: Expensify
 seo: Bulk APIs | Expensify | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

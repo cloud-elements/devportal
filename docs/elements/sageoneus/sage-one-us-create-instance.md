@@ -3,7 +3,7 @@ heading: Sage One US
 seo: Create Instance | Sage One US | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 653
 parent: Back to Element Guides

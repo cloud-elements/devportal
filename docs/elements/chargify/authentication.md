@@ -3,7 +3,7 @@ heading: Chargify
 seo: Authentication | Chargify | Cloud Elements API Docs
 title: Authentication
 description: Integrate Chargify into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

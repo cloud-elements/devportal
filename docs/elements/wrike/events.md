@@ -3,7 +3,7 @@ heading: Wrike
 seo: Events | Wrike | Cloud Elements API Docs
 title: Events
 description: Enable Wrike events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 127
 parent: Back to Element Guides

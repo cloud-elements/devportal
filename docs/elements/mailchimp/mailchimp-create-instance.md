@@ -3,7 +3,7 @@ heading: MailChimp
 seo: Create Instance | MailChimp | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 527
 parent: Back to Element Guides

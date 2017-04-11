@@ -3,7 +3,7 @@ heading: Wrike
 seo: Endpoint Setup | Wrike | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 551
 parent: Back to Element Guides

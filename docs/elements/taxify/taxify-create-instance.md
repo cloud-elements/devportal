@@ -3,7 +3,7 @@ heading: Taxify
 seo: Create Instance | Taxify | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 320
 parent: Back to Element Guides

@@ -1,9 +1,9 @@
 ---
 heading: Salesforce Marketing Cloud Beta
 seo: Query Language | Salesforce Marketing Cloud | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

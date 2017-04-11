@@ -3,7 +3,7 @@ heading: JIRA
 seo: Events | JIRA | Cloud Elements API Docs
 title: Events
 description: Enable JIRA events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1
 parent: Back to Element Guides

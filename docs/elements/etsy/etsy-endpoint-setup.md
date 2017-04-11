@@ -3,7 +3,7 @@ heading: Etsy
 seo: Endpoint Setup | Etsy | Cloud Elements API Docs
 title: Register as a Consumer
 description: Register as a Consumer
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 128
 parent: Back to Element Guides

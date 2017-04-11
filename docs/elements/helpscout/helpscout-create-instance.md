@@ -3,7 +3,7 @@ heading: Help Scout
 seo: Create Instance | Help Scout | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 338
 parent: Back to Element Guides

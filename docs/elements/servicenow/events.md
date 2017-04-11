@@ -3,7 +3,7 @@ heading: ServiceNow
 seo: Events | ServiceNow | Cloud Elements API Docs
 title: Events
 description: Enable ServiceNow events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 145
 parent: Back to Element Guides

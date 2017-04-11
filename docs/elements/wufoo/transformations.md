@@ -3,7 +3,7 @@ heading: Wufoo
 seo: Transform Data | Wufoo | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 685
 parent: Back to Element Guides

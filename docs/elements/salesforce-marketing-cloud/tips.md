@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud Beta
 seo: Tips | Salesforce Marketing Cloud BETA | Cloud Elements API Docs
 title: Tips
 description: Salesforce Marketing Cloud BETA FAQ.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

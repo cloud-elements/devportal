@@ -1,9 +1,9 @@
 ---
 heading: MailJet Marketing Beta
 seo: Query Language | MailJet Marketing | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 87
 parent: Back to Element Guides

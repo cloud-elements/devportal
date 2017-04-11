@@ -3,7 +3,7 @@ heading: Intacct
 seo: Create Instance | Intacct | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 921
 parent: Back to Element Guides

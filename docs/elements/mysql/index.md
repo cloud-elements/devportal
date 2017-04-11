@@ -3,7 +3,7 @@ heading: MySQL
 seo: Overview | MySQL | Cloud Elements API Docs
 title: Overview
 description: Integrate MySQL into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 479
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: SAP Anywhere
 seo: Bulk APIs | SAP Anywhere | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1468
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Salesforce CRM
 seo: Overview | Salesforce CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce CRM into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides

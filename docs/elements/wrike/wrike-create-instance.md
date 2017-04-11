@@ -3,7 +3,7 @@ heading: Wrike
 seo: Create Instance | Wrike | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 551
 parent: Back to Element Guides

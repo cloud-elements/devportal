@@ -3,7 +3,7 @@ heading: ServiceNow
 seo: Create Instance | ServiceNow | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 145
 parent: Back to Element Guides

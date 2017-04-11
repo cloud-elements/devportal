@@ -3,7 +3,7 @@ heading: QuickBase
 seo: Endpoint Setup | QuickBase | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup for QuickBase
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides

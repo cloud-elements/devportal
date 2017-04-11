@@ -3,7 +3,7 @@ heading: ePages
 seo: Create Instance | ePages | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

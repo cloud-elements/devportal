@@ -3,7 +3,7 @@ heading: ServiceMax
 seo: Endpoint Setup | ServiceMax | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 169
 parent: Back to Element Guides

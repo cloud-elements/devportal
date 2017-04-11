@@ -3,7 +3,7 @@ heading: Weebly
 seo: Events | Weebly | Cloud Elements API Docs
 title: Events
 description: Enable Weebly events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 449
 parent: Back to Element Guides

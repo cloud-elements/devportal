@@ -3,7 +3,7 @@ heading: SugarCRM
 seo: Endpoint Setup | SugarCRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 170
 parent: Back to Element Guides

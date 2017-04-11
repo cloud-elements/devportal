@@ -3,7 +3,7 @@ heading: Citrix ShareFile
 seo: Create Instance | Citrix ShareFile | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 450
 parent: Back to Element Guides

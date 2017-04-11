@@ -3,7 +3,7 @@ heading: Freshservice
 seo: Events | Freshservice | Cloud Elements API Docs
 title: Events
 description: Enable Freshservice events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 252
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: ConnectWise CRM
 seo: Overview | ConnectWise CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate ConnectWise CRM into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 198
 parent: Back to Element Guides

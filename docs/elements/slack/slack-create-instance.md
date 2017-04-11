@@ -3,7 +3,7 @@ heading: Slack
 seo: Create Instance | Slack | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1358
 parent: Back to Element Guides

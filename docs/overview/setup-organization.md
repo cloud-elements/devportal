@@ -3,7 +3,7 @@ heading: Setup Your Organization
 seo: Setup Your Cloud Elements Organization | Cloud Elements API Docs
 title: Setup Organization
 description: Instructions on how to set up your Organization and add Accounts with Cloud Elements.
-layout: sidebarleft
+layout: docs
 order: 3
 published: true
 sitemap: false

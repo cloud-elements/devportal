@@ -3,7 +3,7 @@ heading: Messaging APIs
 seo: Messaging Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: sidebarleft
+layout: docs
 platform: messaging
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs

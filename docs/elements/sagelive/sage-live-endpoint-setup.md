@@ -3,7 +3,7 @@ heading: Sage Live
 seo: Endpoint Setup | Sage Live | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 676
 parent: Back to Element Guides

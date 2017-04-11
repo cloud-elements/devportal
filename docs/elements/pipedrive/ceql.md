@@ -1,9 +1,9 @@
 ---
 heading: Pipedrive
 seo: Query Language | Pipedrive | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 167
 parent: Back to Element Guides

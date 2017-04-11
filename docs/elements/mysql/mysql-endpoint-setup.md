@@ -3,7 +3,7 @@ heading: MySQL
 seo: Endpoint Setup | MySQL | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate a MySQL Database via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 479
 parent: Back to Element Guides

@@ -1,9 +1,9 @@
 ---
 heading: Evernote Beta
 seo: Query Language | Evernote | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 125
 parent: Back to Element Guides

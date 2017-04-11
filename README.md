@@ -1,6 +1,4 @@
-# devportal 2.0 <sub><sup>| Cloud Elements developer portal</sup></sub>
-
-** Please Note: Layouts, installation, and usage instructions have changed for devportal 2.0 **
+# devportal <sub><sup>| Cloud Elements developer portal</sup></sub>
 
 This site is based on [Jekyll](http://jekyllrb.com/), with a dash of [Twitter Bootstrap](http://themes.getbootstrap.com/products/dashboard) added.
 
@@ -25,16 +23,14 @@ _Please_, feel free to make any contributions you feel will make Cloud Elements 
 ```bash
 $ git clone git@github.com:cloud-elements/devportal.git
 $ cd devportal
-$ bundle install
+$ sudo gem install jekyll redcarpet jekyll-sitemap jekyll-redirect-from jekyll-youtube
 ```
 
 ## Usage
 
 ```bash
-$ bundle exec jekyll serve --incremental
+$ jekyll serve
 ```
-
-**Note:** The `--incremental` flag will build only the changed files.
 
 Now browse to [http://127.0.0.1:4000/](http://127.0.0.1:4000/) and code away!
 
@@ -99,7 +95,7 @@ heading: Salesforce CRM
 seo: Overview | Salesforce CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce CRM into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides
@@ -116,7 +112,7 @@ heading: Instance APIs
 seo: Instance APIs Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: sidebarleft
+layout: docs
 platform: instances
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
@@ -124,23 +120,6 @@ order: 1
 sitemap: false
 ---
 ```
-
-## Layouts:
-
-There are three layouts that can be used.
-
-- Element Pages should use the `sidebarelementdoc` layout  
-- Product Pages (non element pages) should use the `sidebarleft` layout  
-- Any pages that include swagger should use the `sidebarapidocs` layout  
-
-## Alternate content tab usage:
-
-In order to create the alternate tab content, one of two values is added to the YAMl at the top of the page.
-
-- To point to alternate API content from a UI page:  
-  - `restContentVersion: <link to rest content>`  
-- To point to alternate UI content from a API page:  
-  - `uiContentVersion`: <link to UI content>`  
 
 ## License
 (The MIT License)

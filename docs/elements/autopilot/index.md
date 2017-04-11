@@ -3,7 +3,7 @@ heading: Autopilot
 seo: Overview | Autopilot | Cloud Elements API Docs
 title: Overview
 description: Integrate Autopilot into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 528
 parent: Back to Element Guides

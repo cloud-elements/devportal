@@ -1,9 +1,9 @@
 ---
 heading: Microsoft OneDrive for Business Beta
 seo: Query Language | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 178
 parent: Back to Element Guides

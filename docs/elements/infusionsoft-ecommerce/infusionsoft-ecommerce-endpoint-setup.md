@@ -3,7 +3,7 @@ heading: Infusionsoft eCommerce
 seo: Endpoint Setup | Infusionsoft eCommerce | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 321
 parent: Back to Element Guides

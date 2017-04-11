@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Element Mapper FAQs| Element Mapper | Cloud Elements API Docs
 title: FAQs
 description: Frequently Asked Questions
-layout: sidebarleft
+layout: docs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

@@ -3,7 +3,7 @@ heading: Wufoo
 seo: Create Instance | Wufoo | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 685
 parent: Back to Element Guides

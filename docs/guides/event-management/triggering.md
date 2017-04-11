@@ -3,7 +3,7 @@ heading: Event Management
 seo: Event Management | Cloud Elements API Docs
 title: Triggering Events
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
-layout: sidebarleft
+layout: docs
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 20

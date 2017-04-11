@@ -1,9 +1,9 @@
 ---
 heading: FieldAware
 seo: Query Language | FieldAware | Cloud Elements API Docs
-title: Querying
+title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1062
 parent: Back to Element Guides

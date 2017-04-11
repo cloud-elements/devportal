@@ -3,7 +3,7 @@ heading: Instagram Beta
 seo: Endpoint Setup | Instagram | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Instagram into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides

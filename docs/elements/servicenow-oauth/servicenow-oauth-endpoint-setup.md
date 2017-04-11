@@ -3,7 +3,7 @@ heading: ServiceNow OAuth Beta
 seo: Endpoint Setup | ServiceNow OAuth OAuth | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 566
 parent: Back to Element Guides

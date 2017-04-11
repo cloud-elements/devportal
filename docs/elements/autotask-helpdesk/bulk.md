@@ -3,7 +3,7 @@ heading: Autotask Help Desk
 seo: Bulk APIs | Autotask Help Desk | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 123
 parent: Back to Element Guides

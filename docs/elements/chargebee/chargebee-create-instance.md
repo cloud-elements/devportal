@@ -3,7 +3,7 @@ heading: Chargebee
 seo: Create Instance | Chargebee | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 451
 parent: Back to Element Guides

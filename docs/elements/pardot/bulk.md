@@ -3,7 +3,7 @@ heading: Pardot
 seo: Bulk APIs | Pardot | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides

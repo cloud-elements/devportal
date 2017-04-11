@@ -3,7 +3,7 @@ heading: CRM APIs
 seo: CRM API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: CRM Hub API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: crm
 breadcrumbs: /docs/hubs/hub-docs.html

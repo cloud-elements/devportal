@@ -3,7 +3,7 @@ heading: SugarCRM
 seo: Events | SugarCRM | Cloud Elements API Docs
 title: Events
 description: Enable SugarCRM events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 170
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: NetSuite Human Capital
 seo: Bulk APIs | NetSuite Human Capital | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 141
 parent: Back to Element Guides

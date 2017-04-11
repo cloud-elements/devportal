@@ -3,7 +3,7 @@ heading: NetSuite ERP
 seo: Events | NetSuite ERP | Cloud Elements API Docs
 title: Events
 description: Enable NetSuite ERP events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 157
 parent: Back to Element Guides

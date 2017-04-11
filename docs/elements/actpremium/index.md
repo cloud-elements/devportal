@@ -3,7 +3,7 @@ heading: Act Premium
 seo: Overview | Act Premium | Cloud Elements API Docs
 title: Overview
 description: Integrate Act Premium into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 816
 parent: Back to Element Guides

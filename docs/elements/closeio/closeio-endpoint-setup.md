@@ -3,7 +3,7 @@ heading: Close.io
 seo: Endpoint Setup | Close.io | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 166
 parent: Back to Element Guides

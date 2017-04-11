@@ -3,7 +3,7 @@ heading: Google Drive
 seo: Tips | Google Drive | Cloud Elements API Docs
 title: Tips
 description: Frequently asked questions and notes on conventions.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides

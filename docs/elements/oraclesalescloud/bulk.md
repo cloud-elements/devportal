@@ -3,7 +3,7 @@ heading: Oracle Sales Cloud
 seo: Bulk APIs | Oracle Sales Cloud | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1948
 parent: Back to Element Guides

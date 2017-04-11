@@ -3,7 +3,7 @@ heading: Twitter
 seo: Endpoint Setup | Twitter | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1359
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: ABBYY
 seo: Overview | ABBYY | Cloud Elements API Docs
 title: Overview
 description: Integrate ABBYY into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 260
 parent: Back to Element Guides

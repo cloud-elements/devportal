@@ -3,7 +3,7 @@ heading: OneDrive
 seo: Create Instance | OneDrive | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 146
 parent: Back to Element Guides

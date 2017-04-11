@@ -3,7 +3,7 @@ heading: Microsoft SQL Server
 seo: Endpoint Setup | Microsoft SQL Server | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate a Microsoft SQL Server Database via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 490
 parent: Back to Element Guides

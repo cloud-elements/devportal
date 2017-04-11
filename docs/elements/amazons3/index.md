@@ -3,7 +3,7 @@ heading: Amazon S3 Beta
 seo: Overview | Amazon S3 | Cloud Elements API Docs
 title: Overview
 description: Integrate Amazon S3 into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 16
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Microsoft SQL Server
 seo: FAQ | Microsoft SQL Server | Cloud Elements API Docs
 title: Tips
 description: FAQ and troubleshooting tips.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 490
 parent: Back to Element Guides

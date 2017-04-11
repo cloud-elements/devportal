@@ -3,7 +3,7 @@ heading: WooCommerce
 seo: Events | WooCommerce | Cloud Elements API Docs
 title: Events
 description: Enable WooCommerce events for your application.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 127
 parent: Back to Element Guides

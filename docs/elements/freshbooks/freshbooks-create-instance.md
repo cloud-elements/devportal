@@ -3,7 +3,7 @@ heading: FreshBooks
 seo: Create Instance | FreshBooks | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides

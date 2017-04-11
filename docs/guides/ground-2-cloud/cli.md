@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Ground2Cloud CLI | Ground2Cloud | Cloud Elements API Docs
 title: G2C CLI
 description: Ground2Cloud Command Line Interface
-layout: sidebarleft
+layout: docs
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 11

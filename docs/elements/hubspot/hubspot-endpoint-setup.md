@@ -3,7 +3,7 @@ heading: HubSpot Marketing
 seo: Endpoint Setup | HubSpot Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 43
 parent: Back to Element Guides

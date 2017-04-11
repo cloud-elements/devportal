@@ -3,7 +3,7 @@ heading: Shopify
 seo: Create Instance | Shopify | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 48
 parent: Back to Element Guides

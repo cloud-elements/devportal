@@ -3,7 +3,7 @@ heading: Human Capital APIs
 seo: Human Capital API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Human Capital Hub API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: humancapital
 breadcrumbs: /docs/hubs/hub-docs.html

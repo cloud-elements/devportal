@@ -3,7 +3,7 @@ heading: MailJet Messaging Beta
 seo: Endpoint Setup | MailJet Messaging | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 84
 parent: Back to Element Guides

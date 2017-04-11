@@ -3,7 +3,7 @@ heading: Oracle Service Cloud
 seo: Create Instance | Oracle Service Cloud | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 88
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Event Conferencing APIs
 seo: Event Conferencing API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Event Conferencing Hub API Documentation.
-layout: sidebarapidocs
+layout: apidocs
 apis: API Docs
 platform: event-conferencing
 breadcrumbs: /docs/hubs/hub-docs.html

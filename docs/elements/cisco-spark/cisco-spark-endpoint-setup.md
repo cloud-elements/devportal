@@ -3,7 +3,7 @@ heading: Cisco Spark
 seo: Endpoint Setup | Cisco Spark | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Cisco Spark into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 1832
 parent: Back to Element Guides

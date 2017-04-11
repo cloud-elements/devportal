@@ -3,7 +3,7 @@ heading: DocuSign
 seo: Create Instance | DocuSign | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 158
 parent: Back to Element Guides

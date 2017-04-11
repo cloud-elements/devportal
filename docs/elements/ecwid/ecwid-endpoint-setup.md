@@ -3,7 +3,7 @@ heading: Ecwid
 seo: Endpoint Setup | Ecwid | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 52
 parent: Back to Element Guides

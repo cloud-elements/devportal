@@ -3,7 +3,7 @@ heading: Salesforce Documents
 seo: Authentication | Salesforce Documents | Cloud Elements API Docs
 title: Authentication
 description: Integrate Salesforce Documents into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 177
 parent: Back to Element Guides

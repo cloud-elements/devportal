@@ -3,7 +3,7 @@ heading: OneNote Beta
 seo: Create Instance | OneNote | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 134
 parent: Back to Element Guides

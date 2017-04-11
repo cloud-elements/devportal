@@ -3,7 +3,7 @@ heading: Twilio SMS V2
 seo: Endpoint Setup | Twilio SMS V2 | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: sidebarelementdoc
+layout: docs
 breadcrumbs: /docs/elements.html
 elementId: 503
 parent: Back to Element Guides

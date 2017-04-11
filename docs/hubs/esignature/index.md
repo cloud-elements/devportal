@@ -3,7 +3,7 @@ heading: eSignature APIs
 seo: eSignature Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: sidebarleft
+layout: docs
 platform: esignature
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs
