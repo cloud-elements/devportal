@@ -366,9 +366,6 @@ body {
   }
 }
 @media (min-width: 768px) {
-  .docs-content {
-    padding-right: 265px;
-  }
 }
 .docs-example {
   position: relative;

@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Config | Ground2Cloud | Cloud Elements API Docs
 title: G2C Configuration
 description: Ground2Cloud Configuration
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 9

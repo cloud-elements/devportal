@@ -3,7 +3,7 @@ heading: Citrix ShareFile
 seo: Events | Citrix ShareFile | Cloud Elements API Docs
 title: Events
 description: Enable Citrix ShareFile events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 450
 parent: Back to Element Guides

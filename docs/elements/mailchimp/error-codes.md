@@ -3,7 +3,7 @@ heading: MailChimp
 seo: Error Codes | MailChimp | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 527
 parent: Back to Element Guides

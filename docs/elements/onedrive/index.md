@@ -3,7 +3,7 @@ heading: OneDrive
 seo: Overview | OneDrive | Cloud Elements API Docs
 title: Overview
 description: Integrate OneDrive into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 146
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Expensify
 seo: Create Instance | Expensify | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 675
 parent: Back to Element Guides

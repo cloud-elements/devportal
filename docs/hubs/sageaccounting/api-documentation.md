@@ -3,7 +3,7 @@ heading: Sage Accounting APIs
 seo: Sage Accounting API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Sage Accounting Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: sageaccounting
 breadcrumbs: /docs/hubs/hub-docs.html

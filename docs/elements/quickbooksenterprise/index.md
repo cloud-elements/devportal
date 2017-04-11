@@ -3,7 +3,7 @@ heading: QuickBooks Enterprise
 seo: Overview | QuickBooks Enterprise | Cloud Elements API Docs
 title: Overview
 description: Integrate QuickBooks Enterprise into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 195
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Microsoft OneDrive for Business Beta
 seo: Endpoint Setup | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Microsoft OneDrive for Business Beta into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 178
 parent: Back to Element Guides

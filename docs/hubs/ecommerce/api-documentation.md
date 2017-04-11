@@ -3,7 +3,7 @@ heading: eCommerce APIs
 seo: eCommerce API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: eCommerce Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: ecommerce
 breadcrumbs: /docs/hubs/hub-docs.html

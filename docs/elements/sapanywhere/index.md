@@ -3,7 +3,7 @@ heading: SAP Anywhere
 seo: Overview | SAP Anywhere | Cloud Elements API Docs
 title: Overview
 description: Integrate SAP Anywhere into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1468
 parent: Back to Element Guides

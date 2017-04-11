@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: CRM Hub Quick Start Guide | Cloud Elements API Docs
 title: CRM Hub Quick Start Guide
 description: Get up and running with the CRM Hub.
-layout: docs
+layout: sidebarelementdoc
 order: 2
 redirect_from:
   - /docs/getstarted/quickstart-guides/crm-hub-quick-start-guide.html

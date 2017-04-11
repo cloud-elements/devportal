@@ -3,7 +3,7 @@ heading: QuickBooks Online
 seo: Overview | QuickBooks Online | Cloud Elements API Docs
 title: Overview
 description: Integrate QuickBooks Online into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
 parent: Back to Element Guides

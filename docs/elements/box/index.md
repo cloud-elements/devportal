@@ -3,7 +3,7 @@ heading: Box
 seo: Overview | Box | Cloud Elements API Docs
 title: Overview
 description: Integrate Box into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
 parent: Back to Element Guides

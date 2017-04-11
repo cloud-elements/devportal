@@ -3,7 +3,7 @@ heading: NetSuite 2016 ERP
 seo: Create Instance | NetSuite 2016 ERP | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 987
 parent: Back to Element Guides

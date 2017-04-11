@@ -3,7 +3,7 @@ heading: Pipedrive
 seo: Error Codes | Pipedrive | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 167
 parent: Back to Element Guides

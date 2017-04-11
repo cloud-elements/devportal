@@ -3,7 +3,7 @@ heading: General APIs
 seo: General API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: General Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: general
 breadcrumbs: /docs/hubs/hub-docs.html

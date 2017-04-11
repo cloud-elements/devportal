@@ -3,7 +3,7 @@ heading: Element Builder
 seo: Create Database Element via Element Builder UI | Element Builder | Cloud Elements API Docs
 title: Create Database Element
 description: Create Database Element via the the Element Builder UI.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html

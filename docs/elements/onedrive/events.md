@@ -3,7 +3,7 @@ heading: OneDrive
 seo: Events | OneDrive | Cloud Elements API Docs
 title: Events
 description: Enable OneDrive events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 146
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Autopilot
 seo: API Docs | Autopilot | Cloud Elements API Docs
 title: API Docs
 description: Autopilot API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 528
 parent: Back to Element Guides

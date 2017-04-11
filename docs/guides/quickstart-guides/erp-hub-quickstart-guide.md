@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: ERP Hub Quick Start Guide | Cloud Elements API Docs
 title: ERP Hub Quick Start Guide
 description: Get up and running with the ERP Hub.
-layout: docs
+layout: sidebarelementdoc
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/erp-hub-quick-start-guide.html

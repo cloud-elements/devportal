@@ -1,0 +1,17 @@
+{% assign overviewshard = site.shards['docs_tutorial'] | sort:"order" %}
+<div class="sidebarWrapper">
+  <h4> Learn Cloud Elements </h3>
+    <ul>
+      {% for i in overviewshard %}
+        {% if i.url == page.url %}
+          <li>
+            <div class="activeMenuItem"> <a href={{i.url}}> {{i.title}} </a> </div>
+          </li>
+        {% else %}
+          <li>
+            <a href={{i.url}}> {{i.title}} </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+</div>

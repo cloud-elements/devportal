@@ -3,7 +3,7 @@ heading: Magento Beta
 seo: Create Instance | Magento | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 356
 parent: Back to Element Guides

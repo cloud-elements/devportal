@@ -3,7 +3,7 @@ heading: Salesforce CRM
 seo: Events | Salesforce CRM | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides

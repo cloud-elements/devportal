@@ -3,7 +3,7 @@ heading: Microsoft Dynamics CRM
 seo: Tips | Microsoft Dynamics CRM | Cloud Elements API Docs
 title: Tips
 description: Frequently asked questions and notes on conventions.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides

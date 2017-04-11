@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: How It Works | Element Mapper | Cloud Elements API Docs
 title: How It Works
 description: What is Element Mapper and how does it work?
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

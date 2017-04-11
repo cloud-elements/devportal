@@ -3,7 +3,7 @@ heading: Stripe
 seo: Create Instance | Stripe | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides

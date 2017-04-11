@@ -1,9 +1,9 @@
 ---
 heading: Brandfolder
 seo: Query Language | Brandfolder | Cloud Elements API Docs
-title: Cloud Elements Query Language
+title: Querying
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 492
 parent: Back to Element Guides

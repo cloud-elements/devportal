@@ -3,7 +3,7 @@ heading: SAP Anywhere
 seo: Events | SAP Anywhere | Cloud Elements API Docs
 title: Events
 description: Enable SAP Anywhere events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1468
 parent: Back to Element Guides

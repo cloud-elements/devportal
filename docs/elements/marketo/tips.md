@@ -3,7 +3,7 @@ heading: Marketo
 seo: Tips | Marketo | Cloud Elements API Docs
 title: Tips
 description: Frequently asked questions and notes on conventions.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 85
 parent: Back to Element Guides

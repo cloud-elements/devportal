@@ -3,7 +3,7 @@ heading: Magento 2.0
 seo: Events | Magento 2.0 | Cloud Elements API Docs
 title: Events
 description: Enable Magento 2.0 events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 815
 parent: Back to Element Guides

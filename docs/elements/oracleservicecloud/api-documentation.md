@@ -3,7 +3,7 @@ heading: Oracle Service Cloud
 seo: API Docs | Oracle Service Cloud | Cloud Elements API Docs
 title: API Docs
 description: Oracle Service Cloud API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 88
 parent: Back to Element Guides
