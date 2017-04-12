@@ -3,7 +3,7 @@ heading: Desk.com
 seo: Events | Desk.com | Cloud Elements API Docs
 title: Events
 description: Enable Desk.com events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 286
 parent: Back to Element Guides

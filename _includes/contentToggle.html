@@ -1,0 +1,21 @@
+<link href="/assets/css/contentToggle.css" rel="stylesheet">
+{% if page.restContentVersion != null%}
+  <div class="toggleButtonWrapper">
+    <a class="button leftButton active"> 
+      UI
+    </a>
+    <a class="button rightButton" href={{page.restContentVersion}}>
+      API
+    </a>
+  </div>
+{% endif %}
+{% if page.uiContentVersion != null%}
+  <div class="toggleButtonWrapper">
+    <a class="button leftButton" href={{page.uiContentVersion}}> 
+      UI
+    </a>
+    <a class="button rightButton active">
+      API
+    </a>
+  </div>
+{% endif %}

@@ -3,7 +3,7 @@ heading: Lithium Response
 seo: Events | Lithium Response | Cloud Elements API Docs
 title: Events
 description: Enable Lithium Response events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 814
 parent: Back to Element Guides

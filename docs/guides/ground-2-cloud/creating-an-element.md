@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Creating an Element | Ground2Cloud | Cloud Elements API Docs
 title: Creating an Element
 description: How an Element can use Ground2Cloud
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 8

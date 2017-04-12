@@ -3,7 +3,7 @@ heading: Infusionsoft eCommerce
 seo: Events | Infusionsoft eCommerce | Cloud Elements API Docs
 title: Events
 description: Enable Infusionsoft eCommerce events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 321
 parent: Back to Element Guides

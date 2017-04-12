@@ -3,7 +3,7 @@ heading: Sage Live
 seo: Create Instance | Sage Live | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 676
 parent: Back to Element Guides

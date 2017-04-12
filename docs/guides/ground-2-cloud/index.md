@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Overview | Ground2Cloud | Cloud Elements API Docs
 title: Overview
 description: Overview Guide explaining the Cloud Elements Ground2Cloud On-Prem Connector.
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1

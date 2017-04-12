@@ -3,7 +3,7 @@ heading: SendGrid
 seo: Authentication | SendGrid | Cloud Elements API Docs
 title: Authentication
 description: Integrate SendGrid into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 6
 parent: Back to Element Guides

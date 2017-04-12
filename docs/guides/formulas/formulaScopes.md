@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formulas Step Scope | Formulas Scope | Cloud Elements Formulas Scope
 title: Formula Step Scope
 description: Understand the scopes different steps produce.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

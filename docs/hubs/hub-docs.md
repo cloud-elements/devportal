@@ -3,7 +3,7 @@ heading: Hub APIs
 seo: Hub APIs | Cloud Elements API Docs
 title: Hub APIs
 description: Find API documentation on all of the currently supported Hub APIs.
-layout: hubs
+layout: sidebarelementtile
 order: 90
 ---
 

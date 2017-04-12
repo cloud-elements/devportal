@@ -3,7 +3,7 @@ heading: Dropbox Business
 seo: Overview | Dropbox Business | Cloud Elements API Docs
 title: Overview
 description: Integrate Dropbox Business into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1780
 parent: Back to Element Guides

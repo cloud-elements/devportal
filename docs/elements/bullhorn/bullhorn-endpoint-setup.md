@@ -3,7 +3,7 @@ heading: Bullhorn CRM
 seo: Endpoint Setup | Bullhorn CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Bullhorn CRM into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1702
 parent: Back to Element Guides

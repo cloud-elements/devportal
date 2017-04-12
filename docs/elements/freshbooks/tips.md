@@ -3,7 +3,7 @@ heading: FreshBooks
 seo: Tips | FreshBooks | Cloud Elements API Docs
 title: Tips
 description: FreshBooks FAQ.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides

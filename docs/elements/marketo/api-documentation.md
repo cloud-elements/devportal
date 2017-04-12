@@ -3,7 +3,7 @@ heading: Marketo
 seo: API Docs | Marketo | Cloud Elements API Docs
 title: API Docs
 description: Marketo API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 85
 parent: Back to Element Guides

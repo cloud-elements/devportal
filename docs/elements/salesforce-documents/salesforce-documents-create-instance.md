@@ -3,7 +3,7 @@ heading: Salesforce Documents
 seo: Create Instance | Salesforce Documents | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 177
 parent: Back to Element Guides

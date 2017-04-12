@@ -3,7 +3,7 @@ heading: Dropbox
 seo: Create Instance | Dropbox | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides

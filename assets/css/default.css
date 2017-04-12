@@ -1,0 +1,31 @@
+.button-row {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.section-button{
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  background: #FF4E4E;
+  border-radius: 6px;
+  width: auto;
+  padding: 0 30px;
+  height: 6rem;
+  margin: 30px;
+  color: #fff;
+  border:none;
+}
+
+.section-button:hover {
+  color: #fff;
+}
+
+.section-button:visited {
+  color: #fff;
+}

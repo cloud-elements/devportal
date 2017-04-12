@@ -3,7 +3,7 @@ heading: ePages
 seo: Endpoint Setup | ePages | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate ePages into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

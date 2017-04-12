@@ -3,7 +3,7 @@ heading: Element Loader
 seo: Bulk Data Migration | Element Loader | Cloud Elements API Docs
 title: Bulk Data Migration
 description: Element Loader Bulk Data Migration.
-layout: docs
+layout: sidebarleft
 order: 6
 ---
 
