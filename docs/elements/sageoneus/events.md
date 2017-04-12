@@ -3,7 +3,7 @@ heading: Sage One US
 seo: Events | Sage One US | Cloud Elements API Docs
 title: Events
 description: Enable Sage One US events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 653
 parent: Back to Element Guides

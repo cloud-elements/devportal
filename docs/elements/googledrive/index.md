@@ -3,7 +3,7 @@ heading: Google Drive
 seo: Overview | Google Drive | Cloud Elements API Docs
 title: Overview
 description: Integrate Google Drive into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides

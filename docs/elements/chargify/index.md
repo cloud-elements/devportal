@@ -3,7 +3,7 @@ heading: Chargify
 seo: Overview | Chargify | Cloud Elements API Docs
 title: Overview
 description: Integrate Chargify into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

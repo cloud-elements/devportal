@@ -3,7 +3,7 @@ heading: Sage Live
 seo: Events | Sage Live | Cloud Elements API Docs
 title: Events
 description: Enable Sage Live events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 676
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Dropbox Business
 seo: Tips | Dropbox Business | Cloud Elements API Docs
 title: Tips
 description: Tips regarding the Dropbox Business Element.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1780
 parent: Back to Element Guides

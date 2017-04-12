@@ -3,7 +3,7 @@ heading: Cloud Storage APIs
 seo: Cloud Storage API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Cloud Storage Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: documents
 breadcrumbs: /docs/hubs/hub-docs.html

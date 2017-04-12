@@ -3,7 +3,7 @@ heading: Ecwid
 seo: Overview | Ecwid | Cloud Elements API Docs
 title: Overview
 description: Integrate Ecwid into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 52
 parent: Back to Element Guides

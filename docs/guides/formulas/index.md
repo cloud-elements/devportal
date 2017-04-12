@@ -3,7 +3,7 @@ heading: Formulas
 seo: Overview | Formulas | Cloud Elements API Docs
 title: Overview
 description: Formula Overview
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

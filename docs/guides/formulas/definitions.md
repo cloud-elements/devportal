@@ -3,7 +3,7 @@ heading: Formulas
 seo: Terminology | Formulas Terminology | Cloud Elements Formula Definitions
 title: Definitions
 description: What are Formulas and how do they work?
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

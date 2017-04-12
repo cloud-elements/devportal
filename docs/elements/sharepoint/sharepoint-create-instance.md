@@ -3,7 +3,7 @@ heading: Sharepoint 2013
 seo: Create Instance | Sharepoint 2013 | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 30
 parent: Back to Element Guides

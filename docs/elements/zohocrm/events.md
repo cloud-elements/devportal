@@ -3,7 +3,7 @@ heading: Zoho CRM
 seo: Events | Zoho CRM | Cloud Elements API Docs
 title: Events
 description: Enable Zoho CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 44
 parent: Back to Element Guides

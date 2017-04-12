@@ -1,9 +1,9 @@
 ---
 heading: InfoBip
 seo: Query Language | InfoBip | Cloud Elements API Docs
-title: Cloud Elements Query Language
+title: Querying
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 37
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Taxify
 seo: Overview | Taxify | Cloud Elements API Docs
 title: Overview
 description: Integrate Taxify into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 320
 parent: Back to Element Guides

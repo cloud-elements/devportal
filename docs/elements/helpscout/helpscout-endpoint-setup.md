@@ -3,7 +3,7 @@ heading: Help Scout
 seo: Endpoint Setup | Help Scout | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Help Scout into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 338
 parent: Back to Element Guides

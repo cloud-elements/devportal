@@ -3,7 +3,7 @@ heading: Dropbox
 seo: Events | Dropbox | Cloud Elements API Docs
 title: Events
 description: Enable Dropbox events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides

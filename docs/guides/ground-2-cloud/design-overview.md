@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Design Overview | Ground2Cloud | Cloud Elements API Docs
 title: Design Overview
 description: Visual workflow about how Ground2Cloud works.
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 3

@@ -3,7 +3,7 @@ heading: Salesforce Marketing Cloud Beta
 seo: Endpoint Setup | Salesforce Marketing Cloud | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1357
 parent: Back to Element Guides

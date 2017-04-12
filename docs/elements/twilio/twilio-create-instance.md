@@ -3,7 +3,7 @@ heading: Twilio SMS
 seo: Create Instance | Twilio SMS | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 7
 parent: Back to Element Guides

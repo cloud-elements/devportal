@@ -3,7 +3,7 @@ heading: Etsy
 seo: Events | Etsy | Cloud Elements API Docs
 title: Events
 description: Enable Etsy events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 128
 parent: Back to Element Guides

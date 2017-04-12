@@ -3,7 +3,7 @@ heading: Infusionsoft Marketing Beta
 seo: Endpoint Setup | Infusionsoft Marketing | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 192
 parent: Back to Element Guides

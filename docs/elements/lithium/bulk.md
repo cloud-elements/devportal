@@ -3,7 +3,7 @@ heading: Lithium Response
 seo: Bulk APIs | Lithium Response | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 814
 parent: Back to Element Guides

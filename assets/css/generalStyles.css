@@ -1,0 +1,11 @@
+.pageContainer {
+  padding-left: 0px;
+  padding-top: 0px;
+}
+
+.sidebar {
+  padding:50px 30px;
+  background: #f3f3f4;
+  /*position: absolute;*/
+  height: 100vh;
+}

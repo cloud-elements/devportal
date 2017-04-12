@@ -3,7 +3,7 @@ heading: Marketo
 seo: Endpoint Setup | Marketo | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 85
 parent: Back to Element Guides

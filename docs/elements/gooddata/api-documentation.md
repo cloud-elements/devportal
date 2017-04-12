@@ -3,7 +3,7 @@ heading: GoodData
 seo: API Docs | GoodData | Cloud Elements API Docs
 title: API Docs
 description: GoodData API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 1469
 parent: Back to Element Guides

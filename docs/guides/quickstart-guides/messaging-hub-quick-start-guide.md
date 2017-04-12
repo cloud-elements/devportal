@@ -3,7 +3,7 @@ heading: Hub Level Documentation
 seo: Messaging Hub Quick Start Guide | Cloud Elements API Docs
 title: Messaging Hub Quick Start Guide
 description: Get up and running with the Messaging Hub.
-layout: docs
+layout: sidebarelementdoc
 order: 4
 redirect_from:
   - /docs/getstarted/quickstart-guides/messaging-hub-quick-start-guide.html
