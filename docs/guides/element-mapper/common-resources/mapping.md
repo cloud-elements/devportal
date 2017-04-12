@@ -1,7 +1,7 @@
 ---
 heading: Common Resources
 seo: Creating Transformations | Common Resources | Cloud Elements API Docs
-title: Creating Transformation
+title: Creating Transformations
 description: Creating Transformations
 layout: docs
 apis: API Docs
@@ -14,12 +14,12 @@ order: 20
 # Creating Transformations
 
 A transformation is the result of the process of mapping fields and objects in your element instances to existing fields and objects in a
-  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>.
+  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>. After you create a common resource, you will select an element instance, choose the resource containing the objects that you want to map to the common resource, and map fields to the common resource. The end result is a a transformation of the selected objects in the element instance.
 
-In addition to the basic object mapping described in [Create a New Common Resource](#create-a-new-common-resource), you can use the transformations page to fine tune your common resources. This section describes more advanced activities that you can do to fine tune your common resources, deal with more difficult objects, manage what appears in your payloads, and more.
 
-In this section:
+__On this page__
 
+* [Map Resources for Transformation](#map-resources-for-transformation)
 * [Use Javascript to Manage Complex Objects](#usejavascript-to-manage-complex-objects)
 * [Transforming Custom Objects](#transforming-custom-objects)
 * [Removing Fields During Transformation](#removing-fields-during-transformation)
@@ -27,6 +27,70 @@ In this section:
 * [Testing Your Transformations](#testing-your-transformations)
 * [Adding Your Common Resource to the API Docs](#adding-your-common-resource-to-the-api-docs)
 * [Working With Arrays](#working-with-arrays)
+
+## Map Resources for Transformation
+
+Before you can transform fields, you need to map the fields for each element instance to the common resource. The common resource fields are on the left and the element instance fields are on the right. We provide a default __id__ field, which you can choose to map to an element instance ID, delete, or rename to an entirely different field. You can map fields one at a time, or you can add several fields to the common resource at one time and map them later.
+
+This section describes creating a common resource at the organization level. You must be an organization level user to create a common resource. Users within your organization can use this common resource for configuring transformations at the instance level. For more about account and instance level transformations, see [Mapping Account Level Transformations](#mapping-account-level-transformations) or [Mapping Instance Level transformations](#mapping-account-level-transformations)
+
+__Note:__ To map element instances to a common resource, you need to already have element instance ready to map.
+
+These instructions describe mapping a single field at a time. However, you can approach mapping fields in different ways. For example, you can add several fields all at once without mapping them.
+
+To map fields:
+
+1. On the Common Resources > Transformations page, click  __Create New Transformation__.
+![Create New Transformation](img/Transformations-Page.png)
+
+1. Select the Element Instance, and then select the Element Instance Resource.
+
+    The Resources available to that Element Instance appear in the Element Instance Resources column after you select a resource.
+  	![Chooser](img/Chooser.png)
+
+1. Beginning with the default field __id__, select an instance resources on the right to map to the common resource on the left.
+
+    __Note__: If you created a resource based on an existing resource, you will see more fields than just the __id__ field. Start with the first one in your list.
+
+    __Note__: If you want to change the name of the default Organization Level Field (or any field), click the __Field Name__ and overwrite it.
+
+    For example, select an ID field in your instance resource to map to the default __id__ field.
+    ![Mapped id](img/Mapped-id.png)
+
+1. Click <img src="img/btn-Add-Field.png" alt="Alt Text" class="inlineImage"> for the Organization Level Fields to add another field.
+
+    __Note__:You can add fields at the account and instance level also, but these steps focus on creating an organization level common resource. For more information, see [Mapping Fields for Accounts](#mapping-fields-for-accounts) or [Mapping Instance Level transformations](#mapping-account-level-transformations).
+
+1. Enter a name for the field, and then choose the data type.
+1. Select the corresponding Instance Resource on the right to map to the new field.
+
+    __Note__: You can type to filter.
+![Filtering Resources](img/gif-filter.gif)
+
+1. Continue adding resources until you’re complete, and then click __Save__.
+3. To map another instance, click the common resource name in the breadcrumbs at the top of the page.
+
+### Tips
+
+* You don't have to map fields one at a time. You can add multiple fields to the Common Resources side at once, and then map them later. Use <img src="img/btn-Filter.png" alt="Filter" class="inlineImage"> to show only those element instance resource fields that haven't been mapped.
+* If you made a mistake and don't want to include a field in a common resource, click <img src="img/btn-Delete.png" alt="Delete" class="inlineImage">. If you still want the field, but want to remove the mapping, click <img src="img/btn-Clear.png" alt="Clear" class="inlineImage">.
+* If you need to map a custom field, click <img src="img/btn-Free-Text.png" alt="Free Text Button" class="inlineImage">, and then type a name. See [Advanced Common Resources: Transforming Custom Resources](advanced.html#transforming-custom-resources) for details.
+* We use dot notation to show arrays in the element instance resources. If you need to create arrays in your common resource, use dot notation. Examples include address.city, address.state, and address.street. See [Advanced Common Resources: Working With Arrays](advanced.html#working-with-arrays) for details.
+
+## Mapping Fields for Accounts
+
+Users at the organization level can map fields to organizations or to specific accounts.
+
+To map fields to a specific account:
+
+* Click <img src="img/btn-Add-Field.png" alt="Add Account Field" class="inlineImage"> for the Account Level Fields.
+
+    or
+
+* Click the arrow next to the fields to demote the field from the organization level to the account level.
+
+    ![Demote](img/gif-Demote.gif)
+
 
 ## Use Javascript to Manage Complex Objects
 
