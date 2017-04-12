@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Steps | Formula Step Types | Cloud Element Formulas
 title: Formula Step Types
 description: An overview of all the available formula steps
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
