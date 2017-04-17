@@ -3,7 +3,7 @@ heading: Salesforce CRM
 seo: Tips | Salesforce CRM | Cloud Elements API Docs
 title: Tips
 description: Salesforce CRM Tips
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides

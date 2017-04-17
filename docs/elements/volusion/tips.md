@@ -3,7 +3,7 @@ heading: Volusion
 seo: Tips | Volusion | Cloud Elements API Docs
 title: Tips
 description: Tips regarding the Volusion Element.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 51
 parent: Back to Element Guides
