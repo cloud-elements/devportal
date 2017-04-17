@@ -13,6 +13,7 @@ Installing Jekyll is easy and straight-forward, but there are a few requirements
 * Linux, Unix, or macOS
 * [NodeJS](https://nodejs.org/), or another JavaScript runtime (Jekyll 2 and earlier, for CoffeeScript support).
 * [Python 2.7](https://www.python.org/downloads/) (for Jekyll 2 and earlier)
+* [Bundler](http://bundler.io/)
 
 The master branch is continuously deployed to production.
 
