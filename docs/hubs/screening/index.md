@@ -3,7 +3,7 @@ heading: Screening APIs
 seo: Screening Hub Overview | Cloud Elements API Docs
 title: Overview
 description: Find API documentation and example API calls.
-layout: docs
+layout: sidebarleft
 platform: screening
 breadcrumbs: /docs/hubs/hub-docs.html
 parent: Back to Hub Docs

@@ -3,7 +3,7 @@ heading: Base CRM
 seo: Create Instance | Base CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 201
 parent: Back to Element Guides

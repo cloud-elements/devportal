@@ -3,7 +3,7 @@ heading: FreshBooks
 seo: Endpoint Setup | FreshBooks | Cloud Elements API Docs
 title: Register as a Consumer
 description: Register as a Consumer
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 172
 parent: Back to Element Guides

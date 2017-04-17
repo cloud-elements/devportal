@@ -3,7 +3,7 @@ heading: Element Builder
 seo: Enhance Element via Element Builder UI | Element Builder | Cloud Elements API Docs
 title: Enhance Element via Element Builder UI
 description: Enhance existing Elements via the the Element Builder UI.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html

@@ -3,7 +3,7 @@ heading: Act-On
 seo: Authentication | Act-On | Cloud Elements API Docs
 title: Authentication
 description: Integrate Act-On into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 45
 parent: Back to Element Guides

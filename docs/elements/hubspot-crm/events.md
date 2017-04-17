@@ -3,7 +3,7 @@ heading: HubSpot CRM
 seo: Events | HubSpot CRM | Cloud Elements API Docs
 title: Events
 description: Enable HubSpot CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 168
 parent: Back to Element Guides

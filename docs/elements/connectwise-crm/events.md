@@ -3,7 +3,7 @@ heading: ConnectWise CRM
 seo: Events | ConnectWise CRM | Cloud Elements API Docs
 title: Events
 description: Enable ConnectWise CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 198
 parent: Back to Element Guides

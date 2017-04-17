@@ -3,7 +3,7 @@ heading: Twitter
 seo: Overview | Twitter | Cloud Elements API Docs
 title: Overview
 description: Integrate Twitter into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1359
 parent: Back to Element Guides

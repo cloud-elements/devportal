@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Managing Ground2Cloud | Ground2Cloud | Cloud Elements API Docs
 title: Managing Ground2Cloud
 description: Information about how to manage Ground2Cloud.
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 7

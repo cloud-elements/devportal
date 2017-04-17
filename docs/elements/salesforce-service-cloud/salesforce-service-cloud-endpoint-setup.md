@@ -3,7 +3,7 @@ heading: Salesforce Service Cloud
 seo: Endpoint Setup | Salesforce Service Cloud | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 29
 parent: Back to Element Guides

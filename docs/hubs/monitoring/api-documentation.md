@@ -3,7 +3,7 @@ heading: Monitoring APIs
 seo: Monitoring API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Monitoring Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: monitoring
 breadcrumbs: /docs/hubs/hub-docs.html

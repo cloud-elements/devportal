@@ -3,7 +3,7 @@ heading: HubSpot CRM
 seo: Endpoint Setup | HubSpot CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 168
 parent: Back to Element Guides

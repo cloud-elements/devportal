@@ -3,7 +3,7 @@ heading: DocuSign
 seo: Events | DocuSign | Cloud Elements API Docs
 title: Events
 description: Enable DocuSign events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 158
 parent: Back to Element Guides

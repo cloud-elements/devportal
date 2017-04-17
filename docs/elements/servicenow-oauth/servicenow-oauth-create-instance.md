@@ -3,7 +3,7 @@ heading: ServiceNow OAuth Beta
 seo: Create Instance | ServiceNow OAuth | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 566
 parent: Back to Element Guides

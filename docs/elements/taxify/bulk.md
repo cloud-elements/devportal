@@ -3,7 +3,7 @@ heading: Taxify
 seo: Bulk APIs | Taxify | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 320
 parent: Back to Element Guides

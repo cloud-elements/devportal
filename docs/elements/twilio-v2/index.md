@@ -3,7 +3,7 @@ heading: Twilio SMS V2
 seo: Overview | Twilio SMS V2 | Cloud Elements API Docs
 title: Overview
 description: Integrate Twilio SMS V2 into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 503
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: ePages
 seo: Overview | ePages | Cloud Elements API Docs
 title: Overview
 description: Integrate ePages into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1595
 parent: Back to Element Guides

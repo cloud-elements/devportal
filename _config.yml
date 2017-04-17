@@ -19,3 +19,24 @@ url: https://developers.cloud-elements.com
 gems:
   - jekyll-redirect-from
   - jekyll-youtube
+  - algoliasearch-jekyll
+
+algolia:
+  application_id: 'G8W6UO94HX'
+  index_name:     'developer_portal_pages'
+  settings:
+    attributesToIndex:
+      - title
+      - heading
+      - seo
+      - description
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - unordered(text)
+      - unordered(tags)
+
+console: 'the UI'

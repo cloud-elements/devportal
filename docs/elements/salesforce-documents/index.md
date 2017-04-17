@@ -3,7 +3,7 @@ heading: Salesforce Documents
 seo: Overview | Salesforce Documents | Cloud Elements API Docs
 title: Overview
 description: Integrate Salesforce Documents into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 177
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: HireRight
 seo: Create Instance | HireRight | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 277
 parent: Back to Element Guides

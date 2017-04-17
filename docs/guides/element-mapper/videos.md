@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Videos | Element Mapper | Cloud Elements API Docs
 title: Videos
 description: Videos walking through the different features of Element Mapper.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

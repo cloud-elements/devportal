@@ -3,7 +3,7 @@ heading: ServiceMax
 seo: Overview | ServiceMax | Cloud Elements API Docs
 title: Overview
 description: Integrate ServiceMax into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 169
 parent: Back to Element Guides

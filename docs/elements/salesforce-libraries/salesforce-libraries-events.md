@@ -3,7 +3,7 @@ heading: Salesforce Libraries
 seo: Events | Salesforce Libraries | Cloud Elements API Docs
 title: Events
 description: Enable Salesforce Libraries events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 438
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Common Resources
 seo: Javascript Examples | Common Resources | Cloud Elements API Docs
 title: Javascript Examples
 description: Advanced Common Resources
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
