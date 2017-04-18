@@ -1,8 +1,8 @@
 ---
 heading: Element Mapper
-seo: How It Works | Element Mapper | Cloud Elements API Docs
-title: How It Works
-description: What is Element Mapper and how does it work?
+seo: Definitions | Element Mapper | Cloud Elements API Docs
+title: Definitions
+description: What are the terms I need to understand for Element Mapper?
 layout: sidebarleft
 apis: API Docs
 platform: organizations
@@ -11,13 +11,13 @@ parent: Back to Guides
 order: 2
 ---
 
-# How It Works
+# Definitions
 There are a few different terms you should become familiar with in order to better grasp Element Mapper.
 
-# Terminology: Object Definition
-The first term is called an "Object Definition".  This simply refers to the standard, canonical object that your application knows about, with each field and field type defined.  Element Mapper then uses your defined object definitions to go about mapping your canonical object definition to the endpoint-specific object.  
+# Object Definition
+The first term is called an "Object Definition".  This simply refers to the standard, canonical object that your application knows about, with each field and field type defined.  Element Mapper then uses your defined object definitions to go about mapping your canonical object definition to the endpoint-specific object.
 
-# Terminology: Transformation
+# Transformation
 A transformation refers to the mapping between one of your object definitions and an endpoint's object.  A transformation is specific to an Element or, potentially, an Element Instance if there are custom fields you want to transform.
 
 # Inheritance

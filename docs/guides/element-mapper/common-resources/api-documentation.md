@@ -1,8 +1,8 @@
 ---
-heading: Element Mapper
+heading: Common Resources
 seo: API Docs | Element Mapper | Cloud Elements API Docs
-title: Transformations API Reference
-description: Element Mapper API Documentation.
+title: Common Resources & Transformations API Reference
+description: Common Resources & Transformations API Documentation.
 layout: sidebarapidocs
 apis: API Docs
 platform: organizations

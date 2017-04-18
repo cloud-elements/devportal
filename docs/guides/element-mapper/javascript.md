@@ -1,20 +1,17 @@
 ---
 heading: Element Mapper
-seo: Getting Started | Element Mapper | Cloud Elements API Docs
-title: Getting Started
-description: Get up and running with Element Mapper UI.
+seo: Using Javascript | Element Mapper | Cloud Elements API Docs
+title: Using Javascript
+description: Get up and running with Using Javascript.
 layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 3
+order: 5
 ---
 
-# Getting Started
-Before using Element Mapper, it is good to know a few things about how Element Mapper works:
-
-# Javascript
+# Using Javascript
 
 Element Mapper supports writing custom Javascript for the use cases where the basic mapping of data does not provide enough functionality.  The function signature for any JS in transformations looks like:
 
@@ -49,8 +46,8 @@ __Libraries__
  * `CE.b64(str)`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
  * `CE.decode64(str)`: Decode a string from base64, using UTF-8 encoding. Takes a `string` as a parameter. Returns a `string`.
  * `CE.hmac(algo)(enc)(secret, str)`: HMAC hash a string (_str_) using the provided secret (_secret_), algorithm (_algo_), and encoding (_enc_). See https://nodejs.org/api/crypto.html#crypto_class_hmac for more information about the algorithm and encoding parameters.
- * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:  
- _algo_: `Sha1`, `Sha256`, `Md5`  
+ * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:
+ _algo_: `Sha1`, `Sha256`, `Md5`
  _enc_: `Hex`, `base64`
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 * Util: The standard Node `util` library. To use, `require` it in your script.

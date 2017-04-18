@@ -48,15 +48,13 @@ curl -X GET \
   -H 'content-type: application/json'
 ```
 
-## Map Resources for Transformation
+## Map Resources to Create a Default Transformation
 
-There are several api calls to map resources. This section describes creating an orgaization level default transformations. Later sections show how map account and instance level Transformations.
-
-This section describes mapping to a common resource at the organization level.
+Cloud Elements provides several APIs to map resources. This section describes mapping fields for an organization-level default transformation. The result is a default transformation for all instances of a specific element.
 
 To map fields:
 
-1. Construct a JSON body as shown below (see [Transformation JSON Parameters](#transformation-json-parameters)):
+1. Construct a JSON body as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
 
           {
             "level": "organization",
@@ -84,7 +82,126 @@ To map fields:
 | level |  The access level of the transformation, either `organization`, `account`, or `instance`.  | Y </br>If not included, `organization` is the default. |
 | vendorName | The name of the resource that contains the fields that you want to map to the common resource. | N |
 | fields |  An object containing the field names and data types of the common resource and the vendor resource. </br>{% include tip.html content="To get a list of fields in a resource, call `GET hubs/{hub}/objects/{RESOURCE}/metadata`." %} | N |
-|  path | The name of the field in the common resource. | Y |
+| path | The name of the field in the common resource. | Y |
 | vendorPath | The name of the field in the vendor resource. | Y |
 | type | The data type of the field in the common resource. </br>Data types can be `boolean`, `string`, `date`, and `number`. | N |
-| vendorType | The data type of the field in the common resource. | N |
+| vendorType | The data type of the field at the vendor. Unless the format is `date`, you do not need to include this parameter. If the format is `date`, also include a mask.  | N |
+
+### cURL Example
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/myContacts \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "level": "organization",
+  "vendorName": "Contact",
+  "fields": [
+    {
+      "type": "string",
+      "path": "FirstName",
+      "vendorPath": "FirstName",
+    },
+    {
+      "type": "string",
+      "path": "id",
+      "vendorPath": "Id",
+    },
+    {
+      "type": "string",
+      "path": "LastName",
+      "vendorPath": "LastName",
+    },
+    {
+      "type": "date",
+      "path": "birthdate",
+      "vendorPath": "Birthdate",
+      "vendorType": "date",
+      "configuration": [
+        {
+          "properties": {
+            "pattern": "yyyy-mm-dd"
+          }
+        }
+      ]
+    }
+  ]
+}'
+```
+
+## Map Resources to Instances and Accounts
+
+Using the Cloud Elements `instances` and `accounts` endpoints, you can map resources to different levels using the following API calls:
+
+* `POST /instances/{id}/transformations/{objectName}`
+* `POST /accounts/{id}/transformations/{objectName}`
+
+
+
+## Map Resources to Multiple Levels
+
+
+
+## Map Resources to Accounts
+
+
+
+
+## Working with Date Type Fields
+
+aksdjkjdsklfja
+
+## Using Regular Expressions
+
+You can use regular expressions as values for the JSON body parameters.
+
+Examples:
+
+* Get the value of the name field from the Products array where id = 4.
+
+        "fields": [
+        {
+         "path": "AppleIpadName",
+         "vendorPath": "Products[id=4].name"
+        },
+
+* Get the value of the name field from the Products array where id = 2.
+
+        "fields": [
+        {
+         "path": "AppleNewProductName",
+         "vendorPath": "details.Products[?(@.id==2)].name"
+        }
+
+* Get the touchId value from the Products array with id=2 which is inside the features object.
+
+        "fields": [
+         {
+          "path": "AppleTouchProductId",
+          "vendorPath": "Products[?(@.features.touchId==true)].id"
+         }
+
+* Get the Id of the array where touchId = true.
+
+         "fields": [
+         {
+           "path": "AppleTouchProductId",
+           "vendorPath": "Products[?(@.features.touchId==true)].id"
+         }
+
+* Get the Id value of the Products array at index 0.
+
+         "fields": [
+         {
+           "path": "AppleProductId",
+           "vendorPath": "Products[0].id"
+         }
+
+* Get a count of the Products array.
+
+         "fields": [
+         {
+           "path": "AppleProductsCount",
+           "vendorPath": "Products[*].size()" 
+         }

@@ -23,6 +23,7 @@ __On this page__
 * [Map Resources for Transformation](#map-resources-for-transformation)
 * [Use Javascript to Manage Complex Objects](#usejavascript-to-manage-complex-objects)
 * [Transforming Custom Objects](#transforming-custom-objects)
+* [Transforming Data Types](#transforming-data-types)
 * [Removing Fields During Transformation](#removing-fields-during-transformation)
 * [Setting Default Values](#setting-default-values)
 * [Testing Your Transformations](#testing-your-transformations)
@@ -92,6 +93,8 @@ To map fields:
 
 You can use custom Javascript when the basic object mapping does not meet your needs. For example, you might need to break a single address object into its component parts (address.city, address.state, address.street, and address.zip).
 
+{% include note.html content=" <ul><li>For all scripts, Javascript `strict` mode is enforced. </li><li>ES6 is supported. </li><li>The function parameters are immutable, meaning they cannot be assigned to directly. To change an object or value passed into the function, first copy it to your own local variable, and then make the necessary changes.</li></ul>" %}
+
 To access the custom Javascript functionality:
 
 * Click   <img src="img/btn-Custom-JS.png" alt="Custom JS" class="inlineImage">.
@@ -105,7 +108,22 @@ Common resource functions include the parameters and functions in the following 
 | transformedObject  |  The transformed object, with any mappings already taking place.  |
 | originalObject  | The original object, with no transformations or mappings taking place on it. |
 | fromVendor  | Is the transformation being executed coming back from the vendor (on an API response) ? |
-| done |   The callback function needed to call at the end of your JS. |
+| done |   The callback function needed to call at the end of your JS. Call `done` to terminate a given step.  |
+
+### Libraries
+
+* CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
+ * `CE.randomString()`: Generate a random string (approx. 10 characters long).
+ * `CE.randomEmail()`: Generate a random email address.
+ * `CE.md5(str)`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
+ * `CE.b64(str)`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
+ * `CE.decode64(str)`: Decode a string from base64, using UTF-8 encoding. Takes a `string` as a parameter. Returns a `string`.
+ * `CE.hmac(algo)(enc)(secret, str)`: HMAC hash a string (_str_) using the provided secret (_secret_), algorithm (_algo_), and encoding (_enc_). See https://nodejs.org/api/crypto.html#crypto_class_hmac for more information about the algorithm and encoding parameters.
+ * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:
+ _algo_: `Sha1`, `Sha256`, `Md5`
+ _enc_: `Hex`, `base64`
+* Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
+* Util: The standard Node `util` library. To use, `require` it in your script.
 
 ### Examples
 
@@ -163,6 +181,18 @@ To remove fields from requests or responses:
     For example, in the following configuration, we remove the portal-id field from the response.
     ![Removed field from response](img/Remove-Fields.png)
 
+## Transforming Data Types
+
+You can transform the data types on vendor objects. In most cases, you only need to select a new data type, but for dates you also provide a mask, or date format.
+
+To change data types:
+
+1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
+2. Select a type from the list.
+3. If you select date, add a date format to the Date Mask.
+
+![Data Type](img/gif-Type.gif)
+
 
 ## Setting Default Values
 
@@ -208,7 +238,7 @@ Try it out:
 The list of resources is in alphabetical order, so the example myContact in this guide is after the `leads` resource:
 ![myContact in API docs](img/api-docs.png)
 
-## Working with Arrays
+## Working with Nested Objects
 
 We display object arrays in dot notation. You can also use dot notation to nest objects in your common resource. For example, you might want to create nested address fields like those shown in the example below:
 

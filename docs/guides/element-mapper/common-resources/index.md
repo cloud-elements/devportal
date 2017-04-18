@@ -18,6 +18,8 @@ redirect_from:
 
 With  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resources</a>, you can <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.transformation}}">transform</a> data objects and fields provided by your vendors to a single, normalized resource at Cloud Elements. Common resources enable you to take advantage of our <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.one-to-many}}">one-to-many</a> integration approach by making API calls to a single resource that describes similar resources at all of your vendors.
 
+      {% include note.html content="Common resources are not available for elements in the Cloud Storage & Documents and Messaging hubs." %}
+
 __On this page__
 
 * [Example](#example)
