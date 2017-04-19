@@ -16,4 +16,4 @@ The Tips section includes more information about the element including FAQs, end
 
 ### Search
 
-{% include netsuite/searchtip.md %}
+{% include netsuite/tips.md %}
