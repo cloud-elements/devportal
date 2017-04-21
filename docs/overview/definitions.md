@@ -43,7 +43,7 @@ An Element Instance is an Element that is authenticated to a specific user accou
 instance can access all of the objects, fields and data for that account - including custom data. An instance is created
 when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials
 for that Element, and optionally add configuration for events. An Element Instance represents a connection
-to a single authenticated account at the target endpoint such as a Salesforce, Marketo, or Netsuite. 
+to a single authenticated account at the target endpoint such as a Salesforce, Marketo, or Netsuite.
 
 ## Transformation
 
@@ -60,7 +60,7 @@ The Transformation APIs allow you to:
 * map custom data fields to and from the format that your application uses and expects
 * programmatically persist and maintain transformations for each of your client’s CRM, Marketing, and Help Desk services
 
-## Bullk API and CEQL
+## Bulk API and CEQL
 
 __Cloud Element Bulk API__ calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once.
 
