@@ -3,7 +3,7 @@ heading: NetSuite 2016 Human Capital
 seo: Events | NetSuite 2016 Human Capital | Cloud Elements API Docs
 title: Events
 description: Enable NetSuite 2016 Human Capital events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1688
 parent: Back to Element Guides
