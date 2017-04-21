@@ -19,7 +19,7 @@ order: 20
 __On this page__
 
 * [Map Resources for Transformation](#map-resources-for-transformation)
-* [Use Javascript to Manage Complex Objects](#usejavascript-to-manage-complex-objects)
+* [Use Javascript to Manage Complex Objects](#use-javascript-to-manage-complex-objects)
 * [Transforming Custom Objects](#transforming-custom-objects)
 * [Transforming Data Types](#transforming-data-types)
 * [Removing Fields During Transformation](#removing-fields-during-transformation)
@@ -145,6 +145,15 @@ Common resource functions include the parameters and functions in the following 
     done(transformedObject);
   }
     ```
+
+* Combining FirstName and LastName fields.
+
+```javascript
+function (originalObject, transformedObject, fromVendor, done) {
+if transformedObject.Name = originalObject.FirstName + '  ' + originalObject.LastName;
+done(transformedObject);
+}
+```
 
 ## Transforming Custom Objects
 
