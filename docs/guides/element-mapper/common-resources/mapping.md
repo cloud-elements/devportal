@@ -1,7 +1,7 @@
 ---
 heading: Creating Resources
 seo: Mapping Fields to Common Resources | Common Resources | Cloud Elements API Docs | Transformations |
-title: Mapping Fields to Common Resources
+title: Transforming Fields
 description: Creating Transformations
 layout: sidebarleft
 restContentVersion: mappingapi
@@ -12,11 +12,9 @@ parent: Back to Guides
 order: 20
 ---
 
-# Mapping Fields to Common Resources
+# Transforming Fields
 
-A transformation is the result of the process of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.map}}">mapping</a> fields in your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance-resource}}">element instance resources</a> to existing fields and objects in a
-  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>. After you create a common resource, you will select an element instance, choose the resource containing the objects that you want to map to the common resource, and map fields to the common resource. The end result is a a transformation of the selected objects in the element instance.
-
+{% include common-resources/map.md%}
 
 __On this page__
 
@@ -31,7 +29,7 @@ __On this page__
 * [Working With Arrays](#working-with-arrays)
 * [Access Levels and Transformations](#access-levels-and-transformations)
 
-## Select an Element Instances to Transform
+## Select an Element Instance to Transform
 
 After you create a common resource, the next step is to map element resource fields to the common resource to create a transformation.
 

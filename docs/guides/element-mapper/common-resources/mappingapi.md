@@ -1,7 +1,7 @@
 ---
 heading: Creating Resources
 seo: Creating Transformations | Common Resources | Cloud Elements API Docs
-title: Mapping Fields to Common Resources via API
+title: Transforming Fields via API
 description: Creating Transformations
 layout: sidebarleft
 uiContentVersion: mapping
@@ -12,18 +12,19 @@ parent: Back to Guides
 order: 21
 ---
 
-# Mapping Fields to Common Resources via API
+# Transforming Fields via API
+
+{% include common-resources/map.md%}
 
 You can test the APIs described in this section using our interactive documentation. Open {{site.console}}, and then click <img src="img/btn-Code.png" alt="Custom JS" class="inlineImage"> in the header. Under Platform API Documentation, open `organizations` for common resources and transformations .
-
-A transformation is the result of the process of <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.map}}">mapping</a> fields in your <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance-resource}}">element instance resources</a> to existing fields and objects in a
-  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>. After you create a common resource, you will select an element instance, choose the resource containing the objects that you want to map to the common resource, and map fields to the common resource. The end result is a a transformation of the selected objects in the element instance.
-
 
 __On this page__
 
 * [Retrieve a List of Common Resources](#retrieve-a-list-of-common-resources)
-* [Map Resources for Transformation](#map-resources-for-transformation)
+* [Map Resources to Create a Default Transformation](#map-resources-to-create-a-default-transformation)
+* [Map Resources to Multiple Levels](#map-resources-to-multiple-levels)
+* [Map Date Fields](#map-date-fields)
+* [Map Complex Resources](#transform-complex-resources)
 
 
 ## Retrieve a List of Common Resources
@@ -152,7 +153,7 @@ Using the Cloud Elements `instances` and `accounts` endpoints, you can map resou
 
 aksdjkjdsklfja
 
-## Using Regular Expressions
+## Map Complex Objects
 
 You can use regular expressions as values for the JSON body parameters.
 
@@ -203,5 +204,5 @@ Examples:
          "fields": [
          {
            "path": "AppleProductsCount",
-           "vendorPath": "Products[*].size()" 
+           "vendorPath": "Products[*].size()"
          }
