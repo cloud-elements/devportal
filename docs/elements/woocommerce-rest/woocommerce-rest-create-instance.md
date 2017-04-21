@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce
+heading: WooCommerce REST
 seo: Create Instance | WooCommerce | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate
