@@ -24,7 +24,7 @@ _Please_, feel free to make any contributions you feel will make Cloud Elements 
 ## Installation
 
 ```bash
-$ git clone git@github.com:cloud-elements/devportal.git
+$ git clone https://github.com/cloud-elements/devportal.git
 $ cd devportal
 $ bundle install
 ```
