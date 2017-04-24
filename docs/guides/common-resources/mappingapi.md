@@ -18,14 +18,7 @@ order: 21
 
 You can test the APIs described in this section using our interactive documentation. Open {{site.console}}, and then click <img src="img/btn-Code.png" alt="Custom JS" class="inlineImage"> in the header. Under Platform API Documentation, open `organizations` for common resources and transformations .
 
-__On this page__
-
-* [Retrieve a List of Common Resources](#retrieve-a-list-of-common-resources)
-* [Map Resources to Create a Default Transformation](#map-resources-to-create-a-default-transformation)
-* [Map Resources to Multiple Levels](#map-resources-to-multiple-levels)
-* [Map Date Fields](#map-date-fields)
-* [Map Complex Resources](#transform-complex-resources)
-
+{% include callout.html content="<strong>On this page</strong><br/><a href=#retrieve-a-list-of-common-resources>Retrieve a List of Common Resources</a><br/><a href=#map-resources-to-create-a-default-transformation>Map Resources to Create a Default Transformation</a><br/><a href=#map-resources-to-multiple-levels>Map Resources to Multiple Levels</a></br><a href=#map-date-fields>Map Date Fields</a></br><a href=#transform-complex-resources>Map Complex Resources</a>" type="primary" %}
 
 ## Retrieve a List of Common Resources
 
@@ -137,6 +130,20 @@ Using the Cloud Elements `instances` and `accounts` endpoints, you can map resou
 
 * `POST /instances/{id}/transformations/{objectName}`
 * `POST /accounts/{id}/transformations/{objectName}`
+
+To create an instance level common resource and map fields to it:
+
+1. Create the common resource. Make following API, replacing {id} with the instance or account id, and replacing {objectName} with the name of the common resource:
+
+        POST /instances/{id}/objects/{objectName}/definitions
+
+2. Map fields to the common resource. Make the following API call, depending on if you are working on the instance or account level:
+
+        POST /instances/{id}/transformations/objectName
+
+4. sdfgdfs
+
+
 
 
 

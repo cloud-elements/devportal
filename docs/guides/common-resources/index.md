@@ -20,11 +20,7 @@ With  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossar
 
 {% include note.html content="Common resources are not available for elements in the Cloud Storage & Documents and Messaging hubs." %}
 
-__On this page__
-
-* [Example](#example)
-* [Understanding Levels](#understanding-levels)
-* [Definition](#definitions)
+{% include callout.html content="<strong>On this page</strong><br/><a href=#example>Example</a><br/><a href=#understanding-levels>Understanding Levels</a><br/><a href=#definitions>Definitions</a>" type="info" %}
 
 ## Example
 A frequent example is to create a common resource to represent your `/contacts` for various CRMs, and then transform the `/contacts` resources from those CRMs. You know that you want your contacts to look a certain way, regardless of the CRM system. You want `FirstName`, `LastName`, and `Email`. But some elements call `FirstName` something else, like `FirstName`, `F_Name`, or `properties.firstname`. You need to create a single common resource with fields named `FirstName`, `LastName`, and `Email`. Then you can map all of the like fields from other elements to the fields in your common resource. We transform those mapped fields,  so you can write to a single API to integrate many services.

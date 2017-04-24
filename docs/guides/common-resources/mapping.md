@@ -16,18 +16,7 @@ order: 20
 
 {% include common-resources/map.md%}
 
-__On this page__
-
-* [Map Resources for Transformation](#map-resources-for-transformation)
-* [Use Javascript to Manage Complex Objects](#use-javascript-to-manage-complex-objects)
-* [Transforming Custom Objects](#transforming-custom-objects)
-* [Transforming Data Types](#transforming-data-types)
-* [Removing Fields During Transformation](#removing-fields-during-transformation)
-* [Setting Default Values](#setting-default-values)
-* [Testing Your Transformations](#testing-your-transformations)
-* [Adding Your Common Resource to the API Docs](#adding-your-common-resource-to-the-api-docs)
-* [Working With Arrays](#working-with-arrays)
-* [Access Levels and Transformations](#access-levels-and-transformations)
+{% include callout.html content="<strong>On this page</strong><br/><a href=#map-resources-for-transformation>Map Resources for Transformation</a><br/><a href=#use-javascript-to-manage-complex-objects>Use Javascript to Manage Complex Objects</a><br/><a href=#transforming-custom-objects>Transforming Custom Objects</a></br><a href=#removing-fields-during-transformation>Removing Fields During Transformation</a></br><a href=#setting-default-values>Setting Default Values</a> </br> <a href=#testing-your-transformations>Testing Your Transformations</a> </br> <a href=#adding-your-common-resource-to-the-api-docs>Adding Your Common Resource to the API Docs</a> </br><a href=#working-with-nested-objects>Working with Nested Objects </a></br><a href=#access-levels-and-transformations>Access Levels and Transformations</a>" type="info" %}
 
 ## Select an Element Instance to Transform
 
