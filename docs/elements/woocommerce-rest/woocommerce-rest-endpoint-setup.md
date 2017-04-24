@@ -35,4 +35,4 @@ To set up the endpoint:
 9. Click __Generate API Key__.
 10. Copy your Consumer Key and Consumer Secret. These will be used to authenticate your element with WooCommerce.
 
-Next [authenticate with WooCommerce to create an element instance](woocommerce-create-instance.html).
+Next [authenticate with WooCommerce to create an element instance](woocommerce-rest-create-instance.html).

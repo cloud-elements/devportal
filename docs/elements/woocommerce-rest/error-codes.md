@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce
+heading: WooCommerce REST
 seo: Error Codes | WooCommerce | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
