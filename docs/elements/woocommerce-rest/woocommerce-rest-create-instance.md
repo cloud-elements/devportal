@@ -12,7 +12,7 @@ order: 20
 
 # Authenticate with {{page.heading}}
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. Once authenticated, you can use the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.field}}">element instance</a> to access the different functionality offered by the {{page.heading}} platform.
 
 __On this page__
 
@@ -41,7 +41,7 @@ Use the {{site.console}} to authenticate with {{page.heading}} and create an ele
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance.
 
-__Note__: An Element token is returned upon successful execution of this API. Retain the token for all subsequent requests involving this element instance.
+{% include note.html content="An Element token is returned upon successful execution of this API. Retain the token for all subsequent requests involving this element instance. " %}
 
 The `/instances` API call includes:
 
