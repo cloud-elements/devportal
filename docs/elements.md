@@ -65,6 +65,7 @@ layout: sidebarelementtile
 * [![Volusion](/assets/img/element-logos/volusion.png)Volusion](./elements/volusion/)
 * [![Weebly](/assets/img/element-logos/weebly.png)Weebly](./elements/weebly/)
 * [![WooCommerce](/assets/img/element-logos/woocommerce.png)WooCommerce](./elements/woocommerce/)
+* [![WooCommerce REST](/assets/img/element-logos/woocommerce.png)WooCommerce REST](./elements/woocommerce-rest/)
 * [![NetSuite ERP 2016](/assets/img/element-logos/netsuite.png)NetSuite ERP 2016](./elements/netsuite-2016-erp/)
 * [![Sage Live](/assets/img/element-logos/sagelive.png)Sage Live](./elements/sagelive/)
 * [![Sage One US](/assets/img/element-logos/sageoneus.png)Sage One US](./elements/sageoneus/)

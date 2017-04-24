@@ -39,5 +39,7 @@ algolia:
       - unordered(text)
       - unordered(tags)
     attributesToSnippet: ['text:20']
-    attributesToHighlight: 
+    attributesToHighlight:
       - 'text'
+
+console: 'UI'
