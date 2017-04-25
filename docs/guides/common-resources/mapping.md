@@ -32,7 +32,7 @@ To select an element instance to transform:
 
 The common resource fields on the left are ready to be mapped to the element instance resource fields on the right.
 
-## Map Resources for Transformation
+## Map Fields to the Common Resource
 
 Before you can transform fields, you need to map the fields for each element instance to the common resource. The common resource fields are on the left and the element instance resource fields are on the right.
 

@@ -16,9 +16,9 @@ order: 21
 
 {% include common-resources/map.md%}
 
-You can test the APIs described in this section using our interactive documentation. Open {{site.console}}, and then click <img src="img/btn-Code.png" alt="Custom JS" class="inlineImage"> in the header. Under Platform API Documentation, open `organizations` for common resources and transformations .
+You can test the APIs described in this section using our interactive documentation. Open {{site.console}}, and then click <img src="img/btn-Code.png" alt="Custom JS" class="inlineImage"> in the header.
 
-{% include callout.html content="<strong>On this page</strong><br/><a href=#retrieve-a-list-of-common-resources>Retrieve a List of Common Resources</a><br/><a href=#map-resources-to-create-a-default-transformation>Map Resources to Create a Default Transformation</a><br/><a href=#map-resources-to-multiple-levels>Map Resources to Multiple Levels</a></br><a href=#map-date-fields>Map Date Fields</a></br><a href=#transform-complex-resources>Map Complex Resources</a>" type="primary" %}
+{% include callout.html content="<strong>On this page</strong><br/><a href=#retrieve-a-list-of-common-resources>Retrieve a List of Common Resources</a><br/><a href=#map-fields-to-create-a-default-transformation>Map Fields to Create a Default Transformation</a><br/><a href=#map-fields-at-the-instance-level>Map Fields at the Instance Level</a></br><a href=#map-fields-at-the-account-level>Map Fields at the Account Level</a></br><a href=#map-complex-objects>Map Complex Objects</a>" type="primary" %}
 
 ## Retrieve a List of Common Resources
 
@@ -42,7 +42,7 @@ curl -X GET \
   -H 'content-type: application/json'
 ```
 
-## Map Resources to Create a Default Transformation
+## Map Fields to Create a Default Transformation
 
 Cloud Elements provides several APIs to map resources. This section describes mapping fields for an organization-level default transformation. The result is a default transformation for all instances of a specific element.
 
@@ -52,18 +52,18 @@ To map fields:
 
           {
             "level": "organization",
-            "vendorName": "VENDOR_RESOURCE",
+            "vendorName": "<VENDOR_RESOURCE>",
             "fields": [
               {
-                "path": "{COMMON_RESOURCE_FIELD}",
-                "type":"{COMMON_RESOURCE_TYPE}",
-                "vendorPath": "{VENDOR_FIELD}",
-                "vendorType": "{VENDOR_TYPE}"
+                "path": "<COMMON_RESOURCE_FIELD>",
+                "type":"<COMMON_RESOURCE_TYPE>",
+                "vendorPath": "<VENDOR_FIELD>",
+                "vendorType": "<VENDOR_TYPE>"
               }
             ]
           }
 
-1. Call the following, including the JSON body :
+1. Call the following, including the JSON body from the previous step:
 
           POST /organizations/elements/{keyOrId}/transformations/{objectName}
 
@@ -124,41 +124,192 @@ curl -X POST \
 }'
 ```
 
-## Map Resources to Instances and Accounts
+## Map Fields at the Instance Level
 
-Using the Cloud Elements `instances` and `accounts` endpoints, you can map resources to different levels using the following API calls:
-
-* `POST /instances/{id}/transformations/{objectName}`
-* `POST /accounts/{id}/transformations/{objectName}`
+Using the Cloud Elements `instances` endpoint, you can map fields at the instance level. Mapping fields is a two-step process that includes creating an instance level resource, and then mapping fields to it.
 
 To create an instance level common resource and map fields to it:
 
-1. Create the common resource. Make following API, replacing {id} with the instance or account id, and replacing {objectName} with the name of the common resource:
+1. Construct a JSON body for the instance level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
+
+        {
+          "fields": [
+            {
+              "type": "<dataType>",
+              "path": "<fieldName>"
+            }
+          ]
+         }
+
+1. Create the common resource. Make the following API call with the JSON body from the previous step, replacing `{id}` with the instance id, and replacing `{objectName}` with the name of the common resource:
 
         POST /instances/{id}/objects/{objectName}/definitions
 
-2. Map fields to the common resource. Make the following API call, depending on if you are working on the instance or account level:
+1. Construct a JSON body to map fields to the new common resource as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
 
-        POST /instances/{id}/transformations/objectName
+          {
+            "level": "instance",
+            "vendorName": "<VENDOR_RESOURCE>",
+            "fields": [
+              {
+                "path": "<COMMON_RESOURCE_FIELD>",
+                "type":"<COMMON_RESOURCE_TYPE>",
+                "vendorPath": "<VENDOR_FIELD>",
+                "vendorType": "<VENDOR_TYPE>"
+              }
+            ]
+          }
 
-4. sdfgdfs
+2. Map fields to the common resource. Call the following, including the JSON body from the previous step:
+
+        POST /instances/{id}/transformations/{objectName}
+
+     {% include note.html content="Replace `{id}` with the instance id and replace `{objectName}` with the name of the common resource." %}
 
 
+### cURL Example
+
+#### Step 1: Create the common resource
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances/{id}/objects/{objectName}/definitions \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "fields": [
+    {
+      "type": "string",
+      "path": "title"
+    }
+  ]
+	}'
+```
+
+#### Step 2: Map fields to the common resource
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances/{id}/transformations/{objectName} \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "vendorName": "Contact",
+  "level": "instance",
+  "fields": [
+    {
+      "path": "title",
+      "type":"string",
+      "vendorPath": "Title"
+    }
+		]
+}'
+```
+
+## Map Fields at the Account Level
+
+Using the Cloud Elements `accounts` endpoint, you can map fields at the account level. Mapping fields is a two-step process that includes creating an account level resource, and then mapping fields to it.
+
+To create an account level common resource and map fields to it:
+
+1. Construct a JSON body for the account level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
+
+        {
+          "fields": [
+            {
+              "type": "<dataType>",
+              "path": "<fieldName>"
+            }
+          ]
+         }
+
+1. Create the common resource. Make one of the following API calls with the JSON body from the previous step, replacing `{id}` with the account id, and replacing `{objectName}` with the name of the common resource:
+
+          POST /accounts/objects/{objectName}/definitions
+
+      {% include note.html content="Use this API call to create a common resource at the default account level." %}
+
+          POST /accounts/{id}/objects/{objectName}/definitions
+
+       {% include note.html content="Use this API call to specify an account by id." %}
+
+1. Construct a JSON body to map fields to the new common resource as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
+
+          {
+           "level": "instance",
+           "vendorName": "<VENDOR_RESOURCE>",
+           "fields": [
+             {
+               "path": "<COMMON_RESOURCE_FIELD>",
+               "type":"<COMMON_RESOURCE_TYPE>",
+               "vendorPath": "<VENDOR_FIELD>",
+               "vendorType": "<VENDOR_TYPE>"
+             }
+             ]
+           }
+
+2. Map fields to the common resource. Call the following, including the JSON body from the previous step:
+
+        POST /accounts/{id}/elements/{keyOrId}/transformations/{objectName}
+
+      {% include note.html content="Replace`{id}` with the instance id, replace `{keyOrId}` with the element key or id, and replace `{objectName}` with the name of the common resource." %}
+
+### cURL Example
+
+#### Step 1: Create the common resource (default account)
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/accounts/objects/{objectName}/definitions \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "fields": [
+    {
+      "type": "string",
+      "path": "title"
+    }
+  ]
+	}'
+```
+
+#### Step 1: Create the common resource (specific account)
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/accounts/{id}/objects/{objectName}/definitions \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "fields": [
+    {
+      "type": "string",
+      "path": "title"
+    }
+  ]
+	}'
+```
 
 
+#### Step 2: Map fields to the common resource
 
-## Map Resources to Multiple Levels
-
-
-
-## Map Resources to Accounts
-
-
-
-
-## Working with Date Type Fields
-
-aksdjkjdsklfja
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/accounts/{id}/elements/{keyOrIdtransformations}/{objectName} \
+  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'content-type: application/json' \
+  -d '{
+  "vendorName": "Contact",
+  "level": "account",
+  "fields": [
+    {
+      "path": "title",
+      "type":"string",
+      "vendorPath": "Title"
+    }
+		]
+}'
+```
 
 ## Map Complex Objects
 
