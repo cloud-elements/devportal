@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce
+heading: WooCommerce REST
 seo: Overview | WooCommerce | Cloud Elements API Docs
 title: Overview
 description: Integrate WooCommerce into your application via the Cloud Elements APIs.
@@ -11,7 +11,7 @@ order: 1
 sitemap: false
 ---
 
-# Welcome to the WooCommerce Element
+# Welcome to the WooCommerce REST Element
 
 WooCommerce is a WordPress eCommerce plugin, with different features built for website development.
 

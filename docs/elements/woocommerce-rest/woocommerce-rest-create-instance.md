@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce
+heading: WooCommerce REST
 seo: Create Instance | WooCommerce | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate
@@ -41,7 +41,7 @@ Use the {{site.console}} to authenticate with {{page.heading}} and create an ele
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance.
 
-__Note__: An Element token is returned upon successful execution of this API. Retain the token for all subsequent requests involving this element instance.
+{% include note.html content="An Element token is returned upon successful execution of this API. Retain the token for all subsequent requests involving this element instance. " %}
 
 The `/instances` API call includes:
 
