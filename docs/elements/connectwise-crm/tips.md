@@ -28,10 +28,14 @@ The resulting WSDL path is `/v2017_2/apis/2.0/`.
 
 ## Bulk Metadata
 
-For `POST /bulk/{objectName}` you must include the following in the metadata:
+To insert records into ConnectWise for a particular `objectName` using `POST /bulk/{objectName}` you must include the following in the metadata:
 
         "action":"create"
 
-For `PATCH /bulk/{objectName}` you must include the following in the metadata:
+ To upsert records into ConnectWise for a particular `objectName `using `POST /bulk/{objectName}` you must include the following in the metadata:
 
         "identifierFieldName":"id"
+
+The default payload format is .csv. To specify the format, include the following:
+
+        "format":"json"

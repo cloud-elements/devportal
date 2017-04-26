@@ -62,10 +62,10 @@ Pass tokens and secrets as basic HTTP Header values.
 
 * To make a Platform or API call, include the following in the header:
 
-        Authorization: User 7OpR4MRo7wnPoVKkKFXHhHBUPRzqutoem/d+WEnR1kY=, Organization ce7f1f9be0d2a8b1f37bcfa6d71eda20
+        Authorization: User <USER_KEY>, Organization <ORGANIZATION_KEY>
 
 * To make a Hub API call, include the following in the header:
 
-        User 7OpR4MRq7wnpnVKkKFXhhHbUPRzQutoem/d+WEnR1kY=, Element fJ5HQ135fW4okMt5AWq0hzm2X7kaK5OpQB0Uxjvlz6U=
+        User <USER_KEY>, Element <ELEMENT_TOKEN>
 
 Get started by [setting up the endpoint](connectwise-rest-endpoint-setup.html).
