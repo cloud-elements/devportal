@@ -3,7 +3,7 @@ heading: NetSuite 2016 CRM
 seo: Events | NetSuite 2016 CRM | Cloud Elements API Docs
 title: Events
 description: Enable NetSuite 2016 CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1687
 parent: Back to Element Guides

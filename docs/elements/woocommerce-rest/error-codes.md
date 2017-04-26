@@ -1,11 +1,11 @@
 ---
-heading: NetSuite 2016 Human Capital
-seo: Error Codes | NetSuite 2016 Human Capital | Cloud Elements API Docs
+heading: WooCommerce REST
+seo: Error Codes | WooCommerce | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 1688
+elementId: 2881
 parent: Back to Element Guides
 order: 40
 sitemap: false
