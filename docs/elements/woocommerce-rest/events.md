@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce
+heading: WooCommerce REST
 seo: Events | WooCommerce | Cloud Elements API Docs
 title: Events
 description: Enable WooCommerce events for your application.
