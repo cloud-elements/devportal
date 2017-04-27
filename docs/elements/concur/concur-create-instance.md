@@ -102,13 +102,13 @@ API parameters are in `code formatting`.
 | Heading | Heading   | Data Type |
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>woocommercerest  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| OAuth API Key</br>`oauth.api.key` | The Consumer Key from Concur. |  string |
-| OAuth API Secret</br>`oauth.api.secret` |  The Consumer Secret from Concur.| string |
+| Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| OAuth API Key</br>`oauth.api.key` | The Key from Concur. |  string |
+| OAuth API Secret</br>`oauth.api.secret` |  The Secret from Concur.| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Type </br>`event.vendor.type` | *Optional*. identifies the type of events enabled for the instance. The {{page.heading}} element supports only `polling`. | string |
-| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL. | string |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  Where do you want CE to send the events that we generate?. | string |
 | Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling </br>`"event.poller.configuration"` |  |  |
