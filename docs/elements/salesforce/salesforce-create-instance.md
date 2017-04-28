@@ -1,8 +1,8 @@
 ---
 heading: Salesforce CRM
-seo: Create Instance | Salesforce CRM | Cloud Elements API Docs
-title: Create Instance
-description: Create Instance
+seo: Authenticate | Salesforce CRM | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate with the vendor
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
