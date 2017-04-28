@@ -17,13 +17,7 @@ Concur provides online tools to manage travel and expense reporting and reimburs
 
 This Overview section describes basic element details, the Base URL for API calls, and information about authenticating with Cloud Elements.
 
-__On this page__
-
-[Element details](#element-details)
-
-[Base URL](#base-url)
-
-[Authenticating with Cloud Elements](#authenticating-with-cloud-elements)
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a>" type="info" %}
 
 ### Element Details
 
@@ -48,7 +42,10 @@ To authenticate with Cloud Elements, you need to know your Organization Secret a
 When you create an account with us, we assign you an Organization Secret and a User Secret. An Organization is a customer of Cloud Elements (`/organizations`). The User and Organization secrets represent your account with Cloud Elements.
 
 To find your Organization and User Secret, open the profile menu.
-![Secrets](../img/Org-User-Secret-C2.png)
+
+| Latest UI | Earlier UI  |
+| :------------- | :------------- |
+| Open the profile menu.</br> ![Search](../img/Org-User-Secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](../img/Org-User-Secret.png)  |
 
 When you create a new connection to an endpoint, you will receive an Element token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
 
