@@ -48,15 +48,14 @@ To add webhooks when authenticating through the `/instances` API call, add the f
 "event.notification.signature.key": "<INSERT_SIGNATURE_KEY>"
 }
 ```
-
-__Note__: `event.notification.signature.key` is optional.
+{% include note.html content="<code>event.notification.signature.key</code> is optional. " %}
 
 #### Example JSON with Webhooks
 
 ```json
 {
   "element": {
-    "key": "woocommercerest"
+    "key": "concur"
   },
   "configuration": {
      "store.url": "http://mycoolstore.com",
@@ -107,14 +106,14 @@ To add polling when authenticating through the `/instances` API call, add the fo
 }
 ```
 
-__Note__: `event.notification.signature.key` is optional.
+{% include note.html content="<code>event.notification.signature.key</code> is optional. " %}
 
 #### Example JSON with Polling
 
 ```json
 {
   "element": {
-    "key": "woocommercerest"
+    "key": "concur"
   },
   "configuration": {
      "store.url": "http://mycoolstore.com",
