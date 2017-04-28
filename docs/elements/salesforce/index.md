@@ -23,9 +23,9 @@ Salesforce provides on-demand customer relationship management (CRM) services.
 | :------------- | :------------- |
 | API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
-| Events |  |
+| Events | Webhooks and polling |
 | Bulk | Supported |
-| Transformations       | Supported    |
+| Transformations | Supported    |
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 # Base URL
