@@ -4,6 +4,10 @@ On this page:
 * [Searching Custom Fields](#searching-custom-fields)
 * [Updating Custom Fields](#updating-custom-fields)
 
+## Limitations
+
+Netsuite querying does not currently support the “OR” functionality.
+
 ## Getting Information About Custom Fields
 
 Because we normalize Netsuite's SOAP API to a RESTful API at Cloud Elements, you need to use specific API calls to get information about custom fields. All references to custom fields require the `internalId`, which you can find using the following API calls to retrieve custom objects and picklists:
