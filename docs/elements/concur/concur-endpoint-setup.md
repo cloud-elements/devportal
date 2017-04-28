@@ -14,7 +14,7 @@ order: 5
 
 To set up the Concur endpoint, you need to have an account and create or already have an app.
 
-__Note__: Concur provides the most up-to-date and detailed setup instructions at [https://docs.woocommerce.com/document/woocommerce-rest-api/](https://docs.woocommerce.com/document/woocommerce-rest-api/).
+{% include note.html content="Concur provides the most up-to-date and detailed setup instructions at <a href=https://developer.concur.com/manage-apps/partner-applications.html>App Registration & Management</a>. " %}
 
 To set up the endpoint:
 
