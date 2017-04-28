@@ -8,7 +8,7 @@ apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 5
+order: 4
 ---
 
 # Advanced Examples
