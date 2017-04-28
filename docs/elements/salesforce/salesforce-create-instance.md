@@ -116,7 +116,7 @@ Use the `/instances` endpoint to authenticate with Salesforce and create an elem
 
 To create an element instance:
 
-1. Construct a JSON body as shown below (see [New Common Resource JSON Parameters](#new-common-resource-json-parameters)):
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
         {
           "element": {
