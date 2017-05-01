@@ -13,6 +13,7 @@ order: 90
 * [![Messaging APIs](/assets/img/hub-icons/messaging.png)Messaging](/docs/hubs/messaging/)
 * [![Social APIs](/assets/img/hub-icons/social.png)Social](/docs/hubs/social/)
 * [![Event Conferencing APIs](/assets/img/hub-icons/events.png)Event Conferencing](/docs/hubs/event-conferencing/)
+* [![Expense APIs](/assets/img/hub-icons/expense.png)Expense](/docs/hubs/expense/)
 * [![Cloud Storage APIs](/assets/img/hub-icons/cloudstorage.png)Cloud Storage](/docs/hubs/cloud-storage/)
 * [![Database APIs](/assets/img/hub-icons/database.png)Database](/docs/hubs/database/)
 * [![OCR APIs](/assets/img/hub-icons/ocr.png)OCR](/docs/hubs/ocr/)
