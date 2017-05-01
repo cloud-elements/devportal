@@ -17,12 +17,12 @@ sitemap: false
 
 {% include common-resources/create-cr.md%}
 
-{% include important.html content="Only users at the organization level can create common resources, but users at any level can create transformations at the instance level. If you are not a user at the organization level, skip to Creating Transformations." %}
+{% include important.html content="Only users at the organization level can create common resources, but users at any level can create transformations at the instance level. If you are not a user at the organization level, skip to <a href=mapping.html>Transforming Fields</a>." %}
 
 To create a common resource, go to the steps that match how you plan to create the resource:
 
 * [Create a New Common Resource](#create-a-new-common-resource) for steps to create an entirely new common resource.
-* [Create a Common Resource Based on Another Common Resource](#create-a-common-resource-based-on-another-common-resource) for steps to create a resource based on an existing resource. You might create copies of resources to provide different common resources for different accounts.
+* [Create a Common Resource Based on Another Common Resource](#create-a-common-resource-based-on-another-common-resource) for steps to create a common resource based on an existing resource. You might create copies of resources to provide different common resources for different accounts.
 * [Create a Common Resource Based on an Element Instance Resource](#create-a-common-resource-based-on-an-element-instance-resource) for steps to create a common resource based on an element resource. You might use element instance resources because you want your common resource to be based on a certain element.
 * [Create a Common Resource Based on a Cloud Elements Template](#create-a-common-resource-based-on-a-cloud-elements-template) for steps to create a common resource based on a Cloud Elements template. Cloud elements templates represent typical common resources.
 
@@ -40,8 +40,6 @@ To create a new common resource:
     ![New Resource from Scratch](img/New-Common_Resource.png)
 
 1. Continue to the next step: [map fields to the common resource](mapping.html).
-
-<span style="color:red">Draft API content, still needs some work. </span>
 
 ## Create a Common Resource Based on Another Common Resource
 
@@ -77,6 +75,8 @@ To set up a common resource based on an existing element instance:
 1. From the __Element Instance Resources__ list, select the resource.
 
     ![Select Element Instance and Resource](img/Select-Element-Resource.png)
+
+    {% include tip.html content="If the list is long, use Search to filter it." %}
 
 1. Enter a name for your resource, and then click __Create__.
 

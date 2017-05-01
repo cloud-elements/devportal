@@ -51,7 +51,7 @@ To create a new common resource:
 
           POST /organizations/objects/definition
 
-1. Continue to the next step: [map fields to create a transformation](#map-resources-for-transformation).
+1. Continue to the next step: [map fields to the common resource](mappingapi.html).
 
 ### New Common Resource JSON Parameters
 
@@ -92,7 +92,7 @@ To set up a common resource based on an existing common resource:
           GET /organizations/objects/{objectName}/definitions
 
 2. Copy the `fields` array in the response to the JSON body for `POST /organizations/objects/definitions` (see [Create a New Common Resource](#create-a-new-common-resource)).
-3. Continue to the next step: [map fields to create a transformation](#map-resources-for-transformation).
+3. Continue to the next step: [map fields to create a transformation](#mappingapi.html).
 
 ### cURL Example
 
@@ -157,6 +157,8 @@ To set up a common resource based on an existing element instance:
 2. Copy the `vendorPath` and `type` fields to a new JSON body.
 3. Rename `vendorPath` to `path`.
 3. Use the new JSON body for `POST /organizations/objects/definitions` (see [Create a New Common Resource](#create-a-new-common-resource)).
+4. Continue to the next step: [map fields to the common resource](mappingapi.html).
+
 
 ### cURL Example
 
@@ -218,7 +220,7 @@ To set up a common resource based on a Cloud Elements template:
 
 2. Locate the template that you want to use.
 2. Copy the `fields` array to the JSON body for `POST /organizations/objects/definitions` (see [Create a New Common Resource](#create-a-new-common-resource)).
-3. Continue to the next step: [map fields to create a transformation](#map-resources-for-transformation).
+1. Continue to the next step: [map fields to the common resource](mappingapi.html).
 
 ### cURL Example
 
