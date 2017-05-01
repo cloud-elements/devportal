@@ -5,7 +5,7 @@ title: Authenticate
 description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 2881
+elementId: 3129
 parent: Back to Element Guides
 order: 20
 ---
