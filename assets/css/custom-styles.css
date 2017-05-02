@@ -729,7 +729,7 @@ a[data-toggle="tooltip"] {
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
-    border: 1px solid #eee; 
+    border: 1px solid #eee;
     border-left-width: 5px;
     border-radius: 3px;
 }
@@ -782,7 +782,6 @@ a[data-toggle="tooltip"] {
 .bs-callout-info h4 {
     color: #5bc0de;
 }
-
 
 /*///////////////////////////////
 /// Media Quieries for Index  ///

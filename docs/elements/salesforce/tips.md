@@ -3,7 +3,7 @@ heading: Salesforce CRM
 seo: Tips | Salesforce CRM | Cloud Elements API Docs
 title: Tips
 description: Salesforce CRM Tips
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides
@@ -33,6 +33,7 @@ The Tips section includes more information about the element including FAQs, end
 * Cloud elements supports your custom objects and fields in the Salesforce CRM Element. Use the `GET /objects` API to return all custom objects, the `GET /{objectName}` API to interact with the custom APIs, and the `GET /objects/{objectName}/metadata` API to expose metadata for fields associated with your custom object.
 * When using transformations with Salesforce, only the mapped fields are returned. Salesforce requires all fields that need to be returned to be included in the request. To avoid issues with accounts that have a large number of custom fields, the transformation functionality is designed to only request the mapped fields. If a field needs to be included, or custom javascript needs to be written for a certain field, be sure to include it within your mapped fields.
 * There is a setting in Salesforce that may lead to an issues where calls return ``“INVALID_SESSION_ID – Session expired or invalid”``. If this is occurring, clear the  the Session Setting __Lock sessions to the IP address from which they originated__ check box.
+* The SFDC query resource (object) can be accessed by using the `GET /query` API. e.g., `/query?q%3Dselect%20*%20from%20opportunity`
 
   ![Salesforce Tips Session Settings](img/Salesforce_Tips_SessionSettings.png)
 

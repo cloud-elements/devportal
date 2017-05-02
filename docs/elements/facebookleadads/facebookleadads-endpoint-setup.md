@@ -3,7 +3,7 @@ heading: Facebook Lead Ads
 seo: Endpoint Setup | Facebook Lead Ads | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Facebook Lead Ads into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 202
 parent: Back to Element Guides

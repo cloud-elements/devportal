@@ -3,7 +3,7 @@ heading: Facebook Lead Ads
 seo: Query Language | Facebook Lead Ads | Cloud Elements API Docs
 title: Cloud Elements Query Language
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 202
 parent: Back to Element Guides
