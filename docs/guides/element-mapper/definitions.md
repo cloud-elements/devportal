@@ -14,17 +14,10 @@ order: 2
 # Definitions
 There are a few different terms you should become familiar with in order to better grasp Element Mapper.
 
-<<<<<<< HEAD:docs/guides/element-mapper/definitions.md
 # Object Definition
 The first term is called an "Object Definition".  This simply refers to the standard, canonical object that your application knows about, with each field and field type defined.  Element Mapper then uses your defined object definitions to go about mapping your canonical object definition to the endpoint-specific object.
 
-# Transformation
-=======
-## Object Definition
-The first term is called an "Object Definition".  This simply refers to the standard, canonical object that your application knows about, with each field and field type defined.  Element Mapper then uses your defined object definitions to go about mapping your canonical object definition to the endpoint-specific object.
-
 ## Transformation
->>>>>>> 6196b5e4245f0a9ca25d8164616ab0e7d86baa1b:docs/guides/element-mapper/definitions.md
 A transformation refers to the mapping between one of your object definitions and an endpoint's object.  A transformation is specific to an Element or, potentially, an Element Instance if there are custom fields you want to transform.
 
 ## Inheritance
