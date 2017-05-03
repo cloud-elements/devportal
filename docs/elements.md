@@ -12,6 +12,7 @@ layout: sidebarelementtile
 * [![Bullhorn CRM](/assets/img/element-logos/bullhorn.png)Bullhorn](./elements/bullhorn/)
 * [![Close.io](/assets/img/element-logos/closeio.png)Close.io](./elements/closeio/)
 * [![ConnectWise CRM](/assets/img/element-logos/connectwise.png)ConnectWise CRM](./elements/connectwise-crm/)
+* [![ConnectWise CRM REST](/assets/img/element-logos/connectwise.png)ConnectWise CRM REST](./elements/connectwise-rest-crm/)
 * [![Dynamics CRM](/assets/img/element-logos/dynamicscrm.png)Microsoft Dynamics CRM](./elements/dynamicscrm/)
 * [![HubSpot CRM](/assets/img/element-logos/hubspot.png)HubSpot CRM](./elements/hubspot-crm/)
 * [![Infusionsoft CRM](/assets/img/element-logos/infusionsoft.png)Infusionsoft CRM Beta](./elements/infusionsoft-crm/)
