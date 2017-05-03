@@ -3,7 +3,7 @@ heading: Facebook Lead Ads
 seo: Events | Facebook Lead Ads | Cloud Elements API Docs
 title: Events
 description: Enable Facebook Lead Ads events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 202
 parent: Back to Element Guides

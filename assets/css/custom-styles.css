@@ -729,7 +729,11 @@ a[data-toggle="tooltip"] {
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
+<<<<<<< HEAD
     border: 1px solid #eee; 
+=======
+    border: 1px solid #eee;
+>>>>>>> 6196b5e4245f0a9ca25d8164616ab0e7d86baa1b
     border-left-width: 5px;
     border-radius: 3px;
 }
@@ -782,7 +786,10 @@ a[data-toggle="tooltip"] {
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6196b5e4245f0a9ca25d8164616ab0e7d86baa1b
 
 /*///////////////////////////////
 /// Media Quieries for Index  ///

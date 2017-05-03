@@ -3,7 +3,7 @@ heading: NetSuite 2016 CRM
 seo: Create Instance | NetSuite 2016 CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1687
 parent: Back to Element Guides
