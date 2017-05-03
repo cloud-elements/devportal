@@ -10,37 +10,34 @@ parent: Back to Element Guides
 order: 5
 ---
 
-## Endpoint Setup
+# Endpoint Setup
 
-Follow these steps to setup your Salesforce application with the endpoint.
+To create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support. Also, to set up a new application in Salesforce, you must have Administrator privileges. Contact your system administrator if you do not have those privileges.
 
-__In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
+{% include note.html content="Salesforce provides the most up-to-date and detailed setup instructions at <a href=https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm>Force.com REST API Developer Guide</a>" %}
 
-Via a web browser, log in to your Salesforce account:
-[https://login.salesforce.com/](https://login.salesforce.com/)
+To set up the endpoint:
 
+1. Via a web browser, log in to your Salesforce account:
+  * Sandbox: [https://test.salesforce.com/](https://test.salesforce.com/)
+  * Production: [https://login.salesforce.com/](https://login.salesforce.com/)
+1. If not already on the Setup page, [navigate to it](https://help.salesforce.com/articleView?id=basics_nav_setup.htm&type=0).
+2. In the menu on the left, click __Apps__, and then click __App Manager__.
+![Salesforce Connected App step 1](img/Apps.gif)
+2. Click __New Connected App__.
+3. Complete the Basic Information section.
+4. In the API (Enable OAuth Settings) section, select __Enable OAuth Settings__.
+5. Enter a Callback URL to redirect the user to after authentication. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint.
+6. In __Selected OAuth Scopes__, add the scopes needed from Available to Selected.
+      {% include note.html content="At a minimum, you must select <strong>Full Access</strong> and <strong>Perform requests on your behalf at any time (refresh\_token_, offline\_access)</strong>." %}
+8. Complete the remaining settings as needed for your app.
+8. Click __Save__ at the bottom of the window.
+9. Click __Continue__.
+9. Note the following in the API (Enable OAuth Settings) section, which you will need to authenticate a Cloud Elements Salesforce element instance with Salesforce.
+ * Consumer Key
+ * Consumer Secret
+ * Callback URL
 
-Select "Setup" if not taken there by default:
+![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
 
-1. In left hand nav menu, under create, select "Apps"
-
-2. Click "New"
-![Salesforce Connected App step 1](img/salesforce-connected-app-1.png)
-
-3. Fill out the basic information about the app
-
-4. Make sure to select "Enable OAuth Settings"
-
-5. You’ll be required to enter a callback URL from the endpoint. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint. For our example,we’ll use a callback URL of https://mycoolapp.com/auth
-
-6. Choose from the "Selected OAuth Scopes". "Full Access" and "Perform requests on your behalf at any time (refresh_token_, offline_access)" are the minimum needed scopes.
-
-7. Add the selected scopes
-
-8. Click "Save" at the bottom of the window ![Salesforce Connected App step 2](img/salesforce-connected-app-2.png)
-
-9. Please make a note of the "Consumer Key"
-
-10. Please make a note of the "Consumer Secret" ![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
-
-Next [create an instance](salesforce-create-instance.html).
+Next [authenticate an element instance with Salesforce](salesforce-create-instance.html).
