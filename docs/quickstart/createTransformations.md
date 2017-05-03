@@ -23,8 +23,7 @@ We will start by creating a transformation for the Contact Object in Salesforce.
 5. Start by mapping the following fields from Salesforce:
   - `Email`  
   - `First Name`
-  - `Last Name`
-  - `Business Phone` ![Mapping](https://cl.ly/271J3r3g1c3p/Image%202017-03-09%20at%201.37.33%20PM.public.png)
+  - `Last Name` ![Mapping](img/quickstart_field_mapping.png)
 6. Set the toggles `Add to Docs` and `Ignore Unmapped` to yes. ![Toggles](https://cl.ly/1r3k3r2M3T0U/Screen%20Shot%202017-03-09%20at%201.43.17%20PM.png)
 7. **Save your transformation** and click the Try it out button at the bottom of the window to see it in action!
 
@@ -34,6 +33,6 @@ Now we will need to map the Shopify `customer` object to the common object we ju
 1. Click the blue Transformations button on the Shopify Instance.
 2. Select the customer object from the drop-down under Shopify.
 3. Instead of creating a new object, select the common object you created for salesforce from the My Objects drop-down.
-4. The transformation window should then look similar to this: ![Unmapped](https://cl.ly/3j3T1V2h1T2h/Image%202017-03-09%20at%201.58.58%20PM.public.png).
+4. The transformation window should then look similar to this: ![Unmapped](img/quickstart_transformations_window.png)
 5. Now map the corresponding fields in Shopify to the common object by dragging and dropping.
 
