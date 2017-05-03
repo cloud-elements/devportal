@@ -45,7 +45,11 @@ The Tips section includes more information about the element including FAQs, end
   * Unlimited Edition
   * Developer Edition
   * Performance Edition
-Visit https://help.salesforce.com/HTViewSolution?id=000005140&language=en_US for more information
+Visit https://help.salesforce.com/HTViewSolution?id=000005140&language=en_US for more information.
+
+### Salesforce Sandbox Environment
+
+The Salseforce sandbox environment has a different base URL from the production environment. Instead of https://login.salesforce.com/, you log in to https://test.salesforce.com/. When you authenticate a Salesforce instance, you must pass a `siteAddress` query parameter with the sandbox URL when getting the redirect URL. See [Authenticate Through API](salesforce-create-instance.html#authenticate-through-api).
 
 ### Events
 
