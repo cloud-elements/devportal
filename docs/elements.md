@@ -123,3 +123,4 @@ layout: sidebarelementtile
 * [![Zuora](/assets/img/element-logos/zuora-logoblue.png)Zuora](./elements/zuora/)
 * [![BrightTALK](/assets/img/element-logos/BrightTALK.png)BrightTALK](./elements/brighttalk)
 * [![Facebook Lead Ads](/assets/img/element-logos/facebook.png)Facebook Lead Ads](./elements/facebookleadads/)
+* [![Concur](http://assets.concur.com/logos/Concur_Logo_VT_Color_500px.png)Concur](./elements/concur/)
