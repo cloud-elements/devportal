@@ -1,5 +1,5 @@
 ---
-heading: Creating Resources
+heading: Defining Common Resources & Transformations
 seo: Overview | Common Resources | Cloud Elements API Docs
 title: Overview
 description: Common Resources Overview
@@ -23,12 +23,12 @@ With  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossar
 {% include callout.html content="<strong>On this page</strong><br/><a href=#example>Example</a><br/><a href=#understanding-levels>Understanding Levels</a><br/><a href=#definitions>Definitions</a>" type="info" %}
 
 ## Example
-A frequent example is to create a common resource to represent your `/contacts` for various CRMs, and then transform the `/contacts` resources from those CRMs. You know that you want your contacts to look a certain way, regardless of the CRM system. You want `FirstName`, `LastName`, and `Email`. But some elements call `FirstName` something else, like `FirstName`, `F_Name`, or `properties.firstname`. You need to create a single common resource with fields named `FirstName`, `LastName`, and `Email`. Then you can map all of the like fields from other elements to the fields in your common resource. We transform those mapped fields,  so you can write to a single API to integrate many services.
+A frequent example is to create a common resource to represent your `/contacts` for various CRMs, and then transform the `/contacts` resources from those CRMs. You know that you want your contacts to look a certain way, regardless of the CRM system. You want `firstName`, `lastName`, and `email`. But some elements call `FirstName` something else, like `FirstName`, `F_Name`, or `properties.firstname`. You need to create a single common resource with fields named `firstName`, `lastName`, and `email`. Then you can map all of the like fields from other elements to the fields in your common resource. We transform those mapped fields,  so you can write to a single API to integrate many services.
 
 This example shows fields in the `/Contact` resource from Salesforce mapped to fields in a common resource called `myContacts`.
 ![Transformations Page](img/Example_MyContacts.png)
 
-You can use common resources to do more than normalize resource names. You can transform data types, so when a resource returns a string and you need a date, Cloud Elements transforms the data. Using our JavaScript Editor, you can create logic to manage complex problems. For example, you can write a simple script to combine fields like `FirstName` and `LastName` into a single field called `Name`. Or tackle even more complicated issues like transforming a number based priority value (1-10) to a descriptor based value (low, medium, or high).
+You can use common resources to do more than normalize resource names. You can transform data types, so when a resource returns a string and you need a date, Cloud Elements transforms the data. Using our JavaScript Editor, you can create logic to manage complex problems. For example, you can write a simple script to combine fields like `firstName` and `lastName` into a single field called `name`. Or tackle even more complicated issues like transforming a number based priority value (1-10) to a descriptor based value (low, medium, or high).
 
 ## Understanding Levels
 

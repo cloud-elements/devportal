@@ -1,5 +1,5 @@
 ---
-heading: Creating Resources
+heading: Defining Common Resources & Transformations
 seo: Creating | Common Resources | Cloud Elements API Docs
 title: Creating Common Resources via API
 description: Common Resources Overview
@@ -26,7 +26,7 @@ To create a common resource, go to the steps that match how you plan to create t
 * [Create a New Common Resource](#create-a-new-common-resource) for steps to create an entirely new common resource.
 * [Create a Common Resource Based on Another Common Resource](#create-a-common-resource-based-on-another-common-resource) for steps to create a resource based on an existing resource. You might create copies of resources to provide different common resources for different accounts.
 * [Create a Common Resource Based on an Element Instance Resource](#create-a-common-resource-based-on-an-element-instance-resource) for steps to create a common resource based on an element resource. You might use element instance resources because you want your common resource to be based on a certain element.
-* [Create a Common Resource Based on a Cloud Elements Template](#create-a-common-resource-based-on-a-cloud-elements-template) for steps to create a common resource based on a Cloud Elements template. Cloud elements templates represent typical common resources.
+* [Create a Common Resource Based on a Cloud Elements Template](#create-a-common-resource-based-on-a-cloud-elements-template) for steps to create a common resource based on a Cloud Elements template. Cloud Elements templates represent typical common resources.
 
 ## Create a New Common Resource
 
@@ -36,16 +36,18 @@ To create a new common resource:
 
 1. Construct a JSON body as shown below (see [New Common Resource JSON Parameters](#new-common-resource-json-parameters)):
 
+    ```json
+    {
+      "<objectName>": {
+        "fields": [
           {
-            "<objectName>": {
-              "fields": [
-                {
-                  "path": "<fieldName>",
-                  "type": "<dataType>"
-                }
-              ]
-            }
+            "path": "<fieldName>",
+            "type": "<dataType>"
           }
+        ]
+      }
+    }
+    ```
 
 1. Call the following, including the JSON body you constructed in the previous step:
 
@@ -69,16 +71,17 @@ curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions \
   -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
   -H 'content-type: application/json' \
-  -d '{
-  "myContacts": {
-    "fields": [
-      {
-        "path": "id",
-        "type": "string"
-      }
-    ]
-  }
-}'
+  -d '
+  {
+    "myContacts": {
+      "fields": [
+        {
+          "path": "id",
+          "type": "string"
+        }
+      ]
+    }
+  }'
 ```
 
 ## Create a Common Resource Based on Another Common Resource
@@ -112,24 +115,25 @@ curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions \
   -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
   -H 'content-type: application/json' \
-  -d '{
-  "Copy_of_existing_resource": {
+  -d '
+  {
+    "Copy_of_existing_resource": {
     "fields": [
-    {
-      "type": "string",
-      "path": "FirstName"
-    },
-    {
-      "type": "string",
-      "path": "id"
-    },
-    {
-      "type": "string",
-      "path": "LastName"
+      {
+        "type": "string",
+        "path": "FirstName"
+      },
+      {
+        "type": "string",
+        "path": "id"
+      },
+      {
+        "type": "string",
+        "path": "LastName"
+      }
+      ]
     }
-  ]
   }
-}
 '
 ```
 
@@ -187,12 +191,13 @@ curl --request GET \
     https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions \
     -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
     -H 'content-type: application/json' \
-    -d '{
+    -d '
+  {
     "Element_Instance_Resource": {
-      "fields": [
+    "fields": [
       {
         "type": "string",
-        "path": "FirstName" //vendorPath renamed to path
+        "path": "FirstName" 
       },
       {
         "type": "string",
@@ -202,7 +207,7 @@ curl --request GET \
         "type": "string",
         "path": "LastName"
       }
-    ]
+      ]
     }
   }
   '
@@ -240,37 +245,38 @@ curl -X GET \
     https://api.cloud-elements.com/elements/api-v2/organizations/objects/definitions \
     -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
     -H 'content-type: application/json' \
-    -d '{
+    -d '
+  {
     "Resource_Based_on_Template_API2": {
-      "fields": [
-        {
-          "type": "string",
-          "path": "name"
-        },
-        {
-          "type": "string",
-          "path": "lastName"
-        },
-        {
-          "type": "string",
-          "path": "email"
-        },
-        {
-          "type": "string",
-          "path": "id"
-        },
-        {
-          "type": "boolean",
-          "path": "active"
-        },
-        {
-          "type": "string",
-          "path": "phone"
-        },
-        {
-          "type": "string",
-          "path": "notes"
-        }
+    "fields": [
+      {
+        "type": "string",
+        "path": "name"
+      },
+      {
+        "type": "string",
+        "path": "lastName"
+      },
+      {
+        "type": "string",
+        "path": "email"
+      },
+      {
+        "type": "string",
+        "path": "id"
+      },
+      {
+        "type": "boolean",
+        "path": "active"
+      },
+      {
+        "type": "string",
+        "path": "phone"
+      },
+      {
+        "type": "string",
+        "path": "notes"
+      }
       ]
     }
   }

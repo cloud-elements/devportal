@@ -1,5 +1,5 @@
 ---
-heading: Common Resources
+heading: Defining Common Resources & Transformations
 seo: Migrate Common Resources | Common Resources | Cloud Elements API Docs
 title: Migrate Common Resources
 description: Migrate Common Resources
@@ -30,27 +30,27 @@ To migrate common resources:
     The JSON response looks like this:
 
     ```json
-      {
-        "fields": [
-          {
-            "type": "string",
-            "path": "birthdate"
-          },
-          {
-            "type": "string",
-            "path": "FirstName"
-          },
-          {
-            "type": "string",
-            "path": "id"
-          },
-          {
-            "type": "string",
-            "path": "LastName"
-          }
-        ],
-        "level": "organization"
-      }
+    {
+      "fields": [
+        {
+          "type": "string",
+          "path": "birthdate"
+        },
+        {
+          "type": "string",
+          "path": "FirstName"
+        },
+        {
+          "type": "string",
+          "path": "id"
+        },
+        {
+          "type": "string",
+          "path": "LastName"
+        }
+      ],
+      "level": "organization"
+    }
     ```
 
 3. Optional. If you created your common resource in an earlier version of the software, it might include a sub-object that it is stored separately. Run the call again using the name of the sub-object for `{objectName}`.
@@ -92,51 +92,51 @@ To migrate transformations:
     The JSON response looks like this:
 
     ```json
+    {
+      "level":"organization",
+      "objectName":"myContacts_API",
+      "vendorName":"Contact",
+      "startDate":"2017-04-24 21:05:05.51129",
+      "fields":[
         {
-        "level": "organization",
-        "objectName": "myContacts_API",
-        "vendorName": "Contact",
-        "startDate": "2017-04-24 21:05:05.51129",
-        "fields": [
-        {
-        "type": "string",
-        "path": "birthdate",
-        "vendorPath": "Birthdate",
-        "level": "organization"
+          "type":"string",
+          "path":"birthdate",
+          "vendorPath":"Birthdate",
+          "level":"organization"
         },
         {
-        "type": "string",
-        "path": "FirstName",
-        "vendorPath": "FirstName",
-        "level": "organization"
+          "type":"string",
+          "path":"FirstName",
+          "vendorPath":"FirstName",
+          "level":"organization"
         },
         {
-        "type": "string",
-        "path": "id",
-        "vendorPath": "Id",
-        "level": "organization"
+          "type":"string",
+          "path":"id",
+          "vendorPath":"Id",
+          "level":"organization"
         },
         {
-        "type": "string",
-        "path": "LastName",
-        "vendorPath": "LastName",
-        "level": "organization"
+          "type":"string",
+          "path":"LastName",
+          "vendorPath":"LastName",
+          "level":"organization"
         }
-        ],
-        "configuration": [
+      ],
+      "configuration":[
         {
-        "type": "passThrough",
-        "properties": {
-        "fromVendor": false,
-        "toVendor": false
-        }
+          "type":"passThrough",
+          "properties":{
+            "fromVendor":false,
+            "toVendor":false
+          }
         },
         {
-        "type": "inherit"
+          "type":"inherit"
         }
-        ],
-        "isLegacy": false
-        }
+      ],
+      "isLegacy":false
+    }
     ```
 
 2. In your target account or environment, make a `POST /organizations/elements/{keyOrId}/transformations/{objectName}` API call, replacing `keyOrId` with the element key and `objectName` with the name of the common resource. Include the JSON payload from the previous step.

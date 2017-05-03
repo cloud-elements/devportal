@@ -1,5 +1,5 @@
 ---
-heading: Creating Resources
+heading: Defining Common Resources & Transformations
 seo: Creating | Common Resources | Cloud Elements API Docs
 title: Creating Common Resources
 description: Common Resources Overview
@@ -24,7 +24,7 @@ To create a common resource, go to the steps that match how you plan to create t
 * [Create a New Common Resource](#create-a-new-common-resource) for steps to create an entirely new common resource.
 * [Create a Common Resource Based on Another Common Resource](#create-a-common-resource-based-on-another-common-resource) for steps to create a common resource based on an existing resource. You might create copies of resources to provide different common resources for different accounts.
 * [Create a Common Resource Based on an Element Instance Resource](#create-a-common-resource-based-on-an-element-instance-resource) for steps to create a common resource based on an element resource. You might use element instance resources because you want your common resource to be based on a certain element.
-* [Create a Common Resource Based on a Cloud Elements Template](#create-a-common-resource-based-on-a-cloud-elements-template) for steps to create a common resource based on a Cloud Elements template. Cloud elements templates represent typical common resources.
+* [Create a Common Resource Based on a Cloud Elements Template](#create-a-common-resource-based-on-a-cloud-elements-template) for steps to create a common resource based on a Cloud Elements template. Cloud Elements templates represent typical common resources.
 
 ## Create a New Common Resource
 

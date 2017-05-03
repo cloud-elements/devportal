@@ -1,5 +1,5 @@
 ---
-heading: Creating Resources
+heading: Defining Common Resources & Transformations
 seo: Creating Transformations | Common Resources | Cloud Elements API Docs
 title: Transforming Fields via API
 description: Creating Transformations
@@ -50,18 +50,20 @@ To map fields:
 
 1. Construct a JSON body as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
 
-          {
-            "level": "organization",
-            "vendorName": "<VENDOR_RESOURCE>",
-            "fields": [
-              {
-                "path": "<COMMON_RESOURCE_FIELD>",
-                "type":"<COMMON_RESOURCE_TYPE>",
-                "vendorPath": "<VENDOR_FIELD>",
-                "vendorType": "<VENDOR_TYPE>"
-              }
-            ]
-          }
+    ```json
+    {
+      "level":"organization",
+      "vendorName":"<VENDOR_RESOURCE>",
+      "fields":[
+        {
+          "path":"<COMMON_RESOURCE_FIELD>",
+          "type":"<COMMON_RESOURCE_TYPE>",
+          "vendorPath":"<VENDOR_FIELD>",
+          "vendorType":"<VENDOR_TYPE>"
+        }
+      ]
+    }
+    ```
 
 1. Call the following, including the JSON body from the previous step:
 
@@ -71,9 +73,9 @@ To map fields:
 
 ### Transformation JSON Parameters
 
-| Parameter | Description   |  Optional (Y/N) |
+| Parameter | Description   |  Required (Y/N) |
 | :------------- | :------------- |:------------- |
-| level |  The access level of the transformation, either `organization`, `account`, or `instance`.  | Y </br>If not included, `organization` is the default. |
+| level |  The access level of the transformation, either `organization`, `account`, or `instance`.  | N. Default depends on endpoint.|
 | vendorName | The name of the resource that contains the fields that you want to map to the common resource. | N |
 | fields |  An object containing the field names and data types of the common resource and the vendor resource. </br>{% include tip.html content="To get a list of fields in a resource, call `GET hubs/{hub}/objects/{RESOURCE}/metadata`." %} | N |
 | path | The name of the field in the common resource. | Y |
@@ -88,36 +90,33 @@ curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/organizations/elements/sfdc/transformations/myContacts \
   -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
   -H 'content-type: application/json' \
-  -d '{
-  "level": "organization",
-  "vendorName": "Contact",
-  "fields": [
+  -d '
+  {
+  "level":"organization",
+  "vendorName":"Contact",
+  "fields":[
     {
-      "type": "string",
-      "path": "FirstName",
-      "vendorPath": "FirstName",
+      "type":"string",
+      "path":"FirstName",
+      "vendorPath":"FirstName"
     },
     {
-      "type": "string",
-      "path": "id",
-      "vendorPath": "Id",
+      "type":"string",
+      "path":"id",
+      "vendorPath":"Id"
     },
     {
-      "type": "string",
-      "path": "LastName",
-      "vendorPath": "LastName",
+      "type":"string",
+      "path":"LastName",
+      "vendorPath":"LastName"
     },
     {
-      "type": "date",
-      "path": "birthdate",
-      "vendorPath": "Birthdate",
-      "vendorType": "date",
-      "configuration": [
-        {
-          "properties": {
-            "pattern": "yyyy-mm-dd"
-          }
-        }
+      "type":"date",
+      "path":"birthdate",
+      "vendorPath":"Birthdate",
+      "vendorType":"date",
+      "configuration":[
+
       ]
     }
   ]
@@ -132,14 +131,16 @@ To create an instance level common resource and map fields to it:
 
 1. Construct a JSON body for the instance level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
 
+    ```json
+    {
+      "fields": [
         {
-          "fields": [
-            {
-              "type": "<dataType>",
-              "path": "<fieldName>"
-            }
-          ]
-         }
+          "type": "<dataType>",
+          "path": "<fieldName>"
+        }
+      ]
+    }
+    ```
 
 1. Create the common resource. Make the following API call with the JSON body from the previous step, replacing `{id}` with the instance id, and replacing `{objectName}` with the name of the common resource:
 
@@ -147,18 +148,20 @@ To create an instance level common resource and map fields to it:
 
 1. Construct a JSON body to map fields to the new common resource as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
 
-          {
-            "level": "instance",
-            "vendorName": "<VENDOR_RESOURCE>",
-            "fields": [
-              {
-                "path": "<COMMON_RESOURCE_FIELD>",
-                "type":"<COMMON_RESOURCE_TYPE>",
-                "vendorPath": "<VENDOR_FIELD>",
-                "vendorType": "<VENDOR_TYPE>"
-              }
-            ]
-          }
+    ```json
+    {
+      "level":"instance",
+      "vendorName":"<VENDOR_RESOURCE>",
+      "fields":[
+        {
+          "path":"<COMMON_RESOURCE_FIELD>",
+          "type":"<COMMON_RESOURCE_TYPE>",
+          "vendorPath":"<VENDOR_FIELD>",
+          "vendorType":"<VENDOR_TYPE>"
+        }
+      ]
+    }
+    ```
 
 2. Map fields to the common resource. Call the following, including the JSON body from the previous step:
 
@@ -176,14 +179,15 @@ curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances/{id}/objects/{objectName}/definitions \
   -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
   -H 'content-type: application/json' \
-  -d '{
-  "fields": [
-    {
-      "type": "string",
-      "path": "title"
-    }
-  ]
-	}'
+  -d '
+  {
+    "fields": [
+      {
+        "type": "string",
+        "path": "title"
+      }
+    ]
+  }'
 ```
 
 #### Step 2: Map fields to the common resource
@@ -193,17 +197,18 @@ curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances/{id}/transformations/{objectName} \
   -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
   -H 'content-type: application/json' \
-  -d '{
-  "vendorName": "Contact",
-  "level": "instance",
-  "fields": [
-    {
-      "path": "title",
-      "type":"string",
-      "vendorPath": "Title"
-    }
-		]
-}'
+  -d '
+  {
+    "vendorName": "Contact",
+    "level": "instance",
+    "fields": [
+      {
+        "path": "title",
+        "type":"string",
+        "vendorPath": "Title"
+      }
+    ]
+  }'
 ```
 
 ## Map Fields at the Account Level
@@ -214,14 +219,16 @@ To create an account level common resource and map fields to it:
 
 1. Construct a JSON body for the account level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
 
+    ```json
+    {
+      "fields":[
         {
-          "fields": [
-            {
-              "type": "<dataType>",
-              "path": "<fieldName>"
-            }
-          ]
-         }
+          "type":"<dataType>",
+          "path":"<fieldName>"
+        }
+      ]
+    }
+    ```
 
 1. Create the common resource. Make one of the following API calls with the JSON body from the previous step, replacing `{id}` with the account id, and replacing `{objectName}` with the name of the common resource:
 
@@ -235,18 +242,20 @@ To create an account level common resource and map fields to it:
 
 1. Construct a JSON body to map fields to the new common resource as shown below. For descriptions of each parameter, see [Transformation JSON Parameters](#transformation-json-parameters).
 
-          {
-           "level": "instance",
-           "vendorName": "<VENDOR_RESOURCE>",
-           "fields": [
-             {
-               "path": "<COMMON_RESOURCE_FIELD>",
-               "type":"<COMMON_RESOURCE_TYPE>",
-               "vendorPath": "<VENDOR_FIELD>",
-               "vendorType": "<VENDOR_TYPE>"
-             }
-             ]
-           }
+    ```json
+    {
+      "level":"instance",
+      "vendorName":"<VENDOR_RESOURCE>",
+      "fields":[
+        {
+          "path":"<COMMON_RESOURCE_FIELD>",
+          "type":"<COMMON_RESOURCE_TYPE>",
+          "vendorPath":"<VENDOR_FIELD>",
+          "vendorType":"<VENDOR_TYPE>"
+        }
+      ]
+    }
+    ```
 
 2. Map fields to the common resource. Call the following, including the JSON body from the previous step:
 
@@ -261,16 +270,17 @@ To create an account level common resource and map fields to it:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/accounts/objects/{objectName}/definitions \
-  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
-  -d '{
-  "fields": [
-    {
-      "type": "string",
-      "path": "title"
-    }
-  ]
-	}'
+  -d '
+  {
+    "fields": [
+      {
+        "type": "string",
+        "path": "title"
+      }
+    ]
+  }'
 ```
 
 #### Step 1: Create the common resource (specific account)
@@ -278,16 +288,17 @@ curl -X POST \
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/accounts/{id}/objects/{objectName}/definitions \
-  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
-  -d '{
-  "fields": [
-    {
-      "type": "string",
-      "path": "title"
-    }
-  ]
-	}'
+  -d '
+  {
+    "fields": [
+      {
+        "type": "string",
+        "path": "title"
+      }
+    ]
+  }'
 ```
 
 
@@ -296,19 +307,19 @@ curl -X POST \
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/accounts/{id}/elements/{keyOrIdtransformations}/{objectName} \
-  -H 'authorization: User {USER_SECRET}, Organization {ORGANIZATION_SECRET}' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
-  "vendorName": "Contact",
-  "level": "account",
-  "fields": [
-    {
-      "path": "title",
-      "type":"string",
-      "vendorPath": "Title"
-    }
-		]
-}'
+    "vendorName": "Contact",
+    "level": "account",
+    "fields": [
+      {
+        "path": "title",
+        "type":"string",
+        "vendorPath": "Title"
+      }
+
+  }'
 ```
 
 ## Map Complex Objects
@@ -319,48 +330,65 @@ Examples:
 
 * Get the value of the name field from the Products array where id = 4.
 
-        "fields": [
+    ```json
+    {
+      "fields": [
         {
-         "path": "AppleIpadName",
-         "vendorPath": "Products[id=4].name"
-        },
+          "path": "AppleIpadName",
+          "vendorPath": "Products[id=4].name"
+        }
+      ]
+    }
+    ```
 
 * Get the value of the name field from the Products array where id = 2.
 
-        "fields": [
+    ```json
+    {
+      "fields": [
         {
-         "path": "AppleNewProductName",
-         "vendorPath": "details.Products[?(@.id==2)].name"
+          "path": "AppleNewProductName",
+          "vendorPath": "details.Products[?(@.id==2)].name"
         }
+      ]
+    }
+    ```
 
 * Get the touchId value from the Products array with id=2 which is inside the features object.
 
-        "fields": [
-         {
+    ```json
+    {
+      "fields": [
+        {
           "path": "AppleTouchProductId",
           "vendorPath": "Products[?(@.features.touchId==true)].id"
-         }
-
-* Get the Id of the array where touchId = true.
-
-         "fields": [
-         {
-           "path": "AppleTouchProductId",
-           "vendorPath": "Products[?(@.features.touchId==true)].id"
-         }
+        }
+      ]
+    }
+    ```
 
 * Get the Id value of the Products array at index 0.
 
-         "fields": [
-         {
-           "path": "AppleProductId",
-           "vendorPath": "Products[0].id"
-         }
+    ```json
+    {
+      "fields": [
+        {
+          "path": "AppleProductId",
+          "vendorPath": "Products[0].id"
+        }
+      ]
+    }
+    ```
 
 * Get a count of the Products array.
 
-         "fields": [
-         {
-           "path": "AppleProductsCount",
-           "vendorPath": "Products[*].size()"
-         }
+```json
+{
+  "fields": [
+    {
+      "path": "AppleProductsCount",
+      "vendorPath": "Products[*].size()"
+    }
+  ]
+}
+```

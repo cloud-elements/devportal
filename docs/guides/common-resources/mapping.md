@@ -1,5 +1,5 @@
 ---
-heading: Creating Resources
+heading: Defining Common Resources & Transformations
 seo: Mapping Fields to Common Resources | Common Resources | Cloud Elements API Docs | Transformations |
 title: Transforming Fields
 description: Creating Transformations
@@ -36,7 +36,7 @@ The common resource fields on the left are ready to be mapped to the element ins
 
 Before you can transform fields, you need to map the fields for each element instance to the common resource. The common resource fields are on the left and the element instance resource fields are on the right.
 
-We provide a default __id__ field, which you can choose to map to an element instance ID, delete, or rename to an entirely different field. If you created you common resource based on an existing resource, you will see more fields than just the __id__ field.
+{% include note.html content="We provide a default <code>id</code> field, which you can choose to map to an <code>id</code> field in the element's resource, delete, or rename to an entirely different field. If you created your common resource based on an existing resource, you will see more fields than just the <code>id</code> field. " %}
 
 You can map fields one at a time, or you can add several fields to the common resource at once, and then map them later. These instructions describe mapping a single field at a time.
 
@@ -66,7 +66,7 @@ To map fields:
 ![Filtering Resources](img/gif-filter.gif)
 
 1. Continue adding resources until you finish, and then click __Save__.
-3. To map another instance, click the common resource name in the breadcrumbs at the top of the page.
+3. To map another instance, click **Transformations** in the breadcrumbs at the top of the page.
 ![Breadcrumbs](img/Breadcrumbs_Return.png)
 
 ### Tips
@@ -74,7 +74,7 @@ To map fields:
 * You don't have to map fields one at a time. You can add multiple fields to the Common Resources side at once, and then map them later. Use <img src="img/btn-Filter.png" alt="Filter" class="inlineImage"> to show only those element instance resource fields that haven't been mapped.
 * If you made a mistake and don't want to include a field in a common resource, click <img src="img/btn-Delete.png" alt="Delete" class="inlineImage">. If you still want the field, but want to remove the mapping, click <img src="img/btn-Clear.png" alt="Clear" class="inlineImage">.
 * If you need to map a custom field, click <img src="img/btn-Free-Text.png" alt="Free Text Button" class="inlineImage">, and then type a name. See [Advanced Common Resources: Transforming Custom Resources](advanced.html#transforming-custom-resources) for details.
-* We use dot notation to show arrays in the element instance resources. If you need to create arrays in your common resource, use dot notation. Examples include address.city, address.state, and address.street. See [Advanced Common Resources: Working With Arrays](advanced.html#working-with-arrays) for details.
+* We use dot notation to show sub-objects in the element instance resources. If you need to create sub-objects in your common resource, use dot notation. Examples include address.city, address.state, and address.street. See [Working With Nested Objects](#working-with-nested-objects) for details.
 
 ## Use Javascript to Manage Complex Objects
 
@@ -236,7 +236,7 @@ The list of resources is in alphabetical order, so the example myContact in this
 
 ## Working with Nested Objects
 
-We display object arrays in dot notation. You can also use dot notation to nest objects in your common resource. For example, you might want to create nested address fields like those shown in the example below:
+We display sub-objects in dot notation. You can also use dot notation to nest objects in your common resource. For example, you might want to create nested address fields like those shown in the example below:
 
 ![Nesting Example](img/Nesting.png)
 

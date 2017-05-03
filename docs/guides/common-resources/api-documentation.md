@@ -1,5 +1,5 @@
 ---
-heading: Common Resources
+heading: Defining Common Resources & Transformations
 seo: API Docs | Element Mapper | Cloud Elements API Docs
 title: API Reference
 description: Common Resources & Transformations API Documentation.
