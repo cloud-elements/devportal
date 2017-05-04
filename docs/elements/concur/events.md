@@ -1,5 +1,5 @@
 ---
-heading: Concur
+heading: Concur Beta
 seo: Events | Concur | Cloud Elements API Docs
 title: Events
 description: Enable Concur events for your application.
@@ -14,11 +14,7 @@ order: 25
 
 {% include polling_and_webhooks_defined.md %}
 
-__On this page__
-
-[Webhooks](#webhooks)
-
-[Polling](#polling)
+{% include callout.html content="<strong>On this page</strong></br><a href=#webhooks>Webhooks</a></br><a href=#polling>Polling</a>" type="info" %}
 
 ## Webhooks
 

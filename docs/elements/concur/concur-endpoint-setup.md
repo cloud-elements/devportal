@@ -1,5 +1,5 @@
 ---
-heading: Concur
+heading: Concur Beta
 seo: Endpoint Setup | Concur | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
