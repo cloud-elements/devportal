@@ -1,5 +1,5 @@
 ---
-heading: Concur
+heading: Concur Beta
 seo: Query Language | Concur | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
