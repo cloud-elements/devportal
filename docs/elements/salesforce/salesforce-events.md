@@ -10,21 +10,53 @@ parent: Back to Element Guides
 order: 25
 ---
 
-## Events
+# Events
 
 {% include polling_and_webhooks_defined.md %}
 
 Cloud Elements supports both webhooks and polling events for Salesforce.
 
-### Polling
+{% include callout.html content="<strong>On this page</strong></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
-In order to enable polling, add these two extra configurations to your instance JSON:
 
-```
-"event.notification.enabled": "true",
+## Polling
+
+You can configure polling through the UI or in the JSON body of the `/instances` API call.
+
+### Configure Polling Through the UI
+
+For more information about each field described here, see [Parameters](#parameters).
+
+1. Switch on __Events Enabled__.
+2. Select **polling** from **Event Type**.
+2. Add an **Event Notification Callback URL**.
+3. Optionally include an **Event Notification Signature Key**.
+4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Enter each object that you want to poll for changes separated by commas.
+
+When finished adding your polling configuration, the Event Configuration section should look like this:
+
+| Latest UI | Earlier UI  |
+| :------------- | :------------- |
+|  ![Polling](img/Polling-C2.png)  |  ![Polling](img/Polling-C1.png)  |
+
+### Configure Polling Through API
+
+To add polling when authenticating through the `/instances` API call, add the following to the `configuration` object in the JSON body. For more information about each parameter described here, see [Parameters](#parameters).
+
+```json
+{
+"event.notification.enabled": true,
+"event.vendor.type": "polling",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.objects": "<SEE_BELOW>"
+"event.notification.signature.key": "<INSERT_KEY>",
+"event.objects": "<COMMA_SEPARATED_LIST>",
+"event.poller.refresh_interval": "<TIME_IN_MINUTES>"
+}
 ```
+{% include note.html content="<code>event.notification.signature.key</code> is optional.  " %}
+
+### Example JSON with Polling
 
 instance JSON with polling events enabled:
 
@@ -40,46 +72,75 @@ instance JSON with polling events enabled:
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.api.key": "<Insert_Client_ID>",
     "oauth.api.secret": "<Insert_Client_Secret>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+    "event.notification.enabled": true,
     "event.vendor.type": "polling",
-    "event.objects": "<INSERT_COMMA_SEPARATED_LIST_OF_OBJECTS_e.g_Account,Contact>"
+    "event.notification.callback.url": "https://mycoolapp.com",
+    "event.notification.signature.key": "12345",
+    "event.objects": "Contact,Account",
+    "event.poller.refresh_interval": "5"
   },
   "tags": [
-    "<Add_Your_Tag>"
+    "forDocs"
   ],
-  "name": "<Insert_Instance_Name>"
+  "name": "mySFDCInstance"
 }
 ```
 
-### Webhooks
+## Webhooks
 
 When implementing webhooks for Salesforce, Cloud Elements creates APEX classes and triggers in order to send webhooks.  This can only be done in a Salesforce sandbox account.  If you want to support webhooks in a production Salesforce account, you'll have to make some modifications and migrate those classes to production according to the Salesforce specification. View more information regarding the [Salesforce specification](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_qs_deploy.htm).
 
-Follow these steps to setup your Salesforce application with the endpoint.
+You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or [through API](#configure-webhooks-through-api) in the JSON body of the `/instances` API call. First, you must [set up webhooks in Salesforce](#set-up-webhooks).
 
-__In order to create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support is required. Also, to set up a new application in Salesforce, you must have Administrator privileges. Please contact your system administrator if you do not have those privileges.__
+### Set Up Webhooks
 
-Via a web browser, login to your Salesforce account:
-[https://login.salesforce.com/](https://login.salesforce.com/)
+Follow these steps to set up your Salesforce application with the endpoint.
 
-
-1. Under "Administer" > "Security Controls" > select "Remote Site Settings"
-![Salesforce Webhook step 1](img/salesforce-webhook-1.png)
-
-2. Click “New Remote Site”
+1. Via a web browser, log in to your Salesforce account:
+1. In the Quick Find box, type `Remote Site Settings`.
+2. Click __New Remote Site__.
 ![Salesforce Webhook step 2](img/salesforce-webhook-2.png)
+3. Create a remote site for each of the following URLs:
 
-3. Input “Remote Site Name” e.g. Cloud Elements and the following URL: `https://api.cloud-elements.com`
+  * https://api.cloud-elements.com
+  * https://console.cloud-elements.com
 
-4. Click “Save”
-![Salesforce Webhook step 3](img/salesforce-webhook-3.png)
+{% include note.html content="Our current support for Salesforce Events includes listening for only Creating, Updating, and Deleting objects in Salesforce. For example, when a new account is created, your application can receive a notification regarding the creation of the account.  " %}
 
-__NOTE: Our current support for Salesforce Events include listening for the following:
-Creating, Updating, and Deleting of any object in Salesforce.
-For example, when a new account is created, your application will receive a notification regarding the creation of the account.__
+### Configure Webhooks Through the UI
 
-The following JSON may be used to create a Salesforce Instance with webhooks enabled:
+For more information about each field described here, see [Parameters](#parameters).
+
+1. Switch on __Events Enabled__.
+2. Select **webhooks** from **Event Type**.
+2. Add an **Event Notification Callback URL**.
+3. Optionally include an Event Notification Signature Key.
+5. Enter each object that you want to poll for changes separated by commas.
+
+When finished adding your polling configuration, the Event Configuration section should look like this:
+
+| Latest UI | Earlier UI  |
+| :------------- | :------------- |
+|  ![Polling](img/Webhooks-C2.png)  |  ![Polling](img/Webhooks-C1.png)  |
+
+### Configure Webhooks Through API
+
+To add webhooks when authenticating through the `/instances` API call, add the following to the `configuration` object in the JSON body. For more information about each parameter described here, see [Parameters](#parameters).
+
+```json
+{
+"event.notification.enabled": true,
+"event.vendor.type": "polling",
+"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
+"event.notification.signature.key": "<INSERT_KEY>",
+"event.objects": "<COMMA_SEPARATED_LIST>"
+}
+```
+{% include note.html content="<code>event.notification.signature.key</code> is optional.  " %}
+
+### Example JSON with Webhooks
+
+Instance JSON with webhooks events enabled:
 
 ```json
 {
@@ -93,14 +154,34 @@ The following JSON may be used to create a Salesforce Instance with webhooks ena
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.api.key": "<Insert_Client_ID>",
     "oauth.api.secret": "<Insert_Client_Secret>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.vendor.type": "webhook",
-    "event.objects": "<INSERT_COMMA_SEPARATED_LIST_OF_OBJECTS_e.g_Account,Contact>"
+    "event.notification.enabled": true,
+    "event.vendor.type": "webhooks",
+    "event.notification.callback.url": "https://mycoolapp.com",
+    "event.notification.signature.key": "12345",
+    "event.objects": "Contact,Account"
   },
   "tags": [
-    "<Add_Your_Tag>"
+    "forDocs"
   ],
-  "name": "<Insert_Instance_Name>"
+  "name": "mySFDCInstance"
 }
 ```
+
+## Parameters
+
+API parameters are in `code formatting`.
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| 'key' | The element key.<br>sfdc  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| `oauth.api.key` | The Consumer Key from Salesforce. |  string |
+| `oauth.api.secret` | The Consumer Secret from Salesforce. | string |
+| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`  | boolean |
+| Event Type </br>`event.vendor.type` | *Optional*. Identifies the type of events enabled for the instance, either `webhook` or `polling`. | string |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  *For webhooks and polling.*</br>The URL where your app can receive events.   | string |
+| Event Notification Signature Key </br>`event.notification.signature.key` | *For webhooks and polling.*</br>*Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
+| Objects to Monitor for Changes</br>`event.objects`|  *For webhooks and polling.*</br>*Optional*</br>Comma separated list of objects to monitor for changes. | string |
+| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | *For polling only.*</br>A number in minutes to identify how often the poller should check for changes. |  number|
+| tags | *Optional*. User-defined tags to further identify the instance. | string |

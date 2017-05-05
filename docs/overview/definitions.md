@@ -43,7 +43,7 @@ An Element Instance is an Element that is authenticated to a specific user accou
 instance can access all of the objects, fields and data for that account - including custom data. An instance is created
 when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials
 for that Element, and optionally add configuration for events. An Element Instance represents a connection
-to a single authenticated account at the target endpoint such as a Salesforce, Marketo, or Netsuite. 
+to a single authenticated account at the target endpoint such as a Salesforce, Marketo, or Netsuite.
 
 ## Transformation
 
@@ -60,7 +60,7 @@ The Transformation APIs allow you to:
 * map custom data fields to and from the format that your application uses and expects
 * programmatically persist and maintain transformations for each of your client’s CRM, Marketing, and Help Desk services
 
-## Bullk API and CEQL
+## Bulk API and CEQL
 
 __Cloud Element Bulk API__ calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once.
 
@@ -69,6 +69,10 @@ The Bulk APIs require the name of the object identified within the cloud service
 Cloud Elements provides discovery services to get a list of available objects.
 
 __The Cloud Elements Query Language (CEQL)__ is a query language used by Cloud Elements to standardize searching across all of our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all of our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint.
+
+## Discovery Service
+
+Cloud Elements includes a comprehensive data discovery service that provides **normalized metadata**, such as the list of  field names and types. Additional information, if available from an endpoint, may also be obtained such as: display name, read-only, etc. If an endpoint doesn’t provide discovery service APIs, Cloud Elements will still provide a minimum set of metadata about the given resource (e.g., name and type). Cloud Elements also allows you to discover **custom fields** (as long as the values are not empty), by supplying an object Id when a native discovery service is not available. The Discovery Service is used along with the Transformation Service to normalize the responses across endpoints.
 
 ## OAuth Proxy
 
