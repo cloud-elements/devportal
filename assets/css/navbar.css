@@ -1,3 +1,4 @@
+@import './masterStyles.css';
 .searchBoxContainer {
   display: flex;
   align-items: center;
@@ -68,4 +69,20 @@
 
 .algolia__result-highlight {
   font-weight: bold;
+}
+
+.nav {
+  background: #102430;
+}
+
+.navbar-wraper {
+  background: transparent;
+}
+
+.navbar-header {
+  background: transparent !important;
+}
+
+.navbar-nav > li > a {
+  color: #FFF;
 }

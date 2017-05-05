@@ -1,3 +1,4 @@
+@import './masterStyles.css';
 /* global body padding */
 body {
   padding-top:    20px;
@@ -16,6 +17,11 @@ body {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-top: 0;
+}
+
+h2 {
+  color: var(--light-blue);
+  font-weight: bold;
 }
 hr {
   margin-top: 30px;
