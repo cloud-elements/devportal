@@ -4,7 +4,7 @@
 
 When creating or updating entities, you must reference external objects by `internalId`. This includes any reference to a subsidiary, location, or department. Likewise ,when you search based on these fields you must use the `internalId`.
 
-* `GET /customers?where=subsidiary = 4`
+* `GET /customers?where=subsidiary=4`
 
 SOAP APIs, like NetSuite, explicitly define every field. Therefore, custom fields are stored in arrays. If you need to support custom fields in NetSuite there are some additional steps.
 
