@@ -3,7 +3,7 @@ heading: PayPal
 seo: Events | PayPal | Cloud Elements API Docs
 title: Events
 description: Enable PayPal events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides
