@@ -13,31 +13,17 @@ redirect_from:
   - /docs/platform/instances/
 ---
 
-## Instance APIs
+# Instance APIs
 
 The Instances APIs allow you to access your account’s element instances that have been provisioned. Access includes creating, retrieving, updating, and deleting instances.
 
 In order to access the Instances APIs, you must sign up for Cloud Elements Service. You will need your Organization and User Secrets to make success Usage API calls. These are generated for you when you sign up for our service. Details on how to sign up and where to find your Organization and User Secrets are documented in the next section.
 
-### SIGN UP FOR THE CLOUD ELEMENTS SERVICE
+## How to Use the Instance APIs
 
-To sign up for the Cloud Elements service, using a web browser, go to [https://console.cloud-elements.com/elements/jsp/signup.jsp](https://console.cloud-elements.com/elements/jsp/signup.jsp).
+Below are example cURL commands and examples of successful responses for  the Instances API calls.  NOTE, not all supported calls are displayed - this is just a sample.
 
-Sign up with Google, GitHub or fill out a short form to create a new account with Cloud Elements. If you choose not to use Google or GitHub to sign up, you will be asked to validate your new account via a confirmation link that will be sent to your email. You will reset your password to one of your choice after your initial login.
-![Cloud Elements Sign up 1](http://cloud-elements.com/wp-content/uploads/bfi_thumb/ConsoleSignup-m7cde2lpyjexfapmzvn0rpkw24op0jn7mwipj6q2zk.png)
-
-1. After completing this process, click “Secrets” in the top right corner of your dashboard as shown.
-
-2. Copy your User and Organization Secrets. They are needed to create a connection or “Element Instance”.
-
-NOTE: If you ever need to reset your Secrets, this action can be done by clicking on “My Settings” which will take you to your profile.
-![Cloud Elements Sign up 2](http://cloud-elements.com/wp-content/uploads/bfi_thumb/ConsoleSignup22-m7ch2y2e2fak6ad3rqmz7knmq5beuc61n2yurd6md4.png)
-
-### How to Use the Instance APIs
-
-Below are example cURL commands and examples of successful responses for each of the Instances API calls.  NOTE, not all supported calls are displayed - this is just a sample.
-
-`POST /instances`
+### POST /instances
 
 Create a new element instance.
 
@@ -108,7 +94,7 @@ Note:  Make sure you have straight quotes in your JSON files and cURL commands. 
 
 {% include common-instance-config.md %}
 
-`GET /instances`
+### GET /instances
 
 Retrieve all of your account’s element instances.
 
@@ -179,7 +165,7 @@ Example of Successful Response – example has been truncated.
 ]
 ```
 
-`PUT /instances/{id}`
+### PUT /instances/{id}
 
 Update an already existing element instance.
 
@@ -233,7 +219,7 @@ Example of Successful Response:
 }
 ```
 
-`DELETE /instances/{id}`
+### DELETE /instances/{id}
 
 Delete an element instance.
 
@@ -249,7 +235,7 @@ Example of Successful Response:
 
 `HTTP 200 on success`
 
-`GET /instances/{id}`
+### GET /instances/{id}
 
 Retrieve a specific element instance.
 
@@ -295,5 +281,33 @@ Example of Successful Response:
     "cachingEnabled": false
 }
 ```
+
+### PATCH /instances/{id}
+
+Update an already existing element instance.
+
+Use `PATCH /instances/{id}` to update the tags associated with an authenticated instance. Updating tags removes any existing tags, so if you want to keep existing tags and add to them, include all of your tags in the JSON body.
+
+To update tags:
+
+1. Construct a JSON body that includes the element instance ID and tags.
+
+    ```json
+    {
+      "id": 764,
+      "tags": [
+        "tag1",
+        "tag2",
+        "tag3"
+      ]
+    }
+    ```
+
+2. Include the JSON in the body of the following API call, replacing `{id}` with the same element instance ID that you included in the JSON body:
+
+    ```
+    PATCH /instances/{id}
+    ```
+
 
 If you need any support integrating our APIs, please let us know. You can [email](mailto:support@cloud-elements.com) or give us a call at +1.866.830.3456. We will do our best to get back to you within 24 hours. Your success is our success.
