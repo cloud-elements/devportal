@@ -1,21 +1,27 @@
-On this page:
+{% include callout.html content="<strong>On this page</strong></br><a href=#working-with-objects>Working With Objects</a></br><a href=#retrieving-custom-fields-and-records>Retrieving Custom Fields and Records</a></br><a href=#retrieve-custom-fields>Retrieving Custom Fields</a></br><a href=#retrieve-custom-records-and-associated-custom-fields>Retrieve Custom Records and Associated Custom Fields</a></br><a href=#retrieve-list-items>Retrieve List Items</a></br><a href=#search-custom-fields>Search Custom Fields</a></br><a href=#update-custom-fields>Update Custom Fields</a></br><a href=#limitations>Limitations</a>" type="info" %}
 
-* [Getting Information About Custom Fields](#getting-information-about-custom-fields)
-* [Searching Custom Fields](#searching-custom-fields)
-* [Updating Custom Fields](#updating-custom-fields)
+## Working With Objects
 
-## Getting Information About Custom Fields
+When creating or updating entities, you must reference external objects by `internalId`. This includes any reference to a subsidiary, location, or department. Likewise ,when you search based on these fields you must use the `internalId`.
 
-Because we normalize Netsuite's SOAP API to a RESTful API at Cloud Elements, you need to use specific API calls to get information about custom fields. All references to custom fields require the `internalId`, which you can find using the following API calls to retrieve custom objects and picklists:
+* `GET /customers?where=subsidiary=4`
 
-* `GET /custom-fields` to retrieve custom objects
-* `GET /lookups/{fieldname}` to retrieve picklists
+SOAP APIs, like NetSuite, explicitly define every field. Therefore, custom fields are stored in arrays. If you need to support custom fields in NetSuite there are some additional steps.
 
-### Retrieving Custom Objects
+## Retrieve Custom Fields and Records
 
-Typically, you use `GET /objects` to retrieve information, but it does not return custom objects. Instead, use `GET /custom-fields`.
+Because we normalize Netsuite's SOAP API to a RESTful API at Cloud Elements, you need to use specific API calls to get information about custom fields, custom records, custom fields associated with custom records, and custom list items. All references to custom fields and records require the `internalId`, which you can find using the following endpoints:
 
-See the [API docs](api-documentation.html) for more information about `GET /custom-fields`.
+* `GET /custom-fields` to [retrieve custom fields](#retrieving-custom-fields).
+* `GET /custom-record-types` to [retrieve custom records](#retrieve-custom-records-and-associated-custom-fields).
+* `GET /custom-record-types/{typeId}/custom-record-fields` to get the custom fields in custom records using the `internalId` from `GET /custom-record-types`.
+* `GET /custom-record-types/{typeId}/custom-records` to get information in the custom fields using the `internalId` from `GET /custom-record-types`.
+* `GET /lookups/{fieldName}` to [retrieve custom list items](#retrieve-list-items).
+
+See the [API docs](api-documentation.html) for more information about these endpoints.
+
+## Retrieving Custom Fields
+Use `GET /custom-fields` to retrieve a list of all custom fields.
 
 The response for `GET /custom-fields` looks like this. Note the `internalId` at the top:
 
@@ -50,13 +56,57 @@ The response for `GET /custom-fields` looks like this. Note the `internalId` at 
 ]
 ```
 
-### Retrieving Picklists
+## Retrieve Custom Records and Associated Custom Fields
+Custom records can contain custom fields. We provide the following endpoints to help retrieve a list of custom records and the fields in those records.
 
-When working with picklists, you also need to refer to them by `internalId`. To get information about a picklist, use `GET /lookups/{fieldname}`, replacing {fieldname} with the name of a picklist.
+* `GET /custom-record-types`
+* `GET /custom-record-types/{typeId}/custom-record-fields`
+* `GET /custom-record-types/{typeId}/custom-records`
 
-See the [API docs](api-documentation.html) for more information about `GET /lookups/{fieldname}`.
+The response for `GET /custom-record-types` looks like this. Note the `internalId` at the top which you can use as `typeId`:
 
-The response for `GET /lookups/{fieldname}` looks like this:
+```json
+[
+   {
+    "internalId": "67",
+    "scriptId": "customrecord_assetlifetimes",
+    "name": "FAM - Lifetimes",
+    "type": {
+      "value": "customRecordType"
+    }
+  },
+  {
+    "internalId": "74",
+    "scriptId": "customrecord_ncfar_assetusage",
+    "name": "FAM - Asset Usage",
+    "type": {
+      "value": "customRecordType"
+    }
+  },
+  {
+    "internalId": "279",
+    "scriptId": "customrecord_pf_kb_sol_fb",
+    "name": "KB Solution Feedback",
+    "type": {
+      "value": "customRecordType"
+    }
+  },
+  {
+    "internalId": "452",
+    "scriptId": "customrecord_suitesocial_record",
+    "name": "SuiteSocial Record",
+    "type": {
+      "value": "customRecordType"
+    }
+  }
+]
+```
+
+## Retrieve List Items
+
+You can access the `internalId` of list items with `GET /lookups/{fieldname}`, replacing {fieldname} with the name of a picklist.
+
+The response for `GET /lookups/currency` looks like this:
 
 ```json
 [
@@ -79,7 +129,7 @@ The response for `GET /lookups/{fieldname}` looks like this:
 ]
 ```
 
-## Searching Custom Fields
+## Search Custom Fields
 
 Cloud Elements supports searching on the following types of custom objects:
 
@@ -111,7 +161,7 @@ To search on custom fields, add `custom.<type>` to the field reference and value
 `custom.long.scriptId` = 'custentity1' and `custom.long.value` = 1000
 ```
 
-## Updating Custom Fields
+## Update Custom Fields
 
 When you make PATCH or POST API calls and need to update custom fields, you need to include a `customFieldList` and specify the `ce_type`.
 
@@ -151,3 +201,7 @@ The following example shows how to include a `customFieldList`in the JSON body o
   }
 }
 ```
+
+## Limitations
+
+Netsuite querying does not currently support the “OR” functionality.
