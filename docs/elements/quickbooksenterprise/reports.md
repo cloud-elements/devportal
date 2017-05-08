@@ -25,7 +25,7 @@ You can access reports in QuickBooks Enterprise via API. Cloud Elements provides
 
 Use `GET /report-types` to retrieve a list of reports and report categories. Use the `Name` from the response as `ReportName` to search for specific reports in `GET /reports`.
 
-### Example Response
+### JSON Response
 
 ```json
 [
@@ -183,7 +183,7 @@ You must specify a `ReportName` in the CEQL expression. The `ReportName` is the 
 | fieldName | operator   | Values |
 | :------------- | :------------- | :------------- |
 | AccountType			| =		| [See below](#accounttype) |
-| AccountId		 |	= , in		 |Data values |
+| AccountId		 |	= , in		 | Data values |
 | AccountName		 |	= , in	 |	Data values |
 | BudgetCriterion			| =		| [See below](#budgetcriterion) |
 | ClassId			| in, =		| Data |
@@ -191,6 +191,7 @@ You must specify a `ReportName` in the CEQL expression. The `ReportName` is the 
 | EntityId			| = , in		| Data |
 | EntityName			| = ,in		| Data |
 | EntityType			| =		| [See below](#entitytype) |
+| FiscalYear | = | Date Year `YYYY` |
 | IncludeAccounts		| =		| [See below](#includeaccounts) |
 | ItemId				| in, = 		| Data |
 | ItemName			| in, =		| Data |
@@ -268,17 +269,11 @@ GET /reports?where=ReportName%20%3D%20'AR%20Aging%20Summary'%20AND%20BudgetCrite
 | bcAccountsAndClasses |  1 |
 | bcAccountsAndCustomers |  2 |
 
-#### EntityFilter
+#### EntityType
 
 ```
 GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Standard'%20AND%20EntityFilter%20%3D%203
 ```
-
-| Entity Filter | Value   |
-| :------------- | :------------- |
-| EntityType   |  = |
-| EntityId	| = , in |
-| EntityName	| = , in |
 
 | EntityType |  Value |
 | :------------- | :------------- |
@@ -296,12 +291,6 @@ GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Standard'%20AND%20I
 | :------------- | :------------- |
 | iaAll  | 0 |
 | iaInUse  | 1 |
-
-#### ItemFilter
-
-ItemType	=
-ItemName	in, =
-ItemId		in , =
 
 #### ItemType
 
@@ -327,7 +316,7 @@ GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Standard'%20AND%20I
 #### ReportAgingAsOf
 
 ```
-GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Standard'%20AND%20ReportAgingAsOf%20%3D%200
+GET /reports?where=ReportName%20%3D%20'AR%20Aging%20Summary'%20AND%20ReportAgingAsOf%20%3D%200
 ```
 
 | Report Aging | Value   |
