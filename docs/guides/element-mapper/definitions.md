@@ -14,7 +14,7 @@ order: 2
 # Definitions
 There are a few different terms you should become familiar with in order to better grasp Element Mapper.
 
-## Object Definition
+# Object Definition
 The first term is called an "Object Definition".  This simply refers to the standard, canonical object that your application knows about, with each field and field type defined.  Element Mapper then uses your defined object definitions to go about mapping your canonical object definition to the endpoint-specific object.
 
 ## Transformation
