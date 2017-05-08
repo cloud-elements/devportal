@@ -38,3 +38,8 @@ algolia:
       - h6
       - unordered(text)
       - unordered(tags)
+    attributesToSnippet: ['text:20']
+    attributesToHighlight:
+      - 'text'
+
+console: 'UI'

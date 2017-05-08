@@ -1,24 +1,24 @@
 ---
 heading: Element Mapper
-seo: Videos | Element Mapper | Cloud Elements API Docs
-title: Videos
-description: Videos walking through the different features of Element Mapper.
+seo: Getting Started | Element Mapper | Cloud Elements API Docs
+title: Getting Started
+description: Videos and help walking through the different features of Element Mapper.
 layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 4
+order: 3
 ---
 
 # First Time Using Element Mapper
-To get started using Element Mapper, you can use the Element Mapper UI or our platform object definition/transformation APIs.  If you are just getting started, we would recommend using the UI to help familarize yourself with the different pieces that make up Element Mapper and how they work.
+To get started using Element Mapper, you can use the Element Mapper UI or our platform object definition/transformation APIs.  If you are just getting started, we would recommend using the UI to help familiarize yourself with the different pieces that make up Element Mapper and how they work.
 
 # Using Element Mapper UI
 
 This guide is here to get you up and running with Element Mapper. We have provided step by step visual directions, as well as, a video of the same instructions taking you through the whole process. Watch the Video or read at your own pace.
 
-This guide reviews the minimum number of steps to get you mapping your data with the leading Cloud Services using Element Mapper. If you have not signed up for Cloud Elements Service or Provisioned an Element with us, please see our [CRM Quick Start Guide](/getstarted/quickstart-guides/crm-hub-quick-start-guide.html)
+This guide reviews the minimum number of steps to get you mapping your data with the leading Cloud Services using Element Mapper. If you have not signed up for Cloud Elements Service or authenticated an Element with us, see [the Getting Started Guide](/docs/quickstart/overview.html).
 
 {% include vimeo-player-full-width.html id=116909693%}
 {% include padding-all.html %}
@@ -29,7 +29,7 @@ This guide reviews the minimum number of steps to get you mapping your data with
 * A Provisioned CRM Element (Salesforce, SugarCRM, ZohoCRM)
 
 Don’t have that set up?
-Check out our CRM Quick Start Guide to get set up in under 4 minutes.
+Check out [the Getting Started Guide](/docs/quickstart/overview.html) to get set up.
 
 *Salesforce will be used for this demonstration*
 

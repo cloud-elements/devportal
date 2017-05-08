@@ -76,6 +76,7 @@
 
 .contentWrapper {
   padding: 30px 20px;
+  min-height: calc(100vh - 90px - 274px);
 }
 
 .pageContainer {

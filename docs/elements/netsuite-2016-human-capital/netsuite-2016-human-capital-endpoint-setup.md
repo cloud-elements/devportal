@@ -3,7 +3,7 @@ heading: NetSuite 2016 Human Capital
 seo: Endpoint Setup | NetSuite 2016 Human Capital | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1688
 parent: Back to Element Guides
