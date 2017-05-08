@@ -59,16 +59,14 @@ public class SecurityEventKey {
 // sha256=jHdbRx5EZAsOfTwAPJOGkNUzQMVVdu5VJlxcsk+G6jQ=
 ```
 
-`Javascript`:
+`Javascript (Node)`:
 
 ```javascript
-// Using Stanford JavaScript Cryptography Library (https://crypto.stanford.edu/sjcl/)
 
-let key = sjcl.codec.utf8String.toBits("MySecretEventSignatureKey");
-let out = (new sjcl.misc.hmac(key, sjcl.hash.sha256)).mac("<INSERT_EVENT_NOTIFICATION_RESPONSE_BODY>");
-let hmac = sjcl.codec.hex.fromBits(out)
-console.log("sha256="hmac)
+var hmac = crypto.createHmac('sha256', 'MySecretEventSignatureKey')
+           .update('<INSERT_EVENT_NOTIFICATION_RESPONSE_BODY>').digest('base64');
 
+// shaHeader == “sha256=“ + hmac
 // sha256=jHdbRx5EZAsOfTwAPJOGkNUzQMVVdu5VJlxcsk+G6jQ=
 ```
 
