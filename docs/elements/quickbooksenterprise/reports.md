@@ -209,7 +209,7 @@ You must specify a `ReportName` in the CEQL expression. The `ReportName` is the 
 | ReturnColumns		| =		| [See below](#returncolumns) |
 | ReturnRows			| =		| [See below](#returnrows) |
 | SummarizeBudgetColumnsBy | =		| [See below](#summarizebudgetcolumnsby) |
-| SummarizeBudgetRowsBy 	| =		| [See below] |
+| SummarizeBudgetRowsBy 	| =		| [See below](#summarizebudgetrowsby) |
 | SummarizeColumnsBy	| =		| [See below](#summarizecolumnsby) |
 
 #### AccountType
@@ -446,6 +446,19 @@ GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Budget%20Overview'%
 | sbcbCustomer | 1 |
 | sbcbDate | 2 |
 
+#### SummarizeBudgetRowsBy
+
+```
+GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Budget%20Overview'%20AND%20FiscalYear%20%3D%20'2016'%20AND%20SummarizeBudgetRowsBy%20%3D%201
+```
+
+| Columns | Value   |
+| :------------- | :------------- |
+| sbrbAccount | 0 |
+| sbrbClass | 1 |
+| sbrbCustomer | 2 |
+
+
 
 #### SummarizeColumnsBy
 
@@ -484,22 +497,3 @@ GET /reports?where=ReportName%20%3D%20'Profit%20and%20Loss%20Budget%20Overview'%
 | scbVendorType | 25 |
 | scbWeek | 26 |
 | scbYear | 27 |
-
-
-#### ItemFilter
-ItemType	=
-ItemName	in, =
-ItemId		in , =
-Values ItemType can be
-itfAllExceptFixedAsset = 0,
-itfAssembly = 1,
-itfDiscount = 2,
-itfFixedAsset = 3,
-itfInventory = 4,
-itfInventoryAndAssembly = 5,
-itfNonInventory = 6,
-itfOtherCharge = 7,
-itfPayment = 8,
-itfSales = 9,
-itfSalesTax = 10,
-itfService = 11,
