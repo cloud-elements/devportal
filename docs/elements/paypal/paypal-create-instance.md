@@ -3,7 +3,7 @@ heading: PayPal
 seo: Create Instance | PayPal | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 2244
 parent: Back to Element Guides
