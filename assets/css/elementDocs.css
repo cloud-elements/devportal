@@ -7,6 +7,10 @@
   flex-wrap: wrap;
 }
 
+.pageTabs div{
+  border-left: none !important;
+}
+
 .tab {
   flex: 1 0 auto;
   text-align: center;

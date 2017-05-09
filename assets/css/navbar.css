@@ -1,3 +1,4 @@
+@import './masterStyles.css';
 .searchBoxContainer {
   display: flex;
   align-items: center;
@@ -55,17 +56,43 @@
   min-height: 15vh;
   font-weight: normal;
   max-height: 80vh;
+  padding: 0px;
 }
 .resultsItem {
   list-style: none;
-  border-bottom: 1px solid #222222;
-  margin-bottom: 5px;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 10px 30px;
 }
 
-.resultsList {
-  padding: 5px;
+.resultsItem:hover {
+  background: rgba(110, 198, 235, 0.3)
+}
+
+.resultsItem a {
+  text-decoration: underline;
+}
+
+#resultsList {
+  padding: 0px;
 }
 
 .algolia__result-highlight {
   font-weight: bold;
+}
+
+.nav {
+  background: #102430;
+}
+
+.navbar-wraper {
+  background: transparent;
+}
+
+.navbar-header {
+  background: transparent !important;
+  padding: 10px !important;
+}
+
+.navbar-nav > li > a {
+  color: #FFF;
 }
