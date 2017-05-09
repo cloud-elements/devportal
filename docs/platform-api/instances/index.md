@@ -286,7 +286,7 @@ Example of Successful Response:
 
 Update an already existing element instance.
 
-Use `PATCH /instances/{id}` to update the tags associated with an authenticated instance. Updating tags removes any existing tags, so if you want to keep existing tags and add to them, include all of your tags in the JSON body.
+One common use of PATCH is to update the tags associated with an element instance. Updating tags removes any existing tags, so if you want to keep existing tags and add to them, include all of your tags in the JSON body.
 
 To update tags:
 
