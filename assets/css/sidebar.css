@@ -1,6 +1,7 @@
 .sidebar{
   background: #f3f3f4;
   padding: 30px 40px;
+  padding: 0px;
 }
 
 .sidebarWrapper {
@@ -13,17 +14,35 @@
   color: #9198aa;
 }
 
-.activeMenuItem a {
-  color: #3bb6e5;
+.activeMenuItem {
   border-left: 2px solid #3bb6e5;
   padding-left: 5px;
-  margin-bottom: 10px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.activeMenuItem a {
+  color: #3bb6e5;
 }
 
 .sidebarWrapper ul {
   list-style: none;
   padding: 0;
   margin: 0px 10px;
+  padding-left: 25px;
+  padding-top: 5px;  
+}
+
+.accordionListActive ul {
+  padding: 0px;
+}
+
+.accordionListActive li {
+  padding: 5px 0px;
+}
+
+.subItem {
+  padding: 0px !important;
 }
 
 @keyframes expand {
@@ -42,7 +61,7 @@
 .accordionListActive {
   transition: all 0.3s ease-in;
   /*transform: scaleY(1);*/
-  max-height: 600px;
+  max-height: 800px;
   opacity: 1s;
 }
 
@@ -58,6 +77,9 @@
   background-color: rgba(1,1,1,0);
   border: none;
   outline: none;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 15px;
+  padding-left: 25px;
 }
 
 .activeHeaderButton {
