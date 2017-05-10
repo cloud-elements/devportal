@@ -18,24 +18,24 @@ The Tips section includes more information about the element including FAQs, end
 
 * When setting up polling, you may need to specify a timezone specific to the location of your server. The default time zone is UTC.
 
-		{% include note.html content="Quickbooks Enterprise has a known limitation where It currently does not support daylight savings, which may impact your time zone settings.  " %}
+    {% include note.html content="Quickbooks Enterprise has a known limitation where It currently does not support daylight savings, which may impact your time zone settings.  " %}
 
-		Example polling configuration:
+    Example polling configuration:
 
-		```json
-		{
-			"payments": {
-				"url": "/hubs/finance/payments?where=TimeModified >= '${dateTimeZone:America/Denver:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
-				"idField": "TxnID",
-				"datesConfiguration": {
-					"updatedDateField": "TimeModified",
-					"updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
-					"createdDateField": "TimeCreated",
-					"createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
-				}
+	```json
+	{
+		"payments": {
+			"url": "/hubs/finance/payments?where=TimeModified >= '${dateTimeZone:America/Denver:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
+			"idField": "TxnID",
+			"datesConfiguration": {
+				"updatedDateField": "TimeModified",
+				"updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+				"createdDateField": "TimeCreated",
+				"createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
 			}
 		}
-		```
+	}
+	```
 
 * Quickbooks cannot search by `customerref.name` in invoices. For more information, reference the [Quickbooks documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0300_references/0000_programming_guide/0050_data_queries).
 
