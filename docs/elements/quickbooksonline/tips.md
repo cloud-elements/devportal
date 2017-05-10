@@ -10,14 +10,14 @@ parent: Back to Element Guides
 order: 75
 ---
 
-## Tips
+# Tips
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
 {% include callout.html content="<strong>On this page</strong><br/><a href=#general>General</a><br/><a href=#authentication>Authentication</a>" type="info" %}
 
 
-### General
+## General
 
 * Quickbooks Online does not allow you to update taxes via third-party service, including API calls. If you need this functionality, delete the transaction and re-create it using the correct taxes.
 * Quickbooks Online does not currently support the "OR" operator in the where/search clause.
@@ -25,7 +25,7 @@ The Tips section includes more information about the element including FAQs, end
 * To search by Account Type in the GET /ledger-accounts api, use spaces in your accountType, such as 'Accounts Payable', 'Credit Card' etc. List of account types can be found at https://developer.intuit.com/docs/api/accounting/account
 * When using Paging for GET /tax-codes, ensure you are setting the active flag to true to get a valid count returned
 
-### Authentication
+## Authentication
 
 * Quickbooks Online only supports one user per authenticated instance. If one user tries to authenticate to multiple instances, the oldest instance will get wiped out.
 * Auth Tokens are good for 180 days and they can be refreshed within 30 days of expiration.
