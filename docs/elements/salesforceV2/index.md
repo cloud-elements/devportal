@@ -11,11 +11,11 @@ order: 1
 sitemap: false
 ---
 
-# Welcome to the {{page:heading}} Element
+# Welcome to the {{page.heading}} Element
 
-{{page:heading}} provides on-demand customer relationship management (CRM) services.
+{{page.heading}} provides on-demand customer relationship management (CRM) services.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
 ## Element Details
 
