@@ -3,7 +3,7 @@ heading: Zuora
 seo: Events | Zuora | Cloud Elements API Docs
 title: Events
 description: Enable Zuora events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 2245
 parent: Back to Element Guides
