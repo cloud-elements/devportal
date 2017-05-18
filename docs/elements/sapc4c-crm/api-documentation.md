@@ -1,6 +1,6 @@
 ---
-heading: SAP Anywhere
-seo: API Docs | SAP Anywhere | Cloud Elements API Docs
+heading: SAP C4C CRM
+seo: API Docs | SAP C4C CRM | Cloud Elements API Docs
 title: API Docs
 description: SAP Anywhere API Documentation.
 layout: sidebarapidocs

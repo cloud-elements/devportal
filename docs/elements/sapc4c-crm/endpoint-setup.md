@@ -1,5 +1,5 @@
 ---
-heading: SAP Anywhere
+heading: SAP C4C CRM
 seo: Endpoint Setup | SAP Anywhere | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup

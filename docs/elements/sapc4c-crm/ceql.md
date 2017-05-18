@@ -1,5 +1,5 @@
 ---
-heading: SAP Anywhere
+heading: SAP C4C CRM
 seo: Query Language | SAP Anywhere | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.

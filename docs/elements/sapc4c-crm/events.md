@@ -1,6 +1,6 @@
 ---
-heading: SAP Anywhere
-seo: Events | SAP Anywhere | Cloud Elements API Docs
+heading: SAP SAP C4C CRM
+seo: Events | SAP SAP C4C CRM | Cloud Elements API Docs
 title: Events
 description: Enable SAP Anywhere events for your application.
 layout: sidebarelementdoc

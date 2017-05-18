@@ -20,8 +20,8 @@ sitemap: false
 | Element Information | Details     |
 | :------------- | :------------- |
 | API Documentation | [{{page.heading}} API  documentation](http://help-legacy.sap.com/saphelp_sapcloudforcustomer/en/PUBLISHING/IntegrationServices.html) |
-| Authentication | OAuth 2  |
-| Events | Webhooks and polling |
+| Authentication | Basic  |
+| Events | Polling |
 | Bulk | Supported |
 | Transformations | Supported    |
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 {% include error-codes.md %}
 
 
-Get started by [setting up the endpoint](salesforce-endpoint-setup.html).
+Get started by [setting up the endpoint](endpoint-setup.html).
