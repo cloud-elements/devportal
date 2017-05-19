@@ -14,7 +14,5 @@ order: 50
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-{% include callout.html content="<strong>On this page</strong><br/><a href=#authentication>Authentication</a><br/><a href=#bulk>Bulk</a><br/><a href=#webhooks>Webhooks</a>" type="info" %}
-
 
 {% include hubspot/tips.md %}
