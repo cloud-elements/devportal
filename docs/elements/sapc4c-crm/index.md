@@ -23,8 +23,7 @@ sitemap: false
 | Authentication | Basic  |
 | Events | Polling |
 | Bulk | Supported |
-| Transformations | Supported    |
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
+| Transformations | Supported . See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.  |
 
 # Base URL
 
