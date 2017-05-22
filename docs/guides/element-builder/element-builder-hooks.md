@@ -15,7 +15,7 @@ order: 7
 
 Hooks allow you to execute custom Javascript before and/or after an API call takes place.  Element Builder supports two types of hooks: global hooks and API resource hooks.  Global hooks are executed before and/or after every single API call to an Element, while API resource hooks are executed before and/or after API calls to a specific API resource on an Element.
 
-# Javascript
+## Javascript
 The function signature for all JS in Element Builder looks like:
 
 ```javascript
@@ -57,7 +57,7 @@ done({
 
 > **NOTE:**  In the above example, the `request_vendor_parameters` that are returned will overwrite the request vendor parameters that need to be sent to the endpoint
 
-### Additional functionality
+## Additional Functionality
 
 __Libraries__
 
@@ -68,8 +68,8 @@ __Libraries__
  * `CE.b64(str)`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
  * `CE.decode64(str)`: Decode a string from base64, using UTF-8 encoding. Takes a `string` as a parameter. Returns a `string`.
  * `CE.hmac(algo)(enc)(secret, str)`: HMAC hash a string (_str_) using the provided secret (_secret_), algorithm (_algo_), and encoding (_enc_). See https://nodejs.org/api/crypto.html#crypto_class_hmac for more information about the algorithm and encoding parameters.
- * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:  
- _algo_: `Sha1`, `Sha256`, `Md5`  
+ * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:
+ _algo_: `Sha1`, `Sha256`, `Md5`
  _enc_: `Hex`, `base64`
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 * Util: The standard Node `util` library. To use, `require` it in your script.
@@ -133,9 +133,7 @@ __Libraries__
 	apiCall.end();
 	```
 
-# Examples
-
-Some examples of a Global Pre-Hook, Pre-Hook, Post-Hook, and Web-Hook Event will be shown.
+## Pre Hook and Post Hook
 
 Hooks are defined as:
 
@@ -151,30 +149,36 @@ We’ll take a look at a few, as well as, some other Hook features.
 
 Hooks can be used under the following Tabs in Element Builder:
 
-* Configuration
-* Resources
-* Events
-
 * __Configuration:__ hook needed to set a global property to the endpoint
 * __Resources:__ hook needed to set a property on a particular resource
 * __Events:__ hook needed to set a property on an event
 
-__Location and Features__
+## Access the Hooks  Panel
 
-The hooks input field can be found towards the bottom of the panel.  Element Builder supports custom JavaScript in both the Pre-Hook and Post-Hook panels.
+The hooks panel appears at the bottom of the panel.  Element Builder supports custom JavaScript in both the Pre-Hook and Post-Hook panels.
 
-To add a custom hook, simply select Pre-Hook or Post-Hook and enter your code below.
+To add a custom hook:
 
-To the left of the code editor, a list of available objects and code samples can be found.  Simply select “Objects” or “Sample Code” to view the contents.
-
-Expand and Collapse the Hooks panel using the “Expand” and “Collapse” toggle feature.
+1. Select Pre-Hook or Post-Hook and enter your code below.
+1. Review the list of available objects and code samples .  Select  **Objects** or **Sample Code** to view the contents.
+1. Expand and Collapse the Hooks panel using the “Expand” and “Collapse” toggle feature.
 ![Element Builder Hooks 1](http://cloud-elements.com/wp-content/uploads/2016/03/Hooks1.png)
 
-#### Global Pre-Hook
+## Examples
+
+This section include the following example:
+
+* [Global Pre-Hook](#global-pre-hook)
+* [Pre-Hook Using Element Configuration](#pre-hook-using-element-configuration)
+* [Post Hook Reading Response Headers](#post-hook-reading-response-headers)
+* [Reading Event Webhooks](#reading-event-webhooks)
+* [Removing Headers](#removing-headers)
+
+### Global Pre-Hook
 
 The hook below applies to all delete method requests. If the request is ‘delete’, then override or create object with that key.
 
-```JavaScript
+```js
 if(request_vendor_method === 'DELETE') {
 	request_vendor_headers["Content-Type"] = "*/*";
 	return {
@@ -183,11 +187,11 @@ if(request_vendor_method === 'DELETE') {
 }
 ```
 
-#### Pre-Hook
+### Pre-Hook Using Element Configuration
 
 This hook is an example of reading a value from the configuration of your element, then manipulating the data that has been posted to an endpoint.
 
-```JavaScript
+```js
 var body = JSON.parse(request_vendor_body);
 var contactEmailUpsert = configuration["contact.emailupsert"];
 if(contactEmailUpsert === false) {
@@ -205,12 +209,13 @@ return {
 }
 ```
 
-#### Post-Hook
+### Post-Hook Reading Response Headers
 
 This hook is an example of reading the response headers to retrieve a value, then extracting that value as an ID and sending it as a response.
+
 The script only executes if the response behaves as expected.
 
-```JavaScript
+```js
 if(response_headers === null
 	|| !(response_status_code === 201
 		|| response_status_code === 200)) {
@@ -236,11 +241,11 @@ return {
 	"response_body": response
 }
 ```
-#### Event Webhook
+### Reading Event Webhooks
 
 This hook is an example of reading the event webhook types and formatting them into what Cloud Elements expects.
 
-```JavaScript
+```js
 var formattedEvents = getArray();
 var eventObj = {};
 eventObj.event_date = events["modifiedAt"];
@@ -269,6 +274,23 @@ formattedEvents.add(eventObj);
 return {
 	"events" : formattedEvents
 }
+```
+
+### Removing Headers
+
+By default, we send `Accept: "application/json"` and `Content-Type: "application/json"` in the headers. If the service provider cannot handle `Accept` or `Content-Type` headers, you can remove them from the request.
+
+In this example, we remove the `Content-Type` header.
+
+```
+let headers = {
+     "Content-Type": null
+};
+
+done({
+     "request_vendor_headers": headers
+...
+)};
 ```
 
 Element Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.

@@ -3,7 +3,7 @@ heading: PayPal
 seo: API Docs | PayPal | Cloud Elements API Docs
 title: API Docs
 description: PayPal API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 2244
 parent: Back to Element Guides

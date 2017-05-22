@@ -5,7 +5,7 @@ title: Events
 description: Enable QuickBase events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 475
+elementId: 1250
 parent: Back to Element Guides
 order: 30
 ---

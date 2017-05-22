@@ -134,9 +134,9 @@ a:hover, a:focus, a:visited {
 }
 
 .nav.navbar-light .navbar-nav > li > a {
-  color: #000;
+  color: #FFF;
   font-size: 90%;
-  border-bottom: 2px solid #FFF;
+  /*border-bottom: 2px solid #FFF;*/
 }
 
 .navbar-default .navbar-nav > li > a .active{
