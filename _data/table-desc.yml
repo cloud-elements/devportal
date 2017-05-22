@@ -1,0 +1,22 @@
+# Formulas
+headers: "The headers to pass along as part of the API request."
+
+query: "The CEQL query to pass as part of the API request."
+
+name: "The name of the formula step."
+
+method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELETE. "
+
+retry-failure: "Indicates that we should retry a configurable number of times if the request fails."
+
+retry-delay : "The time in minutes to wait between retries."
+
+max-retry: "The maximum number of times to retry the request."
+
+retry-status-codes: "Retry status codes description"
+
+path: "Path description"
+
+body: "Body description"
+
+acceptable-codes: "Acceptable Codes description"
