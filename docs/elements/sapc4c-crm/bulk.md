@@ -1,6 +1,6 @@
 ---
 heading: SAP C4C CRM
-seo: Bulk APIs | SAP Anywhere | Cloud Elements API Docs
+seo: Bulk APIs | SAP C4C CRM | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
@@ -19,4 +19,4 @@ If we support a GET /objectName endpoint, like GET /contacts or GET /accounts, t
 
 Cloud Elements leverages the provider bulk endpoints whenever available. When there is no bulk available from the provider, Cloud Elements provides a bulk service for uploading and downloading data from the endpoint.
 
-The {{site.heading}} element uses the Cloud Elements bulk service. Rate limits come into play when using the bulk service, so review the limitations of your service provider.
+The {{page.heading}} element uses the Cloud Elements bulk service. Rate limits come into play when using the bulk service, so review the limitations of your service provider.

@@ -1,6 +1,6 @@
 ---
 heading: SAP C4C CRM
-seo: Query Language | SAP Anywhere | Cloud Elements API Docs
+seo: Query Language | SAP C4C CRM | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

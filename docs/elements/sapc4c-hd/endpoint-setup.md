@@ -1,6 +1,6 @@
 ---
-heading: SAP Anywhere
-seo: Endpoint Setup | SAP Anywhere | Cloud Elements API Docs
+heading: SAP C4C Helpdesk
+seo: Endpoint Setup | SAP C4C Helpdesk | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: sidebarelementdoc
@@ -10,33 +10,27 @@ parent: Back to Element Guides
 order: 5
 ---
 
-## Endpoint Setup
+# Endpoint Setup
 
-Follow these steps to setup your SAP Anywhere application with the endpoint.
+To authenticate an element instance, use credentials associated with a Development User. The user credentials associated with an authenticated element instance must have access to any resources that you access.
 
-The screen shots below assume you have signed up with SAP Anywhere as a developer.
-Information this process is in the next section and includes a link to the [SAP Anywhere Documentation](https://doc-eu.sapanywhere.com/api/app/public_app).
+To confirm or change access to resources:
 
-### Register Developer Account and Create Your Test Tenant
+1. Go to your SAP C4C application.
+2. Click **Administrator** in the main menu, and then click **Business Users**.
+![Administrator Page](../sapc4c-crm/img/admin.png)
+2. Select your user in the list, and then click **Edit>Access Rights**.
+3. Review the Work Center / View Name column for resources that you need access to.
+4. Select **Assigned to User** for each resource, as shown for the Leads resource below.
+![Leads Selected](../sapc4c-crm/img/leads.png)
 
-To start developing your app for SAP Anywhere, you need a developer account to become an SAP Anywhere developer. So far the developer account registration is not opened to all users. You can contact us and then we will send you an invitation email. You can follow the instructions in this invitation email and register your developer account.
+    {% include note.html content="If you experience an error, click <strong>Edit without Business Roles</strong> at the top of the page and try again. " %}
 
-As a developer, you are able to access SAP Anywhere developer center dashboard and you can create your own testing tenant. Testing tenant is an area for app development where you can create data to test out the functionality of your app.
+6. Refresh your session by closing and logging back in.
 
-To create a testing tenant, you need to navigate to the Testing sandbox tab and click Create button to create your own testing tenant.
 
-[Get a developer account](https://doc-eu.sapanywhere.com/api/app/public_app#register)
 
-Via a web browser, log in to your SAP Anywhere account:
-[https://dev-us.sapanywhere.com/portal/apps?locale=en_US](https://dev-us.sapanywhere.com/portal/apps?locale=en_US)
 
-1. My Apps > Add a new App
-![SAP Anywhere Connected App step 1](img/sapanywhere-api-connected-app-1.png)
 
-2. Input app info and click "Create"
-![SAP Anywhere Connected App step 2](img/sapanywhere-api-connected-app-2.png)
 
-3. Make note of the API Key and Secret
-![SAP Anywhere Connected App step 3](img/sapanywhere-api-connected-app-3.png)
-
-Next [create an instance](sapanywhere-create-instance.html).
+Next [authenticate an element instance](authenticate.html).

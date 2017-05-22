@@ -1,8 +1,8 @@
 ---
-heading: SAP Anywhere
-seo: Create Instance | SAP Anywhere | Cloud Elements API Docs
-title: Create Instance
-description: Create Instance
+heading: SAP C4C Helpdesk
+seo: Authenticate an Element Instance | SAP Anywhere | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate an Element Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1468
@@ -10,177 +10,173 @@ parent: Back to Element Guides
 order: 20
 ---
 
-## Create Instance
+# Authenticate with SAP C4C
 
-When you provision an instance, your app will have access to the different functionality offered by the SAP Anywhere platform.
+You can authenticate with SAP C4C to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. You can use the authenticated element instance to access the different resources at the {{page.heading}} platform.
 
-### Step 1. Get Elements OAuth Information
+{% include note.html content="If you want to set up events when you authenticate, go to <a href=events.html>the Events section</a>" %}
 
-* HTTP Header: None
-* HTTP Verb: GET
-* Request URL: /elements/{keyOrId}/oauth/url
-* Request Body: None
-* Query Parameters:
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
 
-* __apiKey–__ the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
+## Authenticate Through the UI
 
-Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
+Use the {{site.console}} to authenticate with SAP C4C and create an element instance. If you are authenticating with events, see the [Events section](events.html).
 
-Example cURL Command:
+To authenticate an element instance:
 
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/sapanywhere/oauth/url?apiKey=fake_sapanywhere_api_key&apiSecret=fake_sapanywhere_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sapanywhere'
+1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+
+3. Create an element instance.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+
+5. Enter a name for the element instance.
+6. Complete the required parameters in the Configuration section: **Subdomain**, **Username**, and **Password**. See [Parameters](#parameters) for descriptions.
+7. If you want to add events, go to [Configure Polling Through the UI](events.html#configure-polling-through-the-ui).
+7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+8. Optionally add tags in the earlier UI:
+     1. On the Tag It page, enter any tags that might help further define the instance.
+      * To add more than one tag, click __Add__ after each tag.
+      ![Add tag](../img/Add-Tag.png)
+     1. Click __Done__.
+8. Take a look at the documentation for the element resources now available to you.
+
+## Authenticate Through API
+
+Use the `/instances` endpoint to authenticate with SAP C4C and create an authenticated element instance. If you are authenticating with events, see the [Events section](events.html).
+
+{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance:
+
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+        "element": {
+          "key": "sapc4chd"
+        },
+        "configuration": {
+          "subdomain": "<domain>.crm.ondemand.com",
+          "username": "<YOUR_SAP_C4C_USERNAME>",
+          "password": "<YOUR_SAP_C4C_PASSWORD>"
+        },
+        "tags": [
+          "ElementDocs"
+          ],
+        "name": "<AUTHENTICATED_INSTANCE_NAME>"
+    }
+    ```
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` in the response and save it for all future requests using the element instance.
+
+### Example cURL
+
 ```
-
-Response:
-
-```json
-{
-  "oauthUrl": "https://app1-us.sapanywhere.com/sbo/oauth2/authorize?scope=BusinessData_RW&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=sapanywhere&client_id=https://api.cloud-elements.com/elements/api-v2/elements/sapanywhere/oauth/url?apiKey=fake_sapanywhere_api_key&apiSecret=fake_sapanywhere_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=sapanywhere_client_id",
-  "element": "sapanywhere"
-}
-```
-
-Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., "sapanywhere" in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
-
-### Step 2. Create an Instance
-
-To provision your SAP Anywhere Element, use the /instances API.
-
-Below is an example of the provisioning API call.
-
-* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
-* __HTTP Verb__: POST
-* __Request URL__: /instances
-* __Request Body__: Required – see below
-* __Query Parameters__: none
-
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
-
-A sample request illustrating the /instances API is shown below.
-
-HTTP Headers:
-
-```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements SAP Anywhere is "sapanywhere".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
-
-```json
-{
+curl -X POST \
+  https://staging.cloud-elements.com/elements/api-v2/instances \
+  -H 'Authorization: User <INSERT>, Organization <INSERT>'  \
+  -H 'content-type: application/json' \
+  -d '{
   "element": {
-    "key": "sapanywhere"
-  },
-  "providerData": {
-    "code": "<CODE_ON_THE_RETURN_URL>"
+	"key": "sapc4chd"
   },
   "configuration": {
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "<INSERT_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_CLIENT_SECRET>"
+    "subdomain": "<domain>.crm.ondemand.com",
+    "username": "<YOUR_SAP_C4C_USERNAME>",
+    "password": "<YOUR_SAP_C4C_PASSWORD>"
   },
   "tags": [
-    "<ADD_YOUR_TAG>"
+	"ElementDocs"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
+  "name": "SAPC4HDCAPI1"
 }
+'
 ```
 
-Here is an example cURL command to create an instance using /instances API.
+## Parameters
 
-Example Request:
+API parameters not shown in the {{site.console}} are in `code formatting`.
 
-```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
-```
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| 'key' | The element key.<br>sapc4chd  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
+| Subdomain </br>`subdomain`| The url of your {{page.heading}} site. Replace <domain> in the default url with your own information.    |   |string |
+| Username | Your user name for {{page.heading}}. | String |
+| Password | Your password for {{page.heading}}. | String |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
 
-Below is a successful JSON response:
+## Example Response
 
 ```json
 {
-  "id": 123,
-  "name": "test",
-  "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+  "id": 50634,
+  "name": "SAPC4CAPI1",
+  "createdDate": "2017-05-19T14:00:59Z",
+  "token": "4RFxtlivv2BW9oAoO64wCnLvwwps4SPCf6LyCUq8Ihg=",
   "element": {
-    "id": 2198,
-    "name": "SAP Anywhere",
-    "key": "sapanywhere",
-    "description": "Add an SAP Anywhere Instance to connect your existing SAP Anywhere account to the eCommerce Hub, allowing you to manage customers, orders and products across multiple eCommerce Elements. You will need your SAP Anywhere account information to add an instance.",
-    "image": "elements/provider_sapanywhere.png",
+    "id": 5353,
+    "name": "SAP C4C Helpdesk",
+    "key": "sapc4chd",
+    "description": "Add a SAP Cloud for Customer (C4C) Instance to connect your existing SAP Cloud for Customer (C4C) account to the Helpdesk Hub, allowing you to manage accounts, contacts, leads, opportunities, etc. across multiple Helpdesk Elements. You will need your SAP Cloud for Customer (C4C) account information to add an instance.",
+    "image": "elements/provider_sapc4c.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
     "trialAccount": false,
     "resources": [],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+      "type": "basic"
+    },
+    "extended": false,
+    "hub": "Helpdesk",
+    "protocolType": "odata",
+    "parameters": [
+      {
+        "id": 3990,
+        "createdDate": "2017-05-17T09:37:05Z",
+        "name": "subdomain",
+        "vendorName": "siteUrl",
+        "type": "configuration",
+        "vendorType": "path",
+        "source": "request",
+        "elementId": 5354,
+        "required": false
+      }
+    ],
     "private": false
   },
+  "elementId": 5354,
   "provisionInteractions": [],
   "valid": true,
   "disabled": false,
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
-  "configuration": {
-    "base.url": "https://api-us.sapanywhere.com/v1/",
-    "bulk.add_metadata": null,
-    "event.notification.subscription.id": null,
-    "sapanywhere.hooks.ordersupdated.id": "",
-    "sapanywhere.hooks.productsdeleted.id": "",
-    "event.vendor.type": "webhooks",
-    "filter.response.nulls": "true",
-    "bulk.query.date_mask": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
-    "bulk.attribute.created_time": "creationTime",
-    "sapanywhere.hooks.customersupdated.id": "",
-    "bulk.relations": null,
-    "pagination.type": "offset",
-    "sapanywhere.hooks.productsupdated.id": "",
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.user.refresh_token": "74aa707d-b7692ecc4a55",
-    "oauth.user.refresh_interval": "43199",
-    "oauth.api.key": "API_KEY",
-    "sapanywhere.hooks.orderscancelled.id": "",
-    "event.notification.enabled": "false",
-    "oauth.api.secret": "API_SECRET",
-    "bulk.query.field_name": "creationTime",
-    "oauth.token.url": "https://app1-us.sapanywhere.com/sbo/oauth2/token",
-    "pagination.max": "100",
-    "sapanywhere.hooks.ordersadded.id": "",
-    "sapanywhere.hooks.customersadded.id": "",
-    "oauth.scope": "BusinessData_RW",
-    "sapanywhere.hooks.customersdeleted.id": "",
-    "oauth.user.token": "eee1db172c126639e29e",
-    "bulk.query.operator": ">=",
-    "sapanywhere.hooks.ordersdeleted.id": "",
-    "oauth.authorization.url": "https://app1-us.sapanywhere.com/sbo/oauth2/authorize",
-    "bulk.query.download_format": "JSON",
-    "event.notification.instance.finder": "",
-    "event.notification.callback.url": "false",
-    "sapanywhere.hooks.productsadded.id": "",
-    "oauth.user.refresh_time": "147931541",
-    "oauth.basic.header": "true"
-  },
+  "configuration": {  },
   "eventsEnabled": false,
-  "eventsNotificationCallbackUrl": "false",
   "traceLoggingEnabled": false,
   "cachingEnabled": false,
   "externalAuthentication": "none",
-  "user": {
-    "id": 123
-  }
+  "user": {  }
 }
 ```
-
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-{% include common-instance-config.md %}

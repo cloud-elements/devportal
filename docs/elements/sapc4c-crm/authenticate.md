@@ -84,47 +84,55 @@ To authenticate an element instance:
 ### Example cURL
 
 ```
-curl -X POST  \
- -H 'Authorization: User <INSERT>, Organization <INSERT>'  \
- -H 'Content-Type: application/json'  \
- --data '{ \
-  "name": "SAP-C4C-CRM", \
-  "configuration": { \
-    "subdomain": "<myDomain>.crm.ondemand.com", \
-    "username": "<myUserName>", \
-    "password": "<myPassowrd>" \
-  } \
-}'  \
-'https://api.cloud-elements.com/elements/api-v2/elements/5353/instances'
+curl -X POST \
+  https://staging.cloud-elements.com/elements/api-v2/instances \
+  -H 'Authorization: User <INSERT>, Organization <INSERT>'  \
+  -H 'content-type: application/json' \
+  -d '{
+  "element": {
+	"key": "sapc4ccrm"
+  },
+  "configuration": {
+    "subdomain": "<domain>.crm.ondemand.com",
+    "username": "<YOUR_SAP_C4C_USERNAME>",
+    "password": "<YOUR_SAP_C4C_PASSWORD>"
+  },
+  "tags": [
+	"ElementDocs"
+  ],
+  "name": "SAPC4CAPI3"
+}
+'
 ```
+
 ## Parameters
 
 API parameters not shown in the {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>sapc4ccrm  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
 | Subdomain </br>`subdomain`| The url of your {{page.heading}} site. Replace <domain> in the default url with your own information.    |   |string |
-| Username | Your user name for {{page.heading}} | String |
-| Password | Your password for {{page.heading}} | String |
+| Username | Your user name for {{page.heading}}. | String |
+| Password | Your password for {{page.heading}}. | String |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
 
 ```json
 {
-  "id": 50634,
-  "name": "SAPC4CAPI1",
-  "createdDate": "2017-05-19T14:00:59Z",
-  "token": "4RFxtlivv2BW9oAoO64wCnLvwwps4SPCf6LyCUq8Ihg=",
+  "id": 50753,
+  "name": "SAPC4HDCAPI2",
+  "createdDate": "2017-05-22T04:12:16Z",
+  "token": "jDCglCWOTvIjkqB54Kaz249kXcydo+ADNUUcPR1FriI=",
   "element": {
-    "id": 5353,
-    "name": "SAP C4C CRM",
-    "key": "sapc4ccrm",
-    "description": "Add a SAP Cloud for Customer (C4C) Instance to connect your existing SAP Cloud for Customer (C4C) account to the CRM Hub, allowing you to manage accounts, contacts, leads, opportunities, etc. across multiple CRM Elements. You will need your SAP Cloud for Customer (C4C) account information to add an instance.",
+    "id": 5354,
+    "name": "SAP C4C Helpdesk",
+    "key": "sapc4chd",
+    "description": "Add a SAP Cloud for Customer (C4C) Instance to connect your existing SAP Cloud for Customer (C4C) account to the Helpdesk Hub, allowing you to manage accounts, contacts, incidents, etc. across multiple Helpdesk Elements. You will need your SAP Cloud for Customer (C4C) account information to add an instance.",
     "image": "elements/provider_sapc4c.png",
     "active": true,
     "deleted": false,
@@ -141,7 +149,7 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
       "type": "basic"
     },
     "extended": false,
-    "hub": "crm",
+    "hub": "helpdesk",
     "protocolType": "odata",
     "parameters": [
       {

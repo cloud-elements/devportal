@@ -23,7 +23,7 @@ sitemap: false
 | Authentication | Basic  |
 | Events | Polling |
 | Bulk | Supported |
-| Transformations | Supported . See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.  |
+| Transformations | Supported. See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.  |
 
 # Base URL
 
