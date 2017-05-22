@@ -24,17 +24,13 @@ If you would like to see more information on our Events framework, please see th
 
 Cloud Elements supports both webhooks and polling events for Salesforce.
 
-You can poll the following resources:
+You can set up events for the following resources:
 
-* contacts
-* accounts
-*
-
-You can set up webhooks for the following resources:
-
-* Contacts
-* Accounts
-*
+* Account
+* Lead
+* Contact
+* Opportunity
+* Other objects that include `created`, `updated`, and `deleted` data.
 
 ## Polling
 

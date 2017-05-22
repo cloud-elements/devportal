@@ -1,6 +1,6 @@
 ---
-heading: Salesforce CRM
-seo: Query Language | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Query Language | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

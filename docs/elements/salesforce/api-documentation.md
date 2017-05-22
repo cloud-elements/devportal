@@ -1,8 +1,8 @@
 ---
-heading: Salesforce CRM
-seo: API Docs | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: API Docs | Salesforce Sales Cloud | Cloud Elements API Docs
 title: API Docs
-description: Salesforce CRM API Documentation.
+description: Salesforce Sales Cloud API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 23

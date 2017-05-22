@@ -1,8 +1,8 @@
 ---
-heading: Salesforce CRM
-seo: Events | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Events | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce CRM events for your application.
+description: Enable Salesforce Sales Cloud events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23

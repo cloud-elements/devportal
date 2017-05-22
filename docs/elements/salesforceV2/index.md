@@ -24,7 +24,7 @@ sitemap: false
 | API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
-| Bulk | Supported |
+| Bulk | Supported by the Cloud Elements bulk service. |
 | Transformations | Supported. See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data |
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 

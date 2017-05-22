@@ -1,8 +1,8 @@
 ---
-heading: Salesforce CRM
-seo: Overview | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Overview | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Overview
-description: Integrate Salesforce CRM into your application via the Cloud Elements APIs.
+description: Integrate Salesforce Sales Cloud into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -11,7 +11,7 @@ order: 1
 sitemap: false
 ---
 
-# Welcome to the Salesforce CRM Element
+# Welcome to the Salesforce Sales Cloud Element
 
 Salesforce provides on-demand customer relationship management (CRM) services.
 
@@ -25,7 +25,7 @@ Salesforce provides on-demand customer relationship management (CRM) services.
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
 | Bulk | Supported |
-| Transformations | Supported    |
+| Transformations | Supported.  See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.    |
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 # Base URL
@@ -63,5 +63,8 @@ Pass tokens and secrets as basic HTTP Header values.
 * To make a Hub API call, include the following in the header:
 
         User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
+
+{% include error-codes.md %}
+
 
 Get started by [setting up the endpoint](salesforce-endpoint-setup.html).
