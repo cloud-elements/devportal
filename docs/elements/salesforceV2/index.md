@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
 | Bulk | Supported by the Cloud Elements bulk service. |
-| Transformations | Supported. See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data |
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 ## Base URL
