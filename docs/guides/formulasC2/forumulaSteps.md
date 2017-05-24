@@ -21,35 +21,33 @@ When you set up an ActiveMQ Request step, include the following information:
 
 | Parameter | Description   | Required |
 | :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}} <br><span style="color:red">Needs to be unique?</span> | Y |
+|  Name  |  {{site.data.table-desc.name}}  | Y |
 |  URL  |  Specifies the AMQP URL endpoint of the MQ Server. The structure of the URL is as specified in the following documentation - https://www.rabbitmq.com/uri-spec.html  | Y |
 |  Queue  |  Indicates the name of the queue of the MQ server to which the message should be posted.  | Y |
-|  Message  |  The JSON payload to post to the server.</br><span style="color:red">Confirm this</span>  | Y |
+|  Message  |  The JSON payload to post to the server.  | Y |
 |  Exchange  |  The name of the MQ server exchange to which the message should be posted.  | N |
 
 ## Element API Request
 
 This step makes an API call to a specific Element Instance.
 
-<span style="color:red">This is actually calling an element instance variable. Clarify.</span>
-
 When you set up an Element API Request step, include the following information:
 
 | Parameter | Description   | Required |
 | :------------- | :------------- | :------------- |
 |  Name  |  {{site.data.table-desc.name}}  | Y |
-|  Element Instance Variable  |  Specifies the element instance that recieves the API call.  | Y |
+|  Element Instance Variable  |  Specifies the element instance that receives the API call.  | Y |
 |  Method  |  {{site.data.table-desc.method}} | Y |
 |  API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-|  Headers  |  {{site.data.table-desc.headers}} </br><span style="color:red">Like what?</span> | N |
-|  Query  |  {{site.data.table-desc.query}} </br><span style="color:red">Like what?</span> | N |
-| Path | {{site.data.table-desc.path}} <span style="color:red">Help!</span>| N |
-| Body | {{site.data.table-desc.body}}<span style="color:red">Help!</span> | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}}<span style="color:red">Help!</span> | N |
+|  Headers  |  {{site.data.table-desc.headers}}  | N |
+|  Query  |  {{site.data.table-desc.query}}  | N |
+| Path | {{site.data.table-desc.path}} | N |
+| Body | {{site.data.table-desc.body}}<span style="color:red">JSON payload. These all need to refer to the formula context. Composed of previous steps and variables. steps.name. Payload constructed from an earlier script step steps.script.payload (the script step returned a payload.)!</span> | N |
+| Acceptable Codes | {{site.data.table-desc.acceptable-codes}}<span style="color:red">comma separated list, if you get these code it's a success</span> | N |
 | Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}} <span style="color:red">Is this right?</span> | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}}<span style="color:red">Help!</span> | N |
+| Retry Delay | {{site.data.table-desc.retry-delay}} <span style="color:red">Milliseconds</span> | N |
+| Retry Status Codes | {{site.data.table-desc.retry-failure}}<span style="color:red">commas separated list, if we get it retry. These only take place if retry is tru.!</span> | N |
 
 
 ## HTTP Request
@@ -79,7 +77,7 @@ Use the JS Filter (true/false) step to write custom Javascript that *must* retur
 * If a filter returns `true`, the formula executes the left, or success, step.
 * If a filter returns `false`, the formula executes the tight, or failure, step.
 
-<span style="color:red">This could use an example</span>
+<span style="color:red">This could use an example: filtering CRM email example</span>
 
 ## JS Script
 
@@ -111,6 +109,16 @@ When you set up an Element API Request step, include the following information:
 | :------------- | :------------- | :------------- |
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 |  List  |  A list of objects to loop over. <span style="color:red">Comma separated, any particular format or limitations?</span> | Y |
+
+refers to something
+${steps.presviousScript.someNumber} (previous script step returns a number\
+
+${config.variableName}
+
+formula context built up as you travers the formulas
+
+
+
 
 <span style="color:red">Confirm this info... lots of questions here.</span>
 
@@ -169,6 +177,8 @@ When you set up an Element Request Stream step, include the following informatio
 | Upload Form Data | <span style="color:red">What?</span> | N |
 | Upload Form Parameter Name | <span style="color:red">What?</span> | N |
 
+form data you get as part of an api call. Much lke body.
+
 ## Sub-Formula
 
 When you set up an Element Request Stream step, include the following information:
@@ -177,9 +187,3 @@ When you set up an Element Request Stream step, include the following informatio
 | :------------- | :------------- | :------------- |
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 | Sub-Formula (ID)  |  The ID of the formula. <span style="color:red">Where do you get this/</span>  | Y |
-
-## Notification Step
-
-<span style="color:red">Where did thi go?</span>
-
-Custom Javascript that *must* pass a boolean to the `done` callback.  If true, an email will be sent to the registered "notification email" address for the formula instance.

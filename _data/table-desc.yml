@@ -1,9 +1,9 @@
 # Formulas
-headers: "The headers to pass along as part of the API request."
+headers: "The headers to pass along as part of the API request. You rarely need to add anything to the headers, but you can use this parameter to pass common header information such as content types."
 
-query: "The CEQL query to pass as part of the API request."
+query: "Any query paramaters, such as a CEQL query or pagination, to pass as part of the API request."
 
-name: "The name of the formula step."
+name: "The name of the formula step. The name must be unique within the formula."
 
 method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELETE. "
 
@@ -15,7 +15,7 @@ max-retry: "The maximum number of times to retry the request."
 
 retry-status-codes: "Retry status codes description"
 
-path: "Path description"
+path: "The path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
 
 body: "Body description"
 
