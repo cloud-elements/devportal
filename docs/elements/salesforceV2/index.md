@@ -24,8 +24,9 @@ sitemap: false
 | API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
-| Bulk | Supported by the Cloud Elements bulk service. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data |
+| Bulk | Supported for both upload and download. |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 ## Base URL

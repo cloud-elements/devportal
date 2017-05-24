@@ -17,8 +17,9 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 ## CEQL in {{page.heading}}
 
-When querying in {{site.heading}}, keep the following in mind:
+When querying in {{page.heading}}, keep the following in mind:
 
+* The Salesforce bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause, chunking is disabled. If chunking is enabled, it may take longer to get all the data. Also, be aware that Salesforce has daily upload and download limits.
 * Use CEQL to query the following endpoints:
   * GET /campaigns
   * GET /accounts
