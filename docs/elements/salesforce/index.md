@@ -11,30 +11,31 @@ order: 1
 sitemap: false
 ---
 
-# Welcome to the Salesforce Sales Cloud Element
+# Welcome to the {{page.heading}} Element
 
-Salesforce provides on-demand customer relationship management (CRM) services.
+{{page.heading}} provides on-demand customer relationship management (CRM) services.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
-# Element Details
+## Element Details
 
 | Element Information | Details     |
 | :------------- | :------------- |
 | API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
-| Bulk | Supported |
-| Transformations | Supported.  See [Define Common Resources and Transformations](../../guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.    |
+| Bulk | Supported for both upload and download. |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
-# Base URL
+## Base URL
 
 The Cloud Element Base URL for all API calls is `https://api.cloud-elements.com/elements/api-v2`.
 
 HTTP requests to the REST API are protected with HTTP Basic authentication with your Organization and User secret and an Element token. We use many standard HTTP features, like HTTP verbs, understood by most HTTP clients. JSON is returned in all responses from the API, including errors. The APIs have predictable, straightforward URLs and use HTTP response codes to indicate API errors.
 
-# Authenticating with Cloud Elements
+## Authenticating with Cloud Elements
 
 To authenticate with Cloud Elements, you need to know your Organization Secret and User Secret. When making some calls, you also need to know the Element Token.
 
@@ -65,6 +66,5 @@ Pass tokens and secrets as basic HTTP Header values.
         User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
 
 {% include error-codes.md %}
-
 
 Get started by [setting up the endpoint](salesforce-endpoint-setup.html).
