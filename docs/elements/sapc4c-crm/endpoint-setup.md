@@ -1,7 +1,7 @@
 ---
 heading: SAP C4C CRM
 seo: Endpoint Setup | SAP C4C CRM | Cloud Elements API Docs
-title: Endpoint Setup
+title: Service Provider Setup
 description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Endpoint Setup
+# Service Provider Setup
 
 To authenticate an element instance, use credentials associated with a Development User. The user credentials associated with an authenticated element instance must have access to any resources that you access.
 
