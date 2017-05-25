@@ -80,7 +80,7 @@ title: sitemap
     <ul class="accordionList" id="hubDocs">
       {% for folder in allshards  %}
         {% assign key = folder[0] %}
-        {% if key contains "docs_hubs" and key != "docs_hubs" and key != ""%}
+        {% if key contains "docs_hubs" and key != "docs_hubs" and key != "" and key != "docs_hubs_sageaccounting" %}
         {% assign pages = site.shards[key] | sort:"order" %}
         <li>
           <button class="subHeading"> {{pages[0].heading}}</button>
