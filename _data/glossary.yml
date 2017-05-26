@@ -15,3 +15,15 @@ element-instance-resource: "The resources available to the element instance thro
 resource: "Specific endpoints within an API that contain objects accessible via the API. "
 
 one-to-many: "Enables developers to write to one API to integrate multiple elements."
+
+formula: "Customizable workflow, independent of the endpoint, and  used to define a set of actions that takes place when a trigger occurs."
+
+formula-template: "A template for a formula that includes all of the triggers, steps, and variables for a formula instance to execute a workflow. "
+
+formula-instance: "A specific instance of a formula template that utilizes the variables defined in the template to execute a specific workflow."
+
+formula-trigger: "An event that happens to kick off a formula including an Event set up on an element instance, an API call to an element instanc, a scheduled event, or a manually triggered event."
+
+formula-step: "An individual step within a formula workflow that can include branches to subsequent success and failure steps."
+
+formula-variable: "Variables that represent either element instances or specific values that must be supplied for each formula instance."

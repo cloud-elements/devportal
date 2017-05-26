@@ -9,14 +9,14 @@ method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELET
 
 retry-failure: "Indicates that we should retry a configurable number of times if the request fails."
 
-retry-delay : "The time in minutes to wait between retries."
+retry-delay : "The time in milliseconds to wait between retries."
 
 max-retry: "The maximum number of times to retry the request."
 
-retry-status-codes: "Retry status codes description"
+retry-status-codes: "A comma separated list of codes returned in the response that indicate that we should retry the request. For example <code>500,501,502</code>"
 
-path: "The path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
+path: "The Path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
 
-body: "Body description"
+body: "The Body parameter specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the Body parameter. For ecample, <code>$steps.previousStep</code>. "
 
-acceptable-codes: "Acceptable Codes description"
+acceptable-codes: "A comma separated list of codes returned in the response that indicate success. For example <code>200,201</code>."

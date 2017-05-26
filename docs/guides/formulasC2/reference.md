@@ -1,19 +1,129 @@
 ---
 heading: Formulas
 seo: Formula Steps | Formula Step Types | Cloud Element Formulas
-title: Formula Step Types
-description: An overview of all the available formula steps
+title: Formula Triggers, Steps, and Variables
+description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 3
+order: 10
 ---
 
+# Triggers, Steps, and Variables
+
+Formulas are comprised of triggers that kick off formulas, steps that the trigger executes, and variables used to define inputs to the formula instance. The triggers, steps, and variables build up context that you can refer to as you build a formula. For example, a JS Script step might build a JSON payload that you can refer to in a later step as `$steps.stepName`. You can refer to variables as `$config.variableName`.
+
+This sections provides configuration information about each formula component.
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
+
+## Reference Syntax
+
+* Triggers
+  * trigger.event
+  * trigger.event.objectType
+  * trigger.event.eventType
+  * trigger.event.objectId
+  * trigger.event.objectType.toLowerCase
+  * trigger.formula.instance.action
+  * trigger.args.action
+  * trigger.args.config
+  * trigger.args.objectId
+  * trigger.args.eventType
+  * trigger.response.body.data.stateAbbreviation
+  * trigger.body.message.events[0].eventType
+  * trigger.body.message.raw.changedConversations
+* Variables
+  * $config.
+* Steps
+  * $steps.
+
+## Triggers
+
+Triggers are the actions that kick off a formula. Triggers can be one of the following type:
+
+* [Event](#event)
+* [Element Request](#element-request)
+* [Scheduled](#scheduled)
+* [Manual](#manual)
+
+### Event
+
+You can set up triggers that listen for an event to happen on an element instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance that is configured to use webhooks or polling to listen for events.
+
+To set up an Event trigger, you must specify an Element Instance Variable. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element instance that will kick off a formula instance when an event occurs.
+
+To see event triggers in action, see the following examples:
+
+* [CRM to Messages](build-template.html#crm-to-messages)
+* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
+
+### Element Request
+
+Triggered anytime a specific API call is made to a given Element Instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance.
+
+When you set up an Element Request trigger, specify the following parameters:
+
+* Element Instance Variable: Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element that will kick off a formula instance when the specified API call occurs.
+* Method:  {{site.data.table-desc.method}}.
+* API: The The endpoint, such as `hubs/crm/contacts`.
+
+### Scheduled
+
+Triggered at times specified by a Cron job. We recommedn that you review the many reference pages for Cron jobs online. In general, the Cron format follows consists of:
+
+| Minute </br>0-59| Hour</br>0-23   | Day of Month</br>1-31   | Month of Year</br>1-12   | Day of Week</br>1-7</br>Monday-Sunday   | Year</br>1900-3000   |
+| :------------- | :------------- | :------------- | :------------- | :------------- |:------------- |
+|  \*  |  \*  |  \*  |  \*  |  \*  |  \*  |
+
+#### Examples
+
+* Run each minute
+
+        * * * * * *
+
+* Run every Monday at noon
+
+        0 12 * * 1 *
+
+* 8.00 PM every weekday (Mon-Fri) only in December:
+
+        0	20	*	12	1-5
+
+* midnight on 1st ,10th & 15th of month
+
+        0	0	1,10,15	*	*
+
+To see Scheduled trigger in action, see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
 
 
-## ActiveMQ Request
+### Manual
+
+Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
+
+To see Scheduled trigger in action, see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+
+## Step Types
+
+You can choose from several different types of steps to make up your formula. You can refer to any step with the `$steps.stepName syntax`. Because you refer to the step by name, each step name must be unique within each formula. However, you can reuse a step in name in a different formula.
+
+You can use the following types of steps in your formulas:
+
+* [ActiveMQ Request](#activemq-request)
+* [Element API Request](#element-api-request)
+* [HTTP Request](#http-request)
+* [JS Filter](#js-filter)
+* [JS Script](#js-script)
+* [Loop Over Variable](#loop-over-variable)
+* [Platform API Request](#platform-api-request)
+* [Retry Formula on Failure](#retry-formula-on-failure)
+* [Stream](#stream-file)
+* [Sub-Formula](#sub-formula)
+
+
+### ActiveMQ Request
 
 The ActiveMQ Request uses the AMQP protocol to post a message to an MQ server such as RabbitMQ.
 
@@ -27,9 +137,16 @@ When you set up an ActiveMQ Request step, include the following information:
 |  Message  |  The JSON payload to post to the server.  | Y |
 |  Exchange  |  The name of the MQ server exchange to which the message should be posted.  | N |
 
-## Element API Request
+### Element API Request
 
 This step makes an API call to a specific Element Instance.
+
+To see an Element API Request step in action see:
+
+* [CRM to Messages](build-template.html#crm-to-messages)
+* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
+* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+
 
 When you set up an Element API Request step, include the following information:
 
@@ -42,15 +159,15 @@ When you set up an Element API Request step, include the following information:
 |  Headers  |  {{site.data.table-desc.headers}}  | N |
 |  Query  |  {{site.data.table-desc.query}}  | N |
 | Path | {{site.data.table-desc.path}} | N |
-| Body | {{site.data.table-desc.body}}<span style="color:red">JSON payload. These all need to refer to the formula context. Composed of previous steps and variables. steps.name. Payload constructed from an earlier script step steps.script.payload (the script step returned a payload.)!</span> | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}}<span style="color:red">comma separated list, if you get these code it's a success</span> | N |
+| Body | {{site.data.table-desc.body}} | N |
+| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
 | Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}} <span style="color:red">Milliseconds</span> | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}}<span style="color:red">commas separated list, if we get it retry. These only take place if retry is tru.!</span> | N |
+| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
+| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
 
 
-## HTTP Request
+### HTTP Request
 
 Makes an HTTP/S call to any URL/endpoint. <span style="color:red">Why? When would you use this? The info in Skeletor calls this an API call.</span>
 
@@ -61,27 +178,38 @@ When you set up an HTTP Request step, include the following information:
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 |  Method  |  {{site.data.table-desc.method}} | Y |
 | HTTP/S URL | The full URL of the request. | Y |
-| Headers  |  {{site.data.table-desc.headers}} </br><span style="color:red">Like what?</span> | N |
-| Query  |  {{site.data.table-desc.query}} </br><span style="color:red">Like what?</span> | N |
-| Path | {{site.data.table-desc.path}} <span style="color:red">Help!</span>| N |
-| Body | {{site.data.table-desc.body}}<span style="color:red">Help!</span> | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}}<span style="color:red">Help!</span> | N |
+|  Headers  |  {{site.data.table-desc.headers}}  | N |
+|  Query  |  {{site.data.table-desc.query}}  | N |
+| Path | {{site.data.table-desc.path}} | N |
+| Body | {{site.data.table-desc.body}} | N |
+| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
 | Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}} <span style="color:red">Is this right?</span> | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}}<span style="color:red">Help!</span> | N |
+| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
+| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
 
-## JS Filter
+### JS Filter
 Use the JS Filter (true/false) step to write custom Javascript that *must* return true or false. As with all steps, you must include a name.
 
 * If a filter returns `true`, the formula executes the left, or success, step.
 * If a filter returns `false`, the formula executes the tight, or failure, step.
 
+To see a JS Filter step in action see:
+
+* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
+* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+
+
 <span style="color:red">This could use an example: filtering CRM email example</span>
 
-## JS Script
+### JS Script
 
 Use the JS Script step to write custom Javascript that *must* pass a valid JSON object to the `done` callback. As with all steps, you must include a name.
+
+To see a JS Script step in action see:
+
+* [CRM to Messages](build-template.html#crm-to-messages)
+* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
 
 The javascript here is powered by Node.js and has the following packages available to it:
 
@@ -99,7 +227,7 @@ The javascript here is powered by Node.js and has the following packages availab
 * Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
 * Util: The standard Node `util` library. To use, `require` it in your script.
 
-## Loop Over Variable
+### Loop Over Variable
 
 Use the Loop Over Variable step to loop over a list of objects from a previous step or trigger.
 
@@ -129,7 +257,8 @@ To Use a loop step:
 * When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object.
 * If you need to continue on after the loop is completed, you can set the loop step onFailure to the next step to execute after the loop is completed. For a loop step, `onFailure` is executed when the loop has been executed for all objects in the list.
 
-## Platform API Request
+### Platform API Request
+
 Makes an API call to one of our platform APIs.
 
 When you set up an Platform API Request step, include the following information:
@@ -139,17 +268,17 @@ When you set up an Platform API Request step, include the following information:
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 |  Method  |  {{site.data.table-desc.method}} | Y |
 |  API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-|  Headers  |  {{site.data.table-desc.headers}} </br><span style="color:red">Like what?</span> | N |
-|  Query  |  {{site.data.table-desc.query}} </br><span style="color:red">Like what?</span> | N |
-| Path | {{site.data.table-desc.path}} <span style="color:red">Help!</span>| N |
-| Body | {{site.data.table-desc.body}}<span style="color:red">Help!</span> | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}}<span style="color:red">Help!</span> | N |
+|  Headers  |  {{site.data.table-desc.headers}}  | N |
+|  Query  |  {{site.data.table-desc.query}}  | N |
+| Path | {{site.data.table-desc.path}} | N |
+| Body | {{site.data.table-desc.body}} | N |
+| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
 | Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}} <span style="color:red">Is this right?</span> | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}}<span style="color:red">Help!</span> | N |
+| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
+| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
 
-## Retry Formula on Failure
+### Retry Formula on Failure
 
 Retries a formula instance execution with the same input data. You can configure the number of retry attempts, with a maximum of 7 attempts. The retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backoff is `round(e^x)` where `x` is the retry attempt number.
 
@@ -160,9 +289,12 @@ When you set up an Retry Formula on Failure step, include the following informat
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
 
-## Element Request Stream
+### Stream File
 
-An Element Request Stream is used to stream a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using **Download** to refer to the first API that will download the data and **Upload** to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
+A Stream File step is used to stream a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using **Download** to refer to the first API that will download the data and **Upload** to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
+
+To see a JS Script step in action see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data).
+
 
 When you set up an Element Request Stream step, include the following information:
 
@@ -179,7 +311,7 @@ When you set up an Element Request Stream step, include the following informatio
 
 form data you get as part of an api call. Much lke body.
 
-## Sub-Formula
+### Sub-Formula
 
 When you set up an Element Request Stream step, include the following information:
 
@@ -187,3 +319,13 @@ When you set up an Element Request Stream step, include the following informatio
 | :------------- | :------------- | :------------- |
 |  Name  |  {{site.data.table-desc.name}}  | Y |
 | Sub-Formula (ID)  |  The ID of the formula. <span style="color:red">Where do you get this/</span>  | Y |
+
+## Formula Variables
+
+asdkflksdl
+
+### Element Instance Variable
+
+fdfdfdf
+
+### Value Variable
