@@ -1,13 +1,17 @@
 ---
-heading: Salesforce CRM
-seo: API Docs | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: API Docs | Salesforce Sales Cloud | Cloud Elements API Docs
 title: API Docs
-description: Salesforce CRM API Documentation.
+description: Salesforce Sales Cloud API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 23
 parent: Back to Element Guides
 order: 90
 ---
+
+#### Base URL
+
+The Cloud Element Base URL for all API calls is `https://api.cloud-elements.com/elements/api-v2`.
 
 {% include swagger.html %}
