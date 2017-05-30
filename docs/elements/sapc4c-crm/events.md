@@ -58,6 +58,7 @@ To authenticate an element instance with polling:
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Configure Polling Through API
@@ -135,7 +136,7 @@ To authenticate an element instance with polling:
 
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
-1. Locate the `token` in the response and save it for all future requests using the element instance.
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 
 ## Parameters
 
