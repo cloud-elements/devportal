@@ -5,7 +5,7 @@ title: Tips
 description: SAP C4C Helpdesk Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 3522
 parent: Back to Element Guides
 order: 75
 ---

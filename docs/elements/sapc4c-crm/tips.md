@@ -5,7 +5,7 @@ title: Tips
 description: SAP C4C CRM Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 3521
 parent: Back to Element Guides
 order: 75
 ---
