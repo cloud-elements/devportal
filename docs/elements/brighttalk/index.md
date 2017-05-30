@@ -3,7 +3,7 @@ heading: BrightTALK
 seo: Overview | BrightTALK | Cloud Elements API Docs
 title: Overview
 description: Integrate BrightTALK into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 184
 parent: Back to Element Guides

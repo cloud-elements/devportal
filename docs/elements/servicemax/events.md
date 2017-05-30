@@ -3,7 +3,7 @@ heading: ServiceMax
 seo: Events | ServiceMax | Cloud Elements API Docs
 title: Events
 description: Enable ServiceMax events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 169
 parent: Back to Element Guides
