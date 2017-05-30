@@ -1,6 +1,6 @@
 ---
-heading: Salesforce CRM
-seo: Authenticate | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Authenticate | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate with the vendor
 layout: sidebarelementdoc
