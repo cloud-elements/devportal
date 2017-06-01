@@ -40,6 +40,7 @@ To subscribe to the Sage One API and receive an APIM Subscription Key:
 4. Click **Subscribe**.
 ![Subscribe to the APIs](img/subscribe-apis.png)
 
+5. Sign in if prompted.
 5. Agree to the terms, and then click **Confirm**.
 6. In the **Your Subscriptions** section, click **Show** for the **Primary Key** to reveal your APIM Subscription Key.
 ![APIM Subscription Key](img/apim-key.png)
