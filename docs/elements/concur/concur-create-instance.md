@@ -6,6 +6,7 @@ description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 3129
+elementKey: concur
 parent: Back to Element Guides
 order: 20
 ---
@@ -45,69 +46,122 @@ Use the {{site.console}} to authenticate with Concur and create an element insta
 
 ## Authenticate Through API
 
-Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events your will need to include event information. See the [Events section](events.html).
+Authenticating through API is a multi-step process that involves:
+
+* [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
+* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
+* [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
+
+### Getting a Redirect URL
+
+Use the following API call to request a redirect URL where the user can authenticate with the vendor. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+
+```bash
+GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+```
+
+#### Query Parameters
+
+| Query Parameter | Description   |
+| :------------- | :------------- |
+| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+
+#### Example cURL
+
+```bash
+curl -X GET
+-H 'Content-Type: application/json'
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com'
+```
+
+#### Example Response
+
+Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
+
+```json
+{
+"element": "{{page.elementKey}}",
+"oauthUrl": "https://www.concursolutions.com/net2/oauth2/Login.aspx?scope=LIST%2CCONFIG%2CATTEND%2CERECPT%2CEXPRPT%2CTRVPRF%2CTRVREQ%2CUSER%2CTWS&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=concur&client_id=UPjRvqOyYz9hDdWLLLLuQV"
+}
+```
+
+### Authenticating Users and Receiving the Authorization Grant Code
+
+Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+
+* code
+* state
+
+| Response Parameter | Description   |
+| :------------- | :------------- |
+| code | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
+| state | A customizable identifier, typically the element key (`{{page.elementKey}}`) . |
+
+{% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
+
+### Authenticating the Element Instance
+
+Use the `/instances` endpoint to authenticate with {{page.elementKey}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
-
-### Request Body
-
-You must include a JSON body with your `/instances` request.  See [Parameters](#parameters) for information about each parameter. The Boolean parameters show default values.
-
-__Note__: The following example JSON show webhooks enabled. You can also enable polling which requires a more detailed configuration. See [Events](events.html) for more information.
 
 To create an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
-```json
-{
-  "element": {
-    "key": "concur"
-  },
-  "configuration": {
-	"store.url": "<http://mycoolstore.com>",
-	"oauth.api.key": "<CONSUMER_KEY>",
-	"oauth.api.secret": "<CONSUMER_SECRET>",
-	"filter.response.nulls": true,
-	"event.vendor.type": "webhook",
-	"event.notification.callback.url": "http://mycoolstore.com",
-  "event.notification.signature.key": "123456"
-  },
-  "tags": [
-	"Docs"
-  ],
-  "name": "ConcurForDocs"
-}
-```
+    ```json
+            {
+              "element": {
+                "key": "{{page.elementKey}}"
+              },
+              "providerData": {
+                "code": "<AUTHORIZATION_GRANT_CODE>"
+              },
+              "configuration": {
+                "oauth.api.key": "<CONCUR_KEY>",
+                "oauth.api.secret": "<CONCUR_SECRET>",
+                "oauth.callback.url": "<CALLBACK_URL>"
+              },
+              "tags": [
+                "<Add_Your_Tag>"
+              ],
+              "name": "<INSTANCE_NAME>"
+            }
+    ```
 
 1. Call the following, including the JSON body you constructed in the previous step:
 
         POST /instances
 
-{% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
-## Sample cURL
+1. Locate the `token` in the response and save it for all future requests using the element instance.
 
-Below is an example cURL request:
+#### Example cURL
 
-```
-curl -X POST  \
- -H 'Authorization: User <INSERT>, Organization <INSERT>'  \
- -H 'Content-Type: application/json'  \
- --data '{ \
-  "name": "<ELEMENT_INSTANCE_NAME>", \
-  "configuration": { \
-    "filter.response.nulls": "true", \
-    "event.vendor.type": "webhook", \
-    "event.notification.enabled": true, \
-    "store.url": "http://<URL>", \
-    "oauth.api.key": "<CONSUMER_KEY>", \
-    "oauth.api.secret": "<CONSUMER_SECRET>", \
-    "event.notification.callback.url": ""<INSERT_YOUR_APPS_CALLBACK_URL>", \
-    "event.notification.signature.key": "12345" \
-  } \
-}'  \
-'https://api.cloud-elements.com/elements/api-v2/elements/2881/instances'
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
+    "element": {
+      "key": "{{page.elementKey}}"
+    },
+    "providerData": {
+      "code": "0_mG9HpbmXfGi3gIQHlWNUbnHP0aOlN"
+    },
+    "configuration": {
+         "oauth.api.key":"UPjRvqOyYz9hDdWLLLLuQV",
+          "oauth.api.secret":"GNnU6D7uvWMjOyOEsU7uL1Xc4iaEdEOa",
+          "oauth.callback.url":"https://mycoolapp.com"    },
+    "tags": [
+      "Test"
+    ],
+    "name": "ConcurInstance"
+  }'
 ```
 
 ## Parameters
