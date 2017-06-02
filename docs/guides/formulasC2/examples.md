@@ -15,6 +15,11 @@ order: 15
 
 The examples in this section demonstrate a selection of common use cases for formulas. Each example is preceded by a table that identifies the types of triggers, steps, and variables used in the formula. The table also identifies any prerequisites required, like an element with events. Lastly, each example includes a downloadable JSON file that you can use to create your own version of the example template with the `POST /formulas` endpoint.
 
+<span style="color:red">Add some links to quick start stuff</span>
+
+<span style="color:red">You can add console logs. Try it ou to see what to reference.</span>
+
+
 {% include callout.html content="<strong>On this page</strong></br><a href=#crm-to-messages>CRM to Messages</a></br><a href=#retrieve-transform-and-sync-contact>Retrieve, Transform, and Sync Contact</a></br><a href=#bulk-transfer-crm-data>Bulk Transfer CRM Data</a>" type="info" %}
 
 ## CRM to Messages
@@ -72,32 +77,32 @@ To create a formula that listens for an event and emails a message:
 Your formula is finished and should look like the visualization below. It should include a trigger and two steps: the first constructs an email and the second sends a message.
 ![Trigger](img/viz-crm-messaging.png)
 
-## Retrieve, Transform, and Sync Contact
+## Add New Contact Created in One System to Another
 
-This example listens for a new contact on a CRM element, transforms the contact to match a common resource, and then syncs with another service provider.
+This example listens for a new contact on one element instance, and then adds the new contact to another element instance.  The trigger for the formula is an Event. When a new contact is created at an element instance that has events set up, the trigger receives a payload with the raw contact information. Because this raw data cannot be used to create the same contact at a different element instance, the formula uses the `objectID` from the trigger to get the transformed contact instead. The formula then posts the transformed contact to the target element instance.
 
 | Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- |:------------- | :------------- |
-|  [Event] (reference.html/#event)  |  <ul><li>[JS Filter] (reference.html/#js-filter)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li><li>A common resource that transforms contacts</li></ul> | [Formula JSON][5]  |
+|  [Event] (reference.html/#event)  |  <ul><li>[JS Filter] (reference.html/#js-filter)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li><li>A common resource that transforms contacts</li><li>A common resource mapped to the origin and destination element instances</li></ul> | [Formula JSON][5]  |
 
-To create a formula that syncs contacts:
+To create a formula that adds new contacts created in one system to another:
 
 1. [Build a formula template](#build-a-formula-template) and select **Event** as the trigger.
-2. Because the trigger is a change to a CRM element, add an element instance variable that refers to a CRM element.
+2. Because the trigger originates from an element instance configured to listen for events, add an element instance variable.
   3. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">.
   3. Click **Add New Variable**, and then click **Element Instance**.
-  4. Enter a name for your CRM variable. In this example, we'll use `destinationInstance`.
+  4. Enter a name for your CRM variable. In this example, we'll use `originInstance`.
   5. Click **Save**.
-  6. Select the variable that you just created (`destinationInstance`), and then click **Save** on the Edit event: "trigger" page.
+  6. Select the variable that you just created (`originInstance`), and then click **Save**.
 
         Your formula visualization should like like the following example:
         ![Trigger](img/viz-trigger.png)
 
-4. Add another element instance variable for the CRM element to sync the new contact to.
+4. Add another element instance variable to represent the system to be updated after you create a contact at the `originInstance`.
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Element Instance**.
-  8. Enter a name. For this tutorial we'll call it `originInstance`.
+  8. Enter a name. For this tutorial we'll call it `destinationInstance`.
   9. Click **Save**.
 10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
 6. Create a JS Filter step that checks to be sure the event is a created contact, and not an updated or deleted contact.
@@ -111,30 +116,30 @@ To create a formula that syncs contacts:
 
       done((theEvent === 'CREATED') && (theObject === 'Contact' || theObject === 'contacts'));
       ```
-1. Create an Element API Request step to retrieve the transformed version of the contact. Under the **isCreateContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to retrieve the transformed version of the newly created object based on the `objectId` in the trigger. Under the **isCreateContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
 
-    {% include note.html content="This step uses the objectId from the previous step to retrieve the transformed object. If you just retrieved the information about the object from the event payload, it would not be normalized and could not sync with another CRM element. " %}
+    {% include note.html content="This step uses the <code>objectId</code> from the trigger to retrieve the transformed object. If you just retrieved the information about the object from the event payload in the trigger, it would not be transformed and could not sync with another element. " %}
 
   7. Select **Element API Request**.
-  8. Enter a name. For this tutorial we'll call it `retrieveContact`.
+  8. Enter a name. For this tutorial we'll call it `retrieveOriginalContact`.
   9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
   9. In **Method**, select **GET** because the formula will submit a GET request to a common resource.
-  10. In **API**, enter the API to the common resource that transforms the data supplied by the event. For this tutorial, the common resource is called `myContact`. You must also specify the objectID from the contact that triggered the event.
+  10. In **API**, retrieve the transformed newly created contact by entering the endpoint of the common resource and specifying the `objectId` from the trigger. For this tutorial, the common resource is called `myContacts`.
 
-            /hubs/crm/MyContact/${trigger.event.objectId}
+            /hubs/crm/MyContacts/${trigger.event.objectId}
 
   13. Click **Save**.
-1. Create an Element API Request step to sync the contact to another CRM element instance. Under the **retrieveContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to add the contact to another element instance. Under the **retrieveContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
   7. Select **Element API Request**.
   8. Enter a name. For this tutorial we'll call it `createContact`.
   9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
   9. In **Method**, select **POST** because the formula will submit a POST request to sync the contact.
-  10. In **API**, enter the API to the common resource. For this tutorial, the common resource is called `myContact`.
+  10. In **API**, enter the API to the common resource. For this tutorial, the common resource is called `myContacts`.
 
-            /hubs/crm/MyContact
+            /hubs/crm/MyContacts
 
   11. Click **Show Advanced**.
-  12. Scroll to **Body** and enter the reference to the step with the transformed contact data. In this case, type `${steps.retrieveContact.response.body}`.
+  12. Scroll to **Body** and enter the reference to the step with the transformed contact data. In this case, type `${steps.retrieveOriginalContact.response.body}`. This inserts the body from the `retrieveOriginalContact` step&mdash;the JSON describing the transformed contact&mdash;in the POST API call to the `destinationInstance`.
   13. Click **Save**.
 
 Your formula is finished and should look like the visualization below. It should include a trigger and three steps: the first checks that an event is a created contact, the second gets the transformed contact data, and the third syncs the contact.
@@ -318,6 +323,8 @@ To get started, we are going to demonstrate how to create a very simple formula 
 [2]:{{ site.url }}/download/crm-to-messaging-formula-instance.json
 [3]:{{ site.url }}/download/crm-to-messaging-formula-instance-execution.json
 [4]:{{ site.url }}/download/crm-to-message.json
+[5]:{{ site.url }}/download/add-new-contact.json
+
 
 
 # Creating Formulas via API
