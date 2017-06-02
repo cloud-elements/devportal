@@ -111,7 +111,7 @@ Provide the response from the previous step to the users. After they authenticat
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
-{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+{% include note.html content="The endpoint returns an Element id and token upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
 To create an element instance:
 
@@ -146,7 +146,7 @@ To create an element instance:
 
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
-1. Locate the `token` in the response and save it for all future requests using the element instance.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 
 #### Example cURL
 
