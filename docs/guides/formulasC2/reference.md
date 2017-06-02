@@ -19,27 +19,6 @@ This sections provides configuration information about each formula component.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
-## Reference Syntax
-
-* Triggers
-  * trigger.event
-  * trigger.event.objectType
-  * trigger.event.eventType
-  * trigger.event.objectId
-  * trigger.event.objectType.toLowerCase
-  * trigger.formula.instance.action
-  * trigger.args.action
-  * trigger.args.config
-  * trigger.args.objectId
-  * trigger.args.eventType
-  * trigger.response.body.data.stateAbbreviation
-  * trigger.body.message.events[0].eventType
-  * trigger.body.message.raw.changedConversations
-* Variables
-  * $config.
-* Steps
-  * $steps.
-
 ## Triggers
 
 Triggers are the actions that kick off a formula. Triggers can be one of the following type:
@@ -55,10 +34,13 @@ You can set up triggers that listen for an event to happen on an element instanc
 
 To set up an Event trigger, you must specify an Element Instance Variable. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element instance that will kick off a formula instance when an event occurs.
 
+If an Event trigger's Element Instance is set up for polling instead of webhooks, then each object that is found while polling triggers a separate formula execution. For example, if the poller finds five changes, five different formula executions kick off.
+
+
 To see event triggers in action, see the following examples:
 
-* [CRM to Messages](build-template.html#crm-to-messages)
-* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
+* [CRM to Messages](examples.html)
+* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
 
 ### Element Request
 
@@ -72,7 +54,11 @@ When you set up an Element Request trigger, specify the following parameters:
 
 ### Scheduled
 
-Triggered at times specified by a Cron job. We recommedn that you review the many reference pages for Cron jobs online. In general, the Cron format follows consists of:
+Triggered at times specified by a Cron job. We recommend that you review the many reference pages for Cron jobs online.
+
+{% include note.html content=" The minimum scheduled frequency is 15 minutes." %}
+
+In general, the Cron format consists of:
 
 | Minute </br>0-59| Hour</br>0-23   | Day of Month</br>1-31   | Month of Year</br>1-12   | Day of Week</br>1-7</br>Monday-Sunday   | Year</br>1900-3000   |
 | :------------- | :------------- | :------------- | :------------- | :------------- |:------------- |
@@ -96,14 +82,14 @@ Triggered at times specified by a Cron job. We recommedn that you review the man
 
         0	0	1,10,15	*	*
 
-To see Scheduled trigger in action, see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 
 ### Manual
 
 Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
 
-To see Scheduled trigger in action, see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 ## Step Types
 
@@ -143,9 +129,9 @@ This step makes an API call to a specific Element Instance.
 
 To see an Element API Request step in action see:
 
-* [CRM to Messages](build-template.html#crm-to-messages)
-* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
-* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+* [CRM to Messages](examples.html#crm-to-messages)
+* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 
 When you set up an Element API Request step, include the following information:
@@ -196,8 +182,8 @@ Use the JS Filter (true/false) step to write custom Javascript that *must* retur
 
 To see a JS Filter step in action see:
 
-* [Retrieve, Transform, and Sync Contact](build-template.html#retrieve-transform-and-sync-contact)
-* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 
 <span style="color:red">This could use an example: filtering CRM email example</span>
@@ -208,8 +194,8 @@ Use the JS Script step to write custom Javascript that *must* pass a valid JSON 
 
 To see a JS Script step in action see:
 
-* [CRM to Messages](build-template.html#crm-to-messages)
-* [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data)
+* [CRM to Messages](examples.html#crm-to-messages)
+* [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 The javascript here is powered by Node.js and has the following packages available to it:
 
@@ -293,7 +279,7 @@ When you set up an Retry Formula on Failure step, include the following informat
 
 A Stream File step is used to stream a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using **Download** to refer to the first API that will download the data and **Upload** to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
 
-To see a JS Script step in action see [Bulk Transfer CRM Data](build-template.html#bulk-transfer-crm-data).
+To see a JS Script step in action see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data).
 
 
 When you set up an Element Request Stream step, include the following information:
@@ -322,10 +308,9 @@ When you set up an Element Request Stream step, include the following informatio
 
 ## Formula Variables
 
-asdkflksdl
+Formulas include two types of variables that you must specify when you run a formula instance:
 
-### Element Instance Variable
+* Element Instance Variable: A variable that is replaced by a specific element when you run a formula instance.
+* Value Variable: A variable that is replaced by a configurable value when you run a formula instance.
 
-fdfdfdf
-
-### Value Variable
+Formula variables are limited to the formula and cannot have the same name. However, you can name variables in different formulas with the same name like "originInstance" or "destinationInstance."

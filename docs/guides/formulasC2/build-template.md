@@ -17,47 +17,120 @@ Formula templates enable you to create a single template for a formula that you 
 
 ## Build a Formula Template
 
-Formula templates are comprised of a trigger that kicks off the formula, and steps that execute as a result of the trigger. You can create formulas that use triggers that are kicked off when something happens to an element instance, you can schedule triggers, or you can manually kick off a trigger.
+Formula templates are comprised of a trigger that kicks off the formula, steps that execute as a result of the trigger, and variables to represent input required to run an instance of the formula. You can create formulas that use triggers that are kicked off when something happens to an element instance, you can schedule triggers, or you can manually kick off a trigger. See [Triggers, Steps, and Variables](reference.html) for more information about each component.
 
-Formulas involve naming, selecting a trigger, add steps,
+As you build a formula, you also build context consisting of triggers, variables, steps, and values created by steps. You can refer to that context in later steps in the formula. Consider each component as a building block that has a name and information that you can refer to. For example, in a formula that sends an email notification when a contact is added, you build the body of the email in one step and refer to the body in a later step when you actually send the message. See [Reference Syntax](#reference-syntax) for way to refer to triggers,
 
-Create variables - flexible formulas, no hard-coded instances.
-Thinks about any possible variables.
-When naming things, remember that you will often refer back to them so make the names clear.
+{% include note.html content="These steps are intended to get you started building a formula instance. Consider using some of <a href=examples.html>the example formulas</a> to get a deeper understanding of how to build a formula template.  " %}
 
+To build a new formula template:
 
-To create a new formula template:
-
-1. Click **Formulas**.
-2. On the Formulas page, click **Create New Formula**.
+1. Click **Formulas**, and then on the Formulas page, click **Create New Formula**.
+![New Formula Template](img/new-formula.png)
 3. Click **Create New Formula**.
 4. Enter a name for your formula, and then click **Create**.
-5. Select your trigger.
-6. Complete the trigger properties.
-7. Click Save.
-6. Add any variables.
-  7. These will be asked for when you create an instance. These are limited to the formula.
-6. Add your first step.
-7. Add a success step.
-8. Add a failure step.
-8. Test
-8. Review executions
 
-## Review Executions
+    {{site.console}} provides you a list of triggers. For details about each trigger, see [Triggers, Steps, and Variables](reference.html).
+    ![Triggers](img/triggers.png)
+
+5. Select your trigger.
+    * Choose **Event** for a formula triggered by an event configured on an Element.
+    * Choose **Element Request** for a formula triggered when a specific API call is made to an element.
+    * Choose **Scheduled** for a formula to occur at a specific time or regular interval.
+    * Chose **Manual** to trigger the formula with an API call to `POST /formulas/instances/:id/executions`.
+6. Complete the trigger properties, which vary based on the selected trigger.
+    * For **Event** provide an [Element Instance Variable](reference.html/#formula-variables).
+    * For **Element Request** provide an [Element Instance Variable](reference.html/#formula-variables), an API method, and API endpoint.
+    * For **Scheduled** provide a [Cron schedule](reference.html/#scheduled).
+    * For **Manual** you do not need to provide any additional properties.
+7. Click **Save**.
+
+    {{site.console}} shows the first trigger node in the formula visualization.
+    ![Trigger](img/viz-trigger.png)
+
+6. Add any variables that you will need to run the formula instance.
+  5. Click **Variables**.
+  ![Variables](img/variables.png)
+  6. Select the type of variable and enter a name.
+
+        Takes note of the Formula Step Variable Name, which is how you will [refer to the variable](#reference-syntax) throughout the formula.
+
+  8. Click **Save**.
+
+5. Add your first step. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage">.
+6. Select the type of step that you want to add.
+7. Complete the step properties, and then click **Save**. For details on each step, see [Element Instance Variable](reference.html/#formula-variables).
+
+    {{site.console}} shows the first trigger node and the step that you just created in the formula visualization. Note that the step nodes include **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> and **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage"> buttons.
+    ![Trigger](img/viz-trigger-step.png)
+
+7. To add another step, either click **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> or **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage">, depending on the previous step.
+8. Continue adding steps until you complete the formula template.
+8. After you complete the formula, [test it](#test-formula-templates).
+
+{% include note.html content="Your formula template is saved in the background as you add each component." %}
+
+## Test Formula Templates
+
+You can test a formula template as you build it. When you test a formula template, you can either use an existing formula instance or create a new formula instance.
+
+{% include tip.html content=" If you plan to use the instance that you create while testing only for testing, consider appending the name test to it. " %}
+
+<span style="color:red">Find out what happens with show advanced: email and webhook url</span>
+
+To test a formula template:
+
+1. At the top of the formula visualization, click **Setup Test**.
+![Setup Test](img/set-up-test.png)
+2. Click **Select Instance**.
+3. Either choose an existing formula instance (and skip down to the selecting a trigger step) or click **Add New Instance**.
+4. Enter a name for the instance.
+5. For each variable, click the variable and add an element instance or enter a value.
+6. Click **Create Instance**.
+7. Select the instance that you just created.
+8. Click **Select Trigger**.
+9. Provide trigger information, depending on the type of trigger.
+
+## Reference Syntax
+
+You can access values created by steps, variables, and other information available to the formula context with the syntax described in this section.
+
+### Trigger Syntax
+
+The base syntax for triggers is `trigger.`.
+
+Each different type of step produces different step execution values that are added to the formula "context". The formula context is then passed from step-to-step, allowing you to use these values in any subsequent steps in your formula. Below are the different values that each different step type produces:
+
+* trigger.event
+* trigger.event.objectType
+* trigger.event.eventType
+* trigger.event.objectId
+* trigger.event.objectType.toLowerCase
+* trigger.formula.instance.action
+* trigger.args.action
+* trigger.args.config
+* trigger.args.objectId
+* trigger.args.eventType
+* trigger.response.body.data.stateAbbreviation
+* trigger.body.message.events[0].eventType
+* trigger.body.message.raw.changedConversations
+
+### Variables
+
+* $config.
+
+### Steps
+
+* $steps.
+
 
 ## Create Variable
 
 Naming: You can use white space, but we'll smash it together and camelCase it.
 
-## Add Steps
+## Review Executions
 
-## Triggers
-Triggers
-
-* Event: Listens for an event on an element. Need to have events enabled on the instance.
-  * Properties: Element Instance Variable
-
-## Referncing other steps
+## Managing Large Visualizations
 
 ## Transformations
 
@@ -69,315 +142,4 @@ Ask Greg for a diagram explaining template & instances
 
 Look for events - waited long enough? are events configured on the instance.
 
-## Examples
-
-### CRM to Messages
-
-This example listens for an event on a CRM element and then sends an email with that event information using a messaging element.
-
-| Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
-| :------------- | :------------- |:------------- |:------------- | :------------- |
-|  [Event] (reference.html/#event) |  <ul><li>[JS Script] (reference.html/#js-script)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub element instance with events</li><li>Messaging hub authenticated element instance</li></ul> | [Formula JSON][4]  |
-
-To create a formula that listens for an event and emails a message:
-
-1. [Build a formula template](#build-a-formula-template) and select **Event** as the trigger.
-2. Because the trigger is a change to a CRM element, add an element instance variable that refers to a CRM element.
-  3. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">.
-  3. Click **Add New Variable**, and then click **Element Instance**.
-  4. Enter a name for your CRM variable. In this example, we'll use `crmElement`.
-  5. Click **Save**.
-  6. Select the variable that you just created (`crmElement`), and then click **Save** on the Edit event: "trigger" page.
-
-        Your formula visualization should like like the following example:
-        ![Trigger](img/viz-trigger.png)
-
-4. Add another element instance variable for the messaging element.
-  5. Click **Variables**.
-  ![Variables](img/variables.png)
-  7. Click **Element Instance**.
-  8. Enter a name. For this tutorial we'll call it `messagingElement`.
-  9. Click **Save**.
-5. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Script step that constructs a message when the trigger happens.
-  7. Click **JS Script**.
-  8. Enter a name for the script. We'll call it `constructBody`.
-  8. Enter a script that constructs a message, such as the example below.
-
-        ```js
-        done( {
-          "subject": "CRM Event Occurred",
-          "to": "receipient@cloud-elements.com",
-          "from": "sender@cloud-elements.com",
-          "message": `${trigger.event.objectType} with ID ${trigger.event.objectId} was ${trigger.event.eventType}`
-        });
-        ```
-  1. Click **Save**.
-1. Create an Element API Request step to send the message that you created in the previous step. Under the **constructBody** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-    7. Select **Element API Request**.
-    8. Enter a name for the step. We'll call it `sendEmail`.
-    9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **messagingElement** variable that we created earlier.
-    9. In **Method**, select **POST** because the formula will submit a POST request to the messaging hub to an email.
-    10. In **API**, enter the API used to send email messages. In this case, enter `/hubs/messaging/messages`.
-    11. Click **Show Advanced**.
-    12. Scroll to **Body** and enter the reference to the email that we constructed earlier. In this case, type `${steps.constructBody}`.
-    13. Click **Save**.
-
-Your formula is finished and should look like the visualization below. It should include a trigger and two steps: the first constructs an email and the second sends a message.
-![Trigger](img/viz-crm-messaging.png)
-
-### Retrieve, Transform, and Sync Contact
-
-This example listens for a new contact on a CRM element, transforms the contact to match a common resource, and then syncs with another service provider.
-
-| Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
-| :------------- | :------------- |:------------- |:------------- | :------------- |
-|  [Event] (reference.html/#event)  |  <ul><li>[JS Filter] (reference.html/#js-filter)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li><li>A common resource that transforms contacts</li></ul> | [Formula JSON][5]  |
-
-To create a formula that syncs contacts:
-
-1. [Build a formula template](#build-a-formula-template) and select **Event** as the trigger.
-2. Because the trigger is a change to a CRM element, add an element instance variable that refers to a CRM element.
-  3. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">.
-  3. Click **Add New Variable**, and then click **Element Instance**.
-  4. Enter a name for your CRM variable. In this example, we'll use `destinationInstance`.
-  5. Click **Save**.
-  6. Select the variable that you just created (`destinationInstance`), and then click **Save** on the Edit event: "trigger" page.
-
-        Your formula visualization should like like the following example:
-        ![Trigger](img/viz-trigger.png)
-
-4. Add another element instance variable for the CRM element to sync the new contact to.
-  5. Click **Variables**.
-  ![Variables](img/variables.png)
-  7. Click **Element Instance**.
-  8. Enter a name. For this tutorial we'll call it `originInstance`.
-  9. Click **Save**.
-10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Filter step that checks to be sure the event is a created contact, and not an updated or deleted contact.
-  7. Click **JS Filter (true/false)**.
-  8. Enter a name for the script. We'll call it `isCreateContact`.
-  8. Enter a script that checks to be sure the event was caused by a created object, such as the example below.
-
-      ```js
-      let theEvent = trigger.event.eventType;
-      let theObject = trigger.event.objectType;
-
-      done((theEvent === 'CREATED') && (theObject === 'Contact' || theObject === 'contacts'));
-      ```
-1. Create an Element API Request step to retrieve the transformed version of the contact. Under the **isCreateContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-
-    {% include note.html content="This step uses the objectId from the previous step to retrieve the transformed object. If you just retrieved the information about the object from the event payload, it would not be normalized and could not sync with another CRM element. " %}
-
-  7. Select **Element API Request**.
-  8. Enter a name. For this tutorial we'll call it `retrieveContact`.
-  9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
-  9. In **Method**, select **GET** because the formula will submit a GET request to a common resource.
-  10. In **API**, enter the API to the common resource that transforms the data supplied by the event. For this tutorial, the common resource is called `myContact`. You must also specify the objectID from the contact that triggered the event.
-
-            /hubs/crm/MyContact/${trigger.event.objectId}
-
-  13. Click **Save**.
-1. Create an Element API Request step to sync the contact to another CRM element instance. Under the **retrieveContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-  7. Select **Element API Request**.
-  8. Enter a name. For this tutorial we'll call it `createContact`.
-  9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
-  9. In **Method**, select **POST** because the formula will submit a POST request to sync the contact.
-  10. In **API**, enter the API to the common resource. For this tutorial, the common resource is called `myContact`.
-
-            /hubs/crm/MyContact
-
-  11. Click **Show Advanced**.
-  12. Scroll to **Body** and enter the reference to the step with the transformed contact data. In this case, type `${steps.retrieveContact.response.body}`.
-  13. Click **Save**.
-
-Your formula is finished and should look like the visualization below. It should include a trigger and three steps: the first checks that an event is a created contact, the second gets the transformed contact data, and the third syncs the contact.
-![Trigger](img/viz-sync-contacts.png)
-
-### Bulk Transfer CRM Data
-
-Bulk data transfer is a common use case. For example, your first sync between CRM systems or maybe you add many accounts or contacts each day and want a single job to run to sync between systems. This example demonstrates how to use two formulas to complete a bulk transfer.
-
-| Trigger | Step Types   | Variable Types| Prerequisites | Template JSON  |
-| :------------- | :------------- |:------------- | :------------- |:------------- |
-|  <ul><li>[Scheduled] (reference.html/#scheduled) (Formula 1)</li><li>[Manual] (reference.html/#manual) (Formula 2)</li></ul> |  <ul><li>[JS Script] (reference.html/#js-script) </li><li>[Element API Request] (reference.html/#element-api-request)</li><li>[JS Filter] (reference.html/#js-filter) (Formula 2)</li><li>[Stream File] (reference.html/#stream-file) (Formula 2)</li></ul>  | <ul><li>[Value] (reference.html/#value-variable)</li><li>[Element Instance] (reference.html/#element-instance-variable)</li>  |<ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li></ul> | <ul><li>[Step 1 Formula JSON][6]</li><li>[Step 1 Formula JSON][7]</li></ul>  |
-
-#### Formula 1
-
-To create a formula that <span style="color:red">makes a bulk request </span>:
-
-1. [Build a formula template](#build-a-formula-template) and select **Scheduled** as the trigger.
-2. Add a cron string to identify when the sync occurs.
-
-    This example fires every <span style="color:red">when</span> at <span style="color:red">when</span> .
-
-        0 0 12 1/1 * ? *
-
-4. Add variables for the resource that you want to sync (like account or contact), the element instance that includes the resources that you want to sync, and the <span style="color:red">the id of the instance of the second formula in this process</span>.
-  5. Click **Variables**.
-  ![Variables](img/variables.png)
-  7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `objectName`.
-  9. Click **Save**.
-  10. Repeat to create a Value variable called `steptwoid`.
-  11. Create an Element Instance variable named `originInstance`.
-10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Script step that <span style="color:red">builds the metadata</span>.
-  7. Click **JS Script**.
-  8. Enter a name for the script. We'll call it `buildMetaData`.
-  8. Enter a script that <span style="color:red">queries a specific resource and ....</span>.
-
-      ```js
-      done ({
-          "query":{
-            "q":"select * from " + config.objectname
-          },
-          "headers":{
-            "Elements-Async-Callback-Url":"https://console.cloud-elements.com/elements/api-v2/formulas/instances/" + config.steptwoid + "/executions"
-          }
-        });
-      ```
-
-1. Create an Element API Request step to <span style="color:red">make a bulk download request</span>. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-  7. Select **Element API Request**.
-  8. Enter a name. For this tutorial we'll call it `bulkQuery`.
-  9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
-  9. In **Method**, select **POST** because the formula will submit a POST request to the resource.
-  10. In **API**, enter the endpoint to make a bulk query.
-
-            /hubs/crm/bulk/query
-
-  11. Click **Show Advanced**.
-  12. In **Headers**, enter the reference to the headers that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.headers}`.
-  13. In **Query**, enter the reference to the query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.query}`.
-  13. Click **Save**.
-
-The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first <span style="color:red">does this</span> and the second <span style="color:red">does that</span>.
-![Trigger](img/viz-bulk-transfer-1.png)
-
-#### Formula 2
-
-To create a formula that <span style="color:red">syncs data from the previous formula </span>:
-
-1. [Build a formula template](#build-a-formula-template) and select **Manual** as the trigger, and then click **Save**.
-
-    {% include note.html content="You do not need to configure anything for the manual trigger, but take note of the endpoint that you will need to trigger the formula: `POST /formulas/instances/:id/executions`" %}
-
-4. Add variables for the resource that you want to sync (like account or contact), the element instance that includes the resources that you want to sync, and the <span style="color:red">the id of the instance of the second formula in this process</span>.
-  5. Click **Variables**.
-  ![Variables](img/variables.png)
-  7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `objectName`.
-  9. Click **Save**.
-  11. Create Element Instance variables to represent the source and target systems to sync. For this example, use `originInstance` and `destinationInstance`.
-10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Filter step that <span style="color:red">does something pretty cool</span>.
-  7. Click **JS Filter (true/false)**.
-  8. Enter a name for the script. We'll call it `isSuccessful`.
-  8. Enter a script that checks to be sure the event was caused by a created object, such as the example below.
-
-      ```js
-      let status = trigger.args.status;
-
-      if (status && status === "COMPLETED") {
-        done(true);
-      } else {
-        done(false);
-      }
-      ```
-6. Create a JS Script step that <span style="color:red">builds the metadata</span>Under the **isSuccessful** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-  7. Click **JS Script**.
-  8. Enter a name for the script. We'll call it `buildMetaData`.
-  8. Enter a script that <span style="color:red">queries a specific resource and ....</span>.
-
-      ```js
-      let metaData = {
-        "identifierFieldName":"email"
-      }
-
-      let downloadHeaders = {
-        "Accept":"text/csv"
-      };
-
-      done({
-        "metaData": metaData,
-        "downloadHeaders": downloadHeaders
-      });
-       ```
-1. Create an Element Stream step to <span style="color:red">move the files downloaded from the origin instance to the destination instance</span>. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
-  7. Select **Stream File**.
-  8. Enter a name. For this example we'll call it `bulkStream`.
-  9. In **Download Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
-  9. In **Download Method**, enter `GET`.
-  10. In **Download API**, enter `/hubs/crm/bulk/${trigger.args.id}/${config.objectname}`. `${trigger.args.id}` refers to <span style="color:red">what</span> and `${config.objectname}` refers to the <span style="color:red">objectName variable that identifes the resource that you want to sync</span>.
-  9. In **Upload Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
-  9. In **Upload Method**, enter `POST`.
-  10. In **Upload API**, enter `/hubs/crm/bulk/${config.objectname}`. `${trigger.args.id}`. `${config.objectname}` refers to the <span style="color:red">objectName variable that identifes the resource that you want to sync</span>.
-  11. Click **Show Advanced**.
-  12. In **Download Headers**, enter the reference to the download headers that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.downloadHeaders}`.
-  13. In **Upload Query**, enter the reference to the upload query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.metaData}`.
-  13. Click **Save**.
-
-The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first <span style="color:red">does this</span> and the second <span style="color:red">does that</span>.
-![Trigger](img/viz-bulk-transfer-1.png)
-
-
-## Test a Formula
-
-1. Click **Setup Test**.
-![Setup Test](img/set-up-test.png)
-2. Click **Select Instance**.
-3. Select an existing formula instance or click **Add New Instance** to create one.
-  4. Enter a name for the Formula Instance.
-  5. Assign variables.
-  6. Click **Show Advanced**.
-
-  <span style="color:red">What are these notifications for???</span>
-
-  7. Enter an **Email**.
-  8. Enter a **Webhook URL**.
-  9. Click **Create Instance**.
-  10. Select the Formula Instance
-11. Click **Select Trigger**.
-12. Select an event, and then click **Save**.
-13. Click **Run**.
-
-
-# Building Your First Formula
-To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.
-
-> **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
-
-# Creating Formulas via UI
-To get started, we are going to demonstrate how to create a very simple formula that leverages a few of the different step types.  This formula will listen for events from a CRM element, and then send an email using the Messaging hub.
-
-> **NOTE:** For this documentation, it is assumed you have an instance of Salesforce and SendGrid already provisioned, and events *must* be enabled for Salesforce.
-
-## Formula Builder I: Creating Your First Formula
-{% include vimeo-player-full-width.html id=170863091 %}
-{% include padding-all.html %}
-
-## Formula Builder II: Using Filter Steps In Your Formula
-{% include vimeo-player-full-width.html id=170861196 %}
-{% include padding-all.html %}
-
-## Formula Builder III: Using Variables In Your Formula
-{% include vimeo-player-full-width.html id=170862318 %}
-{% include padding-all.html %}
-
-> **NOTE:** Sample JSON available from the videos above:
-[Formula JSON][1], [Formula Instance JSON][2], [Formula Instance Execution JSON][3].
-
-[1]:{{ site.url }}/download/crm-to-messaging-formula.json
-[2]:{{ site.url }}/download/crm-to-messaging-formula-instance.json
-[3]:{{ site.url }}/download/crm-to-messaging-formula-instance-execution.json
-[4]:{{ site.url }}/download/crm-to-message.json
-
-
-# Creating Formulas via API
-
-In order to go about creating formulas and formula instances via the API, please reference our "API Docs" section on the right side panel.
-
-> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via the Console UI.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
-
-> **NOTE:** The platform formula APIs show a sub-resource of a formula called `configuration`.  This is what we call "Variables" throughout our documentation and in the Formula Builder UI.
+## Create Formula Based on Existing Formula
