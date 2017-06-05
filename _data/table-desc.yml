@@ -1,11 +1,11 @@
 # Formulas
-headers: "The headers to pass along as part of the API request. You rarely need to add anything to the headers, but you can use this parameter to pass common header information such as content types."
+formula-headers: "The headers to pass along as part of the API request. You rarely need to add anything to the headers, but you can use this parameter to pass common header information such as content types."
 
-query: "Any query paramaters, such as a CEQL query or pagination, to pass as part of the API request."
+formula-query: "Any query paramaters, such as a CEQL query or pagination, to pass as part of the API request."
 
-name: "The name of the formula step. The name must be unique within the formula."
+step-name: "The name of the formula step. The name must be unique within the formula."
 
-method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELETE. "
+formula-method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELETE. "
 
 retry-failure: "Indicates that we should retry a configurable number of times if the request fails."
 
@@ -15,8 +15,16 @@ max-retry: "The maximum number of times to retry the request."
 
 retry-status-codes: "A comma separated list of codes returned in the response that indicate that we should retry the request. For example <code>500,501,502</code>"
 
-path: "The Path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
+formula-path: "The Path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
 
-body: "The Body parameter specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the Body parameter. For ecample, <code>$steps.previousStep</code>. "
+formula-body: "The Body parameter specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the Body parameter. For ecample, <code>$steps.previousStep</code>. "
 
 acceptable-codes: "A comma separated list of codes returned in the response that indicate success. For example <code>200,201</code>."
+
+step-id: "The unique identifier for the step."
+
+onSuccess: "The next step for a successful execution of the current step."
+
+onFailure: "The next step for a successful execution of the current step."
+
+step-type: "The type of step, such as elementRequest, filter, or loop."

@@ -4,11 +4,12 @@ seo: Formula Steps | Formula Step Types | Cloud Element Formulas
 title: Formula Triggers, Steps, and Variables
 description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
+uiContentVersion: reference
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 10
+order: 11
 ---
 
 # Triggers, Steps, and Variables
@@ -49,7 +50,7 @@ Triggered anytime a specific API call is made to a given Element Instance. To se
 When you set up an Element Request trigger, specify the following parameters:
 
 * Element Instance Variable: Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element that will kick off a formula instance when the specified API call occurs.
-* Method:  {{site.data.table-desc.formula-method}}.
+* Method:  {{site.data.table-desc.method}}.
 * API: The The endpoint, such as `hubs/crm/contacts`.
 
 ### Scheduled
@@ -111,19 +112,21 @@ You can use the following types of steps in your formulas:
 
 ### ActiveMQ Request
 
-The ActiveMQ Request (amqpRequest) uses the AMQP protocol to post a message to an MQ server such as RabbitMQ.
-
-{% include note.html content="The ActiveMQ Request's type in the JSON is amqpRequest." %}
+The ActiveMQ Request (`amqpRequest`) uses the AMQP protocol to post a message to an MQ server such as RabbitMQ.
 
 When you set up an ActiveMQ Request step, include the following information:
 
 | Parameter | Description   | Required |
 | :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.step-name}}  | Y |
-|  URL  |  Specifies the AMQP URL endpoint of the MQ Server. The structure of the URL is specified in [RabbitMQ URI Specification]( https://www.rabbitmq.com/uri-spec.html)  | Y |
-|  Queue  |  Indicates the name of the queue of the MQ server to which the message should be posted.  | Y |
-|  Message  |  The JSON payload to post to the server.  | Y |
-|  Exchange  |  The name of the MQ server exchange to which the message should be posted.  | N |
+| id | {{site.data.table-desc.step-id}} | y |
+| onSuccess | {{site.data.table-desc.onSuccess}} | Y |
+| onFailure | {{site.data.table-desc.onFailure}} | Y |
+| name  |  {{site.data.table-desc.step.name}}  | Y |
+| type  |  {{site.data.table-desc.step.type}}  | Y |
+| url |  Specifies the AMQP URL endpoint of the MQ Server. The structure of the URL is specified in [RabbitMQ URI Specification]( https://www.rabbitmq.com/uri-spec.html)  | Y |
+|  queue  |  Indicates the name of the queue of the MQ server to which the message should be posted.  | Y |
+|  body  |  The JSON payload to post to the server.  | Y |
+|  exchange  |  The name of the MQ server exchange to which the message should be posted.  | N |
 
 ### Element API Request
 
@@ -140,14 +143,14 @@ When you set up an Element API Request step, include the following information:
 
 | Parameter | Description   | Required |
 | :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.step-name}}  | Y |
+|  Name  |  {{site.data.table-desc.name}}  | Y |
 |  Element Instance Variable  |  Specifies the element instance that receives the API call.  | Y |
-|  Method  |  {{site.data.table-desc.formula-method}} | Y |
+|  Method  |  {{site.data.table-desc.method}} | Y |
 |  API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-|  Headers  |  {{site.data.table-desc.formula-headers}}  | N |
-|  Query  |  {{site.data.table-desc.formula-query}}  | N |
-| Path | {{site.data.table-desc.formula-path}} | N |
-| Body | {{site.data.table-desc.formula-body}} | N |
+|  Headers  |  {{site.data.table-desc.headers}}  | N |
+|  Query  |  {{site.data.table-desc.query}}  | N |
+| Path | {{site.data.table-desc.path}} | N |
+| Body | {{site.data.table-desc.body}} | N |
 | Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
 | Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
 | Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |

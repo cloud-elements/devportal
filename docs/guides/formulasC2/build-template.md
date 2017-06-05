@@ -91,37 +91,6 @@ To test a formula template:
 8. Click **Select Trigger**.
 9. Provide trigger information, depending on the type of trigger.
 
-## Reference Syntax
-
-You can access values created by steps, variables, and other information available to the formula context with the syntax described in this section.
-
-### Trigger Syntax
-
-The base syntax for triggers is `trigger.`.
-
-Each different type of step produces different step execution values that are added to the formula "context". The formula context is then passed from step-to-step, allowing you to use these values in any subsequent steps in your formula. Below are the different values that each different step type produces:
-
-* trigger.event
-* trigger.event.objectType
-* trigger.event.eventType
-* trigger.event.objectId
-* trigger.event.objectType.toLowerCase
-* trigger.formula.instance.action
-* trigger.args.action
-* trigger.args.config
-* trigger.args.objectId
-* trigger.args.eventType
-* trigger.response.body.data.stateAbbreviation
-* trigger.body.message.events[0].eventType
-* trigger.body.message.raw.changedConversations
-
-### Variables
-
-* $config.
-
-### Steps
-
-* $steps.
 
 
 ## Create Variable
