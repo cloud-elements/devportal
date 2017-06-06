@@ -1,12 +1,12 @@
 ---
-heading: Box
-seo: Authenticate | Box | Cloud Elements API Docs
+heading: Zendesk
+seo: Authenticate | Zendesk | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider.
+description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 22
-elementKey: box
+elementId: 41
+elementKey: zendesk
 parent: Back to Element Guides
 order: 20
 ---
@@ -39,13 +39,15 @@ To authenticate an element instance:
 
 5. Enter a name for the element instance.
 
+      {% include note.html content="If connecting to a Salesforce sandbox, change the optional Endpoint Address to https://test.salesforce.com. " %}
+
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
-8. Provide your Box credentials, and then allow the connection.
+8. Provide your Salesforce credentials, and then allow the connection.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
@@ -62,23 +64,22 @@ Authenticating through API is a multi-step process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<zendesk_subdomain>
 ```
 
 #### Query Parameters
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Unique Identifier** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+| siteAddress | Your unique Zendesk subdomain (i.e. - https://{subdomain}.zendesk.com) |
 
 #### Example cURL
 
 ```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://httpbin.org/get&state={{page.elementKey}}'
+curl -X GET "https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_zendesk_unique_identifier&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&siteAddress=zendesk_subdomain" -H  "accept: application/json" -H  "content-type: application/json"
 ```
 
 #### Example Response
@@ -87,8 +88,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-  "oauthUrl": "https://www.box.com/api/oauth2/authorize?response_type=code&client_id=57du4eiw3cseqfrs06bn9hg37ff344hv&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=box",
-  "element": "box"
+"element": "{{page.elementKey}}",
+"oauthUrl": "https://zendesk_subdomain.zendesk.com/oauth/authorizations/new?scope=read+write&response_type=code&redirect_uri=https://www.mycool.app.com/auth&state=zendesk&client_id=zendesk_unique_identifier"
 }
 ```
 
@@ -118,6 +119,7 @@ To create an element instance:
 
     ```json
     {
+      "name": "<INSTANCE_NAME>",
       "element": {
         "key": "{{page.elementKey}}"
       },
@@ -132,8 +134,7 @@ To create an element instance:
       },
       "tags": [
         "<Add_Your_Tag>"
-      ],
-      "name": "<INSTANCE_NAME>"
+      ]
     }
     ```
 
@@ -153,6 +154,7 @@ curl -X POST \
   -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
+  "name": "Zendesk_Instance"
   "element": {
     "key": "{{page.elementKey}}"
   },
@@ -160,14 +162,14 @@ curl -X POST \
     "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.callback.url": "<CALLBACK_URL>",
-    "oauth.api.key": "<CONSUMER_KEY>",
-    "oauth.api.secret": "<CONSUMER_SECRET>"
+    "oauth.callback.url": "https://www.mycoolapp.com/auth",
+    "oauth.api.key": "zendesk_unique_identifier",
+    "oauth.api.secret": "fake_api_secret",
+    "zendesk.subdomain": "zendesk_subdomain"
   },
   "tags": [
-    "MyTag"
-  ],
-  "name": "My Box Instane"
+    "For Docs"
+  ]
 }'
 ```
 ## Parameters
@@ -178,81 +180,30 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  name:`name` |  A unique name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The Redirect URL from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html).  | string |
-| `oauth.api.key` | The Client Id from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Client Secret from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html)| string |
-| tags | *Optional*. User-defined tags to further identify the instance. | string |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  `name` |  The name for the element instance created during authentication.   | Body  |
+| `oauth.callback.url` | The Callback URL from Zendesk. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Unique Identifier from Zendesk. This is the Unique Identifier that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Secret from Zendesk. This is the Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| `zendesk.subdomain` | Your unique Zendesk subdomain | string |
+| `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
 
 ```json
 {
-  "id": 427236,
-  "name": "FromAPI-tags",
-  "createdDate": "2017-06-06T21:29:33Z",
-  "token": "s;dkjhsadlkjhfvlkadflvakdfvaqewcs",
-  "element": {
-    "id": 22,
-    "name": "Box",
-    "hookName": "Box",
-    "key": "box",
-    "description": "Add a Box Instance to connect your existing Box account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Box account information to add an instance.",
-    "image": "elements/provider_box.png",
-    "active": true,
-    "deleted": false,
-    "typeOauth": true,
-    "trialAccount": false,
-    "configDescription": "If you do not have an Box.net account, you can create one at <a href=\"http://www.box.com\" target=\"_blank\">Box.Net Signup</a>",
-    "resources": [],
-    "transformationsEnabled": false,
-    "bulkDownloadEnabled": false,
-    "bulkUploadEnabled": false,
-    "cloneable": true,
-    "extendable": true,
-    "beta": false,
-    "authentication": {
-      "type": "oauth2"
+    "id": 123,
+    "name": "test",
+    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+    "element": {
+        "id": 41,
+        "name": "Zendesk",
+        "key": "zendesk",
+        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
+        "active": true,
+        "deleted": false
     },
-    "extended": false,
-    "hub": "documents",
-    "protocolType": "http",
-    "parameters": [],
-    "private": false
-  },
-  "elementId": 22,
-  "provisionInteractions": [],
-  "valid": true,
-  "disabled": false,
-  "maxCacheSize": 0,
-  "cacheTimeToLive": 0,
-  "configuration": {
-    "base.url": "",
-    "oauth.api.secret": "wvyQdUrNvXbHabxPVcxZV60G0ELMEx3n",
-    "event.notification.subscription.id": null,
-    "event.metadata": "{\"webhook\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
-    "oauth.subuser.email": null,
-    "oauth.user.token": "KtWxcp0Rz4VYRdHh72g1mBu0yPW8Zbq8",
-    "oauth.user.id": "263773421",
-    "filter.response.nulls": "true",
-    "pagination.type": "offset",
-    "event.notification.callback.url": null,
-    "oauth.callback.url": "https://httpbin.org/get",
-    "event.notification.signature.key": null,
-    "oauth.user.refresh_token": "mbqHxMQ0okd24mom1wsj3PMx41JLWpfAtmdtiSN0kWvbYGqpALCc6TldBVZrF92Z",
-    "oauth.user.refresh_interval": null,
-    "oauth.api.key": "57du4eiw3cseqfrs06bn9hg37ff344hv",
-    "document.tagging": null,
-    "oauth.user.refresh_time": "1496784574729",
-    "event.notification.enabled": "false"
-  },
-  "eventsEnabled": false,
-  "traceLoggingEnabled": false,
-  "cachingEnabled": false,
-  "externalAuthentication": "none",
-  "user": {
-    "id": 1234567
-  }
+    "valid": true,
+    "disabled": false
 }
 ```

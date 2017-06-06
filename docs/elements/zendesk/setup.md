@@ -1,8 +1,8 @@
 ---
 heading: Zendesk
-seo: Endpoint Setup | Zendesk | Cloud Elements API Docs
-title: Endpoint Setup
-description: Endpoint setup
+seo: Endpoint Setup | Service provider setup | Zendesk | Cloud Elements API Docs
+title: Service Provider Setup
+description: Service provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 5
 ---
 
-## Endpoint Setup
+# Service Provider Setup
 
 Follow these steps to set up a Zendesk application with the endpoint.
 Via a web browser, go to your Zendesk unique web address and login.
@@ -37,4 +37,4 @@ Via a web browser, go to your Zendesk unique web address and login.
 9. Click “Save”
 ![Zendesk Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/04/ZendeskAPI4.png)
 
-Next [create an instance](zendesk-create-instance.html).
+Next [create an instance](authenticate.html).
