@@ -1,8 +1,8 @@
 ---
-heading: Hubspot Marketing
-seo: Authenticate | Hubspot Marketing | Cloud Elements API Docs
-title: Authenticate 
-description: Authenticate an element instance with Hubspot Marketing
+heading: Name of Element
+seo: Authenticate | Name of Element | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -15,11 +15,13 @@ order: 20
 
 You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through the API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
 
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
+
+<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -39,7 +41,7 @@ To authenticate an element instance:
 
 5. Enter a name for the element instance.
 
-6. Enter you Hubspot portal id. 
+      {% include note.html content="If connecting to a Salesforce sandbox, change the optional Endpoint Address to https://test.salesforce.com. " %}
 
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
@@ -47,7 +49,7 @@ To authenticate an element instance:
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
-8. Provide your Hubspot credentials, and then allow the connection.
+8. Provide your Salesforce credentials, and then allow the connection.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
@@ -75,7 +77,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
 
 #### Example cURL
 
