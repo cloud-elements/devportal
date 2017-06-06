@@ -98,16 +98,9 @@ To authenticate an element instance with polling:
       "element":{
         "key":"{{page.elementKey}}"
       },
-      "providerData":{
-        "code": "<AUTHORIZATION_GRANT_CODE>"
-      },
       "configuration":{
-        "oauth.api.key": "<CLIENT_ID>",
-        "oauth.api.secret": "<CLIENT_SECRET>",
-        "signature.secret": "<SIGNING_SECRET>",
-        "apim.subscription.key": "<SUBSCRIPTION_PRIMARY_KEY_or_APIM_SUBSCRIPTION_KEY>",
-        "country": "<COUNTRY_CODE>",
-        "oauth.callback.url": "<CALLBACK_URL>",
+        "app.name":"<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
+        "host.ip":"<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
@@ -267,18 +260,11 @@ instance JSON with polling events enabled:
 ```json
 {
   "element":{
-    "key":"sageone"
-  },
-  "providerData":{
-    "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
+    "key":"{{page.elementKey}}"
   },
   "configuration":{
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
-    "signature.secret": "xxxxxxxxxxxxxxxxxxxxxxxxx",
-    "apim.subscription.key": "xxxxxxxxxxxxxxxxxxxxxxxxx",
-    "country": "US",
-    "oauth.callback.url": "https://mycoolapp.com",
+    "app.name":"<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
+    "host.ip":"<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
     "event.notification.enabled":true,
     "event.notification.callback.url":"http://mycoolapp.com",
     "event.poller.refresh_interval":"15",
@@ -428,14 +414,10 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
-| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [Service Provider Setup section](setup.html). | string |
-| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [Service Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
-| `country` | The two digit country code associated with the account of the authenticating user. | string |
+| `app.name` | The {{page.heading}} app name. |  string |
+| `host.ip` | The {{page.heading}} host IP. |  string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
