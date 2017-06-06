@@ -27,7 +27,7 @@ If you are using Cloud Elements' platform, by default, MS Dynamics polling is se
 
 `accounts`, `contacts`, `opportunities`, `leads`, `tasks`, `notes`, and `activities`.
 
-In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` how often you would like it to perform the polling job (minutes).
+In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` to how often you would like to have the polling job (minutes) performed.
 
 #### Events via an API Call
 
