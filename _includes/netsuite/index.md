@@ -14,7 +14,7 @@
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | NetSuite only supports one API call at a time from one unique user. NetSuite does not support concurrent API calls.|
-| Versions Supported |  |
+| Versions Supported | Netsuite 2016_R2 |
 
 ## Base URL
 
