@@ -56,17 +56,20 @@ This instance.json file must be included with your instance request.  Please fil
 ```
 
 If you would prefer your payload to be more similar to test you ran with our UI it is also possible to send the following payload
+
 ```JSON
 {
 "element": {
 "key": "freshdesk"
 },
 "configuration": {
-"api.key": "pcTlQRXAg1YWdxDwsxIX",
-"subdomain": "cloudelements"
+"api.key": "<INSERT_FRESHDESK_API_KEY",
+"subdomain": "<INSERT_FRESHDESK_SUBDOMAIN_URL>"
 },
-
-"name": "stuff"
+"tags": [
+  "<INSERT_TAGS>"
+],
+"name": "<INSERT_INSTANCE_NAME>"
 }
 ```
 Either of these payloads will work depending on what information you prefer to be gathering.
