@@ -2,3 +2,4 @@
 .jekyll-metadata
 /devportal.git
 .DS_Store
+Gemfile.lock
