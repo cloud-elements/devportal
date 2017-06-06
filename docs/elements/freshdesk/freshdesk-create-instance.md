@@ -55,6 +55,22 @@ This instance.json file must be included with your instance request.  Please fil
 }
 ```
 
+If you would prefer your payload to be more similar to test you ran with our UI it is also possible to send the following payload
+```JSON
+{
+"element": {
+"key": "freshdesk"
+},
+"configuration": {
+"api.key": "pcTlQRXAg1YWdxDwsxIX",
+"subdomain": "cloudelements"
+},
+
+"name": "stuff"
+}
+```
+Either of these payloads will work depending on what information you prefer to be gathering.
+
 Here is an example cURL command to create an instance using /instances API.
 
 Example Request:
