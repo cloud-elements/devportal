@@ -16,7 +16,7 @@ To authenticate a {{page.heading}} element instance, complete the setup steps de
 
 To set up the service provider:
 
-1. Via a web browser, login to your QuickBooks account at [https://developer.intuit.com/us](https://developer.intuit.com/us).
+1. Via a web browser, log in to your QuickBooks account at [https://developer.intuit.com/us](https://developer.intuit.com/us).
 2. In the menu on the top, click __My Apps__.
 3. Click __Create new app__.
 4. Click __Select APIs__ under __Just start coding__.
