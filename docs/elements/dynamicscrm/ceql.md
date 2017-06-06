@@ -5,7 +5,7 @@ title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 62
+elementId: 190
 parent: Back to Element Guides
 order: 45
 sitemap: false
@@ -19,7 +19,6 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 When querying in {{page.heading}}, keep the following in mind:
 
-* The {{page.heading}} bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause, chunking is disabled. If chunking is enabled, it may take longer to get all the data. Also, be aware that {{page.heading}} has daily upload and download limits.
 * Use CEQL to query the following endpoints:
   * GET /accounts
   * GET /activities
