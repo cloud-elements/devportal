@@ -19,15 +19,21 @@ Cloud Elements supports events via polling or webhooks depending on the endpoint
 
 ## Supported Events and Resources
 
-Cloud Elements supports polling events for {{page.heading}}.
+Cloud Elements supports polling events for {{page.heading}}. Polling can be set up for one specific resource (i.e. `accounts`) or for multiple resources.
 
-Polling can be set up for one specific resource (i.e. `accounts`) or for multiple resources. If you are using Cloud Elements' platform, by default, MS Dynamics polling is setup to gather the following resources:
+#### Cloud Elements Platform (UI)
+
+If you are using Cloud Elements' platform, by default, MS Dynamics polling is setup to gather the following resources:
 
 `accounts`, `contacts`, `opportunities`, `leads`, `tasks`, `notes`, and `activities`.
 
+In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` how often you would like it to perform the polling job (minutes).
+
+#### Events via an API Call
+
 However, if you are setting up an instance via an API call, in order to enable polling, you will need to add these extra configurations to your instance `JSON`.
 
-For more information, please visit our [Configure Polling Through API](#configure-polling-through-api) page.
+**For more information**, please visit our [Configure Polling Through API](#configure-polling-through-api) page.
 
 ```JSON
 "event.notification.enabled": "true",
@@ -35,7 +41,7 @@ For more information, please visit our [Configure Polling Through API](#configur
 "event.poller.configuration": "<SEE_BELOW>"
 ```
 
-NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
+**NOTE:** The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
 Here is an example instance JSON with polling events enabled for Microsoft Dynamics 2016 and later:
 
