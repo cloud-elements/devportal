@@ -21,7 +21,7 @@ To set up the service provider:
 3. Click __Create new app__.
 4. Click __Select APIs__ under __Just start coding__.
 5. Select __Accounting__ and __Payments__ and click __Create app__.
-6. Note the following in the __Keys__ section, which you will need to authenticate a Cloud Elements Salesforce element instance with Salesforce.
+6. Note the following in the __Keys__ section, which you will need to authenticate a Cloud Elements Quickbooks element instance with Quickbooks.
  * App token
  * OAuth Consumer Key
  * OAuth Consumer Secret
