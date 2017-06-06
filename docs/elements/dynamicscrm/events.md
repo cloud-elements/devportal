@@ -1,20 +1,36 @@
 ---
 heading: Microsoft Dynamics CRM
-seo: Events | MS Dynamics CRM | Cloud Elements API Docs
+seo: Events | Microsoft Dynamics CRM | Cloud Elements API Docs
 title: Events
 description: Enable Microsoft Dynamics CRM events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 190
+elementKey: dynamicscrmadfs
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
+
+<!-- remove this link below (has been replaced with the above code) -->
+<!-- {% include polling_and_webhooks_defined.md %} -->
+
+## Supported Events and Resources
+
+Cloud Elements supports polling events for {{page.heading}}.
+
+Polling can be set up for one specific resource (i.e. `accounts`) or for multiple resources. If you are using Cloud Elements' platform, by default, MS Dynamics polling is setup to gather the following resources:
+
+`accounts`, `contacts`, `opportunities`, `leads`, `tasks`, `notes`, and `activities`.
+
+However, if you are setting up an instance via an API call, in order to enable polling, you will need to add these extra configurations to your instance `JSON`.
+
+For more information, please visit our [Configure Polling Through API](#configure-polling-through-api) page.
 
 ```JSON
 "event.notification.enabled": "true",
