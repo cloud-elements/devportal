@@ -31,4 +31,4 @@ Follow these steps to set up a Dropbox Business application with the endpoint. V
 8. Click “Add”
 ![Dropbox Business Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxBusinessAPI2.png)
 
-Next [create an instance](dropbox-business-create-instance.html).
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
