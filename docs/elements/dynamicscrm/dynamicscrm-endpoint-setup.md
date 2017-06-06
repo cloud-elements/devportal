@@ -11,7 +11,8 @@ order: 2
 ---
 ## Endpoint Setup
 
-To set up the Microsoft Dynamics CRM endpoint, you need to have an account and create or already have an app. Also, to authenticate with OAuth 2, you need to know the Client ID and keys for the app. If you use custom authenication when you provision an element, you do not need the Client ID and keys for the app.
+To set up the Microsoft Dynamics CRM endpoint, you need to have an account and create or already have an app. Also, to authenticate with OAuth 2, you need to know the Client ID and keys for the app. If you use custom authentication when you provision an element, you do not need the Client ID and keys for the app.
+Dynamics versions 2013-2015 are supported by the MS Dynamics 2015 SDK.
 
 __Note__: Microsoft provides the most up-to-date and detailed setup instructions at [https://msdn.microsoft.com/en-us/library/mt593051.aspx](https://msdn.microsoft.com/en-us/library/mt593051.aspx).
 
