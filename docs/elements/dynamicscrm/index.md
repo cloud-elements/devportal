@@ -26,7 +26,7 @@ sitemap: false
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
+| Authentication Requirements | We support the 2013 version and above with administrator privileges.|
 
 ## Base URL
 
