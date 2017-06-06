@@ -6,13 +6,32 @@ description: Enable NetSuite 2016 ERP events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 987
+elementKey: netsuiteerpv2
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#parameters>Parameters</a>" type="info" %}
+
+## Supported Events and Resources
+
+Cloud Elements supports polling events for {{page.heading}}. Polling can be set up for one specific resource (i.e. `accounts`) or for multiple resources.
+
+## Polling
+
+#### Cloud Elements Platform (UI)
+
+If you are using Cloud Elements' platform, by default, MS Dynamics polling is setup to gather the following resources:
+
+`customers`, `employees`, `estimates`, `invoices`, `journal-entries`, `payments`, `products`, `purchase-orders`, `time-activities`, `vendor-payments`, and `vendors`.
+
+In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` to how often you would like to have the polling job (minutes) performed.
+
+#### Via API
 
 In order to enable polling, add these extra configurations to your instance JSON:
 
