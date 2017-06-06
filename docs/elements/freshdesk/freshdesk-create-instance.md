@@ -55,6 +55,25 @@ This instance.json file must be included with your instance request.  Please fil
 }
 ```
 
+If you would prefer your payload to be more similar to test you ran with our UI it is also possible to send the following payload
+
+```JSON
+{
+"element": {
+"key": "freshdesk"
+},
+"configuration": {
+"api.key": "<INSERT_FRESHDESK_API_KEY",
+"subdomain": "<INSERT_FRESHDESK_SUBDOMAIN_URL>"
+},
+"tags": [
+  "<INSERT_TAGS>"
+],
+"name": "<INSERT_INSTANCE_NAME>"
+}
+```
+Either of these payloads will work depending on what information you prefer to be gathering.
+
 Here is an example cURL command to create an instance using /instances API.
 
 Example Request:
@@ -118,6 +137,12 @@ Below is a successful JSON response:
   "cachingEnabled": false
 }
 ```
+#### Where can I find my Freshdesk API key?
+
+1. Login to your Support Portal
+2. Click on your profile picture on the top right corner of your portal
+3. Go to Profile settings Page
+4. Your API key will be available below the change password section to your right
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
