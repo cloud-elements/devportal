@@ -119,7 +119,7 @@ To create an element instance:
 
     ```json
     {
-      "name": "<INSTANCE_NAME>"
+      "name": "<INSTANCE_NAME>",
       "element": {
         "key": "{{page.elementKey}}"
       },
@@ -180,13 +180,13 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  `name` |  The name for the element instance created during authentication.   | Body  |
 | `oauth.callback.url` | The Callback URL from Zendesk. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
 | `oauth.api.key` | The Unique Identifier from Zendesk. This is the Unique Identifier that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
 | `oauth.api.secret` | The Secret from Zendesk. This is the Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | `zendesk.subdomain` | Your unique Zendesk subdomain | string |
-| tags | *Optional*. User-defined tags to further identify the instance. | string |
+| `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
 
