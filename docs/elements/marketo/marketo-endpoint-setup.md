@@ -17,7 +17,7 @@ To authenticate a {{page.heading}} element instance you must first belong to the
 To set up the service provider:
 
 1. Via a web browser, log in to your Marketo account:  [https://login.marketo.com/ ](https://login.marketo.com/ ) <br/>
-1. Navigate to the admin area of the Marketo application (test1)
+1. Navigate to the admin area of the Marketo application
 ![Marketo Connected App step 1](/img/marketo_admin.png)
 2. Click on the Users & Roles node on the left panel.
 ![Marketo Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/12/Marketowp2.png)
