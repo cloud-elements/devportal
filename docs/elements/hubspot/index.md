@@ -1,8 +1,8 @@
 ---
-heading: HubSpot Marketing
-seo: Overview | HubSpot Marketing | Cloud Elements API Docs
+heading: Hubspot Marketing
+seo: Overview | Hubspot Marketing | Cloud Elements API Docs
 title: Overview
-description: Integrate HubSpot Marketing into your application via the Cloud Elements APIs.
+description: Integrate Hubspot Marketing into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 43
@@ -11,21 +11,60 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the HubSpot Marketing Element
+# Welcome to the {{page.heading}} Element
 
+{{page.heading}} is an inbound marketing and sales platform that helps companies attract visitors, convert leads, and close customers.
 
-#### At a Glance
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
-In order to create a connection to HubSpot Marketing the following steps are required:
+## Element Details
 
-1. Set up the [endpoint](hubspot-endpoint-setup.html)
-2. Call the `GET /elements/hubspot/oauth/url` with your HubSpot Marketing API key and secret
-3. Call the `POST /instances` API to instantiate your HubSpot Marketing connected app
+| Element Information | Details     |
+| :------------- | :------------- |
+| API Documentation | [Hubspot API documentation](https://developers.hubspot.com/docs/overview) |
+| Authentication | OAuth 2  |
+| Events | Webhooks and polling |
+| Bulk | Supported for up, down, and all around |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://developers.hubspot.com/apps/api_guidelines)|
+| Authentication Requirements |  Paid Hubspot marketing account with administrator privileges. Webhooks require a Pro plan. |
 
-#### In Depth
+## Base URL
 
-The HubSpot Marketing Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
+The Cloud Element Base URL for all API calls is `https://api.cloud-elements.com/elements/api-v2`.
 
-All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
+HTTP requests to the REST API are protected with custom authentication which requires your Organization and User secret and an Element Instance token. We use many standard HTTP features, such as HTTP verbs, understood by most HTTP clients. JSON is returned in all responses from the API, including errors. The APIs have predictable, straightforward URLs and use standard HTTP response codes to indicate API errors.
 
-Get started by [setting up the endpoint](hubspot-endpoint-setup.html).
+## Authenticating with Cloud Elements
+
+To authenticate with Cloud Elements, you need to know your Organization Secret and User Secret. When making some calls, you also need to know the Element Instance token.
+
+When you create an account with us, we assign you an Organization Secret and a User Secret. An Organization is a customer of Cloud Elements (`/organizations`). The User and Organization secrets combined represent your individual account with Cloud Elements.
+
+To find your Organization and User Secret:
+
+| Latest UI | Earlier UI  |
+| :------------- | :------------- |
+| Open the profile menu.</br> ![Search](../img/Org-User-Secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](../img/Org-User-Secret.png)  |
+
+When you create a new connection to an endpoint, you will receive an Element Instance token. Cloud Elements automatically maintains valid credentials behind the scenes, so you won't need to connect your application again.
+
+To find your Element Instance token:
+
+        GET /instances/<INSTANCE_ID>
+
+An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
+
+Pass your tokens and secrets in an Authorization header on a HTTP request.
+
+* To make a Platform or API call, include the following in the header:
+
+        Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_USER_SECRET>
+
+* To make a Hub API call, include the following in the header:
+
+        User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
+
+{% include error-codes.md %}
+
+Get started by [setting up the service provider](setup.html).

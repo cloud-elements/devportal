@@ -6,172 +6,428 @@ description: Enable QuickBooks Enterprise events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 195
+elementKey: quickbooksonprem
 parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
-```JSON
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.configuration": "<SEE_BELOW>"
-```
+## Supported Events and Resources
 
-NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
+Cloud Elements supports polling events for {{page.heading}}.
+
+You can set up events for the following resources:
+
+* bills
+* credit-memos
+* item-receipts
+* invoices
+* journal-entries
+* payments
+* sales-receipts
+* purchase-orders
+* sales-orders
+* customers
+* employees
+* products
+* vendors
+* Other objects that include `created`, `updated`, and `deleted` data.
+
+## Polling
+
+You can configure polling through the UI or in the JSON body of the `/instances` API call.
+
+{% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
+
+
+### Configure Polling Through the UI
+
+For more information about each field described here, see [Parameters](#parameters).
+
+To authenticate an element instance with polling:
+
+1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+
+3. Create an element instance.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+
+5. Enter a name for the element instance.
+7. Switch **Events Enabled** on.
+8. Add an Event Notification Callback URL.
+4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Select and configure the resources to poll.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling. | Edit the JSON to add or remove resources and optionally change the `datesConfiguration`.  |
+
+7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+8. Optionally add tags in the earlier UI:
+     1. On the Tag It page, enter any tags that might help further define the instance.
+      * To add more than one tag, click __Add__ after each tag.
+      ![Add tag](../img/Add-Tag.png)
+     1. Click __Done__.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+8. Take a look at the documentation for the element resources now available to you.
+
+### Configure Polling Through API
+
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
+
+{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance with polling:
+
+1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+      "element":{
+        "key":"{{page.elementKey}}"
+      },
+      "configuration":{
+        "app.name":"<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
+        "host.ip":"<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
+        "event.notification.enabled": true,
+        "event.notification.callback.url": "http://mycoolapp.com",
+        "event.poller.refresh_interval": "<minutes>",
+        "event.poller.configuration":{
+          "bills": {
+            "url": "/hubs/finance/bills?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "credit-memos": {
+            "url": "/hubs/finance/credit-memos?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "item-receipts": {
+            "url": "/hubs/finance/item-receipts?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "invoices": {
+            "url": "/hubs/finance/invoices?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "journal-entries": {
+            "url": "/hubs/finance/journal-entries?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "payments": {
+            "url": "/hubs/finance/payments?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "sales-receipts": {
+            "url": "/hubs/finance/sales-receipts?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "purchase-orders": {
+            "url": "/hubs/finance/purchase-orders?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "sales-orders": {
+            "url": "/hubs/finance/sales-orders?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "TxnID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "customers": {
+            "url": "/hubs/finance/customers?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "ListID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "employees": {
+            "url": "/hubs/finance/employees?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "ListID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "products": {
+            "url": "/hubs/finance/products?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "ListID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "vendors": {
+            "url": "/hubs/finance/vendors?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+            "idField": "ListID",
+            "datesConfiguration": {
+              "updatedDateField": "TimeModified",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField": "TimeCreated",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          }
+        }
+      },
+      "tags":[
+        "Test"
+      ],
+      "name":"API_Polling"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
+
+### Example JSON with Polling
 
 instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
-    "key": "quickbooksonprem"
+  "element":{
+    "key":"{{page.elementKey}}"
   },
-  "configuration": {
-    "app.name": "<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
-    "host.ip": "<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.poller.configuration": {
+  "configuration":{
+    "app.name":"<INSERT_QUICKBOOKS_ENTERPRISE_APP_NAME>",
+    "host.ip":"<INSERT_QUICKBOOKS_ENTERPRISE_HOST_IP>",
+    "event.notification.enabled":true,
+    "event.notification.callback.url":"http://mycoolapp.com",
+    "event.poller.refresh_interval":"15",
+    "event.poller.configuration":{
       "bills": {
-        "url": "/hubs/finance/bills?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/bills?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "credit-memos": {
-        "url": "/hubs/finance/credit-memos?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/credit-memos?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "item-receipts": {
-        "url": "/hubs/finance/item-receipts?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/item-receipts?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "invoices": {
-        "url": "/hubs/finance/invoices?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/invoices?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "journal-entries": {
-        "url": "/hubs/finance/journal-entries?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/journal-entries?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "payments": {
-        "url": "/hubs/finance/payments?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/payments?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "sales-receipts": {
-        "url": "/hubs/finance/sales-receipts?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/sales-receipts?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "purchase-orders": {
-        "url": "/hubs/finance/purchase-orders?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/purchase-orders?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "sales-orders": {
-        "url": "/hubs/finance/sales-orders?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/sales-orders?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "TxnID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "customers": {
-        "url": "/hubs/finance/customers?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/customers?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "ListID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "employees": {
-        "url": "/hubs/finance/employees?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/employees?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "ListID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "products": {
-        "url": "/hubs/finance/products?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/products?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "ListID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       },
       "vendors": {
-        "url": "/hubs/finance/vendors?where=TimeModified >= '#{'$'}{gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+        "url": "/hubs/finance/vendors?where=TimeModified >= '${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
         "idField": "ListID",
         "datesConfiguration": {
           "updatedDateField": "TimeModified",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX",
           "createdDateField": "TimeCreated",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssXXX"
         }
       }
     }
   },
-  "tags": [
-    "<INSERT_TAGS>"
+  "tags":[
+    "Test"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
+  "name":"API_Polling"
 }
 ```
+
+## Parameters
+
+API parameters not shown in the {{site.console}} are in `code formatting`.
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| `app.name` | The {{page.heading}} app name. |  string |
+| `host.ip` | The {{page.heading}} host IP. |  string |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
+| Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
+| bills  | The configuration of the bills resource. | JSON object |
+| URL</br>`url` | The url to query for updates to the resource.  | String |
+| ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
+| Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
+| Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
+| Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
+| Created Date Field</br>`createdDateField` | The field that identifies an created object. | String |
+| Created Date Format</br>`createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
