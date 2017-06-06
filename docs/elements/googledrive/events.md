@@ -1,11 +1,11 @@
 ---
-heading: Name of Element
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: Google Drive
+seo: Events | Google Drive | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce Sales Cloud events for your application.
+description: Enable Google Drive events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 21
 elementKey: fake
 parent: Back to Element Guides
 order: 25
@@ -15,7 +15,7 @@ order: 25
 
 Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br>" type="info" %}
 
 ## Supported Events and Resources
 
