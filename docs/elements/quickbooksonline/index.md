@@ -18,7 +18,7 @@ sitemap: false
 
 In order to create a connection to QuickBooks Online the following steps are required:
 
-1. Set up the [endpoint](quickbooksonline-endpoint-setup.html)
+1. Set up the [endpoint](setup.html)
 2. Call the `GET /elements/quickbooks/oauth/token` with your QuickBooks Online API key, secret, and siteAddress
 3. Call the `GET /elements/quickbooks/oauth/url` with your QuickBooks Online API key and secret, requestToken, and siteAddress
 4. Call the `POST /instances` API to instantiate your QuickBooks Online connected app
@@ -29,4 +29,4 @@ The QuickBooks Online Element is a collection of resources providing a pre-built
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
-Get started by [setting up the endpoint](quickbooksonline-endpoint-setup.html).
+Get started by [setting up the endpoint](setup.html).
