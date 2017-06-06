@@ -6,6 +6,7 @@ description: Enable Salesforce Sales Cloud events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
+elementKey: fake
 parent: Back to Element Guides
 order: 25
 ---
@@ -18,7 +19,11 @@ Cloud Elements supports events via polling or webhooks depending on the endpoint
 
 ## Supported Events and Resources
 
-Cloud Elements supports both webhooks and polling events for {{page.heading}}.
+Cloud Elements supports polling events for {{page.heading}}.
+
+You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
+
+<span style="color:red">Alternatively, if there are multiple supported resources, you can go with something like this:</span>
 
 You can set up events for the following resources:
 
@@ -74,19 +79,63 @@ To authenticate an element instance with polling:
 
 ### Configure Polling Through API
 
-To add polling when authenticating through the `/instances` API call, add the following to the `configuration` object in the JSON body. For more information about each parameter described here, see [Parameters](#parameters).
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
 
-```json
-{
-"event.notification.enabled": true,
-"event.vendor.type": "polling",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.notification.signature.key": "<INSERT_KEY>",
-"event.objects": "<COMMA_SEPARATED_LIST>",
-"event.poller.refresh_interval": "<TIME_IN_MINUTES>"
-}
-```
-{% include note.html content="<code>event.notification.signature.key</code> is optional.  " %}
+{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance with polling:
+
+1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+      "element":{
+        "key":"{{page.elementKey}}"
+      },
+      "providerData":{
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
+      "configuration":{
+        "oauth.api.key": "<CLIENT_ID>",
+        "oauth.api.secret": "<CLIENT_SECRET>",
+        "signature.secret": "<SIGNING_SECRET>",
+        "apim.subscription.key": "<SUBSCRIPTION_PRIMARY_KEY_or_APIM_SUBSCRIPTION_KEY>",
+        "country": "<COUNTRY_CODE>",
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "event.notification.enabled": true,
+        "event.notification.callback.url": "http://mycoolapp.com",
+        "event.poller.refresh_interval": "<minutes>",
+        "event.poller.configuration":{
+          "customers":{
+            "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
+            "idField":"id",
+            "datesConfiguration":{
+              "updatedDateField":"updated_at",
+              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+              "updatedDateTimezone":"GMT",
+              "createdDateField":"created_at",
+              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+              "createdDateTimezone":"GMT"
+            }
+          }
+        }
+      },
+      "tags":[
+        "Test"
+      ],
+      "name":"API_Polling"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
 
 ### Example JSON with Polling
 
@@ -94,132 +143,65 @@ instance JSON with polling events enabled:
 
 ```json
 {
-  "element": {
-    "key": "sfdc"
+  "element":{
+    "key":"sageone"
   },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
+  "providerData":{
+    "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
   },
-  "configuration": {
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>",
-    "event.notification.enabled": true,
-    "event.vendor.type": "polling",
-    "event.notification.callback.url": "https://mycoolapp.com",
-    "event.notification.signature.key": "12345",
-    "event.objects": "Contact,Account",
-    "event.poller.refresh_interval": "5"
+  "configuration":{
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
+    "signature.secret": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "apim.subscription.key": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "country": "US",
+    "oauth.callback.url": "https://mycoolapp.com",
+    "event.notification.enabled":true,
+    "event.notification.callback.url":"http://mycoolapp.com",
+    "event.poller.refresh_interval":"15",
+    "event.poller.configuration":{
+      "customers":{
+        "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
+        "idField":"id",
+        "datesConfiguration":{
+          "updatedDateField":"updated_at",
+          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "updatedDateTimezone":"GMT",
+          "createdDateField":"created_at",
+          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "createdDateTimezone":"GMT"
+        }
+      }
+    }
   },
-  "tags": [
-    "forDocs"
+  "tags":[
+    "Test"
   ],
-  "name": "mySFDCInstance"
-}
-```
-
-## Webhooks
-
-When implementing webhooks for Salesforce, Cloud Elements creates APEX classes and triggers in order to send webhooks.  This can only be done in a Salesforce sandbox account.  If you want to support webhooks in a production Salesforce account, you'll have to make some modifications and migrate those classes to production according to the Salesforce specification. View more information regarding the [Salesforce specification](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_qs_deploy.htm).
-
-You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or [through API](#configure-webhooks-through-api) in the JSON body of the `/instances` API call. First, you must [set up webhooks in Salesforce](#set-up-webhooks).
-
-### Set Up Webhooks
-
-Follow these steps to set up your Salesforce application with the endpoint.
-
-1. Via a web browser, log in to your Salesforce account:
-1. In the Quick Find box, type `Remote Site Settings`.
-2. Click __New Remote Site__.
-![Salesforce Webhook step 2](img/salesforce-webhook-2.png)
-3. Create a remote site for each of the following URLs:
-
-  * https://api.cloud-elements.com
-  * https://console.cloud-elements.com
-
-{% include note.html content="Our current support for Salesforce Events includes listening for only Creating, Updating, and Deleting objects in Salesforce. For example, when a new account is created, your application can receive a notification regarding the creation of the account.  " %}
-
-### Configure Webhooks Through the UI
-
-For more information about each field described here, see [Parameters](#parameters).
-
-1. Switch on __Events Enabled__.
-2. Select **webhooks** from **Event Type**.
-2. Add an **Event Notification Callback URL**.
-3. Optionally include an Event Notification Signature Key.
-5. Enter each object that you want to poll for changes separated by commas.
-
-When finished adding your polling configuration, the Event Configuration section should look like this:
-
-| Latest UI | Earlier UI  |
-| :------------- | :------------- |
-|  ![Polling](img/Webhooks-C2.png)  |  ![Polling](img/Webhooks-C1.png)  |
-
-### Configure Webhooks Through API
-
-To add webhooks when authenticating through the `/instances` API call, add the following to the `configuration` object in the JSON body. For more information about each parameter described here, see [Parameters](#parameters).
-
-```json
-{
-"event.notification.enabled": true,
-"event.vendor.type": "polling",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.notification.signature.key": "<INSERT_KEY>",
-"event.objects": "<COMMA_SEPARATED_LIST>"
-}
-```
-{% include note.html content="<code>event.notification.signature.key</code> is optional.  " %}
-
-### Example JSON with Webhooks
-
-Instance JSON with webhooks events enabled:
-
-```json
-{
-  "element": {
-    "key": "sfdc"
-  },
-  "providerData": {
-    "code": "<Code_On_The_Return_URL>"
-  },
-  "configuration": {
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "<Insert_Client_ID>",
-    "oauth.api.secret": "<Insert_Client_Secret>",
-    "event.notification.enabled": true,
-    "event.vendor.type": "webhooks",
-    "event.notification.callback.url": "https://mycoolapp.com",
-    "event.notification.signature.key": "12345",
-    "event.objects": "Contact,Account"
-  },
-  "tags": [
-    "forDocs"
-  ],
-  "name": "mySFDCInstance"
+  "name":"API_Polling"
 }
 ```
 
 ## Parameters
 
-API parameters are in `code formatting`.
+API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>sfdc  | string  |
+| 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.api.key` | The Consumer Key from Salesforce. |  string |
-| `oauth.api.secret` | The Consumer Secret from Salesforce. | string |
-| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
-| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`  | boolean |
-| Event Type </br>`event.vendor.type` | *Optional*. Identifies the type of events enabled for the instance, either `webhook` or `polling`. | string |
-| Event Notification Callback URL</br>`event.notification.callback.url` |  *For webhooks and polling.*</br>The URL where your app can receive events.   | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *For webhooks and polling.*</br>*Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
-| Objects to Monitor for Changes</br>`event.objects`|  *For webhooks and polling.*</br>*Optional*</br>Comma separated list of objects to monitor for changes. | string |
-| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | *For polling only.*</br>A number in minutes to identify how often the poller should check for changes. |  number|
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
+| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [Service Provider Setup section](setup.html). | string |
+| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [Service Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
+| `country` | The two digit country code associated with the account of the authenticating user. | string |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
-| resource name </br>e.g., contact, account, etc.  | The configuration of an individual resource. | JSON object |
-| URL</br>`url` | The url to query for updates.  | String |
-| ID Field</br>`idField` | The field that is used to uniquely identify an object.  | String |
+| customers  | The configuration of the customers resource. | JSON object |
+| URL</br>`url` | The url to query for updates to the resource.  | String |
+| ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
 | Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
 | Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
 | Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
