@@ -51,8 +51,6 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
-<span style="color:red">The text below is for an OAuth2 element. </span>
-
 Authenticating through API is a multi-step process that involves:
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
@@ -80,7 +78,7 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}'
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://httpbin.org/get&state={{page.elementKey}}'
 ```
 
 #### Example Response
@@ -89,7 +87,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-  "oauthUrl": "https://www.box.com/api/oauth2/authorize?response_type=code&client_id=twsbokk5mqxh3r30tdc3ai756nzm1ji4&redirect_uri=https%3A%2F%2Fauth.cloudelements.io%2Foauth&state=box",
+  "oauthUrl": "https://www.box.com/api/oauth2/authorize?response_type=code&client_id=57du4eiw3cseqfrs06bn9hg37ff344hv&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=box",
   "element": "box"
 }
 ```
@@ -167,9 +165,9 @@ curl -X POST \
     "oauth.api.secret": "<CONSUMER_SECRET>"
   },
   "tags": [
-    "For Docs"
+    "MyTag"
   ],
-  "name": "SFDC_Instance"
+  "name": "My Box Instane"
 }'
 ```
 ## Parameters
@@ -181,38 +179,80 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL from Salesforce. This is the Callback URL that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Salesforce. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Salesforce. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html)| string |
-| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
+|  name:`name` |  A unique name for the element instance created during authentication.   | string  |
+| `oauth.callback.url` | The Redirect URL from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html).  | string |
+| `oauth.api.key` | The Client Id from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html) |  string |
+| `oauth.api.secret` | The Client Secret from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html)| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
 
 ```json
 {
-    "id": 123,
-    "name": "test",
-    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
-    "element": {
-        "id": 39,
-        "name": "Salesforce.com",
-        "key": "sfdc",
-        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have a Salesforce.com account, you can create one at Salesforce.com Signup</a>",
-        "signupURL": "http://www.salesforce.com"
+  "id": 427236,
+  "name": "FromAPI-tags",
+  "createdDate": "2017-06-06T21:29:33Z",
+  "token": "s;dkjhsadlkjhfvlkadflvakdfvaqewcs",
+  "element": {
+    "id": 22,
+    "name": "Box",
+    "hookName": "Box",
+    "key": "box",
+    "description": "Add a Box Instance to connect your existing Box account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Box account information to add an instance.",
+    "image": "elements/provider_box.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have an Box.net account, you can create one at <a href=\"http://www.box.com\" target=\"_blank\">Box.Net Signup</a>",
+    "resources": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+      "type": "oauth2"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "eventsEnabled": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+    "extended": false,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+  },
+  "elementId": 22,
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "",
+    "oauth.api.secret": "wvyQdUrNvXbHabxPVcxZV60G0ELMEx3n",
+    "event.notification.subscription.id": null,
+    "event.metadata": "{\"webhook\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
+    "oauth.subuser.email": null,
+    "oauth.user.token": "KtWxcp0Rz4VYRdHh72g1mBu0yPW8Zbq8",
+    "oauth.user.id": "263773421",
+    "filter.response.nulls": "true",
+    "pagination.type": "offset",
+    "event.notification.callback.url": null,
+    "oauth.callback.url": "https://httpbin.org/get",
+    "event.notification.signature.key": null,
+    "oauth.user.refresh_token": "mbqHxMQ0okd24mom1wsj3PMx41JLWpfAtmdtiSN0kWvbYGqpALCc6TldBVZrF92Z",
+    "oauth.user.refresh_interval": null,
+    "oauth.api.key": "57du4eiw3cseqfrs06bn9hg37ff344hv",
+    "document.tagging": null,
+    "oauth.user.refresh_time": "1496784574729",
+    "event.notification.enabled": "false"
+  },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+    "id": 1234567
+  }
 }
 ```
