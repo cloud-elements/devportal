@@ -154,7 +154,7 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
   "element": {
