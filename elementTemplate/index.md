@@ -33,7 +33,7 @@ sitemap: false
 
 The Cloud Element Base URL for all API calls is `https://api.cloud-elements.com/elements/api-v2`.
 
-HTTP requests to the REST API are protected with HTTP Basic authentication with your Organization and User secret and an Element token. We use many standard HTTP features, like HTTP verbs, understood by most HTTP clients. JSON is returned in all responses from the API, including errors. The APIs have predictable, straightforward URLs and use HTTP response codes to indicate API errors.
+HTTP requests to the REST API are protected with HTTP Custom authentication with your Organization and User secret and an Element token. We use many standard HTTP features, like HTTP verbs, understood by most HTTP clients. JSON is returned in all responses from the API, including errors. The APIs have predictable, straightforward URLs and use HTTP response codes to indicate API errors.
 
 ## Authenticating with Cloud Elements
 
