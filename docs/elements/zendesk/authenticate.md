@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Zendesk
+seo: Authenticate | Zendesk | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
-elementKey: fake
+elementId: 41
+elementKey: zendesk
 parent: Back to Element Guides
 order: 20
 ---
@@ -20,8 +20,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -55,8 +53,6 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
-<span style="color:red">The text below is for an OAuth2 element. </span>
-
 Authenticating through API is a multi-step process that involves:
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
@@ -68,21 +64,22 @@ Authenticating through API is a multi-step process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<zendesk_subdomain>
 ```
 
 #### Query Parameters
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Unique Identifier** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+| siteAddress | Your unique Zendesk subdomain (i.e. - https://{subdomain}.zendesk.com) |
 
 #### Example cURL
 
 ```bash
-curl -X GET "https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}" -H  "accept: application/json" -H  "content-type: application/json"
+curl -X GET "https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_zendesk_unique_identifier&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&siteAddress=zendesk_subdomain" -H  "accept: application/json" -H  "content-type: application/json"
 ```
 
 #### Example Response
@@ -92,7 +89,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 ```json
 {
 "element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+"oauthUrl": "https://zendesk_subdomain.zendesk.com/oauth/authorizations/new?scope=read+write&response_type=code&redirect_uri=https://www.mycool.app.com/auth&state=zendesk&client_id=zendesk_unique_identifier"
 }
 ```
 
@@ -122,6 +119,7 @@ To create an element instance:
 
     ```json
     {
+      "name": "<INSTANCE_NAME>",
       "element": {
         "key": "{{page.elementKey}}"
       },
@@ -136,8 +134,7 @@ To create an element instance:
       },
       "tags": [
         "<Add_Your_Tag>"
-      ],
-      "name": "<INSTANCE_NAME>"
+      ]
     }
     ```
 
@@ -154,9 +151,10 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
+  "name": "Zendesk_Instance"
   "element": {
     "key": "{{page.elementKey}}"
   },
@@ -164,14 +162,14 @@ curl -X POST \
     "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.callback.url": "<CALLBACK_URL>",
-    "oauth.api.key": "<CONSUMER_KEY>",
-    "oauth.api.secret": "<CONSUMER_SECRET>"
+    "oauth.callback.url": "https://www.mycoolapp.com/auth",
+    "oauth.api.key": "zendesk_unique_identifier",
+    "oauth.api.secret": "fake_api_secret",
+    "zendesk.subdomain": "zendesk_subdomain"
   },
   "tags": [
     "For Docs"
-  ],
-  "name": "SFDC_Instance"
+  ]
 }'
 ```
 ## Parameters
@@ -182,13 +180,13 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL from Salesforce. This is the Callback URL that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Salesforce. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Salesforce. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html)| string |
-| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
-| tags | *Optional*. User-defined tags to further identify the instance. | string |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  `name` |  The name for the element instance created during authentication.   | Body  |
+| `oauth.callback.url` | The Callback URL from Zendesk. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Unique Identifier from Zendesk. This is the Unique Identifier that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Secret from Zendesk. This is the Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| `zendesk.subdomain` | Your unique Zendesk subdomain | string |
+| `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
 
@@ -198,23 +196,14 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
     "name": "test",
     "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
     "element": {
-        "id": 39,
-        "name": "Salesforce.com",
-        "key": "sfdc",
+        "id": 41,
+        "name": "Zendesk",
+        "key": "zendesk",
         "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
         "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have a Salesforce.com account, you can create one at Salesforce.com Signup</a>",
-        "signupURL": "http://www.salesforce.com"
+        "deleted": false
     },
-    "provisionInteractions": [],
     "valid": true,
-    "eventsEnabled": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
+    "disabled": false
 }
 ```

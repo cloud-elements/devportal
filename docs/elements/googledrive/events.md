@@ -6,42 +6,17 @@ description: Enable Google Drive events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
+elementKey: fake
 parent: Back to Element Guides
-order: 30
+order: 25
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br>" type="info" %}
 
-```JSON
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.configuration": "<SEE_BELOW>"
-```
+## Supported Events and Resources
 
-instance JSON with polling events enabled:
-
-```json
-{
-  "element": {
-    "key": "googledrive"
-  },
-  "providerData": {
-    "code": "Code on Return the URL"
-  },
-  "configuration": {
-    "oauth.api.key": "<INSERT_GOOGLE_DRIVE_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_GOOGLE_DRIVE_CLIENT_SECRET>",
-    "oauth.callback.url": "https://www.yourcallbackurl.com/oauth2callback",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
-  },
-  "tags": [
-    "<INSERT_TAGS>"
-  ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
-```
+Cloud Elements supports webhook events for {{page.heading}}.  Whenever a file or folder is created, updated, or deleted, Cloud Elements will receive an event from Google Drive.  Once that event is received, Cloud Elements will standardize the payload and dispatch an event to the configured callback URL your Element Instance.
