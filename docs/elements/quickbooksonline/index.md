@@ -23,7 +23,7 @@ sitemap: false
 | :------------- | :------------- |
 | API Documentation | [Quickbooks API documentation](https://developer.intuit.com/docs) |
 | Authentication | OAuth 1.0 or Token Based |
-| Events | Webhooks and polling |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0300_references/0000_programming_guide/0000_rest_api_quick_reference#/Limits_and_throttles)|
