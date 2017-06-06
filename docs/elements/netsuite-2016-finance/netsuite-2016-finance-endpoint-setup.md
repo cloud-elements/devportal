@@ -27,7 +27,7 @@ Via a web browser, login to your NetSuite System page and login.
 
 Cloud Elements supports NetSuite 2016 Token Based Authentication.  Below is a summary of steps needed to enable Token Based Authentication.  We encourage visiting the [NetSuite Token Based Authentication documentation](https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_4247337262.html&whence=) to read more about the process.
 
-After retrieving your NetSuite Account ID using the steps mentioned above, enable TBA for your NetSuite account.
+After retrieving your NetSuite Account ID using the steps mentioned above, enable Token Based Authentication for your NetSuite account.
 
 Navigate to **Setup > Company > Enable Features > Suite Cloud > Manage Authentication** and enable Token-Based Authentication.
 
