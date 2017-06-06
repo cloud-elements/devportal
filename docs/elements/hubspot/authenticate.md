@@ -64,7 +64,7 @@ Authenticating through API is a multi-step process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET "/elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>"
 ```
 
 #### Query Parameters
@@ -88,7 +88,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 ```json
 {
 "element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+"oauthUrl":"https://app.hubspot.com/oauth/authorize?client_id=fake_api_key&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&state=hubspot&scope=contacts%20timeline%20files%20content%20reports%20social%20automation%20forms"
 }
 ```
 
@@ -108,9 +108,9 @@ Provide the response from the previous step to the users. After they authenticat
 
 ### Authenticating the Element Instance
 
-Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with Hubspot and create an element instance. If you are configuring events, see the [Events section](events.html).
 
-{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+{% include note.html content="The endpoint returns an Element Instance token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
 To create an element instance:
 
@@ -157,7 +157,7 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "xoz8AFqScK2ngM04kSSM"
+    "code": "<AUTHORIZATION_GRANT_CODE>"
   },
   "configuration": {
     "oauth.callback.url": "<CALLBACK_URL>",
@@ -167,7 +167,7 @@ curl -X POST \
   "tags": [
     "For Docs"
   ],
-  "name": "SFDC_Instance"
+  "name": "Hubspot_Instance"
 }'
 ```
 ## Parameters
@@ -178,7 +178,7 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+| key | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | `oauth.callback.url` | The Callback URL from Salesforce. This is the Callback URL that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
 | `oauth.api.key` | The Consumer Key from Salesforce. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
@@ -192,18 +192,18 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 {
     "id": 123,
     "name": "test",
-    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
+    "token": "redacted",
     "element": {
-        "id": 39,
-        "name": "Salesforce.com",
-        "key": "sfdc",
-        "description": "The Salesforce.com allows you to deliver revolutionary CRM automation functionality, such as account and contact creation, from anywhere, anytime, on any device.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have a Salesforce.com account, you can create one at Salesforce.com Signup</a>",
-        "signupURL": "http://www.salesforce.com"
+      "id": 43,
+      "name": "Hubspot Marketing",
+      "key": "hubspot",
+      "description": "Add a HubSpot Instance to connect your existing HubSpot account to the Marketing Hub, allowing you to manage accounts, campaigns, contacts, leads etc. across multiple Marketing Elements. You will need your HubSpot account information to add an instance.",
+      "image": "elements/provider_hubspot.png",
+      "active": true,
+      "deleted": false,
+      "typeOauth": true,
+      "trialAccount": false,
+      "configDescription": "If you do not have a HubSpot account, you can create one at <a href=\"http://www.hubspot.com\" target=\"_blank\">HubSpot Signup</a>"
     },
     "provisionInteractions": [],
     "valid": true,
