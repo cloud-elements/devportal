@@ -23,6 +23,16 @@ Cloud Elements supports polling events for {{page.heading}}.
 
 You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
 
+<span style="color:red">Alternatively, if there are multiple supported resources, you can go with something like this:</span>
+
+You can set up events for the following resources:
+
+* Account
+* Lead
+* Contact
+* Opportunity
+* Other objects that include `created`, `updated`, and `deleted` data.
+
 ## Polling
 
 You can configure polling through the UI or in the JSON body of the `/instances` API call.

@@ -6,7 +6,7 @@ description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
-elementKey: sageone
+elementKey: fake
 parent: Back to Element Guides
 order: 20
 ---
@@ -54,6 +54,8 @@ To authenticate an element instance:
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
+
+<span style="color:red">The text below is for an OAuth2 element. </span>
 
 Authenticating through API is a multi-step process that involves:
 
