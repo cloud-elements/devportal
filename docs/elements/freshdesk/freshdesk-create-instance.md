@@ -137,6 +137,12 @@ Below is a successful JSON response:
   "cachingEnabled": false
 }
 ```
+#### Where can I find my Freshdesk API key?
+
+1. Login to your Support Portal
+2. Click on your profile picture on the top right corner of your portal
+3. Go to Profile settings Page
+4. Your API key will be available below the change password section to your right
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
