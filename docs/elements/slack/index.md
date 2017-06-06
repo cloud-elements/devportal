@@ -3,7 +3,7 @@ heading: Slack
 seo: Overview | Slack | Cloud Elements API Docs
 title: Overview
 description: Integrate Slack into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1358
 parent: Back to Element Guides

@@ -1,0 +1,50 @@
+.pageTabs{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 10px 0px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.pageTabs div{
+  border-left: none !important;
+}
+
+.tab {
+  flex: 1 0 auto;
+  text-align: center;
+  margin: 0px 7px 7px 0px;
+}
+
+.tab a{
+  font-size: 1.4rem;
+  color: #222222;
+}
+
+.activeTab a{
+  border-bottom: 2px solid #40b4e5;
+}
+
+.pageHeading {
+  border-bottom: 1px solid #247aa1;
+  padding: 10px 10px 0px 10px;
+}
+
+div#swagger-ui-container {
+  font-size: 1.7rem;
+}
+
+ul#resources {
+  padding-left: 0px;
+  font-size: 1.6rem;
+}
+
+ul#resources ul{
+  padding-left: 0px;
+}
+
+.activeMenuItem a {
+  padding-left: 0px !important;
+  border-left: none !important;
+}

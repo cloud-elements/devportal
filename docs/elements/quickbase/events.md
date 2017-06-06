@@ -3,9 +3,9 @@ heading: QuickBase
 seo: Events | QuickBase | Cloud Elements API Docs
 title: Events
 description: Enable QuickBase events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 475
+elementId: 1250
 parent: Back to Element Guides
 order: 30
 ---

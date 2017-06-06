@@ -11,11 +11,12 @@ redirect_from:
 
 {% include product-guides.html %}
 
-* [Integration Guide![Sample Integration](/assets/img/integration-guide.png)See Sample Integration](/docs/guides/integration-guide/overview.html)
+* [Getting Started![Sample Integration](/assets/img/integration-guide.png)Get started with Cloud Elements](/docs/guides/integration-guide/overview.html)
 * [Element Builder![Element Builder](/assets/img/element-builder-icon.png)Build Custom Elements](/docs/guides/element-builder/)
 * [Element Mapper![Element Mapper](/assets/img/element-mapper-icon.png)Map and Transform Data](/docs/guides/element-mapper/)
 * [Formulas![Formulas](/assets/img/formulas-icon.png)Build Workflows](/docs/guides/formulas/)
 * [Ground2Cloud![Ground2Cloud](/assets/img/ground-2-cloud-icon.png)On Prem Connector](/docs/guides/ground-2-cloud/)
+* [Cook Books![Cook Books](/assets/img/cookbook.png)Use Cases](/docs/guides/cook-books/home)
 
 {% include platform-guides.html %}
 

@@ -3,7 +3,7 @@ heading: Act Essentials
 seo: Endpoint Setup | Act Essentials | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate Act Essentials into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1251
 parent: Back to Element Guides

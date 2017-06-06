@@ -3,7 +3,7 @@ heading: Google Sheets
 seo: Overview | Google Sheets | Cloud Elements API Docs
 title: Overview
 description: Integrate Google Sheets into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 552
 parent: Back to Element Guides

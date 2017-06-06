@@ -3,7 +3,7 @@ heading: MySQL
 seo: Transform Data | MySQL | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 479
 parent: Back to Element Guides

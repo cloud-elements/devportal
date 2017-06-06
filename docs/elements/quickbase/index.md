@@ -3,9 +3,9 @@ heading: QuickBase
 seo: Overview | QuickBase | Cloud Elements API Docs
 title: Overview
 description: Integrate QuickBase into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 475
+elementId: 1250
 parent: Back to Element Guides
 order: 1
 sitemap: false

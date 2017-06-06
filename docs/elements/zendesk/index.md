@@ -3,7 +3,7 @@ heading: Zendesk
 seo: Overview | Zendesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Zendesk into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Zoho CRM
 seo: Create Instance | Zoho CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 44
 parent: Back to Element Guides
@@ -44,8 +44,8 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "zohocrm"
   },
   "configuration": {
-     "crm.zohocrm.username":"<INSERT_NETSUITE_EMAIL>",
-     "crm.zohocrm.password":"<INSERT_NETSUITE_PASSWORD>"
+     "crm.zohocrm.username":"<INSERT_ZOHO_USERNAME>",
+     "crm.zohocrm.password":"<INSERT_ZOHO_PASSWORD>"
   },
   "tags": [
     "<INSERT_TAGS>"

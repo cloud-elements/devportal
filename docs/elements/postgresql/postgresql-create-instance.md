@@ -3,7 +3,7 @@ heading: PostgreSQL
 seo: Create Instance | PostgreSQL | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 478
 parent: Back to Element Guides
@@ -18,6 +18,7 @@ The following is required to create a PostgreSQL Element Instance:
 * Database Name
 * Database Username
 * Database Password
+* Database Schema Name (__OPTIONAL:__ Schema name from where the database schema needs to be read from, if nothing mentioned connects to `public` schema)
 * Database Tables (__OPTIONAL:__ Can connect a set of tables i.e. contacts, accounts or prefixed tables, i.e. `data_*` via comma separated list)
 
 ### Step 1. Create an Instance

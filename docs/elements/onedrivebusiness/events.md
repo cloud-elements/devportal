@@ -3,7 +3,7 @@ heading: Microsoft OneDrive for Business Beta
 seo: Events | Microsoft OneDrive for Business Beta | Cloud Elements API Docs
 title: Events
 description: Enable Microsoft OneDrive for Business Beta events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 178
 parent: Back to Element Guides

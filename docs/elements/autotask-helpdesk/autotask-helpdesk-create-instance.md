@@ -3,7 +3,7 @@ heading: Autotask Help
 seo: Create Instance | Autotask Help Desk | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 123
 parent: Back to Element Guides

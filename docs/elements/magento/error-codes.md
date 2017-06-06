@@ -1,9 +1,9 @@
 ---
-heading: Magento
+heading: Magento Beta
 seo: Error Codes | Magento | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 356
 parent: Back to Element Guides

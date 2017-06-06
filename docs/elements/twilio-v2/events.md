@@ -3,7 +3,7 @@ heading: Twilio SMS V2
 seo: Events | Twilio SMS V2 | Cloud Elements API Docs
 title: Events
 description: Enable Twilio SMS V2 events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 503
 parent: Back to Element Guides

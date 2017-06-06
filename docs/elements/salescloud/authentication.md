@@ -1,0 +1,14 @@
+---
+heading: Oracle Sales Cloud
+seo: Authentication | Oracle Sales Cloud | Cloud Elements API Docs
+title: Authentication
+description: Integrate Oracle Sales Cloud into your application via the Cloud Elements APIs.
+layout: sidebarelementdoc
+breadcrumbs: /docs/elements.html
+elementId: 204
+parent: Back to Element Guides
+order: 10
+sitemap: false
+---
+
+{% include authentication.md %}

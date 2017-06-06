@@ -3,7 +3,7 @@ heading: SendGrid
 seo: Create Instance | SendGrid | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 6
 parent: Back to Element Guides

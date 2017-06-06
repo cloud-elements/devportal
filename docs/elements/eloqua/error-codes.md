@@ -3,7 +3,7 @@ heading: Eloqua
 seo: Error Codes | Eloqua | Cloud Elements API Doc
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides

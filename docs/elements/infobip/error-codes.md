@@ -3,7 +3,7 @@ heading: InfoBip
 seo: Error Codes | InfoBip | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 37
 parent: Back to Element Guides

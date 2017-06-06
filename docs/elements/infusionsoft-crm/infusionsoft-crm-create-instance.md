@@ -1,9 +1,9 @@
 ---
-heading: Infusionsoft CRM
+heading: Infusionsoft CRM Beta
 seo: Create Instance | Infusionsoft CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 191
 parent: Back to Element Guides

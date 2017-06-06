@@ -3,7 +3,7 @@ heading: ABBYY
 seo: Endpoint Setup | ABBYY | Cloud Elements API Docs
 title: Endpoint Setup
 description: Integrate ABBYY into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 260
 parent: Back to Element Guides

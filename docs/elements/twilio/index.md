@@ -3,7 +3,7 @@ heading: Twilio SMS
 seo: Overview | Twilio SMS | Cloud Elements API Docs
 title: Overview
 description: Integrate Twilio SMS into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 7
 parent: Back to Element Guides
@@ -16,7 +16,7 @@ sitemap: false
 
 #### At a Glance
 
-In order to create a connection to Twilio SMS the following steps are required:
+To create a connection to Twilio SMS the following steps are required:
 
 1. Call the `POST /instances` API to instantiate your Twilio SMS connected app
 

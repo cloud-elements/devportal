@@ -3,7 +3,7 @@ heading: Lithium Response
 seo: Overview | Lithium Response | Cloud Elements API Docs
 title: Overview
 description: Integrate Lithium Response into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 814
 parent: Back to Element Guides

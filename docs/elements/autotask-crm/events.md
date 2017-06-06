@@ -1,9 +1,9 @@
 ---
-heading: Autotask CRM
+heading: Autotask CRM Beta
 seo: Events | Autotask CRM | Cloud Elements API Docs
 title: Events
 description: Enable Autotask CRM events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 50
 parent: Back to Element Guides

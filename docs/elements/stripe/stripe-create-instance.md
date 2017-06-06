@@ -3,7 +3,7 @@ heading: Stripe
 seo: Create Instance | Stripe | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides
@@ -44,8 +44,7 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "stripe"
   },
   "configuration": {
-    "username":  "<INSERT_STRIPE_API_KEY>",
-    "password": "<INSERT_STRIPE_PASSWORD>"
+    "api.key": "<INSERT_STRIPE_API_KEY>"
   },
   "tags": [
     "<INSERT_TAGS>"

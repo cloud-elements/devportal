@@ -3,7 +3,7 @@ heading: Taxify
 seo: API Docs | Taxify | Cloud Elements API Docs
 title: API Docs
 description: Taxify API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 320
 parent: Back to Element Guides

@@ -1,9 +1,9 @@
 ---
-heading: Microsoft Dynamics Great Plains
+heading: Microsoft Dynamics Great Plains Beta
 seo: Endpoint Setup | MS Dynamics Great Plains | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 46
 parent: Back to Element Guides

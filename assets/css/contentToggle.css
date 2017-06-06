@@ -1,0 +1,38 @@
+.toggleButtonWrapper {
+  width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  padding: 3px 10px;
+  /*background: #f5f7f9;*/
+  font-size: 1.6rem;
+  color: inherit;
+  box-shadow: 0 0 2px #848383;
+}
+
+.button:hover {
+  color: #40b6e4;
+}
+
+.leftButton {
+  border-radius: 5px 0px 0px 5px;
+}
+
+.rightButton {
+  border-radius: 0px 5px 5px 0px;
+}
+
+.active {
+  -moz-box-shadow: inset 0 0 5px #848383;
+  -webkit-box-shadow: inset 0 0 5px #848383;
+  box-shadow: inset 0 0 5px #848383;
+  background: #49BF9E;
+  color: WHITE;
+}
+
+.active:hover {
+  color: WHITE;
+}

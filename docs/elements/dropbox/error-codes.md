@@ -3,7 +3,7 @@ heading: Dropbox
 seo: Error Codes | Dropbox | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1779
 parent: Back to Element Guides
