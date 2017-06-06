@@ -5,7 +5,7 @@ heading: Formulas
 seo: Formula Use Cases | Formulas | Cloud Elements API Docs
 title: Use Cases
 description: View common example use cases demonstrating the functionality of formulas.
-layout: docs
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html

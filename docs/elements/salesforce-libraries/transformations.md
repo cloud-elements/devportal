@@ -3,7 +3,7 @@ heading: Salesforce Libraries
 seo: Transform Data | Salesforce Libraries | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 438
 parent: Back to Element Guides

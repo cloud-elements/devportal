@@ -3,7 +3,7 @@ heading: Act Premium CRM
 seo: Overview | Act Premium CRM | Cloud Elements API Docs
 title: Overview
 description: Integrate Act Premium CRM into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1173
 parent: Back to Element Guides

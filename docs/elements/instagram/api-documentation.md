@@ -1,9 +1,9 @@
 ---
-heading: Instagram
+heading: Instagram Beta
 seo: API Docs | Instagram | Cloud Elements API Docs
 title: API Docs
 description: Instagram API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 143
 parent: Back to Element Guides

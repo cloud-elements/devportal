@@ -1,9 +1,9 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Create Instance | SFTP | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1742
 parent: Back to Element Guides

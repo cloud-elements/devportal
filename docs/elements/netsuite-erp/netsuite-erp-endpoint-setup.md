@@ -3,7 +3,7 @@ heading: NetSuite ERP
 seo: Endpoint Setup | NetSuite ERP | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 157
 parent: Back to Element Guides

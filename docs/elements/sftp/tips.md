@@ -1,9 +1,9 @@
 ---
-heading: SFTP
+heading: SFTP Beta
 seo: Tips | SFTP | Cloud Elements API Docs
 title: Tips
 description: SFTP FAQ.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1742
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Chargify
 seo: Bulk APIs | Chargify | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 525
 parent: Back to Element Guides

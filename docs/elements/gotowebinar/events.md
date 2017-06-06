@@ -3,7 +3,7 @@ heading: Citrix GoToWebinar
 seo: Events | Citrix GoToWebinar | Cloud Elements API Docs
 title: Events
 description: Enable Citrix GoToWebinar events for your application.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1743
 parent: Back to Element Guides

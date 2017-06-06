@@ -3,7 +3,7 @@ heading: Desk.com
 seo: Endpoint Setup | Desk.com | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint Setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 286
 parent: Back to Element Guides

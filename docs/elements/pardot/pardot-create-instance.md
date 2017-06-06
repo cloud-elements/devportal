@@ -3,7 +3,7 @@ heading: Pardot
 seo: Create Instance | Pardot | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 90
 parent: Back to Element Guides

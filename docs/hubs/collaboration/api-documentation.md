@@ -3,7 +3,7 @@ heading: Collaboration APIs
 seo: Collaboration API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Collaboration Hub API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: collaboration
 breadcrumbs: /docs/hubs/hub-docs.html

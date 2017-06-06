@@ -3,7 +3,7 @@ heading: Citrix ShareFile
 seo: Tips | Citrix ShareFile | Cloud Elements API Docs
 title: Tips
 description: Citrix ShareFile FAQ.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 450
 parent: Back to Element Guides

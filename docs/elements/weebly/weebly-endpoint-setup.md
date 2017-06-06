@@ -3,7 +3,7 @@ heading: Weebly
 seo: Endpoint Setup | Weebly | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 449
 parent: Back to Element Guides

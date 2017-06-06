@@ -3,17 +3,18 @@ heading: Cloud Elements Definitions
 seo: Cloud Elements Definitions | Cloud Elements API Docs
 title: Definitions
 description: Overview of common terms within the Cloud Elements Platform.
-layout: docs
+layout: sidebarleft
 order: 2
 published: true
 sitemap: false
 ---
 
-### Cloud Elements Definitions
+## Element
 
-#### ELEMENTS
-
-An `Element` is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, UPDATE, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.
+An Element is a pre-built API integration that enables a connection into a specific cloud application endpoint
+(e.g., Salesforce, Quickbooks, or Marketo). All Elements start with a normalized set of features, including authentication,
+resources, paging, errors, events and search. At the Element level, we also seek to support the richer set
+of APIs that an application provides, even when not all of the Elements in that category share that resource.
 
 * Elements share common services including discovery, search query, pagination, bulk uploading and downloading, logging and interactive documentation.
 * Methods are normalized and accessible through RESTful APIs
@@ -21,9 +22,9 @@ An `Element` is a collection of resources providing a pre-built integration into
 * Cloud Elements keeps each Element up to date with changes at the endpoint.
 * Each Elements is a “Multi-tenant” connector supporting an unlimited number of authenticated accounts with no additional code required.
 
-#### HUBS
+## API Hub
 
-`Hubs` map resources from a collection of endpoints (What we call Elements) into a uniform set of APIs. With Hubs you can integrate an entire category of services (e.g., CRM, Documents, Finance) through a single set of APIs.
+Hubs map resources from a collection of endpoints (What we call Elements) into a uniform set of APIs. With Hubs you can integrate an entire category of services (e.g., CRM, Documents, Finance) through a single set of APIs.
 
 We normalize our API calls for all endpoints, to enable calls between services e.g. Salesforce to HubSpot. However, with this feature, certain endpoint resources cannot be mapped for each hub.
 
@@ -36,70 +37,22 @@ We normalize our API calls for all endpoints, to enable calls between services e
 
 We’ve categorized the leading cloud applications into Hubs (e.g. CRM, Documents, and Messaging). You integrate to a Cloud Elements “Hub” via a single RESTful API and your app is instantly connected to all the leading services in that category, no need to do custom and costly integration to each service.
 
-#### Instance
+## Element Instance
 
-An Instance is your personalized version of an Element or formula.  An Element Instance allows you to access your data, custom objects, and fields for an Element.
+An Element Instance is an Element that is authenticated to a specific user account for the application service. An
+instance can access all of the objects, fields and data for that account - including custom data. An instance is created
+when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials
+for that Element, and optionally add configuration for events. An Element Instance represents a connection
+to a single authenticated account at the target endpoint such as a Salesforce, Marketo, or Netsuite.
 
-An Element Instance consists of three components:
+## Transformation
 
-* __Instance Name__:  This allows you to identify multiple Instances of the same element.
-* __Authentication__: For some elements, you need to provide your login credentials for that system.  Things like username/password combos, or API keys are some examples.  For OAuth authentication, Cloud Elements directs you to the login page of that element and handles the OAuth token exchange in the background seamlessly.
-* __Events__: Cloud Elements allows you to set up events for your Element Instances.  If the cloud service supports Webhooks, you configure those through the instance.  If not, Cloud Elements supports custom polling of any object in that system.
+Cloud Element supports mapping and transforming data between your application and any of the cloud services you're leveraging through our Element Mapper. Element Mapper is an API and Data Mapping Application to map and transform data across different Elements. This allows you to define how you want your resource to look and then go about mapping and transforming that resource for each Element, as needed.
 
-An `instance` is always connected to a single account.  For every customer or account you wish to connect, an `instance` will need to be created.  For example, if five different customers need to access the data in my Salesforce account, I must create 5 different instances for those customers.
+## Formula
 
-Example `cURL` request using Basic Authentication:
+Cloud Elements supports customizable workflows, called Formulas. Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps. These steps can go about accomplishing a large variety of different use cases across different services. Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
 
-```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
-```
-
-```JSON
-{
-  "element": {
-    "key": "closeio"  // The Cloud Application Service
-  },
-  "configuration": {
-    "username": "<INSERT_CLOSE_IO_API_KEY>", // Credentials needed to provision the Element
-    "password": "<INSERT_CLOSE_IO_PASSWORD>"
-  },
-  "tags": [
-    "<INSERT_TAGS>"
-  ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
-```
-
-Instances can be managed via API or our API Management Console.
-
-Management via API:
-
-Using our RESTful APIs, easily create, retrieve, update, and delete using the `/instances` endpoint.
-
-Management via the Console:
-
-From the left hand navigation menu, Elements > select My Instances.
-This action will render a list of your current instances.
-From this screen click the settings gear to edit, clone, or delete an instance.
-API docs for the Element can also be viewed along with creating a transformation (more about this in the transformations defined section).
-
-{% include padding-all.html %}
-
-{% youtube "https://www.youtube.com/embed/qRCz9TdvksM?color=white&theme=light" %}
-
-{% include padding-all.html %}
-
-#### FORMULAS
-
-Formulas are the automated workflows that sync data between Elements.  For example, if your integration use case calls for syncing `/contacts` between your CRM and Helpdesk Elements, you would build a formula to accomplish the movement of this data.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.
-
-#### TRANSFORMATIONS
-
-The purpose of the Transformation APIs (Beta) is to give you the option of defining what an object would look like in your app.
 
 The Transformation APIs allow you to:
 
@@ -107,7 +60,7 @@ The Transformation APIs allow you to:
 * map custom data fields to and from the format that your application uses and expects
 * programmatically persist and maintain transformations for each of your client’s CRM, Marketing, and Help Desk services
 
-#### BULK APIs and CEQL
+## Bulk API and CEQL
 
 __Cloud Element Bulk API__ calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once.
 
@@ -117,7 +70,11 @@ Cloud Elements provides discovery services to get a list of available objects.
 
 __The Cloud Elements Query Language (CEQL)__ is a query language used by Cloud Elements to standardize searching across all of our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all of our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint.
 
-#### OAUTH PROXY
+## Discovery Service
+
+Cloud Elements includes a comprehensive data discovery service that provides **normalized metadata**, such as the list of  field names and types. Additional information, if available from an endpoint, may also be obtained such as: display name, read-only, etc. If an endpoint doesn’t provide discovery service APIs, Cloud Elements will still provide a minimum set of metadata about the given resource (e.g., name and type). Cloud Elements also allows you to discover **custom fields** (as long as the values are not empty), by supplying an object Id when a native discovery service is not available. The Discovery Service is used along with the Transformation Service to normalize the responses across endpoints.
+
+## OAuth Proxy
 
 The __OAuth Proxy__ feature gives you the capability to have multiple environments, such as development, QA, etc, with one endpoint application. For example some vendors only allow one callback URL per application. The proxy will allow for the same callback URL to be used with multiple application endpoints. You would then use the proxy address as the Callback URL instead of your own Callback URL. This permits multiple endpoint applications to one callback URL.
 

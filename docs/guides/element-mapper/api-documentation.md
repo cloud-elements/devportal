@@ -1,9 +1,9 @@
 ---
 heading: Element Mapper
 seo: API Docs | Element Mapper | Cloud Elements API Docs
-title: Platform Documentation
+title: Transformations API Reference
 description: Element Mapper API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

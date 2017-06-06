@@ -3,7 +3,7 @@ heading: Stripe
 seo: Overview | Stripe | Cloud Elements API Docs
 title: Overview
 description: Integrate Stripe into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 475
 parent: Back to Element Guides

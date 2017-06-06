@@ -3,7 +3,7 @@ heading: Sage Live
 seo: Overview | Sage Live | Cloud Elements API Docs
 title: Overview
 description: Integrate Sage Live into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 676
 parent: Back to Element Guides

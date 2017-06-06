@@ -1,9 +1,9 @@
 ---
-heading: OneNote
+heading: OneNote Beta
 seo: API Docs | OneNote | Cloud Elements API Docs
 title: API Docs
 description: OneNote API Documentation.
-layout: apidocs
+layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 134
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: Ground2Cloud
 seo: Installation | Ground2Cloud | Cloud Elements API Docs
 title: Installing Ground2Cloud
 description: Information about how Ground2Cloud is installed.
-layout: docs
+layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 6

@@ -3,7 +3,7 @@ heading: NetSuite 2016 Finance
 seo: Overview | NetSuite 2016 Finance | Cloud Elements API Docs
 title: Overview
 description: Integrate NetSuite 2016 Finance into your application via the Cloud Elements APIs.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 988
 parent: Back to Element Guides

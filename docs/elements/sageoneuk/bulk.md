@@ -3,7 +3,7 @@ heading: Sage One UK
 seo: Bulk APIs | Sage One UK | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 686
 parent: Back to Element Guides

@@ -3,7 +3,7 @@ heading: HubSpot CRM
 seo: Create Instance | HubSpot CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 168
 parent: Back to Element Guides

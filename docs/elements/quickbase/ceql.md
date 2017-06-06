@@ -1,11 +1,11 @@
 ---
 heading: QuickBase
 seo: Query Language | QuickBase | Cloud Elements API Docs
-title: Cloud Elements Query Language
+title: Querying
 description: Make database queries using Cloud Elements Query Language.
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 475
+elementId: 1250
 parent: Back to Element Guides
 order: 45
 sitemap: false

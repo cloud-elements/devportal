@@ -1,9 +1,9 @@
 ---
-heading: Infusionsoft CRM
+heading: Infusionsoft CRM Beta
 seo: Endpoint Setup | Infusionsoft CRM | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
-layout: docs
+layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 191
 parent: Back to Element Guides
