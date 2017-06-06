@@ -6,15 +6,37 @@ description: Enable NetSuite 2016 ERP events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 987
+elementKey: netsuiteerpv2
 parent: Back to Element Guides
 order: 30
 ---
 
 ## Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling-events-via-cloud-elements-platform-ui>Polling via Platform</a></br><a
+href=#polling-events-via-an-api-call>Polling via API call</a></br><a  
+href=#parameters>Parameters</a>" type="info" %}
+## Supported Events and Resources
+
+Cloud Elements supports polling events for {{page.heading}}. Polling can be set up for one specific resource (i.e. `accounts`) or for multiple resources.
+
+
+#### Polling Events via Cloud Elements Platform (UI)
+
+If you are using Cloud Elements' platform, by default, MS Dynamics polling is setup to gather the following resources:
+
+`customers`, `employees`, `estimates`, `invoices`, `journal-entries`, `payments`, `products`, `purchase-orders`, `time-activities`, `vendor-payments`, and `vendors`.
+
+In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` to how often you would like to have the polling job (minutes) performed.
+
+
+#### Polling Events via an API Call
 
 In order to enable polling, add these extra configurations to your instance JSON:
+
+**For more information**, please visit our [Configure Polling Through API](#configure-polling-through-api) page.
 
 ```JSON
 "event.notification.enabled": "true",
@@ -22,11 +44,12 @@ In order to enable polling, add these extra configurations to your instance JSON
 "event.poller.configuration": "<SEE_BELOW>"
 ```
 
-NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
+**NOTE:** The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
-instance JSON with polling events enabled:
+Instance JSON with polling events enabled:
 
-#### Basic Authentication NetSuite 2016
+## Parameters
+Basic Authentication NetSuite 2016
 
 ```JSON
 {
