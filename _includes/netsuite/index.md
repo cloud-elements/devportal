@@ -1,19 +1,6 @@
----
-heading: Google Drive
-seo: Overview | Google Drive | Cloud Elements API Docs
-title: Overview
-description: Integrate Google Drive into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: 21
-parent: Back to Element Guides
-order: 1
-sitemap: false
----
-
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides Cloud Storage services.
+{{page.heading}} provides on-demand services. 
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -21,13 +8,13 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Google Drive API documentation](https://developers.google.com/drive/v3/reference/) |
-| Authentication | OAuth 2  |
-| Events | Webhooks |
-| Bulk | Not Supported |
-| Transformations | Not Supported |
-| Rate Limits | [{{page.heading}} rate limit quotas can be seen in your specific Google App under "quotas"](https://console.developers.google.com/iam-admin/quotas)|
-| Authentication Requirements |  None |
+| API Documentation | [Netsuite API documentation](http://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2016_2/schema/record/account.html) |
+| Authentication | Custom  |
+| Events | Polling |
+| Bulk | Supported for both upload and download. |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Rate Limits | NetSuite only supports one API call at a time from one unique user. NetSuite does not support concurrent API calls.|
+| Versions Supported | Netsuite 2016_R2 |
 
 ## Base URL
 
@@ -37,7 +24,7 @@ HTTP requests to the REST API are protected with HTTP Basic authentication with 
 
 ## Authenticating with Cloud Elements
 
-To authenticate with Cloud Elements, you need to know your Organization Secret and User Secret. When making some calls, you also need to know the Element Token.
+To authenticate with Cloud Elements, you need to know your Organization Secret and User Secret. When making some calls, you also need to know the Element Instance Token.
 
 When you create an account with us, we assign you an Organization Secret and a User Secret. An Organization is a customer of Cloud Elements (`/organizations`). The User and Organization secrets represent your account with Cloud Elements.
 
@@ -47,13 +34,13 @@ To find your Organization and User Secret:
 | :------------- | :------------- |
 | Open the profile menu.</br> ![Search](../img/Org-User-Secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](../img/Org-User-Secret.png)  |
 
-When you create a new connection to an endpoint, you will receive an Element token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
+When you create a new connection to an endpoint, you will receive an Element instance token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
 
-To find your Element token:
+To find your Element instance token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
+An Element instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
 
 Pass tokens and secrets as basic HTTP Header values.
 
