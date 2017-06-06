@@ -89,40 +89,29 @@ CEQL is composed of the following parts:
 
 ### Where can it be used?
 
-CEQL, or at least parts of CEQL, can be used in most of our find or search related APIs. You can add CEQL as query parameters to API calls (for example, `GET accounts?where=Name=’Foo Account’`) or directly in our API Documentation as shown below.
+CEQL, or at least parts of CEQL, can be used in most of our find or search related APIs. You can add CEQL as query parameters to API calls (for example, `GET products?where=name=’Foo Product’`) or directly in our API Documentation as shown below.
 
 ![Cloud Elements Query Language CEQL](/assets/img/ceql-description.png)
 
 ### Examples
 
-* Select from `accounts` where the `Name` equals a specific value:
-  * __API Docs:__ where Name=’Foo Account’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name=’Foo Account’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name%3D%E2%80%99Foo%20Account%E2%80%99
-* Select from `accounts` where the `Name` equals a specific value and the Industry equals a specific value:
-  * __API Docs:__ where Name=’Foo Account’ AND Industry=’Biotechnology’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name=’Foo Account’ AND Industry=’Biotechnology’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name%3D’Foo%20Account’%20AND%20Industry%3D’Biotechnology’
-* Select from `accounts` where the name equals a specific value OR the `Industry` is a specific value AND the `LastModifiedDate` > a specific value:
-
-    {% include note.html content="When working with dates and time, wrapping a value in the ` character will ensure a column does not get split. For example, <code>select * from customers ‘`metaData.lastUpdateTime` > 2015-01-06T09:31:38-07:00’</code>" %}
-
-  * __API Docs:__ where Name=’GenePoint’ OR (Industry=’Biotechnology’ AND LastModifiedDate>’2015-01-01T00:00:00.000Z’)
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name=’GenePoint’ OR (Industry=’Biotechnology’ AND LastModifiedDate>’2015-01-01T00:00:00.000Z’)
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name%3D’GenePoint’%20OR%20(Industry%3D’Biotechnology’%20AND%20LastModifiedDate%3E’2015-01-01T00%3A00%3A00.000Z’)
-* Select from accounts where the name is like a specific value:
-  * __API Docs:__ where Name LIKE ‘%Foo%’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name LIKE ‘%Foo%’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=Name%20LIKE%20’%25Foo%25′
-* Select from accounts where the estimated value of the AnnualRevenue is greater than or equal to a specific value:
-  * __API Docs:__ where AnnualRevenue >= 100000
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=AnnualRevenue >= 100000
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/crm/accounts?where=AnnualRevenue%20%3E%3D%20100000
+* Select from `products` where the `name` equals a specific value:
+  * __API Docs:__ where name=’Foo Product’
+  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’
+  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D%E2%80%99Foo%20Product%E2%80%99
+* Select from `products` where the `name` equals a specific value and the type equals a specific value:
+  * __API Docs:__ where name=’Foo Product’ AND type=’SERVICE’
+  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’ AND type=’SERVICE’
+  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D’Foo%20Product’%20AND%20type%3D’SERVICE’
+* Select from products where the name is like a specific value:
+  * __API Docs:__ where name LIKE ‘%Foo%’
+  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name LIKE ‘%Foo%’
+  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%20LIKE%20’%25Foo%25′
+* Select from products where the createTime is greater than a specific value:
+  * __API Docs:__ where metaData.createTime>'2017-01-14T00:36:24Z'
+  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime > '2017-01-14T00:36:24Z'
+  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime+%3E+%272017-01-14T00:36:24Z%27
 
 ### CEQL Limitations
 
 * CEQL does not support sub­queries
-
-__Select from accounts where the name equals a specific value OR the Industry is a specific value AND the LastModifiedDate > a specific value__
-
-![Cloud Elements Query Language CEQL](/assets/img/ceql-example.png)
