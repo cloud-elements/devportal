@@ -2,12 +2,12 @@
 heading: Zendesk
 seo: Tips | Zendesk | Cloud Elements API Docs
 title: Tips
-description: Integrate Zendesk into your application via the Cloud Elements APIs.
+description: Name of Element Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41
 parent: Back to Element Guides
-order: 1
+order: 75
 ---
 
 # Tips
