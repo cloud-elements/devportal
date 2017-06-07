@@ -2,15 +2,21 @@
 heading: Google Drive
 seo: Tips | Google Drive | Cloud Elements API Docs
 title: Tips
-description: Frequently asked questions and notes on conventions.
+description: Google Drive Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
 parent: Back to Element Guides
-order: 50
+order: 75
 ---
 
-## Tips
+# Tips
+
+The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#general>General</a>" type="info" %}
+
+## General
 
 A note about Google Drive regarding folder naming conventions. Currently, users can have the same name for multiple folders. This could provide a potential challenge as the API call may be unsure of what path to take on some calls.
 
