@@ -1,7 +1,7 @@
 ---
 heading: Dropbox Business
-seo: Endpoint Setup | Dropbox Business | Cloud Elements API Docs
-title: Endpoint Setup
+seo: Service Provider Setup | Dropbox Business | Cloud Elements API Docs
+title: Service Provider Setup
 description: Integrate Dropbox Business into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -9,7 +9,7 @@ elementId: 1780
 parent: Back to Element Guides
 order: 2
 ---
-## Endpoint Setup
+# Service Provider Setup
 
 Follow these steps to set up a Dropbox Business application with the endpoint. Via a web browser, go to [https://www.dropbox.com/developers/apps/create](https://www.dropbox.com/developers/apps/create) and login to your account.
 
@@ -31,4 +31,4 @@ Follow these steps to set up a Dropbox Business application with the endpoint. V
 8. Click “Add”
 ![Dropbox Business Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/03/DropboxBusinessAPI2.png)
 
-Next [create an instance](dropbox-business-create-instance.html).
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
