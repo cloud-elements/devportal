@@ -21,7 +21,7 @@ The {{page.heading}} element is a part of the the Cloud Elements Accounting Hub.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [Sage One API documentation](https://developer.sageone.com/docs/en/v1) |
 | Authentication | OAuth 2  |
 | Events | Polling |
 | Bulk | Not supported. |
