@@ -11,4 +11,5 @@ order: 35
 sitemap: false
 ---
 
-{% include bulk-apis.md %}
+# Bulk
+Bulk is not currently supported for this element
