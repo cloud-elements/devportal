@@ -11,4 +11,6 @@ order: 45
 sitemap: false
 ---
 
-{% include ceql.md %}
+# Cloud Elements Query Language
+
+CEQL searching is not currently supported for the {{page.heading}} element.
