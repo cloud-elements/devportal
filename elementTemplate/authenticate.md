@@ -112,7 +112,8 @@ Provide the response from the previous step to the users. After they authenticat
 
 ### Authenticating the Element Instance
 
-Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with {{
+}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
