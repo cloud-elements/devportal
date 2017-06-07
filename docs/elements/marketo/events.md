@@ -226,7 +226,7 @@ Select JSON for “Request Token Encoding” as well as “Response Type”
 Select Save
 ![Marketo Webhooks step 4](http://cloud-elements.com/wp-content/uploads/2015/10/MarketoAPI4.png)
 
-Select “Marketing Activities”
+Select “Marketing Activities” from the main menu
 ![Marketo Webhooks step 5](http://cloud-elements.com/wp-content/uploads/2015/10/MarketoAPI5.png)
 
 Select “New Smart Campaign”
