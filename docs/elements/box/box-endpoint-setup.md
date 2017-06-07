@@ -1,36 +1,34 @@
 ---
 heading: Box
-seo: Endpoint Setup | Box | Cloud Elements API Docs
-title: Endpoint Setup
-description: Integrate Box into your application via the Cloud Elements APIs.
+seo: Endpoint Setup | Service provider setup | Box | Cloud Elements API Docs
+title: Service Provider Setup
+description: Service provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
 parent: Back to Element Guides
-order: 2
+order: 5
 ---
-## Endpoint Setup
 
-Follow these steps to set up a Box application with the endpoint.
-Via a web browser, go to  [https://app.box.com/developers/services/edit/](https://app.box.com/developers/services/edit/).
+# Service Provider Setup
 
-1. Enter the name of your application
+To setup the endpoint for {{page.heading}}, complete the setup steps described in this section.
 
-2. Select the appropriate options
+1. Via a web browser, go to  [https://app.box.com/developers/services/edit/](https://app.box.com/developers/services/edit/).
 
-3. Click “Create Application”
-![Box Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI1.png)
+2. Input an application name
 
-4. After receiving confirmation that your application is created, click “Configure your application”
-![Box Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI2.png)
+3. Select the type of Box application
 
-5. Copy the “client_id”
+4. Click “Create Application”
 
-6. Copy the “client_secret”
+5. After the Box application is created, click “Configure your application”
 
-7. Input your “redirect_uri” (your app’s callback URL)
+6. Copy the “client_id” and the “client_secret”
 
-8. Select your “Scopes” (check “Read and write all files and folders”)
-![Box Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI3.png)
+7. Input a “redirect_uri” (your app’s callback URL)
 
-Next [create an instance](box-create-instance.html).
+8. Select appropriate “Scopes” for the application (“Read and write all files and folders” is required for most integrations)
+![Box Connected App step 3](img/EndpointSetupStep8.png)
+
+Next [authenticate an element instance with {{page.heading}}](box-authenticate.html).
