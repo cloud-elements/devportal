@@ -1,39 +1,36 @@
 ---
 heading: Box
-seo: Service Provider Setup | Box | Cloud Elements API Docs
+seo: Endpoint Setup | Service provider setup | Box | Cloud Elements API Docs
 title: Service Provider Setup
-description: Integrate Box into your application via the Cloud Elements APIs.
+description: Service provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
 parent: Back to Element Guides
-order: 2
+order: 5
 ---
-
-
 
 # Service Provider Setup
 
-Follow these steps to set up a Box application with the endpoint.
-Via a web browser, go to  [https://app.box.com/developers/services/edit/](https://app.box.com/developers/services/edit/).
+To setup the endpoint for {{page.heading}}, complete the setup steps described in this section.
 
-1. Enter the name of your application
+1. Via a web browser, go to  [https://app.box.com/developers/services/edit/](https://app.box.com/developers/services/edit/).
 
-2. Select the appropriate options
+2. Input an application name.
 
-3. Click “Create Application”
-![Box Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI1.png)
+3. Select the type of Box application.
 
-4. After receiving confirmation that your application is created, click “Configure your application”
-![Box Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI2.png)
+4. Click **Create Application**
 
-5. Copy the “client_id”
+5. After the Box application is created, click **Configure your application**.
 
-6. Copy the “client_secret”
+6. Copy the **client_id** and the **client_secret**.
 
-7. Input your “redirect_uri” (your app’s callback URL)
+7. Input a **redirect_uri** (your app’s callback URL).
 
-8. Select your “Scopes” (check “Read and write all files and folders”)
-![Box Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI3.png)
+8. Select the appropriate **Scopes** for the application.
 
-Next [create an instance](box-create-instance.html).
+    {% include note.html content="“Read and write all files and folders” is required for most integrations. " %}
+    ![Box Connected App step 3](img/EndpointSetupStep8.png)
+
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
