@@ -63,7 +63,7 @@ Pass tokens and secrets as basic HTTP Header values.
 
 * To make a Hub API call, include the following in the header:
 
-        User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
+        Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
 
 {% include error-codes.md %}
 

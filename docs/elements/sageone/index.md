@@ -21,7 +21,7 @@ The {{page.heading}} element is a part of the the Cloud Elements Accounting Hub.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [Sage One API documentation](https://developer.sageone.com/docs/en/v1) |
 | Authentication | OAuth 2  |
 | Events | Polling |
 | Bulk | Not supported. |
@@ -61,7 +61,7 @@ Pass tokens and secrets as basic HTTP Header values.
 
 * To make a Hub API call, include the following in the header:
 
-        User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
+        Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
 
 {% include error-codes.md %}
 
