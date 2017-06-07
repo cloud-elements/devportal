@@ -1,147 +1,258 @@
 ---
 heading: Box
-seo: Create Instance | Box | Cloud Elements API Docs
-title: Create Instance
-description: Create Instance
+seo: Authenticate | Box | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate an element instance with the service provider.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
+elementKey: box
 parent: Back to Element Guides
 order: 20
 ---
 
-## Create Instance
+# Authenticate with {{page.heading}}
 
-Box is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Box platform.
+You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
-### Step 1. Get Elements OAuth Information
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
 
-* HTTP Header: None
-* HTTP Verb: GET
-* Request URL: /elements/{keyOrId}/oauth/url
-* Request Body: None
-* Query Parameters:
+## Authenticate Through the UI
 
-* __apiKey–__ the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app, state – any custom value that you want passed to the callback handler listening at the provided callback URL.
+Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
+If you are configuring events, see the [Events section](events.html).
 
-Example cURL Command:
+To authenticate an element instance:
+
+1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+
+3. Create an element instance.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+
+5. Enter a name for the element instance.
+
+7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+8. Optionally add tags in the earlier UI:
+     1. On the Tag It page, enter any tags that might help further define the instance.
+      * To add more than one tag, click __Add__ after each tag.
+      ![Add tag](../img/Add-Tag.png)
+     1. Click __Done__.
+8. Provide your Box credentials, and then allow the connection.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+8. Take a look at the documentation for the element resources now available to you.
+
+## Authenticate Through API
+
+Authenticating through API is a multi-step process that involves:
+
+* [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
+* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
+* [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
+
+### Getting a Redirect URL
+
+Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+
+```bash
+GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+```
+
+#### Query Parameters
+
+| Query Parameter | Description   |
+| :------------- | :------------- |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+
+#### Example cURL
 
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/box/oauth/url?apiKey=fake_Box_api_key&apiSecret=fake_Box_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state=box'
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://httpbin.org/get&state={{page.elementKey}}'
 ```
 
-Response:
+#### Example Response
 
-```javascript
+Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
+
+```json
 {
-  "oauthUrl": "https://www.box.com/api/oauth2/authorize?response_type=code&client_id=insert_box_client_id0&redirect_uri=https://www.mycoolapp.com/auth&state=box",
+  "oauthUrl": "https://www.box.com/api/oauth2/authorize?response_type=code&client_id=57du4eiw3cseqfrs06bn9hg37ff344hv&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=box",
   "element": "box"
 }
 ```
 
-Handle Callback from the Endpoint:
-Upon successful authentication and authorization by the user, the endpoint will redirect to the callback URL you provided when you setup your application with the endpoint, in our example, https://www.mycoolapp.com/auth. The endpoint will also provide two query string parameters: “state” and “code”. The value for the “state” parameter will be the name of the endpoint, e.g., “box” in our example, and the value for the “code” parameter is the code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint. If the user denies authentication and/or authorization, there will be a query string parameter called “error” instead of the “code” parameter. In this case, your application can handle the error gracefully.
+### Authenticating Users and Receiving the Authorization Grant Code
 
-### Step 2. Create an Instance
+Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
 
-To provision your Box Element, use the /instances API.
+* code
+* state
 
-Below is an example of the provisioning API call.
+| Response Parameter | Description   |
+| :------------- | :------------- |
+| code | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
+| state | A customizable identifier, typically the element key (`{{page.elementKey}}`) . |
 
-* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
-* __HTTP Verb__: POST
-* __Request URL__: /instances
-* __Request Body__: Required – see below
-* __Query Parameters__: none
+{% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+### Authenticating the Element Instance
 
-A sample request illustrating the /instances API is shown below.
+Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
 
-HTTP Headers:
+{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+
+To create an element instance:
+
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+      "element": {
+        "key": "{{page.elementKey}}"
+      },
+      "providerData": {
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
+      "configuration": {
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "oauth.api.key": "<CONSUMER_KEY>",
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "filter.response.nulls": true
+      },
+      "tags": [
+        "<Add_Your_Tag>"
+      ],
+      "name": "<INSTANCE_NAME>"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
+#### Example cURL
 
 ```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Box is “box”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
-
-```javascript
-{
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
   "element": {
-    "key": "box"
+    "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "Code on Return the URL"
+    "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.api.key": "<INSERT_BOX_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_BOX_CLIENT_SECRET>",
-    "oauth.callback.url": "https://www.mycoolapp.com/auth"
+    "oauth.callback.url": "<CALLBACK_URL>",
+    "oauth.api.key": "<CONSUMER_KEY>",
+    "oauth.api.secret": "<CONSUMER_SECRET>"
   },
   "tags": [
-    "<INSERT_TAGS>"
+    "MyTag"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
+  "name": "My Box Instane"
+}'
 ```
+## Parameters
 
-Here is an example cURL command to create an instance using /instances API.
+API parameters not shown in the {{site.console}} are in `code formatting`.
 
-Example Request:
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
-```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
-```
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+|  name:`name` |  A unique name for the element instance created during authentication.   | string  |
+| `oauth.callback.url` | The Redirect URL from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html).  | string |
+| `oauth.api.key` | The Client Id from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html) |  string |
+| `oauth.api.secret` | The Client Secret from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html)| string |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
 
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
-
-Below is a successful JSON response:
+## Example Response
 
 ```json
 {
-  "id": 123,
-  "name": "Test",
-  "token": "5MOr3Sl/E4kww6mTjmjBYV/hAUAzz1g=",
+  "id": 427236,
+  "name": "FromAPI-tags",
+  "createdDate": "2017-06-06T21:29:33Z",
+  "token": "s;dkjhsadlkjhfvlkadflvakdfvaqewcs",
   "element": {
-      "id": 22,
-      "name": "Box",
-      "key": "box",
-      "description": "Add a Box Instance to connect your existing Box account to the Documents Hub, allowing you to manage files and folders. You will need your Box account information to add an instance.",
-      "image": "elements/provider_box.png",
-      "active": true,
-      "deleted": false,
-      "typeOauth": true,
-      "trialAccount": false,
-      "existingAccountDescription": "Give your application access to your existing
-   Box accountEnter your credentials and details for your Box Account",
-      "configDescription": "If you do not have an Box.net account, you can create one at Box.Net Signup",
-      "transformationsEnabled": false,
-      "authentication": {
-        "type": "oauth2"
-      },
-      "hub": "documents"
+    "id": 22,
+    "name": "Box",
+    "hookName": "Box",
+    "key": "box",
+    "description": "Add a Box Instance to connect your existing Box account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Box account information to add an instance.",
+    "image": "elements/provider_box.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": true,
+    "trialAccount": false,
+    "configDescription": "If you do not have an Box.net account, you can create one at <a href=\"http://www.box.com\" target=\"_blank\">Box.Net Signup</a>",
+    "resources": [],
+    "transformationsEnabled": false,
+    "bulkDownloadEnabled": false,
+    "bulkUploadEnabled": false,
+    "cloneable": true,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+      "type": "oauth2"
     },
-    "provisionInteractions": [],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "eventsEnabled": false,
-    "cachingEnabled": false
+    "extended": false,
+    "hub": "documents",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
+  },
+  "elementId": 22,
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {
+    "base.url": "",
+    "oauth.api.secret": "wvyQdUrNvXbHabxPVcxZV60G0ELMEx3n",
+    "event.notification.subscription.id": null,
+    "event.metadata": "{\"webhook\": {\"file\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]},\n        \"folder\": {\"eventTypes\": [\"created\", \"updated\", \"deleted\"]}}}",
+    "oauth.subuser.email": null,
+    "oauth.user.token": "KtWxcp0Rz4VYRdHh72g1mBu0yPW8Zbq8",
+    "oauth.user.id": "263773421",
+    "filter.response.nulls": "true",
+    "pagination.type": "offset",
+    "event.notification.callback.url": null,
+    "oauth.callback.url": "https://httpbin.org/get",
+    "event.notification.signature.key": null,
+    "oauth.user.refresh_token": "mbqHxMQ0okd24mom1wsj3PMx41JLWpfAtmdtiSN0kWvbYGqpALCc6TldBVZrF92Z",
+    "oauth.user.refresh_interval": null,
+    "oauth.api.key": "57du4eiw3cseqfrs06bn9hg37ff344hv",
+    "document.tagging": null,
+    "oauth.user.refresh_time": "1496784574729",
+    "event.notification.enabled": "false"
+  },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+    "id": 1234567
   }
+}
 ```
-
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-{% include common-instance-config.md %}

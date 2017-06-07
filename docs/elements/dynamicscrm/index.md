@@ -26,7 +26,7 @@ sitemap: false
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
+| Authentication Requirements | We support the 2013 version and above with administrator privileges.|
 
 ## Base URL
 
@@ -62,7 +62,7 @@ Pass tokens and secrets as basic HTTP Header values.
 
 * To make a Hub API call, include the following in the header:
 
-        User <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
+        Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
 
 {% include error-codes.md %}
 
