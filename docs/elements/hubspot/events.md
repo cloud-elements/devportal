@@ -124,13 +124,13 @@ You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) 
 
 Follow these steps to set up your Hubspot application with the endpoint.
 
-1. Via a web browser, log in to your Hubspot developer account:
+1. Via a web browser, log in to your Hubspot developer account at [https://app.hubspot.com/login](https://app.hubspot.com/login).
 1. In the developer app dashboard select the app that you'd like to send webhooks for.
-1. Select the "Webhook Subscriptions" nav item and then select configure. 
-1. In the webhook URL field, enter: 
+1. Select the **Webhook Subscriptions** nav item and then select **configure**.
+1. In the webhook URL field, enter:
   * https://console.cloud-elements.com
-1. In the concurrent requests field, leave the default value of 10 and click "Save".
-1. Next, you'll need to set up individual subscriptions for each object and event type for which you'd like to receive a notification. Do this by clicking "Create Subscription".
+1. In the concurrent requests field, leave the default value of 10 and click **Save**.
+1. Next, you'll need to set up individual subscriptions for each object and event type for which you'd like to receive a notification. Do this by clicking **Create Subscription**.
 1. Now, follow the prompts to configure the subscription.
 
 ### Configure Webhooks Through the UI
