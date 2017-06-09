@@ -12,16 +12,26 @@ order: 5
 
 # Service Provider Setup
 
-{% include note.html content="Google Drive provides the most up-to-date and detailed setup instructions <a href=https://developers.google.com/drive/web/enable-sdk>here</a>" %}
+To authenticate a {{page.heading}} element instance you must have a project withe the Google Drive API enabled..
 
-Navigate to <a href=https://console.developers.google.com/apis/dashboard>your Google Drive developer dashboard</a> and select your Google Drive project.  If you do not have any Google Drive projects, create a new one by clicking "Select a project" and then the "+": ![Screenshot1](./img/GoogleDriveCreateProject.png)
 
-Once you have created, or selected, your Google Drive project, enable the Google Drive API for this project.  You are free to enable other APIs as well, but *at least* this API should be enabled. ![Screenshot2](./img/GoogleApi.png)
+{% include note.html content="Google Drive provides the most up-to-date and detailed setup instructions <a href=https://developers.google.com/drive/web/enable-sdk>here</a>." %}
 
-After the Google Drive API is enabled, click on "Credentials" on the left-hand side and then click "Create credentials".  Select "Web Application" as the "Application type" and follow the necessary prompts as necessary.  
+To set up the service provider:
 
-{% include note.html content="Remember your OAuth callback URL.  This should be the URL that your app is setup to handle once a user has granted access to this OAuth application." %}
+1. Navigate to <a href=https://console.developers.google.com/apis/dashboard>your Google Drive developer dashboard</a> and select your Google Drive project.
 
-Once you are finished, you will be given an OAuth client secret and OAuth client ID.  Take note of these, as they will be needed when creating a Google Drive Element Instance. ![Screenshot3](./img/GoogleClientSecret.png)
+    {% include note.html content="If you do not have any Google Drive projects, create a new one by clicking <strong>Select a project</strong>and then the <strong>+</strong>, as shown below.  " %}
+
+    ![Screenshot1](./img/GoogleDriveCreateProject.png)
+
+1. Enable the Google Drive API for the project.  You are free to enable other APIs as well, but we require *at least* the Google Drive API.
+![Screenshot2](./img/GoogleApi.png)
+1. After you enable the Google Drive API, click **Credentials** on the left-hand side ,and then click **Create credentials**.
+2. Select **Web Application** as the **Application type** and follow the prompts.
+
+    {% include note.html content="Remember your OAuth callback URL.  This should be the URL that your app is set up to handle after a user grants access to this OAuth application." %}
+
+1. Note the OAuth client secret and OAuth client ID, which you need to authenticate an element instance. ![Screenshot3](./img/GoogleClientSecret.png)
 
 Next [authenticate an element instance with Google Drive](authenticate.html).

@@ -1,7 +1,7 @@
 ---
 heading: Freshdesk
-seo: Create Instance | Freshdesk | Cloud Elements API Docs
-title: Create Instance
+seo: Authenticate | Freshdesk | Cloud Elements API Docs
+title: Authenticate
 description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -22,8 +22,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
-
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
@@ -41,9 +39,6 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-
-      {% include note.html content="If connecting to a Salesforce sandbox, change the optional Endpoint Address to https://test.salesforce.com. " %}
-
 7. Enter the **Subdomain** and **API Key**.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
@@ -51,13 +46,12 @@ To authenticate an element instance:
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
-8. Provide your Salesforce credentials, and then allow the connection.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
 
-Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 

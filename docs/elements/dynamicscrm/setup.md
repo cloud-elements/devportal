@@ -39,4 +39,4 @@ To create an app and acquire OAuth information:
 4. Click <img src="img/Save.png" alt="Alt Text" class="inlineImage"> in the page footer.
 1. Go to the __keys__ section and capture the key value for __OAuth Client Secret in Azure AD__.
 
-Next [create an instance](dynamicscrm-create-instance.html).
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
