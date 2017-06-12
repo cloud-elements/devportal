@@ -14,7 +14,7 @@ order: 75
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-{% include callout.html content="<strong>On this page</strong><br/><a href=#general>General</a><br/><a href=#events>Events</a> type="info" %}
+{% include callout.html content="<strong>On this page</strong><br/><a href=#general>General</a><br/><a href=#events>Events</a>" type="info" %}
 
 ## General
 
