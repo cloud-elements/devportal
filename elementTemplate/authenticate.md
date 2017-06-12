@@ -55,7 +55,7 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
-<span style="color:red">The text below is for an OAuth2 element. </span>
+<span style="color:red">The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint..."</span>
 
 Authenticating through API is a multi-step process that involves:
 
@@ -114,7 +114,7 @@ Provide the response from the previous step to the users. After they authenticat
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
-{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
 To create an element instance:
 

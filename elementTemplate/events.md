@@ -2,7 +2,7 @@
 heading: Name of Element
 seo: Events | Name of Element | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce Sales Cloud events for your application.
+description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -27,15 +27,17 @@ You can set up polling for the `customers` resource. You can also copy the `cust
 
 You can set up events for the following resources:
 
-* Account
-* Lead
-* Contact
-* Opportunity
-* Other objects that include `created`, `updated`, and `deleted` data.
+* accounts
+* contacts
+* leads
+* opportunities
+* users
+
+{% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
 ## Polling
 
-You can configure polling through the UI or in the JSON body of the `/instances` API call.
+You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API call](#configure-polling-through-api) .
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
 
@@ -46,27 +48,20 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with polling:
 
-1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
+1. Enter the basic information required to create an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
-3. Create an element instance.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
-
-5. Enter a name for the element instance.
-7. Switch **Events Enabled** on.
-8. Add an Event Notification Callback URL.
+8. Add an **Event Notification Callback URL**.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select and configure the resources to poll.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling. | Edit the JSON to add or remove resources and optionally change the `datesConfiguration`.  |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
 
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
@@ -81,7 +76,7 @@ To authenticate an element instance with polling:
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
 
-{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
 To authenticate an element instance with polling:
 
@@ -122,9 +117,9 @@ To authenticate an element instance with polling:
         }
       },
       "tags":[
-        "Test"
+        "<Add_Your_Tag>"
       ],
-      "name":"API_Polling"
+      "name":"<INSTANCE_NAME>"
     }
     ```
 
