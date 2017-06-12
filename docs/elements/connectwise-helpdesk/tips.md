@@ -10,4 +10,4 @@ parent: Back to Element Guides
 order: 75
 ---
 
-{% include Elements/connectwise/Tips.md %}
+{% include Elements/Connectwise/Tips.md %}
