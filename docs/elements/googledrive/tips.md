@@ -18,7 +18,7 @@ The Tips section includes more information about the element including FAQs, end
 
 ## General
 
-* Google Drive has a new optional parameter, mediaType, that allows you to specify the type for conversion from a native GoogleApp document. By default, Documents will be converted to MS Word, SpreadSheets to Excel, and Presentations to PowerPoints. (Ask Taylor if we need additional information)
+* Google Drive has a new optional parameter, mediaType, that allows you to specify the type for conversion from a native GoogleApp document. By default, Documents will be converted to MS Word, SpreadSheets to Excel, and Presentations to PowerPoints. 
 * Google does not return a size for any google document including: sheets, docs, slides, forms, etc because these do not take up drive storage space.
 * In order to receive every path of the file of the folder, the calculateFolderPath must be set to true.
 
