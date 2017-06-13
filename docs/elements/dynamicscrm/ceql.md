@@ -19,6 +19,7 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 When querying in {{page.heading}}, keep the following in mind:
 
+* You can search on almost any attribute. However, we recommend that you keep your searches as simple as possible. Cloud Elements normalizes the proprietary FetchXML queries used by MS Dynamics, simplifying their verbose query language.
 * Use CEQL to query the following endpoints:
   * GET /accounts
   * GET /activities

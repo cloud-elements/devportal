@@ -38,8 +38,8 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.<br/> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.<br/> ![Search](../img/Add-Instance.png)  |
 
 1. Enter a name for the element instance.
-1. The `Configured Application Name` should be set to the application name that is configured in the Quickbooks application.  
-The `Host Name/IP` is the address of the application endpoint. In most cases, this will be a [Ground2Cloud](/docs/guides/ground-2-cloud) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of Quickbooks Enterprise, without the need to open up firewalls to your site.
+2. In **Configured Application Name**, enter the application name that is configured in the Quickbooks application.
+3. In **Host Name/IP**, enter the address of the application endpoint. In most cases, this will be a [Ground2Cloud](/docs/guides/ground-2-cloud) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of Quickbooks Enterprise, without the need to open up firewalls to your site.
 1. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 1. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
@@ -120,6 +120,8 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | Key<br/>`key` | The element key.<br/>{{page.elementKey}}  | string  |
 |  Name<br/>`name` |  The name for the element instance created during authentication.   | Body  |
+| Configured Application Name</br>`app.name` | The application name that is configured in the Quickbooks application. | string |
+| Host Name/IP</br>`host.ip` | The URL of the server hosting Quickbooks Enterprise | string |
 | Filter null values from the response <br/>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. <br/>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

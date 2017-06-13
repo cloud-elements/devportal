@@ -38,14 +38,14 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-6. You can choose to authenticate with the default APIM Subscription Key, or you can enter your own. The APIM Subscription Key is the subscription Primary key that you noted in the [Service Provider Setup section](setup.html).
+6. Enter your shop URL in **Shopify Site Address**.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
-8. Provide your Sage credentials, and then allow the connection.
+8. Provide your Shopify credentials, and then allow the connection.
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
@@ -185,7 +185,7 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
 | `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
 | `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
-| Site Address</br> `shopify.site.address` | The site address of your Shopify Store | string |
+| Shopify Site Address</br> `shopify.site.address` | The site address of your Shopify Store | string |
 | `oauth.scope` | The permissions granted to the user when they authenticate to your application | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

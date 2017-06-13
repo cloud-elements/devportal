@@ -38,19 +38,22 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-6. You can choose to authenticate with the default APIM Subscription Key, or you can enter your own. The APIM Subscription Key is the subscription Primary key that you noted in the [Service Provider Setup section](setup.html).
+6. Select an **Authentication Type**:
+  * Choose **Custom** to authenticate through user name and password.
+  * Choose **oauth2** to authenticate using the key and client id that you identified in [Service Provider Setup](#setup.html).
+6. Enter the parameters required by your selected authorization type. See [Custom Parameters](#custom-parameters) or [OAuth2 Parameters](#oauth2-parameters)for details.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
       * To add more than one tag, click __Add__ after each tag.
       ![Add tag](../img/Add-Tag.png)
      1. Click __Done__.
-8. Provide your Sage credentials, and then allow the connection.
-8. Take a look at the documentation for the element resources now available to you.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+1. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
 
-You can provision the instance using custom [authentication](#custom-authentication) or [OAuth](#oauth-authentication).
+You can provision the instance using [custom authentication](#custom-authentication) or [OAuth](#oauth-authentication).
 
 ### Custom Authentication
 
@@ -60,7 +63,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To create an element instance:
 
-1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+1. Construct a JSON body as shown below (see [Custom Parameters](#custom-parameters)):
 
     ```json
             {
@@ -87,7 +90,7 @@ To create an element instance:
 
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 
-#### Example cURL
+### Custom Authentication Example cURL
 
 ```bash
 curl -X POST \
@@ -109,7 +112,7 @@ curl -X POST \
     "name": "DynamicsCRMInstance"
   }'
 ```
-## Parameters
+## Custom Parameters
 
 API parameters not shown in the {{site.console}} are in `code formatting`.
 
@@ -118,10 +121,10 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `name` |  The name for the element instance created during authentication.   | string  |
-| `user.username` | The USERNAME of the Dynamics CRM account  | string |
-| `user.password` | The PASSWORD of the Dynamics CRM account  | string |
-| `dynamics.tenant` | The Microsoft Dynamics Tenant URL. | string |
+| Name</br>`name` |  The name for the element instance created during authentication.   | string  |
+| User Name</br>`user.username` | The USERNAME of the Dynamics CRM account  | string |
+| User password</br>`user.password` | The PASSWORD of the Dynamics CRM account  | string |
+| Dynamics CRM URL</br>`dynamics.tenant` | The Microsoft Dynamics Tenant URL. | string |
 | `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response
@@ -218,7 +221,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To create an element instance:
 
-1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+1. Construct a JSON body as shown below (see [OAuth2 Parameters](#oauth2-parameters)):
 
     ```json
             {
@@ -249,7 +252,7 @@ To create an element instance:
 
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 
-#### Example cURL
+#### OAuth2 Example cURL
 
 ```bash
 curl -X POST \
@@ -284,10 +287,10 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `name` |  The name for the element instance created during authentication.   | string  |
+| Name</br>`name` |  The name for the element instance created during authentication.   | string  |
 | `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
+| OAuth Client ID in Azure AD</br>`oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
+| OAuth Client Secret in Azure AD</br> `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
 | `dynamics.tenant` | The Microsoft Dynamics Tenant URL. | string |
 | `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 

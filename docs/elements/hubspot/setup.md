@@ -16,12 +16,13 @@ To create a custom {{page.heading}} integration you must have a {{page.heading}}
 
 To set up the service provider:
 
-1. Via a web browser, log in to your Hubspot account:
-  * [https://app.hubspot.com/login](https://app.hubspot.com/login)
-1.Once you login, you should land on the developer dashboard. If you are redirected elsewhere, navigate to the developer dashboard.
-1. From the dashboard, select "Create App".
+1. Via a web browser, log in to your Hubspot account at [https://app.hubspot.com/login](https://app.hubspot.com/login).
+
+    Once you login, you should land on the developer dashboard. If you are redirected elsewhere, navigate to the developer dashboard.
+
+1. From the developer dashboard, click **Create App**.
 ![Hubspot App step 1](img/hubspot_app_dash.png)
-1. Name your app, select public or private, and then click "Create".
+1. Name your app, select public or private, and then click **Create**.
 1. After creating your app, note the following.
  * Client Id
  * Client Secret

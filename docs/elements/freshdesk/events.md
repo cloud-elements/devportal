@@ -5,7 +5,8 @@ title: Events
 description: Enable Freshdesk events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 144
+elementId: 491
+elementKey: freshdeskv2
 parent: Back to Element Guides
 order: 30
 ---
@@ -48,12 +49,11 @@ This instance.json file must be included with your instance request.  Please fil
 ```JSON
 {
   "element": {
-    "key": "freshdesk"
+    "key": "{{page.elementKey}}"
   },
   "configuration": {
-    "username": "<INSERT_FRESHDESK_USERNAME>",
-    "password": "<INSERT_FRESHDESK_PASSWORD>",
-    "subdomain": "<INSERT_FRESHDESK_SUBDOMAIN_URL>",
+    "subdomain": "<YOUR_SOBDOMAIN>",
+    "username": "<YOUR_API_KEY",
     "event.notification.enabled": "true",
     "event.notification.callback.url": "<INSERT_EVENT_CALLBACK_URL>"
   },
@@ -83,12 +83,12 @@ Below is a successful JSON response:
 ```JSON
 {
   "id": 1234,
-  "name": "FreshDesk Test",
+  "name": "FreshDesk",
   "token": "/sO6vVsB2eXhOlgvNR/p+G7wC/+rhY5M=",
   "element": {
-    "id": 130,
-    "name": "Freshdesk Beta",
-    "key": "freshdesk",
+    "id": 491,
+    "name": "Freshdesk V2",
+    "key": "freshdeskv2",
     "description": "Add a Freshdesk Instance to connect your existing Freshdesk account to the Help Desk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Freshdesk account information to add an instance.",
     "image": "https://pbs.twimg.com/profile_images/3159951933/1511f0f59e3f239a8ef707b1db3a42e3.png",
     "active": true,

@@ -11,28 +11,26 @@ parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+# Events
 
 Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling-events-via-cloud-elements-platform-ui>Polling via Platform</a></br><a
-href=#polling-events-via-an-api-call>Polling via API call</a></br><a  
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events </a></br><a href=#configure-polling-through-the-ui>Configure Polling Through the UI</a></br><a
+href=#configure-polling-through-api>Configure Polling Through API</a></br><a
 href=#parameters>Parameters</a>" type="info" %}
 
-## Supported Events and Resources
+## Supported Events
 
 Cloud Elements supports polling events for {{page.heading}}.
 
 
-#### Polling Events via Cloud Elements Platform (UI)
+### Configure Polling Through the UI
 
 In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` to how often you would like to have the polling job (minutes) performed.
 
-#### Polling Events via an API Call
+## Configure Polling Through API
 
 However, if you are setting up an instance via an API call, in order to enable polling, you will need to add these extra configurations to your instance `JSON`.
-
-**For more information**, please visit our [Configure Polling Through API](#configure-polling-through-api) page.
 
 ```JSON
 "event.notification.enabled": "true",

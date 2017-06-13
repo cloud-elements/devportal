@@ -26,7 +26,7 @@ sitemap: false
 | Events | Webhooks |
 | Bulk | Not Supported |
 | Transformations | Not Supported |
-| Rate Limits | [{{page.heading}} rate limit quotas can be seen in your specific Google App under "quotas"](https://console.developers.google.com/iam-admin/quotas)|
+| Rate Limits | [{{page.heading}} rate limit quotas can be seen in your specific Google App under "quotas"](https://console.developers.google.com/iam-admin/quotas).|
 | Authentication Requirements |  None |
 
 ## Base URL
