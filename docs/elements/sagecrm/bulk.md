@@ -22,6 +22,6 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 | Bulk Information | Details   |
 | :------------- | :------------- |
 |  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the service provider's documentation.   |
-| Upsert Support | Yes |
+| Upsert Support | No |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select name,id from contacts`. |
 | Order By Support | Yes, you can add `order by fieldName` to the query. |

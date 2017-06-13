@@ -71,6 +71,7 @@ layout: sidebarelementtile
 * [![WooCommerce REST](/assets/img/element-logos/woocommerce.png)WooCommerce REST](./elements/woocommerce-rest/)
 * [![NetSuite ERP 2016](/assets/img/element-logos/netsuite.png)NetSuite ERP 2016](./elements/netsuite-2016-erp/)
 * [![Sage Live](/assets/img/element-logos/sagelive.png)Sage Live](./elements/sagelive/)
+* [![Sage CRM](/assets/img/element-logos/sagecrm.png)Sage CRM](./elements/sagecrm/)
 * [![Sage One US](/assets/img/element-logos/sageoneus.png)Sage One US](./elements/sageoneus/)
 * [![Sage One UK](/assets/img/element-logos/sageoneus.png)Sage One UK](./elements/sageoneuk/)
 * [![GoToWebinar](/assets/img/element-logos/gotowebinar.png)GoToWebinar](./elements/gotowebinar/)

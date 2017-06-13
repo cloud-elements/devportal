@@ -42,6 +42,8 @@ You can configure polling [through the UI](#configure-polling-through-the-ui) or
 
 For more information about each field described here, see [Parameters](#parameters).
 
+{% include note.html content="To set up polling, the Sage CRM server time zone, system administrator time zone, and polling configuration must match. See <a href=setup.html>Service Provider Setup</a> for instructions.  " %}
+
 To authenticate an element instance with polling:
 
 1. Enter the basic information required to create an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
@@ -58,6 +60,8 @@ To authenticate an element instance with polling:
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
     | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+
+    {% include note.html content="If the time zones that you set up in Sage CRM are not UTC+00:00, make sure that you update the time zones in the poller configuration to match.  " %}
 
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
