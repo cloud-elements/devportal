@@ -4,6 +4,7 @@ seo: Formula Steps | Formula Step Types | Cloud Element Formulas
 title: Formula Triggers, Steps, and Variables
 description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
+restContentVersion: referenceAPI
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -50,7 +51,7 @@ When you set up an Element Request trigger, specify the following parameters:
 
 * Element Instance Variable: Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element that will kick off a formula instance when the specified API call occurs.
 * Method:  {{site.data.table-desc.formula-method}}.
-* API: The The endpoint, such as `hubs/crm/contacts`.
+* API: The endpoint, such as `hubs/crm/contacts`.
 
 ### Scheduled
 
@@ -89,7 +90,7 @@ To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#b
 
 Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
 
-To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
+To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 ## Step Types
 

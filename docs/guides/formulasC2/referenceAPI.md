@@ -20,6 +20,70 @@ This sections provides configuration information about each formula component.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
+
+## JSON Example
+
+Your formula JSON include objects for the triggers, steps and variables that make up your formula. The configuration object contains your variables, while the triggers and steps objects contain their relevant information. See the sample file below:
+
+```json
+{
+  "name": "Formula Name",
+  "description": "Formula Description.",
+  "configuration": [{
+      "name": "instanceName",
+      "type": "elementInstance",
+      "key": "instanceName"
+    },
+    {
+      "name": "instanceName2",
+      "type": "elementInstance",
+      "key": "instanceName2"
+    }{
+      "name": "valueName",
+      "type": "value",
+      "key": "valueName"
+    }
+  ],
+  "triggers": [{
+    "type": "event",
+    "properties": {
+      "elementInstanceId": "${instanceName}"
+    },
+    "onSuccess": ["step1"]
+  }],
+  "steps": [{
+      "name": "step1",
+      "type": "filter",
+      "properties": {
+        "body": "done(trigger.event.eventType === 'UPDATED' && trigger.event.objectType === 'Contact');"
+      },
+      "onSuccess": [ "step2" ]
+    },
+    {
+      "name": "step2",
+      "type": "script",
+      "properties": {
+        "body": "done({\n  \"subject\": \"CRM Event Occurred\",\n  \"to\": \"recipient@cloud-elements.com\",\n  \"from\": \"sender@cloud-elements.com\",\n  \"message\": `${trigger.event.objectType} with ID ${trigger.event.objectId} was ${trigger.event.eventType}`\n});"
+      },
+      "onSuccess": ["step3"]
+    },
+    {
+      "name": "step3",
+      "type": "elementRequest",
+      "properties": {
+        "method": "POST",
+        "elementInstanceId": "${instanceName2}",
+        "api": "/hubs/messaging/messages",
+        "body": "${steps.step2}"
+      }
+    }
+  ]
+}
+
+
+```
+
+
 ## Triggers
 
 Triggers are the actions that kick off a formula. Triggers can be one of the following type:
@@ -33,10 +97,21 @@ Triggers are the actions that kick off a formula. Triggers can be one of the fol
 
 You can set up triggers that listen for an event to happen on an element instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance that is configured to use webhooks or polling to listen for events.
 
-To set up an Event trigger, you must specify an Element Instance Variable. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element instance that will kick off a formula instance when an event occurs.
+To set up an Event trigger:
+
+* Specify the `type` as `event`.
+* For  `elementInstanceId` include the Element Instance Variable that triggers the formula.
+
+```
+"triggers": [{
+  "type": "event",
+  "properties": {
+    "elementInstanceId": "${crmElement}"
+  },
+  "onSuccess": ["step1"]
+```
 
 If an Event trigger's Element Instance is set up for polling instead of webhooks, then each object that is found while polling triggers a separate formula execution. For example, if the poller finds five changes, five different formula executions kick off.
-
 
 To see event triggers in action, see the following examples:
 
@@ -47,11 +122,24 @@ To see event triggers in action, see the following examples:
 
 Triggered anytime a specific API call is made to a given Element Instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance.
 
-When you set up an Element Request trigger, specify the following parameters:
+To set up an Element Request trigger:
 
-* Element Instance Variable: Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage"> to find or create a variable to represent the element that will kick off a formula instance when the specified API call occurs.
-* Method:  {{site.data.table-desc.method}}.
-* API: The The endpoint, such as `hubs/crm/contacts`.
+* Specify the `type` as `elementRequest`.
+* In `properties`:
+  * For `elementInstanceId`, include the Element Instance Variable that triggers the formula.
+  * For `method`, specify a valid API verb. {{site.data.table-desc.formula-method}}
+  * For `api` enter the endpoint, such as `hubs/crm/contacts`
+
+```
+"triggers": [{
+  "type": "elementRequest",
+  "properties": {
+    "method": "POST",
+    "elementInstanceId": "${config.crmInstance}",
+    "api": "/hubs/crm/contacts"
+  },
+  "onSuccess":"[step1]"
+  ```
 
 ### Scheduled
 
@@ -83,6 +171,20 @@ In general, the Cron format consists of:
 
         0	0	1,10,15	*	*
 
+To set up a Schedule trigger:
+
+* Specify the `type` as `scheduled`.
+* For `cron` enter a cron string.
+
+```
+"triggers": [{
+  "type": "scheduled",
+  "properties": {
+    "cron": "0 0 12 1/1 * ? *"
+  },
+  "onSuccess":"[step1]"
+  ```
+
 To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 
@@ -90,7 +192,17 @@ To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#b
 
 Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
 
-To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
+To set up a Manual trigger specify the `type` as `manual`.
+
+```
+"triggers": [{
+  "type": "manual",
+  "properties": { },
+  "onSuccess":"[step1]"
+  ```
+
+
+To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 ## Step Types
 
