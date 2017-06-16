@@ -47,7 +47,7 @@ This instance.json file must be included with your instance request.  Please fil
     "apikey.user.name":  "<INSERT_PARDOT_USERNAME>",
     "apikey.user.password": "<INSERT_PARDOT_PASSWORD>",
     "apikey.user.key": "<INSERT_PARDOT_API_USER_KEY>",
-    "provider.version": "4"
+    "provider.version": "<INSERT_PARDOT_VERSION_3_OR_4>(default is 3)"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -74,32 +74,48 @@ Below is a successful JSON response:
 
 ```JSON
 {
-  "id": 1234,
-  "name": "Test",
-  "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
+  "id": 428549,
+  "name": "test",
+  "createdDate": "2017-06-15T17:42:57Z",
+  "token": "R20R73zasYZjqgD/dXIndzCib5+SGvNtCfOpUI30o9999",
   "element": {
-    "id": 95,
-    "name": "Pardot Helpdesk",
-    "key": "autotaskhelpdesk",
-    "description": "Add an Pardot Helpdesk Instance to connect your existing Pardot account to the Helpdesk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Pardot Helpdesk account information to add an instance.",
-    "image": "elements/provider_autotask.png",
+    "id": 90,
+    "name": "Pardot",
+    "hookName": "Pardot",
+    "key": "pardot",
+    "description": "Add a Pardot Instance to connect your existing Pardot account to the Marketing Hub, allowing you to manage accounts, campaigns, contacts, leads etc. across multiple Marketing Elements. You will need your Pardot account information to add an instance.",
+    "image": "elements/provider_pardot.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
     "trialAccount": false,
-    "configDescription": "If you do not have an Pardot.com account, you can create one at Pardot CRM Signup",
-    "signupURL": "http://www.autotask.com",
-    "transformationsEnabled": false,
-    "authentication": {},
-    "hub": "helpdesk"
+    "configDescription": "If you do not have an Pardot account, you can create one at <a href=\"http://www.pardot.com target=\"_blank\">Pardot Signup</a>",
+    "signupURL": "http://www.pardot.com",
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": false,
+    "extendable": true,
+    "beta": false,
+    "authentication": {
+      "type": "apiKey"
+    },
+    "extended": false,
+    "hub": "marketing",
+    "protocolType": "http",
+    "parameters": [],
+    "private": false
   },
+  "elementId": 90,
   "provisionInteractions": [],
   "valid": true,
   "disabled": false,
   "maxCacheSize": 0,
   "cacheTimeToLive": 0,
   "eventsEnabled": false,
-  "cachingEnabled": false
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none"
 }
 ```
 
