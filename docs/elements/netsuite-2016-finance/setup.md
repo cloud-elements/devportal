@@ -1,6 +1,6 @@
 ---
 heading: NetSuite 2016 Finance
-seo: Endpoint Setup | Service provider setup | NetSuite 2016 Finance | Cloud Elements API Docs
+seo: Endpoint Setup | Service Provider Setup | NetSuite 2016 Finance | Cloud Elements API Docs
 title: Service Provider Setup
 description: Service provider setup
 layout: sidebarelementdoc
