@@ -15,7 +15,7 @@ To set up a new application in {{page.heading}}, you must have Administrator int
 Cloud Elements supports NetSuite 2016 Token Based Authentication.  Please start by reviewing the [NetSuite Token Based Authentication documentation](https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_4247337262.html&whence=).
 
 1. Navigate to **Setup > Company > Enable Features > Suite Cloud > Manage Authentication** and enable Token-Based Authentication.
-![NetSuiteTokenAuthStep1.gif.gif](img/NetSuiteTokenAuthStep1.gif)
+![NetSuiteTokenAuthStep1.gif](img/NetSuiteTokenAuthStep1.gif)
 2. Create a new custom Role to the Token Based Authentication user by navigating to **Setup > Users/Roles > Manage Roles > New**.
 3. On the Permissions subtab, configure the access to Transactions, Lists, and Custom Records that will be allowed through the Cloud Elements integration. Cloud Elements recommends adding "Web Services" and "User Access Tokens" at a minimum.
 4. Assign the Role to the desired user by navigating to **Lists > Employees > Employees > edit user > Access tab >** selct the role created in step 2 from the drop down list.
