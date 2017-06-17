@@ -1,8 +1,8 @@
 ---
-heading: Eloqua
-seo: API Docs | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: API Docs | Oracle Eloqua | Cloud Elements API Docs
 title: API Docs
-description: Eloqua API Documentation.
+description: Oracle Eloqua API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 27

@@ -1,6 +1,6 @@
 ---
-heading: Eloqua
-seo: Query Language | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Query Language | Oracle Eloqua | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

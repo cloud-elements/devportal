@@ -96,10 +96,10 @@ Pages have a block of YAML at the top that sets a few options. They are pretty s
 
 ```
 ---
-heading: Salesforce CRM
-seo: Overview | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Overview | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Overview
-description: Integrate Salesforce CRM into your application via the Cloud Elements APIs.
+description: Integrate Salesforce Sales Cloud into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -142,18 +142,18 @@ In order to create the alternate tab content, one of two values is added to the 
   - `restContentVersion: <link to rest content>`  
 - To point to alternate UI content from a API page:  
   - `uiContentVersion`: <link to UI content>`  
-  
+
 # Voice and Tone
 
 Voice and tone are hard to establish and enforce, but overall use a tone that:
 
 * Respects a broad audience. We have a very technical audience, but not all of them are as technical as we think sometimes. Also consider that not everyone speaks English as their first language. The more simple you write, teh easier it is for an ESL reader to understand.
 
-* Guides the audience clearly and concisely. Focus on getting the user through a task, not dumping everything on them with no clear objective. 
+* Guides the audience clearly and concisely. Focus on getting the user through a task, not dumping everything on them with no clear objective.
 
 * Educates. Tell readers what they need to know, not just what we want to say. Focus on the process or end-product, not the feature. Give them the exact information they need, and links to where to find out more.
 
-* Talk to the reader, don't refer to them as a third party to the docs. Go ahead and say "you can..." 
+* Talk to the reader, don't refer to them as a third party to the docs. Go ahead and say "you can..."
 
 # Basic Principles
 
@@ -168,7 +168,7 @@ Most of the guidelines here support creating content that is clear, concise, and
 
 # :fire: The ~~10~~4 Commandments of Good Technical Writing :fire:
 
-If you read nothing else in this style guide, read this section. 
+If you read nothing else in this style guide, read this section.
 
 ## Use active voice
 
@@ -182,12 +182,12 @@ Our writing is littered with the passive voice. See, I just did it. Take a few m
 
 You can also perform the 😱  ⚰️  [zombie test](https://www.grammarly.com/blog/a-scary-easy-way-to-help-you-find-passive-voice/)😱  ⚰️ . If you can add "by zombies" after the verb, it's passive. Try it with the :-1: above: "The APIs are designed by zombies to have predictable..."
 
-## Be concise 
+## Be concise
 Use short words and sentences. Avoid unnecessary modifiers (notice how necessary unnecessary is?).
 
 A few tips to be concise:
 * Adverbs. ~~Ruthlessly~~ destroy adverbs.
-* If it can be said using fewer words, do so: 
+* If it can be said using fewer words, do so:
 
 :thumbsup: To write well you should write carefully.
 
