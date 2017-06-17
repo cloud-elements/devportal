@@ -19,7 +19,7 @@ layout: sidebarelementtile
 * [![NetSuite CRM 2016](/assets/img/element-logos/netsuite.png)NetSuite CRM 2016](./elements/netsuite-2016-crm/)
 * [![Oracle Sales Cloud](/assets/img/element-logos/oraclesalescloud.png)Oracle Sales Cloud](./elements/oraclesalescloud/)
 * [![Pipedrive](/assets/img/element-logos/pipedrive.png)Pipedrive](./elements/pipedrive/)
-* [![Salesforce CRM](/assets/img/element-logos/salesforce.png)Salesforce CRM](./elements/salesforce/)
+* [![Salesforce Sales Cloud](/assets/img/element-logos/salesforce.png)Salesforce CRM](./elements/salesforce/)
 * [![SugarCRM](/assets/img/element-logos/sugarcrm.png)SugarCRM](./elements/sugarcrm/)
 * [![ZohoCRM](/assets/img/element-logos/zohocrm.png)ZohoCRM](./elements/zohocrm/)
 * [![Act-On](/assets/img/element-logos/acton.png)Act-On](./elements/acton/)
