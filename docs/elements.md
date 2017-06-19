@@ -5,8 +5,8 @@ description: Find API documentation, guides, and more on all of the currently su
 layout: sidebarelementtile
 ---
 
-* [![Act Essentials](/assets/img/element-logos/actpremium.png)Act Essentials](./elements/actessentials/)
-* [![Act Premium CRM](/assets/img/element-logos/actpremium.png)Act Premium CRM](./elements/actpremiumcrm/)
+* [![Act! Essentials](/assets/img/element-logos/actpremium.png)Act! Essentials](./elements/actessentials/)
+* [![Act! Premium CRM](/assets/img/element-logos/actpremium.png)Act! Premium CRM](./elements/actpremiumcrm/)
 * [![Autotask CRM](/assets/img/element-logos/autotask.png)Autotask CRM Beta](./elements/autotask-crm/)
 * [![BaseCRM](/assets/img/element-logos/basecrm.png)BaseCRM](./elements/basecrm/)
 * [![Bullhorn CRM](/assets/img/element-logos/bullhorn.png)Bullhorn](./elements/bullhorn/)
@@ -100,7 +100,7 @@ layout: sidebarelementtile
 * [![Twitter](/assets/img/element-logos/twitter.png)Twitter](./elements/twitter/)
 * [![Lithium](/assets/img/element-logos/lithium.png)Lithium](./elements/lithium/)
 * [![ABBYY](/assets/img/element-logos/abbyy.png)ABBYY](./elements/abbyy/)
-* [![Act Premium](/assets/img/element-logos/actpremium.png)Act Premium](./elements/actpremium/)
+* [![Act! Premium](/assets/img/element-logos/actpremium.png)Act! Premium](./elements/actpremium/)
 * [![Typeform](/assets/img/element-logos/typeform.png)Typeform](./elements/typeform/)
 * [![Wufoo](/assets/img/element-logos/wufoo.png)Wufoo](./elements/wufoo/)
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/)

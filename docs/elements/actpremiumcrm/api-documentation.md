@@ -1,8 +1,8 @@
 ---
-heading: Act Premium CRM
-seo: API Docs | Act Premium CRM | Cloud Elements API Docs
+heading: Act! Premium CRM
+seo: API Docs | Act! Premium CRM | Cloud Elements API Docs
 title: API Docs
-description: Act Premium CRM API Documentation.
+description: Act! Premium CRM API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 1173

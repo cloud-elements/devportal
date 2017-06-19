@@ -1,6 +1,6 @@
 ---
-heading: Act Essentials
-seo: Transform Data | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: Transform Data | Act! Essentials | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc

@@ -1,6 +1,6 @@
 ---
-heading: Act Premium
-seo: Query Language | Act Premium | Cloud Elements API Docs
+heading: Act! Premium
+seo: Query Language | Act! Premium | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

@@ -1,8 +1,8 @@
 ---
-heading: Act Essentials
-seo: Events | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: Events | Act! Essentials | Cloud Elements API Docs
 title: Events
-description: Enable Act Essentials events for your application.
+description: Enable Act! Essentials events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1251
@@ -14,7 +14,7 @@ order: 30
 
 {% include polling_and_webhooks_defined.md %}
 
-Cloud Elements supports polling events for Act Essentials.
+Cloud Elements supports polling events for Act! Essentials.
 
 In order to enable polling, add these two extra configurations to your instance JSON:
 

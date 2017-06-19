@@ -1,6 +1,6 @@
 ---
-heading: Act Essentials
-seo: Create Instance | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: Create Instance | Act! Essentials | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -49,7 +49,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your Act Essentials Element, use the /instances API.
+To provision your Act! Essentials Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -69,7 +69,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Act Essentials is "actessentialsoauth".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Act! Essentials is "actessentialsoauth".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
