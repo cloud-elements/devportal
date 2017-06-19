@@ -1,6 +1,6 @@
 ---
-heading: SAP C4C CRM
-seo: Bulk APIs | SAP C4C CRM | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer CRM
+seo: Bulk APIs | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc

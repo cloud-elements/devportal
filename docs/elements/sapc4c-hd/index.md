@@ -1,8 +1,8 @@
 ---
-heading: SAP C4C Helpdesk
-seo: Overview | SAP C4C | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer Helpdesk
+seo: Overview | SAP Hybris Cloud for Customer | Cloud Elements API Docs
 title: Overview
-description: Integrate SAP C4C into your application via the Cloud Elements APIs.
+description: Integrate SAP Hybris Cloud for Customer into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 3522
