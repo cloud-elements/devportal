@@ -1,6 +1,6 @@
 ---
-heading: Eloqua
-seo: Transform Data | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Transform Data | Oracle Eloqua | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc
