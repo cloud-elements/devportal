@@ -66,9 +66,9 @@ To create an element instance:
         "key": "{{page.elementKey}}"
       },
       "configuration": {
-         "subdomain": "sagecrm-0.<YOUR_TENANT>.com",
-        	"username": "<YOUR_USERNAME>",
-        	"password": "<YOUR_PASSWORD>"
+        "subdomain": "sagecrm-0.<YOUR_TENANT>.com",
+        "username": "<YOUR_USERNAME>",
+        "password": "<YOUR_PASSWORD>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -97,12 +97,12 @@ curl -X POST \
   	"key": "sagecrm"
     },
     "configuration": {
-  	"subdomain": "sagecrm-0.cloud-elements.com",
-  	"username": "XXXXXX",
-  	"password": "XXXXXXXXXX"
+    	"subdomain": "sagecrm-0.cloud-elements.com",
+    	"username": "XXXXXX",
+    	"password": "XXXXXXXXXX"
     },
     "tags": [
-  	"Docs"
+  	 "Docs"
     ],
     "name": "SageCRM"
   }
