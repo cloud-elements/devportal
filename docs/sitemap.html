@@ -95,14 +95,6 @@ title: sitemap
         {% endif %}
       {% endfor %}
     </ul>
-    <button class="headerButton" onClick="selectAccordion('tutorial')">Training</button>
-    <ul class="accordionList" id="tutorial"> 
-      {% assign overviewshard = site.shards['docs_tutorial'] | sort:"order" %}
-      {% for i in overviewshard %}
-        <li>
-          <a href={{i.url}}> {{i.title}} </a>
-        </li>
-      {% endfor %}
-    </ul>
+    <button class="headerButton" onClick="window.location='https://cloudelements.docebosaas.com'">Training</button>
     <button class="headerButton" onClick="location.href= 'mailto:documentation@cloud-elements.com'">Docs Feedback
     </button>

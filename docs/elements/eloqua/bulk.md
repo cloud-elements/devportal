@@ -1,6 +1,6 @@
 ---
-heading: Eloqua
-seo: Bulk APIs | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Bulk APIs | Oracle Eloqua | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
