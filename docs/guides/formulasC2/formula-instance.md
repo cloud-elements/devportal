@@ -1,0 +1,88 @@
+---
+heading: Build Formulas
+seo: Build a Formula Template | Formulas | Cloud Elements API Docs
+title: Create a Formula Instance
+description: How to build a formula template
+layout: sidebarleft
+apis: API Docs
+platform: formulas
+breadcrumbs: /docs/guides/home.html
+parent: Back to Guides
+order: 10
+---
+
+# Formula Instances
+
+Formula instances are individual copies of a formula template with specific element instances and values replacing the Element Instance and Value variables in the template. You can set up formula instances to provide notifications of any errors through email for a webhook URL.
+
+## Create Formula Instance
+
+To create a formula instance:
+
+1. Navigate to the the Formulas page.
+2. Hover over the element card, and then click **Create Instance**.
+3. Enter a name for the instance.
+4. Specify the Element Instance and Value variables:
+  * In the **Variables** section under **Instances**,  select an Instance variable, and then choose or create an element instance to replace the variable.
+  * In the **Variables** section under **Values**, enter a value to replace the variable.
+  ![Variables](img/create-instance.png)
+3. To add email or webhook notifications, click **Show Advanced**.
+  * In **Email** enter a comma-separated list of email addresses.
+  * In **Webhook URL** enter a comma-separated list of URLs.
+4. Click **Create Instance**.
+
+## Deactivate a Formula Instance
+
+You can deactivate a formula to temporarily stop executions until you reactivate it.
+
+{% include note.html content="You can also deactivate a formula template to stop the executions of all formula instances. See <a href=build-template/#deactivate-a-formula-template>Deactivate a Formula Template</a>. " %}
+
+To deactivate a formula instance:
+
+1. Navigate to the Formula instance. On the Formulas page, hover over the Formula card, and then click on the **Instances** banner.
+2. Hover over the Formula Instance card, and then click **Edit**.
+3. At the top right of the page, switch the **Active** slider off.
+![Active](img/active.gif)
+
+
+## Review Executions
+
+You can troubleshoot formulas instances or review successful executions. The executions are split into three columns from left to right:
+
+* Formula Executions &mdash; the list of executions of the selected formula instance. Failed executions are clearly marked.
+* Steps &mdash;The steps in the formula and an indication of their success <img src="img/icon-step-success.png" alt="Success" class="inlineImage"> or failure <img src="img/icon-step-failure.png" alt="Failure" class="inlineImage">.
+* values &mdash;The details associated with the selected step.
+![Formula Instance Executions](img/instance-executions.png)
+
+To review formula instance executions:
+
+1. Navigate to the Formula instance. On the Formulas page, hover over the Formula card, and then click on the **Instances** banner.
+2. Hover over the Formula Instance card, and then click **Executions**.
+3. Click the execution to review.
+4. Click the step to review.
+
+
+## Delete a Formula Instance
+
+You can delete a formula instance.
+
+To delete a formula instance:
+
+1. Navigate to the Formula instance. On the Formulas page, hover over the Formula card, and then click on the **Instances** banner.
+2. Hover over the Formula Instance card, and then click **Delete**.
+3. Confirm the deletion.
+
+## Edit Formula Instances
+
+You can update the following information in a formula instances:
+
+* Name
+* Variables
+* Notifications
+
+To edit a formula variable:
+
+1. Navigate to the Formula instance. On the Formulas page, hover over the Formula card, and then click on the **Instances** banner.
+2. Hover over the Formula Instance card, and then click **Edit**.
+  * To edit the name, a Value variable, or any notifications, make your changes, and then click **Update**.
+  * To edit an Element Instance variable, click the pencil icon, and then select a new element instance. Click **Update**.

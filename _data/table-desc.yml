@@ -1,7 +1,7 @@
 # Formulas
 formula-headers: "The headers to pass along as part of the API request. You rarely need to add anything to the headers, but you can use this parameter to pass common header information such as content types."
 
-formula-query: "Any query paramaters, such as a CEQL query or pagination, to pass as part of the API request."
+formula-query: "Any query parameters, such as a CEQL query or pagination, to pass as part of the API request."
 
 step-name: "The name of the formula step. The name must be unique within the formula."
 
@@ -13,13 +13,13 @@ retry-delay : "The time in milliseconds to wait between retries."
 
 max-retry: "The maximum number of times to retry the request."
 
-retry-status-codes: "A comma separated list of codes returned in the response that indicate that we should retry the request. For example <code>500,501,502</code>"
+retry-status-codes: "A comma-separated list (<code>500,502</code>) of codes, range (<code>400-415</code>), or both (<code>400-415,500,502</code>) returned in the response that indicates that we should retry the request. "
 
-formula-path: "The Path parameter is retained to support earlier formulas where it defined variables, such as an {ID} variable in an endpoint. In the latest version of the application, the path parameter is unnecessary. "
+formula-path: "Support earlier formulas where <code>path</code> defined variables, such as an {ID} variable in an endpoint. In the latest version, the path parameter is unnecessary. "
 
-formula-body: "The Body parameter specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the Body parameter. For ecample, <code>$steps.previousStep</code>. "
+formula-body: "Specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the <code>body</code> parameter. For example, <code>$steps.previousStep.body</code>. "
 
-acceptable-codes: "A comma separated list of codes returned in the response that indicate success. For example <code>200,201</code>."
+acceptable-codes: "A comma-separated list (<code>200,201</code>) of codes, range (<code>200-205</code>), or both (<code>200-205,208</code>) returned in the response that indicates success. "
 
 step-id: "The unique identifier for the step."
 

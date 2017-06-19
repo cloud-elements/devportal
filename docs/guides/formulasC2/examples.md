@@ -8,7 +8,7 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 15
+order: 25
 ---
 
 # Formula Template Examples

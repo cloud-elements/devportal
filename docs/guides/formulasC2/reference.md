@@ -9,7 +9,7 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 10
+order: 15
 ---
 
 # Triggers, Steps, and Variables
@@ -18,7 +18,7 @@ Formulas are comprised of triggers that kick off formulas, steps that the trigge
 
 This sections provides configuration information about each formula component.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#triggers>Triggers</a></br><a href=#step-types>Step Types</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
 ## Triggers
 
@@ -29,7 +29,7 @@ Triggers are the actions that kick off a formula. Triggers can be one of the fol
 * [Scheduled](#scheduled)
 * [Manual](#manual)
 
-### Event
+### Event <img src="img/trigger-icon-event.png" alt="Event" class="inlineImage">
 
 You can set up triggers that listen for an event to happen on an element instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance that is configured to use webhooks or polling to listen for events.
 
@@ -37,15 +37,16 @@ To set up an Event trigger, you must specify an Element Instance Variable. Click
 
 If an Event trigger's Element Instance is set up for polling instead of webhooks, then each object that is found while polling triggers a separate formula execution. For example, if the poller finds five changes, five different formula executions kick off.
 
-
 To see event triggers in action, see the following examples:
 
 * [CRM to Messages](examples.html)
 * [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
 
-### Element Request
+{% include Formulas/scope-trigger-event.md %}
 
-Triggered anytime a specific API call is made to a given Element Instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance.
+### Element Request <img src="img/trigger-icon-erequest.png" alt="Element Request" class="inlineImage">
+
+Triggered any time a specific API call is made to a given Element Instance. To set up this trigger, you must use an Element Instance Variable that, when specified in a formula instance, refers to an element instance.
 
 When you set up an Element Request trigger, specify the following parameters:
 
@@ -53,7 +54,7 @@ When you set up an Element Request trigger, specify the following parameters:
 * Method:  {{site.data.table-desc.formula-method}}.
 * API: The endpoint, such as `hubs/crm/contacts`.
 
-### Scheduled
+### Scheduled <img src="img/trigger-icon-scheduled.png" alt="Scheduled" class="inlineImage">
 
 Triggered at times specified by a Cron job. We recommend that you review the many reference pages for Cron jobs online.
 
@@ -83,10 +84,9 @@ In general, the Cron format consists of:
 
         0	0	1,10,15	*	*
 
-To see Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
+To see aScheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
-
-### Manual
+### Manual <img src="img/trigger-icon-manual.png" alt="Manual" class="inlineImage">
 
 Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
 
@@ -110,25 +110,22 @@ You can use the following types of steps in your formulas:
 * [Sub-Formula](#sub-formula)
 
 
-### ActiveMQ Request
+### ActiveMQ Request <img src="img/step-icon-amqpRequest.png" alt="ActiveMQ Request" class="inlineImage">
 
-The ActiveMQ Request (amqpRequest) uses the AMQP protocol to post a message to an MQ server such as RabbitMQ.
-
-{% include note.html content="The ActiveMQ Request's type in the JSON is amqpRequest." %}
+The ActiveMQ Request (`amqpRequest`) step type uses the AMQP protocol to post a message to an MQ server such as RabbitMQ.
+![ActiveMQ Request](img/step-amq.png)
 
 When you set up an ActiveMQ Request step, include the following information:
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.step-name}}  | Y |
-|  URL  |  Specifies the AMQP URL endpoint of the MQ Server. The structure of the URL is specified in [RabbitMQ URI Specification]( https://www.rabbitmq.com/uri-spec.html)  | Y |
-|  Queue  |  Indicates the name of the queue of the MQ server to which the message should be posted.  | Y |
-|  Message  |  The JSON payload to post to the server.  | Y |
-|  Exchange  |  The name of the MQ server exchange to which the message should be posted.  | N |
+{% include Formulas/table-amq.md %}
 
-### Element API Request
+{% include Formulas/scope-amq.md %}
 
-This step makes an API call to a specific Element Instance.
+
+### Element API Request <img src="img/step-icon-elementRequest.png" alt="Element API Request" class="inlineImage">
+
+The Element API Request (`elementRequest`) step makes an API call to a specific Element Instance.
+![Element API Request](img/step-elementRequest.png)
 
 To see an Element API Request step in action see:
 
@@ -136,178 +133,113 @@ To see an Element API Request step in action see:
 * [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
-
 When you set up an Element API Request step, include the following information:
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.step-name}}  | Y |
-|  Element Instance Variable  |  Specifies the element instance that receives the API call.  | Y |
-|  Method  |  {{site.data.table-desc.formula-method}} | Y |
-|  API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-|  Headers  |  {{site.data.table-desc.formula-headers}}  | N |
-|  Query  |  {{site.data.table-desc.formula-query}}  | N |
-| Path | {{site.data.table-desc.formula-path}} | N |
-| Body | {{site.data.table-desc.formula-body}} | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
-| Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
-| Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
+{% include Formulas/table-element-request.md %}
 
+{% include Formulas/scope-elementRequest.md %}
 
-### HTTP Request
+### HTTP Request <img src="img/step-icon-httpRequest.png" alt="HTTP Request" class="inlineImage">
 
-Makes an HTTP/S call to any URL/endpoint. <span style="color:red">Why? When would you use this? The info in Skeletor calls this an API call.</span>
+The HTTP Request (`httpRequest`) step make an HTTP/S call to any URL/endpoint.
+![Element API Request](img/step-httpRequest.png)
 
 When you set up an HTTP Request step, include the following information:
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-|  Method  |  {{site.data.table-desc.method}} | Y |
-| HTTP/S URL | The full URL of the request. | Y |
-|  Headers  |  {{site.data.table-desc.headers}}  | N |
-|  Query  |  {{site.data.table-desc.query}}  | N |
-| Path | {{site.data.table-desc.path}} | N |
-| Body | {{site.data.table-desc.body}} | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
-| Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
-| Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
+{% include Formulas/table-http-request.md %}
 
-### JS Filter
-Use the JS Filter (true/false) step to write custom Javascript that *must* return true or false. As with all steps, you must include a name.
+{% include Formulas/scope-httpRequest.md %}
 
-* If a filter returns `true`, the formula executes the left, or success, step.
-* If a filter returns `false`, the formula executes the tight, or failure, step.
+### JS Filter <img src="img/step-icon-filter.png" alt="JS Filter" class="inlineImage">
+
+Use the JS Filter (true/false) (`filter`) step to write custom Javascript that *must* return true or false. As with all steps, you must include a name. See [Javascript in Formulas](javascript.html) for more information about working with Javascript in formulas.
+![JS Filter](img/step-filter.png)
+
+Use JS Filter steps to specify only certain event types, field values, or other information. You can also use filters to split formulas into different paths.
+
+* If a filter returns `true`, the formula executes the left, or OnSuccess <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">, step.
+* If a filter returns `false`, the formula executes the tight, or OnFailure <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage">, step.
 
 To see a JS Filter step in action see:
 
 * [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
+{% include Formulas/scope-filter.md %}
 
-<span style="color:red">This could use an example: filtering CRM email example</span>
+### JS Script <img src="img/step-icon-script.png" alt="JS Script" class="inlineImage">
 
-### JS Script
+Use the JS Script (`script`) step to write custom Javascript that *must* pass a valid JSON object to the `done` callback. As with all steps, you must include a name. See [Javascript in Formulas](javascript.html) for more information about working with Javascript in formulas.
+![JS Script](img/step-script.png)
 
-Use the JS Script step to write custom Javascript that *must* pass a valid JSON object to the `done` callback. As with all steps, you must include a name.
+Use JS Script steps to build objects to use in request steps for query parameters or the request body.
 
 To see a JS Script step in action see:
 
 * [CRM to Messages](examples.html#crm-to-messages)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
-The javascript here is powered by Node.js and has the following packages available to it:
+{% include Formulas/scope-script.md %}
 
-<span style="color:red">Still accurate? What about the library below? Is it the same across all areas of the app?</span>
+### Loop Over Variable <img src="img/step-icon-loop.png" alt="Loop Over Variable" class="inlineImage">
 
-* CE: Our custom library that provides some common functionality. It is not necessary to `require` this library, it is available by default.
- * `CE.randomString()`: Generate a random string (approx. 10 characters long).
- * `CE.randomEmail()`: Generate a random email address.
- * `CE.md5(str)`: Create an MD5 hash from a string value. Takes a `string` as a parameter. Returns a `string`.
- * `CE.b64(str)`: Encode a string in base64. Takes a `string` as a parameter. Returns a `string`.
- * `CE.hmac(algo)(enc)(secret, str)`: HMAC hash a string (_str_) using the provided secret (_secret_), algorithm (_algo_), and encoding (_enc_). See https://nodejs.org/api/crypto.html#crypto_class_hmac for more information about the algorithm and encoding parameters.
- * `CE.hmac[algo][enc](secret, str)`: This is a set of convenience functions that allow HMAC hashing using some common algorithms and encodings. For example, `CE.hmacSha1Hex(secret, str)` will create an HMAC SHA1 hash of the provided string, using the provided secret, and return a hex string.  You can replace _algo_ and _enc_ with the following values:
- _algo_: `Sha1`, `Sha256`, `Md5`
- _enc_: `Hex`, `base64`
-* Lodash: The popular `lodash` library. To use this library, simply `require` it in your script. It is possible to use the library modules, as well, such as `lodash/fp`.
-* Util: The standard Node `util` library. To use, `require` it in your script.
+Use the Loop Over Variable (`loop`) step to loop over a list of objects from a previous step or trigger. Set `onSuccess` to the first step in the loop. When you have reached the last step in the loop set the onSuccess field to the loop step, this will restart the loop for the next object. If you need to continue on after the loop is completed, set `onFailure` to the next step to execute after the loop is completed. For a loop step, `onFailure` is executed when the loop has been executed for all objects in the list.
 
-### Loop Over Variable
+![Loop Over Variable](img/step-loop.png)
 
-Use the Loop Over Variable step to loop over a list of objects from a previous step or trigger.
+When you set up a Loop Over Variable step, include the following information:
 
-When you set up an Element API Request step, include the following information:
+{% include Formulas/table-loop.md %}
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-|  List  |  A list of objects to loop over. <span style="color:red">Comma separated, any particular format or limitations?</span> | Y |
+{% include Formulas/scope-loop.md %}
 
-refers to something
-${steps.presviousScript.someNumber} (previous script step returns a number\
+### Platform API Request <img src="img/step-icon-request.png" alt="Alt Text" class="inlineImage">
 
-${config.variableName}
-
-formula context built up as you travers the formulas
-
-
-
-
-<span style="color:red">Confirm this info... lots of questions here.</span>
-
-To Use a loop step:
-
-* You must provide it with a list of objects to loop over.
-* Set the `onSuccess` field to the first step in the loop.
-* When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object.
-* If you need to continue on after the loop is completed, you can set the loop step onFailure to the next step to execute after the loop is completed. For a loop step, `onFailure` is executed when the loop has been executed for all objects in the list.
-
-### Platform API Request
-
-Makes an API call to one of our platform APIs.
+The Platform API Request (`request`) step makes an API call to one of our platform APIs.
+![Platform API Request](img/step-request.png)
 
 When you set up an Platform API Request step, include the following information:
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-|  Method  |  {{site.data.table-desc.method}} | Y |
-|  API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-|  Headers  |  {{site.data.table-desc.headers}}  | N |
-|  Query  |  {{site.data.table-desc.query}}  | N |
-| Path | {{site.data.table-desc.path}} | N |
-| Body | {{site.data.table-desc.body}} | N |
-| Acceptable Codes | {{site.data.table-desc.acceptable-codes}} | N |
-| Retry on Failure | {{site.data.table-desc.retry-failure}} | N |
-| Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-| Retry Delay | {{site.data.table-desc.retry-delay}}  | N |
-| Retry Status Codes | {{site.data.table-desc.retry-failure}} | N |
+{% include Formulas/table-element-request.md %}
 
-### Retry Formula on Failure
-
-Retries a formula instance execution with the same input data. You can configure the number of retry attempts, with a maximum of 7 attempts. The retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backoff is `round(e^x)` where `x` is the retry attempt number.
-
-When you set up an Retry Formula on Failure step, include the following information:
-
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-| Max Retry Attempts | {{site.data.table-desc.max-retry}} | N |
-
-### Stream File
-
-A Stream File step is used to stream a file from one Element Instance to another. In this step, you are outlining two API calls instead of just one. These are separated by using **Download** to refer to the first API that will download the data and **Upload** to refer to the second API call which uploads the data. The response body of the download request is used as the request body of the upload request.
-
-To see a JS Script step in action see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data).
+{% include Formulas/scope-request.md %}
 
 
-When you set up an Element Request Stream step, include the following information:
+### Retry Formula on Failure <img src="img/step-icon-retryFormulaExecution.png" alt="Retry Formula on Failure" class="inlineImage">
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-| Download/Upload Element Instance Variable  |  Specifies the element instance that receives the API call.  | Y |
-| Download/Upload Method  |  {{site.data.table-desc.method}} | Y |
-| Download/Upload API  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
-| Download/UploadHeaders  |  {{site.data.table-desc.headers}} </br><span style="color:red">Like what?</span> | N |
-| Download/UploadQuery  |  {{site.data.table-desc.query}} </br><span style="color:red">Like what?</span> | N |
-| Upload Form Data | <span style="color:red">What?</span> | N |
-| Upload Form Parameter Name | <span style="color:red">What?</span> | N |
+Retry Formula on Failure (`retryFormulaExecution`) retries a formula instance execution with the same input data. You can configure the number of retry attempts, with a maximum of 7 attempts. The retry time is set based upon an exponential backoff in minutes. The equation used for the exponential backoff is `round(e^x)` where `x` is the retry attempt number.
+![Platform API Request](img/step-retryFormulaExecution.png)
 
-form data you get as part of an api call. Much lke body.
+When you set up a Retry Formula on Failure step, include the following information:
 
-### Sub-Formula
+{% include Formulas/table-retry.md %}
 
-When you set up an Element Request Stream step, include the following information:
+{% include Formulas/scope-retry.md %}
 
-| Parameter | Description   | Required |
-| :------------- | :------------- | :------------- |
-|  Name  |  {{site.data.table-desc.name}}  | Y |
-| Sub-Formula (ID)  |  The ID of the formula. <span style="color:red">Where do you get this/</span>  | Y |
+### Stream File <img src="img/step-icon-stream.png" alt="Stream File" class="inlineImage">
+
+Stream File (`elementRequestStream`) steps move a file from one Element Instance to another. Stream Files steps configure two API requests instead of just one. One request downloads the date from an element instance, and the second request uploads the data to another. Use the response body of the download request as the request body of the upload request.
+![Stream File](img/step-elementRequestStream.png)
+
+To see a Stream File step in action see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data).
+
+When you set up a Stream File step, include the following information:
+
+{% include Formulas/table-stream.md %}
+
+{% include Formulas/scope-stream.md %}
+
+### Sub-Formula <img src="img/step-icon-sub.png" alt="Sub-Formula" class="inlineImage">
+
+Sub-Formula (`formula`) steps run another formula instance.
+![Stream File](img/step-formula.png)
+
+
+When you set up a Sub-Formu step, include the following information:
+
+{% include Formulas/table-formula.md %}
+
+{% include Formulas/scope-formula.md %}
 
 ## Formula Variables
 
@@ -317,3 +249,7 @@ Formulas include two types of variables that you must specify when you run a for
 * Value Variable: A variable that is replaced by a configurable value when you run a formula instance.
 
 Formula variables are limited to the formula and cannot have the same name. However, you can name variables in different formulas with the same name like "originInstance" or "destinationInstance."
+
+### Formula Variable Scope
+
+Formula variables contribute to the formula context and you refer to them by their Formula Step Variable Name. This name is always `config.variableName`. So, if you create an Element Instance Variable called `originInstance`, you refer to it as `$config.originInstance`. A Value Variable called `objectName` is referred to as `$config.objectName`.

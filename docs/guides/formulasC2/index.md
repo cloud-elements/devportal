@@ -16,17 +16,6 @@ redirect_from:
 
 # Overview
 
-Cloud Elements supports customizable workflows, called **Formulas**.  Formulas are user-defined workflows that have a trigger (incoming event, API request, timer, etc.) that, when triggered, will begin executing a series of steps.  These steps can go about accomplishing a large variety of different use cases across different services.  Some ways our customers are using them now include keeping their systems in sync, migrating data between systems, automating business workflows, and many more.
+{% include callout.html content="The content of this guide is intended for users of Cloud Elements 2.0. Although much of the functionality is shared between versions, users of earlier version of Cloud Elements should also reference <a href=../../guides/formulas/index.html>Formulas</a>." type="warning" %}
 
-<span style="color:red">New Below</span>
-
-It's critical to distinguish between formula templates and formulas.
-
-Build templater
-run a formula
-see executins and debug
-Deactivate
-
-> **NOTE:** The Formula documentation assumes knowledge of how Elements and Element Instances work in our platform.  If you are new to Cloud Elements, please visit the "Quick Start" section in the developer portal or play around in the Cloud Elements Console UI before proceeding with Formulas.
-
-> **QUESTIONS/COMMENTS?** Please don't hesitate to [contact us](mailto:support@cloud-elements.com).
+In Cloud Elements you can build **formula templates**&mdash;reusable workflow templates that are independent of API providers. Formula templates include triggers, such as events, scheduled timers, or API requests, that kick off a series of steps. These steps can accomplish a large variety of different use cases across different services.  For example, they can keep systems in sync, migrate data between systems, or automate business workflows.

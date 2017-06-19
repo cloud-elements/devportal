@@ -1,7 +1,7 @@
 ---
 heading: Formulas
 seo: API Docs | Formulas | Cloud Elements API Docs
-title: Platform Documentation
+title: API Docs
 description: Formulas API Documentation.
 layout: sidebarapidocs
 apis: API Docs

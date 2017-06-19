@@ -38,6 +38,9 @@ To build a new formula template:
     * Choose **Element Request** for a formula triggered when a specific API call is made to an element.
     * Choose **Scheduled** for a formula to occur at a specific time or regular interval.
     * Chose **Manual** to trigger the formula with an API call to `POST /formulas/instances/:id/executions`.
+
+    {% include note.html content="You cannot change a trigger in a formula template after you create it.  " %}
+
 6. Complete the trigger properties, which vary based on the selected trigger.
     * For **Event** provide an [Element Instance Variable](reference.html/#formula-variables).
     * For **Element Request** provide an [Element Instance Variable](reference.html/#formula-variables), an API method, and API endpoint.
@@ -74,41 +77,113 @@ To build a new formula template:
 
 You can test a formula template as you build it. When you test a formula template, you can either use an existing formula instance or create a new formula instance.
 
-{% include tip.html content=" If you plan to use the instance that you create while testing only for testing, consider appending the name test to it. " %}
-
-<span style="color:red">Find out what happens with show advanced: email and webhook url</span>
+{% include tip.html content=" If you plan to use the formula instance that you create while testing only for testing, consider appending the name test to it. " %}
 
 To test a formula template:
 
 1. At the top of the formula visualization, click **Setup Test**.
 ![Setup Test](img/set-up-test.png)
 2. Click **Select Instance**.
-3. Either choose an existing formula instance (and skip down to the selecting a trigger step) or click **Add New Instance**.
-4. Enter a name for the instance.
-5. For each variable, click the variable and add an element instance or enter a value.
-6. Click **Create Instance**.
-7. Select the instance that you just created.
+3. Either choose an existing formula instance (and skip down to the Select Trigger step) or click **Add New Instance**.
+  4. Enter a name for the new formula instance.
+  5. For each variable, click the variable and add an element instance or enter a value.
+  6. Click **Create Instance**.
+  7. Select the instance that you just created.
 8. Click **Select Trigger**.
 9. Provide trigger information, depending on the type of trigger.
 
-
-
 ## Create Variable
 
-Naming: You can use white space, but we'll smash it together and camelCase it.
+You can create two types of variables: Element Instance variables that will be replaced by element instances and Value variables that will be replaced by values entered at the formula instance. When you create a variable, note the Formula Step Variable Name which is how you refer to variable in the formula context. See [Formula Variables](reference.html/#formula-variables) for more about variables in the formula context.
+
+To create a formula variable:
+
+1. Open the formula template. On the Formulas page, hover over the Formula Card, and then click Open.
+5. Click **Variables**.
+![Variables](img/variables.png)
+2. Select the type of variable to create.
+3. Enter a name for the variable. You can include spaces, but spaces are removed to create the Formula Step Variable Name, which is how the variable is referred to in the formula context.
+4. Click **Save**.
+
+## Edit and Delete Variables
+
+You can edit the name of a variable or remove a variable from a formula template.
+
+{% include note.html content="You cannot delete a formula variable if an instance of the formula exists.  " %}
+
+To edit or delete a formula variable:
+
+1. Open the formula template. On the Formulas page, hover over the Formula Card, and then click Open.
+5. Click **Variables**.
+![Variables](img/variables.png)
+2. Click **Edit Variable**.
+3. Select the variable to edit or delete, and then:
+  * Edit the name, and then click **Save**.
+  * Click **Delete**.
 
 ## Review Executions
 
-## Managing Large Visualizations
+You can troubleshoot formulas by reviewing executions. The executions are split into three columns from left to right:
 
-## Transformations
+* Formula Executions &mdash; the list of executions of the selected formula template. Failed executions are clearly marked.
+* Steps &mdash;The steps in the formula and an indication of their success <img src="img/icon-step-success.png" alt="Success" class="inlineImage"> or failure <img src="img/icon-step-failure.png" alt="Failure" class="inlineImage">.
+* values &mdash;The details associated with the selected step.
+![Formula Instance Executions](img/instance-executions.png)
 
-How can I transform data from a trigger?
+{% include note.html content="To review executions, you must have a formula instance. Otherwise the Executions button is unavailable.  " %}
 
-Ask Greg for a diagram explaining template & instances
+To review executions
 
-## Troubleshooting
+1. Open the formula template. On the Formulas page, hover over the Formula Card, and then click Open.
+2. Click **Executions**.
+![Variables](img/executions.png)
+3. Click the execution to review.
+4. Click the step to review.
 
-Look for events - waited long enough? are events configured on the instance.
+## Create a Copy of a Formula Template
 
-## Create Formula Based on Existing Formula
+You can create a formula template based on an existing template or from a Cloud Element sample formula, resulting in a copy of the template.
+
+To create a copy of a formula template:
+
+1. Click **Formulas**, and then on the Formulas page, click **Create New Formula**.
+![New Formula Template](img/new-formula.png)
+3. Click **Create From Existing Formula**.
+  * To use one of your existing formula templates, select the template.
+  * To use a Cloud Elements formula template, click CE Sample Formulas, and then select the formula.
+4. Enter a name for your formula, and then click **Create**.
+
+
+## Parallel Executions
+
+To help formula instances execute the formula steps as efficiently as possible, formula instances take advantage of multithreaded executions. That is, multiple steps in a formula instance can make API calls at the same time. Some API providers do not allow multiple API calls from the same account at the same time. If this happens, you can change a formula template or an individual formula instance to execute one step at a time. This makes the formula less efficient and results in an increase to the overall execution time.
+
+To change a formula from the default multithreaded execution to single threaded:
+
+* In the formula template or formula instance JSON, update `singleThreaded` to `true`:
+
+```json
+"singleThreaded": true
+```
+
+## Delete a Formula Template
+
+You can delete a formula template if the template has no instances associated with it. If the formula template includes instances, [delete those first](formula-instance.html/#delete-a-formula-instance).
+
+To delete a formula template:
+
+1. Navigate to the Formulas page.
+2. Hover over the Formula Template card, and then click **Delete**.
+3. Confirm the deletion.
+
+## Deactivate a Formula Template
+
+You can deactivate a formula template to prevent any executions of formula instances of the template.
+
+{% include note.html content="You can also deactivate a specific formula instance. See <a href=formula-instance/#deactivate-a-formula-instance>Deactivate a Formula Instance</a>. " %}
+
+To deactivate a formula:
+
+1. Open the formula template. From the Formulas page, hover over the Formula Template card, and then click **Open**.
+2. At the top of the page, switch the **Active** slider off.
+![Active](img/active.gif)
