@@ -1,11 +1,11 @@
 ---
-heading: Element Name
-seo: Overview | Element Name | Cloud Elements API Docs
+heading: Sage CRM
+seo: Overview | Sage CRM | Cloud Elements API Docs
 title: Overview
-description: Integrate Element Name into your application via the Cloud Elements APIs.
+description: Integrate Sage CRM into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 3641
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -13,9 +13,7 @@ sitemap: false
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides on-demand customer relationship management (CRM) services.
-
-<span style="color:red">A great place to get this initial paragraph is from Programmableweb or the vendor's website.</span>
+Cloud Elements provides the {{page.heading}} element in our CRM hub..
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -23,13 +21,11 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
-| Authentication | OAuth 2  |
-| Events | Webhooks and polling |
+| API Documentation | [API documentation](https://community.sagecrm.com/user_community/m/cloud_documentation/tags/English/default.aspx) |
+| Authentication | Basic  |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 ## Base URL
 
