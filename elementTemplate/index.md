@@ -23,7 +23,7 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |

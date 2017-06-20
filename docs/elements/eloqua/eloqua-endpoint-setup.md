@@ -1,6 +1,6 @@
 ---
-heading: Eloqua
-seo: Endpoint Setup | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Endpoint Setup | Oracle Eloqua | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: sidebarelementdoc
