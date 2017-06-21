@@ -1,8 +1,8 @@
 ---
-heading: Salesforce Sales Cloud
-seo: Overview | Salesforce Sales Cloud | Cloud Elements API Docs
+heading: Element Name
+seo: Overview | Element Name | Cloud Elements API Docs
 title: Overview
-description: Integrate Salesforce Sales Cloud into your application via the Cloud Elements APIs.
+description: Integrate Element Name into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -23,7 +23,7 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Salesforce API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |

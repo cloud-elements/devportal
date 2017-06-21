@@ -1,6 +1,6 @@
 ---
 heading: Name of Element
-seo: Endpoint Setup | Service provider setup | Salesforce Sales Cloud | Cloud Elements API Docs
+seo: Endpoint Setup | Service provider setup | Name of Element | Cloud Elements API Docs
 title: Service Provider Setup
 description: Service provider setup
 layout: sidebarelementdoc

@@ -1,11 +1,11 @@
 ---
-heading: Autotask Help Desk
-seo: Overview | Autotask Help Desk | Cloud Elements API Docs
+heading: Sage CRM
+seo: Overview | Sage CRM | Cloud Elements API Docs
 title: Overview
-description: Integrate Autotask Help Desk into your application via the Cloud Elements APIs.
+description: Integrate Sage CRM into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 123
+elementId: 3641
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -13,7 +13,7 @@ sitemap: false
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides Help Desk services.
+Cloud Elements provides the {{page.heading}} element in our CRM hub..
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -21,8 +21,8 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://www.autotask.net/help/Content/AdminSetup/2ExtensionsIntegrations/APIs/WebServicesAPI.htm) |
-| Authentication | Basic: user name, password, and Server URL  |
+| API Documentation | [API documentation](https://community.sagecrm.com/user_community/m/cloud_documentation/tags/English/default.aspx) |
+| Authentication | Basic  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [creating an instance](autotask-helpdesk-create-instance.html).
+Get started by [setting up the service provider](setup.html).
