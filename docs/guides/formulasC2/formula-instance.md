@@ -1,5 +1,5 @@
 ---
-heading: Build Formulas
+heading: Building Formulas
 seo: Build a Formula Template | Formulas | Cloud Elements API Docs
 title: Create a Formula Instance
 description: How to build a formula template
@@ -15,6 +15,8 @@ order: 10
 
 Formula instances are individual copies of a formula template with specific element instances and values replacing the Element Instance and Value variables in the template. You can set up formula instances to provide notifications of any errors through email for a webhook URL.
 
+{% include callout.html content="<strong>On this page</strong></br><a href=#create-formula-instance>Create Formula Instance</a></br><a href=#deactivate-a-formula-instance>Deactivate a Formula Instance</a></br><a href=#review-executions>Review Executions</a></br><a href=#delete-a-formula-instance>Delete a Formula Instance</a></br><a href=#edit-a-formula-instance>Edit a Formula Instance</a></br><a href=#find-a-formula-instance-id>Find a Formula Instance ID</a>" type="info" %}
+
 ## Create Formula Instance
 
 To create a formula instance:
@@ -26,7 +28,7 @@ To create a formula instance:
   * In the **Variables** section under **Instances**,  select an Instance variable, and then choose or create an element instance to replace the variable.
   * In the **Variables** section under **Values**, enter a value to replace the variable.
   ![Variables](img/create-instance.png)
-3. To add email or webhook notifications, click **Show Advanced**.
+3. To add email or webhook error notifications, click **Show Advanced**.
   * In **Email** enter a comma-separated list of email addresses.
   * In **Webhook URL** enter a comma-separated list of URLs.
 4. Click **Create Instance**.
@@ -64,15 +66,13 @@ To review formula instance executions:
 
 ## Delete a Formula Instance
 
-You can delete a formula instance.
-
 To delete a formula instance:
 
 1. Navigate to the Formula instance. On the Formulas page, hover over the Formula card, and then click on the **Instances** banner.
 2. Hover over the Formula Instance card, and then click **Delete**.
 3. Confirm the deletion.
 
-## Edit Formula Instances
+## Edit a Formula Instance
 
 You can update the following information in a formula instances:
 
@@ -86,3 +86,7 @@ To edit a formula variable:
 2. Hover over the Formula Instance card, and then click **Edit**.
   * To edit the name, a Value variable, or any notifications, make your changes, and then click **Update**.
   * To edit an Element Instance variable, click the pencil icon, and then select a new element instance. Click **Update**.
+
+## Find a Formula Instance ID
+
+The Formula Instance ID is a unique identifier for each formula instance. You can see the formula ID on a formula instance card under the title.

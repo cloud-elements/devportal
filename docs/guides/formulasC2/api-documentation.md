@@ -1,5 +1,5 @@
 ---
-heading: Formulas
+heading: Building Formulas
 seo: API Docs | Formulas | Cloud Elements API Docs
 title: API Docs
 description: Formulas API Documentation.

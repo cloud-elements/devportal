@@ -156,19 +156,19 @@ In general, the Cron format consists of:
 
 * Run each minute
 
-        * * * * * *
+        	0 0/1 * 1/1 * ? *
 
 * Run every Monday at noon
 
-        0 12 * * 1 *
+        0 0 12 ? * MON *
 
-* 8.00 PM every weekday (Mon-Fri) only in December:
+* 8.00 PM every weekday (Mon-Fri):
 
-        0	20	*	12	1-5
+        	0 0 8 ? * MON,TUE,WED,THU,FRI *
 
 * midnight on 1st ,10th & 15th of month
 
-        0	0	1,10,15	*	*
+        0 0 0 1,10,15 1/1 ? *
 
 To set up a Schedule trigger:
 
@@ -179,7 +179,7 @@ To set up a Schedule trigger:
 "triggers": [{
   "type": "scheduled",
   "properties": {
-    "cron": "0 0 12 1/1 * ? *"
+    "cron": "0 0 12 ? * MON *"
     },
   "onSuccess":"[step1]"
 }]
@@ -190,7 +190,7 @@ To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html
 
 ### Manual
 
-Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration.
+Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration. You can use formulas triggered manually as synchronous API calls. See [Use a Formula as an API Call](#build-template.html/#use-a-formula-as-an-api-call) for setup instructions.
 
 To set up a Manual trigger specify the `type` as `manual`.
 

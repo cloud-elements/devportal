@@ -1,5 +1,5 @@
 ---
-heading: Formula Template Examples
+heading: Building Formulas
 seo: Build a Formula Template | Formulas | Cloud Elements API Docs
 title: Formula Template Examples
 description: How to build a formula template
@@ -14,11 +14,6 @@ order: 25
 # Formula Template Examples
 
 The examples in this section demonstrate a selection of common use cases for formulas. Each example is preceded by a table that identifies the types of triggers, steps, and variables used in the formula. The table also identifies any prerequisites required, like an element with events. Lastly, each example includes a downloadable JSON file that you can use to create your own version of the example template with the `POST /formulas` endpoint.
-
-<span style="color:red">Add some links to quick start stuff</span>
-
-<span style="color:red">You can add console logs. Try it ou to see what to reference.</span>
-
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#crm-to-messages>CRM to Messages</a></br><a href=#retrieve-transform-and-sync-contact>Retrieve, Transform, and Sync Contact</a></br><a href=#bulk-transfer-crm-data>Bulk Transfer CRM Data</a>" type="info" %}
 
@@ -155,41 +150,40 @@ Bulk data transfer is a common use case. For example, your first sync between CR
 
 ### Formula 1
 
-To create a formula that <span style="color:red">makes a bulk request </span>:
+To create a formula that makes a bulk query and then triggers the second formula that will download and then upload the bulk files:
 
 1. [Build a formula template](#build-a-formula-template) and select **Scheduled** as the trigger.
 2. Add a cron string to identify when the sync occurs.
 
-    This example fires every <span style="color:red">when</span> at <span style="color:red">when</span> .
+    This example fires every Monday through Friday at 1:00 a.m..
 
-        0 0 12 1/1 * ? *
+        0 0 1 ? * MON,TUE,WED,THU,FRI *
 
-4. Add variables for the resource that you want to sync (like account or contact), the element instance that includes the resources that you want to sync, and the <span style="color:red">the id of the instance of the second formula in this process</span>.
+4. Add three variables for the 1) The resource that you want to sync (like `account` or `contact`), 2) The element instance that includes the resources that you want to sync and, 3) The formula instance id associated with the second formula ([Formula 2](#formula-2)) in this process.
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `objectName`.
+  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
   9. Click **Save**.
-  10. Repeat to create a Value variable called `steptwoid`.
+  10. Repeat to create a Value variable called `stepTwoId`.
   11. Create an Element Instance variable named `originInstance`.
 10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Script step that <span style="color:red">builds the metadata</span>.
+6. Create a JS Script step that builds the metadata for the bulk query, including the CEQL query that request a specific resource and the callback URL that will be the formula execution endpoint that executes [Formula 2](#formula-2).
   7. Click **JS Script**.
   8. Enter a name for the script. We'll call it `buildMetaData`.
-  8. Enter a script that <span style="color:red">queries a specific resource and ....</span>.
 
       ```js
       done ({
           "query":{
-            "q":"select * from " + config.objectname
+            "q":"select * from " + config.resourceName
           },
           "headers":{
-            "Elements-Async-Callback-Url":"https://console.cloud-elements.com/elements/api-v2/formulas/instances/" + config.steptwoid + "/executions"
+            "Elements-Async-Callback-Url":"/formulas/instances/" + config.stepTwoId + "/executions"
           }
         });
       ```
 
-1. Create an Element API Request step to <span style="color:red">make a bulk download request</span>. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to make a bulk download query, referencing the query and callback URL created in **buildMetaData**. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
   7. Select **Element API Request**.
   8. Enter a name. For this tutorial we'll call it `bulkQuery`.
   9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
@@ -203,29 +197,29 @@ To create a formula that <span style="color:red">makes a bulk request </span>:
   13. In **Query**, enter the reference to the query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.query}`.
   13. Click **Save**.
 
-The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first <span style="color:red">does this</span> and the second <span style="color:red">does that</span>.
+The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first builds the metadata for a bulk query, and the second makes the bulk query, which includes a callback to the formula execution endpoint of the next formula.
 ![Trigger](img/viz-bulk-transfer-1.png)
 
-####Formula 2
+#### Formula 2
 
-To create a formula that <span style="color:red">syncs data from the previous formula </span>:
+To create a formula that receives the notification that the job is done, downloads the file from the original element and posts to the destination:
 
 1. [Build a formula template](#build-a-formula-template) and select **Manual** as the trigger, and then click **Save**.
 
     {% include note.html content="You do not need to configure anything for the manual trigger, but take note of the endpoint that you will need to trigger the formula: `POST /formulas/instances/:id/executions`" %}
 
-4. Add variables for the resource that you want to sync (like account or contact), the element instance that includes the resources that you want to sync, and the <span style="color:red">the id of the instance of the second formula in this process</span>.
+4. Add two element instance variables to represent the element that you are downloading from and the element that you are uploading to, and a variable to represent the resource that you are syncing.
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `objectName`.
+  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
   9. Click **Save**.
   11. Create Element Instance variables to represent the source and target systems to sync. For this example, use `originInstance` and `destinationInstance`.
 10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Filter step that <span style="color:red">does something pretty cool</span>.
+6. Create a JS Filter step that makes sure that the bulk query is completed.
   7. Click **JS Filter (true/false)**.
   8. Enter a name for the script. We'll call it `isSuccessful`.
-  8. Enter a script that checks to be sure the event was caused by a created object, such as the example below.
+  8. Enter a script such as the example below.
 
       ```js
       let status = trigger.args.status;
@@ -236,10 +230,10 @@ To create a formula that <span style="color:red">syncs data from the previous fo
         done(false);
       }
       ```
-6. Create a JS Script step that <span style="color:red">builds the metadata</span>Under the **isSuccessful** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+6. Create a JS Script step that defines an identifier field, which is the unique key for an upsert operation. It also specifices the content type as **csv**. Under the **isSuccessful** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
   7. Click **JS Script**.
   8. Enter a name for the script. We'll call it `buildMetaData`.
-  8. Enter a script that <span style="color:red">queries a specific resource and ....</span>.
+  8. Enter a script like the following example:
 
       ```js
       let metaData = {
@@ -255,82 +249,27 @@ To create a formula that <span style="color:red">syncs data from the previous fo
         "downloadHeaders": downloadHeaders
       });
        ```
-1. Create an Element Stream step to <span style="color:red">move the files downloaded from the origin instance to the destination instance</span>. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element Stream step to move the files downloaded from the origin instance to the destination instance<. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
   7. Select **Stream File**.
   8. Enter a name. For this example we'll call it `bulkStream`.
   9. In **Download Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
   9. In **Download Method**, enter `GET`.
-  10. In **Download API**, enter `/hubs/crm/bulk/${trigger.args.id}/${config.objectname}`. `${trigger.args.id}` refers to <span style="color:red">what</span> and `${config.objectname}` refers to the <span style="color:red">objectName variable that identifes the resource that you want to sync</span>.
+  10. In **Download API**, enter `/hubs/crm/bulk/${trigger.args.id}/${config.resourceName}`. `${trigger.args.id}` gets the id from the payload sent to the trigger by [Formula 1](#formula-1). `${config.resourceName}` refers to the resourceName variable that identifies the resource that you want to sync</span>.
   9. In **Upload Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
   9. In **Upload Method**, enter `POST`.
-  10. In **Upload API**, enter `/hubs/crm/bulk/${config.objectname}`. `${trigger.args.id}`. `${config.objectname}` refers to the <span style="color:red">objectName variable that identifes the resource that you want to sync</span>.
+  10. In **Upload API**, enter `/hubs/crm/bulk/${config.resourceName}`. `${trigger.args.id}`.
   11. Click **Show Advanced**.
   12. In **Download Headers**, enter the reference to the download headers that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.downloadHeaders}`.
   13. In **Upload Query**, enter the reference to the upload query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.metaData}`.
   13. Click **Save**.
 
-The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first <span style="color:red">does this</span> and the second <span style="color:red">does that</span>.
-![Trigger](img/viz-bulk-transfer-1.png)
-
-
-## Test a Formula
-
-1. Click **Setup Test**.
-![Setup Test](img/set-up-test.png)
-2. Click **Select Instance**.
-3. Select an existing formula instance or click **Add New Instance** to create one.
-  4. Enter a name for the Formula Instance.
-  5. Assign variables.
-  6. Click **Show Advanced**.
-
-  <span style="color:red">What are these notifications for???</span>
-
-  7. Enter an **Email**.
-  8. Enter a **Webhook URL**.
-  9. Click **Create Instance**.
-  10. Select the Formula Instance
-11. Click **Select Trigger**.
-12. Select an event, and then click **Save**.
-13. Click **Run**.
-
-
-# Building Your First Formula
-To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.
-
-> **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
-
-# Creating Formulas via UI
-To get started, we are going to demonstrate how to create a very simple formula that leverages a few of the different step types.  This formula will listen for events from a CRM element, and then send an email using the Messaging hub.
-
-> **NOTE:** For this documentation, it is assumed you have an instance of Salesforce and SendGrid already provisioned, and events *must* be enabled for Salesforce.
-
-## Formula Builder I: Creating Your First Formula
-{% include vimeo-player-full-width.html id=170863091 %}
-{% include padding-all.html %}
-
-## Formula Builder II: Using Filter Steps In Your Formula
-{% include vimeo-player-full-width.html id=170861196 %}
-{% include padding-all.html %}
-
-## Formula Builder III: Using Variables In Your Formula
-{% include vimeo-player-full-width.html id=170862318 %}
-{% include padding-all.html %}
-
-> **NOTE:** Sample JSON available from the videos above:
-[Formula JSON][1], [Formula Instance JSON][2], [Formula Instance Execution JSON][3].
+The second formula is finished and should look like the visualization below.
+![Trigger](img/viz-bulk-transfer-2.png)
 
 [1]:{{ site.url }}/download/crm-to-messaging-formula.json
 [2]:{{ site.url }}/download/crm-to-messaging-formula-instance.json
 [3]:{{ site.url }}/download/crm-to-messaging-formula-instance-execution.json
 [4]:{{ site.url }}/download/crm-to-message.json
 [5]:{{ site.url }}/download/add-new-contact.json
-
-
-
-# Creating Formulas via API
-
-In order to go about creating formulas and formula instances via the API, please reference our "API Docs" section on the right side panel.
-
-> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via the Console UI.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
-
-> **NOTE:** The platform formula APIs show a sub-resource of a formula called `configuration`.  This is what we call "Variables" throughout our documentation and in the Formula Builder UI.
+[6]:{{ site.url }}/download/bulk-formula-1.json
+[7]:{{ site.url }}/download/bulk-formula-2.json

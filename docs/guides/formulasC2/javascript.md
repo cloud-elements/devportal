@@ -1,5 +1,5 @@
 ---
-heading: Javascript in Formulas
+heading: Building Formulas
 seo: Javascript in Formulas | Formulas | Cloud Elements API Docs
 title: Javascript in Formulas
 description: How to Use Javascript in Formulas
