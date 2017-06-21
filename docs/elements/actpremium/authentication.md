@@ -1,8 +1,8 @@
 ---
-heading: Act Premium
-seo: Authentication | Act Premium | Cloud Elements API Docs
+heading: Act! Premium
+seo: Authentication | Act! Premium | Cloud Elements API Docs
 title: Authentication
-description: Integrate Act Premium into your application via the Cloud Elements APIs.
+description: Integrate Act! Premium into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 816

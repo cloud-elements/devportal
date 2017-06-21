@@ -1,6 +1,6 @@
 ---
-heading: SAP C4C Helpdesk
-seo: Endpoint Setup | SAP C4C Helpdesk | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer Helpdesk
+seo: Endpoint Setup | SAP Hybris Cloud for Customer Helpdesk | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: sidebarelementdoc
@@ -16,7 +16,7 @@ To authenticate an element instance, use credentials associated with a Developme
 
 To confirm or change access to resources:
 
-1. Go to your SAP C4C application.
+1. Go to your SAP Hybris Cloud for Customer application.
 2. Click **Administrator** in the main menu, and then click **Business Users**.
 ![Administrator Page](../sapc4c-crm/img/admin.png)
 2. Select your user in the list, and then click **Edit>Access Rights**.

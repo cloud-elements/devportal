@@ -1,6 +1,6 @@
 ---
-heading: SAP C4C CRM
-seo: Events | SAP C4C CRM | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer CRM
+seo: Events | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
 title: Events
 description: Enable SAP Anywhere events for your application.
 layout: sidebarelementdoc
@@ -25,7 +25,7 @@ Cloud Elements supports polling events for the following {{page.heading}} resour
 
 ## Configure Polling Through the UI
 
-Use the {{site.console}} to authenticate with SAP C4C and create an element instance with polling enabled.
+Use the {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance with polling enabled.
 
 To authenticate an element instance with polling:
 
@@ -63,7 +63,7 @@ To authenticate an element instance with polling:
 
 ## Configure Polling Through API
 
-Use the `/instances` endpoint to authenticate with SAP C4C and create an element instance with polling enabled.
+Use the `/instances` endpoint to authenticate with SAP Hybris Cloud for Customer and create an element instance with polling enabled.
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
@@ -78,8 +78,8 @@ To authenticate an element instance with polling:
         },
         "configuration": {
           "subdomain": "<domain>.crm.ondemand.com",
-          "username": "<YOUR_SAP_C4C_USERNAME>",
-          "password": "<YOUR_SAP_C4C_PASSWORD>",
+          "username": "<YOUR_SAP_Hybris Cloud for Customer_USERNAME>",
+          "password": "<YOUR_SAP_Hybris Cloud for Customer_PASSWORD>",
           "event.notification.enabled": true,
           "event.notification.callback.url": "http://mycoolapp.com",
           "event.poller.refresh_interval": "15",
@@ -175,7 +175,7 @@ curl -X POST \
   "configuration": {
     "subdomain": "<domain>.crm.ondemand.com",
     "username": "<USERNAME>",
-    "password": "<YOUR_SAP_C4C_PASSWORD>",
+    "password": "<YOUR_SAP_Hybris Cloud for Customer_PASSWORD>",
           "event.notification.enabled": true,
           "event.notification.callback.url": "http://mycoolapp.com",
           "event.poller.refresh_interval": "15",
@@ -203,14 +203,14 @@ curl -X POST \
 ```json
 {
   "id": 50634,
-  "name": "SAPC4CAPI1",
+  "name": "SAPHybris Cloud for CustomerAPI1",
   "createdDate": "2017-05-19T14:00:59Z",
   "token": "4RFxtlivv2BW9oAoO64wCnLvwwps4SPCf6LyCUq8Ihg=",
   "element": {
     "id": 5353,
-    "name": "SAP C4C CRM",
+    "name": "SAP Hybris Cloud for Customer CRM",
     "key": "sapc4ccrm",
-    "description": "Add a SAP Cloud for Customer (C4C) Instance to connect your existing SAP Cloud for Customer (C4C) account to the CRM Hub, allowing you to manage accounts, contacts, leads, opportunities, etc. across multiple CRM Elements. You will need your SAP Cloud for Customer (C4C) account information to add an instance.",
+    "description": "Add a SAP Cloud for Customer (Hybris Cloud for Customer) Instance to connect your existing SAP Cloud for Customer (Hybris Cloud for Customer) account to the CRM Hub, allowing you to manage accounts, contacts, leads, opportunities, etc. across multiple CRM Elements. You will need your SAP Cloud for Customer (Hybris Cloud for Customer) account information to add an instance.",
     "image": "elements/provider_sapc4c.png",
     "active": true,
     "deleted": false,

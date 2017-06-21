@@ -1,6 +1,6 @@
 ---
-heading: SAP C4C Helpdesk
-seo: Query Language | SAP C4C Helpdesk | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer Helpdesk
+seo: Query Language | SAP Hybris Cloud for Customer Helpdesk | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

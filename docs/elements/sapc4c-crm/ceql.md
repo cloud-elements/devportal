@@ -1,6 +1,6 @@
 ---
-heading: SAP C4C CRM
-seo: Query Language | SAP C4C CRM | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer CRM
+seo: Query Language | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

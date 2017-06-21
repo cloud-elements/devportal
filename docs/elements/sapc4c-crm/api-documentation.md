@@ -1,8 +1,8 @@
 ---
-heading: SAP C4C CRM
-seo: API Docs | SAP C4C CRM | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer CRM
+seo: API Docs | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
 title: API Docs
-description: SAP C4C CRM API Documentation.
+description: SAP Hybris Cloud for Customer CRM API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 3521

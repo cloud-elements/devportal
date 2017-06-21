@@ -1,6 +1,6 @@
 ---
-heading: Act Essentials
-seo: Error Codes | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: Error Codes | Act! Essentials | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: sidebarelementdoc

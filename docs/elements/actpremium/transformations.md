@@ -1,6 +1,6 @@
 ---
-heading: Act Premium
-seo: Transform Data | Act Premium | Cloud Elements API Docs
+heading: Act! Premium
+seo: Transform Data | Act! Premium | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc

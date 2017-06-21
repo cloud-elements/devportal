@@ -1,8 +1,8 @@
 ---
-heading: Act Essentials
-seo: API Docs | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: API Docs | Act! Essentials | Cloud Elements API Docs
 title: API Docs
-description: Act Essentials API Documentation.
+description: Act! Essentials API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 1251

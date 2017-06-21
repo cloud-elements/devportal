@@ -1,6 +1,6 @@
 ---
-heading: Act Premium CRM CRM
-seo: Create Instance | Act Premium CRM | Cloud Elements API Docs
+heading: Act! Premium CRM
+seo: Create Instance | Act! Premium CRM | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -12,7 +12,7 @@ order: 15
 
 ## Create Instance
 
-To provision your Act Premium CRM Element, use the /instances API.
+To provision your Act! Premium CRM Element, use the /instances API.
 
 ### Step 1. Call the /instances API
 
@@ -32,7 +32,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Act Premium CRM is "actpremiumcrm".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Act! Premium CRM is "actpremiumcrm".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
@@ -75,10 +75,10 @@ Below is a successful JSON response:
   "token": "cuED0/DezalhhzK2OtO6kMP7NvPnMyNcRDZc=",
   "element": {
     "id": 750,
-    "name": "Act Premium CRM",
+    "name": "Act! Premium CRM",
     "key": "actpremium",
-    "description": "Add Act Premium CRM instance.  You will need your Act Premium CRM account details to create an instance",
-    "image": "http://www.paystreamadvisors.com/wp-content/uploads/2015/01/Act Premium CRM-Logo_340x170_01-new.gif",
+    "description": "Add Act! Premium CRM instance.  You will need your Act! Premium CRM account details to create an instance",
+    "image": "http://www.paystreamadvisors.com/wp-content/uploads/2015/01/Act! Premium CRM-Logo_340x170_01-new.gif",
     "active": false,
     "deleted": false,
     "typeOauth": false,

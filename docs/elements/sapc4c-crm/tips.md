@@ -1,8 +1,8 @@
 ---
-heading: SAP C4C CRM
-seo: Tips | SAP C4C CRM | Cloud Elements API Docs
+heading: SAP Hybris Cloud for Customer CRM
+seo: Tips | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
 title: Tips
-description: SAP C4C CRM Tips
+description: SAP Hybris Cloud for Customer CRM Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 3521
@@ -91,11 +91,11 @@ For example, `GET /accounts?expand=AccountRole` returns the `AccountRole` as:
 
 ## Object Discovery
 
-Use `GET /objects` to retrieve a list of the normalized Cloud Elements resources and all of the other resources at SAP C4C. You can utilize these resources in calls to the endpoints that utilize `{objectName}`. Be sure that you can access the resource included in `{objectName}` at SAP C4C. See [Endpoint Setup](endpoint-setup.html) for setup instructions.
+Use `GET /objects` to retrieve a list of the normalized Cloud Elements resources and all of the other resources at SAP Hybris Cloud for Customer. You can utilize these resources in calls to the endpoints that utilize `{objectName}`. Be sure that you can access the resource included in `{objectName}` at SAP Hybris Cloud for Customer. See [Endpoint Setup](endpoint-setup.html) for setup instructions.
 
 ## LeadCollection
 
-The `LeadCollection` object has been privately deprecated in SAP C4C. If you're using the API directly, call `LeanLeadCollection` instead.
+The `LeadCollection` object has been privately deprecated in SAP Hybris Cloud for Customer. If you're using the API directly, call `LeanLeadCollection` instead.
 
 ## vendorNativeType
 

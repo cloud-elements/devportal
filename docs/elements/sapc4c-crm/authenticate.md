@@ -1,5 +1,5 @@
 ---
-heading: SAP C4C CRM
+heading: SAP Hybris Cloud for Customer CRM
 seo: Authenticate an Element Instance | SAP Anywhere | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an Element Instance
@@ -10,9 +10,9 @@ parent: Back to Element Guides
 order: 20
 ---
 
-# Authenticate with SAP C4C
+# Authenticate with SAP Hybris Cloud for Customer
 
-You can authenticate with SAP C4C to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. You can use the authenticated element instance to access the different resources at the {{page.heading}} platform.
+You can authenticate with SAP Hybris Cloud for Customer to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. You can use the authenticated element instance to access the different resources at the {{page.heading}} platform.
 
 {% include note.html content="If you want to set up events when you authenticate, go to <a href=events.html>the Events section</a>" %}
 
@@ -20,7 +20,7 @@ You can authenticate with SAP C4C to create your own instance of the {{page.head
 
 ## Authenticate Through the UI
 
-Use the {{site.console}} to authenticate with SAP C4C and create an element instance. If you are authenticating with events, see the [Events section](events.html).
+Use the {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance. If you are authenticating with events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
@@ -50,7 +50,7 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
-Use the `/instances` endpoint to authenticate with SAP C4C and create an authenticated element instance. If you are authenticating with events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with SAP Hybris Cloud for Customer and create an authenticated element instance. If you are authenticating with events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
@@ -65,8 +65,8 @@ To authenticate an element instance:
         },
         "configuration": {
           "subdomain": "<domain>.crm.ondemand.com",
-          "username": "<YOUR_SAP_C4C_USERNAME>",
-          "password": "<YOUR_SAP_C4C_PASSWORD>"
+          "username": "<YOUR_SAP_Hybris Cloud for Customer_USERNAME>",
+          "password": "<YOUR_SAP_Hybris Cloud for Customer_PASSWORD>"
         },
         "tags": [
           "ElementDocs"
@@ -95,13 +95,13 @@ curl -X POST \
   },
   "configuration": {
     "subdomain": "<domain>.crm.ondemand.com",
-    "username": "<YOUR_SAP_C4C_USERNAME>",
-    "password": "<YOUR_SAP_C4C_PASSWORD>"
+    "username": "<YOUR_SAP_Hybris Cloud for Customer_USERNAME>",
+    "password": "<YOUR_SAP_Hybris Cloud for Customer_PASSWORD>"
   },
   "tags": [
 	"ElementDocs"
   ],
-  "name": "SAPC4CAPI3"
+  "name": "SAPHybris Cloud for CustomerAPI3"
 }
 '
 ```
@@ -131,9 +131,9 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
   "token": "jDCglCWOTvIjkqB54Kaz249kXcydo+ADNUUcPR1FriI=",
   "element": {
     "id": 5354,
-    "name": "SAP C4C Helpdesk",
+    "name": "SAP Hybris Cloud for Customer Helpdesk",
     "key": "sapc4chd",
-    "description": "Add a SAP Cloud for Customer (C4C) Instance to connect your existing SAP Cloud for Customer (C4C) account to the Helpdesk Hub, allowing you to manage accounts, contacts, incidents, etc. across multiple Helpdesk Elements. You will need your SAP Cloud for Customer (C4C) account information to add an instance.",
+    "description": "Add a SAP Cloud for Customer (Hybris Cloud for Customer) Instance to connect your existing SAP Cloud for Customer (Hybris Cloud for Customer) account to the Helpdesk Hub, allowing you to manage accounts, contacts, incidents, etc. across multiple Helpdesk Elements. You will need your SAP Cloud for Customer (Hybris Cloud for Customer) account information to add an instance.",
     "image": "elements/provider_sapc4c.png",
     "active": true,
     "deleted": false,
