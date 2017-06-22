@@ -1,13 +1,13 @@
 ---
-heading: Eloqua
-seo: Tips | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Tips | Oracle Eloqua | Cloud Elements API Docs
 title: Tips
-description: Eloqua Tips
+description: Oracle Eloqua Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
 parent: Back to Element Guides
-order: 30
+order: 75
 ---
 
 # Tips
@@ -18,4 +18,4 @@ The Tips section includes more information about the element including FAQs, end
 
 ## Custom Objects
 
-* Cloud Elements stores Eloqua custom object field IDs during instance creation. If the custom Eloqua object is ever edited in Eloqua, users will need to re-authenticate their instance so that CE can store the most up-to-date representation of the Eloqua custom objects.
+Cloud Elements stores Oracle Eloqua custom object field IDs during instance creation. If the custom Oracle Eloqua object is ever edited in Oracle Eloqua, users will need to re-authenticate their instance so that CE can store the most up-to-date representation of the Oracle Eloqua custom objects.

@@ -1,8 +1,8 @@
 ---
-heading: Eloqua
-seo: Overview | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Overview | Oracle Eloqua | Cloud Elements API Docs
 title: Overview
-description: Integrate Eloqua into your application via the Cloud Elements APIs.
+description: Integrate Oracle Eloqua into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
