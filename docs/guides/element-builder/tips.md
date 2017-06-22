@@ -20,11 +20,11 @@ Have a tech tip suggestion? Please contact the [Documentation Team](mailto:docum
 
 ## Max Page Size
 
-When building an element in Element Builder, you set up a max page size, (*red box pictured below*) for your element. Cloud Elements uses this to discern what to send to the vendor as a default in the __pageSize__ parameter when making a GET list request.
+When building an element in Element Builder, you set up a max page size, (*red box pictured below*) for your element. Cloud Elements uses this to discern what to send to the vendor as a default in the __pageSize__ parameter when making a `GET` list request, like `GET /contacts` or `GET /users`.
 ![Element Builder Configuration 1](/assets/img/element-builder/tips/twitter-configuration-pageMax.png)
 
 
-The image above shows that Twitter uses `100` as it's Max page size. This means that whenever making a GET list requests in Twitter, Cloud Elements uses 100 as the default page size.
+The image above shows that Twitter uses `100` as it's Max page size. This means that whenever making a `GET` list requests in Twitter, Cloud Elements uses 100 as the default page size.
 
 However, there may be times where the endpoint may have different max page sizes for a resource. For example, when you are calling a `GET /users` in [FreshService](http://api.freshservice.com/#view_all_user), they note that `users` only returns `50` results per page. However, when calling `GET /problems` in [FreshService](http://api.freshservice.com/#view_all_problem), they note that `problems` only returns `30` results per page. To solve this, you can pass an object that specifies the pagination for each object, as well as the default.
 
@@ -32,35 +32,35 @@ However, there may be times where the endpoint may have different max page sizes
 
 ### Examples
 
-1. Setting pagination max for the `users` and `problems` resources:
+* Setting max page size for the `users` and `problems` resources:
 
-```JSON
-{
-  "users": 50,
-  "problems": 30
-}
-```
+    ```JSON
+    {
+      "users": 50,
+      "problems": 30
+    }
+    ```
 
-2. Setting pagination max for the `users` and `problems` resources as well as a `default` max page size:
+* Setting max page size for the `users` and `problems` resources as well as a `default` max page size:
 
-```JSON
-{
-  "users": 50,
-  "problems": 30,
-  "default": 30
-}
-```
+    ```JSON
+    {
+      "users": 50,
+      "problems": 30,
+      "default": 30
+    }
+    ```
 
-3. Setting pagination max for previous and a child resource, i.e. `GET /users/{id}/comments`:
+* Setting max page size for previous and a child resource, i.e. `GET /users/{id}/comments`:
 
-```JSON
-{
-  "users": 50,
-  "problems": 30,
-  "usersComments": 50,
-  "default": 30
-}
-```
+    ```JSON
+    {
+      "users": 50,
+      "problems": 30,
+      "usersComments": 50,
+      "default": 30
+    }
+    ```
 
 ### Support
 
