@@ -15,19 +15,22 @@ sitemap: false
 
 Tips is a section to find all of your tips and tricks for building high quality elements! *More to come!*
 
-Have a tech tip suggestion? Please contact [Support](mailto:support@cloud-elements.com).
 
-### **Pagination Max**
+Have a tech tip suggestion? Please contact the [Documentation Team](mailto:documentation@cloud-elements.com).
 
-When building an element in Element Builder, you set up a max pagination, (*number 10 pictured below*) for your element. Cloud Elements uses this to discern what to send to the vendor as a default in the __pageSize__ parameter when making GET list request.
-![Element Builder Configuration 1](http://cloud-elements.com/wp-content/uploads/2015/04/Configuration1.png)
+## Max Page Size
+
+When building an element in Element Builder, you set up a max page size, (*red box pictured below*) for your element. Cloud Elements uses this to discern what to send to the vendor as a default in the __pageSize__ parameter when making a GET list request.
+![Element Builder Configuration 1](/assets/img/element-builder/tips/twitter-configuration-pageMax.png)
 
 
-You will notice that __Twitter__ uses __100__ as it's max page size (or limit). This means that whenever making GET list requests in __Twitter__, Cloud Elements will use __100__ as it's page size whenever it hasn't been supplied by the end user. However, there may be times where the endpoint may have different max page sizes for a resource. For example, when you are calling a `GET /users` in [FreshService](http://api.freshservice.com/#view_all_user), they note that `users` only returns `50` results per page. However, when calling `GET /problems` in [FreshService](http://api.freshservice.com/#view_all_problem), they note that `problems` only returns `30` results per page. To solve this, you can pass an object that specifies the pagination for each object, as well as the default.
+The image above shows that Twitter uses `100` as it's Max page size. This means that whenever making a GET list requests in Twitter, Cloud Elements uses 100 as the default page size.
+
+However, there may be times where the endpoint may have different max page sizes for a resource. For example, when you are calling a `GET /users` in [FreshService](http://api.freshservice.com/#view_all_user), they note that `users` only returns `50` results per page. However, when calling `GET /problems` in [FreshService](http://api.freshservice.com/#view_all_problem), they note that `problems` only returns `30` results per page. To solve this, you can pass an object that specifies the pagination for each object, as well as the default.
 
 ![Element Builder Configuration 2](/assets/img/element-builder/tips/freshservice-configuration-pageMax.png)
 
-#### Examples
+### Examples
 
 1. Setting pagination max for the `users` and `problems` resources:
 
@@ -37,6 +40,7 @@ You will notice that __Twitter__ uses __100__ as it's max page size (or limit). 
   "problems": 30
 }
 ```
+
 2. Setting pagination max for the `users` and `problems` resources as well as a `default` max page size:
 
 ```JSON
@@ -46,6 +50,7 @@ You will notice that __Twitter__ uses __100__ as it's max page size (or limit). 
   "default": 30
 }
 ```
+
 3. Setting pagination max for previous and a child resource, i.e. `GET /users/{id}/comments`:
 
 ```JSON
