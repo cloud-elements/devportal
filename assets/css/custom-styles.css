@@ -31,16 +31,6 @@ a:hover, a:focus, a:visited {
 ///    Custom CSS for Nav     ///
 ///////////////////////////////*/
 
-
-#logo {
-  margin-left: 0;
-  padding: 0;
-  /*margin-top: -15px;*/
-  width: 87%;
-}
-#logo img{
-  padding-left: 27px;
-}
 .container-fluid {
   margin-right: auto;
   margin-left: auto;
