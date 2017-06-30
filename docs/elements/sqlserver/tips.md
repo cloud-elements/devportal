@@ -10,11 +10,15 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Tips
+# Tips
 
-### Why can't I connect my database?
+The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-Check your config file to make sure the port and bind-address have been set.
+{% include callout.html content="<strong>On this page</strong></br><a href=#general>General</a></br><a href=#events>Events</a></br><a href=#events>Events</a></br><a href=#documentation>Documentation</a></br>" type="info" %}
+
+## General
+
+* If you are having trouble connecting to your database, check your config file to make sure the port and bind-address have been set.
 
 Example Config:
 
@@ -32,8 +36,12 @@ If you wish to expose the `external bind-address`, then comment out the `localho
 
 If you wish to expose both sources (`localhost` and `external`), then comment out both addresses.
 
-### I don't see any API Docs:
+* Microsoft SQL server is a database element that is constructed from your database table structure. Spaces in column names are not supported.
 
-Since the resources/objects are constructed via your database tables, we do not have any generic API docs available to view.
+## Events
 
-Need some help? [Contact Support](mailto:support@cloud-elements.com) with any questions and we'll get back to you as soon as possible.
+* Events are based on timestamp in the database with or without timezone.
+
+## Documentation
+
+* Cloud Elements does not have any generic API docs available to view.
