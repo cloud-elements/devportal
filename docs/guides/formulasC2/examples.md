@@ -167,12 +167,12 @@ To create a formula that makes a bulk query and then triggers the second formula
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
+  8. Enter a name for the variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
   9. Click **Save**.
   10. Repeat to create a Value variable called `stepTwoId`.
   11. Create an Element Instance variable named `originInstance`.
 10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.
-6. Create a JS Script step that builds the metadata for the bulk query, including the CEQL query that request a specific resource and the callback URL that will be the formula execution endpoint that executes [Formula 2](#formula-2).
+6. Create a JS Script step that builds the metadata for the bulk query, including the CEQL query that requests a specific resource and the callback URL that will be the formula execution endpoint that executes [Formula 2](#formula-2).
   7. Click **JS Script**.
   8. Enter a name for the script. We'll call it `buildMetaData`.
 
@@ -216,7 +216,7 @@ To create a formula that receives the notification that the job completes, downl
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Value**.
-  8. Enter a name for variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
+  8. Enter a name for the variable that represents the resource that you want to sync. For this tutorial we'll call it `resourceName`.
   9. Click **Save**.
   11. Create Element Instance variables to represent the source and target systems to sync. For this example, use `originInstance` and `destinationInstance`.
 10. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage"> to add a step.

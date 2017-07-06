@@ -12,7 +12,7 @@ order: 11
 
 Formulas are comprised of triggers that kick off formulas, steps that the trigger executes, and variables used to define inputs to the formula instance. The triggers, steps, and variables build up context that you can refer to as you build a formula. For example, a JS Script step might build a JSON payload that you can refer to in a later step as `$steps.stepName`. You can refer to variables as `$config.variableName`.
 
-This sections provides configuration information about each formula component.
+This section provides configuration information about each formula component.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#json-example>JSON Example</a></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
@@ -81,7 +81,7 @@ You can build a formula with an API request to the `POST /formulas` endpoint. Yo
 
 ## Triggers
 
-Triggers are the actions that kick off a formula. Triggers can be one of the following type:
+Triggers are the actions that kick off a formula. Triggers can be one of the following types:
 
 * [Event](#event)
 * [Element Request](#element-request)
@@ -226,7 +226,7 @@ To see a Manual trigger in action, see [Bulk Transfer CRM Data](examples.html#bu
 
 ## Step Types
 
-You can choose from several different types of steps to make up your formula. You can refer to any step with the `$steps.stepName syntax`. Because you refer to the step by name, each step name must be unique within each formula. However, you can reuse a step in name in a different formula.
+You can choose from several different types of steps to make up your formula. You can refer to any step with the `$steps.stepName syntax`. Because you refer to the step by name, each step name must be unique within each formula. However, you can reuse a step name in a different formula.
 
 You can use the following types of steps in your formulas:
 
@@ -452,7 +452,7 @@ The Platform API Request (`request`) step makes an API call to one of our platfo
 }
 ```
 
-When you set up an Platform API Request step, include the following information:
+When you set up a Platform API Request step, include the following information:
 
 {% include Formulas/table-element-request.md %}
 

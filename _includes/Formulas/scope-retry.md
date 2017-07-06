@@ -1,6 +1,6 @@
 #### Retry Formula on Failure Step Scope
 
-Retry Formula on Failure steps truncate the formula execution and schedule a retry execution for a later time based upon the retry attempt number. The result of this equation is used to schedule a retry in minutes. The step execution response value for this step, is a `string` as shown in the example below.
+Retry Formula on Failure steps truncate the formula execution and schedule a retry execution for a later time based upon the retry attempt number. The result of this equation is used to schedule a retry in minutes. The step execution response value for this step is a `string` as shown in the example below.
 
 ```json
 {
