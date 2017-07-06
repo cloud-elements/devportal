@@ -4,7 +4,7 @@ HTTP Request steps add the step execution values described in the example JSON b
 
 ```json
 {
-  "my-step-name": {
+  "myHTTPRequestStep": {
     "request": {
         "query": "{}",
         "body": "{\"Name\":\"New Account Name\"}",
@@ -23,6 +23,6 @@ HTTP Request steps add the step execution values described in the example JSON b
 ```
 Example references to HTTP Request scope:
 
-* `$steps.my-step-name.request`
-* `$steps.my-step-name.request.body`
-* `$steps.my-step-name.response.code`
+* `${steps.myHTTPRequestStep.request}`
+* `${steps.myHTTPRequestStep.request.body}`
+* `${steps.myHTTPRequestStep.response.code}`

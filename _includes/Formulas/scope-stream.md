@@ -4,7 +4,7 @@ Stream File steps add the step execution values described in the example JSON be
 
 ```json
 {
-  "my-step-name": {
+  "myStreamStep": {
     "download": {
         "request": {
               "query": "{}",
@@ -36,6 +36,6 @@ Stream File steps add the step execution values described in the example JSON be
 
 Example references to Stream File scope:
 
-* `$steps.my-step-name.download.request.query.`
-* `$steps.my-step-name.upload.request.headers.`
-* `$steps.my-step-name.upload.response.body`
+* `${steps.myStreamStep.download.request.query}`
+* `${steps.myStreamStep.upload.request.headers}`
+* `${steps.myStreamStep.upload.response.body}`

@@ -4,7 +4,7 @@ Element API Request steps add the step execution values described in the example
 
 ```json
 {
-  "my-step-name": {
+  "myElementRequestStep": {
     "request": {
         "query": "{}",
         "body": "{\"Name\":\"New Account Name\"}",
@@ -23,6 +23,6 @@ Element API Request steps add the step execution values described in the example
 ```
 Example references to Element API Request scope:
 
-* `$steps.my-step-name.request.`
-* `$steps.my-step-name.request.body`
-* `$steps.my-step-name.response.code`
+* `${steps.myElementRequestStep.request}`
+* `${steps.myElementRequestStep.request.body}`
+* `${steps.myElementRequestStep.response.code}`

@@ -13,13 +13,13 @@ order: 25
 
 # Formula Template Examples
 
-The examples in this section demonstrate a selection of common use cases for formulas. Each example is preceded by a table that identifies the types of triggers, steps, and variables used in the formula. The table also identifies any prerequisites required, like an element with events. Lastly, each example includes a downloadable JSON file that you can use to create your own version of the example template with the `POST /formulas` endpoint.
+The examples in this section show a selection of common use cases for formulas. Each example includes a table that identifies the types of triggers, steps, and variables used in the formula. The table also identifies any prerequisites required, like an element with events. Lastly, each example includes a downloadable JSON file that you can use to create your own version of the example template with the `POST /formulas` endpoint.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#crm-to-messages>CRM to Messages</a></br><a href=#retrieve-transform-and-sync-contact>Retrieve, Transform, and Sync Contact</a></br><a href=#bulk-transfer-crm-data>Bulk Transfer CRM Data</a>" type="info" %}
 
 ## CRM to Messages
 
-This example listens for an event on a CRM element and then sends an email with that event information using a messaging element.
+This example listens for an event on a CRM element and then sends an email with that event information using a messaging element. This example was tested with the [Salesforce Sales Cloud](../../elements/salesforce/) and [SendGrid](../../elements/sendgrid/) elements.
 
 | Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- |:------------- | :------------- |
@@ -35,7 +35,7 @@ To create a formula that listens for an event and emails a message:
   5. Click **Save**.
   6. Select the variable that you just created (`crmElement`), and then click **Save** on the Edit event: "trigger" page.
 
-        Your formula visualization should like like the following example:
+        Your formula visualization should look like the following example:
         ![Trigger](img/viz-trigger.png)
 
 4. Add another element instance variable for the messaging element.
@@ -63,18 +63,22 @@ To create a formula that listens for an event and emails a message:
     7. Select **Element API Request**.
     8. Enter a name for the step. We'll call it `sendEmail`.
     9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **messagingElement** variable that we created earlier.
-    9. In **Method**, select **POST** because the formula will submit a POST request to the messaging hub to an email.
-    10. In **API**, enter the API used to send email messages. In this case, enter `/hubs/messaging/messages`.
+    9. In **Method**, select **POST** because the formula will submit a POST request to the messaging hub to send an email.
+    10. In **API**, enter the API used to send email messages. In this case, enter `/messages`.
     11. Click **Show Advanced**.
     12. Scroll to **Body** and enter the reference to the email that we constructed earlier. In this case, type `${steps.constructBody}`.
     13. Click **Save**.
 
-Your formula is finished and should look like the visualization below. It should include a trigger and two steps: the first constructs an email and the second sends a message.
+Your formula should look like the visualization below. It should include a trigger and two steps: the first constructs an email and the second sends a message.
 ![Trigger](img/viz-crm-messaging.png)
 
 ## Add New Contact Created in One System to Another
 
 This example listens for a new contact on one element instance, and then adds the new contact to another element instance.  The trigger for the formula is an Event. When a new contact is created at an element instance that has events set up, the trigger receives a payload with the raw contact information. Because this raw data cannot be used to create the same contact at a different element instance, the formula uses the `objectID` from the trigger to get the transformed contact instead. The formula then posts the transformed contact to the target element instance.
+
+For this example to work, you must [define a common resource](../../guides/common-resources/?resource=organizations) to transform the data received from Salesforce.
+
+This example was tested with the [Salesforce Sales Cloud](../../elements/salesforce/) and [HubSpot CRM](../../elements/hubspot-crm/) elements.
 
 | Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- |:------------- | :------------- |
@@ -90,10 +94,10 @@ To create a formula that adds new contacts created in one system to another:
   5. Click **Save**.
   6. Select the variable that you just created (`originInstance`), and then click **Save**.
 
-        Your formula visualization should like like the following example:
+        Your formula visualization should look like the following example:
         ![Trigger](img/viz-trigger.png)
 
-4. Add another element instance variable to represent the system to be updated after you create a contact at the `originInstance`.
+4. Add another Element Instance variable to represent the system to update after you create a contact at the `originInstance`.
   5. Click **Variables**.
   ![Variables](img/variables.png)
   7. Click **Element Instance**.
@@ -121,7 +125,7 @@ To create a formula that adds new contacts created in one system to another:
   9. In **Method**, select **GET** because the formula will submit a GET request to a common resource.
   10. In **API**, retrieve the transformed newly created contact by entering the endpoint of the common resource and specifying the `objectId` from the trigger. For this tutorial, the common resource is called `myContacts`.
 
-            /hubs/crm/MyContacts/${trigger.event.objectId}
+            /MyContacts/${trigger.event.objectId}
 
   13. Click **Save**.
 1. Create an Element API Request step to add the contact to another element instance. Under the **retrieveContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
@@ -131,10 +135,10 @@ To create a formula that adds new contacts created in one system to another:
   9. In **Method**, select **POST** because the formula will submit a POST request to sync the contact.
   10. In **API**, enter the API to the common resource. For this tutorial, the common resource is called `myContacts`.
 
-            /hubs/crm/MyContacts
+            /MyContacts
 
   11. Click **Show Advanced**.
-  12. Scroll to **Body** and enter the reference to the step with the transformed contact data. In this case, type `${steps.retrieveOriginalContact.response.body}`. This inserts the body from the `retrieveOriginalContact` step&mdash;the JSON describing the transformed contact&mdash;in the POST API call to the `destinationInstance`.
+  12. Scroll to **Body** and enter the reference to the step with the transformed contact data. In this case, type `${steps.retrieveOriginalContact.response.body}`. This inserts the body from the `retrieveOriginalContact` step&mdash;the JSON describing the transformed contact&mdash;in the POST request to the `destinationInstance`.
   13. Click **Save**.
 
 Your formula is finished and should look like the visualization below. It should include a trigger and three steps: the first checks that an event is a created contact, the second gets the transformed contact data, and the third syncs the contact.
@@ -190,19 +194,19 @@ To create a formula that makes a bulk query and then triggers the second formula
   9. In **Method**, select **POST** because the formula will submit a POST request to the resource.
   10. In **API**, enter the endpoint to make a bulk query.
 
-            /hubs/crm/bulk/query
+            /bulk/query
 
   11. Click **Show Advanced**.
   12. In **Headers**, enter the reference to the headers that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.headers}`.
   13. In **Query**, enter the reference to the query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.query}`.
   13. Click **Save**.
 
-The first formula is finished and should look like the visualization below. It should include a trigger and two steps: the first builds the metadata for a bulk query, and the second makes the bulk query, which includes a callback to the formula execution endpoint of the next formula.
+The first formula should look like the visualization below. It should include a trigger and two steps: the first builds the metadata for a bulk query, and the second makes the bulk query, which includes a callback to the formula execution endpoint of the next formula.
 ![Trigger](img/viz-bulk-transfer-1.png)
 
 #### Formula 2
 
-To create a formula that receives the notification that the job is done, downloads the file from the original element and posts to the destination:
+To create a formula that receives the notification that the job completes, downloads the file from the original element, and posts to the destination:
 
 1. [Build a formula template](#build-a-formula-template) and select **Manual** as the trigger, and then click **Save**.
 
@@ -236,11 +240,11 @@ To create a formula that receives the notification that the job is done, downloa
   8. Enter a script like the following example:
 
       ```js
-      let metaData = {
+      const metaData = {
         "identifierFieldName":"email"
       }
 
-      let downloadHeaders = {
+      const downloadHeaders = {
         "Accept":"text/csv"
       };
 
@@ -254,16 +258,16 @@ To create a formula that receives the notification that the job is done, downloa
   8. Enter a name. For this example we'll call it `bulkStream`.
   9. In **Download Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
   9. In **Download Method**, enter `GET`.
-  10. In **Download API**, enter `/hubs/crm/bulk/${trigger.args.id}/${config.resourceName}`. `${trigger.args.id}` gets the id from the payload sent to the trigger by [Formula 1](#formula-1). `${config.resourceName}` refers to the resourceName variable that identifies the resource that you want to sync</span>.
+  10. In **Download API**, enter `/bulk/${trigger.args.id}/${config.resourceName}`. `${trigger.args.id}` gets the id from the payload sent to the trigger by [Formula 1](#formula-1). `${config.resourceName}` refers to the resourceName variable that identifies the resource that you want to sync.
   9. In **Upload Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
   9. In **Upload Method**, enter `POST`.
-  10. In **Upload API**, enter `/hubs/crm/bulk/${config.resourceName}`. `${trigger.args.id}`.
+  10. In **Upload API**, enter `/bulk/${config.resourceName}`. `${trigger.args.id}`.
   11. Click **Show Advanced**.
   12. In **Download Headers**, enter the reference to the download headers that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.downloadHeaders}`.
   13. In **Upload Query**, enter the reference to the upload query that you built in the script in the `buildMetaData` step. In this case, type `${steps.buildMetaData.metaData}`.
   13. Click **Save**.
 
-The second formula is finished and should look like the visualization below.
+The second formula should look like the visualization below.
 ![Trigger](img/viz-bulk-transfer-2.png)
 
 [1]:{{ site.url }}/download/crm-to-messaging-formula.json

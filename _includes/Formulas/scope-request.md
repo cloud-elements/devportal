@@ -4,7 +4,7 @@ Platform API Request steps add the step execution values described in the exampl
 
 ```json
 {
-  "my-step-name": {
+  "myPlatformStep": {
     "request": {
         "query": "{}",
         "body": "{\"Name\":\"New Account Name\"}",
@@ -23,6 +23,6 @@ Platform API Request steps add the step execution values described in the exampl
 ```
 Example references to Platform API Request scope:
 
-* `$steps.my-step-name.request.`
-* `$steps.my-step-name.request.body`
-* `$steps.my-step-name.response.code`
+* `${steps.myPlatformStep.request}`
+* `${steps.myPlatformStep.request.body}`
+* `${steps.myPlatformStep.response.code}`

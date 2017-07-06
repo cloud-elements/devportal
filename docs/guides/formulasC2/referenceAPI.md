@@ -69,7 +69,7 @@ You can build a formula with an API request to the `POST /formulas` endpoint. Yo
       "properties": {
         "method": "POST",
         "elementInstanceId": "${instanceName2}",
-        "api": "/hubs/messaging/messages",
+        "api": "/messages",
         "body": "${steps.step2}"
       }
     }
@@ -98,13 +98,17 @@ To set up an Event trigger:
 * For  `elementInstanceId` include the Element Instance Variable that triggers the formula.
 
 ```json
-"triggers": [{
-  "type": "event",
-  "properties": {
-    "elementInstanceId": "${crmElement}"
+{
+  "triggers": [
+    {
+      "type": "event",
+      "properties": {
+      "elementInstanceId": "${config.crmElement}"
     },
   "onSuccess": ["step1"]
-}]
+    }
+  ]
+}
 ```
 
 If an Event trigger's Element Instance is set up for polling instead of webhooks, then each object that is found while polling triggers a separate formula execution. For example, if the poller finds five changes, five different formula executions kick off.
@@ -129,15 +133,21 @@ To set up an Element Request trigger:
   * For `api` enter the endpoint, such as `hubs/crm/contacts`
 
 ```json
-"triggers": [{
-  "type": "elementRequest",
-  "properties": {
-    "method": "POST",
-    "elementInstanceId": "${config.crmInstance}",
-    "api": "/hubs/crm/contacts"
-    },
-  "onSuccess":"[step1]"
-}]
+{
+   "triggers":[
+      {
+         "type":"elementRequest",
+         "properties":{
+            "method":"POST",
+            "elementInstanceId":"${config.crmInstance}",
+            "api":"/contacts"
+         },
+         "onSuccess":[
+            "step1"
+         ]
+      }
+   ]
+}
   ```
 
 ### Scheduled
@@ -176,13 +186,15 @@ To set up a Schedule trigger:
 * For `cron` enter a cron string.
 
 ```json
-"triggers": [{
-  "type": "scheduled",
-  "properties": {
-    "cron": "0 0 12 ? * MON *"
-    },
-  "onSuccess":"[step1]"
-}]
+{
+	"triggers": [{
+		"type": "scheduled",
+		"properties": {
+			"cron": "0 0 12 ? * MON *"
+		},
+		"onSuccess": ["step1"]
+	}]
+}
   ```
 
 To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
@@ -195,12 +207,21 @@ Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Ma
 To set up a Manual trigger specify the `type` as `manual`.
 
 ```json
-"triggers": [{
-  "type": "manual",
-  "properties": { },
-  "onSuccess":"[step1]"
-}]
+{
+   "triggers":[
+      {
+         "type":"manual",
+         "properties":{
+
+         },
+         "onSuccess":[
+            "step1"
+         ]
+      }
+   ]
+}
   ```
+
 To see a Manual trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 ## Step Types
@@ -261,7 +282,7 @@ The Element API Request (`elementRequest`) step makes an API call to a specific 
   "properties": {
     "elementInstanceId": "${config.elementVariable}",
     "method": "POST",
-    "api": "/hubs/messaging/messages",
+    "api": "/messages",
     "headers": "Header content",
     "query": "query string",
     "path": "path string",
@@ -369,6 +390,7 @@ Use the JS Script (`script`) step to write custom Javascript that *must* pass a 
 	}]
 }
   ```
+  {% include note.html content="If you use <code>console.log</code> in a JS Script step, the output is added to the body of the step. If you reference the script step in another step as just <code>${steps.stepName}</code>, the <code>console.log</code> output is added to the step context and can cause errors. Prevent this by declaring what to include in the step body by adding it to <code>done</code>.  For example, <code>done({body.variableName})</code>.  " %}
 
 To see a JS Script step in action see:
 
@@ -475,14 +497,14 @@ Stream File (`elementRequestStream`) steps move a file from one Element Instance
 		"uploadMethod": "POST",
 		"downloadQuery": "Query string",
 		"uploadQuery": "Query string",
-		"uploadApi": "/hubs/crm/bulk/${config.objectname}",
+		"uploadApi": "/bulk/${config.objectname}",
 		"uploadHeaders": "${steps.previousStep.uploadHeaders}",
 		"uploadFormData": "${steps.previousStep.formData}",
 		"downloadMethod": "GET",
 		"downloadElementInstanceId": "${config.downloadElementVariable}",
 		"downloadHeaders": "${steps.previousStep.downloadHeaders}",
 		"uploadFormDataName": "${steps.previousStep.formParameter}",
-		"downloadApi": "/hubs/crm/bulk/${trigger.args.id}/${config.objectname}"
+		"downloadApi": "/bulk/${trigger.args.id}/${config.objectname}"
     },
   "onSuccess": ["nextStepName"]
   }]

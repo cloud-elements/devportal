@@ -16,7 +16,7 @@ redirect_from:
 
 # Overview
 
-{% include callout.html content="This guide is intended for users of Cloud Elements 2.0. Earlier version of Cloud Elements shares much of the same functionality. You can read documentation for the earlier version at <a href=../../guides/formulas/index.html>Formulas</a>." type="warning" %}
+{% include callout.html content="This guide includes steps to use Cloud Elements 2.0. Earlier versions of Cloud Elements share much of the same functionality, but you can read information about the earlier version at <a href=../../guides/formulas/index.html>Formulas</a>." type="info" %}
 
 In Cloud Elements you can build **formula templates**&mdash;reusable workflow templates that are independent of API providers. Formula templates include triggers, like events or schedules, that kick off a series of steps. Formulas support a large variety of different use cases across different services.  For example, they can keep systems in sync, migrate data between systems, or automate business workflows.
 
@@ -26,9 +26,9 @@ Formulas are a great way to move the logic out of your apps and into Cloud Eleme
 
 ## Example
 
-We provide detailed examples of various formulas in the [Examples](examples.html) section. But, to help you understand the power of formulas, here's a common example.
+We give detailed examples of formulas in the [Examples](examples.html) section. But, to help you understand the power of formulas, here's a common example.
 
-A common use case is keeping contacts synced across multiple systems. You might need to make sure that whenever a contact is added to Salesforce, it also syncs to Hubspot. To accomplish this, you must first [transform the data](/docs/guides/common-resources/index.html). Then, create a formula template that listens for updates to contacts in one CRM, and then pushes those contacts to another CRM. After you set up the template, create a formula instance where you plug in Salesforce as the source element and Hubspot as the target element.
+A common use case is keeping contacts synced across many systems. You might need to make sure that whenever a contact is added to Salesforce, it also syncs to HubSpot. To do this, you must first [transform the data](/docs/guides/common-resources/index.html). Then, create a formula template that listens for updates to contacts in one CRM, and then pushes those contacts to another CRM. After you set up the template, create a formula instance where you plug in Salesforce as the source element and HubSpot as the target element.
 
 ## Definitions
 

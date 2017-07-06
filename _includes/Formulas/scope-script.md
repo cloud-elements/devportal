@@ -12,6 +12,6 @@ done({
 ```
 Example references to JS Script scope:
 
-* `steps.my-script-step.foo`
-* `steps.my-script-step.object`
-* `steps.my-script-step.object.someKey`
+* `${steps.myScriptStep.foo}`
+* `${steps.myScriptStep.object}`
+* `${steps.myScriptStep.object.someKey}`

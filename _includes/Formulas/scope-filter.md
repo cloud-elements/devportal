@@ -4,7 +4,7 @@ JS Filter steps pass a boolean into the JS `done` callback function. That boolea
 
 ```json
 {
-  "my-step-name": {
+  "myFilterStep": {
     "continue": "true"
   }
 }
@@ -12,7 +12,7 @@ JS Filter steps pass a boolean into the JS `done` callback function. That boolea
 
 ```json
 {
-  "my-step-name": {
+  "myFilterStep": {
     "continue": "false"
   }
 }

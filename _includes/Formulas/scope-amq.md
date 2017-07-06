@@ -4,7 +4,7 @@ ActiveMQ Request steps add the step execution values described in the example JS
 
 ```json
 {
-  "my-step-name": {
+  "myAmqStep": {
     "request": {
         "body": "{\"message\":\"This is a test message.\"}",
         "url": "amqp://otqaqsml:tPpXwTl7-iMtezRmyJmD-y2U_XbroYpW@jaguar.rmq.cloudamqp.com/otqaqsml",
@@ -17,5 +17,5 @@ ActiveMQ Request steps add the step execution values described in the example JS
 ```
 Example references to ActiveMQ Request scope:
 
-* `$steps.my-step-name.request`
-* `$steps.my-step-name.request.body`
+* `${steps.myAmqStep.request}`
+* `${steps.myAmqStep.request.body}`

@@ -68,9 +68,9 @@ In general, the Cron format consists of:
 
 #### Examples
 
-* Run each minute
+* Run every 15 minutes
 
-        	0 0/1 * 1/1 * ? *
+        	0 0/15 * 1/1 * ? *
 
 * Run every Monday at noon
 
@@ -173,6 +173,8 @@ Use the JS Script (`script`) step to write custom Javascript that *must* pass a 
 ![JS Script](img/step-script.png)
 
 Use JS Script steps to build objects to use in request steps for query parameters or the request body.
+
+{% include note.html content="If you use <code>console.log</code> in a JS Script step, the output is added to the body of the step. If you reference the script step in another step as just <code>${steps.stepName}</code>, the <code>console.log</code> output is added to the step context and can cause errors. Prevent this by declaring what to include in the step body by adding it to <code>done</code>.  For example, <code>done({body.variableName})</code>.  " %}
 
 To see a JS Script step in action see:
 
