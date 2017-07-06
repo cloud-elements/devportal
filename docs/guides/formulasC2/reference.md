@@ -237,7 +237,7 @@ Sub-Formula (`formula`) steps run another formula instance.
 ![Stream File](img/step-formula.png)
 
 
-When you set up a Sub-Formu step, include the following information:
+When you set up a Sub-Formula step, include the following information:
 
 {% include Formulas/table-formula.md %}
 

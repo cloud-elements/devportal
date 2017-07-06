@@ -15,8 +15,7 @@ order: 5
 
 Formula templates enable you to create a single template for a formula that you can reuse with different elements and values. After you create a formula template, you can then create a formula instance where you replace the formula variable with actual element instances and values. This approach helps you build efficient and reusable formulas.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#build-a-formula-template>Build a Formula Template</a></br><a href=#test-formula-templates>Test Formula Templates</a></br><a href=#create-variables>Create Variables</a></br><a href=#edit-and-delete-variables>Edit and Delete Variables</a></br><a href=#review-executions>Review Executions</a></br><a href=#copy-a-formula-template>Copy a Formula Template</a></br><a href=#parallel-executions>Parallel Executions</a></br><a href=#use-a-formula-as-a-resource>Use a Formula as a Resource</a></br><a href=#rename-a-formula-template>Rename a Formula Template</a></br><a href=#add-a-description-to-a-formula-template>Add a Description to a Formula Template</a></br><a href=#delete-a-formula-template>Delete a Formula Template</a></br><a href=#deactivate-a-formula-template>Deactivate a Formula Template
-</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#build-a-formula-template>Build a Formula Template</a></br><a href=#test-formula-templates>Test Formula Templates</a></br><a href=#create-variables>Create Variables</a></br><a href=#edit-and-delete-variables>Edit and Delete Variables</a></br><a href=#review-executions>Review Executions</a></br><a href=#copy-a-formula-template>Copy a Formula Template</a></br><a href=#parallel-executions>Parallel Executions</a></br><a href=#use-a-formula-as-a-resource>Use a Formula as a Resource</a></br><a href=#rename-a-formula-template>Rename a Formula Template</a></br><a href=#add-a-description-to-a-formula-template>Add a Description to a Formula Template</a></br><a href=#delete-a-formula-template>Delete a Formula Template</a></br><a href=#deactivate-a-formula-template>Deactivate a Formula Template</br><a href=#access-formula-information>Access Formula Information</a>" type="info" %}
 
 ## Build a Formula Template
 
@@ -259,3 +258,21 @@ To deactivate a formula:
 2. Switch the **Active** slider off.
 ![Active](img/active.gif)
 3. Click **Save**.
+
+## Access Formula Information
+
+Each formula template and formula instance exposes information about itself through the `info` object.
+
+```json
+{
+  "info":{
+   "formulaId":"123",
+   "formulaName":"name",
+   "formulaInstanceId":"123",
+   "formulaInstanceName":"name",
+   "formulaExecutionId":"1234"
+  }
+}
+```
+
+Formula information contributes to the formula context. You can access the information with `info.property`, such as `info.formulaInstanceId` or `info.formulaName`. 
