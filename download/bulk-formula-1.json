@@ -1,0 +1,83 @@
+{
+   "accountId":12345,
+   "singleThreaded":false,
+   "createdDate":"2017-05-26T14:42:14Z",
+   "configuration":[
+      {
+         "name":"originInstance",
+         "id":24317,
+         "type":"elementInstance",
+         "key":"originInstance",
+         "required":true
+      },
+      {
+         "name":"resourceName",
+         "id":24316,
+         "type":"value",
+         "key":"resourceName",
+         "required":true
+      },
+      {
+         "name":"stepTwoId",
+         "id":24318,
+         "type":"value",
+         "key":"stepTwoId",
+         "required":true
+      }
+   ],
+   "name":"Formula Guide Bulk Transfer 1",
+   "active":true,
+   "id":11493,
+   "triggers":[
+      {
+         "async":true,
+         "name":"trigger",
+         "onFailure":[
+
+         ],
+         "id":10602,
+         "type":"scheduled",
+         "properties":{
+            "cron":"0 0 1 ? * MON,TUE,WED,THU,FRI *"
+         },
+         "onSuccess":[
+            "buildMetaData"
+         ]
+      }
+   ],
+   "steps":[
+      {
+         "name":"buildMetaData",
+         "onFailure":[
+
+         ],
+         "id":77011,
+         "type":"script",
+         "properties":{
+            "body":"done ({\n    \"query\":{\n    \"q\":\"select * from \" + config.resourceName\n  },\n  \"headers\":{\n    \"Elements-Async-Callback-Url\":\"/formulas/instances/\" + config.stepTwoId + \"/executions\"\n  }\n});"
+         },
+         "onSuccess":[
+            "bulkQuery"
+         ]
+      },
+      {
+         "name":"bulkQuery",
+         "onFailure":[
+
+         ],
+         "id":77012,
+         "type":"elementRequest",
+         "properties":{
+            "headers":"${steps.buildMetaData.headers}",
+            "method":"POST",
+            "elementInstanceId":"${config.originInstance}",
+            "query":"${steps.buildMetaData.query}",
+            "api":"/hubs/crm/bulk/query"
+         },
+         "onSuccess":[
+
+         ]
+      }
+   ],
+   "userId":12345
+}
