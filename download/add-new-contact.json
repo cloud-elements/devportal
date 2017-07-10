@@ -1,0 +1,54 @@
+{
+  "name": "Add New Contacts Created in One System to Another",
+  "configuration": [{
+		"name": "destinationInstance",
+		"type": "elementInstance",
+		"key": "destinationInstance",
+		"required": true
+	}, {
+		"name": "originInstance",
+		"type": "elementInstance",
+		"key": "originInstance",
+		"required": true
+	}],
+	"triggers": [{
+		"async": true,
+		"name": "trigger",
+		"onFailure": [],
+		"type": "event",
+		"properties": {
+			"elementInstanceId": "${originInstance}"
+		},
+		"onSuccess": ["isCreateContact"]
+	}],
+	"steps": [{
+		"name": "createContact",
+		"onFailure": [],
+		"type": "elementRequest",
+		"properties": {
+			"method": "POST",
+			"elementInstanceId": "${config.destinationInstance}",
+			"api": "/hubs/crm/myContacts",
+			"body": "${steps.retrieveOriginalContact.response.body}"
+		},
+		"onSuccess": []
+	}, {
+		"name": "isCreateContact",
+		"onFailure": [],
+		"type": "filter",
+		"properties": {
+			"body": "let theEvent = trigger.event.eventType;\nlet theObject = trigger.event.objectType;\n\ndone((theEvent === 'CREATED') && (theObject === 'Contact' || theObject === 'contacts'));"
+		},
+		"onSuccess": ["retrieveOriginalContact"]
+	}, {
+		"name": "retrieveOriginalContact",
+		"onFailure": [],
+		"type": "elementRequest",
+		"properties": {
+			"method": "GET",
+			"elementInstanceId": "${config.originInstance}",
+			"api": "/hubs/crm/myContacts/${trigger.event.objectId}"
+		},
+		"onSuccess": ["createContact"]
+	}],
+}

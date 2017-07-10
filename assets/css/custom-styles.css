@@ -743,31 +743,31 @@ a[data-toggle="tooltip"] {
     color: #777;
 }
 .bs-callout-primary {
-    border-left-color: #428bca;
+    border-left-color: #4d82bf;
 }
 .bs-callout-primary h4 {
     color: #428bca;
 }
 .bs-callout-success {
-    border-left-color: #5cb85c;
+    border-left-color: #71c1a3;
 }
 .bs-callout-success h4 {
     color: #5cb85c;
 }
 .bs-callout-danger {
-    border-left-color: #d9534f;
+    border-left-color: #c5a647;
 }
 .bs-callout-danger h4 {
     color: #d9534f;
 }
 .bs-callout-warning {
-    border-left-color: #f0ad4e;
+    border-left-color: #dc5151;
 }
 .bs-callout-warning h4 {
     color: #f0ad4e;
 }
 .bs-callout-info {
-    border-left-color: #5bc0de;
+    border-left-color: #44c8f5;
 }
 .bs-callout-info h4 {
     color: #5bc0de;
