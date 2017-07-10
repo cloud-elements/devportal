@@ -25,3 +25,7 @@ formula-trigger: "An action that occurs and kicks off a formula. Triggers can be
 formula-step: "An individual step within a formula workflow that can include branches to subsequent success and failure steps."
 
 formula-variable: "Variables that represent either element instances or specific values that must be supplied for each formula instance."
+
+polling: "An event option where Cloud Elements checks for changes to a resource in a configurable duration and captures the changed information"
+
+webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."

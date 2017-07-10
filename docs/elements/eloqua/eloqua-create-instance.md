@@ -1,6 +1,6 @@
 ---
-heading: Eloqua
-seo: Create Instance | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Create Instance | Oracle Eloqua | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance
 
-Eloqua is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Eloqua platform.
+Oracle Eloqua is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Oracle Eloqua platform.
 
 Optionally, you may provision an instance to specific features like Marketing Cloud, Service Cloud and Eloqua Documents. Below are examples of each method.
 
@@ -52,7 +52,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your Eloqua Element, use the /instances API.
+To provision your Oracle Eloqua Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -72,7 +72,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Eloqua is “eloqua”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Oracle Eloqua is “eloqua”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
@@ -119,15 +119,15 @@ Below is a successful JSON response:
     "id": 1234,
     "name": "Eloqua",
     "key": "eloqua",
-    "description": " The Eloqua Element transforms the way you integrate sales and marketing data with your applications, by allowing you to integrate a leading Marketing Automation service in a fraction of the time, with a fraction of the code. Your marketing campaigns, leads and contacts can now be all in one place, integrated seamlessly into your application.",
+    "description": " The Oracle Eloqua Element transforms the way you integrate sales and marketing data with your applications, by allowing you to integrate a leading Marketing Automation service in a fraction of the time, with a fraction of the code. Your marketing campaigns, leads and contacts can now be all in one place, integrated seamlessly into your application.",
     "image": "elements/provider_eloqua.png",
     "active": true,
     "deleted": false,
     "typeOauth": true,
     "trialAccount": false,
-    "existingAccountDescription": "Use Your Eloqua Account
-Enter your credentials and asscoiated company details for Eloqua Account.",
-    "configDescription": "If you do not have a Eloqua account, you can create one at Eloqua Registration",
+    "existingAccountDescription": "Use Your Oracle Eloqua Account
+Enter your credentials and asscoiated company details for Oracle Eloqua Account.",
+    "configDescription": "If you do not have a Oracle Eloqua account, you can create one at Eloqua Registration",
     "signupURL": "http://topliners.eloqua.com",
     "transformationsEnabled": true,
     "hub": "marketing"

@@ -1,27 +1,47 @@
 ---
-heading: Eloqua
-seo: Events | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Events | Oracle Eloqua | Cloud Elements API Docs
 title: Events
-description: Enable Eloqua events for your application.
+description: Enable Oracle Eloqua events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27
+elementKey: 'eloqua'
 parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events </a></br><a href=#configure-polling-through-the-ui>Configure Polling Through the UI</a></br><a
+href=#configure-polling-through-api>Configure Polling Through API</a></br><a
+href=#parameters>Parameters</a>" type="info" %}
+
+## Supported Events
+
+Cloud Elements supports polling events for {{page.heading}}.
+
+
+### Configure Polling Through the UI
+
+In order to enable polling, you need to set `Event Notifications Enabled: True` and set the `Event poller refresh interval:` to how often you would like to have the polling job (minutes) performed.
+
+## Configure Polling Through API
+
+However, if you are setting up an instance via an API call, in order to enable polling, you will need to add these extra configurations to your instance `JSON`.
 
 ```JSON
 "event.notification.enabled": "true",
 "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
 ```
+**NOTE:** The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
 
-instance JSON with polling events enabled:
+
+## Parameters
+
+Here is an example instance JSON with polling events enabled for {{page.heading}}:
 
 ```json
 {

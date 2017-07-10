@@ -58,11 +58,10 @@ To add polling when authenticating through the `/instances` API call, add the fo
     "key": "concur"
   },
   "configuration": {
-     "store.url": "http://mycoolstore.com",
-     "oauth.api.key": "<CONSUMER_KEY>",
-     "oauth.api.secret": "<CONSUMER_SECRET>",
-     "filter.response.nulls": true,
-     "event.vendor.type": "polling",
+    "oauth.api.key":"UPjRvqOyYz9hDdWLLLLuQV",
+    "oauth.api.secret":"GNnU6D7uvWMjOyOEsU7uL1Xc4iaEdEOa",
+    "oauth.callback.url":"https://httpbin.org/get",
+    "event.vendor.type": "polling",
      "event.notification.callback.url": "http://mycoolstore.com",
      "event.notification.signature.key": "123456",
      "event.poller.configuration": {
@@ -75,7 +74,8 @@ To add polling when authenticating through the `/instances` API call, add the fo
      			"createdDateField": "CreateDate",
      			"createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS"
         }
-       }
+      }
+    }
   },
   "tags": [
      "Docs"

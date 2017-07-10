@@ -1,8 +1,8 @@
 ---
-heading: Act Premium
-seo: API Docs | Act Premium | Cloud Elements API Docs
+heading: Act! Premium
+seo: API Docs | Act! Premium | Cloud Elements API Docs
 title: API Docs
-description: Act Premium API Documentation.
+description: Act! Premium API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 816

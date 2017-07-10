@@ -1,8 +1,8 @@
 ---
-heading: Salesforce CRM
-seo: Events | Salesforce CRM | Cloud Elements API Docs
+heading: Salesforce Sales Cloud
+seo: Events | Salesforce Sales Cloud | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce CRM events for your application.
+description: Enable Salesforce Sales Cloud events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
@@ -12,12 +12,21 @@ order: 25
 
 # Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
+
+## Supported Events and Resources
 
 Cloud Elements supports both webhooks and polling events for Salesforce.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
+You can set up events for the following resources:
 
+* Account
+* Lead
+* Contact
+* Opportunity
+* Other objects that include `created`, `updated`, and `deleted` data.
 
 ## Polling
 

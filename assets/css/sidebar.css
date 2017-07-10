@@ -2,6 +2,7 @@
   background: #f3f3f4;
   padding: 30px 40px;
   padding: 0px;
+  overflow-y: scroll;
 }
 
 .sidebarWrapper {
@@ -98,11 +99,14 @@
 
 .contentWrapper {
   padding: 30px 20px;
-  min-height: calc(100vh - 90px - 274px);
+  min-height: calc(100vh - 90px);
+  overflow-y: scroll;
 }
 
 .pageContainer {
   display: flex;
+  height: calc(100vh - 90px);
+  overflow: hidden;
 }
 
 .subHeading{

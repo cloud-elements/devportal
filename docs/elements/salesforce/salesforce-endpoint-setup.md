@@ -1,7 +1,7 @@
 ---
-heading: Salesforce CRM
-seo: Endpoint Setup | Salesforce CRM | Cloud Elements API Docs
-title: Endpoint Setup
+heading: Salesforce Sales Cloud
+seo: Endpoint Setup | Salesforce Sales Cloud | Cloud Elements API Docs
+title: Service Provider Setup
 description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,9 +10,9 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Endpoint Setup
+# Service Provider Setup
 
-To create a Salesforce Element Instance you must have the Enterprise edition or Professional edition with API support. Also, to set up a new application in Salesforce, you must have Administrator privileges. Contact your system administrator if you do not have those privileges.
+To authenticate a {{page.heading}} element instance you must have the {{page.heading}} Enterprise edition or Professional edition with API support. Also, to set up a new application in {{page.heading}}, you must have Administrator privileges. Contact your system administrator if you do not have those privileges.
 
 {% include note.html content="Salesforce provides the most up-to-date and detailed setup instructions at <a href=https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_understanding_authentication.htm>Force.com REST API Developer Guide</a>" %}
 

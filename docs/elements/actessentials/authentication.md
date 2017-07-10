@@ -1,8 +1,8 @@
 ---
-heading: Act Essentials
-seo: Authentication | Act Essentials | Cloud Elements API Docs
+heading: Act! Essentials
+seo: Authentication | Act! Essentials | Cloud Elements API Docs
 title: Authentication
-description: Integrate Act Essentials into your application via the Cloud Elements APIs.
+description: Integrate Act! Essentials into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1251
