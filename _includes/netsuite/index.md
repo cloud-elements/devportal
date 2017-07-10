@@ -1,6 +1,6 @@
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides on-demand services. 
+{{page.heading}} provides integrated business application software for small and midsize businesses.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -13,7 +13,7 @@
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | NetSuite only supports one API call at a time from one unique user. NetSuite does not support concurrent API calls.|
+| Rate Limits | NetSuite supports only one API call at a time from one unique user. NetSuite does not support concurrent API calls.|
 | Versions Supported | Netsuite 2016_R2 |
 
 ## Base URL

@@ -1,16 +1,3 @@
----
-heading: Netsuite 2016 Finance
-seo: Authenticate | Netsuite 2016 Finance | Cloud Elements API Docs
-title: Authenticate
-description: Authenticate an element instance with the service provider
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: 988
-elementKey: netsuitefinancev2
-parent: Back to Element Guides
-order: 20
----
-
 # Authenticate with {{page.heading}}
 
 You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
@@ -29,7 +16,7 @@ To authenticate an element instance:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](img/Element-Search-NSF.png)  |  ![Search](img/Element-Search2-NSF.png)  |
+    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
 
 1. Create an element instance.
 
@@ -38,17 +25,14 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](img/Create-Instance-NSF.gif)  | Click __Add Instance__.</br> ![Search](img/Create-Instance2-NSF.png)  |
 
 1. Enter a name for the element instance.
-
 1. Choose if you are connecting to a NetSuite sandbox.
+1. Enter the **Account ID** that you identifed in the [Service Provider Setup](setup.html) section.
 
-1. Choose your single-session information. By activiting "Single Session", you ensure that Cloud Elements doesn't send multiple requests to your Netsuite Account at one time. This may be necessary for certain trial NetSuite accounts. If you activate "Single Session", you must also provide a "Single Session Lock Key": this can be any alphanumeric value,
+1. Select the Authentication Type for the element instance. Choose **Basic** or **TokenBasedAuthentication**, based on the type of authentication you are using.
+
+1. Choose your single-session information. By activiting "Single Session", you ensure that Cloud Elements doesn't send multiple requeststo your Netsuite Account at one time. This may be necessary for certain trial NetSuite accounts. If you activate "Single Session", you must also provide a "Single Session Lock Key": this can be any alphanumeric value,
 but it must be unique within the Cloud Elements environment.
 
-1. Enter the Account ID for this instance.
-
-1. Select the Authentication Type for the element instance. You should
-choose "Basic" or "TokenBasedAuthentication", based on the type of
-authentication you are using.
 
     {% include note.html content="If you choose 'Basic' authentication, you'll also need to supply the **email** and **password** of an authenticated user, along with the **App ID** of your integration. You will have found this information when you [set up your account](setup.html)." %}
 
