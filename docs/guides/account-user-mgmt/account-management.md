@@ -34,23 +34,58 @@ Organization-level accounts appear with an organization label on the account car
 
 {% include account-user/table-accounts.md%}
 
-
-
-
-
-
 ## Add an Account
 
-Accounts are the second level of Cloud Elements access. In most implemetations of Cloud Elements, consider an account as your customer.
+Accounts are the second level of Cloud Elements access. In most implementations of Cloud Elements, consider an account as your customer.
 
 To create an account:
 
-1. On the Transformations page, click __Create New Transformation__.
+1. On the Accounts page, click __Create New Account.
 
-  ![Create New Transformation](img/Create_New_Transform.png)
+  ![Create New Transformation](img/Create_New_Account.png)
 
-2. From the __Element Instances__ list, select the element instance that contains the resource that you want to use.
-1. From the __Element Instance Resources__ list, select the resource that contains the fields that you want to transform.
+2. Enter a name for the account, and then click **Create**.
+
+Cloud Elements creates a new account. The new account has no users, so your next step is to create a user for the new account.
+
+## Add Users to Accounts
+
+As the organization-level user, you can add users to any accounts that you create.
+
+To create a user for an account:
+
+1. Access the account page, either by creating a new account or hover over the Account Card, and then click **Open**.
+2. Click **Create new user**.
+3. Complete the required fields.
+4. Click **Create**.
+
+After you create a user, they do not receive any notification. This is because many users do not need to access Cloud Elements directly. If the new user needs to access Cloud Elements, either provide them with the password you entered or encourage them to reset their password.
+
+## Change an Account Name or Description
+
+You can update the name or description of any account.
+
+To update an account:
+
+1. Access the account page. Hover over the Account Card, and then click **Open**.
+2. Click the pencil icon <img src="img/btn-pencil.png" alt="Pencil icon" class="inlineImage">next to the **_Account Name_ Users** list.
+3. Add a new name or description.
+4. Click **Update**.
+
+## Delete an Account
+
+You can delete an account, which also deactivates any users associated with the account.
+
+To delete an account:
+
+1. Access the account page. Hover over the Account Card, and then click **Open**.
+2. Click the pencil icon <img src="img/btn-pencil.png" alt="Pencil icon" class="inlineImage">next to the **_Account Name_ Users** list.
+3. Click **Delete**, and the confirm the deletion.
+
+
+
+
+
 
 
 

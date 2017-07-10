@@ -70,3 +70,25 @@ curl -X GET \
 ### Account Attributes
 
 {% include account-user/table-accounts.md%}
+
+## Add an Account
+
+Add accounts with `POST /accounts`.
+
+### JSON Body
+
+```json
+{
+  "name": "Company Name",
+  "description": "Short description of the account",
+  "externalId": "companyemail@company.com"
+}
+```
+
+### Attributes
+
+| Name | Description   | Required |
+| :------------- | :------------- | :------------- |
+|  where  |  The CEQL search expression is a where clause like in a typical SQL query, but without the WHERE keyword. For example, to search for accounts created on or after ‘Jan 15, 2017′, use a search expression like `where=createdDate >= ‘2014-01-17′`. If you do not use a CEQL query, the endpoint returns all accounts in a paginated fashion.  | N |
+|  offset  |  The record offset at which to begin the paginated results.</br>Default 0  | N |
+|  pageSize  |  The page size for the paginated results.</br>Default 200  | N |
