@@ -19,11 +19,11 @@ To authenticate a {{page.heading}} element instance you must [register a connect
 
 {% include tip.html content="Find the most up-to-date information in <a href=https://www.campaignmonitor.com/api/getting-started/>Campaign Monitor's documentation for registering an app</a>.  " %}
 
-To register  connect app:
+To register a connected app:
 
 1. Log in to your {{page.heading}} account.
 1. Navigate to the Account Settings. Click your profile in the top right, and then select **Account Settings**.
-2. In the menu on the rigt, click **Manage connected apps**.
+2. In the menu on the right, click **Manage connected apps**.
 ![Manage Connected Apps](img/connected-apps.png)
 2. Scroll down, and then click **OAuth Registration** under the available integrations.
 ![OAuth Registration](img/oauth-reg.png)
