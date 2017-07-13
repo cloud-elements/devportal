@@ -116,7 +116,7 @@ Optional properties:
 * `headers`
 * `body`
 
-**Note:** Thes optional parameters must refer to an object from a previous step.
+**Note:** These optional parameters must refer to an object from a previous step.
 
 ```json
 {
