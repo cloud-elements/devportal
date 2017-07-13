@@ -12,13 +12,13 @@ order: 20
 
 # Authenticate with Salesforce
 
-You can authenticate with Salesforce to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with Salesforce to create your own instance of the {{page.heading}} element through {{site.console}} or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the {{site.console}} to authenticate with Salesforce and create an element instance. Salesforce authentication follows the typical OAuth 2 framework and you will need to sign in to Salesforce as part of the process.
+Use {{site.console}} to authenticate with Salesforce and create an element instance. Salesforce authentication follows the typical OAuth 2 framework and you will need to sign in to Salesforce as part of the process.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -172,7 +172,7 @@ curl -X POST \
 ```
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>" %}
 

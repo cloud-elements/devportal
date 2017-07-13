@@ -1,5 +1,5 @@
 ---
-heading: Account APIs
+heading: Manage Accounts and Users
 seo: Account API Docs | Cloud Elements API Docs
 title: Platform Documentation
 description: Account API Documentation.

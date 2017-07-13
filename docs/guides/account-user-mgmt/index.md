@@ -1,5 +1,5 @@
 ---
-heading: Account and User Management
+heading: Manage Accounts and Users
 seo: Account Overview | Cloud Elements  Docs
 title: Overview
 description: Manage organizations, users, and accounts
@@ -14,21 +14,28 @@ sitemap: false
 
 # Overview
 
-Your access to Cloud Elements
+{% include callout.html content="This guide includes steps to use Cloud Elements 2.0. Earlier versions of Cloud Elements share much of the same functionality, but you can read information about the earlier version at <a href=../../platform-api/accounts/account-management.html>Account Usage and Management Guide</a>." type="info" %}
 
-If account si your customer, in an embedded integration is each one of those a new account with a user created?
+The first user to sign up for Cloud Elements created an organization and established an Organization Secret automatically. As the default user of the organization, they are the organization administrator. The organization administrator can manage the accounts within the organization and the users associated with those accounts.
 
+Your organization comes with a default account and the organization administrator is the first user associated with that account. The organization can include many accounts. Accounts cannot see information associated with other accounts. Each account includes individual users.  Cloud Elements assigns each user a User Secret. With the Organization Secret representing the company and the User Secret representing a discrete customer of the company, users can make requests to the Cloud Elements APIs.
 
+The key piece in integrations is the element, which is an enhanced connector to an API provider. When you build an integration into your application using Cloud Elements and offer it to your customers, they become users of the associated account.  With your Organization Secret and their own User Secret, they can authenticate with their API Provider and create individual element instances. For example, if you provide your customers an integration to Salesforce, after they authenticate with Salesforce They create an authenticated Salesforce element instance in the account used for the integration..
 
-You create an organization-level account when you sign up for Cloud Elements.
+## Definitions
 
-You define the fields in common resources within a hierarchy that includes three levels: organization, account, and instance. Only users at the organization level can create common resources, while users at other levels can configure the common resources for specific transformations.
+<dl>
 
-* The organization is the highest level. A common resources built at this level represents a template that you can use for all accounts within your organization.
-* The account is the next highest level. Accounts typically represent your customers. Transformations at the account level are shared by all users associated with a specific account.
-* The instance is the most granular level. Transformations that you or other users create at this level apply only to a specific element instance.
+<dt id="organization">organization</dt>
+<dd>{{site.data.glossary.organization}}</dd>
 
+<dt id="account">account</dt>
+<dd>{{site.data.glossary.account}} </dd>
 
-When you sign up for Cloud Elements, by default an Organization-level user is created, and a Default Account is created for you. All Elements provisioned by the Organization-level user associate to this Default Account.
+<dt id="user">user</dt>
+<dd>{{site.data.glossary.user}}</dd>
 
-The Organization-level user is the same as the User ID you signed up with, and is the only User ID you will see in your Administration -> Users screen until you provision other users into your environment:
+<dt id="organization-administrator">organization administrator</dt>
+<dd>{{site.data.glossary.organization-administrator}}</dd>
+
+</dl>
