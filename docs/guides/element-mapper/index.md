@@ -16,6 +16,8 @@ redirect_from:
 
 # Overview
 
+{% include callout.html content="Cloud Elements 2.0 is currently in BETA. This guide includes steps to use an earlier version of Cloud Elements. Both versions share much of the same functionality, and you can read information about the latest version at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
+
 Cloud Element supports mapping and transforming data between your application and any of the cloud services you're leveraging through our **Element Mapper**.  Element Mapper is an API and Data Mapping Application to map and transform data across different Elements. This allows you to define how you want your resource to look and then go about mapping and transforming that resource for each Element, as needed.
 
 > **NOTE:** The Element Mapper documentation assumes knowledge of how Elements and Element Instances work in our platform.  If you are new to Cloud Elements, please visit the "Quick Start" section in the developer portal or play around in the Cloud Elements Console UI before proceeding with Element Mapper.
