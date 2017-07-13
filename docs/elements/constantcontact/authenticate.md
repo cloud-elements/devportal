@@ -21,8 +21,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
-
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
@@ -40,9 +38,13 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
+6. If you do not already have a Constant Contact account, click **Show Optional Fields**, and then choose **true** for **New User**.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Provide your {{page.heading}} credentials, and then allow the connection.
+8. Provide your {{page.heading}} credentials, and then allow the connection. If you are a new user, sign up.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
