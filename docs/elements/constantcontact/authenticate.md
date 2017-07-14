@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Constant Contact
+seo: Authenticate | Constant Contact | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 23
-elementKey: fake
+elementKey: constantcontact
 parent: Back to Element Guides
 order: 20
 ---
@@ -47,6 +47,7 @@ To authenticate an element instance:
 
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
@@ -67,6 +68,13 @@ Use the following API call to request a redirect URL where the user can authenti
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
 ```
 
+{% include note.html content="If you want to provider your application users with the ability to sign up with Constant Contact, include <code>newUser=True</code> in the query parameters as shown below. " %}
+
+```bash
+curl -X GET /elements/{keyOrId}/oauth/url?newUser=True&apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+```
+
+
 #### Query Parameters
 
 | Query Parameter | Description   |
@@ -74,6 +82,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 | apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
+| newUser | _Optional_. Include `newUser=true` to redirect a user to the account sign up page instead of the login page. |
 
 #### Example cURL
 
@@ -88,8 +97,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+    "oauthUrl": "https://oauth2.constantcontact.com/oauth2/oauth/siteowner/authorize?response_type=code&client_id=6rja8budeg8gkpq9fhu3g4ha&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget",
+    "element": "constantcontact"
 }
 ```
 
@@ -98,12 +107,12 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
 
 * code
-* state
+* username
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
 | code | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
-| state | A customizable identifier, typically the element key (`{{page.elementKey}}`) . |
+| username | The {{page.heading}} user name of the authenticated user. |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
@@ -191,15 +200,16 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 ```json
 {
-  "id": 123,
-  "name": "test",
+  "id": 12345,
+  "name": "API for Docs",
   "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
   "element": {
-      "id": 39,
+      "id": {{page.elementID}},
       "name": "{{page.heading}}",
+      "hookName": "ConstantContactHook",
       "key": "{{page.elementKey}}",
-      "description": "Campaign Monitor makes it easy for you to create, send, and optimize your email marketing campaigns.",
-      "image": "https://www.campaignmonitor.com/assets/brand/campaignmonitor.jpg",
+      "description": "Add a Constant Contact instance to connect your existing or new Constant Contact account to the Marketing Hub, allowing you to manage campaigns, lists, contacts etc. across multiple Marketing Elements. You will need your Constant Contact account information to add an instance.",
+      "image": "elements/provider_constantcontact.png",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -214,21 +224,24 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
       "authentication": {
           "type": "oauth2"
       },
-      "elementId": {{page.elementId}},
-      "provisionInteractions": [],
-      "valid": true,
-      "disabled": false,
-      "maxCacheSize": 0,
-      "cacheTimeToLive": 0,
-      "configuration": {    },
-      "eventsEnabled": false,
-      "eventsNotificationCallbackUrl": "false",
-      "traceLoggingEnabled": false,
-      "cachingEnabled": false,
-      "externalAuthentication": "none",
-      "user": {
-          "id": 12345
-        }
+      "extended": false,
+      "hub": "marketing",
+      "protocolType": "http",
+      "parameters": [ ]
+  "elementId": {{page.elementId}},
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {    },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+      "id": 12345
     }
+  }
  }
 ```
