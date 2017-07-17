@@ -16,7 +16,7 @@ ValeOn: <!-- vale on -->
 
 # Manage Your Profile
 
-Your profile includes the basic information about yourself, like your name and email. It also includes critical information that you need to interact with Cloud Elements including your password, User Secret, and Organization secret.
+Your profile includes the basic information about yourself, like your name and email. It also includes critical information that you need to interact with Cloud Elements including your password, User Secret, and Organization Secret.
 
 ## Access and Update Your Profile
 
