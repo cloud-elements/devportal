@@ -5,7 +5,7 @@ title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: 3929
 elementKey: constantcontact
 parent: Back to Element Guides
 order: 20
@@ -52,8 +52,6 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
-<span style="color:red">The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint..."</span>
-
 Authenticating through API is a multi-step process that involves:
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
@@ -68,7 +66,7 @@ Use the following API call to request a redirect URL where the user can authenti
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
 ```
 
-{% include note.html content="If you want to provider your application users with the ability to sign up with Constant Contact, include <code>newUser=True</code> in the query parameters as shown below. " %}
+{% include note.html content="If you want to provide your application users with the ability to sign up with Constant Contact, include <code>newUser=True</code> in the query parameters as shown below. " %}
 
 ```bash
 curl -X GET /elements/{keyOrId}/oauth/url?newUser=True&apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
@@ -82,7 +80,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?newUser=True&apiKey=<api_key>&apiSecre
 | apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
-| newUser | _Optional_. Include `newUser=true` to redirect a user to the account sign up page instead of the login page. |
+| newUser | _Optional_. Include `newUser=true` to redirect a user to the account signup page instead of the login page. |
 
 #### Example cURL
 
@@ -227,7 +225,7 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
       "extended": false,
       "hub": "marketing",
       "protocolType": "http",
-      "parameters": [ ]
+      "parameters": [ ],
   "elementId": {{page.elementId}},
   "provisionInteractions": [],
   "valid": true,

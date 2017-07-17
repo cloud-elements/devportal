@@ -129,3 +129,4 @@ layout: sidebarelementtile
 * [![Concur](http://assets.concur.com/logos/Concur_Logo_VT_Color_500px.png)Concur Beta](./elements/concur/)
 * [![Sage One](http://www.merchantmaverick.com/wp-content/uploads/2015/09/sage-one-logo1.jpg)Sage One](./elements/sageone/)
 * [![Campaign Monitor](https://www.campaignmonitor.com/assets/brand/campaignmonitor.jpg)Campaign Monitor](./elements/campaignmonitor/)
+* [![Constant Contact](/assets/img/element-logos/provider_constantcontact.png)Constant Contact](./elements/constantcontact/)

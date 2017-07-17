@@ -5,7 +5,7 @@ title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 3929
 elementKey: constantcontact
 parent: Back to Element Guides
 order: 5
@@ -19,7 +19,7 @@ To authenticate a {{page.heading}} element instance you must register an app wit
 
 To register an app:
 
-1. Log in to the {{page.heading}} [Mashery page(https://constantcontact.mashery.com/)].
+1. Log in to the {{page.heading}} [Constant Contact Mashery page](https://constantcontact.mashery.com/).
 1. Follow the steps provided to register your app.
 7. Record the  **Key** and **Secret**. When you [authenticate an element instance](#authenticate.html), use **Key** as the `apiKey` and **Secret** as the `apiSecret`.
 3. Click the **my account** link below the API information or click the **Apps & API Keys** tab.

@@ -43,8 +43,12 @@ To authenticate an element instance:
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
