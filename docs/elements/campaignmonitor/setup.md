@@ -5,7 +5,7 @@ title: API Provider Setup
 description: API provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6341
+elementId: 3928
 elementKey: campaignmonitor
 parent: Back to Element Guides
 order: 5
@@ -13,7 +13,7 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must [register a connected app](#register-a-connected-app) with {{page.heading}} and know the Client ID, Client Secret, and Callback URL of the app. Also, if you plan to use events, you need to know the [List ID](#find-a-list-id) of any lists that you want to monitor for events.
+To authenticate a {{page.heading}} element instance you must [register a connected app](#register-a-connected-app) with {{page.heading}} and know the **Client ID,** **Client Secret**, and **Callback URL** of the app. Also, if you plan to use events, you need to know the [List ID](#find-a-list-id) of any lists that you want to monitor for events.
 
 ## Register a Connected App
 

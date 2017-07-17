@@ -5,7 +5,7 @@ title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6341
+elementId: 3928
 elementKey: campaignmonitor
 parent: Back to Element Guides
 order: 20

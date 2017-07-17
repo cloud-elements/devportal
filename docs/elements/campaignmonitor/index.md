@@ -5,7 +5,7 @@ title: Overview
 description: Integrate Campaign Monitor into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6341
+elementId: 3928
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -24,7 +24,7 @@ sitemap: false
 | API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks |
-| Bulk | ~~Supported for both upload and download.~~ |
+| Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://www.campaignmonitor.com/api/getting-started/#rate-limiting)|
 | Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
