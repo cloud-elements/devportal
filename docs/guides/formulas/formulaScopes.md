@@ -3,15 +3,13 @@ heading: Formulas
 seo: Formulas Step Scope | Formulas Scope | Cloud Elements Formulas Scope
 title: Formula Step Scope
 description: Understand the scopes different steps produce.
-layout: sidebarelementdoc
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 5
 ---
-
-{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
 
 # Formula Scope
 Each different type of step produces different step execution values that are added to the formula "context".  The formula context is then passed from step-to-step, allowing you to use these values in any subsequent steps in your formula.  Below are the different values that each different step type produces:

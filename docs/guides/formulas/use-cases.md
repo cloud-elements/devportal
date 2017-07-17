@@ -5,15 +5,13 @@ heading: Formulas
 seo: Formula Use Cases | Formulas | Cloud Elements API Docs
 title: Use Cases
 description: View common example use cases demonstrating the functionality of formulas.
-layout: sidebarelementdoc
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 5
 ---
-
-{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
 
 # Example Use Cases
 Now that you are familiar with what a formula is and how to go about creating one, lets talk through some more complex, real-world use cases.

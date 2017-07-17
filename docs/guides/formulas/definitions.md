@@ -3,7 +3,7 @@ heading: Formulas
 seo: Terminology | Formulas Terminology | Cloud Elements Formula Definitions
 title: Definitions
 description: What are Formulas and how do they work?
-layout: sidebarelementdoc
+layout: sidebarleft
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -11,10 +11,8 @@ parent: Back to Guides
 order: 2
 ---
 
-{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
-
 # Formula Definitions
-There are a few different terms you should become familiar with in order to better grasp formulas.
+There are a few different terms you should become familiar with in order to better grasp formulas.  
 
 ## Formula Templates
 Just like there are Elements and then instances of those Elements, our platform supports formulas and then instances of those formulas. Another way to think of a formula is like a template, that you will later create one or more instances of.

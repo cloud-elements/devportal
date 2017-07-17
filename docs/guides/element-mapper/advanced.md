@@ -3,15 +3,13 @@ heading: Element Mapper
 seo: Element Mapper Advanced Examples | Element Mapper | Cloud Elements API Docs
 title: Advanced
 description: View different advanced examples of Element Mapper in action.
-layout: sidebarelementdoc
+layout: sidebarleft
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 4
 ---
-
-{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
 
 # Advanced Examples
 Below are a handful of advanced examples of leveraging Element Mapper.
