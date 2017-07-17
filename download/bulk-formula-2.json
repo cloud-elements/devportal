@@ -1,0 +1,101 @@
+{
+   "accountId":4321,
+   "singleThreaded":false,
+   "createdDate":"2017-05-26T15:41:17Z",
+   "configuration":[
+      {
+         "name":"destinationInstance",
+         "id":24324,
+         "type":"elementInstance",
+         "key":"destinationInstance",
+         "required":true
+      },
+      {
+         "name":"objectName",
+         "id":24322,
+         "type":"value",
+         "key":"objectName",
+         "required":true
+      },
+      {
+         "name":"originInstance",
+         "id":24323,
+         "type":"elementInstance",
+         "key":"originInstance",
+         "required":true
+      }
+   ],
+   "name":"Formula Guide Bulk Transfer 2",
+   "active":true,
+   "id":11496,
+   "triggers":[
+      {
+         "async":true,
+         "name":"trigger",
+         "onFailure":[
+
+         ],
+         "id":10604,
+         "type":"manual",
+         "properties":{
+
+         },
+         "onSuccess":[
+            "isSuccessful"
+         ]
+      }
+   ],
+   "steps":[
+      {
+         "name":"buildMetaData",
+         "onFailure":[
+
+         ],
+         "id":77017,
+         "type":"script",
+         "properties":{
+            "body":"      let metaData = {\n        \"identifierFieldName\":\"email\"\n      }\n\n      let downloadHeaders = {\n        \"Accept\":\"text/csv\"\n      };\n\n      done({\n        \"metaData\": metaData,\n        \"downloadHeaders\": downloadHeaders\n      });\n"
+         },
+         "onSuccess":[
+            "bulkStream"
+         ]
+      },
+      {
+         "name":"bulkStream",
+         "onFailure":[
+
+         ],
+         "id":77018,
+         "type":"elementRequestStream",
+         "properties":{
+            "uploadElementInstanceId":"${config.destinationInstance}",
+            "uploadMethod":"POST",
+            "uploadQuery":"${steps.buildMetadata.metaData}",
+            "uploadApi":"/hubs/crm/bulk/${config.objectname}",
+            "uploadFormData":"",
+            "downloadMethod":"GET",
+            "downloadElementInstanceId":"${config.originInstance}",
+            "downloadHeaders":"${steps.buildMetadata.downloadHeaders}",
+            "downloadApi":"/hubs/crm/bulk/${trigger.args.id}/${config.objectname}"
+         },
+         "onSuccess":[
+
+         ]
+      },
+      {
+         "name":"isSuccessful",
+         "onFailure":[
+
+         ],
+         "id":77016,
+         "type":"filter",
+         "properties":{
+            "body":"let status = trigger.args.status;\n\nif (status && status === \"COMPLETED\") {\n  done(true);\n} else {\n  done(false);\n}"
+         },
+         "onSuccess":[
+            "buildMetaData"
+         ]
+      }
+   ],
+   "userId":1234
+}

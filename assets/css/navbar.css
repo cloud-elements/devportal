@@ -91,8 +91,31 @@
 .navbar-header {
   background: transparent !important;
   padding: 10px !important;
+  height: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .navbar-nav > li > a {
   color: #FFF;
+  height: 100%;
+}
+
+#logo {
+  height: 100%;
+  padding: 5px 30px;
+  width: 100%;
+}
+
+#logo a {
+  height: 100%;
+  padding: 0px !important;
+  width: 100%;
+}
+
+#logo img {
+  height: 100%;
+  width: auto;
+  padding: 0px;
 }

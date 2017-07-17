@@ -16,6 +16,24 @@ resource: "Specific endpoints within an API that contain objects accessible via 
 
 one-to-many: "Enables developers to write to one API to integrate multiple elements."
 
+formula-template: "A reusable workflow that is independent of the Element and includes the triggers, steps, and variables for a formula instance to execute the workflow. "
+
+formula-instance: "A specific instance of a formula template configured with explicit variables and associated with specific element instances."
+
+formula-trigger: "An action that occurs and kicks off a formula. Triggers can be events set up on an element instance, an API call to an element instance, a scheduled occurrence, or manually triggered."
+
+formula-step: "An individual step within a formula workflow that can include branches to subsequent success and failure steps."
+
+formula-variable: "Variables that represent either element instances or specific values that must be supplied for each formula instance."
+
 polling: "An event option where Cloud Elements checks for changes to a resource in a configurable duration and captures the changed information"
 
 webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."
+
+organization: "The top level of the accounts and users hierarchy that represents the Cloud Elements customer."
+
+account: "The second level of the accounts and users hierarchy that represents your customers."
+
+user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
+
+organization-administrator: "The user  that can manage accounts and is associated with the initial sign up with Cloud Elements."

@@ -12,7 +12,7 @@ order: 20
 
 # Authenticate with {{page.heading}}
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through {{site.console}} or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
 __On this page__
 
@@ -27,7 +27,7 @@ __On this page__
 
 ## Authenticate Through the UI
 
-Use the {{site.console}} to authenticate with {{page.heading}} and create an element instance.
+Use {{site.console}} to authenticate with {{page.heading}} and create an element instance.
 
 1. Sign in, and then search for the element in our Elements Catalog.
 ![Search](img/Element-Search-Woo.png)

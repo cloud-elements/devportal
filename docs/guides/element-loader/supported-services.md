@@ -15,7 +15,7 @@ Below is a list of the current services Element Loader supports. We are adding n
 * Dropbox
 * Google Drive
 * Close.io
-* Orace Eloqua
+* Oracle Eloqua
 * HubSpot
 * Marketo
 * Microsoft Dynamics CRM

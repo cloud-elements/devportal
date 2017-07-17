@@ -182,7 +182,7 @@ instance JSON with polling events enabled:
 
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

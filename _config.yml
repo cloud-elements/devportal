@@ -42,4 +42,4 @@ algolia:
     attributesToHighlight:
       - 'text'
 
-console: 'UI'
+console: 'Cloud Elements'

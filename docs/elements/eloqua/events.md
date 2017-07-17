@@ -1,8 +1,8 @@
 ---
-heading: Eloqua
-seo: Events | Eloqua | Cloud Elements API Docs
+heading: Oracle Eloqua
+seo: Events | Oracle Eloqua | Cloud Elements API Docs
 title: Events
-description: Enable Eloqua events for your application.
+description: Enable Oracle Eloqua events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27

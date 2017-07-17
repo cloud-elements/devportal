@@ -1,0 +1,36 @@
+# Formulas
+formula-headers: "The headers to pass along as part of the API request. You rarely need to add anything to the headers, but you can use this parameter to pass common header information such as content types."
+
+formula-query: "Any query parameters, such as a CEQL query or pagination, to pass as part of the API request."
+
+step-name: "The name of the formula step. The name must be unique within the formula."
+
+formula-method: "The API method of the API call, such as GET, POST, PUT, PATCH, or DELETE. "
+
+retry-failure: "Indicates that we should retry a configurable number of times if the request fails."
+
+retry-delay : "The time in milliseconds to wait between retries."
+
+max-retry: "The maximum number of times to retry the request."
+
+retry-status-codes: "A comma-separated list (<code>500,502</code>) of codes, range (<code>400-415</code>), or both (<code>400-415,500,502</code>) returned in the response that indicates that we should retry the request. "
+
+formula-path: "Support earlier formulas where <code>path</code> defined variables, such as an {ID} variable in an endpoint. In the latest version, the path parameter is unnecessary. "
+
+formula-body: "Specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the <code>body</code> parameter. For example, <code>{$steps.previousStep.body}</code>. "
+
+acceptable-codes: "A comma-separated list (<code>200,201</code>) of codes, range (<code>200-205</code>), or both (<code>200-205,208</code>) returned in the response that indicates success. "
+
+step-id: "The unique identifier for the step."
+
+onSuccess: "The next step for a successful execution of the current step."
+
+onFailure: "The next step for a failed execution of the current step."
+
+step-type: "The type of step, such as elementRequest, filter, or loop."
+
+account-id: "The unique identifier for an account within an organization. Use in any <code>/accounts</code> endpoint with an {id} variable."
+
+user-id: "The unique identifier for a user within an account. Use in any <code>/users</code> endpoint with an {id} variable."
+
+ceql-desc: "The CEQL search expression is a where clause like in a typical SQL query, but without the WHERE keyword. For example, to search for accounts created on or after ‘Jan 15, 2017′, use a search expression like <code>`where=createdDate >= ‘2014-01-17′`</code>."

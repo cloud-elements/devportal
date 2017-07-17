@@ -12,7 +12,7 @@ order: 20
 
 # Authenticate with SAP Hybris Cloud for Customer
 
-You can authenticate with SAP Hybris Cloud for Customer to create your own instance of the {{page.heading}} element through the {{site.console}} or through APIs. You can use the authenticated element instance to access the different resources at the {{page.heading}} platform.
+You can authenticate with SAP Hybris Cloud for Customer to create your own instance of the {{page.heading}} element through {{site.console}} or through APIs. You can use the authenticated element instance to access the different resources at the {{page.heading}} platform.
 
 {% include note.html content="If you want to set up events when you authenticate, go to <a href=events.html>the Events section</a>" %}
 
@@ -20,7 +20,7 @@ You can authenticate with SAP Hybris Cloud for Customer to create your own insta
 
 ## Authenticate Through the UI
 
-Use the {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance. If you are authenticating with events, see the [Events section](events.html).
+Use {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance. If you are authenticating with events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
@@ -108,7 +108,7 @@ curl -X POST \
 
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
