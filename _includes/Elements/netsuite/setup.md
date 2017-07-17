@@ -21,6 +21,8 @@ To locate your Account ID:
 
 Cloud Elements supports NetSuite 2016 Token Based Authentication.  Review the detailed information at [NetSuite Token Based Authentication documentation](https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_4247337262.html&whence=).
 
+{% include note.html content="To use token based authentication, set up a new user linked to a single role. If you use an existing user, they might have multiple roles. Then the role used by the webservice might not match the role selected as the webservices role.  " %}
+
 To set up Token Based Authentication:
 
 1. Navigate to **Setup > Company > Enable Features > Suite Cloud > Manage Authentication** and enable Token-Based Authentication.

@@ -10,4 +10,4 @@ parent: Back to Element Guides
 order: 5
 ---
 
-{% include netsuite/setup.md %}
+{% include Elements/netsuite/setup.md %}

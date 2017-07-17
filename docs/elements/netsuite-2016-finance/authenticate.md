@@ -11,4 +11,4 @@ parent: Back to Element Guides
 order: 20
 ---
 
-{% include netsuite/authenticate.md %}
+{% include Elements/netsuite/authenticate.md %}

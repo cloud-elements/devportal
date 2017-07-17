@@ -12,7 +12,7 @@ parent: Back to Element Guides
 order: 25
 ---
 
-{% include netsuite/events1.md %}
+{% include Elements/netsuite/events1.md %}
 
 * customers
 * employees
@@ -26,4 +26,4 @@ order: 25
 * vendors
 * Other objects that include `created`, `updated`, and `deleted` data.
 
-{% include netsuite/events2.md %}
+{% include Elements/netsuite/events2.md %}

@@ -12,7 +12,7 @@ parent: Back to Element Guides
 order: 30
 ---
 
-{% include netsuite/events1.md %}
+{% include Elements/netsuite/events1.md %}
 
 * accounts
 * contacts
@@ -21,4 +21,4 @@ order: 30
 * activities
 * opportunities
 
-{% include netsuite/events2.md %}
+{% include Elements/netsuite/events2.md %}
