@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Migrate Object Definitions and Transformations | Element Mapper | Cloud Elements API Docs
 title: Migrate Object Definitions and Transformations
 description: How to move Objects and Transformations from one account to another
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
@@ -11,13 +11,15 @@ parent: Back to Guides
 order: 6
 ---
 
-# Overview  
+{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
+
+# Overview
 
 If you are developing in multiple environments or accounts, you will need to be able to move your object definitions and transformations from one account/environment to another. The best way to accomplish this is using the APIs
 
-### 1. Move Object Definitions  
+### 1. Move Object Definitions
 
-Start by calling `GET /organizations/objects/definitions` and find the object definitions that you want to migrate. For this example we will use "MyContact" You should see a response like this:  
+Start by calling `GET /organizations/objects/definitions` and find the object definitions that you want to migrate. For this example we will use "MyContact" You should see a response like this:
 
 ```JSON
 {
@@ -83,9 +85,9 @@ Start by calling `GET /organizations/objects/definitions` and find the object de
 }
 ```
 
-First, grab the parent object that you are going to move `MyContact`. Notice this object definition references another sub object called `addressInfo`. Each sub object in Cloud Elements is its own entity, so make sure you grab all of the associated sub objects.  
+First, grab the parent object that you are going to move `MyContact`. Notice this object definition references another sub object called `addressInfo`. Each sub object in Cloud Elements is its own entity, so make sure you grab all of the associated sub objects.
 
-Use `POST /organizations/objects/definitions` to push these objects into the other account. Bring your object definition and sub objects into one JSON object:  
+Use `POST /organizations/objects/definitions` to push these objects into the other account. Bring your object definition and sub objects into one JSON object:
 
 ```JSON
 {
@@ -142,10 +144,10 @@ Use `POST /organizations/objects/definitions` to push these objects into the oth
 }
 ```
 
-### 2. Migrate Transformation  
+### 2. Migrate Transformation
 
 Next pull your transformation using `GET /organizations/elements/{keyOrId}/transformations/{objectName}`
-The response will look like:  
+The response will look like:
 
 ```JSON
 {

@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Steps | Formula Step Types | Cloud Element Formulas
 title: Formula Step Types
 description: An overview of all the available formula steps
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -11,13 +11,15 @@ parent: Back to Guides
 order: 3
 ---
 
+{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
+
 ## amqp Request Step
 The `amqpRequest` uses the `AMQP` protocol to post a message to an MQ server, e.g., `RabbitMQ`, etc.
 
-* The `url` parameter is required and is used to specify the `AMQP` URL endpoint of the MQ Server. The structure of the URL is as specified in the following documentation - https://www.rabbitmq.com/uri-spec.html  
-* The `exchange` parameter is optional and indicates the name of the MQ server exchange to which the message should be posted.  
-* The `queue` attribute is required and indicates the name of the queue of the MQ server to which the message should be posted.  
-* The `body`, as for the other request types, is the `JSON` payload to post to the MQ server.  
+* The `url` parameter is required and is used to specify the `AMQP` URL endpoint of the MQ Server. The structure of the URL is as specified in the following documentation - https://www.rabbitmq.com/uri-spec.html
+* The `exchange` parameter is optional and indicates the name of the MQ server exchange to which the message should be posted.
+* The `queue` attribute is required and indicates the name of the queue of the MQ server to which the message should be posted.
+* The `body`, as for the other request types, is the `JSON` payload to post to the MQ server.
 
 ```json
 {
@@ -74,7 +76,7 @@ Each of the two API calls in the Stream Step have the same properties as an Elem
 Custom Javascript that *must* return true or false.
 
 * If a filter returns `true`, the step linked to `onSucess` will be executed.
-* If a filter returns `false`, the step linked to `onFailure` will be executed. 
+* If a filter returns `false`, the step linked to `onFailure` will be executed.
 
 ```json
 {
@@ -106,7 +108,7 @@ Makes an HTTP/S call to any URL/endpoint.
 
 Required properties:
 
-* `url`, with HTTP or HTTPS 
+* `url`, with HTTP or HTTPS
 * `Method`
 
 Optional properties:
@@ -141,9 +143,9 @@ Loops over a list of objects from a previous step or trigger.
 
 To Use a loop step:
 
-* You must provide it with a list of objects to loop over. 
-* Set the `onSuccess` field to the first step in the loop. 
-* When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object. 
+* You must provide it with a list of objects to loop over.
+* Set the `onSuccess` field to the first step in the loop.
+* When you have reached the last step in the loop set the `onSuccess` field to the loop step, this will restart the loop for the next object.
 * If you need to continue on after the loop is completed, you can set the loop step onFailure to the next step to execute after the loop is completed. For a loop step, `onFailure` is executed when the loop has been executed for all objects in the list.
 
 ## Notification Step
@@ -154,7 +156,7 @@ Retries a formula instance execution with the same input data. The number of ret
 
 Required Property:
 
-* `retryAttempts` 
+* `retryAttempts`
 
 ## Request Step
 Makes an API call to one of our platform APIs.
