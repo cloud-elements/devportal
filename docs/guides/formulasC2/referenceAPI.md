@@ -1,4 +1,8 @@
 ---
+heading: Building Formulas
+seo: Formula Steps | Formula Step Types | Cloud Element Formulas
+title: Formula Triggers, Steps, and Variables JSON
+description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
 uiContentVersion: reference
 apis: API Docs
