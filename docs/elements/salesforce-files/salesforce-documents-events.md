@@ -1,8 +1,8 @@
 ---
-heading: Salesforce Documents
-seo: Events | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: Events | Salesforce Files | Cloud Elements API Docs
 title: Events
-description: Enable Salesforce Documents events for your application.
+description: Enable Salesforce Files events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 177

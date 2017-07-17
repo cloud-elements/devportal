@@ -1,8 +1,8 @@
 ---
-heading: Salesforce Documents
-seo: Overview | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: Overview | Salesforce Files | Cloud Elements API Docs
 title: Overview
-description: Integrate Salesforce Documents into your application via the Cloud Elements APIs.
+description: Integrate Salesforce Files into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 177
@@ -11,7 +11,7 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the Salesforce Documents Element
+## Welcome to the Salesforce Files Element
 
 
 #### At a Glance
