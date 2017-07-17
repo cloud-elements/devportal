@@ -1,7 +1,7 @@
 ---
 heading: PostgreSQL
-seo: FAQ | PostgreSQL | Cloud Elements API Docs
-title: FAQ
+seo: Tips | PostgreSQL | Cloud Elements API Docs
+title: Tips
 description: FAQ and troubleshooting tips.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
