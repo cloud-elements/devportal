@@ -81,7 +81,7 @@ Custom Javascript that *must* return true or false.
   "name": "contact-filter-step",
   "type": "filter",
   "onSuccess": [ "some-step" ],
-  "onFailure": [ "some-other-step"]
+  "onFailure": [ "some-other-step"],
   "properties": {
     "body": "done(trigger.event.objectType.toUpperCase() === 'CONTACT' && trigger.event.eventType === 'UPDATED');"
   }
@@ -116,7 +116,7 @@ Optional properties:
 * `headers`
 * `body`
 
-**Note:** Thes optional parameters must refer to an object from a previous step.
+**Note:** These optional parameters must refer to an object from a previous step.
 
 ```json
 {
