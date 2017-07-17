@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Accounts and Users
 seo: Account API Docs | Cloud Elements API Docs
 title: Platform Documentation
@@ -9,6 +10,7 @@ platform: accounts
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 90
+ValeOn: <!-- vale on -->
 ---
 
 {% include swagger.html %}

@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Accounts and Users
 seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Accounts
@@ -11,11 +12,12 @@ parent: Back to Guides
 order: 11
 redirect_from:
   - /docs/platform/accounts/account-management.html
+ValeOn: <!-- vale on -->
 ---
 
 # Manage Accounts
 
-If you are the user who created the organization, you are the organization administrator and you can manage the accounts related to it with the `/accounts` endpoint. You can create, retrieve, update, delete, and search accounts. To manage accounts, you must include a valid Organization Secret and the User Secret of the organization administrator in the header of any API requests to `/accounts`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
+If you are the user who created the organization, you are the organization administrator. You can manage the accounts related to the organization with the `/accounts` endpoint. You can create, retrieve, update, delete, and search accounts. To manage accounts, you must include a valid Organization Secret and the User Secret of the organization administrator in the header of any API requests to `/accounts`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#find-accounts>Find Accounts</a></br><a href=#add-an-account>Add an Account</a></br><a href=#add-users-to-accounts>Add Users to Accounts</a></br><a href=#get-a-specific-account>Get a Specific Account</a></br><a href=#update-an-account>Update an Account</a></br><a href=#deactivate-and-reactivate-an-account>Deactivate and Reactivate an Account</a></br><a href=#delete-an-account>Delete an Account</a></br>" type="info" %}
 
@@ -156,7 +158,7 @@ To get a list of accounts including ids see [Find Accounts](#find-accounts).
 * `email`
 * `password`
 
-You can also include the following optional attributes to provide more details about the user. These attributes do not appear in {{site.console}}.
+You can also include the following optional attributes to provide more details about the user. The attributes do not appear in {{site.console}}.
 
 * `"city": "string"`
 * `"country": "string"`
@@ -342,7 +344,7 @@ See [User Attributes](user-managementAPI.html#user-attributes) for descriptions 
 
 ## Deactivate and Reactivate an Account
 
-You can deactivate an account or activate an already deactivated account with the account `id` and the `PATCH /accounts/{id}` endpoint. Deactivating an account essentially performs the same action as [deleting an account](#delete-an-account). After you deactivate an account, you can not view it in Cloud Elements 2.0.  You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
+You can deactivate an account or activate an already deactivated account with the account `id` and the `PATCH /accounts/{id}` endpoint. Deactivating an account essentially performs the same action as [deleting an account](#delete-an-account). After you deactivate an account, you cannot view it in Cloud Elements 2.0.  You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
 
 ### Deactivate and Reactivate Account Parameters
 
@@ -391,11 +393,11 @@ See [Account Attributes](#account-attributes) for descriptions of each attribute
 
 Delete an account from your organization with the account `id` and the `DELETE /accounts/{id}` endpoint. Deleting an account essentially performs the same action as [deactivating an account](#deactivate-and-reactivate-an-account). You can recover a deleted account by reactivating it. The account will not appear in Cloud Elements 2.0 and is not retrieved by `GET /accounts`. You can still find the account using the account `id` with `/accounts` endpoints that use the `{id}` variable.
 
-{% include warning.html content="Do not attempt to delete the default organization-level account, which will prevent you from logging in to Cloud Elements or making API requests.  " %}
+{% include warning.html content="Do not delete the default organization-level account. Doing so will prevent you from logging in to Cloud Elements or making API requests.  " %}
 
 If you delete an account that also has users associated with it, the account deletion deactivates the users. If you reactivate the account and want to keep the same users, you must reactivate them separately.
 
-To check for any users of the account, use `GET /accounts/{id}/users`. If you receive a status of `404 Not Found` with the response body below, the account has no users and you can safely delete it.
+To check for any users of the account, use `GET /accounts/{id}/users`. If you receive a status of `404 Not Found` with the response body below, the account has no users and you can delete it.
 
 ```json
 {

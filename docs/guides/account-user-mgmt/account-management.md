@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Accounts and Users
 seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Accounts
@@ -11,6 +12,7 @@ parent: Back to Guides
 order: 10
 redirect_from:
   - /docs/platform/accounts/account-management.html
+ValeOn: <!-- vale on -->
 ---
 
 # Manage Accounts
@@ -60,7 +62,7 @@ To create a user for an account:
 3. Complete the required fields.
 4. Click **Create**.
 
-After you create a user, they do not receive any notification. This is because many users do not need to access Cloud Elements directly. If the new user needs to access Cloud Elements, either provide them with the password that you entered or encourage them to reset their password.
+After you create a user, they do not receive any notification. This is because many users do not need to access Cloud Elements directly. If the new user needs to access Cloud Elements, either give them the password that you entered or encourage them to reset their password.
 
 ## Change an Account Name or Description
 
@@ -75,13 +77,13 @@ To update an account:
 
 ## Deactivate and Reactivate an Account
 
-You can deactivate an account, making it unavailable for use. If you need to reactivate an account, you must use the [Cloud Elements APIs](account-managementAPI.html#deactivate-and-reactivate-an-account). Deactivating an account essentially performs the same action as [deleting an account](#delete-an-account). After you deactivate an account, you can not view it in Cloud Elements 2.0. You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
+You can deactivate an account, making it unavailable for use. If you need to reactivate an account, you must use the [Cloud Elements APIs](account-managementAPI.html#deactivate-and-reactivate-an-account). Deactivating an account essentially performs the same action as [deleting an account](#delete-an-account). After you deactivate an account, you cannot view it in Cloud Elements 2.0. You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
 
 ## Delete an Account
 
-You can delete an account, which also deactivates any users associated with the account. Deleting an account essentially performs the same action as [deactivating an account](#deactivate-and-reactivate-an-account). You can recover a deleted account by reactivating it with the Cloud Elements APIs. After you delete an account, you can not view it in Cloud Elements 2.0. You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
+You can delete an account, which also deactivates any users associated with the account. Deleting an account essentially performs the same action as [deactivating an account](#deactivate-and-reactivate-an-account). You can recover a deleted account by reactivating it with the Cloud Elements APIs. After you delete an account, you cannot view it in Cloud Elements 2.0. You can still find the account using the Cloud Elements APIs. Use the account `id` with `/accounts` endpoints that use the `{id}` variable.
 
-{% include warning.html content="Do not attempt to delete the default organization-level account, which will prevent you from logging in to Cloud Elements or making API requests.  " %}
+{% include warning.html content="Do not delete the default organization-level account. Doing so will prevent you from logging in to Cloud Elements or making API requests.  " %}
 
 If you delete an account that also has users associated with it, the account deletion deactivates the users. If you reactivate the account and want to keep the same users, you must reactivate them separately.
 

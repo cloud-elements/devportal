@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Accounts and Users
 seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Users
@@ -11,6 +12,7 @@ parent: Back to Guides
 order: 21
 redirect_from:
   - /docs/platform/accounts/account-management.html
+ValeOn: <!-- vale on -->
 ---
 
 # Manage Users
@@ -128,13 +130,13 @@ The following user attributes are deprecated and you can ignore them:
 
 ## Add a User
 
-Because you must associate each user with an account, adding a user is accomplished with the account `id` and  `POST /accounts/{accountId}/users`. See [Add Users to Accounts](account-managementAPI#add-users-to-accounts).
+Because you must associate each user with an account, you use an account `id` and the  `POST /accounts/{accountId}/users` endpoint. See [Add Users to Accounts](account-managementAPI#add-users-to-accounts).
 
 ## Get a Specific User
 
 You can get information about a specific user with the user `id` or `email` and the `GET/users/{emailOrId}` endpoint.
 
-You can also get a specific user of an account with the account `id`, the user `id` or `email` and, and the `GET/accounts/{id}/users/{emailOrId}` endpoint.
+You can also get a specific user of an account with the account `id`, the user `id` or `email`, and the `GET/accounts/{id}/users/{emailOrId}` endpoint.
 
 ### Get Specific User Parameters
 

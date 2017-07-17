@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Accounts and Users
 seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Your Profile
@@ -10,6 +11,7 @@ parent: Back to Guides
 order: 30
 redirect_from:
   - /docs/platform/accounts/account-management.html
+ValeOn: <!-- vale on -->
 ---
 
 # Manage Your Profile
