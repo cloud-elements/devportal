@@ -10,11 +10,15 @@ parent: Back to Element Guides
 order: 50
 ---
 
-## Tips
+# Tips
 
-### Why can't I connect my database?
+The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-Check your config file to make sure the port and bind-address have been set.
+{% include callout.html content="<strong>On this page</strong></br><a href=#database-connection>Database Connection</a></br><a href=#column-names>Column Names</a></br><a href=#events>Events</a></br><a href=#api-documentation>API-Documentation</a></br>" type="info" %}
+
+## Database Connection
+
+If you are having trouble connecting to your database, check your config file to make sure the port and bind-address have been set.
 
 Example Config:
 
@@ -25,15 +29,20 @@ bind-address           = 127.0.0.1 localhost
 #bind-address           = 159.203.5.166 external
 ```
 
-In this example, the `localhost bind-address` is not commented out so it will be used as the `db.host` value in the POST /instance configuration.
-The port is set to `3306`.  The `db.host` value would equal = `127.0.0.1:3306`.
+In this example, the `localhost bind-address` is not commented out so it will be used as the `db.host` value in the POST /instance configuration. The port is set to `3306`. In this case when you authenticate an element instance, use `127.0.0.1:3306` as the value for `db.host`.
 
-If you wish to expose the `external bind-address`, then comment out the `localhost bind-address`.
+If you want to expose the `external bind-address`, then comment out the `localhost bind-address`.
 
-If you wish to expose both sources (`localhost` and `external`), then comment out both addresses.
+If you want to expose both sources (`localhost` and `external`), then comment out both addresses.
 
-### I don't see any API Docs:
+## Column Names
 
-Since the resources/objects are constructed via your database tables, we do not have any generic API docs available to view.
+MySQL is a database element that is constructed from your database table structure. Spaces in column names are not supported.
 
-Need some help? [Contact Support](mailto:support@cloud-elements.com) with any questions and we'll get back to you as soon as possible.
+## Events
+
+Events are based on timestamp in the database with or without timezone.
+
+## API Documentation
+
+Cloud Elements does not have any generic API docs available to view.
