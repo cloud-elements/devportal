@@ -3,7 +3,7 @@ heading: Formulas
 seo: Overview | Formulas | Cloud Elements API Docs
 title: Overview
 description: Formula Overview
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -13,6 +13,8 @@ sitemap: false
 redirect_from:
   - /docs/products/formulas/
 ---
+
+{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
 
 # Overview
 

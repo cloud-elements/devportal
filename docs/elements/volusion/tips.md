@@ -11,18 +11,14 @@ order: 50
 sitemap: false
 ---
 
-## Volusion Tips
+# Tips
 
-How does Volusion Pagination work?
+The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-Volusion uses a sync style API for the GET /products and GET /orders resources.
-This means that pagination will automatically occur during each request, and
-must be reset through the Volusion website. For example, a call to GET /products will
-fetch the first page of 100 results, and then the next call will fetch the second page of 100
-results. This will continue to occur until the entire store of results has been
-returned. There is no need to specify a `page` or `pageSize` parameter.
+* Volusion uses a sync style API for the `GET /products` and `GET /orders` resources. This means that pagination will automatically occur during each request, and must be reset through the Volusion website. For example, a call to `GET /products` will fetch the first page of 100 results, and then the next call will fetch the second page of 100 results. This will continue to occur until the entire store of results has been returned. There is no need to specify a `page` or `pageSize` parameter.
 
-The directions for resetting pagination are :
+To reset pagination:
 
-```Volusion admin dashboard > Inventory > Import/Export > Volusion API >
-RUN Generic/Orders > Select date from Drop down list (oldest) > Reset Export```
+1. From the Volusion Admin Dashboard, select **Inventory Import/Export > Volusion API > RUN Generic/Orders**.
+1. Select a date from the list.
+1. Click **Reset Export**.

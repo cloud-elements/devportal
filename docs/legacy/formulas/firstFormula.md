@@ -3,7 +3,7 @@ heading: Formulas
 seo: Formula Quickstart | Formulas | Cloud Elements API Docs
 title: Build Your First Formula
 description: Videos walking through the different features of Formula Builder.
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -11,8 +11,10 @@ parent: Back to Guides
 order: 4
 ---
 
+{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
+
 # Building Your First Formula
-To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.  
+To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.
 
 > **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
 
