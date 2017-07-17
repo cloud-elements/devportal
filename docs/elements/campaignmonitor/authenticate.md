@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
+heading: Campaign Monitor
 seo: Authenticate | Name of Element | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
-elementKey: fake
+elementId: 3928
+elementKey: campaignmonitor
 parent: Back to Element Guides
 order: 20
 ---
@@ -21,35 +21,32 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
-
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
 
-    | Cloud Elements 2.0 | Earlier UI  |
+    | Latest UI | Earlier UI  |
     | :------------- | :------------- |
     |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
 
 3. Create an element instance.
 
-    | Cloud Elements 2.0 | Earlier UI  |
+    | Latest UI | Earlier UI  |
     | :------------- | :------------- |
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
+{% include note.html content="The optional List IDs field is needed only for event setup. See <a href=events.html>Events</a>.  " %}
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
+8. If using the earlier UI, optionally add tags.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
-
-<span style="color:red">The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint..."</span>
 
 Authenticating through API is a multi-step process that involves:
 
@@ -62,7 +59,7 @@ Authenticating through API is a multi-step process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET /elements/api-v2/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
 ```
 
 #### Query Parameters
@@ -76,8 +73,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 #### Example cURL
 
 ```bash
-curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
 ```
 
 #### Example Response
@@ -86,8 +82,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+    "oauthUrl": "https://api.createsend.com/oauth?scope=ViewReports%2CManageLists%2CCreateCampaigns%2CImportSubscribers%2CSendCampaigns%2CViewSubscribersInReports%2CManageTemplates%2CAdministerPersons%2CAdministerAccount%2CViewTransactional%2CSendTransactional&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=campaignmonitor&client_id=123456",
+    "element": "campaignmonitor"
 }
 ```
 
@@ -165,7 +161,7 @@ curl -X POST \
     "oauth.api.secret": "<CONSUMER_SECRET>"
   },
   "tags": [
-    "Docs"
+    "For Docs"
   ],
   "name": "API Instance"
 }'

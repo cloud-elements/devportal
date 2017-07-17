@@ -1,16 +1,17 @@
 ---
 heading: Name of Element
-seo: Endpoint Setup | Service provider setup | Name of Element | Cloud Elements API Docs
-title: Service Provider Setup
-description: Service provider setup
+seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+title: API Provider Setup
+description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
+elementKey: key
 parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance you must have the {{page.heading}} Enterprise edition or Professional edition with API support. Also, to set up a new application in {{page.heading}}, you must have Administrator privileges. Contact your system administrator if you do not have those privileges.
 
