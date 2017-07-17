@@ -3,7 +3,7 @@ heading: Element Mapper
 seo: Overview | Element Mapper | Cloud Elements API Docs
 title: Overview
 description: Element Mapper Overview
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
@@ -13,6 +13,8 @@ sitemap: false
 redirect_from:
   - /docs/products/element-mapper/
 ---
+
+{% include callout.html content="This guide is for an earlier version of Cloud Elements. See Cloud Elements 2.0 documentation at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
 
 # Overview
 

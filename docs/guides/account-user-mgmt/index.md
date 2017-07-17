@@ -16,7 +16,7 @@ ValeOn: <!-- vale on -->
 
 # Overview
 
-{% include callout.html content="The <i>Manage Accounts and Users</i> guide includes steps to use Cloud Elements 2.0. Earlier versions of Cloud Elements share much of the same functionality. You can read information about the earlier version at <a href=../../platform-api/accounts/account-management.html>Account Usage and Management Guide</a>." type="info" %}
+{% include callout.html content="The <i>Manage Accounts and Users Guide</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. Find steps to use the earlier version at <a href=../../platform-api/accounts/account-management.html>Account Usage and Management Guide</a>." type="info" %}
 
 The first user to sign up for Cloud Elements created an organization and established an Organization Secret automatically. As the default user of the organization, they are the organization administrator. The organization administrator can manage the accounts within the organization and the users associated with those accounts.
 
