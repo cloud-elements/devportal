@@ -53,6 +53,8 @@ To authenticate an element instance:
 
 ## Authenticate Through API
 
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send API calls to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  __token__ and __id__  for future API calls.
+
 <span style="color:red">The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint..."</span>
 
 Authenticating through API is a multi-step process that involves:
@@ -190,6 +192,8 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance
+
+In this example, the instance ID is `12345` and the instance token starts with "ABC/D...". The actual values returned to you will be unique: make sure you save them for future requests to this new instance.
 
 ```json
 {
