@@ -26,7 +26,7 @@ Each different type of step produces different step execution values that are ad
         "method": "POST",
         "path": "{}",
         "uri": "/elements/api-v2/hubs/crm/accounts",
-        "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"jjwyse.ngrok.io\",\"content-type\":\"application/json}"
+        "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"anysite.io\",\"content-type\":\"application/json}"
     },
     "response": {
       "code": "200",
@@ -68,7 +68,7 @@ Each different type of step produces different step execution values that are ad
               "query": "{}",
               "method": "POST",
               "uri": "/elements/api-v2/hubs/crm/accounts",
-              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"jjwyse.ngrok.io\",\"content-type\":\"application/json}"
+              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"anysite.io\",\"content-type\":\"application/json}"
           },
           "response": {
               "code": "200",
@@ -80,7 +80,7 @@ Each different type of step produces different step execution values that are ad
               "query": "{}",
               "method": "POST",
               "uri": "/elements/api-v2/hubs/crm/accounts",
-              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"jjwyse.ngrok.io\",\"content-type\":\"application/json}"
+              "headers": "{\"authorization\":\"Element /ABC=, User DEF=, Organization GHI\",\"content-length\":\"14\",\"host\":\"anysite.io\",\"content-type\":\"application/json}"
             ,
             "response": {
                 "code": "200",
@@ -183,7 +183,7 @@ function (trigger, steps, info, config, done) {
 
 > __PROTIP:__ You can use `console.log` to log things in your formula and help debug.
 
-> __PROTIP:__ You can use `notify.email` to send an email notification.  
+> __PROTIP:__ You can use `notify.email` to send an email notification.
 
 > __PROTIP:__ ES6 is supported.
 
