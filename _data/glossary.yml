@@ -29,3 +29,11 @@ formula-variable: "Variables that represent either element instances or specific
 polling: "An event option where Cloud Elements checks for changes to a resource in a configurable duration and captures the changed information"
 
 webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."
+
+organization: "The top level of the accounts and users hierarchy that represents the Cloud Elements customer."
+
+account: "The second level of the accounts and users hierarchy that represents your customers."
+
+user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
+
+organization-administrator: "The user  that can manage accounts and is associated with the initial sign up with Cloud Elements."

@@ -1,11 +1,15 @@
 ---
+heading: Building Formulas
+seo: Formula Steps | Formula Step Types | Cloud Element Formulas
+title: Formula Triggers, Steps, and Variables JSON
+description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
 uiContentVersion: reference
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 11
+order: 18
 ---
 
 # Triggers, Steps, and Variables

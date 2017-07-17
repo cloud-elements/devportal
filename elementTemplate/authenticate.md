@@ -178,7 +178,7 @@ curl -X POST \
 ```
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 

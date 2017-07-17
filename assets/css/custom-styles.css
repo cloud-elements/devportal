@@ -704,6 +704,12 @@ a[data-toggle="tooltip"] {
   border-color:#bce8f1
 }
 
+.alert-danger {
+  color:#31708f;
+  background-color:#EDEDEE;
+  border-color:#dc5151
+}
+
 .alert-warning {
   color:#31708f;
   background-color:#EDEDEE;
