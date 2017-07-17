@@ -11,4 +11,4 @@ order: 1
 sitemap: false
 ---
 
-{% include netsuite/index.md %}
+{% include Elements/netsuite/index.md %}

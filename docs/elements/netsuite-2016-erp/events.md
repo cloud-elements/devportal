@@ -7,10 +7,12 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 987
 elementKey: netsuiteerpv2
+pollObject: customers
 parent: Back to Element Guides
 order: 30
 ---
 
+<<<<<<< HEAD
 # Events
 
 Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
@@ -251,3 +253,21 @@ tags                                                                     | _Opti
 ## Webhooks
 
 Webhooks are not supported for this endpoint
+=======
+{% include Elements/netsuite/events1.md %}
+
+* customers
+* employees
+* estimates
+* invoices
+* journal-entries
+* payments
+* products
+* purchase-orders
+* time-activities
+* vendor-payments
+* vendors
+* Other objects that include `created`, `updated`, and `deleted` data.
+
+{% include Elements/netsuite/events2.md %}
+>>>>>>> 655824d218b6322f2d5f8ae2a40b329c25e6f71d

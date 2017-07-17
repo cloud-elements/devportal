@@ -14,4 +14,4 @@ order: 75
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-{% include netsuite/tips.md %}
+{% include Elements/netsuite/tips.md %}
