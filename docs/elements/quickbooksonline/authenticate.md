@@ -67,10 +67,10 @@ Authenticating through API is a multi-step process that involves:
 * [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
 
 #### Getting an Oauth Token
-Use the following API call to request an Oauth Token. Replace 'keyOrId' with the element key, `{{page.elementKey}}`. You will also need to replace 'api_key', 'api_secret' and 'siteAddress'.
+Use the following API call to request an Oauth Token. Replace 'keyOrId' with the element key, `{{page.elementKey}}`. You will also need to replace 'api_key', 'api_secret' and 'callbackUrl'.
 
 ```bash
-GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>
 ```
 
 ##### Query Parameters
@@ -79,13 +79,13 @@ GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&call
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
 
 ##### Example cURL
 ```
 curl -X GET
 -H 'Content-Type: application/json'
-https://api.cloud-elements.com/elements/api-v2/elements/elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>'
+https://api.cloud-elements.com/elements/api-v2/elements/elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>'
 ```
 
 ##### Example Response
@@ -103,7 +103,7 @@ You will use the token returned on this call to get the redirect URL and to prov
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>&requestToken=insert_fake_request_token&state=quickbooks
+GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&requestToken=insert_fake_request_token&state=quickbooks
 ```
 
 ##### Query Parameters
@@ -112,7 +112,7 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
 | requestToken | The token returned from the previous step.
 
 ##### Example cURL
@@ -151,7 +151,7 @@ Provide the response from the previous step to the users. After they authenticat
 
 #### Authenticating the Element Instance
 
-Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with Quickbooks and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
@@ -198,7 +198,7 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
   "element": {
@@ -240,9 +240,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in Quickbooks Online. |
 | `state` | This should always be {{page.elementKey}} |
 | `dataSource` | This value determines what data source should be used for the connection. It is returned after authentication. |
-| `oauth.callback.url` | The Callback URL from Salesforce. This is the Callback URL that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Salesforce. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Salesforce. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](salesforce-edpoint-setup.html)| string |
+| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
+| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](quickbooks-edpoint-setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
@@ -284,7 +284,7 @@ The Quickbooks Online element also allows for token based authentication. To pro
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
   "element": {
@@ -321,12 +321,12 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `"oauth.user.refresh_interval"` | In seconds, the amount of time that should pass before a refresh needs to take place. The default for Quickbooks Online is 151 days or 13046400. |
 | `oauth.user.token` | The token retrieve in the [Getting an Oauth Token step](#getting-an-oauth-token). |
 | `oauth.user.token.secret` | A secret to establish the ownership of the token. |
-| `quickbooks.realm.id` | The unique Identifier for the authorized quickbooks company. |
+| `quickbooks.realm.id` | The unique Identifier for the authorized Quickbooks company. |
 | `state` | This should always be {{page.elementKey}} |
 | `quickbooks.dataSource` | This value determines what data source should be used for the connection. |
-| `oauth.callback.url` | The Callback URL from Salesforce. This is the Callback URL that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Salesforce. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Salesforce. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](salesforce-edpoint-setup.html)| string |
+| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
+| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](quickbooks-edpoint-setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
