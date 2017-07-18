@@ -1,7 +1,7 @@
 ---
 heading: Formulas
 seo: API Docs | Formulas | Cloud Elements API Docs
-title: Platform Documentation
+title: API Documentation
 description: Formulas API Documentation.
 layout: sidebarapidocs
 apis: API Docs
@@ -11,4 +11,4 @@ parent: Back to Guides
 order: 100
 ---
 
-{% include swagger.html %}
+See the  API Documentation in [Building Formulas](../../guides/formulasC2/index.html).

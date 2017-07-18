@@ -3,13 +3,15 @@ heading: Element Mapper
 seo: Definitions | Element Mapper | Cloud Elements API Docs
 title: Definitions
 description: What are the terms I need to understand for Element Mapper?
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 2
 ---
+
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
 
 # Definitions
 There are a few different terms you should become familiar with in order to better grasp Element Mapper.

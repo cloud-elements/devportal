@@ -12,6 +12,8 @@ redirect_from:
   - /docs/platform/accounts/account-management.html
 ---
 
+{% include callout.html content="The <i>Account Usage and Management Guide</i> is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/account-user-mgmt/index.html>Manage Accounts and Users</a>." type="info" %}
+
 ## Account Usage and Management Guide
 
 Accounts and Account-level Users provide a way within Cloud Elements to organize a group of related Element Instances together. Conceptually, you can think of an account as a way to organize Element Instances for “Your Customer”.
@@ -513,7 +515,7 @@ Example of  Successful Response:
 NOTE:  The new user `Brie` has been assigned an ID of `13404`.  This ID can be found in the top field of the JSON response.  This ID will be needed along with the account ID for the
 `GET /accounts/{accountId}/users`,
 `GET /accounts/{accountId}/users/{emailOrId:.+}`, and the
-`PATCH /accounts/{accountId}/users/{id}`.  
+`PATCH /accounts/{accountId}/users/{id}`.
 
 
 `GET /accounts/{accountId}/users`

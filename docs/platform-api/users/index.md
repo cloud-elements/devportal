@@ -13,6 +13,8 @@ redirect_from:
   - /docs/platform/users/
 ---
 
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/account-user-mgmt/index.html>Manage Accounts and Users</a>." type="info" %}
+
 ## User APIs
 
 The Users APIs allow you to access users within your organizational account. Access includes retrieving, updating, and deleting users.
