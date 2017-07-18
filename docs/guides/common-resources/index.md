@@ -14,6 +14,8 @@ redirect_from:
   - /docs/products/common-resources/
 ---
 
+{% include callout.html content="<i>Defining Common Resources & Transformations</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../../legacy/element-mapper/index.html>Element Mapper</a>." type="info" %}
+
 # Overview
 
 With  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resources</a>, you can <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.transformation}}">transform</a> fields provided by your service providers to a single, normalized resource at Cloud Elements. This allows you to take advantage of our <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.one-to-many}}">one-to-many</a> integration approach where you write to a single common resource to integrate the transformed resources from your various service providers.

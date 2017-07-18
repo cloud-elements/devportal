@@ -3,13 +3,15 @@ heading: Element Mapper
 seo: Getting Started | Element Mapper | Cloud Elements API Docs
 title: Getting Started
 description: Videos and help walking through the different features of Element Mapper.
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 3
 ---
+
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/common-resources/index.html>Defining Common Resources & Transformations</a>." type="info" %}
 
 # First Time Using Element Mapper
 To get started using Element Mapper, you can use the Element Mapper UI or our platform object definition/transformation APIs.  If you are just getting started, we would recommend using the UI to help familiarize yourself with the different pieces that make up Element Mapper and how they work.

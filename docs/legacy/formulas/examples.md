@@ -3,13 +3,15 @@ heading: Formulas
 seo: Formula Examples | Formulas | Cloud Elements API Docs
 title: Examples
 description: View JSON examples of all of the different types of triggers and steps.
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 7
 ---
+
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
 
 # Examples
 Below are some JSON examples of all of the different types of triggers and steps that are currently available:
@@ -453,7 +455,7 @@ Below are some JSON examples of all of the different types of triggers and steps
 }
 ```
 
-> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` and `subFormulaConfigs` properties. Both point to a value that was constructed from a previous step. The args can be accessed in the sub-formula using `trigger.args`. The subFormulaConfigs can be accessed in the sub-formula using `config` for example: `config.crmInstanceId`. 
+> **NOTE:** The above JSON snippet shows an example of a step leveraging the optional `args` and `subFormulaConfigs` properties. Both point to a value that was constructed from a previous step. The args can be accessed in the sub-formula using `trigger.args`. The subFormulaConfigs can be accessed in the sub-formula using `config` for example: `config.crmInstanceId`.
 
 > **NOTE:** If the sub-formula requires variables to be set, then those variables can either be set in the parent formula instance using the same config names or passed in via the `subFormulaConfigs` property. All sub-formulas inherit their parent formula's configuration values. If you pass in the `subFormulaConfigs` these are added to the list of existing configs from the parent and the sub-formula has access to the parent's configs and those passed in with the values in `subFormulaConfigs` taking precedence.
 

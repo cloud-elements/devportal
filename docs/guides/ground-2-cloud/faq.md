@@ -461,7 +461,7 @@ applications to perform any further actions deemed necessary, which may
 include the user or application retrying the request.
 
 The Cloud Elements API Toolkit provides
-[formulas](http://developers.cloud-elements.com/docs/products/formulas/index.html)
+[formulas](http://developers.cloud-elements.com/docs/guides/formulasC2/index.html)
 and
 [events](http://developers.cloud-elements.com/docs/products/element-builder/enhance-existing-elements.html)
 which might help construct simple or complex retry scenarios for

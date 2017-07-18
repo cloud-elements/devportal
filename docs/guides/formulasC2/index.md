@@ -14,9 +14,7 @@ redirect_from:
   - /docs/products/formulas/
 ---
 
-# Overview
-
-{% include callout.html content="This guide includes steps to use Cloud Elements 2.0. Earlier versions of Cloud Elements share much of the same functionality, but you can read information about the earlier version at <a href=../../guides/formulas/index.html>Formulas</a>." type="info" %}
+{% include callout.html content="<i>Building Formulas</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../../legacy/formulas/index.html>Formulas</a>." type="info" %}
 
 In Cloud Elements you can build **formula templates**&mdash;reusable workflow templates that are independent of API providers. Formula templates include triggers, like events or schedules, that kick off a series of steps. Formulas support a large variety of different use cases across different services.  For example, they can keep systems in sync, migrate data between systems, or automate business workflows.
 

@@ -11,4 +11,4 @@ parent: Back to Guides
 order: 90
 ---
 
-{% include swagger.html %}
+See the  API Documentation in [Defining Common Resources & Transformations](../../guides/common-resources/index.html).

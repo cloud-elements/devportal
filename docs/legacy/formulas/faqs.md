@@ -3,13 +3,15 @@ heading: Formulas
 seo: Formula FAQs | Formulas | Cloud Elements API Docs
 title: FAQs
 description: Frequently Asked Questions
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 8
 ---
+
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/formulasC2/index.html>Building Formulas</a>." type="info" %}
 
 # FAQs
 
