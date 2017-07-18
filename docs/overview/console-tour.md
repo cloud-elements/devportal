@@ -1,15 +1,15 @@
 ---
-heading: Console Tour
-seo: Console Tour | Cloud Elements API Docs
-title: Console Tour
-description: A Brief Tour of the Console
+heading: Cloud Elements Tour
+seo: Tour | Cloud Elements API Docs
+title: Cloud Elements Tour
+description: A Brief Tour of Cloud Elements
 layout: sidebarleft
 order: 4
 published: true
 sitemap: false
 ---
 
-## Console Tour
+## Cloud Elements Tour
 
 ### Element Catalog
 

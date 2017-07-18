@@ -1,6 +1,6 @@
 ## Authentication To Cloud Elements APIs
 
-To call our APIs, you will need an account with Cloud Elements. To get an account, you must [sign up](https://console.cloud-elements.com/elements/jsp/signup.jsp) using our API Manager Console. When you create an account with us, we assign you an Organization secret and a User secret. An Organization is a customer of Cloud Elements (/organizations). The User and Organization secret represent your account with Cloud Elements
+To call our APIs, you will need an account with Cloud Elements. To get an account, you must [sign up](https://console.cloud-elements.com/elements/jsp/signup.jsp) using the Cloud Elements UI. When you create an account with us, we assign you an Organization secret and a User secret. An Organization is a customer of Cloud Elements (/organizations). The User and Organization secret represent your account with Cloud Elements
 An Organization secret and User secret are needed to call our Platform APIs, to do things like:
 
 * learn about our Catalog of endpoints (`/elements`)

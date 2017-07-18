@@ -24,7 +24,7 @@ NOTE: This page assumes you have an Element Instance created for Salesforce and 
 
 #### Create Custom Contact
 
-Log in to the Cloud Elements API Manager Console.
+Log in to [Cloud Elements](https://console.cloud-elements.com).
 
 Select ‘My Objects’ and click ‘Add/Edit Object’.
 ![Create Custom Contact 1](http://cloud-elements.com/wp-content/uploads/2015/09/CreateCustomContact1.png)

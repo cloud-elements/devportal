@@ -49,7 +49,7 @@ Let’s say you have a customer, “Acme Publishing”, and you wish to organize
 
 To accomplish these goals, you need to add an Account and an Account User, within your Cloud Elements Organization/Environment. Presently, the only way to do this is via the API. Here’s how:
 
-Go to the Console Documentation, Platform -> Accounts:
+In <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, open **API Docs > Platform > Accounts**:
 ![Cloud Elements Account Management 2](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts11.png)
 
 Expand the `POST /accounts` section:
@@ -110,7 +110,7 @@ This user will then show up in the Administration -> Users section when logged i
 The User Token returned from the POST JSON body response is sufficient to go ahead and make API calls, etc.
 ![Cloud Elements Account Management 10](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts9.png)
 
-If you wish for the user to be able to interactively login to the console, however, you’ll need to initiate a password reset email. Logout from the Console:
+If you wish for the user to be able to interactively login to the console, however, you’ll need to initiate a password reset email. Log out from Cloud Elements:
 ![Cloud Elements Account Management 11](http://cloud-elements.com/wp-content/uploads/2015/03/Accounts10.png)
 
 Click the “Reset Password” button:
@@ -513,7 +513,7 @@ Example of  Successful Response:
 NOTE:  The new user `Brie` has been assigned an ID of `13404`.  This ID can be found in the top field of the JSON response.  This ID will be needed along with the account ID for the
 `GET /accounts/{accountId}/users`,
 `GET /accounts/{accountId}/users/{emailOrId:.+}`, and the
-`PATCH /accounts/{accountId}/users/{id}`.  
+`PATCH /accounts/{accountId}/users/{id}`.
 
 
 `GET /accounts/{accountId}/users`

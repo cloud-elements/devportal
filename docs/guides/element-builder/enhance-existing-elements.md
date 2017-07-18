@@ -37,7 +37,7 @@ Let’s get started by cloning the current FreshBooks Element in Cloud Elements 
 
 #### Clone Existing Element
 
-Login to the [Cloud Elements API Manager Console](https://console.cloud-elements.com/elements/jsp/login.jsp)
+Log in to [Cloud Elements](https://console.cloud-elements.com/elements/jsp/login.jsp)
 
 Click “Elements Catalog” and select “Finance”
 

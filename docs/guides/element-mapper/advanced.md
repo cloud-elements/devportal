@@ -24,9 +24,9 @@ Add object definitions to resources like accounts and contacts so they can be ma
 
 The My Object resource can be used with Elements in all of our Hubs with the exception of Documents and Messaging.
 
-This guide will walk you through the creation of an Object via the Cloud Elements API Manager Console.
+This guide will walk you through the creation of an Object via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> .
 
-Log in to the [Cloud Elements API Manager Console](https://console.cloud-elements.com/elements/jsp/login.jsp)
+Log in to [Cloud Elements](https://console.cloud-elements.com/elements/jsp/login.jsp)
 
 Click “My Objects”
 ![Element Mapper My Object 1](http://cloud-elements.com/wp-content/uploads/2015/06/MyObject1.png)
@@ -151,7 +151,7 @@ Let’s take a look at an example:
 Mapping flat fields to an array can also be done via the Element Mapper UI.
 A QuickBooks custom customer will be used. This document assumes a QuickBooks instance has been created. If an instance has not been created, please review the QuickBooks Documentation under Elements > QuickBooks > Endpoint Setup and Create Instance found in the left hand side of the documentation menu.
 
-Log in to the [Cloud Elements API Manger Console](https://console.cloud-elements.com/elements/jsp/login.jsp).
+Log in to [Cloud Elements](https://console.cloud-elements.com/elements/jsp/login.jsp).
 
 Navigate to ‘My Instances’
 

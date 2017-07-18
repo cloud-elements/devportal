@@ -12,7 +12,7 @@ order: 4
 ---
 
 # Building Your First Formula
-To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.  
+To get started creating your own formulas, you can use the Formula Builder UI or our platform formula APIs.  If you are just getting started, we would recommend building formulas via the UI to help familiarize yourself with the different pieces of a formula and how they work.
 
 > **NOTE:** The Formula Builder UI leverages *only* our platform formula APIs, so anything you can do in the UI can also be done via our APIs.
 
@@ -44,6 +44,6 @@ To get started, we are going to demonstrate how to create a very simple formula 
 
 In order to go about creating formulas and formula instances via the API, please reference our "API Docs" section on the right side panel.
 
-> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via the Console UI.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
+> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
 
 > **NOTE:** The platform formula APIs show a sub-resource of a formula called `configuration`.  This is what we call "Variables" throughout our documentation and in the Formula Builder UI.
