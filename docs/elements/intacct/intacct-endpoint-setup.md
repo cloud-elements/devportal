@@ -23,3 +23,26 @@ __NOTE FROM INTACCT:  SenderId and password are your api gateway credentials, on
 ![Intacct Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/08/IntacctAPI2.png)
 
 Next [create an instance](intacct-create-instance.html) with your Intacct Company ID, User ID, Password, Sender ID and Sender Password.
+
+### Set up User Permissions
+
+**Single-Entity Account**
+
+1. In Intacct, go to **Company** > **Users** 
+2. Locate the user, and click Subscriptions 
+3. Click each individual permission and select All
+  1. You may need to click into the permission link on each module
+  ![Intacct Permissions](/assets/img/elements/intacct/IntacctPermissions.gif)
+4. Click Save
+
+**Multi-Entity Account**
+
+1. In Intacct, go to **Company** > **Roles**
+2. Create a new Role
+3. Make sure all Modules are selected
+  1. You may need to click into the permission link on each module
+  ![Intacct Permissions](/assets/img/elements/intacct/IntacctPermissions.gif)
+4. Click Save
+5. Go to **Company** > **Users**
+6. Locate the user, and assign the newly created role to it.
+7. Click Save

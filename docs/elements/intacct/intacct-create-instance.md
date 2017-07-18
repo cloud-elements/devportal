@@ -1,7 +1,7 @@
 ---
 heading: Intacct
 seo: Create Instance | Intacct | Cloud Elements API Docs
-title: Create Instance
+title: Authenticate
 description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -49,7 +49,8 @@ This instance.json file must be included with your instance request.  Please fil
 	"intacct.user.password": "<INSERT_INTACCT_USER_PASSWORD>",
 	"intacct.sender.id": "<INSERT_INTACCT_SENDER_ID>",
 	"intacct.sender.password": "<INSERT_INTACCT_SENDER_PASSWORD>",
-	"intacct.control.id": "<INSERT_INTACCT_CONTROL_ID>"  //unique value like myTestId
+	"intacct.control.id": "<INSERT_INTACCT_CONTROL_ID>",  //unique value like myTestId
+  "intacct.location.id": "<The Location/Entity ID of the company>" //optional for multi entity companies
   },
   "tags": [
     "<INSERT_TAGS>"
