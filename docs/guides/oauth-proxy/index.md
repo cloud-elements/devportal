@@ -20,7 +20,7 @@ We offer two forms of the proxy.
 Standard OAuth Proxy Configuration: requires an API key and secret to be passed as URL parameters or in the JSON payload needed to create an instance.
 OAuth Proxy with API Key and Secret Management: option to input your API key and secret during the proxy creation and we will take care of the rest during instance creation.
 
-Currently, an OAuth Proxy can only be created from the Cloud Elements Console. The OAuth Proxy is an __OPTIONAL__ feature. This feature is NOT required to use Cloud Elements Service. Instructions on how to set up the Proxy are below.
+Currently, an OAuth Proxy can only be created from <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>. The OAuth Proxy is an __OPTIONAL__ feature. This feature is NOT required to use Cloud Elements Service. Instructions on how to set up the Proxy are below.
 
 How to use the OAuth Proxy:
 

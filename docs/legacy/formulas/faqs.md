@@ -18,14 +18,14 @@ order: 8
 ## **How do I go about debugging a formula instance execution?**
 As always, everything we do is API-first, so you can always use the formula platform APIs to retrieve details about an execution including all of that execution's step executions and step execution values.  To view all platform APIs for formulas, click on "API Docs" in the right-hand panel.
 
-That being said, our Console UI leverages those APIs for you, so sometimes it can be easier to view executions there.  To do so, simply login to the Cloud Elements Console UI, and click on "Executions" in the left-hand panel under the "Formulas" heading.
+That being said, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> leverages those APIs for you, so sometimes it can be easier to view executions there.  To do so, simply login to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, and click on "Executions" in the left-hand panel under the "Formulas" heading.
 
 ![ExecutionsScreen](/assets/img/formulas/executions.gif)
 
 The `GET /formulas/instances/executions/{executionId}/errors` API allows you to retrieve errors for a formula instance execution.
 This API returns any steps that failed and the step execution value containing the error message.
 
-This can also be accessed via our Console UI within the "Executions" Screen:
+This can also be accessed via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> UI within the "Executions" Screen:
 
 ![ExecutionErrorsScreen](https://cloud.githubusercontent.com/assets/7445993/19490597/037c8d34-952d-11e6-8c96-c2280ff329a2.gif)
 
@@ -35,9 +35,9 @@ First off, that's not a question.  Secondly, if your formula is not running, che
 * Have you created an instance of the formula?
 * Is the trigger's element instance active?
 * If the trigger is an event type, are events enabled for the trigger's element instance?
-* If you click on "Events" in the LHS of the Console UI, can you see that we are receiving events for this element instance?
+* If you click on "Events" in <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, can you see that we are receiving events for this element instance?
 * Are both the formula and formula instance set to "active"?
-* If you click on "Executions" in the LHS of the Console UI, can you see that it's running but failing somewhere?
+* If you click on "Executions" in Cloud Elements, can you see that it's running but failing somewhere?
 * Is it a full moon? (jokes...)
 
 ## **How fast do formulas run?**

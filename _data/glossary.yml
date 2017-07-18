@@ -39,3 +39,5 @@ account: "The second level of the accounts and users hierarchy that represents y
 user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
 
 organization-administrator: "The user  that can manage accounts and is associated with the initial sign up with Cloud Elements."
+
+ce-ui: "The Cloud Elements user interface that provides access to the features and APIs avalable with Cloud Elements."
