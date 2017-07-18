@@ -1,8 +1,8 @@
 ---
-heading: Salesforce Documents
-seo: API Docs | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: API Docs | Salesforce Files | Cloud Elements API Docs
 title: API Docs
-description: Salesforce Documents API Documentation.
+description: Salesforce Files API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 177

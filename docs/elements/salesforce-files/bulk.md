@@ -1,6 +1,6 @@
 ---
-heading: Salesforce Documents
-seo: Bulk APIs | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: Bulk APIs | Salesforce Files | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc

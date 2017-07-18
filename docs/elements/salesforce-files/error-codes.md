@@ -1,6 +1,6 @@
 ---
-heading: Salesforce Documents
-seo: Error Codes | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: Error Codes | Salesforce Files | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: sidebarelementdoc

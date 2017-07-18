@@ -1,6 +1,6 @@
 ---
-heading: Salesforce Documents
-seo: Endpoint Setup | Salesforce Documents | Cloud Elements API Docs
+heading: Salesforce Files
+seo: Endpoint Setup | Salesforce Files | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: sidebarelementdoc

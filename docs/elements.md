@@ -84,7 +84,7 @@ layout: sidebarelementtile
 * [![OneDrive](/assets/img/element-logos/onedrive.png)OneDrive](./elements/onedrive/)
 * [![OneDrive Business](/assets/img/element-logos/onedrivebusiness.png)Microsoft OneDrive for Business Beta](./elements/onedrivebusiness/)
 * [![OneNote](/assets/img/element-logos/onenote.png)OneNote Beta](./elements/onenote/)
-* [![Salesforce Documents](/assets/img/element-logos/salesforce.png)Salesforce Documents](./elements/salesforce-documents/)
+* [![Salesforce Files](/assets/img/element-logos/salesforce.png)Salesforce Files](./elements/salesforce-files/)
 * [![Salesforce Libraries](/assets/img/element-logos/salesforce.png)Salesforce Libraries](./elements/salesforce-libraries/)
 * [![Citrix ShareFile](/assets/img/element-logos/sharefile.png)Citrix ShareFile](./elements/sharefile/)
 * [![SFTP](/assets/img/element-logos/sftp.png)SFTP Beta](./elements/sftp/)
