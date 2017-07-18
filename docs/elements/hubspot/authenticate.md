@@ -1,7 +1,7 @@
 ---
 heading: Hubspot Marketing
 seo: Authenticate | Hubspot Marketing | Cloud Elements API Docs
-title: Authenticate 
+title: Authenticate
 description: Authenticate an element instance with Hubspot Marketing
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -39,7 +39,7 @@ To authenticate an element instance:
 
 5. Enter a name for the element instance.
 
-6. Enter you Hubspot portal id. 
+6. Enter you Hubspot portal id.
 
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
@@ -150,7 +150,7 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
   "element": {
