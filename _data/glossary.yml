@@ -12,6 +12,8 @@ element-instance: "The specific authenticated instance of an element."
 
 element-instance-resource: "The resources available to the element instance through its API."
 
+element: "An enhanced connector that provides a unified developer experience into a specic cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo)."
+
 resource: "Specific endpoints within an API that contain objects accessible via the API. "
 
 one-to-many: "Enables developers to write to one API to integrate multiple elements."
