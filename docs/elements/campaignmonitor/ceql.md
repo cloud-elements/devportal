@@ -19,7 +19,7 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 When querying in {{page.heading}}, keep the following in mind:
 
-* Many GET requests require a CEQL query. For example, to make a `GET /lists` request you must include a CEQL query that specifiedsa Client ID, like `id='123454654564'`. So your actual request would be:
+* Many GET requests require a CEQL query. For example, to make a `GET /lists` request you must include a CEQL query that specifies a Client ID, like `id='123454654564'`. So your actual request would be:
 
     ```bash
     https://staging.cloud-elements.com/elements/api-v2/hubs/marketing/lists?where=id%3D'123454654564'
