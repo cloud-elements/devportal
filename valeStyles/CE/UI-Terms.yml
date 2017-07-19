@@ -1,0 +1,7 @@
+extends: substitution
+message: Prefer %s over '%s.'
+level: warning
+ignorecase: true
+swap:
+  open-source: "'open source'"
+  dropdown: "'drop-down' or 'drop down' or 'list'"

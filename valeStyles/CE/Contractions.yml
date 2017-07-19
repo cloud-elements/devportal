@@ -1,0 +1,40 @@
+extends: substitution
+message: Use '%s' instead of '%s.'
+level: suggestion
+ignorecase: true
+swap:
+  it's: it is
+  it'll: it will
+  we're: we are
+  we'll: we will
+  we've: we have
+  they're: they are
+  they'll: they will
+  that's: that is
+  that'll: that will
+  who's: who is
+  who'll: who will
+  what's: what is
+  what'll: what will
+  where's: where is
+  where'll: where will
+  when's: when is
+  when'll: when will
+  why's: why is
+  why'll: why will
+  how's: how is
+  how'll: how will
+  isn't: is not
+  aren't: are not
+  wasn't: was not
+  weren't: were not
+  haven't: have not
+  hasn't: has not
+  won't: will not
+  don't: do not
+  doesn't: does not
+  didn't: did not
+  can't: cannot
+  couldn't: could not
+  shouldn't: should not
+  couldn't: could not
