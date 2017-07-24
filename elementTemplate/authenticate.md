@@ -184,7 +184,8 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  |
 | `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
