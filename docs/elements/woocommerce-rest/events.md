@@ -14,11 +14,7 @@ order: 25
 
 {% include polling_and_webhooks_defined.md %}
 
-__On this page__
-
-[Webhooks](#webhooks)
-
-[Polling](#polling)
+{% include callout.html content="<strong>On this page</strong></br><a href=#webhooks>Webhooks</a></br><a href=#polling>Polling</a>" type="info" %}
 
 ## Webhooks
 
@@ -34,7 +30,7 @@ To add webhooks when authenticating through the UI:
 
 When finished adding your webhook configuration, the Event Configuration section should look like this:
 
-![Webhooks Eabled](img/Webhooks.png)
+![Webhooks Enabled](img/webhooks.png)
 
 ### Configure Webhooks Through API
 

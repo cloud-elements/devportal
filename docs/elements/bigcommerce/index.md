@@ -15,8 +15,6 @@ sitemap: false
 
 {{page.heading}} provides an online ecommerce service used to power online stores.
 
-<span style="color:red">A great place to get this initial paragraph is from Programmableweb or the vendor's website.</span>
-
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
 ## Element Details
