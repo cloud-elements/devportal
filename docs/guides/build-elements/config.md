@@ -20,12 +20,12 @@ The information that you need to enter to configure your element differs dependi
 
 ## Configure OAuth and OAuth2
 
-1. In Base URL enter the URL where all API Requests will be sent. See [Base URL and Pagination](#base-url-and-pagination).
+1. In **Base URL** enter the URL where all API Requests will be sent. See [Base URL and Pagination](#base-url-and-pagination).
 2. Enter pagination information:
   * **Max Page Size** supported by the API provider. See [Base URL and Pagination](#base-url-and-pagination).
   * **Pagination Type** supported by the API provider. See [Base URL and Pagination](#base-url-and-pagination).
 1. Complete the OAuth 2 information
-1. If the Cloud Service uses OAUth 1 or OAuth 2, complete the following: See [OAuth Authorization](#oauth-authorization).
+1. If the Cloud Service uses OAuth 1 or OAuth 2, complete the following: See [OAuth Authorization](#oauth-authorization).
   * OAuth Authorization Url:
   * OAuth API Key:
   * OAuth API Secret
