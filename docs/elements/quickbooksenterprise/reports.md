@@ -200,10 +200,10 @@ You must specify a `ReportName` in the CEQL expression. The `ReportName` is the 
 | ReportBasis			| =		| [See below](#reportbasis) |
 | ReportCalendar		| =		| [See below](#reportcalendar) |
 | ReportDetail			| =		| [See below](#reportdetail) |
-| ReportModifiedFromDate|  	= | ISO8601 Date |
+| ReportModifiedFromDate|  	= | `yyyy-mm-ddThh:mm:ss` |
 | ReportName | =		| string see valid  |
-| ReportPeriodFrom		| =		| ISO8601 Date |
-| ReportPeriodTo		| =		| ISO8601 Date |
+| ReportPeriodStart		| =		| `yyyy-mm-ddThh:mm:ss` |
+| ReportPeriodEnd		| =		| `yyyy-mm-ddThh:mm:ss` |
 | ReportPostingStatus		| =		| [See below](#reportpostingstatus) |
 | ReportTxnType		| in, =		| [See below](#reporttxntype) |
 | ReturnColumns		| =		| [See below](#returncolumns) |
