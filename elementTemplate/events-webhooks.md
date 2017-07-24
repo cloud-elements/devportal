@@ -19,11 +19,11 @@ Cloud Elements supports events via polling or webhooks depending on the endpoint
 
 ## Supported Events and Resources
 
-Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [Campaign Monitor's webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
+Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
 
 ## Webhooks
 
-You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or in the JSON body of the `/instances` [API call](#configure-webhooks-through-api) .
+You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-webhooks-through-api) .
 
 ### Configure Webhooks Through the UI
 
@@ -31,9 +31,7 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with webhooks:
 
-1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to naming the authenticated element instance.
-2. In Cloud Elements 2.0, click Show Optional Fields to show the List ID's field.
-3. Enter a comma separated list of List IDs that represent the lists that you want to monitor with events. See [Find a List ID in API Provider Setup](setup.html#find-a-list-id) for more information about locating the List IDs.
+1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
 2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
@@ -41,6 +39,7 @@ To authenticate an element instance with webhooks:
     | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
+9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. If using the earlier UI, optionally add tags.
@@ -106,12 +105,12 @@ curl -X POST \
     "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.callback.url": "<CALLBACK_URL>",
-    "oauth.api.key": "<CONSUMER_KEY>",
-    "oauth.api.secret": "<CONSUMER_SECRET>"
+    "oauth.callback.url": "https://mycoolapp.com",
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx"
     "event.notification.enabled": true,
-    "event.notification.callback.url": "<CALLBACK_URL>",
-    "events.list.ids": "<LIST_IDS>"
+    "event.notification.callback.url": "https://mycoolapp.com/events",
+    "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -124,14 +123,17 @@ curl -X POST \
 
 API parameters not shown in the {{site.console}} are in `code formatting`.
 
+<add custom element-specific params at the bottom of the table>
+
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  |
 | `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
 | `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
-| List IDs</br>`events.list.ids` | A comma separated list of  API Subscriber List IDs for lists that you want to monitor. This is the **List ID** that you noted in the [API Provider Setup section](setup.html).  | String |
+| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
