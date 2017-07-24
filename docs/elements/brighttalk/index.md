@@ -15,7 +15,7 @@ sitemap: false
 
 BrightTALK is a webinar and video meeting service provider. BrightTALK uses the web service called Bulkloader to provide connections to other services like Oracle Eloqua, HubSpot, and Salesforce Sales Cloud.
 
-This overview describes basic element details, the Base URL for API calls, and information about authenticating with Cloud Elements.  
+This overview describes basic element details, the Base URL for API calls, and information about authenticating with Cloud Elements.
 
 [Element details](#element-details)
 
@@ -47,14 +47,14 @@ To authenticate with Cloud Elements, you need to know your Organization Secret a
 
 When you create an account with us, we assign you an Organization Secret and a User Secret. An Organization is a customer of Cloud Elements (`/organizations`). The User and Organization secrets represent your account with Cloud Elements.
 
-To find your Organization and User Secret, click __Secrets__ in the API Manager Console:
+To find your Organization and User Secret, click __Secrets__ in Cloud Elements:
 ![Secrets](../img/Org-User-Secret.png)
 
 When you create a new connection to an endpoint, you will receive an Element token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
 
 To find your Element token:
 
-* Open the API Manager Console, go to My Instances, and then click __Token__.
+* Open <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, go to My Instances, and then click __Token__.
     ![Instance Token](../img/Instance-Token.png)
 
     or

@@ -18,7 +18,7 @@ redirect_from:
 
 This Cook Book outlines how to synchronize Contact data between Salesforce and Hubspot. The end goal is to have Salesforce update Hubspot when a Contact is created or modified and vice versa.
 
-The Cook Book uses the UI in our Console, however, all of the steps in this guide can also be accomplished by our API.
+The Cook Book uses <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, however, all of the steps in this guide can also be accomplished by our API.
 
 If this is your first time using our platform, checkout our [Platform Overview](https://developers.cloud-elements.com/docs/overview/overview.html).
 
