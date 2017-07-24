@@ -14,8 +14,8 @@ sitemap: false
 
 ### What to do First
 
-__Create an account__ in the [Cloud Elements Developer Console](https://console.cloud-elements.com/elements/jsp/signup.jsp)
-Once you get logged into the Console, locate the `ADMINISTRATION` menu on the left hand side.
+__Create an account__ in [Cloud Elements](https://console.cloud-elements.com/elements/jsp/signup.jsp)
+Once you get logged in to <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>, locate the `ADMINISTRATION` menu on the left hand side.
 
 The Administration menu allows you to create accounts and user logins for your customers.
 
