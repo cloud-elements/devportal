@@ -1,11 +1,7 @@
 ---
 heading: Event Management
 seo: Event Management | Cloud Elements API Docs
-<<<<<<< HEAD
 title: Provisioning via UI
-=======
-title: Provisioning via Cloud element-instance-resource
->>>>>>> d3cdc56cd9077d13c425e1fb47ef6979417c3506
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
 layout: sidebarleft
 breadcrumbs: /docs/platform/platform-docs.html
