@@ -16,17 +16,18 @@ box_number: 1
 
 ## Define Basic Element Information
 
-Basic information about an element includes the name, lement key, and description; the type of service to connect to; the authentication type of the element, API docs; vendor API documentation, and logo.
+Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
 
 ## Build an Element
 
 1. On the Elements page, click **Build a New Element**.
-1. Click **Build New Element**.
+1. Click **Create**.
 1. Enter basic information about the element:
-  * Element Name &mdash;The name appears on the Element card and should clearly identify the API provider associated with it.
+  * Element Name &mdash; The name appears on the Element card and should clearly identify the API provider associated with it.
   * Element Key &mdash; Generated form the Element Name by default, but you can enter any text.
   * Description &mdash; The description appears in the response when you authenticate an instance of the element.
-1. Select the API type used by the Service Provider.
+1. Select a Hub as a way to categorize the element.
+2. Select the API type used by the Service Provider.
 2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an "Authorization" or "Authentication" section of the provider's API documentation.
 
     {% include note.html content=" Your authentication selection affects the configuration values that you will need to complete when you configure the element. " %}

@@ -18,14 +18,21 @@ box_number: 2
 
 The information that you need to enter to configure your element differs depending on the authorization type.
 
-## Configure OAuth and OAuth2
+## Configure Basic Porperties
+
+Regardless of the authorization type, you'll need to enter the following:
 
 1. In **Base URL** enter the URL where all API Requests will be sent. See [Base URL and Pagination](#base-url-and-pagination).
 2. Enter pagination information:
   * **Max Page Size** supported by the API provider. See [Base URL and Pagination](#base-url-and-pagination).
   * **Pagination Type** supported by the API provider. See [Base URL and Pagination](#base-url-and-pagination).
-1. Complete the OAuth 2 information
-1. If the Cloud Service uses OAuth 1 or OAuth 2, complete the following: See [OAuth Authorization](#oauth-authorization).
+
+## Configure OAuth and OAuth2
+
+To configure Oauth 2.0 elements:
+
+1. Click **Authentication**.
+2. Complete the following required parameters: See [OAuth Authorization](#oauth-authorization).
   * OAuth Authorization Url:
   * OAuth API Key:
   * OAuth API Secret
@@ -34,8 +41,11 @@ The information that you need to enter to configure your element differs dependi
   * OAuth Scope:
   * OAuth Request Token URL (OAuth 1):
   * OAuth Request Authorization Type (OAuth 1):
-  * Oauth Refresh Token Url (OAuth 2):
-  * Oauth Revoke Token Url (OAuth 2):
+1. Complete the following optional parameters:
+  * OAuth Refresh Interval (s)
+  * Oauth Token Refresh Url (OAuth 2):
+  * Oauth Revoke Token Url (OAuth 2): ????
+
 1. Select the format of the request (__Accept Header__) and response (__Content-Type Header__) types. Cloud Elements supports JSON and XML.
 1. Set up any configuration required for the Element. A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret. See [Adding Element Configurations](#adding-element-configurations).
 1. Set up parameters. A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body. See [Adding Element Parameters](#adding-element-parameters).

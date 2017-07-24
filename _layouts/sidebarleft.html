@@ -20,7 +20,6 @@
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
   /* this chunk of css is not part of the toolkit :) */
-
   body {
     width: 1px;
     min-width: 100%;
@@ -33,33 +32,25 @@
   {% include nav.html %}
 
   <div class="container-fluid pageContainer">
+
     <div class="col-md-3 sidebar">
     {% include sidebar.html %}
     </div>
     <div class="col-md-9 contentWrapper">
+      {% include contentToggle.html %}
+      {% if page.simple_map == true %}
+
       <script>
           $(document).ready ( function(){
               $('.box{{page.box_number}}').addClass('active');
           });
       </script>
 
-      {% include maps/{{page.map_name}}.html %}
-
-      {% elsif page.complex_map == true %}
-
-      <script>
-          $(document).ready ( function(){
-              $('.modalButton{{page.box_number}}').addClass('active');
-          });
-      </script>
-
-      {% include maps/{{page.map_name}}.html %}
+      {% include maps/usermap.html %}
 
       {% endif %}
 
-      {% include contentToggle.html %}
       {{content}}
-
     </div>
   </div>
   <script src="/assets/js/chart.js"></script>
