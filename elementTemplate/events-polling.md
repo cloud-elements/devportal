@@ -37,7 +37,7 @@ You can set up events for the following resources:
 
 ## Polling
 
-You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API call](#configure-polling-through-api) .
+You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-polling-through-api) .
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
 
@@ -182,7 +182,8 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
 | `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
