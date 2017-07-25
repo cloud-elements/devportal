@@ -46,6 +46,6 @@ To get started, we are going to demonstrate how to create a very simple formula 
 
 In order to go about creating formulas and formula instances via the API, please reference our "API Docs" section on the right side panel.
 
-> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via the Console UI.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
+> **PROTIP:** An easy way to get started using the APIs is to create a formula using the UI and then "Export" it via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>.  This simply downloads the JSON representation of that formula and you can then go about manipulating and using that JSON in our platform formula APIs.
 
 > **NOTE:** The platform formula APIs show a sub-resource of a formula called `configuration`.  This is what we call "Variables" throughout our documentation and in the Formula Builder UI.

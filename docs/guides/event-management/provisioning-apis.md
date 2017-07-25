@@ -9,7 +9,7 @@ parent: Back to Platform Docs
 order: 15
 sitemap: false
 ---
-Elements can be provisioned with Event Management Integration via the Elements Manager or APIs. [Click here for provisioning via Manager Console](provisioning-console.html).
+Elements can be provisioned with Event Management Integration via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> or APIs. [Click here for provisioning via Cloud Elements](provisioning-console.html).
 
 #### **Provisioning via APIs**
 
@@ -172,4 +172,4 @@ the new Element instance.
 And that's it: you've used our APIs to provision a new Element instance
 with notifications enabled.
 
-[Provisioning via Manager Console](provisioning-console.html).
+[Provisioning via Cloud Elements](provisioning-console.html).
