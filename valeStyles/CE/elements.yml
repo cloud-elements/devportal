@@ -1,0 +1,20 @@
+extends: substitution
+message: "'Always use '%s' instead of '%s'"
+ignorecase: true
+level: error
+swap:
+  (?:SalesForce|salesforce|salesForce): Salesforce
+  ?:Hubspot|hubspot|hubSpot): HubSpot
+  Salesforce CRM: Salesforce Service Cloud
+  Salesforce Documents: Salesforce Files
+  (?:sendgrid|Sendgrid|sendGrid): SendGrid
+  (?:Brighttalk|BrightTalk): BrightTalk
+  (?:Abbyy|abbyy): ABBYY
+  (?:Act Premium|ActPremium): Act! Premium
+  (?:Act On|ActOn): ActOn
+  Allbound: allbound
+  (?:Bigcommerce|Big Commerce): BigCommerce
+  (?:Connectwise|connectwise): Connectwise
+  (?:Eventmobi|eventMobi): Eventmobi
+  (?:Fieldlocate|fieldLocate): Fieldlocate
+  FreshService: Freshservice

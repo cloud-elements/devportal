@@ -1,0 +1,8 @@
+extends: substitution
+message: "use '%s' as a verb and  '%s' as a noun"
+ignorecase: true
+level: warning
+swap:
+  setup: set up
+  login: log in
+  logout: log out

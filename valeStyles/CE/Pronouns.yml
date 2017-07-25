@@ -1,0 +1,10 @@
+message: Do not overuse demonstrative pronouns like “%s”
+link: http://grammar.yourdictionary.com/parts-of-speech/pronouns/what-is-a-demonstrative-pronoun.html
+description: Use these pronouns sparingly. Overuse contributes to readers’ confusion.
+extends: existence
+level: warning
+ignorecase: true
+tokens:
+  - this
+  - these
+  - it
