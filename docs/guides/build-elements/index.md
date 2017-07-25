@@ -28,7 +28,9 @@ Before you begin, make sure that you know the answers to the following questions
 * Where is the API documentation?
 * What kind of API? REST, SOAP, database?
 * What kind of authentication? OAuth 1 or 2? Basic? AWS V2 or V4?
-* Does the endpoint support events or bulk? 
+* Does the endpoint support events or bulk?
+* Do OAuth 2 tokens expire?
+* 
 
 
 
