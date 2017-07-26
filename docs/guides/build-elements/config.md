@@ -18,7 +18,7 @@ box_number: 2
 
 The information that you need to enter to configure your element differs depending on the authorization type.
 
-## Configure Basic Porperties
+## Configure Basic Properties
 
 Regardless of the authorization type, you'll need to enter the following:
 
@@ -29,7 +29,7 @@ Regardless of the authorization type, you'll need to enter the following:
 
 ## Configure OAuth 2.0
 
-To configure Oauth 2.0 elements:
+To configure OAuth 2.0 elements:
 
 1. Click **Authentication**.
 2. Complete the fields needed to enable users to grant Cloud Elements access to their account on behalf of your application:
@@ -42,28 +42,63 @@ To configure Oauth 2.0 elements:
   * OAuth Refresh Interval (s)
   * OAuth Token Refresh URL
 
-  ## Configure OAuth 1.0 
+### OAuth 2.0 Parameters
 
-  To configure Oauth 2.0 elements:
+| Name | Description   | Required   |
+| :------------- | :------------- | :------------- |
+|  Body  |  Body  |  Body  |
+
+  ## Configure OAuth 1.0
+
+  To configure OAuth 1.0 elements:
 
 1. Click **Authentication**.
 2. Complete the fields needed to obtain an OAuth Request Token to request user authorization
   * OAuth Request URL
   * OAuth Callback URL
-3. Then OAuth Authorization URL
-4. Then OAuth Token URL
+  * OAuth API Key
+  * OAuth API Secret
+3. In **OAuth Authorization URL** enter the URL where Cloud Elements redirects the user to authorize access.
+4. In **OAuth Token URL** enter the URL where Cloud Elements fetches an access token.
+5. In **OAuth Authorization Type (Header or Query)** select the way that authorization information is passed to the API provider.
+6. In **OAuth Scope** select the permissions that the user will authorize your integration to have.
+7. In **OAuth User Secret** enter
+
+### OAuth 1.0 Parameters
+
+| Name | Description   | Required   |
+| :------------- | :------------- | :------------- |
+|  OAuth Request URL  |  Body  |  Y  |
+|  OAuth Callback URL  |  Body  |  Y  |
+|  OAuth API Key  |  Body  |  Y  |
+|  OAuth API Secret  |  Body  |  Y  |
+|  OAuth Authorization URL  |  Body  |  Y  |
+|  OAuth Token URL  |  Body  |  Y  |
+|  OAuth Authorization Type (Header or Query)  |  Body  |  Y  |
+|  OAuth Scope  |  Body  |  N  |
+|  OAuth User Secret  |  Body  |  N  |
 
 ## Configure Basic Authorization
 
-Set up the user name and password. Not much to do here, you can change:
+In Basic access authorization, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authorization, we start you off with Username and Password configurations. If you need to add any additional configurations like an API Key, do so in the Configuration step.
 
-Display nmae
-Type of configuration
-Whetehr it's required
-The configuartion key - how it appears in the json
-Add a default value.
+The user name and password configurations are customizable so you can keep the default values or add your own. You can also click **Delete Configuration** to remove a user name or password configurations if you do not need it.
 
-1. Click **Authentication**.
+### Basic Authorization Parameters
+
+| Name | Description   | Required   |
+| :------------- | :------------- | :------------- |
+|  Parameter Name  |  The parameter name as it will appear in {{site.console}} if not hidden. |  Y  |
+|  Configuration Description  | A brief description of the parameter. This appears in hover help and should assist a user in completing the field. |  Y  |
+|  Configuration Key  | The parameter name as it appears in the JSON payload. To maintain consistency with Cloud Elements standards, we recommend that you camelCase the configuration key.  |  Y  |
+|  Configuration Type  |  |  Y  |
+|  Default Value  | Enter any default value that you want to provide for the parameter. |  N  |
+|  Required  | Indicates whether the parameter is required or not. |  Y  |
+|  Hide on the UI  | Indicates whether the parameter appears on the UI when you authenticate an element instance or not. |  Y  |
+
+## Configure Custom Authorization
+
+
 
 
 
