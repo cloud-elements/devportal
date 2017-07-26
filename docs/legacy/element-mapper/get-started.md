@@ -37,100 +37,85 @@ Check out [the Getting Started Guide](/docs/quickstart/overview.html) to get set
 
 ## What we’ll do:
 
-1. Sign in to the Elements Manager
+1. [Access transformations](#access-transformations).
+2. [Create an account object](#create-an-account-object).
+3. [Map fields to the account object](#map-fields-to-the-account-object).
+4. [View the object](#view-the-object).
 
-2. Create an Account Object
+### Access transformations
 
-3. Map Fields to the Account Object
+2. Sign in to your account at Cloud Elements
+3. Once you are logged in to the Cloud Elements, click **My Instances**.
+![Element Mapper Quick Start 2](img/my-instances.png)
+3. Click **Transformations** for the elment that you want to use.
+![Element Mapper Quick Start 3](img/transformations.png)
 
-Click Sign In to be taken to the Elements Manager.
+### Create an account object
 
-Sign in to your account
-![Element Mapper Quick Start 1](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper1.png)
-
-Once you are logged in to the Elements Manager, click on “My Elements”
-![Element Mapper Quick Start 2](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper2.png)
-
-Click “Transformations” from the list of Elements
-![Element Mapper Quick Start 3](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper3.png)
-
-Select an Object. We’ll use the Account Object as the example.
-
-Click “New Object”
+1. Select an Object. We’ll use the Account Object as the example.
+2. Click **New Object**.
 ![Element Mapper Quick Start 4](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper18.png)
+3. Name the Object, e.g. “myAccounts”.
 
-Name the Object, e.g. “myAccounts”
+{% include note.html content="Some objects appear only in the payload associated with certain methods. In the example below, the custom fields <b>Key</b> and <b>Value</b> appear only in the <code>POST</code> and <code>PATCH</code> methods, but not <code>GET</code>. To see the methods associated with each object, click <b>Display Methods</b> under the resource name." %}
+![Display Methods](img/display-methods.png)
 
-Drag and Drop some Fields to Map to the object “myAccounts”
+### Map fields to the account object
+
+4. Drag and drop some Fields to map to the object “myAccounts”.
 ![Element Mapper Quick Start 5](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper21.png)
-
-Click the pencil to edit the object fields
+5. Click the pencil to edit the object fields.
 ![Element Mapper Quick Start 6](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper31.png)
-
-Name the field – assign custom value e.g. “myName”
-
-(Optional) Select Yes or No to “ignore unmapped” fields.
-
-Yes gives you the flexibility to map only the fields you wish to the object. No gives you the option to map the custom fields of your choice and all available fields for the object within the Endpoint (Salesforce in our example).
+6. Name the field – assign custom value e.g. “myName”.
+7. (Optional) Select Yes or No to “ignore unmapped” fields.
+  * Yes gives you the flexibility to map only the fields you wish to the object.
+  * No gives you the option to map the custom fields of your choice and all available fields for the object within the Endpoint (Salesforce in our example).
 ![Element Mapper Quick Start 7](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper45.png)
-
-OR you may click “Add Field” to map fields manually. This option gives you the power to create nested objects – meaning you can create a myAddress Object and map only the fields you wish to add, e.g. BillingStreet, BillingCity, BillingState.
-
-* Name the Object e.g. “myAddress”
-* Select type e.g. “object”
-* Name Field to Map e.g. “Address”
-* Click the green check mark to complete the action
-![Element Mapper Quick Start 7](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper53.png)
-
-Drag and drop the fields you wish to nest underneath the object.
+8. OR you may click “Add Field” to map fields manually. This option gives you the power to create nested objects – meaning you can create a myAddress Object and map only the fields you wish to add, e.g. BillingStreet, BillingCity, BillingState.
+  * Name the Object e.g. “myAddress”.
+  * Select type e.g. “object”.
+  * Name Field to Map e.g. “Address”.
+  * Click the green check mark to complete the action.
+  ![Element Mapper Quick Start 7](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper53.png)
+8. Drag and drop the fields you wish to nest underneath the object.
 ![Element Mapper Quick Start 8](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper63.png)
-
-Assign values to each of the fields
-
-* Name the Object e.g. “myBillingState”
-* Select type e.g. “string”
-* Select Field to Map e.g. “BillingState”
-* Click the green check mark to complete the action
-![Element Mapper Quick Start 9](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper73.png)
-
-(Optional) Select the Level you wish to map the transformation with.
-
-* Organization = Your Company Level
-
-Select “Transformation Level”
-
-* Instance Level = Only for one Salesforce Connection
-* Organization Level = Your Company Level
-* Account Level = A customer of your Company
-
-Click “Save”
-
-Click “X”
+9. Assign values to each of the fields
+  * Name the Object e.g. “myBillingState”.
+  * Select type e.g. “string”.
+  * Select Field to Map e.g. “BillingState”.
+  * Click the green check mark to complete the action.
+  ![Element Mapper Quick Start 9](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper73.png)
+10. (Optional) Select the Level you wish to map the transformation with.
+  * Organization = Your Company Level.
+11. Select “Transformation Level”.
+  * Instance Level = Only for one Salesforce Connection.
+  * Organization Level = Your Company Level.
+  * Account Level = A customer of your Company.
+12. Click **Save**.
+13. Click “X”
 ![Element Mapper Quick Start 10](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper82.png)
 
-To view your Object, click “Documentation”
+### View the object
+
+14. To view your Object, click **Documentation**.
 ![Element Mapper Quick Start 11](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper14.png)
-
-Scroll down towards the bottom of the window to ” GET /{objectName}” and click the link
+15. Scroll down towards the bottom of the window to ” GET /{objectName}” and click the link
 ![Element Mapper Quick Start 12](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper15.png)
-
-Scroll down to Parameters
-
-Input the name of the Object you created, e.g. “myAccounts”
-
-Click “Try It Out” Button
+16. Scroll down to Parameters.
+17. Input the name of the Object you created, e.g. “myAccounts”.
+18. Click **Try It Out**.
 ![Element Mapper Quick Start 13](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper16.png)
-
-View Mapped Objects
+19. View Mapped Objects.
 ![Element Mapper Quick Start 14](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper92.png)
 
 ##### CHECKPOINT
 
 __What we did:__
 
-* Signed in to the Elements Manager
-* Created an Object
-* Mapped fields to the object
+* Signed in to Cloud Elements.
+* Created an object.
+* Mapped fields to the object.
+* Viewed the object.
 
 Don’t stop there, keep exploring the other functionality that Element Mapper has to offer by creating more custom objects with different Element Endpoints like HubSpot, QuickBooks and more.
 
