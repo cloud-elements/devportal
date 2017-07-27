@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Query Language | Name of Element | Cloud Elements API Docs
+heading: Egnyte
+seo: Query Language | Egnyte | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
@@ -17,33 +17,10 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 ## CEQL in {{page.heading}}
 
-When querying in {{page.heading}}, keep the following in mind:
+Use CEQL to query the following endpoints:
 
-* The Salesforce bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause, chunking is disabled. If chunking is enabled, it may take longer to get all the data. Also, be aware that Salesforce has daily upload and download limits.
-* Use CEQL to query the following endpoints:
-  * GET /campaigns
-  * GET /accounts
-  * GET /accounts/{accountId}/activities
-  * GET /accounts/{accountId}/notes
-  * GET /accounts/{accountId}/tasks
-  * GET /users
   * GET /{objectName}
-  * GET /{objectName}/{objectId}/attachments
   * GET /{objectName}/{objectId}/{childObjectName}
-  * GET /opportunities
-  * GET /opportunities/{opportunityId}/activities
-  * GET /opportunities/{opportunityId}/notes
-  * POST /bulk/query
-  * GET /contacts
-  * GET /contacts/{contactId}/activities
-  * GET /contacts/{contactId}/notes
-  * GET /contacts/{contactId}/tasks
-  * GET /leads
-  * GET /leads/{leadId}/activities
-  * GET /leads/{leadId}/notes
-  * GET /leads/{leadId}/tasks
-  * GET /reports/{id}
-
 
 ## CEQL Reference
 

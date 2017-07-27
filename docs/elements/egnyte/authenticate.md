@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Egnyte
+seo: Authenticate | Egnyte | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
-elementKey: fake
+elementKey: egnyte
 parent: Back to Element Guides
 order: 20
 ---
@@ -20,8 +20,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<span style="color:red">Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.</span>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -37,25 +35,32 @@ To authenticate an element instance:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click **Create Instance**.</br> ![Create Instance](../img/Create-Instance.gif)  | Click **Add Instance**.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
+6. In **The Egnyte Subdomain** enter your Egnyte Domain, which appears in the URL between `https://` and `egnyte.com`.
+
+    For example, the Cloud Elements Egnyte Domain in https://cloudelements.egnyte.com is `cloudelements`.
+
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+7. Click **Create Instance** (latest UI) or **Next** (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
     After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
 
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](../img/element-instance.png)
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+
+
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send API calls to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  __token__ and __id__  for future API calls.
-
-<span style="color:red">The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint..."</span>
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send API calls to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a **token** and **id**  for future API calls.
 
 Authenticating through API is a multi-step process that involves:
 
@@ -75,8 +80,8 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Shared Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
 
 #### Example cURL
@@ -93,13 +98,15 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 ```json
 {
 "element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+"oauthUrl": "https://.egnyte.com/puboauth/token?scope=Egnyte.filesystem+Egnyte.link&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=egnyte&client_id=hkvbgcm5pb7yu5s2e8th7uzm"
 }
 ```
 
+{% include note.html content="The response does not include the subdomain which you need to include to receive the authorization grant code. " %}
+
 ### Authenticating Users and Receiving the Authorization Grant Code
 
-Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+Add the subdomain and provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
 
 * code
 * state
@@ -134,7 +141,7 @@ To create an element instance:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "filter.response.nulls": true
+        "subdomain": "<YOUR_SUBDOMAIN>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -163,12 +170,13 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "xxxxxxxxxxxxxxxxxxxxxxx"
+    "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
     "oauth.callback.url": "https://mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxx"
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxx",
+    "subdomain":"cloudelements"
   },
   "tags": [
     "Docs"
@@ -190,6 +198,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  |
 | `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
 | `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
+| The Egnyte Subdomain </br>`subdomain` | The Egnyte Domain which appears in the URL between `https://` and `egnyte.com`. For example, the Cloud Elements Egnyte Domain in https://cloudelements.egnyte.com is `cloudelements`. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance
