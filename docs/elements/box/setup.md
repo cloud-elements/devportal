@@ -1,8 +1,8 @@
 ---
 heading: Box
-seo: Endpoint Setup | Service provider setup | Box | Cloud Elements API Docs
-title: Service Provider Setup
-description: Service provider setup
+seo: Endpoint Setup | API provider setup | Box | Cloud Elements API Docs
+title: API Provider Setup
+description: API provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
@@ -10,7 +10,13 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
+
+To authenticate a {{page.heading}} element instance you must [register an app](#register-an-app) with {{page.heading}} and know the **client_id,** **client__secret**, and **redirect_uri** of the app. You will use these as the API Key, API Secret, and Callback URL when you authenticate an element instance.
+
+Also, if you plan to use events, you need to know the [List ID](#find-a-list-id) of any lists that you want to monitor for events.
+
+## Register an App
 
 To setup the endpoint for {{page.heading}}, complete the setup steps described in this section.
 
