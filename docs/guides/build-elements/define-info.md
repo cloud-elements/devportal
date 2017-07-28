@@ -43,7 +43,7 @@ Basic information includes how you identify the element, the hub it belongs to, 
 
 | Info Tab Components | Description    |
 | :------------- | :------------- |
-| Hub       | Hubs map resources from a collection of endpoints (What we call Elements) into a uniform set of APIs.<br />Add a new hub from the dropdown menu to create a new collection if our defaults do not meet your needs.     |
+| Hub  | Hubs map resources from a collection of endpoints (What we call Elements) into a uniform set of APIs.<br />Add a new hub from the dropdown menu to create a new collection if our defaults do not meet your needs.     |
 | Name | The name of the Element. This helps form the default Element Key |
 | Element Key | A unique identifier of the element. The default comes from the Element Name. |
 | Description | Use the Description to provide detailed information about the Element |

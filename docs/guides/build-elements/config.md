@@ -29,6 +29,8 @@ Regardless of the authorization type, you'll need to enter the following:
 
 ## Configure OAuth 2.0
 
+Cloud Elements provides the parameters required to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement these parameters with additional configuration.
+
 To configure OAuth 2.0 elements:
 
 1. Click **Authentication**.
@@ -46,7 +48,15 @@ To configure OAuth 2.0 elements:
 
 | Name | Description   | Required   |
 | :------------- | :------------- | :------------- |
+|  OAuth API Key  |  The default API Key used to authenticate with the API provider. Most API providers call this some variation of key or id, such as Key, API Key, or Client ID. |  Y  |
+|  OAuth API Secret  |  The default API Secret used to authenticate with the API provider. Most API providers call this some variation of secret, such as Secret , API Secret, or Client Secret.  |  Y  |
+|  OAuth Callback URL  |  The URL that will receive the authorization code from the API provider used to authenticate an element instance.  |  Y  |
+|  OAuth Authorization URL  |  Body  |  Body  |
+|  OAuth Token URL  |  Body  |  Body  |
+|  OAuth Refresh Interval (s)  |  Body  |  Body  |
+|  OAuth Token Refresh URL  |  Body  |  Body  |
 |  Body  |  Body  |  Body  |
+
 
   ## Configure OAuth 1.0
 
