@@ -195,7 +195,7 @@ This instance.json file must be included with your instance request.  Please fil
         }
       },
       "statuses": {
-        "url": "/hubs/social/statuses?where=q='Example Screen Name'",
+        "url": "/hubs/social/statuses?where=q='<EXAMPLE_SCREEN_NAME>'",
         "idField": "id_str",
         "datesConfiguration": {
           "updatedDateField": "created_at",
@@ -207,7 +207,7 @@ This instance.json file must be included with your instance request.  Please fil
         }
       },
       "users": {
-        "url": "/hubs/social/users?where=q='example'",
+        "url": "/hubs/social/users?where=q='<EXAMPLE>'",
         "idField": "id_str",
         "datesConfiguration": {
           "updatedDateField": "created_at",
