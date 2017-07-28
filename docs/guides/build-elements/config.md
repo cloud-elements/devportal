@@ -1,20 +1,20 @@
 ---
 heading: Build Custom Elements
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Define Element Config Requirements
+title: Custom Config & Parameters
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 14
+order: 24
 simple_map: true
 map_name: usermap
 box_number: 2
 ---
 
-# Define Element Config Requirements
+# Custom Configuration and Parameters
 
 The information that you need to enter to configure your element differs depending on the authorization type.
 

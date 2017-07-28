@@ -790,10 +790,10 @@ For maps
     box-shadow: 2px 2px 4px #666666;
     width: 100px;
     height: 80px;
-    background-color: #44c8f5;
+    background: #44c8f5;
     font-family: Arial;
     font-size: 12px;
-    hyphens: auto;
+    hyphens: none;
     float: left
 }
 

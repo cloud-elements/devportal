@@ -1,20 +1,20 @@
 ---
 heading: Build Custom Elements
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Define Basic Element Information
+title: Custom Element Information
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 12
+order: 22
 simple_map: true
 map_name: usermap
 box_number: 1
 ---
 
-## Define Basic Element Information
+# Custom Element Information
 
 Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
 
