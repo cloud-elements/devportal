@@ -57,7 +57,7 @@ Check out [the Getting Started Guide](/docs/quickstart/overview.html) to get set
 ![Element Mapper Quick Start 4](http://cloud-elements.com/wp-content/uploads/2015/01/Datamapper18.png)
 3. Name the Object, e.g. “myAccounts”.
 
-{% include note.html content="Some objects appear only in the payload associated with certain methods. In the example below, the custom fields <b>Key</b> and <b>Value</b> appear only in the <code>POST</code> and <code>PATCH</code> methods, but not <code>GET</code>. To see the methods associated with each object, click <b>Display Methods</b> under the resource name." %}
+{% include note.html content="For some elements, you can see the methods associated with a specific object and the direction represent request and response. To see the methods associated with each object, click <b>Display Methods</b> under the resource name. In the example below, the custom fields <b>Key</b> and <b>Value</b> appear only in the <code>POST</code> and <code>PATCH</code> methods, but not <code>GET</code>. " %}
 ![Display Methods](img/display-methods.png)
 
 ### Map fields to the account object
