@@ -2,7 +2,7 @@
 heading: Box
 seo: Authenticate | Box | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider.
+description: Authenticate an element instance with the API provider.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 22
@@ -25,28 +25,29 @@ If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
-1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
+1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
 
-    | Latest UI | Earlier UI  |
+    | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
     |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
 
 3. Create an element instance.
 
-    | Latest UI | Earlier UI  |
+    | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click **Create Instance**.</br> ![Create Instance](../img/Create-Instance.gif)  | Click **Add Instance**.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
+6. With **Document Hub Tagging** select whether you want to enable document tagging.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
-     1. Click __Done__.
-8. Provide your Box credentials, and then allow the connection.
+    After you authenticate with the API provider, the authentication flow returns you to {{site.console}}.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
@@ -59,7 +60,7 @@ Authenticating through API is a multi-step process that involves:
 
 ### Getting a Redirect URL
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
@@ -69,9 +70,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider section](salesforce-endpoint-setup.html).  |
 
 #### Example cURL
 
