@@ -1,3 +1,15 @@
+---
+heading: Shopify
+seo: Bulk APIs | ServiceNow | Cloud Elements API Docs
+title: Bulk APIs
+description: Add Bulk functionality to your app.
+layout: sidebarelementdoc
+breadcrumbs: /docs/elements.html
+elementId: 48
+parent: Back to Element Guides
+order: 20
+---
+
 # Bulk
 
 Cloud Elements Bulk support provides an option to upload a large number of resources, such as contacts, to a service provider all at once. You can use bulk to [download a csv or json](../../guides/bulk/download.html) file from a large number of records or [upload a csv or json](../../guides/bulk/upload.html) file to add multiple records. See the [Bulk Guide](../../guides/bulk/index.html) for more information on managing bulk.
