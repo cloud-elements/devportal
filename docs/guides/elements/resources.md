@@ -1,5 +1,5 @@
 ---
-heading: Build Custom Elements
+heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Resources
 description: Defining element name and authentication
