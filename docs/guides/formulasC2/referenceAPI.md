@@ -326,7 +326,6 @@ The HTTP Request (`httpRequest`) step make an HTTP/S call to any URL/endpoint.
   "onFailure": [],
   "type": "httpRequest",
   "properties": {
-    "elementInstanceId": "${config.elementVariable}",
     "method": "POST",
     "url": "https://mycoolapp.com/api",
     "headers": "Header content",
