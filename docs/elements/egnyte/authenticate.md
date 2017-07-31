@@ -5,7 +5,7 @@ title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4016
 elementKey: egnyte
 parent: Back to Element Guides
 order: 20

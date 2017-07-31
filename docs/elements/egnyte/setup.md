@@ -5,7 +5,7 @@ title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4016
 elementKey: key
 parent: Back to Element Guides
 order: 5
