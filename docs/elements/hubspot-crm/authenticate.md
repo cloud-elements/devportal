@@ -1,14 +1,14 @@
 ---
-heading: Hubspot Marketing
-seo: Authenticate | Hubspot Marketing | Cloud Elements API Docs
-title: Authenticate
-description: Authenticate an element instance with Hubspot Marketing
+heading: HubSpot CRM
+seo: Create Instance | HubSpot CRM | Cloud Elements API Docs
+title: Create Instance
+description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 43
-elementKey: hubspot
+elementId: 168
+elementKey: hubspotcrm
 parent: Back to Element Guides
-order: 20
+order: 15
 ---
 
 {% include Elements/Hubspot/authenticate.md %}
@@ -24,11 +24,11 @@ In this example, the instance ID is `58772` and the instance token starts with "
   "createdDate": "2017-08-01T16:12:43Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxx/9DROw=",
   "element": {
-    "id": 43,
-    "name": "Hubspot Marketing",
-    "hookName": "HubSpot",
-    "key": "hubspot",
-    "description": "Add a HubSpot Instance to connect your existing HubSpot account to the Marketing Hub, allowing you to manage accounts, campaigns, contacts, leads etc. across multiple Marketing Elements. You will need your HubSpot account information to add an instance.",
+    "id": 229,
+    "name": "Hubspot CRM",
+    "hookName": "HubSpotCRM",
+    "key": "hubspotcrm",
+    "description": "HubSpot is an inbound marketing software platform that helps companies attract visitors, convert leads, and close customers.",
     "image": "elements/provider_hubspot.png",
     "active": true,
     "deleted": false,
@@ -47,7 +47,7 @@ In this example, the instance ID is `58772` and the instance token starts with "
         "type": "oauth2"
     },
     "extended": false,
-    "hub": "marketing",
+    "hub": "crm",
     "protocolType": "http",
     "parameters": [],
     "private": false

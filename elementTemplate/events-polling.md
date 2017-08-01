@@ -48,7 +48,7 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with polling:
 
-1. Enter the basic information required to create an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
@@ -57,18 +57,16 @@ To authenticate an element instance with polling:
 
 8. Add an **Event Notification Callback URL**.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 5. Select and configure the resources to poll.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
     | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
 
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
-     1. Click __Done__.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.
 
