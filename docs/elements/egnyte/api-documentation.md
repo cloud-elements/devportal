@@ -1,11 +1,11 @@
 ---
-heading: Element Name
-seo: API Docs | Element Name | Cloud Elements API Docs
+heading: Egnyte
+seo: API Docs | Egnyte | Cloud Elements API Docs
 title: API Docs
-description: Element Name API Documentation.
+description: Egnyte API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4016
 parent: Back to Element Guides
 order: 90
 ---

@@ -1,11 +1,11 @@
 ---
-heading: Name of Element
-seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+heading: Egnyte
+seo: API Provider Setup | API provider setup | Egnyte | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4016
 elementKey: key
 parent: Back to Element Guides
 order: 5
@@ -13,16 +13,9 @@ order: 5
 
 # API Provider Setup
 
-<For Oauth apps:>
-To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}} and know the **Key**, **Shared Secret**, and **Registered OAuth Redirect URI** of the app. You use these when you authenticate an element instance as the API Key, API Secret, and Callback URL.
+To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}} and know the **Key**, **Shared Secret**, and **Registered OAuth Redirect URI** of the app. You use these when you authenticate an element instance as the API Key, API Secret, and OAuth Callback URL.
 
-<For other apps:>
-
-To authenticate a {{page.heading}} element instance, complete the setup steps described in this section.
-
-{% include note.html content="If there is a note needed, add it here.</a>" %}
-
-To set up the API provider: <span style="color:red">The steps are going to differ widely. Try to only use screen shots where necessary, but by the end of the steps, the user should have the information needed to authenticate an instance with the service provider.</span>
+To set up the API provider:
 
 1. Log in to your developer account at [Egnyte](https://developers.egnyte.com).
 3. Click **Create New Application**.
@@ -35,7 +28,5 @@ To set up the API provider: <span style="color:red">The steps are going to diffe
 ![Rate Limits](img/rate-limits.png)
 2. Click **Register Application**.
 3. Record the **Key** and **Shared Secret** as your API Key and API Secret.
-
-![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
 
 Next [authenticate an element instance with {{page.heading}}](authenticate.html).
