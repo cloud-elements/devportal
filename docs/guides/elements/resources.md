@@ -16,11 +16,11 @@ box_number: 5
 
 # Custom Resources
 
-Add resources to existing elements or define resources for a custom element all within a familiar API documentation format.
+Add resources to existing elements or define resources for a custom element all within a familiar API documentation format. As you create new resources, keep the API documentation of the API provider close. You will refer to it often.
 
-## Add
+## Add Resources
 
-Add resources as part of the element builder flow or as part of extending an element.
+Add resources as part of the element building workflow or as part of extending an element.
 
 Throughout this section, we provide several examples. To keep them consistent, we are using the use case of adding a `/deals` resource to a CRM element.
 
@@ -30,11 +30,16 @@ To add a resource:
 
 1. Click **Add a new resource**.
 2. Identify if the resource is a child resource, such as `/users/{id}/tasks` or `/contacts/{id}/tasks`.
-3. In **Cloud Elements Resource Name** add the name of the resource as you want to see it in Cloud Elements. For example, enter `deals` to add a `/deals` resource to a CRM element. The name you choose is what appears in the API documentation, such as **GET /deals **and in the hub endpoint, such as `hubs/crm/deals`.
-4. In **Vendor Resource Name** add the name of the resource at the API provider. No slash `/` is required before the resource name. In this example, enter `deals`.
-5. In **Primary Key** enter the property that uniquely identifies the rsource. Primary keys are typically ID fields associated with the resource. In this example, a primary key could be `dealID`.
+3. In **Cloud Elements Resource Name** add the name of the resource as you want to see it in Cloud Elements. For example, enter `deals` to add a `/deals` resource to a CRM element. The name you choose is what appears in the API documentation and also creates an endpoint in the hub. For example, the new `GET /deals` endpoint appears as **GET /deals** in the docs and is accessible via the `hubs/crm/deals` endpoint.
+![deals in the docs](img/deals-swagger.png)
+4. In **Vendor Resource Name** add the path to the resource at the API provider. No slash `/` is required before the initial resource name. In this example, the API documentation states that the path is `deals/v1/deal/paged`.
+5. In **Primary Key** enter the property that uniquely identifies the resource. Primary keys are typically ID fields associated with the resource. In this example, a primary key could be `dealID`.
 6. In **Created Date Key** and **Updated Date Key** enter the properties that identify the created and updated dates. Created and updated date keys vary widely, but can be `created`, `createdate`, or `timecreated` and  `updated`, `lastModified`, or `dateModified`.
-7. Select the methods to add. You will define the methods that you select in the next step. Make sure that the methods that you select are supported by the API provider.
+7. Select the methods to add. You will define the methods that you select when you [set up the endpoints](#set-up-endpoints). Make sure that the methods that you select are supported by the API provider.
+
+    For a new deals resource with all methods, our basic resource information looks like this:
+    ![Basic Resource Information](img/resource-basic-info.png)
+
 8. Click **Go**.
 
 ### Set Up Endpoints
@@ -45,27 +50,90 @@ If you have any authenticated element instances for the element, they appear on 
 
 To set up endpoints:
 
-1. Select an endpoint, and then click **Go**.
+1. Select an endpoint, and then click **Go** or <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+
+    {% include note.html content="After you edit an endpoint for the first time, the <b>Go</b> button is replace by a toolbar. " %}
+
 2. Enter a description. This appears in the API documentation and should help a user understand what the request is for and what to expect in the response. A description of the `GET /deals` endpoint could be: "Retrieves a list of deals. Use CEQL to filter by related fields like company and contact."
-    {% include tip.html content="The descriptions that you enter for each endpoint should help a user understand what the endpoint does. Keep the descriptions short, no more than three sentences. Start with a verb associated with a method, like gets, retrieves, checks, creates, returns, updates, or deletes. Then describe what resource is being manipulated and add any other helpful information about required fields, filtering, or formatting. " %}
+
+    {% include tip.html content="The descriptions that you enter for each endpoint should help a user understand what the endpoint does. Keep the descriptions short, no more than three sentences. Start with a verb associated with a method like gets, retrieves, checks, creates, returns, updates, or deletes. Then describe what resource is being manipulated and add any other helpful information about required fields, filtering, or formatting. " %}
+
 3. After you complete your description, click or tab out of the description.
 4. Depending on the method, different default parameters appear.
-5. Before you test add a Root Key
+5. Add a Root Key to limit what you send or receive.
+6. In Pagination Type selected.
+7. In **Next Resource**.
 
 
 ### Adding Parameters to Endpoints
 
-Endpoint parameters allow you to pass various parameters to the endpoint. Use the endpoint parameters to configure searches, pagination, and required fields. You can configure most required and optional parameters for most endpoints. Some common parameters for each methods are offered as defaults for you to configure.
+Endpoint parameters allow you to pass various parameters to the endpoint. Use the endpoint parameters to configure searches, pagination, and required fields. You can configure most required and optional parameters for most endpoints. Cloud Elements provides some default common parameters for each method, except DELETE.
 
-| GET | GET {id} | POST  | PATCH | DELETE |  |
+#### Default Parameters for each Method
+
+| GET | GET {id} | POST, PATCH & PUT| DELETE |
+| :------------- | :------------- | :------------- | :------------- |
+|  **where**: CEQL search expression.  |  **id**: The id of a specific object. | **body**: The object payload to create or update.  | No default, but the id of the deleted object is a common parameter. |
+|  **page**: The next token or link to get additional results.   |  |   |  |
+|  **pageSize**: The number of records to return.  |   |  |   |
+
+#### Add Parameters
+
+Map parameters that you send as part of the request from Cloud Elements on the left side of the page to parameters available to the resource at the API provider on the right side. The right and left side division is presented as **Cloud Elements Receives As** and **Vendor Receives as** in the example below.
+![Add parameters UI](img/resource-parameter.png)
+
+To add a parameter :
+
+1. Select an endpoint, and then click **Go** or <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+2. Click **Add New Parameter**.
+3. In the **parameter name** box, enter the name of the parameter. The name appears in the API documentation in some cases or can be a value passed to the API provider.
+4. In **Parameter Description** enter a brief description of the parameter. If the parameter appears in the API documentation, this description also appears.
+5. In **Vendor Name** enter the name of the parameter to map to. For example, if you are adding an id parameter, **Vendor Name** should be the unique id field for the resource.
+6. In **Parameter Type** and **Vendor Type** select how Cloud Elements and the API provider pass the parameter.
+8. In **Parameter Datatype** and **Vendor Datatype** select the data type of the parameter.
+* integer - 32 bit binary signed integer
+* long - 32 bit binary signed integer
+* float - a knid of number
+* double -  a kind of number
+* string
+* byte - 	base64 encoded characters
+* binary - any sequence of octets
+* boolean - true/false
+* date - As defined by full-date - RFC3339
+* dateTime - 	As defined by date-time - RFC3339
+* password - A hint to UIs to obscure input.
+9. If you ant to switch the standard workflow where the parameters on the left are part of the request, click **Parameter Source**, and then select **Request**.
+10. To make the parmater a required partt of the request, switch **Required** on.
+
+#### Parameter Types
+
+| Parameter | Description   |
 | :------------- | :------------- |
-|  **where**: CEQL where queries.  |  **id**: The id of a specific object | Object payload to create.  | Object payload to update.  | The id of the deleted object. | 
-|  **page**: The next token or link to get additional results.   |   |   | The id of the updated object.  | The id of the deleted object. |
-|  **pageSize**: The number of records to return.   |   |   |   |  |
+|  configuration  |  passed as a header parameter. Example, X-MyHeader: Value  |
+|  header  |  passed as a path parameter. Example, separate resource for object by id  |
+|  path  |  Passed as a request body parameter. Example, body. Is this part of the body or everything in the body? can you apss more than one bodies?  |
+|  body  |  Passed as a query string parameter. Example /deals?properties=dealName  |
+|  query  |    |
+|  form  |  passed as form-data |
+|  multipart  |  passed as multipart content   |
+|  value  |  the value is the value of the parameter name  |
+|  bodyField  |  Body  |
+|  prevBody  |  Body  |
+|  prevBodyField  | CE Only Body  |
+|  value  |  Body  |
+| bodyToken |Vendor Only |
+| no-op | Vendor Only |
 
+#### Update Default Parameters
 
-To add a parameter:
+In the example use case of building a `/deals` resource, each method provided a default parameter. The following table describes how each was set up.
 
+| Method | Parameter   | Description |
+| :------------- | :------------- | :------------- |
+|  GET  |  where   |  The **where** parameter implements a CEQL search expression parameter in the endpoint. </br> To configure, check the API documentation to confirm that the endpoint supports searches. If it does, next identify the parameter used to search and enter it as the **Vendor Name**. </br>Now, identify how the query is passed (in the header, as a query paramter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
+|  GET  |  page   |  The **page** parameter identifies the link or token to identify a set of paginated records. </br> To configure, check the API documentation for pagination information. If it supports pagination, next identify the parameter used to identify page numbers as the **Vendor Name**. </br>Now, identify how the parameter is passed (in the header, as a query paramter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
+|  GET  |  pageSize  |  The **pageSize** parameter identifies the number of records to return. </br> To configure, check the API documentation for pagination information. If it supports pagination, next identify the parameter used to limit results as the **Vendor Name**. </br>Now, identify how the parameter is passed (in the header, as a query parameter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
+| POST | body | 
 
 
 
