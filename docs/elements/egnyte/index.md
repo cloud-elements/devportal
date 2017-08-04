@@ -1,11 +1,11 @@
 ---
-heading: Name of Element
-seo: Overview | Name of Element | Cloud Elements API Docs
+heading: Egnyte
+seo: Overview | Egnyte | Cloud Elements API Docs
 title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
+description: Integrate Egnyte into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4016
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -13,9 +13,7 @@ sitemap: false
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides on-demand customer relationship management (CRM) services.
-
-<sA great place to get this initial paragraph is from Programmableweb or the vendor's website.>
+{{page.heading}} provides enterprise file sharing services in the Cloud Elements Cloud Storage and Documents hub.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -23,13 +21,17 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [{{page.heading}} API documentation](https://developers.egnyte.com/docs) |
 | Authentication | OAuth 2  |
-| Events | Webhooks and polling |
-| Bulk | Supported for both upload and download. |
+| Events | Polling |
+| Bulk | Not supported. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
+| Rate Limits | Two	Calls per second and 1,000	Calls per day. Your rate limits are stated when you register an application. |
+
+## Egnyte Element Video
+
+{% include vimeo-player-full-width.html id=227324526 %}
+{% include padding-all.html %}
 
 ## Base URL
 

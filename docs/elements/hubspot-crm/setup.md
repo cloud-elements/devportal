@@ -1,11 +1,11 @@
 ---
-heading: Hubspot Marketing
-seo: API Provider Setup | Service provider setup | Hubspot Marketing | Cloud Elements API Docs
+heading: HubSpot CRM
+seo: API Provider Setup | HubSpot CRM | Cloud Elements API Docs
 title: API Provider Setup
-description: API Provider Setup
+description: API Provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 43
+elementId: 168
 parent: Back to Element Guides
 order: 5
 ---
