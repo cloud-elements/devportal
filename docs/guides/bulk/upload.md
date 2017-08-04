@@ -14,8 +14,6 @@ order: 3
 
 Unlike bulk downloads, using the bulk upload requires only a single call. The `POST /bulk/{objectName}` uploads a file which will then be processed by the bulk job.
 
-{% include workflow.html displayNames="upload,download" active="upload" %}
-
 For files that don't have column headers that match the field names in an endpoint, a transformation is  required. The transformation provides a mapping from the column headers to field names. See our [Element Mapper]("/docs/guides/element-mapper/?resource=organizations") documentation for more information about transformations. 
 
 The Bulk Upload is composed of the following parts:
