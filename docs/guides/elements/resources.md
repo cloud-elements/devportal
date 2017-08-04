@@ -91,17 +91,17 @@ To add a parameter :
 5. In **Vendor Name** enter the name of the parameter to map to. For example, if you are adding an id parameter, **Vendor Name** should be the unique id field for the resource.
 6. In **Parameter Type** and **Vendor Type** select how Cloud Elements and the API provider pass the parameter.
 8. In **Parameter Datatype** and **Vendor Datatype** select the data type of the parameter.
-* integer - 32 bit binary signed integer
-* long - 32 bit binary signed integer
-* float - a knid of number
-* double -  a kind of number
-* string
-* byte - 	base64 encoded characters
-* binary - any sequence of octets
-* boolean - true/false
-* date - As defined by full-date - RFC3339
-* dateTime - 	As defined by date-time - RFC3339
-* password - A hint to UIs to obscure input.
+  * integer - 32 bit binary signed integer
+  * long - 32 bit binary signed integer
+  * float - a knid of number
+  * double -  a kind of number
+  * string
+  * byte - 	base64 encoded characters
+  * binary - any sequence of octets
+  * boolean - true/false
+  * date - As defined by full-date - RFC3339
+  * dateTime - 	As defined by date-time - RFC3339
+  * password - A hint to UIs to obscure input.
 9. If you ant to switch the standard workflow where the parameters on the left are part of the request, click **Parameter Source**, and then select **Request**.
 10. To make the parmater a required partt of the request, switch **Required** on.
 
@@ -133,7 +133,7 @@ In the example use case of building a `/deals` resource, each method provided a 
 |  GET  |  where   |  The **where** parameter implements a CEQL search expression parameter in the endpoint. </br> To configure, check the API documentation to confirm that the endpoint supports searches. If it does, next identify the parameter used to search and enter it as the **Vendor Name**. </br>Now, identify how the query is passed (in the header, as a query paramter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
 |  GET  |  page   |  The **page** parameter identifies the link or token to identify a set of paginated records. </br> To configure, check the API documentation for pagination information. If it supports pagination, next identify the parameter used to identify page numbers as the **Vendor Name**. </br>Now, identify how the parameter is passed (in the header, as a query paramter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
 |  GET  |  pageSize  |  The **pageSize** parameter identifies the number of records to return. </br> To configure, check the API documentation for pagination information. If it supports pagination, next identify the parameter used to limit results as the **Vendor Name**. </br>Now, identify how the parameter is passed (in the header, as a query parameter, etc.) and in what format. Select the **Vendor Type** and **Vendor Datatype** to match. |
-| POST | body | 
+| POST | body |
 
 
 
