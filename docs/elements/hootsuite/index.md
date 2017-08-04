@@ -1,8 +1,8 @@
 ---
-heading: Name of Element
-seo: Overview | Name of Element | Cloud Elements API Docs
+heading: Hootsuite
+seo: Overview | Hootsuite | Cloud Elements API Docs
 title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
+description: Integrate Hootsuite into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
@@ -22,7 +22,7 @@ sitemap: false
 | Element Information | Details     |
 | :------------- | :------------- |
 | API Documentation | [{{page.heading}} API documentation](https://app-directory.s3.amazonaws.com/docs/api/index.html) |
-| Authentication | OAuth 2  |
+| Authentication | OAuth 2.0 |
 | Events | Webhooks |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|

@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Bulk APIs | Name of Element | Cloud Elements API Docs
+heading: Hootsuite
+seo: Bulk APIs | Hootsuite | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
@@ -22,6 +22,6 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 | Bulk Information | Details   |
 | :------------- | :------------- |
 |  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).   |
-| Upsert Support | Yes |
-| Field Selection Support | Yes. You can specify fields within a resource. For example, `select name,id from contacts`.</br>No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
+| Upsert Support | No |
+| Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
 | Order By Support | Yes, you can add `orderby=fieldName` to the query. |

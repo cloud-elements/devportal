@@ -131,3 +131,4 @@ layout: sidebarelementtile
 * [![Campaign Monitor](https://www.campaignmonitor.com/assets/brand/campaignmonitor.jpg)Campaign Monitor](./elements/campaignmonitor/)
 * [![Constant Contact](/assets/img/element-logos/provider_constantcontact.png)Constant Contact](./elements/constantcontact/)
 * [![Egnyte](/assets/img/element-logos/egnyte.png)Egnyte](./elements/egnyte/)
+* [![Hootsuite](/assets/img/element-logos/hootsuite.png)Hootsuite](./elements/hootsuite/)
