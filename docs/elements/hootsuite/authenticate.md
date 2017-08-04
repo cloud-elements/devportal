@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Hootsuite
+seo: Authenticate | Hootsuite | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
-elementKey: fake
+elementKey: hootsuite
 parent: Back to Element Guides
 order: 20
 ---
@@ -20,8 +20,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -55,8 +53,6 @@ To authenticate an element instance:
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-<The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint...">
-
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
@@ -75,8 +71,8 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **REST API Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **REST API Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
 
 #### Example cURL
@@ -89,8 +85,6 @@ curl -X GET \
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
-
-<Replace the below oauthUrl value with an actual one from Postman.>
 
 ```json
 {
@@ -135,8 +129,7 @@ To create an element instance:
       "configuration": {
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "filter.response.nulls": true
+      	"oauth.api.secret": "<CONSUMER_SECRET>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -187,11 +180,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
+| `code` | The authorization grant code returned from the API provider in an OAuth 2.0 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
-| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
+| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **API Callback URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
+| `oauth.api.key` | The REST API Client ID from {{page.heading}}. This is the **REST API Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
+| `oauth.api.secret` | The REST API Client Secret from {{page.heading}}. This is the **REST API Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -200,34 +193,36 @@ In this example, the instance ID is `12345` and the instance token starts with "
 
 ```json
 {
-  "id": 123,
-  "name": "test",
-  "createdDate": "2017-07-27T14:27:32Z",
-  "token": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "id": 12345,
+  "name": "API Instance",
+  "createdDate": "2017-08-04T14:56:20Z",
+  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 6698,
-      "name": "{{page.heading}}",
-      "key": "{{page.elementKey}}",
-      "description": " an Egnyte Instance to connect your existing Egnyte account to the Cloud Storage and Documents Hub, allowing you to manage files and folders. You will need your Egnyte account information to add an instance.",
-      "image": "elements/provider_egnyte.png",
-      "active": true,
+      "id": 6791,
+      "name": "Hootsuite",
+      "hookName": "",
+      "key": "hootsuite",
+      "description": "Add a Hootsuite instance to connect to Hootsuite account to the social Hub, allowing you to manage messages, teams , members of the organizations across multiple social elements. You will need  Hootsuite account information to add an instance.",
+      "image": "elements/provider_hootsuite.png",
+      "active": false,
       "deleted": false,
       "typeOauth": false,
       "trialAccount": false,
       "resources": [ ],
-      "transformationsEnabled": false,
-      "bulkDownloadEnabled": false,
-      "bulkUploadEnabled": false,
+      "transformationsEnabled": true,
+      "bulkDownloadEnabled": true,
+      "bulkUploadEnabled": true,
       "cloneable": true,
       "extendable": false,
-      "beta": false,
+      "beta": true,
       "authentication": {
           "type": "oauth2"
       },
-      "extended": true,
-      "hub": "documents",
+      "extended": false,
+      "hub": "social",
       "protocolType": "http",
-      "parameters": [  ]
+      "parameters": [],
+      "private": false
     },
     "elementId": {{page.elementId}},
     "tags": [
