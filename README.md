@@ -141,7 +141,19 @@ In order to create the alternate tab content, one of two values is added to the 
 - To point to alternate API content from a UI page:  
   - `restContentVersion: <link to rest content>`  
 - To point to alternate UI content from a API page:  
-  - `uiContentVersion`: <link to UI content>`  
+  - `uiContentVersion`: <link to UI content>` 
+
+## Workflow component usage
+
+The workflow component can be included in any markdown file. The component can be added to a page using the jekyll include in the follow in manner:
+
+`{% include workflow.html displayNames="<name-one>,<name-one>>" links="<link-1>,<link-2>" %}`
+
+Where `displayName` is a comma separated list of names, and `links` is a comma separated list of relative links. The component will grow dynamically as you add more names and links.
+
+**Example:**
+
+`{% include workflow.html displayNames="download,upload" links="/docs/guides/bulk/download.html,/docs/guides/bulk/upload.html" %}`
 
 # Voice and Tone
 
