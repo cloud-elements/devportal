@@ -147,9 +147,9 @@ In order to create the alternate tab content, one of two values is added to the 
 
 The workflow component can be included in any markdown file. The component can be added to a page using the jekyll include in the follow in manner:
 
-`{% include workflow.html displayNames="<name-one>,<name-one>>" links="<link-1>,<link-2>" %}`
+`{% include workflow.html displayNames="<name-one>,<name-one>>" links="<link-1>,<link-2>" active="<name-one>"%}`
 
-Where `displayName` is a comma separated list of names, and `links` is a comma separated list of relative links. The component will grow dynamically as you add more names and links.
+Where `displayName` is a comma separated list of names, and `links` is a comma separated list of relative links. The component will grow dynamically as you add more names and links. To set one of the steps to be highlighted, add an "active" argument with the name of the step that should be highlighted.
 
 **Example:**
 

@@ -10,7 +10,11 @@
 {% else %}
   {% assign secondaryClass = "inactiveWorkFlowStep" %}
 {% endif%}
-<div class="workFlowStep {{secondaryClass}}" onclick="location.href='{{links[forloop.index0]}}';" id="{{links[forloop.index0]}}">
+{% if include.links %}
+<div class="workFlowStep {{secondaryClass}}" onclick="location.href='{{links[forloop.index0]}}';">
+{% else %}
+<div class="workFlowStep {{secondaryClass}}">
+{% endif %}
   <div class="workFlowStepNum"> {{forloop.index}}</div>
   <div>{{name}}</div>
 </div>
