@@ -1,27 +1,25 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
-title: Authenticate
-description: Authenticate an element instance with the service provider
+heading: ServiceNow OAuth Beta
+seo: Authenticate Instance | ServiceNow OAuth | Cloud Elements API Docs
+title: Authenticate Instance
+description: Authenticate Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
+elementId: 566
+elementKey: servicenowoauth
 parent: Back to Element Guides
-order: 20
+order: 25
 ---
 
 # Authenticate with {{page.heading}}
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with ServiceNow to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
+Use the UI to authenticate with ServiceNow and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -40,6 +38,7 @@ To authenticate an element instance:
     | Hover over the element card, and then click **Create Instance**.</br> ![Create Instance](../img/Create-Instance.gif)  | Click **Add Instance**.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
+6. In **The ServiceNow Subdomain**, enter your subdomain. This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -50,24 +49,25 @@ To authenticate an element instance:
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 ![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
+9. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](#manage-your-developer-instance).
 
 ## Authenticate Through API
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-<The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint...">
-
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
-{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=""%}
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
 * [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
 * [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
 
+
 ### Getting a Redirect URL
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
+
 
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
@@ -144,7 +144,7 @@ To create an element instance:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "filter.response.nulls": true
+        "servicenow.subdomain": "<YOUR_SUBDOMAIN>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -160,6 +160,7 @@ To create an element instance:
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+2. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](#manage-your-developer-instance).
 
 #### Example cURL
 
@@ -178,7 +179,8 @@ curl -X POST \
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "servicenow.subdomain": "domain12345"
   },
   "tags": [
     "Docs"
@@ -197,9 +199,10 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
-| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html). |  string |
+| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Redirect URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
+| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
 | `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html). | string |
+| The ServiceNow Subdomain</br>`servicenow.subdomain` | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -210,39 +213,39 @@ In this example, the instance ID is `12345` and the instance token starts with "
 {
   "id": 12345,
   "name": "API Instance",
-  "createdDate": "2017-08-07T18:46:38Z",
+  "createdDate": "2017-07-27T14:27:32Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
-      "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
-      "active": true,
-      "deleted": false,
-      "typeOauth": false,
-      "trialAccount": false,
-      "resources": [ ],
-      "transformationsEnabled": true,
-      "bulkDownloadEnabled": true,
-      "bulkUploadEnabled": true,
-      "cloneable": true,
-      "extendable": true,
-      "beta": true,
-      "authentication": {
-          "type": "oauth2"
-      },
-      "extended": false,
-      "hub": "helpdesk",
-      "protocolType": "http",
-      "parameters": [  ]
+    "id": 1323,
+    "name": "ServiceNow OAuth",
+    "hookName": "ServiceNow",
+    "key": "servicenowoauth",
+    "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
+    "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [ ],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": true,
+    "beta": true,
+    "authentication": {
+        "type": "oauth2"
     },
-    "elementId": {{page.elementId}},
+    "extended": false,
+    "hub": "helpdesk",
+    "protocolType": "http",
+    "parameters": [  ]
+    },
+    "elementId": 1323,
     "tags": [
-      "Docs"
-      ],
-    "provisionInteractions": [  ],
+        "Docs"
+    ],
+    "provisionInteractions": [],
     "valid": true,
     "disabled": false,
     "maxCacheSize": 0,
@@ -253,8 +256,18 @@ In this example, the instance ID is `12345` and the instance token starts with "
     "cachingEnabled": false,
     "externalAuthentication": "none",
     "user": {
-        "id": 12345
-      }
-    }
- }
+    "id": 12345
+  }
+}
 ```
+
+## Manage Your Developer Instance
+
+After you authenticate an element instance, you must "wake up" your developer instance. See more at [ServiceNow's documentation](https://developer.servicenow.com/app.do#!/program/faq?q=personal_developer_instance_guidance).
+
+To wake a Cloud Elements ServiceNow element instance:
+
+1. Log in to the wake up instance URL with the [Developer portal](https://developer.servicenow.com/app.do#!/instance) credentials.
+2. On the status screen, click **Refresh status**.
+
+After 10 days of no activity, ServiceNow deletes the instance.
