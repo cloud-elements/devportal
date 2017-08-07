@@ -8,7 +8,7 @@ Cloud Elements supports webhook events for {{page.heading}}. For more informatio
 
 ## Webhooks
 
-You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or [through API](#configure-webhooks-through-api) in the JSON body of the `/instances` API call. Before you begin, make sure that you set up webhooks as descriped in  [API Provider Setup](setup.html#set-up-events).
+You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or [through API](#configure-webhooks-through-api) in the JSON body of the `/instances` API call. Before you begin, make sure that you set up webhooks as described in  [API Provider Setup](setup.html#set-up-events).
 
 ### Configure Webhooks Through the UI
 

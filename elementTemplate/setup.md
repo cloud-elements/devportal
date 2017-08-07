@@ -13,29 +13,50 @@ order: 5
 
 # API Provider Setup
 
-<For Oauth apps:>
-To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}} and know the **Key**, **Shared Secret**, and **Registered OAuth Redirect URI** of the app. You use these when you authenticate an element instance as the API Key, API Secret, and Callback URL.
+To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}}. When you authenticate, use the **API Client ID**, **API Client Secret**, and **Callback URL** as the **API Key**, **API Secret**, and **Callback URL**. If you plan to monitor events, also configure the **Webhook URL**.
 
-<For other apps:>
+See the latest setup instructions in the [{{page.heading}} documentation](https://apiprovider.com).
 
-To authenticate a {{page.heading}} element instance, complete the setup steps described in this section.
+{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a></br><a href=#set-up-events>Set Up Events</a>" type="info" %}
 
-{% include note.html content="If there is a note needed, add it here.</a>" %}
+## Locate Credentials for Authentication
 
-To set up the API provider: <span style="color:red">The steps are going to differ widely. Try to only use screen shots where necessary, but by the end of the steps, the user should have the information needed to authenticate an instance with the service provider.</span>
+If you already created an application, see below to locate the **API Client ID**, **API Client Secret**, and **Callback URL**. If you have not created an app, see [Create an Application](#create-an-application).
 
-1. Log in to your developer account at [Egnyte](https://developers.egnyte.com).
-3. Click **Create New Application**.
-4. Complete the required information.
-5. In **Egnyte domain you will use for testing** enter the domain that you have access to for testing. When you authenticate an element instance, you also provide an Egnyte domain. When testing, these values should match.
-5. In **Registered OAuth Redirect URI** enter the URL that you will use as the OAuth Callback URL when you authenticate an element instance.
-![Egnyte Setup 1](img/egnyte-domain-callback.png)
-3. Record your **Registered OAuth Redirect URI** as the OAuth Callback URL.
-2. In the SELECT WHICH WEB APIS THIS APPLICATION WILL USE section, note the rate limits.
-![Rate Limits](img/rate-limits.png)
-2. Click **Register Application**.
-3. Record the **Key** and **Shared Secret** as your API Key and API Secret.
+To find your OAuth 2.0 credentials:
 
-![Salesforce Connected App step 3](img/salesforce-connected-app-3.png)
+1. Log in to your developer account at [{{page.heading}}](https://apiprovider.com).
+2. Click the application that you want to connect.
+3. Record the **API Client ID** and **API Client Secret**.
+3. Record the **Callback URL** for your app.
+![Key secret and URL](img/hootsuite-creds.png)
+
+## Create an Application
+
+If you have not created an application, you need one to authenticate with {{page.heading}}.
+
+To create an application:
+
+1. Log in to your developer account at [{{page.heading}}](https://apiprovider.com).
+2. Click **Create New App**.
+3. Complete the required information.
+4. If you plan to monitor events at {{page.heading}}, enter `https://console.cloud-elements.com/elements/api-v2/events/{{page.heading}}`.
+4. Click **Create**.
+2. Click the application that you want to connect.
+3. Record the **API Client ID** and **API Client Secret**.
+3. Record the **Callback URL** for your app.
+![Key secret and URL](img/hootsuite-creds.png)
+
+## Set Up Events
+
+{{page.heading}} supports webhooks. If you want to enable events when you authenticate and element instance, complete the steps below to set up webhooks with {{page.heading}}.
+
+1. Log in to your developer account at [{{page.heading}}](https://apiprovider.com).
+2. Click the application that you want to connect.
+3. Click **Edit**.
+3. In **Webhook URL** enter `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}`.
+4. Click **Save**.
+5. Test the webhook. Click **Send ping webhook** and watch for a status code of 200.
+6. Record the **Webhook URL** which you will use when you set up events as the **Event Notification Callback URL**.
 
 Next [authenticate an element instance with {{page.heading}}](authenticate.html).
