@@ -32,7 +32,7 @@ layout: sidebarelementtile
 * [![Marketo](/assets/img/element-logos/marketo.png)Marketo](./elements/marketo/)
 * [![Pardot](/assets/img/element-logos/pardot.png)Pardot](./elements/pardot/)
 * [![Salesforce Marketing Cloud Beta](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud Beta](./elements/salesforce-marketing-cloud)
-* [![FreshBooks](/assets/img/element-logos/freshbooks.png)FreshBooks](./elements/freshbooks/)
+* [![FreshBooks Classic](/assets/img/element-logos/freshbooks.png)FreshBooks Classic](./elements/freshbooks/)
 * [![Great Plains](/assets/img/element-logos/greatplains.png)MS Great Plains Beta](./elements/greatplains/)
 * [![Intacct](/assets/img/element-logos/intacct.png)Intacct](./elements/intacct/)
 * [![NetSuite Finance](/assets/img/element-logos/netsuite.png)NetSuite Finance](./elements/netsuite-finance/)

@@ -1,6 +1,6 @@
 ---
-heading: FreshBooks
-seo: Query Language | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: Query Language | FreshBooks Classic | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
