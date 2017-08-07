@@ -5,7 +5,7 @@ title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4066
 elementKey: hootsuite
 parent: Back to Element Guides
 order: 5
@@ -49,12 +49,12 @@ To create an application:
 
 ## Set Up Events
 
-{{page.heading}} supports webhooks. If you want to enable events when you authenticate and element instance, complete the steps below to set up webhooks with {{page.heading}}.
+{{page.heading}} supports webhooks. If you want to enable events when you authenticate an element instance configure the Webhook URL at {{page.heading}}.You must append the element instance ID encoded with Base 64 to the end of  the webhook URL. Because of this, you must authenticate an element instance first with a placeholder Event Notification Callback URL. After you have the element ID, set up the Webhook URL as described below, and then update the element instance.
 
 1. Log in to your developer account at [{{page.heading}}](https://hootsuite.com/developers/my-apps).
 2. Click the application that you want to connect.
 3. Click **Edit**.
-3. In **Webhook URL** enter `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}`.
+3. In **Webhook URL** enter `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/<Base 64 Element ID>`.
 4. Click **Save**.
 5. Test the webhook. Click **Send ping webhook** and watch for a status code of 200.
 6. Record the **Webhook URL** which you will use when you set up events as the **Event Notification Callback URL**.

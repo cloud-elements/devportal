@@ -5,7 +5,7 @@ title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 11
+elementId: 4066
 elementKey: hootsuite
 parent: Back to Element Guides
 order: 25
@@ -20,6 +20,10 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 ## Supported Events and Resources
 
 Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://developer.hootsuite.com/v1.0/docs/webhooks-overview).
+
+{% include important.html content="Because Hootsuite requires the element instance encoded with Base 64 appended to the <b>Webhook URL</b>, you need to first create an instance with a placeholder Event Notification Callback URL. After you have the element ID, set up the Webhook URL as described in <a href=setup.html>API Provider Setup</a>, and then update the element instance.
+  " %}
+
 
 ## Webhooks
 
@@ -39,6 +43,9 @@ To authenticate an element instance with webhooks:
     | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
+
+    {% include note.html content="When you first authenticate the element instance, enter a placeholder URL such as <code>https://api.cloud-elements.com/elements/api-v2/events/hootsuite</code>. After you update the Webhook URL in Hootsuite, you can update the instance with the complete URL including the Base 64 encoded Element ID." %}
+
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -51,6 +58,14 @@ To authenticate an element instance with webhooks:
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
     | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+
+10. Use a Base 64  encoding tool, such as [Base64(https://www.base64encode.org/)], to encode the element ID.
+11. Follow the steps in [API Provider Setup](setup.html/#set-up-events) to define the **Webhook URL** at Hootsuite.
+12. Update the **Event Notification Callback URL** in the element instance:
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | Open the element instance for editing, change the **Event Notification Callback URL**, and then click **Update**. | Open the element instance for editing, change the **Event Notification Callback URL**, click **Next**, and then respond **No** when asked if you want to re-authenticate. |
 
 ### Configure Webhooks Through API
 
@@ -86,6 +101,8 @@ To authenticate an element instance with webhooks:
 
     ```
 
+    {% include note.html content="For <code>event.notification.callback.url</code> enter a placeholder URL such as <code>https://api.cloud-elements.com/elements/api-v2/events/hootsuite</code>. After you update the Webhook URL in Hootsuite, you can update the instance with the complete URL including the Base 64 encoded Element ID." %}
+
 1. Call the following, including the JSON body you constructed in the previous step:
 
         POST /instances
@@ -93,6 +110,9 @@ To authenticate an element instance with webhooks:
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+10. Use a Base 64  encoding tool, such as [Base64(https://www.base64encode.org/)], to encode the element ID.
+11. Follow the steps in [API Provider Setup](setup.html/#set-up-events) to define the **Webhook URL** at Hootsuite.
+12. Use `PATCH /instances` to update the `event.notification.callback.url` in the element instance.
 
 
 #### Example cURL
@@ -138,5 +158,5 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | `oauth.api.key` | The REST API Client ID from {{page.heading}}. This is the **REST API Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
 | `oauth.api.secret` | The REST API Client Secret from {{page.heading}}. This is the **REST API Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
-| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. This is the **Webhook URL** that you noted in the [API Provider Setup section](setup.html) | string |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. This is the **Webhook URL** that you noted in the [API Provider Setup section](setup.html). | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
