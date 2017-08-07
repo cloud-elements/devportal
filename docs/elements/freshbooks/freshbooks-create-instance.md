@@ -1,6 +1,6 @@
 ---
-heading: FreshBooks
-seo: Create Instance | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: Create Instance | FreshBooks Classic | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -12,7 +12,7 @@ order: 15
 
 ## Create Instance
 
-FreshBooks is a Finance Platform. When you provision an instance, your app will have access to the different functionality offered by the FreshBooks platform.
+FreshBooks Classic is a Finance Platform. When you provision an instance, your app will have access to the different functionality offered by the FreshBooks Classic platform.
 
 ### Step 1. Get Elements OAuth Token
 
@@ -22,11 +22,11 @@ FreshBooks is a Finance Platform. When you provision an instance, your app will 
 * Request Body: None
 * Query Parameters:
 
-* __key__ - freshbooks
-* __apiKey–__ - “Your Personal Subsite e.g. for mycompany.freshbooks.com would be mycompany”
+* __key__ - FreshBooks Classic
+* __apiKey–__ - “Your Personal Subsite e.g. for mycompany.FreshBooks Classic.com would be mycompany”
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
-* __siteAddress__ - your FreshBooks Site Address you are wanting to Authorize e.g. for targetcompany.freshbooks.com would be targetcompany
+* __siteAddress__ - your FreshBooks Classic Site Address you are wanting to Authorize e.g. for targetcompany.FreshBooks Classic.com would be targetcompany
 
 Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{keyOrId}/oauth/url call.
 
@@ -37,7 +37,7 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/freshbooks/oauth/token?apiKey=insert_api_key&apiSecret=insert_api_secret&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&siteAddress=insert_freshbooks_site_address'
+'https://api.cloud-elements.com/elements/api-v2/elements/FreshBooks Classic/oauth/token?apiKey=insert_api_key&apiSecret=insert_api_secret&callbackUrl=https%3A%2F%2Fwww.mycoolapp.com%2Fauth&siteAddress=insert_FreshBooks Classic_site_address'
 ```
 
 Response:
@@ -49,7 +49,7 @@ Response:
 }
 ```
 
-FreshBooks expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
+FreshBooks Classic expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
 
 ### Step 2. Get Elements OAuth URL
 
@@ -59,12 +59,12 @@ FreshBooks expects a token and secret. These are contained in the response to th
 * Request Body: None
 * Query Parameters:
 
-* __key__ - freshbooks
-* __apiKey–__ - “Your Personal Subsite e.g. for mycompany.freshbooks.com would be mycompany”
+* __key__ - FreshBooks Classic
+* __apiKey–__ - “Your Personal Subsite e.g. for mycompany.FreshBooks Classic.com would be mycompany”
 * __apiSecret__ – the secret obtained from registering your app with the provider
 * __callbackUrl__ – the URL that you supplied to the provider when registering your app,
 * __requestToken__ - the token obtained from the GET /elements/{keyOrId}/oauth/token call (previous step).
-* __siteAddress__ - your FreshBooks Site Address you are wanting to Authorize e.g. for targetcompany.freshbooks.com would be targetcompany
+* __siteAddress__ - your FreshBooks Classic Site Address you are wanting to Authorize e.g. for targetcompany.FreshBooks Classic.com would be targetcompany
 
 Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
 
@@ -73,15 +73,15 @@ Example cURL Command:
 ```bash
 curl -X GET
 -H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/freshbooks/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_requestToken&siteAddress=insert_freshbooks_site_address'
+'https://api.cloud-elements.com/elements/api-v2/elements/FreshBooks Classic/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_requestToken&siteAddress=insert_FreshBooks Classic_site_address'
 ```
 
 Response:
 
 ```json
 {
-  "oauthUrl": "https://siteaddress.freshbooks.com/oauth/oauth_authorize.php?oauth_token=null&oauth_callback=https%3A%2F%2Fwww.mycoolapp.com%2Fauth%3Fstate%3Dfreshbooks",
-  "element": "freshbooks"
+  "oauthUrl": "https://siteaddress.FreshBooks Classic.com/oauth/oauth_authorize.php?oauth_token=null&oauth_callback=https%3A%2F%2Fwww.mycoolapp.com%2Fauth%3Fstate%3DFreshBooks Classic",
+  "element": "FreshBooks Classic"
 }
 ```
 
@@ -99,7 +99,7 @@ __oauth_verifier__
 __refresh_token__
 __secret__
 
-To provision your FreshBooks Element, use the /instances API.
+To provision your FreshBooks Classic Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -119,12 +119,12 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements FreshBooks is “freshbooks”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements FreshBooks Classic is “FreshBooks Classic”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {
   "element": {
-    "key": "freshbooks"
+    "key": "FreshBooks Classic"
   },
   "providerData": {
        "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
@@ -132,9 +132,9 @@ This instance.json file must be included with your instance request.  Please fil
        "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>"
    },
   "configuration": {
-  	"oauth.api.key":"<INSERT_FRESHBOOKS_API_KEY>",
-  	"oauth.api.secret":"<INSERT_FRESHBOOKS_API_SECRET>",
-    "freshbooks.site.address":"<INSERT_FRESHBOOKS_SITE_ADDRESS>"
+  	"oauth.api.key":"<INSERT_FreshBooks Classic_API_KEY>",
+  	"oauth.api.secret":"<INSERT_FreshBooks Classic_API_SECRET>",
+    "FreshBooks Classic.site.address":"<INSERT_FreshBooks Classic_SITE_ADDRESS>"
   },
   "tags": [
     "<INSERT_TAGS>"
@@ -166,9 +166,9 @@ Below is a successful JSON response:
   "token": "Ck9PmTdQ4WLe221gRtM0VAp2+trCYHBsEtA=",
   "element": {
     "id": 123,
-    "name": "Freshbooks Beta",
-    "key": "freshbooks",
-    "description": "Add a Freshbooks Instance to connect your existing Freshbooks account to the Finance Hub",
+    "name": "FreshBooks Classic Beta",
+    "key": "FreshBooks Classic",
+    "description": "Add a FreshBooks Classic Instance to connect your existing FreshBooks Classic account to the Finance Hub",
     "image": "https://pbs.twimg.com/profile_images/111898528/fb-leaf_400x400.gif",
     "active": true,
     "deleted": false,
@@ -183,19 +183,19 @@ Below is a successful JSON response:
   "cacheTimeToLive": 0,
   "configuration": {
     "base.url": "https://{site.address}/api/2.1",
-    "oauth.api.secret": "FRESHBOOKS_API_SECRET",
-    "site.address": "FRESHBOOKS_SITE_ADDRESS",
-    "oauth.token.url": "https://siteaddress.freshbooks.com/oauth/oauth_access.php",
+    "oauth.api.secret": "FreshBooks Classic_API_SECRET",
+    "site.address": "FreshBooks Classic_SITE_ADDRESS",
+    "oauth.token.url": "https://siteaddress.FreshBooks Classic.com/oauth/oauth_access.php",
     "oauth.user.token.secret": "USER SECRET",
     "pagination.max": "100",
     "event.vendor.type": "webhook",
-    "oauth.request.url": "https://siteaddress.freshbooks.com/oauth/oauth_request.php",
+    "oauth.request.url": "https://siteaddress.FreshBooks Classic.com/oauth/oauth_request.php",
     "oauth.user.token": "USER TOKEN",
-    "oauth.authorization.url": "https://siteaddress.freshbooks.com/oauth/oauth_authorize.php",
+    "oauth.authorization.url": "https://siteaddress.FreshBooks Classic.com/oauth/oauth_authorize.php",
     "pagination.type": "page",
     "event.notification.callback.url": null,
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "FRESHBOOKS_API_SECRET",
+    "oauth.api.key": "FreshBooks Classic_API_SECRET",
     "event.notification.enabled": "false"
   },
   "eventsEnabled": false,
