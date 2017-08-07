@@ -16,7 +16,7 @@ box_number: 1
 
 # Custom Element Information
 
-When you create an element, the first step is to provide some basic infomration about the element. Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
+When you create an element, the first step is to provide some basic information about the element. Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
 
 ## Build an Element
 
@@ -28,14 +28,16 @@ When you create an element, the first step is to provide some basic infomration 
   * Description &mdash; The description appears in the response when you authenticate an instance of the element.
 1. Choose the Hub associated with the new element. Make sure that you choose an accurate hub because you can leverage existing hub resources when you add resources to the element.
 2. Select the API type used by the API provider. You can usually find the API type on an overview or introductory section of the API documentation.
- * JSON REST API &mdash; Select if the API is a REST or RESTful API.
- * SOAP/XML &mdash; Select if the API is a SOAP API.
- * Database &mdash;Select of the API is for a database application.
+ * REST API &mdash; Select if the API is a REST or RESTful API.
+ * SOAP API &mdash; Select if the API is a SOAP API.
+ * Database &mdash; Select of the API is for a database application.
 2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an "Authorization" or "Authentication" section of the provider's API documentation. See the [Parameters table(#element-info-parameters)] for details.
 
     {% include note.html content=" Your authentication selection affects the configuration values that you will need to complete when you configure the element. " %}
 
 3. Add reference information that you will need while building the element:
+  * Documentation URL &mdash; Add a link to the API documentation. You will reference this throughout the element building process.
+  * Vendor API Version &mdash; Add a version number here if available so you always know what version of the API the element was built for.
 6. Click **Next**.
 7. [Define the information needed to configure an authenticated element instance](config.html).
 
