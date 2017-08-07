@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Query Language | Name of Element | Cloud Elements API Docs
+heading: Hootsuite
+seo: Query Language | Hootsuite | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

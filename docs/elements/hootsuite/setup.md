@@ -40,7 +40,7 @@ To create an application:
 1. Log in to your developer account at [{{page.heading}}](https://hootsuite.com/developers/my-apps).
 2. Click **Create New App**.
 3. Complete the required information.
-4. If you plan to monitor events at {{page.heading}}, enter `https://console.cloud-elements.com/elements/api-v2/events/hootsuite`.
+4. If you plan to monitor events at {{page.heading}}, see [Set Up Events](#set-up-events) before you add a **Webhook URL**.
 4. Click **Create**.
 2. Click the application that you want to connect.
 3. Record the **REST API Client ID** and **REST API Client Secret**.

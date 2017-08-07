@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Bulk APIs | Name of Element | Cloud Elements API Docs
+heading: Hootsuite
+seo: Bulk APIs | Hootsuite | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
