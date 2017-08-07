@@ -56,8 +56,8 @@ To authenticate an element instance with polling:
     | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
-4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select and configure the resources to poll.
 
     | Cloud Elements 2.0 | Earlier UI  |
