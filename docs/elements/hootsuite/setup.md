@@ -15,6 +15,8 @@ order: 5
 
 To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}} and request credentials. When you authenticate, use the **REST API Client ID**, **REST API Client Secret**, and **API Callback URL** as the API Key, API Secret, and Callback URL. If you plan to monitor events, also configure the **Webhook URL**.
 
+{% include note.html content="To activate API access for your Hootsuite application, contact Hootsuite support." %}
+
 See the latest setup instructions in the [{{page.heading}} documentation](https://hootsuite.com/developers/app-directory/quickstart/app).
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a></br><a href=#set-up-events>Set Up Events</a>" type="info" %}
@@ -40,7 +42,7 @@ To create an application:
 1. Log in to your developer account at [{{page.heading}}](https://hootsuite.com/developers/my-apps).
 2. Click **Create New App**.
 3. Complete the required information.
-4. If you plan to monitor events at {{page.heading}}, enter `https://console.cloud-elements.com/elements/api-v2/events/hootsuite`.
+4. If you plan to monitor events at {{page.heading}}, see [Set Up Events](#set-up-events) before you add a **Webhook URL**.
 4. Click **Create**.
 2. Click the application that you want to connect.
 3. Record the **REST API Client ID** and **REST API Client Secret**.
