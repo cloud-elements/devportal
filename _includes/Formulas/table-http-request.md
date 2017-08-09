@@ -1,7 +1,6 @@
 | Parameter | Description   | Required |
 | :------------- | :------------- | :------------- |
 | Name</br>`name`  |  {{site.data.table-desc.step-name}}  | Y |
-| Element Instance Variable</br>`elementInstanceId`  |  Specifies the element instance that receives the API call.  | Y |
 | Method</br>`method`  |  {{site.data.table-desc.formula-method}} | Y |
 | HTTP/S URL</br>`url`  |  The full URL of the request.  | Y |
 | Headers</br>`headers`  |  {{site.data.table-desc.formula-headers}}  | N |

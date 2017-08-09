@@ -1,8 +1,8 @@
 ---
-heading: FreshBooks
-seo: API Docs | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: API Docs | FreshBooks Classic | Cloud Elements API Docs
 title: API Docs
-description: FreshBooks API Documentation.
+description: FreshBooks Classic API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 172

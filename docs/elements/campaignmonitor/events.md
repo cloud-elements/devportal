@@ -19,7 +19,7 @@ Cloud Elements supports events via polling or webhooks depending on the endpoint
 
 ## Supported Events and Resources
 
-Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [Campaign Monitor's webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
+Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s' webhooks documentation](https://developer.box.com/docs/getting-started-with-webhooks-v2).
 
 ## Webhooks
 

@@ -5,7 +5,7 @@ title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: nn
 elementKey: fake
 parent: Back to Element Guides
 order: 25
@@ -13,7 +13,7 @@ order: 25
 
 # Events
 
-Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
+Cloud Elements supports events via polling or webhooks depending on the API provider. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
@@ -41,10 +41,17 @@ To authenticate an element instance with webhooks:
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. If using the earlier UI, optionally add tags.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-8. Take a look at the documentation for the element resources now available to you.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
 
 ### Configure Webhooks Through API
 

@@ -1,11 +1,11 @@
 ---
-heading: Element Name
-seo: Overview | Element Name | Cloud Elements API Docs
+heading: Name of Element
+seo: Overview | Name of Element | Cloud Elements API Docs
 title: Overview
-description: Integrate Element Name into your application via the Cloud Elements APIs.
+description: Integrate Name of Element into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 23
+elementId: nn
 parent: Back to Element Guides
 order: 1
 sitemap: false
@@ -15,7 +15,7 @@ sitemap: false
 
 {{page.heading}} provides on-demand customer relationship management (CRM) services.
 
-<span style="color:red">A great place to get this initial paragraph is from Programmableweb or the vendor's website.</span>
+<A great place to get this initial paragraph is from Programmableweb or the vendor's website.>
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -24,7 +24,7 @@ sitemap: false
 | Element Information | Details     |
 | :------------- | :------------- |
 | API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
-| Authentication | OAuth 2  |
+| Authentication | OAuth 2.0  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
@@ -69,4 +69,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](setup.html).
+Get started by [setting up the API provider](setup.html).

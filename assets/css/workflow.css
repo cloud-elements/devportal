@@ -1,0 +1,46 @@
+.workFlowFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.workFlowStep {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  text-decoration: none;
+  color: #9ca9af;
+  width: auto;
+  align-items: center;
+  cursor: pointer;
+}
+
+.workFlowStepNum {
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #9ca9af;
+  color: #FFF;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+}
+
+.arrow {
+  border: solid #9ca9af;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  height: 10px; 
+  width: 10px;
+  margin-right: 2px;
+}
+
+.activeWorkFlowStep {
+  color: #4d82bf;
+}
+.activeWorkFlowStep .workFlowStepNum{
+  background-color: #4d82bf;
+}
+
