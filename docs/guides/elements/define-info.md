@@ -9,39 +9,47 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 22
-simple_map: true
-map_name: usermap
-box_number: 1
 ---
 
 # Custom Element Information
 
+{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,config.html#set-up-parameters,hooks.html,events.html,bulk.html,resources.html" active="info"%}
+
 When you create an element, the first step is to provide some basic information about the element. Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
 
-## Build an Element
+{% include callout.html content="<strong>On this page</strong></br><a href=#basic-element-information-setup>Basic Element Information Setup</a></br><a href=#element-information-parameters>Element Information Parameters</a>" type="info" %}
+
+## Basic Element Information Setup
+
+To start building an element and provide the basic information:
 
 1. On the Elements page, click **Build a New Element**.
 1. Click **Create**.
 1. Enter basic information about the element:
-  * Element Name &mdash; The name appears on the Element card and should clearly identify the API provider associated with it.
-  * Element Key &mdash; Generated form the Element Name by default, but you can enter any text.
-  * Description &mdash; The description appears in the response when you authenticate an instance of the element.
-1. Choose the Hub associated with the new element. Make sure that you choose an accurate hub because you can leverage existing hub resources when you add resources to the element.
+  * **Element Name** &mdash; The name appears on the Element card and should clearly identify the API provider associated with it.
+  * **Element Key** &mdash; Generated form the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
+  * **Description** &mdash; The description appears in the response when you authenticate an instance of the element.
+1. Choose the Hub associated with the new element. Make sure that you choose an accurate hub because you can leverage existing hub resources when you [add resources to the element](resources.html).
 2. Select the API type used by the API provider. You can usually find the API type on an overview or introductory section of the API documentation.
- * REST API &mdash; Select if the API is a REST or RESTful API.
- * SOAP API &mdash; Select if the API is a SOAP API.
- * Database &mdash; Select of the API is for a database application.
-2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an "Authorization" or "Authentication" section of the provider's API documentation. See the [Parameters table(#element-info-parameters)] for details.
+ * **REST API** &mdash; Select if the API is a REST or RESTful API.
+ * **SOAP API** &mdash; Select if the API is a SOAP API.
+ * **Database** &mdash; Select of the API is for a database application.
+2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an "Authorization" or "Authentication" section of the provider's API documentation. See the [Parameters table](#element-information-parameters) for details.
 
     {% include note.html content=" Your authentication selection affects the configuration values that you will need to complete when you configure the element. " %}
 
 3. Add reference information that you will need while building the element:
-  * Documentation URL &mdash; Add a link to the API documentation. You will reference this throughout the element building process.
-  * Vendor API Version &mdash; Add a version number here if available so you always know what version of the API the element was built for.
+  * **Documentation URL** &mdash; Add a link to the API documentation. You will reference this throughout the element building process.
+  * **Vendor API Version** &mdash; Add a version number here if available so you always know what version of the API the element was built for.
 6. Click **Next**.
-7. [Define the information needed to configure an authenticated element instance](config.html).
+7. On the element Setup page, complete the Properties.
+8. In **Base URL** enter the URL where all API Requests will be sent. When you [add resources](resources.html), they are relative to the Base URL. Most API providers identify the Base URL in an introduction or "Getting Started" section.
+2. Enter pagination information, which you typically find in a "Pagination" section of the API documentation.:
+  * **Max Page Size** the maximum number of returned records supported by the API provider. Some API providers describe Max Page Size as limit.
+  * **Pagination Type** the approach to pagination supported by the API provider.
+7. [Define authentication information](auth.html).
 
-## Element Info Parameters
+## Element Information Parameters
 
 | Parameter | Description    | Required |
 | :------------- | :------------- | :------------- |
@@ -61,8 +69,13 @@ When you create an element, the first step is to provide some basic information 
 |  | **Custom** For user-defined authentications, such as passing an API key in the header or login requests made during authentication where tokens are passed. Because OAuth 1.0 and 2.0 are implemented differently at different cloud services, you might need to choose Custom. |  |
 | Documentation URL | The URL to the API provider's API documentation. | N |
 | Vendor API version | Some vendors offer multiple versions of their API. Enter the version that you are building the element for here. | N |
+|  Base URL  |  Endpoints are appended to the base URL. So, with an endpoint like `https://api.example.com/v1/users?role=admin&status=active`, the base URL is `https://api.example.com/v1/`.  Many API providers explicitly state the base URL, but in some cases you can find it by looking at examples in the API documentation. |  Y  |
+|  Max Page Size  |  The maximum number of records the API provider returns in a response.   |  Y  |
+|  Pagination Type  | How the API provider provides pages of data. Find the pagination types in a Pagination section of the API documentation.   |  Y  |
+|    | **Page starts with n**: Pagination begins with either 1 or 0.  |    |
+|    |  **Offset**: A numeric offset identifies the first page.  |    |
+|    |  **Cursor**: A unique key element identifies the first page entry   |    |
 
+Continue to the next step, [Custom Authentication Setup](auth.html).
 
-Continue to the next step, [Define Configuration & Parameters](config.html).
-
-{% include maps/usermap.html%}
+{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,parameters.html,hooks.html,events.html,bulk.html,resources.html" active="Authentication"%}

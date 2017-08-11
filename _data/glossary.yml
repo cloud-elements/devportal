@@ -43,3 +43,25 @@ transformation: "The conversion of objects in the vendor's resource to objects i
 user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
 
 webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."
+
+eb-api-key: "The default API Key used to authenticate with the API provider. Most API providers call this some variation of key or id, such as Key, API Key, or Client ID."
+
+eb-api-secret: "The default API Secret used to authenticate with the API provider. Most API providers call this some variation of secret, such as Secret , API Secret, or Client Secret."
+
+eb-callback-url: "The URL that will receive the authorization code from the API provider used to authenticate an element instance."
+
+eb-auth-url: "The URL where a user authorizes the application to access their information at the API provider."
+
+eb-token-url: "The URL where the application exchanges the authorization grant code for an access token."
+
+eb-global-hook: "A hook that applies to all requests or responses configured for an element."
+
+eb-resource-hook: "A hook that applies to requests or responses configured for a specific endpoint."
+
+eb-pre-request-hook: "A script that executes prior to sending API requests. For example, use a pre-request hook to manipulate or add query parameters, headers, the path, the body, or any element configuration."
+
+eb-post-response-hook: "A script that executes after recieving a response from an API provider. For example, use a post-response hook to manipulate response headers, the body, or any element configuration based on the response."
+
+eb-hook: "A script that you build for elements that operates on reequests and responses and that can be applied to all requests or resposnes or specific endpoints."
+
+element-card: "Each element appears in the elements catalog on its own card that shows basic information about the element and enables access to the ways that you can your with an element."

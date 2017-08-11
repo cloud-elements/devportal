@@ -1,7 +1,7 @@
 ---
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Authentication
+title: Custom Authentication Setup
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -9,39 +9,21 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 23
-simple_map: true
-map_name: usermap
-box_number: 2
 ---
 
-# Custom Authentication
+# Custom Authentication Setup
 
-The information that you need to enter to set up authentication with the API provider differs depending on the authorization type.
+{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,config.html#set-up-parameters,hooks.html,events.html,bulk.html,resources.html" active="Authentication"%}
 
-## Configure Basic Properties
+The information that you need to enter to set up authentication with the API provider differs depending on the authentication type. You can use the default flows on this page, but if the API provider uses complex authentication, you can override the default information with configurations, parameters , and hooks.
 
-Regardless of the authorization type, you'll need to enter the following:
+Click the authentication type that you selected to see configuration instructions. If you selected Custom, go to [Configuration and Parameters](config.html).
 
-1. In **Base URL** enter the URL where all API Requests will be sent.
-2. Enter pagination information:
-  * **Max Page Size** supported by the API provider.
-  * **Pagination Type** supported by the API provider.
-
-### Basic Parameters
-
-| Name | Description   | Required   |
-| :------------- | :------------- | :------------- |
-|  Base URL  |  Endpoints are appended to the base URL. So, with an endpoint like `https://api.example.com/v1/users?role=admin&status=active`, the base URL is `https://api.example.com/v1/`.  Many API providers explicitly state the base URL, but in some cases you can find it by looking at examples in the API documentation. |  Y  |
-|  Max Page Size  |  The maximum number of records the API provider returns in a response.   |  Y  |
-|  Pagination Type  | How the API provider provides pages of data. Find the pagination types in a Pagination section of the API documentation.   |  Y  |
-|    | **Page starts with n**: Pagination begins with either 1 or 0.  |    |
-|    |  **Offset**: A numeric offset identifies the first page.  |    |
-|    |  **Cursor**: A unique key element identifies the first page entry   |    |
-
+{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a>" type="info" %}
 
 ## Configure OAuth 2.0
 
-Cloud Elements provides the parameters required to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement these parameters with additional configuration. Prior to setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
+Cloud Elements provides the [parameters](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Prior to setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
 To configure OAuth 2.0 elements:
 
@@ -60,26 +42,26 @@ To configure OAuth 2.0 elements:
 
 | Name | Description   | Required   |
 | :------------- | :------------- | :------------- |
-|  OAuth API Key  |  The default API Key used to authenticate with the API provider. Most API providers call this some variation of key or id, such as Key, API Key, or Client ID. |  Y  |
-|  OAuth API Secret  |  The default API Secret used to authenticate with the API provider. Most API providers call this some variation of secret, such as Secret , API Secret, or Client Secret.  |  Y  |
-|  OAuth Callback URL  |  The URL that will receive the authorization code from the API provider used to authenticate an element instance.  |  Y  |
-|  OAuth Authorization URL  |  The URL where a user authorizes the application to access their information at the API provider.  |  Y  |
-|  OAuth Token URL  |  The URL where you exchange the authorization grant code for an access token.  |  Y  |
+|  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
+|  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
+|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
+|  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
+|  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
 |  OAuth Refresh Interval (s)  |  If the access token expires, the time frame when Cloud Elements sends a request to the OAuth Token Refresh URL.  |  N  |
 |  OAuth Token Refresh URL  |  The URL to send a refresh request.  |  N  |
 
-  ## Configure OAuth 1.0
+## Configure OAuth 1.0
 
-  Cloud Elements provides the parameters required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement these parameters with additional configuration.
+Cloud Elements provides the [parameters](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement these parameters with additional configuration.
 
-  To configure OAuth 1.0 elements:
+To configure OAuth 1.0 elements:
 
 1. Click **Authentication**.
 2. Complete the fields needed to obtain an OAuth Request Token to request user authorization
-  * OAuth Request URL
-  * OAuth Callback URL
   * OAuth API Key
   * OAuth API Secret
+  * OAuth Request URL
+  * OAuth Callback URL
 3. In **OAuth Authorization URL** enter the URL where Cloud Elements redirects the user to authorize access.
 4. In **OAuth Token URL** enter the URL where Cloud Elements fetches an access token.
 5. In **OAuth Authorization Type (Header or Query)** select the way that authorization information is passed to the API provider.
@@ -90,23 +72,21 @@ To configure OAuth 2.0 elements:
 
 | Name | Description   | Required   |
 | :------------- | :------------- | :------------- |
-|  OAuth Request URL  |  Body  |  Y  |
-|  OAuth Callback URL  |  Body  |  Y  |
-|  OAuth API Key  |  Body  |  Y  |
-|  OAuth API Secret  |  Body  |  Y  |
-|  OAuth Authorization URL  |  Body  |  Y  |
-|  OAuth Token URL  |  Body  |  Y  |
-|  OAuth Authorization Type (Header or Query)  |  Body  |  Y  |
-|  OAuth Scope  |  Body  |  N  |
-|  OAuth User Secret  |  Body  |  N  |
+|  OAuth Request URL  |  The URL used to obtain an unauthorized request token. A value used by the Consumer to obtain authorization from the User, and exchanged for an Access Token. |  Y  |
+|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
+|  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
+|  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
+|  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
+|  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
+|  OAuth Authorization Type (Header or Query)  |  How the API provider recieves authentication information, either in the header or as a query parameter.  |  Y  |
+|  OAuth Scope  |  A comma separated list of scopes that define what the access token can do and what resources it can access.  |  N  |
+|  OAuth User Secret  |    |  N  |
 
-## Configure Basic Authorization
+## Configure Basic Authentication
 
-In Basic access authorization, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authorization, we start you off with Username and Password configurations. If you need to add any additional configurations like an API Key, do so in the Configuration step.
+In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with Username and Password configurations. If you need to add any additional configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
-The user name and password configurations are customizable so you can keep the default values or add your own. You can also click **Delete Configuration** to remove a user name or password configurations if you do not need it.
-
-### Basic Authorization Parameters
+### Basic Authentication Parameters
 
 | Name | Description   | Required   |
 | :------------- | :------------- | :------------- |
@@ -118,23 +98,21 @@ The user name and password configurations are customizable so you can keep the d
 |  Required  | Indicates whether the parameter is required or not. |  Y  |
 |  Hide on the UI  | Indicates whether the parameter appears on the UI when you authenticate an element instance or not. |  Y  |
 
-## Configure Custom Authorization
+## Configure Custom Authentication
 
+To configure custom authentication information, use the [Configuration](config.html), [Parameters](config.html), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
 
+## Configure AWS Authentication
 
+Cloud Elements provides default authentication fields for API providers that use [Amazon Web Services Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) and [Version 2](http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html). API providers typically do not vary from the standard AWS authentications, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
+### Basic Authentication Parameters
 
-2. Complete the fields needed to obtain a request token:
-    * OAuth Request URL &mdash;
-    * OAuth Callback URL &mdash;
-1. In **OAuth Request URL** enter the url to enable users to grant Cloud Elements access to their account on behalf of your application:
-2. In **OAuth Callback URL** enter the URL the API provider returns the token needed to exchange for an access token.
-3. In **OAuth Token URL** enter the URL where Cloud Elements fetches the access token.
+| Name | Description   | Required   |
+| :------------- | :------------- | :------------- |
+|  AWS Access Key ID  | The ID associated with your AWS access key.   |  Y  |
+|  AWS Secret Access Key  | The secret key used in the Signature Version 2 signing process |  Yes for version 2 only |
 
+## Change the Authentication Type
 
-
-1. Select the format of the request (__Accept Header__) and response (__Content-Type Header__) types. Cloud Elements supports JSON and XML.
-1. Set up any configuration required for the Element. A value which is stored when a connection to the endpoint is created. This value is populated via user input and will be used when invoking the API, e.g. an api_key and api_secret. See [Adding Element Configurations](#adding-element-configurations).
-1. Set up parameters. A globally defined value that will apply to all API calls. Parameters can be sent as a header, path, query, body. See [Adding Element Parameters](#adding-element-parameters).
-1. Set up hooks. re-Hook: Action you wish to execute prior to sending API calls e.g. manipulating or adding data (query, header, path, body, configuration). Post-Hook: Modify the response data (body, header, configuration) on the return call from the endpoint. See [Adding Element Hooks](#adding-element-hooks)
-1. Click __Next__.
+If you selected the incorrect authentication type, or find that you need to change the authentication for any reason, select another authentication type from the **type** list in the Authentication heading.

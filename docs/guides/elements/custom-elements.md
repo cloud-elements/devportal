@@ -13,7 +13,7 @@ order: 20
 
 # Overview
 
-You can build your own elements to create custom integrations to API providers. Publish finished elements to your private Elements Catalog while automatically generating interactive API Documentation using Swagger. You can aggregate services by creating a Hub or mapping your new Element to an existing Hub. You can also utilize the normalized resources that we have already organized into Hubs, and leverage the same resources across any other Element you build.
+You can build your own elements to create custom integrations to API providers. Publish finished elements to your private Elements Catalog while automatically generating interactive API Documentation. You can aggregate services by creating a Hub or mapping your new element to an existing Hub. You can also utilize the normalized resources that we have already organized into Hubs, and leverage the same resources across any other element that you build.
 
 This guide is intended for individuals familiar with APIs, Javascript, and JSON. To create an element we recommend that you have a thorough understanding of:
 
@@ -26,18 +26,19 @@ This guide is intended for individuals familiar with APIs, Javascript, and JSON.
 
 ## The Workflow
 
-The high-level workflow that you will follow to create a custom element is shown below. Click a box to jump to the section.
+While you can work on different parts of an element throughout the entire creation process, in general you will follow the high-level workflow shown below.
 
-{% include maps/usermap.html%}
+{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,parameters.html,hooks.html,events.html,bulk.html,resources.html" active=""%}
 
 ## Before you Begin
 
-Before you begin, make sure that you know the answers to the following questions:
+Before you begin, here is a sampling of questions you need to know the answers to. You can find most of the information needed in the API provider's documentation
 
 * Where is the API documentation?
 * What kind of API? REST, SOAP, database?
-* What kind of authentication? OAuth 1 or 2? Basic? AWS V2 or V4?
+* What kind of authentication? OAuth 1.0 or 2.0? Basic? AWS V2 or V4?
 * Does the endpoint support events or bulk?
 * Do OAuth 2.0 tokens expire?
 * What resources do you want to connect? Accounts, contacts, lists, leads?
 * In which Hub should you categorize the element?
+* Have you set up an application to integrate with the API provider? Do you have the authentication information for it?
