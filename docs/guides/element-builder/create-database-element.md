@@ -809,7 +809,7 @@ If you are interested in using our Ground2Cloud Service, please [contact us](inf
 
 #### Support
 
-We would love to hear about enhancements or concerns regarding Cloud Elements & Element Builder.  Please don’t hesitate to get in touch.
+We would love to hear about enhancements or concerns regarding Cloud Elements.  Please don’t hesitate to get in touch.
 
 Need some help?  Don’t hesitate to reach out to [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.
 
