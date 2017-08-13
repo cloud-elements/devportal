@@ -141,7 +141,7 @@ In order to create the alternate tab content, one of two values is added to the 
 - To point to alternate API content from a UI page:  
   - `restContentVersion: <link to rest content>`  
 - To point to alternate UI content from a API page:  
-  - `uiContentVersion`: <link to UI content>`
+  - `uiContentVersion`: <link to UI content>` 
 
 ## Workflow component usage
 
