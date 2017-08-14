@@ -84,6 +84,7 @@ Note the following when writing javascript in formulas:
 * You can use `notify.email` to send an email notification.
 * ES6 is supported.
 * The function parameters are immutable, meaning they cannot be assigned to directly. To change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
+* Body variables (request_body) are applicable only to methods that pass a JSON body like POST, PATCH,and PUT. Body variables are undefined/null if there is no JSON body sent.
 
 ## The done Function
 
@@ -112,6 +113,7 @@ This section presents some possible use cases for hooks. Because you can write J
 * [Reading Event Webhooks](#reading-event-webhooks)
 * [Removing Headers](#removing-headers)
 * [HTTP and HTTPS Library Examples](#http-and-https-library-examples)
+* [Parse an ID from a request path](#parse-an-id-from-a-request-path)
 
 
 ### Global Pre-Request Hook for All Delete Methods

@@ -210,8 +210,6 @@ The descriptions that you enter for each endpoint should help a user understand 
 
 If you are coming from Element Builder, you're at the last step of the workflow:
 
-{% include maps/usermap.html%}
-
 ## Step 1: define the resource
 
 To add a resources:
