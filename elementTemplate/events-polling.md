@@ -191,7 +191,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
-| customers  | The configuration of the customers resource. | JSON object |
+| customers  | The polling event configuration of the customers resource. | JSON object |
 | URL</br>`url` | The url to query for updates to the resource.  | String |
 | ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
 | Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
