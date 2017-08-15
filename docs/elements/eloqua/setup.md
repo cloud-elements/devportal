@@ -1,8 +1,8 @@
 ---
 heading: Oracle Eloqua
-seo: Endpoint Setup | Oracle Eloqua | Cloud Elements API Docs
-title: Endpoint Setup
-description: Endpoint setup
+seo: API Provider Setup | Oracle Eloqua | Cloud Elements API Docs
+title: API Provider Setup
+description: API Provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 27

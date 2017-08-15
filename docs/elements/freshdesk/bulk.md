@@ -1,11 +1,11 @@
 ---
-heading: Hootsuite
-seo: Bulk  | Hootsuite | Cloud Elements API Docs
+heading: Freshdesk V2
+seo: Bulk  | Freshdesk | Cloud Elements API Docs
 title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 491
 parent: Back to Element Guides
 order: 30
 sitemap: false
@@ -21,7 +21,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).   |
+|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://developers.freshdesk.com/api/#ratelimit).   |
 | Upsert Support | No |
 | Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
-| Order By Support | Yes, you can add `orderby=fieldName` to the query. |
+| Order By Support | No. |

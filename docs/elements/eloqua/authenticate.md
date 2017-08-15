@@ -1,7 +1,7 @@
 ---
 heading: Oracle Eloqua
-seo: Create Instance | Oracle Eloqua | Cloud Elements API Docs
-title: Create Instance
+seo: Authenticate | Oracle Eloqua | Cloud Elements API Docs
+title: Authenticate
 description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
