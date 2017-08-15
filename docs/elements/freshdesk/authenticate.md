@@ -1,5 +1,5 @@
 ---
-heading: Freshdesk
+heading: Freshdesk V2
 seo: Authenticate | Freshdesk | Cloud Elements API Docs
 title: Authenticate
 description: Create Instance
@@ -40,13 +40,15 @@ To authenticate an element instance:
 
 5. Enter a name for the element instance.
 7. Enter the **Subdomain** and **API Key**.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
-     1. Click __Done__.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
@@ -66,8 +68,8 @@ To create an element instance:
         "key": "{{page.elementKey}}"
       },
       "configuration": {
-        "subdomain": "<YOUR_SOBDOMAIN>",
-        "username": "<YOUR_API_KEY",
+        "subdomain": "<YOUR_SUBDOMAIN>",
+        "username": "<YOUR_API_KEY>",
         "filter.response.nulls": true
       },
       "tags": [
@@ -98,12 +100,82 @@ curl -X POST \
     },
     "configuration": {
   	 "subdomain": "cloudelements",
-  	 "username": "pcTlQRXAg1YWdxDwsxIX"
+  	 "username": "xxxxxxxxxxxxxxxxxxxxx"
     },
     "tags": [
   	 "Docs"
     ],
-      "name": "FDviaAPI3"
+      "name": "API Instance"
   }
 '
+```
+## Parameters
+
+API parameters not shown in {{site.console}} are in `code formatting`.
+
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
+| Subdomain</br>subdomain | Your domain name when logging in to Freshdesk. For example, in `https://cloudelements.freshdesk.com` the subdomain is `cloudelements`.  | string |
+| API Key</br>username | The Freshdesk API Key that you noted in the [API Provider Setup section](setup.html). | string |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
+
+## Example Response for an Authenticated Element Instance
+
+In this example, the instance ID is `12345` and the instance token starts with "ABC/D...". The actual values returned to you will be unique: make sure you save them for future requests to this new instance.
+
+```json
+{
+  "id": 12345,
+  "name": "API Instance",
+  "createdDate": "2017-08-07T18:46:38Z",
+  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "element": {
+      "id": 491,
+      "name": "Freshdesk V2",
+      "hookName": "Freshdeskv2",
+      "key": "freshdeskv2",
+      "description": "Add a Freshdesk Instance to connect your existing Freshdesk account to the Help Desk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Freshdesk account information to add an instance.",
+      "image": "elements/provider_freshdesk.png",
+      "active": true,
+      "deleted": false,
+      "typeOauth": false,
+      "trialAccount": false,
+      "resources": [ ],
+      "transformationsEnabled": true,
+      "bulkDownloadEnabled": true,
+      "bulkUploadEnabled": true,
+      "cloneable": true,
+      "extendable": true,
+      "beta": false,
+      "authentication": {
+          "type": "basic"
+      },
+      "extended": false,
+      "hub": "helpdesk",
+      "protocolType": "http",
+      "parameters": [  ]
+    },
+    "elementId": {{page.elementId}},
+    "tags": [
+      "Docs"
+      ],
+    "provisionInteractions": [],
+    "valid": true,
+    "disabled": false,
+    "maxCacheSize": 0,
+    "cacheTimeToLive": 0,
+    "configuration": {    },
+    "eventsEnabled": false,
+    "traceLoggingEnabled": false,
+    "cachingEnabled": false,
+    "externalAuthentication": "none",
+    "user": {
+        "id": 12345
+      }
+  }
+
 ```
