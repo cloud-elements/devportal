@@ -1,6 +1,6 @@
 ---
 heading: ServiceNow OAuth Beta
-seo: API Provider Setup | ServiceNow OAuth OAuth | Cloud Elements API Docs
+seo: API Provider Setup | ServiceNow OAuth | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup
 layout: sidebarelementdoc
