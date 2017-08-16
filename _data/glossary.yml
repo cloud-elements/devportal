@@ -54,6 +54,8 @@ eb-auth-url: "The URL where a user authorizes the application to access their in
 
 eb-token-url: "The URL where the application exchanges the authorization grant code for an access token."
 
+eb-scope: "A comma separated list of the permissions that the user will authorize your integration to have."
+
 eb-global-hook: "A hook that applies to all requests or responses configured for an element."
 
 eb-resource-hook: "A hook that applies to requests or responses configured for a specific endpoint."

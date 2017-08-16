@@ -122,7 +122,7 @@ To define a parameter :
   * date - As defined by full-date - RFC3339
   * dateTime - 	As defined by date-time - RFC3339
   * password - A hint to UIs to obscure input.
-8. If the **Parameter Type** is `body`, enter the name of an existing model in **Model Name**.
+8. If the **Parameter Type** is `body`, enter the name of an existing model in **Model Name**. See [Add Models(#add-models)] to create a model for the endpoint.
 9. If you want to switch the standard workflow where the parameters on the left are part of the request, click **Parameter Source**, and then select **Request**. ID, GET,
 10. To make the parameter a required part of the request, switch **Required** on.
 11. Take your next steps:
@@ -173,6 +173,29 @@ To create a resource hook:
 2. Write the script needed for your use case. See [Custom Hooks](hooks.html) for more information about the functions and libraries available to you.
 3. Save the endpoint.
 
+## Add Models
+
+Depending on the endpoint method, you can add request models and response models. Request models provide an example of how you should structure the JSON body of a POST, PUT, or PATCH request. Response models give you an idea of what the response from the API vendor should look like.
+
+Request models are required for POST, PUT, or PATCH requests, and the model that you set up should match the Model Name in the **body** parameter.
+
+To add a request model to a POST, PUT, or PATCH request:
+
+1. Identify what the request body should look like in the API provider's documentation.
+2. Click **Request Model**.
+3. Enter a name for the model.
+4. Enter the model as a schema object as defined in the [OpenAPI version 2.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schemaObject).
+3. When complete, close the model drawer.
+
+To add a response model:
+
+1. Identify what the request body should look like in the API provider's documentation.
+2. Click **Response Model**.
+3. Enter a name for the model.
+4. Enter the model as a schema object as defined in the [OpenAPI version 2.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schemaObject).
+3. When complete, close the model drawer.
+
+
 ### Add Endpoints
 
 {% include workflow.html displayNames="Info,Description & Configuration,Parameters,Endpoints,Hooks" links="#provide-basic-resource-info,#add-description-and-configure,#add-parameters,#add-hooks#add-endpoints" active="Endpoints"%}
@@ -185,15 +208,6 @@ To add an endpoint:
 2. Select the Method for the new endpoint. The left side represents the Cloud Elements side of the endpoint.
 3. On the right side, select the vendor method associate with the endpoint, and then enter the URL of that endpoint.
 4. Click **Go**, and then follow the steps to [add a description and configuration information](#add-description-and-configuration), [add parameters](#add-parameters), and [add hooks](#add-hooks).
-
-## Add Models
-
-To add a model:
-
-1. Click **Models**.
-2. Find the resource, expand it, and then click <img src="img/resource-pencil.png" alt="pencil" class="inlineImage">.
-3.
-3.
 
 
 

@@ -1,7 +1,7 @@
 ---
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Elements
+title: Build Custom Elements
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -11,9 +11,9 @@ parent: Back to Guides
 order: 20
 ---
 
-# Overview
+# Build Custom Elements
 
-You can build your own elements to create custom integrations to API providers. Publish finished elements to your private Elements Catalog while automatically generating interactive API Documentation. You can aggregate services by creating a Hub or mapping your new element to an existing Hub. You can also utilize the normalized resources that we have already organized into Hubs, and leverage the same resources across any other element that you build.
+You can build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can aggregate services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also utilize the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
 
 This guide is intended for individuals familiar with APIs, Javascript, and JSON. To create an element we recommend that you have a thorough understanding of:
 
@@ -28,7 +28,7 @@ This guide is intended for individuals familiar with APIs, Javascript, and JSON.
 
 While you can work on different parts of an element throughout the entire creation process, in general you will follow the high-level workflow shown below.
 
-{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,parameters.html,hooks.html,events.html,bulk.html,resources.html" active=""%}
+{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active=""%}
 
 ## Before you Begin
 
@@ -42,3 +42,10 @@ Before you begin, here is a sampling of questions you need to know the answers t
 * What resources do you want to connect? Accounts, contacts, lists, leads?
 * In which Hub should you categorize the element?
 * Have you set up an application to integrate with the API provider? Do you have the authentication information for it?
+
+## Examples
+
+The examples in this section are based on building an element for [Harvest](https://harvestapp.com/), a time and expense application. To supplement this documentation, we created the following elements that you can import to follow along with:
+
+* Harvest Basic
+* Harvest OAuth 2.0

@@ -13,9 +13,10 @@ order: 22
 
 # Custom Element Information
 
-{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,config.html#set-up-parameters,hooks.html,events.html,bulk.html,resources.html" active="info"%}
+{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Info"%}
 
-When you create an element, the first step is to provide some basic information about the element. Basic information includes how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API.
+
+When you create an element, the first step is to provide some basic information about the element. To build the element, we need to know how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API provider.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#basic-element-information-setup>Basic Element Information Setup</a></br><a href=#element-information-parameters>Element Information Parameters</a>" type="info" %}
 
@@ -24,17 +25,18 @@ When you create an element, the first step is to provide some basic information 
 To start building an element and provide the basic information:
 
 1. On the Elements page, click **Build a New Element**.
-1. Click **Create**.
-1. Enter basic information about the element:
-  * **Element Name** &mdash; The name appears on the Element card and should clearly identify the API provider associated with it.
+![Build Element](img/btn_build.png)
+1. Review the information on the Builder page, and then click **Create**.
+1. Name and describe the element:
+  * **Element Name** &mdash; The name appears on the element card and should clearly identify the API provider associated with it.
   * **Element Key** &mdash; Generated form the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
-  * **Description** &mdash; The description appears in the response when you authenticate an instance of the element.
-1. Choose the Hub associated with the new element. Make sure that you choose an accurate hub because you can leverage existing hub resources when you [add resources to the element](resources.html).
+  * **Description** &mdash; The description helps to clarify the purpose of the element. The description appears in the response when you authenticate an instance of the element.
+1. Choose the hub associated with the new element. Make sure that you choose an accurate hub because you can leverage existing hub resources when you [add resources to the element](resources.html).
 2. Select the API type used by the API provider. You can usually find the API type on an overview or introductory section of the API documentation.
  * **REST API** &mdash; Select if the API is a REST or RESTful API.
  * **SOAP API** &mdash; Select if the API is a SOAP API.
  * **Database** &mdash; Select of the API is for a database application.
-2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an "Authorization" or "Authentication" section of the provider's API documentation. See the [Parameters table](#element-information-parameters) for details.
+2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an _Authorization_ or _Authentication_ section of the provider's API documentation. For example, Harvest provides an [Authentication section](http://help.getharvest.com/api-v1/authentication/) that describes both Basic and OAuth 2.0 authentication.
 
     {% include note.html content=" Your authentication selection affects the configuration values that you will need to complete when you configure the element. " %}
 
@@ -78,4 +80,4 @@ To start building an element and provide the basic information:
 
 Continue to the next step, [Custom Authentication Setup](auth.html).
 
-{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,parameters.html,hooks.html,events.html,bulk.html,resources.html" active="Authentication"%}
+{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Authentication"%}
