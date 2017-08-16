@@ -1,6 +1,6 @@
 ---
-heading: ConnectWise Help Desk
-seo: Query Language | ConnectWise Help Desk | Cloud Elements API Docs
+heading: ConnectWise
+seo: Query Language | ConnectWise | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

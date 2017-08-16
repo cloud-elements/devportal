@@ -1,8 +1,8 @@
 ---
-heading: ConnectWise Help Desk
-seo: API Docs | ConnectWise Help Desk | Cloud Elements API Docs
+heading: ConnectWise
+seo: API Docs | ConnectWise | Cloud Elements API Docs
 title: API Docs
-description: ConnectWise Help Desk API Documentation.
+description: ConnectWise API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 142
