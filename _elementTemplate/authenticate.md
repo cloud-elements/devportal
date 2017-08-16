@@ -127,7 +127,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
-To create an element instance:
+To authenticate an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
@@ -255,6 +255,5 @@ In this example, the instance ID is `12345` and the instance token starts with "
     "user": {
         "id": 12345
       }
-    }
- }
+}
 ```
