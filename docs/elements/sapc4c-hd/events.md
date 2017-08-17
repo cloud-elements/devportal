@@ -25,7 +25,7 @@ Cloud Elements supports polling events for the following {{page.heading}} resour
 
 ## Configure Polling Through the UI
 
-Use the {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance with polling enabled.
+Use {{site.console}} to authenticate with SAP Hybris Cloud for Customer and create an element instance with polling enabled.
 
 To authenticate an element instance with polling:
 
@@ -140,7 +140,7 @@ To authenticate an element instance with polling:
 
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
 

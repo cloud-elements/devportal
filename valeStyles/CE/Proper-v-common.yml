@@ -1,0 +1,6 @@
+extends: substitution
+message: '%s'
+level: suggestion
+ignorecase: false
+swap:
+  Element: Lower case if talking about a generic element

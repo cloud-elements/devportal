@@ -68,9 +68,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider Setup section](setup.html).  |
 
 #### Example cURL
 
@@ -150,7 +150,7 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
     "element": {
@@ -174,7 +174,7 @@ curl -X POST \
 ```
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
 
@@ -182,9 +182,9 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
 | Shopify Site Address</br> `shopify.site.address` | The site address of your Shopify Store | string |
 | `oauth.scope` | The permissions granted to the user when they authenticate to your application | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

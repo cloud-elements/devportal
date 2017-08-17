@@ -6,7 +6,7 @@ The Tips section includes more information about the element including FAQs, end
 
 ## Authentication
 
-* Hubspot supports three different authentication mechanisms: Basic, OAuth 2 (legacy) and OAuth 2 (new). When you authenticate an instance and include the HubSpot Portal ID, you use the latest OAuth 2 authentication
+* Hubspot supports two different authentication mechanisms: API Key (Basic) and OAuth 2.0. When you authenticate an instance and include the HubSpot Portal ID, you use the latest OAuth 2 authentication
 * If you intend to use the new OAuth 2, you must also provide scope.  In Sandbox or developer accounts, HubSpot Marketing will never have appropriate scope to authenticate an instance. To authenticate an element instance with a HubsSpot Marketing trial account, you must create your own connected app with limited scope.
 * If you receive the following error message, verify that the scopes selected in your registered app are aligned with the permissions allowed under the selected Portal ID.
 

@@ -21,7 +21,7 @@ In order to access the Usage APIs, you must sign up for Cloud Elements Service. 
 
 ### WHERE TO FIND THE USAGE APIS
 
-The Usage APIs can be accessed via the Cloud Elements Console at: [https://console.cloud-elements.com/elements/jsp/login.jsp](https://console.cloud-elements.com/elements/jsp/login.jsp). The console provides a Graphical User Interface (GUI) environment that formats data returned by each of the API calls into graphs. An example can be seen below. The Usage APIs can also be integrated right into you app.
+The Usage APIs can be accessed via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> at: [https://console.cloud-elements.com/elements/jsp/login.jsp](https://console.cloud-elements.com/elements/jsp/login.jsp). The console provides a Graphical User Interface (GUI) environment that formats data returned by each of the API calls into graphs. An example can be seen below. The Usage APIs can also be integrated right into you app.
 
 ### SIGN UP FOR THE CLOUD ELEMENTS SERVICE
 

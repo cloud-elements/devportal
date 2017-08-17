@@ -1,0 +1,42 @@
+{
+  "name": "CRM to Messages",
+  "description": "This example listens for an event on a CRM element and then sends an email with that event information using a messaging element.",
+  "configuration": [{
+      "name": "crmElement",
+      "type": "elementInstance",
+      "key": "crmElement"
+    },
+    {
+      "name": "messagingElement",
+      "type": "elementInstance",
+      "key": "messagingElement"
+    }
+  ],
+  "triggers": [{
+    "type": "event",
+    "properties": {
+      "elementInstanceId": "${config.crmElement}"
+    },
+    "onSuccess": ["constructBody"]
+  }],
+  "steps": [{
+      "name": "constructBody",
+      "type": "script",
+      "properties": {
+        "body": "done({\n  \"subject\": \"CRM Event Occurred\",\n  \"to\": \"receipient@cloud-elements.com\",\n  \"from\": \"sender@cloud-elements.com\",\n  \"message\": `${trigger.event.objectType} with ID ${trigger.event.objectId} was ${trigger.event.eventType}`\n});"
+      },
+      "onSuccess": ["sendEmail"]
+    },
+    {
+      "name": "sendEmail",
+      "type": "elementRequest",
+      "properties": {
+        "method": "POST",
+        "elementInstanceId": "${config.messagingElement}",
+        "api": "/hubs/messaging/messages",
+        "body": "${steps.constructBody}"
+      }
+    }
+  ]
+
+}

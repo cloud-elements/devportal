@@ -1,7 +1,7 @@
 ---
 heading: ServiceNow OAuth Beta
-seo: Bulk APIs | ServiceNow OAuth | Cloud Elements API Docs
-title: Bulk APIs
+seo: Bulk  | ServiceNow OAuth | Cloud Elements API Docs
+title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -11,4 +11,4 @@ order: 35
 sitemap: false
 ---
 
-{% include bulk-apis.md %}
+{% include Elements/servicenow/bulk.md %}

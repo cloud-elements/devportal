@@ -11,14 +11,16 @@ parent: Back to Guides
 order: 5
 ---
 
-## Create a Database Element BETA
+## Create a Database Element
 
-Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  We are currently testing our BETA version.  __Currently only endpoints with a REST API, PostgreSql, MySql and SqlServer database elements can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you are interested in participating in our round of BETA testing.
+Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  __Currently only endpoints with a REST API, PostgreSql, MySql and SqlServer database elements can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you have questions or need help getting started.
 
 This guide will demonstrate how to build a __Database Element only__.
 Please view the [Element Builder Documentation](index.html) for more information on how to build Elements for endpoints with a REST API.
 
 __For this guide, a sample database was created called `mydb`.  This database contains two tables: `customers` and `addresses`.  This guide will demonstrate creating `CRUD` (Create, Read, Update, and Delete) customer API calls, as well as, creating a `C` addresses API call and complex query API call.__
+
+__NOTE: We currently limit result sets to 50 rows for all Database Elements__
 
 - [Element Builder Tabs](#element-builder-tabs])
     - [Info Tab](#info-tab)
@@ -807,7 +809,7 @@ If you are interested in using our Ground2Cloud Service, please [contact us](inf
 
 #### Support
 
-Element Builder is currently in BETA.  We would love to hear about enhancements or concerns regarding the application.  Please don’t hesitate to get in touch.
+We would love to hear about enhancements or concerns regarding Cloud Elements.  Please don’t hesitate to get in touch.
 
 Need some help?  Don’t hesitate to reach out to [Cloud Elements Support](mailto:support@cloud-elements.com) with any questions or concerns.
 

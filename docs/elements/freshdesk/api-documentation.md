@@ -1,5 +1,5 @@
 ---
-heading: Freshdesk
+heading: Freshdesk V2
 seo: API Docs | Freshdesk | Cloud Elements API Docs
 title: API Docs
 description: Freshdesk API Documentation.

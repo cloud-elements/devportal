@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance
 
-You can provision instances through the API Manager Console or through APIs. This section describes both methods and includes parameter details, a request sample, and a response sample.
+You can provision instances through Cloud Elemens or through APIs. This section describes both methods and includes parameter details, a request sample, and a response sample.
 
 [Provision an Instance in Cloud Elements](#provision-an-instance-in-cloud-elements)
 
@@ -26,7 +26,7 @@ You can provision instances through the API Manager Console or through APIs. Thi
 
 ### Provision an Instance in Cloud Elements
 
-Use the Cloud Elements API Manager Console to provision an instance using our user interface. We provide a Provision Instance workflow that includes two steps: Provision it and Tag it.
+Use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> to provision an instance using our user interface. We provide a Provision Instance workflow that includes two steps: Provision it and Tag it.
 
 1. Sign in, and then search for the element in our Elements Catalog.
   ![Search](../img/Element-Search.png)

@@ -1,8 +1,8 @@
 ---
-heading: FreshBooks
-seo: Authentication | FreshBooks | Cloud Elements API Doc
+heading: FreshBooks Classic
+seo: Authentication | FreshBooks Classic | Cloud Elements API Doc
 title: Authentication
-description: Integrate FreshBooks into your application via the Cloud Elements APIs.
+description: Integrate FreshBooks Classic into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 172

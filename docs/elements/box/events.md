@@ -10,104 +10,131 @@ parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-Box supports webhooks.  Follow these directions to configure your application to accept webhooks.
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
-### Endpoint Setup
+## Supported Events and Resources
 
-Follow these steps to set up a Box application with the endpoint.
-Via a web browser, go to  [https://app.box.com/developers/services/edit/](https://app.box.com/developers/services/edit/).
+Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
 
-1. Enter the name of your application
+Before continuing, be sure that you set up webhooks as describe in [API Provider Setup](setup.html).
 
-2. Select the appropriate options
+## Webhooks
 
-3. Click “Create Application”
-![Box Connected App step 1](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI1.png)
+You can configure webhooks [through the UI](#configure-webhooks-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-webhooks-through-api) .
 
-4. After receiving confirmation that your application is created, click “Configure your application”
-![Box Connected App step 2](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI2.png)
+### Configure Webhooks Through the UI
 
-5. Copy the “client_id”
+For more information about each field described here, see [Parameters](#parameters).
 
-6. Copy the “client_secret”
+To authenticate an element instance with webhooks:
 
-7. You will be required to enter a callback URL from the endpoint. Enter this URL: `https://console.cloud-elements.com/elements/jsp/home.jsp`
+1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
+2. Enable events: Switch **Events Enabled** on.
 
-8. Select your “Scopes” (check “Read and write all files and folders”)
-![Box Connected App step 3](http://cloud-elements.com/wp-content/uploads/2014/08/BoxAPI31.png)
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
-9. Scroll down and click “Create a New Webhook”
-![Box Connected App step 4](http://cloud-elements.com/wp-content/uploads/2014/08/BoxCreateWebhook.png)
+8. Add an **Event Notification Callback URL**.
+9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+8. If using the earlier UI, optionally add tags.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+8. Take a look at the documentation for the element resources now available to you.
 
-On “Create Webhook” Screen
+### Configure Webhooks Through API
 
-1. Fill out app information
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with webhooks enabled.
 
-2. Select “Event Types” - Events your app will be notified on
-![Box Connected App step 5](http://cloud-elements.com/wp-content/uploads/2014/08/BoxNameWebhook.png)
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
-3. Input this Endpoint URL: `https://api.cloud-elements.com/elements/api-v2/events/box`
+To authenticate an element instance with webhooks:
 
-4. Select the minimum configurations:
-Input “userId” Input “#to_user_id#”
-Input “event” Input “#event_type#”
-Input “itemId” Input “#item_id#”
-Input “itemType” Input “#item_type#”
-Input “newItemId” Input “#new_item_id#”
+1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
-5. Click “Save Webhook”
-![Box Connected App step 6](http://cloud-elements.com/wp-content/uploads/2014/08/BoxCreateWebhookMinimumConfigs.png)
+    ```json
+    {
+      "element": {
+        "key": "{{page.elementKey}}"
+      },
+      "providerData": {
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
+      "configuration": {
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "oauth.api.key": "<CONSUMER_KEY>",
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "event.notification.enabled": true,
+        "event.notification.callback.url": "<CALLBACK_URL>",
+        "events.list.ids": "<LIST_IDS>"
+      },
+      "tags": [
+        "<Add_Your_Tag>"
+      ],
+      "name": "<INSTANCE_NAME>"
+    }
 
-NOTE: As long as the minimum configuration fields are set properly, any other additional fields can also be specified. These additional fields will be sent along in the webhook call.
+    ```
 
-Box requires you to submit a Support Request to enable webhooks for your app. You must complete this step before you will receive events from Box.
+1. Call the following, including the JSON body you constructed in the previous step:
 
-Go to this URL: [https://developers.box.com/view-webhooks/](https://developers.box.com/view-webhooks/)
+        POST /instances
 
-Scroll to the bottom of the page and click Contact Us to submit a request. You will need your API Key. This can be found at the bottom of the app configuration screen.
-![Box Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/01/BoxContactUs.png)
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
-For your Box Ticket Request:
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 
-* Select “Platform”
-* Select “View API”
-* Select “Webhooks”
-* Input “API Key” This is your client_id that was assigned by Box when you created your app.
 
-Input your email and webhook request, as well as, a request to enable “As-User” functionality.
-![Box Connected App step 7](http://cloud-elements.com/wp-content/uploads/2014/08/BoxContactUs2.png)
+#### Example cURL
 
-In order to enable events, add these two extra configurations to your instance JSON:
-
-```
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
-```
-
-instance JSON with polling events enabled:
-
-```json
-{
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
   "element": {
-    "key": "box"
+    "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "Code on Return the URL"
+    "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.api.key": "<INSERT_BOX_CLIENT_ID>",
-    "oauth.api.secret": "<INSERT_BOX_CLIENT_SECRET>",
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>"
+    "oauth.callback.url": "https://mycoolapp.com",
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx"
+    "event.notification.enabled": true,
+    "event.notification.callback.url": "https://mycoolapp.com/events",
+    "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
-    "<INSERT_TAGS>"
+    "Docs"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
+  "name": "API Instance"
+}'
 ```
+
+## Parameters
+
+API parameters not shown in the {{site.console}} are in `code formatting`.
+
+<add custom element-specific params at the bottom of the table>
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |

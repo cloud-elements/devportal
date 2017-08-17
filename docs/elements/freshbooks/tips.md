@@ -1,8 +1,8 @@
 ---
-heading: FreshBooks
-seo: Tips | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: Tips | FreshBooks Classic | Cloud Elements API Docs
 title: Tips
-description: FreshBooks FAQ.
+description: FreshBooks Classic FAQ.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 172
@@ -12,7 +12,7 @@ order: 50
 
 ## Tips
 
-FreshBooks response payloads are by default formatted in XML.  Cloud Elements transforms the response payloads from XML to JSON in each of the API calls.
+FreshBooks Classic response payloads are by default formatted in XML.  Cloud Elements transforms the response payloads from XML to JSON in each of the API calls.
 
 Due to this transformation, the ‘@’ and ‘$’ symbols will be seen in the JSON response payloads.  Fields prefixed with the ‘@’ are interpreted as attributes and the ‘$’ field represents text content.  Let’s take a look at an example.
 

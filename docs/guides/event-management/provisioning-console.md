@@ -1,7 +1,7 @@
 ---
 heading: Event Management
 seo: Event Management | Cloud Elements API Docs
-title: Provisioning via Console
+title: Provisioning via UI
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
 layout: sidebarleft
 breadcrumbs: /docs/platform/platform-docs.html
@@ -12,9 +12,9 @@ sitemap: false
 
 ### Provisioning
 
-Elements can be provisioned with Event Management Integration via the Manager Console or APIs. [Click here for provisioning via APIs](provisioning-apis.html).
+Elements can be provisioned with Event Management Integration via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> or APIs. [Click here for provisioning via APIs](provisioning-apis.html).
 
-#### **Provisioning via Manager Console**
+#### **Provisioning via Cloud Elements**
 
 __Dropbox__ will be used for most of this demonstration.  However the
 majority of our Elements support events.
@@ -68,6 +68,6 @@ information here to help track your Element instances.)
 ![Cloud Elements Events 8](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance31.png)
 
 And that's it! You've successfully provisioned a new Element instance
-with notifications via our Console UI.
+with notifications via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>.
 
 [Provision via APIs](provisioning-apis.html)

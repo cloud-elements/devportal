@@ -14,7 +14,7 @@ order: 20
 
 Salesforce is a Customer Success Platform. When you provision an instance, your app will have access to the different functionality offered by the Salesforce platform.
 
-Optionally, you may provision an instance to specific features like Marketing Cloud, CRM and Salesforce Documents. Below are examples of each method.
+Optionally, you may provision an instance to specific features like Marketing Cloud, CRM and Salesforce Files. Below are examples of each method.
 
 ### Step 1. Get Elements OAuth Information
 

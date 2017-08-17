@@ -153,7 +153,7 @@ To create an element instance:
 ```bash
 curl -X POST \
   https://api.cloud-elements.com/elements/api-v2/instances \
-  -H 'authorization: User <USER_SECRET>, Organization ,ORGANIZATION_SECRET>' \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
     "element": {
@@ -178,7 +178,7 @@ curl -X POST \
 ```
 ## Parameters
 
-API parameters not shown in the {{site.console}} are in `code formatting`.
+API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
 
