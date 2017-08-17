@@ -455,10 +455,10 @@ window.Docs = {
 	toggleEndpointListForResource: function(resource) {
 		var elem = $('li#resource_' + Docs.escapeResourceName(resource) + ' ul.endpoints');
 		if (elem.is(':visible')) {
-			$.bbq.pushState('#/', 2);
+			// $.bbq.pushState('#/', 2);
 			Docs.collapseEndpointListForResource(resource);
 		} else {
-            $.bbq.pushState('#/' + resource, 2);
+            // $.bbq.pushState('#/' + resource, 2);
 			Docs.expandEndpointListForResource(resource);
 		}
 	},
@@ -20204,7 +20204,7 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
   toggleOperationContent: function (event) {
     var elem = $('#' + Docs.escapeResourceName(this.parentId + '_' + this.nickname + '_content'));
     if (elem.is(':visible')){
-      $.bbq.pushState('#/', 2);
+      // $.bbq.pushState('#/', 2);
       event.preventDefault();
       Docs.collapseOperation(elem);
     } else {

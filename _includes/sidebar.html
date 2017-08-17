@@ -41,9 +41,9 @@
 
 
       // Initialized the highlighting wrapper
-      $(`a[href='${pathWithQuery}']`).addClass("activeAccordionLink");
+      $(`.sidebarWrapper a[href='${pathWithQuery}']`).addClass("activeAccordionLink");
       //Create Click listener for the links
-      $(".accordionLink").click((e)=> {
+      $(".sidebarWrapper a").click((e)=> {
         $(".activeAccordionLink").removeClass("activeAccordionLink");
         $(e.target).addClass("activeAccordionLink");
       })
