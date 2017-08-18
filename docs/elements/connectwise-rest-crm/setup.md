@@ -1,7 +1,7 @@
 ---
-heading: ConnectWise REST BETA
-seo: Endpoint Setup | ConnectWise REST | Cloud Elements API Docs
-title: Endpoint Setup
+heading: ConnectWise REST
+seo: API Provider Setup | ConnectWise REST | Cloud Elements API Docs
+title: API Provider Setup
 description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,12 +10,11 @@ parent: Back to Element Guides
 order: 5
 ---
 
-## Endpoint Setup
+# API Provider Setup
 
-To set up the ConnectWise REST endpoint, you need to have an account.
+To authenticate a {{page.heading}} element instance you must have an account and either generate or know your **Public Key** and **Private Key**.
 
 __Note__: ConnectWise provides the most up-to-date and detailed setup instructions at [https://developer.connectwise.com/Manage/Developer_Guide](https://developer.connectwise.com/Manage/Developer_Guide).
-
 
 To set up the endpoint:
 
@@ -28,4 +27,4 @@ To set up the endpoint:
 ![Add Keys](img/add-key.png)
 10. Copy your Public Key and Private Key. These will be used to authenticate your element with ConnectWise.
 
-Next [authenticate with ConnectWise to create an element instance](connectwise-rest-create-instance.html).
+Next [authenticate with ConnectWise to create an element instance](authenticate.html).
