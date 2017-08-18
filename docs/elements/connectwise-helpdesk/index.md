@@ -9,6 +9,7 @@ elementId: 142
 auth: Basic authentication with user name and password
 hub: Help Desk
 events: Webhooks
+bulk: Supported for both upload and download.
 parent: Back to Element Guides
 order: 1
 sitemap: false

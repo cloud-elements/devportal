@@ -1,5 +1,5 @@
 ---
-heading: ConnectWise REST BETA
+heading: ConnectWise REST
 seo: API Provider Setup | ConnectWise REST | Cloud Elements API Docs
 title: API Provider Setup
 description: Endpoint setup

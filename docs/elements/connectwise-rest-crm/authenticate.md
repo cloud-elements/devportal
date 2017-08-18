@@ -1,5 +1,5 @@
 ---
-heading: ConnectWise REST BETA
+heading: ConnectWise REST
 seo: Authenticate | ConnectWise REST | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate
@@ -8,7 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 3012
 elementKey: connectwisecrmrest
 parent: Back to Element Guides
-order: 20
+order: 15
 ---
 
 # Authenticate with {{page.heading}}
@@ -95,9 +95,9 @@ curl -X POST \
   },
   "configuration": {
     "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-    "company": "<COMPANY_NAME>",
-    "public.key": "<PUBLIC_KEY>",
-    "private.key": "<PRIVATE_KEY>"
+    "company": "cloudelements",
+    "public.key": "xxxxxxxx",
+    "private.key": "xxxxxxxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -115,7 +115,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Heading | Heading   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>connectwisecrmrest  | string  |
+| 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | Connectwise URL</br>`baseUrl` | The url of your ConnectWise site with `api-` appended.</br> Be sure to add your url only to the siteURL section of the entire URL, so the entire value looks like: `https://<api-myconnectwise.com>/v4_6_release/apis/3.0`.<br> Where `<api-myconnectwise.com>` is one of the following: <ul><li>`api-eu.myconnectwise.net`</li><li>`api-au.myconnectwise.net`</li><li>`api-na.myconnectwise.net`</li><li>`api-staging.connectwisedev.com`</li></ul>| string |
 | Company</br>`company` | The company name that you use to log in. |  string |

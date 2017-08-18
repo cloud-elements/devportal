@@ -110,6 +110,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Password </br>`private.key` | Your ConnectWise password. | string |
 | WSDL Path</br> `helpdesk.connectwise.wsdl.path` | The WSDL path appears in the URL that ConnectWise redirects you to after you log in. For example, in `https://my.connectwise.com/v2017_2/ConnectWise.aspx?locale=en_US&session=...`, the WSDL path is `/v2017_2/apis/2.0/`. | string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`  | boolean |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance
 

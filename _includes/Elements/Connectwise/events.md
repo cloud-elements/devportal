@@ -1,16 +1,3 @@
----
-heading: Name of Element
-seo: Events | Name of Element | Cloud Elements API Docs
-title: Events
-description: Enable Element Name events for your application.
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-parent: Back to Element Guides
-order: 25
----
-
 # Events
 
 Cloud Elements supports events via polling or webhooks depending on the API provider. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
@@ -19,7 +6,7 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 ## Supported Events and Resources
 
-Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
+Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://developer.connectwise.com/Manage/Developer_Guide/Callbacks).
 
 ## Webhooks
 
@@ -31,7 +18,7 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with webhooks:
 
-1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
 2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
@@ -61,7 +48,6 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To authenticate an element instance with webhooks:
 
-1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
     ```json
@@ -69,13 +55,11 @@ To authenticate an element instance with webhooks:
       "element": {
         "key": "{{page.elementKey}}"
       },
-      "providerData": {
-        "code": "<AUTHORIZATION_GRANT_CODE>"
-      },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "helpdesk.connectwise.username": "<INSERT_CONNECTWISE_USERNAME>",
+        "helpdesk.connectwise.password": "<INSERT_CONNECTWISE_PASSWORD>",
+        "helpdesk.connectwise.server.url": "<INSERT_CONNECTWISE_SERVER_URL>",
+        "helpdesk.connectwise.company": "<INSERT_CONNECTWISE_COMPANY>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "<CALLBACK_URL>",
         "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
@@ -108,13 +92,11 @@ curl -X POST \
   "element": {
     "key": "{{page.elementKey}}"
   },
-  "providerData": {
-    "code": "xoz8AFqScK2ngM04kSSM"
-  },
   "configuration": {
-    "oauth.callback.url": "https://mycoolapp.com",
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx"
+    "helpdesk.connectwise.username": "xxxxxxxx",
+    "helpdesk.connectwise.password": "xxxxxxxxxxxxxx",
+    "helpdesk.connectwise.server.url": "http://api-cloudelements.connectwisedev.com",
+    "helpdesk.connectwise.company": "cloudelements",
     "event.notification.enabled": true,
     "event.notification.callback.url": "https://mycoolapp.com/events",
     "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -134,12 +116,14 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
+| 'key' | The element key.<br>connectwisecrmrest  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  |
-| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
+| Server URL</br>`helpdesk.connectwise.server.url` | The url of your ConnectWise site with `api-` appended. | string |
+| Company</br>`company` | The company name that you use to log in. |  string |
+| User Name</br>`public.key` |  Your ConnectWise user name. | string |
+| Password </br>`private.key` | Your ConnectWise password. | string |
+| WSDL Path</br> `helpdesk.connectwise.wsdl.path` | The WSDL path appears in the URL that ConnectWise redirects you to after you log in. For example, in `https://my.connectwise.com/v2017_2/ConnectWise.aspx?locale=en_US&session=...`, the WSDL path is `/v2017_2/apis/2.0/`. | string |
+| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`  | boolean |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |

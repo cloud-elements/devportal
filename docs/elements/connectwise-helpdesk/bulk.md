@@ -11,4 +11,4 @@ order: 35
 sitemap: false
 ---
 
-{% include bulk-apis.md %}
+{% include Elements/Connectwise/bulk.md %}

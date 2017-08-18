@@ -10,6 +10,7 @@ auth: Basic authentication with user name and password
 hub: CRM
 events: Webhooks
 parent: Back to Element Guides
+bulk: No
 order: 1
 sitemap: false
 ---
