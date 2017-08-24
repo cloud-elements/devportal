@@ -1,0 +1,460 @@
+[
+  {
+    "id": 84320,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Delete an attachment by ID",
+    "path": "/hubs/crm/attachments/{id}",
+    "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}",
+    "method": "DELETE",
+    "vendorMethod": "DELETE",
+    "parameters": [
+      {
+        "id": 171643,
+        "resourceId": 84320,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "objectId",
+        "description": "ID of the attachment",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84321,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve an attachment by ID",
+    "path": "/hubs/crm/attachments/{id}",
+    "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}/",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "parameters": [
+      {
+        "id": 171644,
+        "resourceId": 84321,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "objectId",
+        "description": "The ID of the object to retrieve from the CRM system.",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "rootKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84322,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Update an attachment by ID",
+    "path": "/hubs/crm/attachments/{id}",
+    "vendorPath": "/services/data/v29.0/sobjects/Attachment/{objectId}",
+    "method": "PATCH",
+    "vendorMethod": "PATCH",
+    "parameters": [
+      {
+        "id": 171646,
+        "resourceId": 84322,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "objectId",
+        "description": "The ID of the attachment",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      },
+      {
+        "id": 171645,
+        "resourceId": 84322,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "file",
+        "vendorName": "file",
+        "description": "File to be uploaded",
+        "type": "multipart",
+        "vendorType": "multipart",
+        "dataType": "file",
+        "vendorDataType": "file",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "rootKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84323,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve the binary attachment data",
+    "path": "/hubs/crm/attachments/{id}/data",
+    "vendorPath": "/services/data/v20.0/sobjects/Attachment/{objectId}/body",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "parameters": [
+      {
+        "id": 171647,
+        "resourceId": 84323,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "objectId",
+        "description": "The ID of the attachment",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "rootKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84324,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve an attachment for an object",
+    "path": "/hubs/crm/{objectName}/{objectId}/attachments",
+    "vendorPath": "/services/data/v36.0/sobjects/{objectName}/{objectId}/Attachments",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "parameters": [
+      {
+        "id": 171652,
+        "resourceId": 84324,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "where",
+        "vendorName": "q",
+        "description": "The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for accounts last modified on or after 'Jan 15, 2014', the search expression will be <i>where=lastModifiedDate>='2014-01-15T00:00:00.000Z'</i>. When this parameter is omitted, all accounts are returned in a paginated fashion.",
+        "type": "query",
+        "vendorType": "query",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": false
+      },
+      {
+        "id": 171651,
+        "resourceId": 84324,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "pageSize",
+        "vendorName": "pageSize",
+        "description": "The page size for pagination, which defaults to 200 if not supplied",
+        "type": "query",
+        "vendorType": "query",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": false
+      },
+      {
+        "id": 171650,
+        "resourceId": 84324,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "page",
+        "vendorName": "page",
+        "description": "The start page for pagination, which defaults to 1 if not supplied",
+        "type": "query",
+        "vendorType": "query",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": false
+      },
+      {
+        "id": 171649,
+        "resourceId": 84324,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectName",
+        "vendorName": "objectName",
+        "description": "The object name of the object to be retrieved. Supported attachment objects are Account, Asset, Campaign, Case, Contact, Contract, Custom objects, EmailMessage, EmailTemplate, Event, Lead, Opportunity, Product2, Solution and Task.",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      },
+      {
+        "id": 171648,
+        "resourceId": 84324,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectId",
+        "vendorName": "objectId",
+        "description": "The ID of the object",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "rootKey": "|records",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84325,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Create an attachment for an object.",
+    "path": "/hubs/crm/{objectName}/{objectId}/attachments",
+    "vendorPath": "/services/data/v29.0/sobjects/Attachment/",
+    "method": "POST",
+    "vendorMethod": "POST",
+    "parameters": [
+      {
+        "id": 171655,
+        "resourceId": 84325,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectName",
+        "vendorName": "objectName",
+        "description": "The object name of the object to be retrieved. Supported attachment objects are Account, Asset, Campaign, Case, Contact, Contract, Custom objects, EmailMessage, EmailTemplate, Event, Lead, Opportunity, Product2, Solution and Task.",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": false
+      },
+      {
+        "id": 171654,
+        "resourceId": 84325,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectId",
+        "vendorName": "ParentId",
+        "description": "The ID of the parent object from the CRM system.",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      },
+      {
+        "id": 171653,
+        "resourceId": 84325,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "file",
+        "vendorName": "file",
+        "description": "The file to attach",
+        "type": "multipart",
+        "vendorType": "multipart",
+        "dataType": "file",
+        "vendorDataType": "file",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "rootKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84326,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve the binary document data",
+    "path": "/hubs/crm/{objectName}/{objectId}/data",
+    "vendorPath": "/services/data/v36.0/sobjects/{objectName}/{objectId}/body",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "parameters": [
+      {
+        "id": 171657,
+        "resourceId": 84326,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectName",
+        "vendorName": "objectName",
+        "description": "The Salesforce object name, i.e. Document",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      },
+      {
+        "id": 171656,
+        "resourceId": 84326,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "objectId",
+        "vendorName": "objectId",
+        "description": "The Salesforce object id, i.e. Document id",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "nextPageKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/octet-stream"
+    },
+    "paginationType": "VENDOR_SUPPORTED",
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84327,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve a list of reports",
+    "path": "/hubs/crm/reports",
+    "vendorPath": "/services/data/v35.0/analytics/reports",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "type": "api",
+    "rootKey": "",
+    "nextPageKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "paginationType": "VENDOR_SUPPORTED",
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84328,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Execute a report and retrieve the results",
+    "path": "/hubs/crm/reports/{id}",
+    "vendorPath": "/services/data/v35.0/analytics/reports/{id}",
+    "method": "GET",
+    "vendorMethod": "POST",
+    "parameters": [
+      {
+        "id": 171660,
+        "resourceId": 84328,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "id",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      },
+      {
+        "id": 171659,
+        "resourceId": 84328,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "where",
+        "vendorName": "converter:toSFDCReportFilter",
+        "type": "query",
+        "vendorType": "query",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "converter": "toSFDCReportFilter",
+        "required": false
+      },
+      {
+        "id": 171658,
+        "resourceId": 84328,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "includeDetails",
+        "vendorName": "includeDetails",
+        "type": "query",
+        "vendorType": "query",
+        "dataType": "boolean",
+        "vendorDataType": "boolean",
+        "source": "request",
+        "required": false
+      }
+    ],
+    "type": "api",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84329,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve report metadata by ID",
+    "path": "/hubs/crm/reports/{id}/metadata",
+    "vendorPath": "/services/data/v35.0/analytics/reports/{id}/describe",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "parameters": [
+      {
+        "id": 171661,
+        "resourceId": 84329,
+        "createdDate": "2017-07-25T18:50:30Z",
+        "name": "id",
+        "vendorName": "id",
+        "type": "path",
+        "vendorType": "path",
+        "dataType": "string",
+        "vendorDataType": "string",
+        "source": "request",
+        "required": true
+      }
+    ],
+    "type": "api",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "ownerAccountId": 3810
+  },
+  {
+    "id": 84330,
+    "createdDate": "2017-07-25T18:50:30Z",
+    "description": "Retrieve a list of reports",
+    "path": "/hubs/crm/reports/metadata",
+    "vendorPath": "/services/data/v35.0/analytics/reports",
+    "method": "GET",
+    "vendorMethod": "GET",
+    "type": "apiNoDocumentation",
+    "nextPageKey": "",
+    "hooks": [],
+    "response": {
+      "contentType": "application/json"
+    },
+    "paginationType": "VENDOR_SUPPORTED",
+    "ownerAccountId": 3810
+  }
+]
