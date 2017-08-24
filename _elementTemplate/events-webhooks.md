@@ -31,7 +31,7 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with webhooks:
 
-1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
@@ -78,7 +78,7 @@ To authenticate an element instance with webhooks:
       	"oauth.api.secret": "<CONSUMER_SECRET>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "<CALLBACK_URL>",
-        "events.list.ids": "<LIST_IDS>"
+        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
       },
       "tags": [
         "<Add_Your_Tag>"

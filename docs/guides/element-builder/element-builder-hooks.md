@@ -79,7 +79,7 @@ __Libraries__
 
 	```JavaScript
 	const https = require('https');
-	//Get SFDC element fromm CE and return the results
+	//Get SFDC element from CE and return the results
 	https.get('https://api.cloud-elements.com/elements/api-v2/elements/sfdc', (res) => {
 		console.log('after response');
 		  let rawData = '';
@@ -166,7 +166,7 @@ To add a custom hook:
 
 ## Examples
 
-This section include the following example:
+This section include the following examples:
 
 * [Global Pre-Hook](#global-pre-hook)
 * [Pre-Hook Using Element Configuration](#pre-hook-using-element-configuration)

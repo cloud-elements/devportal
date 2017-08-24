@@ -35,11 +35,22 @@
   {% include nav.html %}
 
   <div class="container-fluid pageContainer">
+
     <div class="col-md-3 sidebar">
     {% include sidebar.html %}
     </div>
     <div class="col-md-9 contentWrapper">
       {% include contentToggle.html %}
+      {% if page.simple_map == true %}
+
+      <script>
+          $(document).ready ( function(){
+              $('.box{{page.box_number}}').addClass('active');
+          });
+      </script>
+
+      {% endif %}
+
       {{content}}
     </div>
   </div>

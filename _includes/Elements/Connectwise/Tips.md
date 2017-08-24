@@ -6,7 +6,7 @@ The Tips section includes more information about the element including FAQs, end
 
 ## General
 
-* Custom fields are not supported by Connectwise.
+* Custom fields are not supported by ConnectWise.
 
 ## WSDL Path
 
@@ -14,7 +14,7 @@ ConnectWise routinely changes the current WSDL version for the sandboxes they pr
 
         { "requestId": "587e64e1e4b0109b3b4637d6", "message": "Failed to connect to the API URL. Validate that you are using the correct WSDL path." }
 
-If this occurs, you can find your updated WSDL path by logging in to ConnectWise and looking at the URL it redirects you to. For example, in the following URL the begining of the WSDL path appears after the ConnectWise URL:
+If this occurs, you can find your updated WSDL path by logging in to ConnectWise and looking at the URL it redirects you to. For example, in the following URL the beginning of the WSDL path appears after the ConnectWise URL:
 
         https://my.connectwise.com/v2017_2/ConnectWise.aspx?locale=en_US&session=...
 
