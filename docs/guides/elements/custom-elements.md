@@ -37,15 +37,16 @@ Before you begin, here is a sampling of questions you need to know the answers t
 * Where is the API documentation?
 * What kind of API? REST, SOAP, database?
 * What kind of authentication? OAuth 1.0 or 2.0? Basic? AWS V2 or V4?
+* Do you need to create a connected app?
 * Does the endpoint support events or bulk?
 * Do OAuth 2.0 tokens expire?
 * What resources do you want to connect? Accounts, contacts, lists, leads?
 * In which Hub should you categorize the element?
 * Have you set up an application to integrate with the API provider? Do you have the authentication information for it?
 
-## Examples
+## Manage Custom Elements
 
-The examples in this section are based on building an element for [Harvest](https://harvestapp.com/), a time and expense application. To supplement this documentation, we created the following elements that you can import to follow along with:
+If you have already built a custom element or imported an element, you can manage the configuration to keep up with changes at the API provider, add or remove resources, or fine-tune the element. You can identify a custom element by the **private** label that appears on the element card.
 
-* Harvest Basic
-* Harvest OAuth 2.0
+To manage an existing custom element, hover over the element card, and then click **Configuration**.
+![Configuration](img/configuration.gif)

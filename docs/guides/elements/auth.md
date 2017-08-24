@@ -38,6 +38,7 @@ To configure OAuth 2.0 elements:
 3. If the API provider expires tokens, complete the following fields:
   * OAuth Refresh Interval (s)
   * OAuth Token Refresh URL
+  * Oauth Revoke Token URL
 
 ### OAuth 2.0 Parameters
 
@@ -48,8 +49,10 @@ To configure OAuth 2.0 elements:
 |  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
 |  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
 |  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
+| OAuth Scope | {{site.data.glossary.eb-scope}} | N |
 |  OAuth Refresh Interval (s)  |  If the access token expires, the time frame in seconds when Cloud Elements sends a request to the OAuth Token Refresh URL. The default is 3600, which is one hour.  |  N  |
 |  OAuth Token Refresh URL  |  The URL to send a refresh request.  |  N  |
+| OAuth Revoke Token URL | The URL to send requests to revoke refresh or access tokens. | N |
 
 ## Configure OAuth 1.0
 

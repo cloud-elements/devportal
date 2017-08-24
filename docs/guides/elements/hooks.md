@@ -13,7 +13,7 @@ order: 26
 
 # Custom Hooks
 
-{% include workflow.html displayNames="Info,Authentication,Configuration,Parameters,Hooks,Events,Bulk,Resources" links="define-info.html,auth.html,config.html,config.html#set-up-parameters,hooks.html,events.html,bulk.html,resources.html" active="Hooks"%}
+{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
 
 Hooks enable you to execute custom Javascript before an API request (pre-request hook) and after the API provider sends a response (post-response hook). You can use two types of hooks when you create an element: global hooks and resource hooks. Global hooks happen on every request or response, while resource hooks happen only on requests to and responses from specific endpoints.
 
@@ -43,7 +43,7 @@ You can create pre-request and post-response hooks as part of the whole element 
 
 * To add global hooks: on the Setup page open the Hooks section, click the **Add hook** button for the type of hook, and then write the script.
 * To add resource hooks: [add or edit a resource](resources.html). In the Hooks section of the endpoint, click the **Add hook** button for the type of hook, and then write the script.
-* To add event hooks: on the Setup page open the Events section, click the **Add hook** button for the type of hook, and then write the script.
+* To add event hooks: [configure events](events.html), click **Add an event hook**, and then write the script.
 
 
 ## Javascript for Hooks

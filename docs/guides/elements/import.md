@@ -13,6 +13,6 @@ order: 50
 
 # Import and Export
 
-## Import
+You can export elements from the elements catalog in JSON format. This allows you to move elements that you build to different environments or make copies of public elements.  When you import an element, you can make changes to it, add resources, and configure advanced features like events and bulk.
 
-## Export
+To export an
