@@ -49,6 +49,8 @@ Elements leverage Cloud Elements API Manager platform services including authent
 
 All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
 
+__NOTE:  We currently limit result sets to 50 rows for all Database Elements__
+
 __NOTE:  API Docs are not available for viewing as they are generated based on the information contained in the Database Table.__
 
 Get started by [selecting how to connect your database](mysql-endpoint-setup.html).

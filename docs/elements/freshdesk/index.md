@@ -1,12 +1,12 @@
 ---
-heading: Freshdesk
+heading: Freshdesk V2
 seo: Overview | Freshdesk | Cloud Elements API Docs
 title: Overview
 description: Integrate Freshdesk into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 491
-
+elementKey: freshdeskv2
 parent: Back to Element Guides
 order: 1
 sitemap: false

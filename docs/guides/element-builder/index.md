@@ -14,6 +14,8 @@ redirect_from:
   - /docs/products/element-builder/
 ---
 
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../elements/index.html>Manage Elements</a>." type="info" %}
+
 # Overview
 
 Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  Using Element Builder, you can configure an Element and publish it to your private Elements Catalog while automatically generating interactive API Documentation using Swagger 2.0. You can aggregate services by creating a Hub or mapping your new Element to an existing Hub. You can also utilize the normalized resources that we have already organized into Hubs, and leverage the same resources across any other Element you build.
