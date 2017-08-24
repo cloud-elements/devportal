@@ -15,7 +15,7 @@ order: 25
 
 Cloud Elements supports events via polling or webhooks depending on the API provider. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a></br><a href=#parameters>Parameters</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
 ## Supported Events and Resources
 
@@ -97,21 +97,22 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "oauth.api.key": "<CLIENT_ID>",
-        "oauth.api.secret": "<CLIENT_SECRET>",
-        "oauth.callback.url": "<CALLBACK_URL>",
+        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
+      	"company": "<COMPANY_NAME>",
+      	"public.key": "<PUBLIC_KEY>",
+      	"private.key": "<PRIVATE_KEY>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "customers":{
-            "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
+          "contacts":{
+            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
             "idField":"id",
             "datesConfiguration":{
-              "updatedDateField":"updated_at",
+              "updatedDateField":"_info.lastUpdated",
               "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
               "updatedDateTimezone":"GMT",
-              "createdDateField":"created_at",
+              "createdDateField":"_info.lastUpdated",
               "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
               "createdDateTimezone":"GMT"
             }
@@ -141,7 +142,7 @@ instance JSON with polling events enabled:
 ```json
 {
   "element":{
-    "key":"sageone"
+    "key":"{{page.elementKey}}"
   },
   "providerData":{
     "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
@@ -191,7 +192,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
-| customers  | The configuration of the customers resource. | JSON object |
+| customers  | The polling event configuration of the customers resource. | JSON object |
 | URL</br>`url` | The url to query for updates to the resource.  | String |
 | ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
 | Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |

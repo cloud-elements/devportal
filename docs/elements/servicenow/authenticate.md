@@ -38,17 +38,17 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-6. Provide your ServiceNow credentials, the ServiceNow subdomain.
-{% include note.html content="ServiceNow Domain field does not require the full URL.  For example, if you ServiceNow URL is https://dev12345.service-now.com/, the subdomain will be dev12345" %}
+6. In **The ServiceNow Subdomain**, enter your subdomain. This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
+7. In **Username** and **Password**, enter the credentials that you use to log in to ServiceNow.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
-     1. Click __Done__.
+    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
 
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API
@@ -113,11 +113,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `username` | Your ServiceNow username that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html).  |
-| `password` | Your ServiceNow password that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html) |  string |
-| `servicenow.subdomain` | The ServiceNow subdomain that you noted at the end of the [Endpoint Setup section](salesforce-endpoint-setup.html)| string |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
+| Username</br>`username` | Your ServiceNow user name.  |
+| Password</br>`password` | Your ServiceNow password. |  string |
+| The ServiceNow Subdomain</br>`servicenow.subdomain` | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain | string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

@@ -21,7 +21,7 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://community.oracle.com/community/topliners/code-it/blog/2012/07/06/eloqua-rest-api--searching-for-contacts) |
+| API Documentation | [{{page.heading}} API documentation](http://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAB/) |
 | Authentication | OAuth 2  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](eloqua-endpoint-setup.html).
+Get started by [setting up the service provider](setup.html).

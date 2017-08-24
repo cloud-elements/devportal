@@ -1,13 +1,13 @@
 ---
-heading: Oracle Eloqua
-seo: Bulk APIs | Oracle Eloqua | Cloud Elements API Docs
-title: Bulk APIs
+heading: Element Name
+seo: Bulk  | Element Name | Cloud Elements API Docs
+title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 27
+elementId: nn
 parent: Back to Element Guides
-order: 35
+order: 30
 sitemap: false
 ---
 
@@ -21,7 +21,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Native API provider bulk.  [API provider's documentation](http://docs.oracle.com/cloud/latest/marketingcs_gs/OMCAB/Developers/BulkAPI/Reference/bulk-limits.htm).   |
+|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).   |
 | Upsert Support | No |
 | Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
-| Order By Support | No. |
+| Order By Support | Yes, you can add `orderby=fieldName` to the query. |

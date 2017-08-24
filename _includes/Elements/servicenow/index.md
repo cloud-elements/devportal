@@ -1,20 +1,8 @@
----
-heading: Freshdesk V2
-seo: Overview | Freshdesk | Cloud Elements API Docs
-title: Overview
-description: Integrate Freshdesk into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: 491
-elementKey: freshdeskv2
-parent: Back to Element Guides
-order: 1
-sitemap: false
----
-
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides on-demand helpdesk services.
+{{page.heading}} provides hosting, online storage, and a general platform for IT service management in the Help Desk Cloud Elements hub.
+
+{% include note.html content="If you're looking for the ServiceNow element with Basic authentication, see the <a href=/docs/elements/servicenow/>ServiceNow</a> documentation.  " %}
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -22,12 +10,11 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [Freshdesk API documentation](https://developers.freshdesk.com/api/) |
-| Authentication | Basic  |
+| API Documentation | [{{page.heading}} API documentation](https://docs.servicenow.com/bundle/geneva-servicenow-platform/page/integrate/inbound_rest/concept/c_RESTAPI.html) |
+| Authentication | {{page.auth}}  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://developers.freshdesk.com/api/#ratelimit)|
 
 ## Base URL
 
@@ -67,4 +54,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](setup.html).
+Get started by [setting up the API provider](setup.html).
