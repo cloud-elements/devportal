@@ -11,4 +11,4 @@ parent: Back to Element Guides
 order: 5
 ---
 
-{% include Elements/Connectwise/index.md %}
+{% include Elements/Connectwise/setup.md %}

@@ -11,7 +11,7 @@ The {{page.heading}} element provides access to the data and functionality in th
 | API Documentation | [{{page.heading}} API documentation](https://developer.connectwise.com/Documentation)</br> __Note__: You must log in to access the ConnectWise API documentation. |
 | Authentication | {{page.auth}}  |
 | Events | {{page.events}} |
-| Bulk | Supported for both upload and download. |
+| Bulk | {{page.bulk}} |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
 
 ## Base URL

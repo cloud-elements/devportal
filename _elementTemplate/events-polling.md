@@ -97,21 +97,22 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "oauth.api.key": "<CLIENT_ID>",
-        "oauth.api.secret": "<CLIENT_SECRET>",
-        "oauth.callback.url": "<CALLBACK_URL>",
+        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
+      	"company": "<COMPANY_NAME>",
+      	"public.key": "<PUBLIC_KEY>",
+      	"private.key": "<PRIVATE_KEY>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "customers":{
-            "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
+          "contacts":{
+            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
             "idField":"id",
             "datesConfiguration":{
-              "updatedDateField":"updated_at",
+              "updatedDateField":"_info.lastUpdated",
               "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
               "updatedDateTimezone":"GMT",
-              "createdDateField":"created_at",
+              "createdDateField":"_info.lastUpdated",
               "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
               "createdDateTimezone":"GMT"
             }
