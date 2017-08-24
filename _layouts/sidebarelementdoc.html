@@ -62,7 +62,7 @@
       <script type="text/javascript">
         // Init the active tab
         $(`a[href='${window.location.pathname}${window.location.search}']`).parent().addClass("activeTab");
-        $(`a[href='${window.location.pathname}${window.location.search}']`).parent().addClass("activeTab");
+        $(`a[href^='${window.location.pathname}?']`).parent().addClass("activeTab");
         // Toggle the current active tab on the element menu
         $(".tab a").click((e)=> {
           $(".activeTab").removeClass("activeTab");
