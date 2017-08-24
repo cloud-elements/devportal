@@ -1,6 +1,6 @@
 ---
-heading: FreshBooks
-seo: Transform Data | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: Transform Data | FreshBooks Classic | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc

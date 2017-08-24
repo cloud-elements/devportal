@@ -13,7 +13,7 @@ order: 3
 
 ## Element Builder UI BETA
 
-Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  We are currently testing our BETA version.  __Currently only endpoints with a REST API can be built using Element Builder__.  Please [contact us](mailto:support@cloud-elements.com) if you are interested in participating in our round of BETA testing.
+Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  
 
 Twitter will be used for this demonstration.  A new Twitter connected app must be created prior to building the Element.
 

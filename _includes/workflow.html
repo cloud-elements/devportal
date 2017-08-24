@@ -1,0 +1,26 @@
+<link href="/assets/css/workflow.css" rel="stylesheet">
+<div class="workFlowWrapper">
+<div class="workFlowFlex">
+{% assign names = include.displayNames | split: "," %}
+{% assign links = include.links | split: "," %}
+{% for name in names %}
+<!-- Determine if the step should be highlighted -->
+{% if name == include.active %}
+  {% assign secondaryClass = "activeWorkFlowStep" %}
+{% else %}
+  {% assign secondaryClass = "inactiveWorkFlowStep" %}
+{% endif%}
+{% if include.links %}
+<div class="workFlowStep {{secondaryClass}}" onclick="location.href='{{links[forloop.index0]}}';">
+{% else %}
+<div class="workFlowStep {{secondaryClass}}">
+{% endif %}
+  <div class="workFlowStepNum"> {{forloop.index}}</div>
+  <div>{{name}}</div>
+</div>
+{% if forloop.last != true %}
+  <div class="arrow"></div>
+{% endif %}
+{% endfor %}
+</div>
+</div>

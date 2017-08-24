@@ -6,90 +6,171 @@ description: Enable ServiceNow OAuth events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 566
+elementKey: servicenowoauth
 parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+{% include Elements/servicenow/events.md %}
 
-{% include polling_and_webhooks_defined.md %}
+### Configure Polling Through the UI
 
-In order to enable polling, add these extra configurations to your instance JSON:
+For more information about each field described here, see [Parameters](#parameters).
 
-```JSON
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.configuration": "<SEE_BELOW>"
-```
+To authenticate an element instance with polling:
 
-NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. Enable events: Switch **Events Enabled** on.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+
+8. Add an **Event Notification Callback URL**.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Select and configure the resources to poll.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+
+9. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate/#manage-your-developer-instance).
+
+### Configure Polling Through API
+
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
+
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance with polling:
+
+1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+      "element":{
+        "key":"{{page.elementKey}}"
+      },
+      "providerData":{
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
+      "configuration":{
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "oauth.api.key": "<CONSUMER_KEY>",
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "servicenow.subdomain": "<YOUR_SUBDOMAIN>",
+        "event.notification.enabled": true,
+        "event.notification.callback.url": "http://mycoolapp.com",
+        "event.poller.refresh_interval": "<minutes>",
+        "event.poller.configuration":{
+          "accounts":{
+            "url": "/hubs/helpdesk/accounts?where=sys_updated_on>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss}'",
+        		"idField": "sys_id",
+        		"datesConfiguration": {
+        			"updatedDateField": "sys_updated_on",
+        			"updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+        			"createdDateField": "sys_created_on",
+        			"createdDateFormat": "yyyy-MM-dd HH:mm:ss"
+        		}
+          }
+        }
+      },
+      "tags":[
+        "<Add_Your_Tag>"
+      ],
+      "name":"<INSTANCE_NAME>"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+2. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate/#manage-your-developer-instance).
+
+
+
+### Example JSON with Polling
 
 instance JSON with polling events enabled:
 
-```JSON
+```json
 {
-  "element": {
-    "key": "servicenowoauth"
+  "element":{
+    "key":"sageone"
   },
-  "providerData": {
-    "code": "1000"  // NOTE: ServiceNow does not require a callback URL so please leave this field as 1000
+  "providerData":{
+    "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
   },
-  "configuration": {
-    "username":"<INSERT_SERVICENOW_USERNAME>",
-    "password":"<INSERT_SERVICENOW_PASSWORD>",
-    "oauth.api.key":"<INSERT_SERVICENOW_CLIENT_ID>",
-    "oauth.api.secret":"<INSERT_SERVICENOW_CLIENT_SECRET>",
-    "servicenow.subdomain":"<INSERT_SERVICENOW_SUBDOMAIN>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.poller.configuration": {
-      "accounts": {
-        "url": "/hubs/helpdesk/accounts?where=sys_updated_on>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss}'",
-        "idField": "sys_id",
-        "datesConfiguration": {
-          "updatedDateField": "sys_updated_on",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateField": "sys_created_on",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
-        }
-      },
-      "contacts": {
-        "url": "/hubs/helpdesk/contacts?where=sys_updated_on>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss}'",
-        "idField": "sys_id",
-        "datesConfiguration": {
-          "updatedDateField": "sys_updated_on",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateField": "sys_created_on",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
-        }
-      },
-      "agents": {
-        "url": "/hubs/helpdesk/agents?where=sys_updated_on>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss}'",
-        "idField": "sys_id",
-        "datesConfiguration": {
-          "updatedDateField": "sys_updated_on",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateField": "sys_created_on",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss"
-        }
-      },
-      "incidents": {
-        "url": "/hubs/helpdesk/incidents?where=sys_updated_on>'${date:yyyy-MM-dd'T'HH:mm:ss}'",
-        "idField": "sys_id",
-        "datesConfiguration": {
-          "updatedDateField": "sys_updated_on",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "updatedDateTimezone": "PST",
-          "createdDateField": "sys_created_on",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateTimezone": "PST"
+  "configuration":{
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
+    "oauth.callback.url": "https://mycoolapp.com",
+    "event.notification.enabled":true,
+    "event.notification.callback.url":"http://mycoolapp.com",
+    "event.poller.refresh_interval":"15",
+    "event.poller.configuration":{
+      "customers":{
+        "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
+        "idField":"id",
+        "datesConfiguration":{
+          "updatedDateField":"updated_at",
+          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "updatedDateTimezone":"GMT",
+          "createdDateField":"created_at",
+          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+          "createdDateTimezone":"GMT"
         }
       }
     }
   },
-  "tags": [
-    "<INSERT_TAGS>"
+  "tags":[
+    "Test"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
+  "name":"API_Polling"
 }
 ```
+
+## Parameters
+
+API parameters not shown in {{site.console}} are in `code formatting`.
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
+| Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
+| accounts  | The configuration of the customers resource. | JSON object |
+| URL</br>`url` | The url to query for updates to the resource.  | String |
+| ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
+| Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
+| Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
+| Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
+| Created Date Field</br>`createdDateField` | The field that identifies an created object. | String |
+| Created Date Format</br>`createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |

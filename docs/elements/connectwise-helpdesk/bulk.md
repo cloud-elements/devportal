@@ -1,6 +1,6 @@
 ---
-heading: ConnectWise Help Desk
-seo: Bulk APIs | ConnectWise Help Desk | Cloud Elements API Docs
+heading: ConnectWise
+seo: Bulk APIs | ConnectWise | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
@@ -11,4 +11,4 @@ order: 35
 sitemap: false
 ---
 
-{% include bulk-apis.md %}
+{% include Elements/Connectwise/bulk.md %}

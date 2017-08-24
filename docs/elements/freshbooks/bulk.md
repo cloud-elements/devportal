@@ -1,6 +1,6 @@
 ---
-heading: FreshBooks
-seo: Bulk APIs | FreshBooks | Cloud Elements API Docs
+heading: FreshBooks Classic
+seo: Bulk APIs | FreshBooks Classic | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc

@@ -1,5 +1,5 @@
 ---
-heading: Freshdesk
+heading: Freshdesk V2
 seo: Events | Freshdesk | Cloud Elements API Docs
 title: Events
 description: Enable Freshdesk events for your application.
@@ -8,177 +8,190 @@ breadcrumbs: /docs/elements.html
 elementId: 491
 elementKey: freshdeskv2
 parent: Back to Element Guides
-order: 30
+order: 28
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the API provider. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-Freshdesk requires an extra specification to be entered once an Element instance has been created. The Freshdesk Instance ID must be 64 base encoded, then included in the webhook callback URL. This document will walk you through the entire workflow:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
-* create an instance
-* retrieve the instance ID
-* 64base Encode Instance ID
-* webhook setup
+## Supported Events and Resources
 
-### Step 1. Create an Instance
+Cloud Elements supports polling events for {{page.heading}}.
 
-To provision your Freshdesk Element, use the /instances API.
+You can set up polling for the `incidents` and `contacts` resources. You can also copy the configuration of either resource to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
 
-Below is an example of the provisioning API call.
+{% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
-* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
-* __HTTP Verb__: POST
-* __Request URL__: /instances
-* __Request Body__: Required – see below
-* __Query Parameters__: none
+## Polling
 
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
+You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-polling-through-api) .
 
-A sample request illustrating the /instances API is shown below.
+{% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
 
-HTTP Headers:
 
-```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
+### Configure Polling Through the UI
 
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Freshdesk is “freshdesk”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+For more information about each field described here, see [Parameters](#parameters).
 
-```JSON
+To authenticate an element instance with polling:
+
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. Enable events: Switch **Events Enabled** on.
+
+    | Latest UI | Earlier UI  |
+    | :------------- | :------------- |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+
+8. Add an **Event Notification Callback URL**.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Select and configure the resources to poll.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
+9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+
+### Configure Polling Through API
+
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
+
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance with polling:
+
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+    ```json
+    {
+      "element": {
+        "key": "{{page.elementKey}}"
+      },
+      "configuration": {
+    	 "subdomain": "<YOUR_SUBDOMAIN>",
+    	 "username": "<YOUR_API_KEY>",
+       "event.notification.callback.url": "http://mycoolapp.com",
+       "event.poller.refresh_interval": "<minutes>",
+       "event.poller.configuration":{
+          "incidents":{
+            "url":"/hubs/helpdesk/incidents?where=updated_since='${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+            "idField":"id",
+            "datesConfiguration":{
+              "updatedDateField":"updated_at",
+              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField":"created_at",
+              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          },
+          "contacts":{
+            "createdCheckTolerance": 5,
+            "url":"/hubs/helpdesk/contacts?where=updated_since='${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+            "idField":"id",
+            "datesConfiguration":{
+              "updatedDateField":"updated_at",
+              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
+              "createdDateField":"created_at",
+              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
+            }
+          }
+        }
+      },
+      "tags":[
+        "<Add_Your_Tag>"
+      ],
+      "name":"<INSTANCE_NAME>"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
+
+### Example JSON with Polling
+
+instance JSON with polling events enabled:
+
+```json
 {
-  "element": {
-    "key": "{{page.elementKey}}"
+  "element":{
+    "key":"{{page.elementKey}}"
   },
-  "configuration": {
-    "subdomain": "<YOUR_SOBDOMAIN>",
-    "username": "<YOUR_API_KEY",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_EVENT_CALLBACK_URL>"
+  "configuration":{
+    "subdomain": "cloudelements",
+    "username": "xxxxxxxxxxxxxxxxxxxxx",
+    "event.notification.callback.url": "http://mycoolapp.com",
+    "event.poller.refresh_interval": "15",
+    "event.poller.configuration":{
+       "incidents":{
+         "url":"/hubs/helpdesk/incidents?where=updated_since='${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+         "idField":"id",
+         "datesConfiguration":{
+           "updatedDateField":"updated_at",
+           "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
+           "createdDateField":"created_at",
+           "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
+         }
+       },
+       "contacts":{
+         "createdCheckTolerance": 5,
+         "url":"/hubs/helpdesk/contacts?where=updated_since='${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+         "idField":"id",
+         "datesConfiguration":{
+           "updatedDateField":"updated_at",
+           "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
+           "createdDateField":"created_at",
+           "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
+         }
+       }
+     }
   },
-  "tags": [
-    "<INSERT_TAGS>"
+  "tags":[
+    "Test"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
+  "name":"API_Polling"
 }
 ```
 
-Here is an example cURL command to create an instance using /instances API.
+## Parameters
 
-Example Request:
+API parameters not shown in {{site.console}} are in `code formatting`.
 
-```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
-```
-
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
-
-Below is a successful JSON response:
-
-```JSON
-{
-  "id": 1234,
-  "name": "FreshDesk",
-  "token": "/sO6vVsB2eXhOlgvNR/p+G7wC/+rhY5M=",
-  "element": {
-    "id": 491,
-    "name": "Freshdesk V2",
-    "key": "freshdeskv2",
-    "description": "Add a Freshdesk Instance to connect your existing Freshdesk account to the Help Desk Hub, allowing you to manage your incidents, priorities, statuses, users, etc. across multiple Help Desk Elements. You will need your Freshdesk account information to add an instance.",
-    "image": "https://pbs.twimg.com/profile_images/3159951933/1511f0f59e3f239a8ef707b1db3a42e3.png",
-    "active": true,
-    "deleted": false,
-    "typeOauth": false,
-    "trialAccount": false,
-    "hub": "helpdesk",
-    "parameters": [
-      {
-        "id": 38,
-        "createdDate": "2015-04-08T19:53:48Z",
-        "name": "subdomain",
-        "vendorName": "subdomain",
-        "type": "configuration",
-        "vendorType": "path",
-        "source": "request",
-        "elementId": 130,
-        "required": false
-      }
-    ]
-  },
-  "provisionInteractions": [],
-  "valid": true,
-  "disabled": false,
-  "maxCacheSize": 0,
-  "cacheTimeToLive": 0,
-  "configuration": {
-    "base.url": "https://{subdomain}.freshdesk.com",
-    "pagination.offset": "false",
-    "password": "password",
-    "pagination.max": "30",
-    "subdomain": "https://sample.freshdesk.com",
-    "username": "sample@sample.com"
-    "event.notification.callback.url": "https//www.mycoolapp.com/events"
-  },
-  "eventsEnabled": true,
-  "cachingEnabled": false
-}
-```
-
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
-
-Retrieve Instance ID from the create instance response:
-![Freshdesk Retrieve Instance ID](http://cloud-elements.com/wp-content/uploads/2015/08/FreshdeskWebHookID.png)
-
-Copy the Instance ID and go to a 64Base Encoding website.
-
-Here is a sample site that will 64 base encode your instance ID: [https://www.base64encode.org/](https://www.base64encode.org/).
-
-Copy the ID, encode it, then copy the encoded ID.
-
-Place the ID in the following URL:
-
-`https://api.cloud-elements.com/elements/api-v2/events/freshdesk/{INSERT_64BASE_ENCODED_INSTANCE_ID}`
-
-An example of the URL once the Instance ID has been encoded:
-
-`https://api.cloud-elements.com/elements/api-v2/events/freshdesk/MjA5MzE=`
-
-Log in to your Freshdesk domain.
-
-1. Click “Admin”
-
-2. Under Helpdesk Productivity, select “Observer”
-![Freshdesk Wehhook Setup step 1](http://cloud-elements.com/wp-content/uploads/2015/08/FreshdeskWebHook1.png)
-
-
-3. Select “New Rule”
-![Freshdesk Wehhook Setup step 2](http://cloud-elements.com/wp-content/uploads/2015/08/FreshdeskWebHook2.png)
-
-4. Name the Rule
-
-5. Add an Event
-
-6. Select person to perform events
-
-7. Select condition(s)
-
-8. Under “Select Actions”
-
-9. Choose “Trigger Webhook”
-![Freshdesk Wehhook Setup step 3](http://cloud-elements.com/wp-content/uploads/2015/08/FreshdeskWebHook3.png)
-
-10. Select POST
-
-11. Insert the following URL with the base64 encoded Instance ID: `https://api.cloud-elements.com/elements/api-v2/events/freshdesk/{INSERT_BASE64_ENCODED_INSTANCE_ID}` Content should be set to JSON
-
-12. Select Content
-
-13. Click “Save”
-![Freshdesk Wehhook Setup step 4](http://cloud-elements.com/wp-content/uploads/2015/08/FreshdeskWebHook4.png)
-
-Events are now implemented for Freshdesk.
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+|  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
+| Subdomain</br>subdomain | Your domain name when logging in to Freshdesk. For example, in `https://cloudelements.freshdesk.com` the subdomain is `cloudelements`.  | string |
+| API Key</br>username | The Freshdesk API Key that you noted in the [API Provider Setup section](setup.html). | string |
+| Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
+| Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
+| Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
+| contacts/incidents  | The polling event configuration of the contacts and incidents resources. | JSON object |
+| URL</br>`url` | The url to query for updates to the resource.  | String |
+| ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
+| Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
+| Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
+| Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
+| Created Date Field</br>`createdDateField` | The field that identifies an created object. | String |
+| Created Date Format</br>`createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| tags | *Optional*. User-defined tags to further identify the instance. | string |
