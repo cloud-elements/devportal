@@ -1,9 +1,5 @@
 ---
-<<<<<<< HEAD
-heading: ConnectWise REST BETA
-=======
 heading: ConnectWise REST
->>>>>>> 6991ed4f659092a4735810e456fe5be1afae2d8c
 seo: Authenticate | ConnectWise REST | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate
@@ -12,11 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 3012
 elementKey: connectwisecrmrest
 parent: Back to Element Guides
-<<<<<<< HEAD
 order: 20
-=======
-order: 15
->>>>>>> 6991ed4f659092a4735810e456fe5be1afae2d8c
 ---
 
 # Authenticate with {{page.heading}}
