@@ -59,7 +59,7 @@ To create a formula that listens for an event and emails a message:
         });
         ```
   1. Click **Save**.
-1. Create an Element API Request step to send the message that you created in the previous step. Under the **constructBody** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to send the message that you created in the previous step. Click the **constructBody** step, and then click **Add OnSuccess**.
     7. Select **Element API Request**.
     8. Enter a name for the step. We'll call it `sendEmail`.
     9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **messagingElement** variable that we created earlier.
@@ -115,7 +115,7 @@ To create a formula that adds new contacts created in one system to another:
 
       done((theEvent === 'CREATED') && (theObject === 'Contact' || theObject === 'contacts'));
       ```
-1. Create an Element API Request step to retrieve the transformed version of the newly created object based on the `objectId` in the trigger. Under the **isCreateContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to retrieve the transformed version of the newly created object based on the `objectId` in the trigger. Click the **isCreateContact** step, and then click **Add OnSuccess**.
 
     {% include note.html content="This step uses the <code>objectId</code> from the trigger to retrieve the transformed object. If you just retrieved the information about the object from the event payload in the trigger, it would not be transformed and could not sync with another element. " %}
 
@@ -128,7 +128,7 @@ To create a formula that adds new contacts created in one system to another:
             /MyContacts/${trigger.event.objectId}
 
   13. Click **Save**.
-1. Create an Element API Request step to add the contact to another element instance. Under the **retrieveContact** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to add the contact to another element instance. Click the **retrieveContact** step, and then click **Add OnSuccess**.
   7. Select **Element API Request**.
   8. Enter a name. For this tutorial we'll call it `createContact`.
   9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **destinationInstance** variable that we created earlier.
@@ -187,7 +187,7 @@ To create a formula that makes a bulk query and then triggers the second formula
         });
       ```
 
-1. Create an Element API Request step to make a bulk download query, referencing the query and callback URL created in **buildMetaData**. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element API Request step to make a bulk download query, referencing the query and callback URL created in **buildMetaData**. Click the **buildMetaData** step, and the click **Add OnSuccess**.
   7. Select **Element API Request**.
   8. Enter a name. For this tutorial we'll call it `bulkQuery`.
   9. In **Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.
@@ -234,7 +234,7 @@ To create a formula that receives the notification that the job completes, downl
         done(false);
       }
       ```
-6. Create a JS Script step that defines an identifier field, which is the unique key for an upsert operation. It also specifices the content type as **csv**. Under the **isSuccessful** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+6. Create a JS Script step that defines an identifier field, which is the unique key for an upsert operation. It also specifies the content type as **csv**. Click the **isSuccessful** step, and then click **Add OnSuccess** .
   7. Click **JS Script**.
   8. Enter a name for the script. We'll call it `buildMetaData`.
   8. Enter a script like the following example:
@@ -253,7 +253,7 @@ To create a formula that receives the notification that the job completes, downl
         "downloadHeaders": downloadHeaders
       });
        ```
-1. Create an Element Stream step to move the files downloaded from the origin instance to the destination instance<. Under the **buildMetaData** step, click the **OnSuccess** button  <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage">.
+1. Create an Element Stream step to move the files downloaded from the origin instance to the destination instance. Click the **buildMetaData** step, and then click **Add OnSuccess** .
   7. Select **Stream File**.
   8. Enter a name. For this example we'll call it `bulkStream`.
   9. In **Download Element Instance Variable**, click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">, and then select the **originInstance** variable that we created earlier.

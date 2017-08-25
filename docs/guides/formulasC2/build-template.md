@@ -27,7 +27,7 @@ As you build a formula, you also build context consisting of triggers, variables
 
 To build a new formula template:
 
-1. Click **Formulas**, and then on the Formulas page, click **Build New Formula**.
+1. Click **Formulas**, and then on the Formulas page, click **Build New Formula Template**.
 ![New Formula Template](img/new-formula.png)
 3. Click **Build New Formula**.
 4. Enter a name for your formula, and then click **Build**.
@@ -66,12 +66,17 @@ To build a new formula template:
 6. Select the type of step that you want to add.
 7. Complete the step properties, and then click **Save**. For details on each step, see [Element Instance Variable](reference.html/#formula-variables).
 
-    {{site.console}} shows the first trigger node and the step that you just created in the formula visualization. Note that the step nodes include **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> and **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage"> buttons.
+    {% include note.html content=" Click Add From Existing to find a step to copy. " %}
+
+    {{site.console}} shows the first trigger node and the step that you just created in the formula visualization. The path from the trigger to the step defaults to On Success, but you can add failure steps later.
     ![Trigger](img/viz-trigger-step.png)
 
-7. To add another step, either click **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> or **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage">, depending on the previous step.
+7. To add another step, click the step, and then select one of the following:
+  * **Insert Above** adds a new step prior to the current step with an On Success path connecting the two.
+  * **Add On Success** adds a step for the formula to continue to if the current step succeeds.
+  * **Add On Failure** adds a step for the formula to continue to if the current step fails.
 8. Continue adding steps until you complete the formula template.
-9. Add a description by clicking Edit. See [Add a Description to a Formula Template](#add-a-description-to-a-formula-template).
+9. Add a description by clicking **Edit**. See [Add a Description to a Formula Template](#add-a-description-to-a-formula-template).
 8. After you complete the formula, [test it](#test-formula-templates).
 
 {% include note.html content="Cloud Elements saves your formula template in the background as you add each component." %}
