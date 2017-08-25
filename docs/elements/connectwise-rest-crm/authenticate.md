@@ -8,7 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 3012
 elementKey: connectwisecrmrest
 parent: Back to Element Guides
-order: 15
+order: 20
 ---
 
 # Authenticate with {{page.heading}}

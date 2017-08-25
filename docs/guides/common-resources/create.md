@@ -28,17 +28,18 @@ To create a common resource, go to the steps that match how you plan to create t
 
 ## Create a New Common Resource
 
-Follow the instructions in this section to create an entirely new common resource. When finished, you will have a common resource with a single default field called __id__.
+Follow the instructions in this section to create an entirely new common resource. When finished, you will have a common resource with a single default field called **id**.
 
 To create a new common resource:
 
-1. On the Common Resources page, click __Create New Common Resource__.
-1. Click __Create New Resource__.
-1. Enter a name for your resource, and then click __Create__.
+1. On the Common Resources page, click **Create New Common Resource**.
+![Create New Common Resource](img/create-new.png)
+1. Enter a name for your resource.
 
-    The Transformations page shows your new Common Resource with a default organization-level field of __id__.
+    The Create page shows your new Common Resource with a default organization-level field of __id__.
     ![New Resource from Scratch](img/New-Common_Resource.png)
 
+1. Click **Save**.
 1. Continue to the next step: [map fields to the common resource](mapping.html).
 
 ## Create a Common Resource Based on Another Common Resource
@@ -47,9 +48,9 @@ You can create a common resource based on other common resources in your organiz
 
 To set up a common resource based on an existing common resource:
 
-1. On the Common Resources page, click __Create New Common Resource__.
-1. Click __Create From Existing Resource__.
-1. Select an existing resource from the __My Resources__ list.
+1. On the Common Resources page, click **Create from Existing Resource**.
+![Existing Resource](img/exist-resources.png)
+1. Select an existing resource from the **Common Resources** list.
 
     {% include tip.html content="If the list is long, use Search to filter it." %}
 
@@ -65,9 +66,9 @@ You can create a new common resource based on an element resource. For example, 
 
 To set up a common resource based on an existing element instance:
 
-1. On the Common Resources page, click __Create New Common Resource__.
-1. Click __Create From Existing Resource__.
-1. On the left side, click __Existing Element Instance Resources__.
+1. On the Common Resources page, click **Create from Existing Resource**.
+![Existing Resource](img/exist-resources.png)
+1. Click **Existing Element Instance Resource**.
 
     ![Existing Element Instance Resources](img/Exist-Element.png)
 
@@ -88,8 +89,8 @@ To set up a common resource based on an existing element instance:
 
 To set up a common resource based on a Cloud Elements template:
 
-1. On the Common Resources page, click __Create New Common Resource__.
-1. Click __Create From Existing Resource__.
+1. On the Common Resources page, click **Create from Existing Resource**.
+![Existing Resource](img/exist-resources.png)
 1. On the left side, click __Cloud Elements Resource Templates__.
 
     ![Cloud Elements Resource Template](img/CE-Template.png)

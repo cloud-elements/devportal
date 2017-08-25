@@ -25,7 +25,7 @@ Parameters enable you to configure what you need to send to an API provider with
 
 ## Reserved Configurations
 
-Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. Therefore, the Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to creat a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
+Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. Therefore, the Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
 
 | OAuth Keys   | Basic and AWS Keys   | Properties Keys |
 | :------------- | :------------- | :------------- |
@@ -94,8 +94,8 @@ To define a parameter :
 |    |  path &mdash; The value is the portion of the request path that matches the Parameter Name. |    |
 |    |  body &mdash; The value is the part of the request body that matches the Parameter Name. |    |
 |    |  query &mdash;  The value is the query parameter that matches the Parameter Name. |    |
-|    |  form  &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, the file name is the Parameter Name. |  |
-|    |  multipart &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, the file name is the Parameter Name. |    |
+|    |  form  &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, then use "file" as the Parameter Name. |  |
+|    |  multipart &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, then use "file" as the Parameter Name. |    |
 |    |  value  &mdash; The value is the Parameter Name.  |  |
 |    |  bodyField &mdash;  The value is the value of the field in a request body that matches the Parameter Name.   | |
 |    |  prevBody - Cloud Elements parameter type only. If chaining requests, the value is the part of the request body of the previous request in the chain that matches the Parameter Name.   |    |

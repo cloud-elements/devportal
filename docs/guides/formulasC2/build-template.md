@@ -13,13 +13,13 @@ order: 5
 
 # Formula Templates
 
-Formula templates enable you to create a single template for a formula that you can reuse with different elements and values. After you create a formula template, you can then create a formula instance where you replace the formula variable with actual element instances and values. This approach helps you build efficient and reusable formulas.
+Formula templates enable you to build a single template for a formula that you can reuse with different elements and values. After you build a formula template, you can then create a formula instance where you replace the formula variable with actual element instances and values. This approach helps you build efficient and reusable formulas.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#build-a-formula-template>Build a Formula Template</a></br><a href=#test-formula-templates>Test Formula Templates</a></br><a href=#create-variables>Create Variables</a></br><a href=#edit-and-delete-variables>Edit and Delete Variables</a></br><a href=#review-executions>Review Executions</a></br><a href=#copy-a-formula-template>Copy a Formula Template</a></br><a href=#parallel-executions>Parallel Executions</a></br><a href=#use-a-formula-as-a-resource>Use a Formula as a Resource</a></br><a href=#rename-a-formula-template>Rename a Formula Template</a></br><a href=#add-a-description-to-a-formula-template>Add a Description to a Formula Template</a></br><a href=#delete-a-formula-template>Delete a Formula Template</a></br><a href=#deactivate-a-formula-template>Deactivate a Formula Template</br><a href=#access-formula-information>Access Formula Information</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#build-a-formula-template>Build a Formula Template</a></br><a href=#test-formula-templates>Test Formula Templates</a></br><a href=#create-variables>Create Variables</a></br><a href=#edit-and-delete-variables>Edit and Delete Variables</a></br><a href=#review-executions>Review Executions</a></br><a href=#copy-a-formula-template>Copy a Formula Template</a></br><a href=#import-and-export-formula-templates>Import and Export Formula Templates</a></br><a href=#parallel-executions>Parallel Executions</a></br><a href=#rename-a-formula-template>Rename a Formula Template</a></br><a href=#add-a-description-to-a-formula-template>Add a Description to a Formula Template</a></br><a href=#delete-a-formula-template>Delete a Formula Template</a></br><a href=#deactivate-a-formula-template>Deactivate a Formula Template</br><a href=#access-formula-information>Access Formula Information</a>" type="info" %}
 
 ## Build a Formula Template
 
-Formula templates include a trigger that kicks off the formula, steps that execute as a result of the trigger, and variables to represent input required to run an instance of the formula. You can create formulas that use triggers that kick off when something happens to an element instance, you can schedule triggers, or you can manually kick off a trigger. See [Triggers, Steps, and Variables](reference.html) for more information about each component.
+Formula templates include a trigger that kicks off the formula, steps that execute as a result of the trigger, and variables to represent input required to run an instance of the formula. You can build formulas that use triggers that kick off when something happens to an element instance, you can schedule triggers, or you can manually kick off a trigger. See [Triggers, Steps, and Variables](reference.html) for more information about each component.
 
 As you build a formula, you also build context consisting of triggers, variables, steps, and values created by steps. You can refer to that context in later steps in the formula. Consider each part as a building block that has a name and information that you can refer to. For example, in a formula that sends an email notification for a new contact, you build the body of the email in one step. In a later step when you actually send the message, refer to the step where you built the body. See [Reference Syntax](#reference-syntax) for ways to refer to triggers.
 
@@ -27,10 +27,10 @@ As you build a formula, you also build context consisting of triggers, variables
 
 To build a new formula template:
 
-1. Click **Formulas**, and then on the Formulas page, click **Create New Formula**.
+1. Click **Formulas**, and then on the Formulas page, click **Build New Formula Template**.
 ![New Formula Template](img/new-formula.png)
-3. Click **Create New Formula**.
-4. Enter a name for your formula, and then click **Create**.
+3. Click **Build New Formula**.
+4. Enter a name for your formula, and then click **Build**.
 
     {{site.console}} provides you a list of triggers. For details about each trigger, see [Triggers, Steps, and Variables](reference.html).
     ![Triggers](img/triggers.png)
@@ -66,21 +66,26 @@ To build a new formula template:
 6. Select the type of step that you want to add.
 7. Complete the step properties, and then click **Save**. For details on each step, see [Element Instance Variable](reference.html/#formula-variables).
 
-    {{site.console}} shows the first trigger node and the step that you just created in the formula visualization. Note that the step nodes include **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> and **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage"> buttons.
+    {% include note.html content=" Click Add From Existing to find a step to copy. " %}
+
+    {{site.console}} shows the first trigger node and the step that you just created in the formula visualization. The path from the trigger to the step defaults to On Success, but you can add failure steps later.
     ![Trigger](img/viz-trigger-step.png)
 
-7. To add another step, either click **onSuccess** <img src="img/btn-onSuccess.png" alt="OnSuccess" class="inlineImage"> or **onFailure** <img src="img/btn-onFailure.png" alt="OnFailure" class="inlineImage">, depending on the previous step.
+7. To add another step, click the step, and then select one of the following:
+  * **Insert Above** adds a new step prior to the current step with an On Success path connecting the two.
+  * **Add On Success** adds a step for the formula to continue to if the current step succeeds.
+  * **Add On Failure** adds a step for the formula to continue to if the current step fails.
 8. Continue adding steps until you complete the formula template.
-9. Add a description by clicking Edit. See [Add a Description to a Formula Template](#add-a-description-to-a-formula-template).
+9. Add a description by clicking **Edit**. See [Add a Description to a Formula Template](#add-a-description-to-a-formula-template).
 8. After you complete the formula, [test it](#test-formula-templates).
 
 {% include note.html content="Cloud Elements saves your formula template in the background as you add each component." %}
 
 ## Test Formula Templates
 
-You can test a formula template as you build it. When you test a formula template, you can either use an existing formula instance or create a new formula instance.
+You can test a formula template as you build it. When you test a formula template, you can either use an existing formula instance or build a new formula instance.
 
-{% include tip.html content=" If you plan to use the formula instance that you create while testing formulas only for testing, consider appending the name test to it. " %}
+{% include tip.html content=" If you plan to use the formula instance that you build while testing formulas only for testing, consider appending the name test to it. " %}
 
 To test a formula template:
 
@@ -91,7 +96,7 @@ To test a formula template:
   4. Enter a name for the new formula instance.
   5. For each variable, click the variable and add an element instance or enter a value.
   6. Click **Create Instance**.
-  7. Select the instance that you just created.
+  7. Select the instance that you just built.
 8. Click **Select Trigger**.
 9. Provide trigger information, depending on the type of trigger.
 
@@ -145,17 +150,34 @@ To review executions
 
 ## Copy a Formula Template
 
-You can create a formula template based on an existing template or from a Cloud Elements sample formula, resulting in a copy of the template.
+You can build a formula template based on an existing template or from a Cloud Elements sample formula, resulting in a copy of the template.
 
-To create a copy of a formula template:
+To build a copy of a formula template:
 
-1. Click **Formulas**, and then on the Formulas page, click **Create New Formula**.
+1. Click **Formulas**, and then on the Formulas page, click **Build New Formula**.
 ![New Formula Template](img/new-formula.png)
-3. Click **Create From Existing Formula**.
+3. Click **Build From Existing Formula**.
   * To use one of your existing formula templates, select the template.
   * To use a Cloud Elements formula template, click CE Sample Formulas, and then select the formula.
 4. Enter a name for your formula, and then click **Create**.
 
+## Import and Export Formula Templates
+
+You can export a formula template as a JSON file and import other templates from their JSON source file.
+
+To import a formula template:
+
+1. Click **Formulas**, and then on the Formulas page, click **Build New Formula**.
+![New Formula Template](img/new-formula.png)
+3. Click **Import**.
+4. Select the JSON file to import.
+5. Optionally rename the file, and then click **Create**.
+
+To export a formula:
+
+1. Navigate to the Formulas page.
+2. Hover over the element card, and then click **Export**.
+3. Save the file.
 
 ## Parallel Executions
 
@@ -176,39 +198,6 @@ Alternatively, in the formula template or formula instance JSON, update `singleT
 {
 "singleThreaded": true
 }
-```
-
-## Use a Formula as a Resource
-
-You can expose formulas with manual triggers as a resource &mdash; or as a synchronous API request. This enables you to further remove logic from your applications and also provides the ability to more efficiently chain requests together.
-
-The API requests are synchronous and so a response is required for further processing. To maintain efficiency, Cloud Elements imposes a processing time limit. If the request reaches that limit, the response notifies you.
-
-To use a formula as an API call:
-
-1. Open the formula template. On the Formulas page, hover over the Formula Card, and then click **Open**.
-2. Click **Edit**.
-![Edit](img/edit.png)
-3. Click **Show Advanced**.
-4. In **API Method** select the method used to call the formula, such as GET, POST, PUT, PATCH, or DELETE.
-5. In **API URI** enter the endpoint for the formula, such as `/formula1`.
-
-To test the formula as a resource, you can make the request yourself or use our API docs. Either way, you must provide a `Formula Instance ID`. You can find the ID on a Formula Instance Card under the title.
-![Formula Instance ID](img/formula-instance-id.png)
-
-To access the docs for the formula:
-
-1. On the Formulas page, hover over the Formula Card, and then click **API Docs**.
-2. On the API Docs page, click **Try it Out**.
-2. In **Elements-Formula-Instance-Id** enter a Formula Instance ID, and then execute the API call.
-
-To make an API request to the formula as a resource, include the formula instance (`elements-formula-instance-id`) in the header in addition to the usual User and Organization. For example:
-
-```bash
-curl -X GET \
-  https://api.cloud-elements.com/elements/api-v2/formula1 \
-  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
-  -H 'elements-formula-instance-id: 28683' \
 ```
 
 ## Rename a Formula Template
@@ -275,4 +264,4 @@ Each formula template and formula instance exposes information about itself thro
 }
 ```
 
-Formula information contributes to the formula context. You can access the information with `info.property`, such as `info.formulaInstanceId` or `info.formulaName`. 
+Formula information contributes to the formula context. You can access the information with `info.property`, such as `info.formulaInstanceId` or `info.formulaName`.

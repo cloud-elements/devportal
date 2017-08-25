@@ -16,21 +16,7 @@ order: 20
 
 {% include common-resources/map.md%}
 
-{% include callout.html content="<strong>On this page</strong><br/><a href=#map-resources-for-transformation>Map Resources for Transformation</a><br/><a href=#use-javascript-to-manage-complex-objects>Use Javascript to Manage Complex Objects</a><br/><a href=#transforming-custom-objects>Transforming Custom Objects</a></br><a href=#removing-fields-during-transformation>Removing Fields During Transformation</a></br><a href=#setting-default-values>Setting Default Values</a> </br> <a href=#testing-your-transformations>Testing Your Transformations</a> </br> <a href=#adding-your-common-resource-to-the-api-docs>Adding Your Common Resource to the API Docs</a> </br><a href=#working-with-nested-objects>Working with Nested Objects </a></br><a href=#access-levels-and-transformations>Access Levels and Transformations</a>" type="info" %}
-
-## Select an Element Instance to Transform
-
-After you create a common resource, the next step is to map element resource fields to the common resource to create a transformation.
-
-To select an element instance to transform:
-1. On the Transformations page, click __Create New Transformation__.
-
-  ![Create New Transformation](img/Create_New_Transform.png)
-
-2. From the __Element Instances__ list, select the element instance that contains the resource that you want to use.
-1. From the __Element Instance Resources__ list, select the resource that contains the fields that you want to transform.
-
-The common resource fields on the left are ready to be mapped to the element instance resource fields on the right.
+{% include callout.html content="<strong>On this page</strong><br/><a href=#map-fields-to-the-common-resource>Map Fields to the Common Resource</a><br/><a href=#use-javascript-to-manage-complex-objects>Use Javascript to Manage Complex Objects</a><br/><a href=#transforming-custom-objects>Transforming Custom Objects</a></br><a href=#removing-fields-during-transformation>Removing Fields During Transformation</a></br><a href=#setting-default-values>Setting Default Values</a> </br> <a href=#testing-your-transformations>Testing Your Transformations</a> </br> <a href=#adding-your-common-resource-to-the-api-docs>Adding Your Common Resource to the API Docs</a> </br><a href=#working-with-nested-objects>Working with Nested Objects </a></br><a href=#access-levels-and-transformations>Access Levels and Transformations</a>" type="info" %}
 
 ## Map Fields to the Common Resource
 
@@ -45,25 +31,28 @@ This section describes mapping to a common resource at the organization level. Y
 To map fields:
 
 1. On the Common Resources > Transformations page, click  __Create New Transformation__.
-![Create New Transformation](img/Create_New_Transform.png)
+
+    ![Create New Transformation](img/Create_New_Transform.png)
 
 1. Select the Element Instance, and then select the Element Instance Resource.
 
     The Resources available to that Element Instance appear in the Element Instance Resources column after you select a resource.
   	![Chooser](img/Chooser.png)
+    {% include tip.html content="Use the search fields to find what you are looking for in long lists. " %}
+
 
 1. Beginning with the default field __id__, select a field on the right to map to __id__.
 ![Select Field](img/Select_Element_Field.png)
 
-1. Click <img src="img/btn-Add-Field.png" alt="Alt Text" class="inlineImage"> next to the Organization Level Fields to add another field.
+1. Click <img src="img/btn-Add-Field.png" alt="Add Field" class="inlineImage"> next to the Organization Level Fields to add another field.
 
-    __Note__:You can add fields at the account and instance level also, but these steps focus on creating an organization level common resource. For more information, see [Access Levels and Transformations](#access-levels-and-transformations).
+    {% include note.html content="You can add fields at the account and instance level also, but these steps focus on creating an organization level common resource. For more information, see <a href=#access-levels-and-transformations>Access Levels and Transformations</a>  " %}
 
 1. Enter a name for the field, and then choose the data type if the field is something other than a string.
 1. Select the corresponding field on the right to map to the new field.
 
-    __Note__: You can type to filter.
-![Filtering Resources](img/gif-filter.gif)
+    {% include note.html content="You can type to filter.  " %}
+    ![Filtering Resources](img/gif-filter.gif)
 
 1. Continue adding resources until you finish, and then click __Save__.
 3. To map another instance, click **Transformations** in the breadcrumbs at the top of the page.
@@ -73,7 +62,7 @@ To map fields:
 
 * You don't have to map fields one at a time. You can add multiple fields to the Common Resources side at once, and then map them later. Use <img src="img/btn-Filter.png" alt="Filter" class="inlineImage"> to show only those element instance resource fields that haven't been mapped.
 * If you made a mistake and don't want to include a field in a common resource, click <img src="img/btn-Delete.png" alt="Delete" class="inlineImage">. If you still want the field, but want to remove the mapping, click <img src="img/btn-Clear.png" alt="Clear" class="inlineImage">.
-* If you need to map a custom field, click <img src="img/btn-Free-Text.png" alt="Free Text Button" class="inlineImage">, and then type a name. See [Advanced Common Resources: Transforming Custom Resources](advanced.html#transforming-custom-resources) for details.
+* If you need to map a custom field, click <img src="img/btn-Free-Text.png" alt="Free Text Button" class="inlineImage">, and then type a name. See [Advanced Common Resources: Transforming Custom Objects](#transforming-custom-objects) for details.
 * We use dot notation to show sub-objects in the element instance resources. If you need to create sub-objects in your common resource, use dot notation. Examples include address.city, address.state, and address.street. See [Working With Nested Objects](#working-with-nested-objects) for details.
 
 ## Use Javascript to Manage Complex Objects
@@ -137,12 +126,12 @@ Common resource functions include the parameters and functions in the following 
 
 * Combining FirstName and LastName fields.
 
-```javascript
-function (originalObject, transformedObject, fromVendor, done) {
-if transformedObject.Name = originalObject.FirstName + '  ' + originalObject.LastName;
-done(transformedObject);
-}
-```
+    ```javascript
+    function (originalObject, transformedObject, fromVendor, done) {
+    if transformedObject.Name = originalObject.FirstName + '  ' + originalObject.LastName;
+    done(transformedObject);
+    }
+    ```
 
 ## Transforming Custom Objects
 
@@ -154,7 +143,7 @@ To map a custom object:
 
     The list becomes a text entry field.
 
-1. In __Field Name__, enter the name of the object.
+1. Enter the name of the object.
 
     ![Custom Object](img/Custom-Object.gif)
 
@@ -183,7 +172,7 @@ You can transform the data types on vendor objects. In most cases, you only need
 
 To change data types:
 
-1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
+1. On the Transformations page, click <img src="img/btn-Field-Settings.png" alt="Field Settings" class="inlineImage">.
 2. Select a type from the list.
 3. If you select date, add a date format to the Date Mask.
 
@@ -196,7 +185,7 @@ If no values exist for a specific field, but you do not want to remove it, you c
 
 To set a default value:
 
-1. On the Transformations page, click <img src="img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">.
+1. On the Transformations page, click <img src="img/btn-Field-Settings.png" alt="Field Settings" class="inlineImage">.
 1. Click __Default Value__, and then type the value.
 1. Click __Save__.
 
@@ -211,7 +200,7 @@ To test a transformation:
 1. Click __Original__ to see the entire response JSON payload.
 1. Test a Put or Patch by selecting the appropriate method, and then entering the JSON request.
 
-    __Tip__: Copy the JSON payload from Transformed.
+    {% include tip.html content="Copy the JSON payload from Transformed." %}
 
 1. Click __Run__.
 
@@ -230,9 +219,6 @@ Try it out:
 1. Go to an element instance.
 1. Hover over the instance card, and the click __API Docs__.
 1. Scroll to your common resource.
-
-The list of resources is in alphabetical order, so the example myContact in this guide is after the `leads` resource:
-![myContact in API docs](img/api-docs.png)
 
 ## Working with Nested Objects
 
