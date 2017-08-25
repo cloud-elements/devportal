@@ -29,7 +29,7 @@ To start building an element and provide the basic information:
 1. Review the information on the Builder page, and then click **Create**.
 1. Name and describe the element:
   * **Element Name** &mdash; The name appears on the element card and should clearly identify the API provider associated with it.
-  * **Element Key** &mdash; Generated form the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
+  * **Element Key** &mdash; Generated from the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
   * **Description** &mdash; The description helps to clarify the purpose of the element. The description appears in the response when you authenticate an instance of the element.
 1. Choose the hub associated with the new element. Make sure that you choose an accurate hub because the you can leverage existing hub resources when you [add resources to the element](resources.html).
 2. Select the API type used by the API provider. You can usually find the API type in an _Overview_ or _Introduction_ section of the API documentation.
@@ -62,7 +62,7 @@ To start building an element and provide the basic information:
 | Parameter | Description    | Required |
 | :------------- | :------------- | :------------- |
 | Name | The name of the Element. This helps form the default Element Key | Y |
-| Element Key | A unique identifier for the element. The default comes from the Element Name. The Element Key is used in `/elements `endpoints that require `{keyOrId}`. | Y |
+| Element Key | A unique identifier for the element. The Element Key must be alphanumeric and lower case. The default comes from the Element Name. The Element Key is used in `/elements `endpoints that require `{keyOrId}`. | Y |
 | Hub  | The hub to which the element belongs.  {{site.data.glossary.hub}} | N |
 | Service type | Identifies the kind of element that you are building, either REST, SOAP, or database| Y |
 |   | JSON REST API &mdash; for REST or RESTful APIS |  |
