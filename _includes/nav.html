@@ -18,10 +18,20 @@
           let listItem = document.createElement('li');
           listItem.setAttribute("class", "resultsItem");
           listItem.innerHTML = 
-            listItem.innerHTML + '<a href='+element.url+'>' + element.heading + ' | ' + element.title + '</a>' + '<br/>' + element._snippetResult.text.value;
+            listItem.innerHTML + '<a class=\'resultItemLink\' href='+element.url+'>' + element.heading + ' | ' + element.title + '</a>' + '<br/>' + element._snippetResult.text.value;
           resultsList.appendChild(listItem);
         })
       });
+      $(".searchResultsContainerActive").click(function(e){
+        console.log("was clicked");
+        console.log(e.target);
+        if($(e.target).is("a") || $(e.target).is("div[id='resultsContainer']")){
+          let resultsList = document.getElementById('resultsList');
+          $(resultsList).empty();
+          $("#searchBox").val("");
+          document.getElementById("resultsContainer").className = "searchResultsContainer";
+        }
+      })
     }
     if(searchTerm.length >= 3){
       document.getElementById("resultsContainer").className = "searchResultsContainerActive";
@@ -86,5 +96,11 @@
     </div>
     <div class="rightPadding col-md-3"></div>
   </div>
+  <script>
+    // $(document).ready(function(){
+    //   console.log('its ready');
+      
+    // })
+  </script>
 </nav>
 <!-- END Main Nav -->
