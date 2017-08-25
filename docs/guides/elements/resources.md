@@ -60,8 +60,8 @@ To add a resource:
 
     {% include note.html content="To remain consistent with Cloud Elements naming conventions, we recommend that you name the resources in the plural form. For example, `/deals` not `/deal`.  " %}
 
-4. In **Vendor Resource Name** add the path to the resource at the API provider. The value that you enter is appended directly to the Base URL. If your Base URL ends with a slash `/` then do not enter a slash before the resource name. If your Base URL does not ned in a slash `/`, then add one before the resource name.
-5. In **Primary Key** enter the property that uniquely identifies the resource. Primary keys are typically ID fields associated with the resource. In this example, a primary key could be `dealID`.
+4. In **Vendor Resource Name** add the path to the resource at the API provider. The value that you enter is appended directly to the Base URL. If your Base URL ends with a slash `/` then do not enter a slash before the resource name. If your Base URL does not end in a slash `/`, then add one before the resource name.
+5. In **Primary Key** enter the property that uniquely identifies the resource. Primary keys are typically ID fields associated with the resource. In this example, a primary key could be `id`.
 6. In **Created Date Key** and **Updated Date Key** enter the properties that identify the created and updated dates. Created and updated date keys vary widely, but can be `created`, `createdate`, or `timecreated` and  `updated`, `lastModified`, or `dateModified`.
 7. Select the methods to add. You will define the methods that you select when you [set up the endpoints](#add-description-and-configure). Make sure that the methods that you select are supported by the API provider.
 
@@ -120,10 +120,10 @@ To set up endpoints:
 |    |  On Delete  |  The endpoint makes a request when you delete an element instance. Use this type of resource to clean up after someone deletes an instance of the element.   |
 |    |  On Provision  |  The endpoint makes a request when you authenticate an element instance. Use this type of resource to extract information during the authentication process to add to the element configuration.  |
 |    |  On Request  |  The endpoint makes a request when you make another request.  |
-|    |  On Refresh  |  The endpoint makes a request when you the element makes a token refresh request  |
-|    |  Provision Auth Validation  |  The endpoint makes a request during authentication validation..   |
-|    |  On Provision Webhook  |  The endpoint makes a request during authentication of an element instance with webhooks.   |
-|    |  On Delete Webhook  | The endpoint makes a request during deletion of an element instance with webhooks.    |
+|    |  On Refresh  |  The endpoint makes a request after the element makes an OAuth2 token refresh request.  |
+|    |  Provision Auth Validation  |  The endpoint makes a request during authentication validation.   |
+|    |  On Provision Webhook  |  The endpoint makes a request during authentication of an element instance to register one or more webhooks with the API provider.   |
+|    |  On Delete Webhook  | The endpoint makes a request during deletion of an element instance to remove one or more webhooks from the API provider.    |
 |    |  OAuth On Authorize URL  |  The endpoint makes a request bypassing the generic OAuth flow.  |
 |    |  OAuth On Token Exchange  |  The endpoint makes a request bypassing the generic OAuth flow.   |
 |    |  OAuth On Token Refresh  | The endpoint makes a request bypassing the generic OAuth flow.    |
@@ -178,8 +178,8 @@ To define a parameter :
 |    |  path &mdash; The value is the portion of the request path that matches the Parameter Name. |    |
 |    |  body &mdash; The value is the part of the request body that matches the Parameter Name. |    |
 |    |  query &mdash;  The value is the query parameter that matches the Parameter Name. |    |
-|    |  form  &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, the file name is the Parameter Name. |  |
-|    |  multipart &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, the file name is the Parameter Name. |    |
+|    |  form  &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, then use "file" as the Parameter Name. |  |
+|    |  multipart &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, then use "file" as the Parameter Name. |    |
 |    |  value  &mdash; The value is the Parameter Name.  |  |
 |    |  bodyField &mdash;  The value is the value of the field in a request body that matches the Parameter Name.   | |
 |    |  prevBody - Cloud Elements parameter type only. If chaining requests, the value is the part of the request body of the previous request in the chain that matches the Parameter Name.   |    |
@@ -260,11 +260,10 @@ To configure bulk:
 
 1. Click the **Bulk** tab.
 2. Select to enable bulk upload, download, or both.
-3. In Primary Key enter
+3. In **Primary Key** enter the field that makes the object unique, such as `id`.
 2. Select the Method for the new endpoint. The left side represents the Cloud Elements side of the endpoint.
 3. On the right side, select the vendor method associate with the endpoint, and then enter the URL of that endpoint.
 4. Click **Go**, and then follow the steps to [add a description and configuration information](#add-description-and-configuration), [add parameters](#add-parameters), and [add hooks](#add-hooks).
-
 
 ### Add Endpoints
 
