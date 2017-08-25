@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/history.js/1.8/bundled-uncompressed/html4+html5/jquery.history.js"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -16,8 +17,8 @@
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
-  <link href="/api-docs/css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
- <link href="/assets/css/elementDocs.css" rel="stylesheet">
+  <!-- <link href="/api-docs/css/screen.css" media="screen" rel="stylesheet" type="text/css"/> -->
+  <!-- <link href="/assets/css/elementDocs.css" rel="stylesheet"> -->
   {% include favicon.html %}
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -37,27 +38,37 @@
     <div class="col-md-3 sidebar">
     {% include sidebar.html %}
     </div>
-    <div class="col-md-9 contentWrapper">
+    <div class="col-md-9 contentWrapper elementDocContentWrapper">
+      <link href="/api-docs/css/screen.css" media="screen" rel="stylesheet" type="text/css"/>
+      <link href="/assets/css/elementDocs.css" rel="stylesheet">
       <div class="container-fluid">
         <div class="pageHeading">
           <h2> {{page.heading}} </h2>
           <!-- <h4> {{page.description}} </h4> -->
         </div>
-         <div class="pageTabs">
+        <div class="pageTabs">
           {% assign id = page.path | shard_id %}
           {% assign shard = site.shards[id] | sort:"order" %}
           {% for p in shard %}
-            {% if page.url == p.url%}
-              <div class="tab activeTab">
-            {% else %}
-              <div class="tab">
-            {% endif %}
-              <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
-            </div>
+          <div class="tab">
+            <a href="{{ p.url }}?elementId={{ page.elementId }}">{{ p.title }}</a>
+          </div>
           {% endfor %}
         </div>
       </div>
-      {{content}}
+      <div class="elementDocContent">
+        {{content}}
+      </div>
+      <script type="text/javascript">
+        // Init the active tab
+        $(`a[href='${window.location.pathname}${window.location.search}']`).parent().addClass("activeTab");
+        $(`a[href^='${window.location.pathname}?']`).parent().addClass("activeTab");
+        // Toggle the current active tab on the element menu
+        $(".tab a").click((e)=> {
+          $(".activeTab").removeClass("activeTab");
+          $(e.target).parent().addClass("activeTab");
+        })
+      </script>
     </div>
   </div>
   <script src="/assets/js/tablesorter.min.js"></script>
@@ -65,6 +76,7 @@
   <script src="/assets/js/application.js"></script>
   {% include google_analytics.html %}
   {% include hubspot-tracking.html %}
+  <script src="/assets/js/ajaxLoading.js"></script>
   <script>
   // execute/clear BS loaders for docs
   $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
