@@ -132,3 +132,4 @@ layout: sidebarelementtile
 * [![Constant Contact](/assets/img/element-logos/provider_constantcontact.png)Constant Contact](./elements/constantcontact/)
 * [![Egnyte](/assets/img/element-logos/egnyte.png)Egnyte](./elements/egnyte/)
 * [![Hootsuite](/assets/img/element-logos/hootsuite.png)Hootsuite](./elements/hootsuite/)
+* [![LinkedIn](https://my.cloudelements.io/assets/img/elements/linkedin.svg)LinkedIn](./elements/linkedin/)

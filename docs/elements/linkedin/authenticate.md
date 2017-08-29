@@ -1,15 +1,15 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: LinkedIn
+seo: Authenticate | LinkedIn | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the service provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 4169
+elementKey: linkedin
+apiKey: Client ID
+apiSecret: Client Secret
+callbackURL: Authorized Redirect URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -23,8 +23,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -57,8 +55,6 @@ To authenticate an element instance:
 ## Authenticate Through API
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
-
-<The text below is for an OAuth2 element. If this is a basic authentication element, delete everything up to Authenticating the Element Instance (including that heading) and start this section with the sentence "Use the /instances endpoint...">
 
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
@@ -97,12 +93,10 @@ curl -X GET \
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
-"element": "{{page.elementKey}}"
+"element": "{{page.elementKey}}",
+"oauthUrl": "AQRG6-6KaSAifvXanhCYf586Jf_0s6CdNshxiV8AhIwXM0mCBJVkeZhFTq3Z63IifnRbKuQ09Jr7QYHMD5NM_YPWBhitItIaTLbOmflfLIXbJcDs8kYn9gmKXENwvs_UonQ8I8zhZnvtdWga-ow"
 }
 ```
 
@@ -215,13 +209,13 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
+      "id": 7017,
+      "name": "LinkedIn",
       "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
-      "active": true,
+      "key": "linkedin",
+      "description": " a LinkedIn Instance to connect your existing LinkedIn account to the Social Hub, allowing you to manage companies, comments, followers and likes across multiple Social Elements. You will need your LinkedIn account information to add an instance.",
+      "image": "elements/provider_linkedin.png",
+      "active": false,
       "deleted": false,
       "typeOauth": false,
       "trialAccount": false,
@@ -236,11 +230,11 @@ In this example, the instance ID is `12345` and the instance token starts with "
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "helpdesk",
+      "hub": "social",
       "protocolType": "http",
       "parameters": [  ]
     },
-    "elementId": {{page.elementId}},
+    "elementId": 7017,
     "tags": [
       "Docs"
       ],

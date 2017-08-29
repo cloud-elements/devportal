@@ -7,13 +7,16 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
 elementKey: key
+apiKey: Key Name
+apiSecret: Secret Name
+callbackURL: Callback URL Name
 parent: Back to Element Guides
 order: 5
 ---
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}}. When you authenticate, use the **API Client ID**, **API Client Secret**, and **Callback URL** as the **API Key**, **API Secret**, and **Callback URL**. If you plan to monitor events, also configure the **Webhook URL**.
+To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}}. When you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and an **{{page.callbackURL}}** as the **API Key**, **API Secret**, and **Callback URL**.  If you plan to monitor events, also configure the **Webhook URL**.
 
 See the latest setup instructions in the [{{page.heading}} documentation](https://apiprovider.com).
 
@@ -21,14 +24,14 @@ See the latest setup instructions in the [{{page.heading}} documentation](https:
 
 ## Locate Credentials for Authentication
 
-If you already created an application, see below to locate the **API Client ID**, **API Client Secret**, and **Callback URL**. If you have not created an app, see [Create an Application](#create-an-application).
+If you already created an application, see below to locate the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}**. If you have not created an app, see [Create an Application](#create-an-application).
 
 To find your OAuth 2.0 credentials:
 
 1. Log in to your developer account at [{{page.heading}}](https://apiprovider.com).
 2. Click the application that you want to connect.
-3. Record the **API Client ID** and **API Client Secret**.
-3. Record the **Callback URL** for your app.
+3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
+3. Record the **{{page.callbackURL}}** for your app.
 ![Key secret and URL](img/hootsuite-creds.png)
 
 ## Create an Application
@@ -43,8 +46,8 @@ To create an application:
 4. If you plan to monitor events at {{page.heading}}, enter `https://console.cloud-elements.com/elements/api-v2/events/{{page.heading}}`.
 4. Click **Create**.
 2. Click the application that you want to connect.
-3. Record the **API Client ID** and **API Client Secret**.
-3. Record the **Callback URL** for your app.
+3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
+3. Record the **{{page.callbackURL}}** for your app.
 ![Key secret and URL](img/hootsuite-creds.png)
 
 ## Set Up Events

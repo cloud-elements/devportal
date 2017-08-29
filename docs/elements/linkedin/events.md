@@ -1,15 +1,15 @@
 ---
-heading: Name of Element
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: LinkedIn
+seo: Events | LinkedIn | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 4169
+elementKey: linkedin
+apiKey: Client ID
+apiSecret: Client Secret
+callbackURL: Authorized Redirect URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -24,17 +24,12 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}.
 
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<span style="color:red">Alternatively, if there are multiple supported resources, you can go with something like this:</span>
+You can set up polling for the `customers` resource. You can also copy a configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
 
 You can set up events for the following resources:
 
-* accounts
-* contacts
-* leads
-* opportunities
-* users
+* companies/{id}/updates/comments
+* companies/{id}/updates/likes
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -59,7 +54,6 @@ To authenticate an element instance with polling:
     | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select and configure the resources to poll.
 
@@ -108,16 +102,24 @@ To authenticate an element instance with polling:
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
-            "idField":"id",
+          "companies/{id}/updates/comments":{
+            "url":"/hubs/social/companies/{id}/updates/comments?where=timestamp>'${milliseconds}'&updateKey={updateKey}'",
+            "idField":" ",
             "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "createdDateTimezone":"GMT"
+              "updatedDateField":"timestamp",
+              "updatedDateFormat":"milliseconds'",
+              "createdDateField":"timestamp",
+              "createdDateFormat":"milliseconds"
+            }
+          },
+          "companies/{id}/updates/likes":{
+            "url":"/hubs/social/companies/{id}/updates/likes?where=timestamp>'${milliseconds}'&updateKey={updateKey}'",
+            "idField":" ",
+            "datesConfiguration":{
+              "updatedDateField":"timestamp",
+              "updatedDateFormat":"milliseconds'",
+              "createdDateField":"timestamp",
+              "createdDateFormat":"milliseconds"
             }
           }
         }
@@ -154,20 +156,28 @@ instance JSON with polling events enabled:
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
     "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
     "oauth.callback.url": "https://mycoolapp.com",
-    "event.notification.enabled":true,
-    "event.notification.callback.url":"http://mycoolapp.com",
-    "event.poller.refresh_interval":"15",
+    "event.notification.enabled": true,
+    "event.notification.callback.url": "http://mycoolapp.com",
+    "event.poller.refresh_interval": "<minutes>",
     "event.poller.configuration":{
-      "customers":{
-        "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
-        "idField":"id",
+      "companies/{id}/updates/comments":{
+        "url":"/hubs/social/companies/{id}/updates/comments?where=timestamp>'${milliseconds}'&updateKey={updateKey}'",
+        "idField":" ",
         "datesConfiguration":{
-          "updatedDateField":"updated_at",
-          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-          "updatedDateTimezone":"GMT",
-          "createdDateField":"created_at",
-          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-          "createdDateTimezone":"GMT"
+          "updatedDateField":"timestamp",
+          "updatedDateFormat":"milliseconds'",
+          "createdDateField":"timestamp",
+          "createdDateFormat":"milliseconds"
+        }
+      },
+      "companies/{id}/updates/likes":{
+        "url":"/hubs/social/companies/{id}/updates/likes?where=timestamp>'${milliseconds}'&updateKey={updateKey}'",
+        "idField":" ",
+        "datesConfiguration":{
+          "updatedDateField":"timestamp",
+          "updatedDateFormat":"milliseconds'",
+          "createdDateField":"timestamp",
+          "createdDateFormat":"milliseconds"
         }
       }
     }
@@ -194,11 +204,10 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
-| Configure Polling</br>`event.poller.configuration`  | _Optional_. Configuration parameters for polling. | JSON object |
+| Configure Polling</br>`event.poller.configuration`  | Optional*. Configuration parameters for polling. | JSON object |
 | Resource to Poll  | The polling event configuration of the resource that you will monitor. | JSON object |
 | URL</br>`url` | The url to query for updates to the resource.  | String |
 | ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
-| Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
 | Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
 | Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
 | Created Date Field</br>`createdDateField` | The field that identifies an created object. | String |
