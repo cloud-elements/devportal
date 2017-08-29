@@ -67,3 +67,17 @@ eb-post-response-hook: "A script that executes after recieving a response from a
 eb-hook: "A script that you build for elements that operates on reequests and responses and that can be applied to all requests or resposnes or specific endpoints."
 
 element-card: "Each element appears in the elements catalog on its own card that shows basic information about the element and enables access to the ways that you can your with an element."
+
+element-auth-api-key: "The API key or client ID obtained from registering your app with the provider. "
+
+element-auth-api-secret: "The client secret obtained from registering your app with the API provider.  "
+
+element-auth-oauth-callback: "The Callback URL  for the connected app you created."
+
+element-auth-grant-code: "The authorization grant code returned from the API provider in an OAuth2 authentication workflow. Cloud Elements uses the code to retrieve the OAuth access and refresh tokens from the endpoint"
+
+element-auth-tags: "<em>Optional</em>. User-defined tags to further identify the instance."
+
+element-auth-state: "A customizable identifier, typically the element key"
+
+element-auth-name: "The name of the element instance created during authentication. "
