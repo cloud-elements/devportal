@@ -1,7 +1,7 @@
 ---
 heading: Microsoft Dynamics CRM
-seo: Endpoint Setup | Microsoft Dynamics CRM | Cloud Elements API Docs
-title: Endpoint Setup
+seo: API Provider Setup | Microsoft Dynamics CRM | Cloud Elements API Docs
+title: API Provider Setup
 description: Integrate Microsoft Dynamics CRM into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ elementKey: 190
 parent: Back to Element Guides
 order: 2
 ---
-## Endpoint Setup
+## API Provider Setup
 
 To set up the Microsoft Dynamics CRM endpoint, you need to have an account and create or already have an app. Also, to authenticate with OAuth 2, you need to know the Client ID and keys for the app. If you use custom authentication when you provision an element, you do not need the Client ID and keys for the app.
 Dynamics versions 2013-2015 are supported by the MS Dynamics 2015 SDK.
@@ -34,7 +34,7 @@ To create an app and acquire OAuth information:
   * __CLIENT ID__:  Used when you provision an element using OAuth authentication as the __OAuth Client ID in Azure AD__ or `oauth.api.key`.
   * __permissions to other applications__: Permissions shown when you provison an instance with OAuth authentication.
 
-     __Note:__ The key value for __OAuth Client Secret in Azure AD__ appears only after you save the configuration and only one time. You will not be able to retrieve the key value later, so capture it mmediately after you save.
+     __Note:__ The key value for __OAuth Client Secret in Azure AD__ appears only after you save the configuration and only one time. You will not be able to retrieve the key value later, so capture it immediately after you save.
 
 4. Click <img src="img/Save.png" alt="Alt Text" class="inlineImage"> in the page footer.
 1. Go to the __keys__ section and capture the key value for __OAuth Client Secret in Azure AD__.

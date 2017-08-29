@@ -11,11 +11,13 @@ parent: Back to Element Guides
 order: 25
 ---
 
-## Events
+# Events
 
 {% include polling_and_webhooks_defined.md %}
 
-### Polling
+{% include callout.html content="<strong>On this page</strong></br><a href=#polling>Polling</a></br><a href=#link>Webhooks</a>" type="info" %}
+
+## Polling
 
 In order to enable polling, add these extra configurations to your instance JSON:
 
@@ -63,7 +65,7 @@ instance JSON with polling events enabled:
 }
 ```
 
-### Optional Event Customization
+### Webhooks
 
 After you create an instance with webhooks enabled, your app will receive event notifications from Zendesk based on our default settings
 

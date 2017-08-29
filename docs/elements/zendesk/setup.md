@@ -1,40 +1,61 @@
 ---
 heading: Zendesk
-seo: Endpoint Setup | Service provider setup | Zendesk | Cloud Elements API Docs
-title: Service Provider Setup
+seo: API Provider Setup | Service provider setup | Zendesk | Cloud Elements API Docs
+title: API Provider Setup
 description: Service provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41
+elementKey: key
+apiKey: Unique Identifier
+apiSecret: Secret
+callbackURL: Redirect URL
 parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
-Follow these steps to set up a Zendesk application with the endpoint.
-Via a web browser, go to your Zendesk unique web address and login.
+To authenticate a {{page.heading}} element instance you must register an app with {{page.heading}}. When you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** as the **API Key**, **API Secret**, and **Callback URL**.
 
-1. Click “Admin”.
-![Zendesk Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/04/ZendeskAPI1.png)
+See the latest setup instructions in the [{{page.heading}} documentation](https://support.zendesk.com/hc/en-us/articles/203663836-Using-OAuth-authentication-with-your-application).
 
-2. Scroll to “CHANNELS” and click “API”
-![Zendesk Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/04/ZendeskAPI2.png)
+{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a>" type="info" %}
 
-3. Click “OAuth Clients”
+## Locate Credentials for Authentication
 
-4. Click “add a client”
-![Zendesk Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/04/ZendeskAPI3.png)
+If you already created an application, see below to locate the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}**. If you have not created an app, see [Create an Application](#create-an-application).
 
-5. Name your app
+To find your OAuth 2.0 credentials:
 
-6. Copy “Unique Identifier”
+1. Log in to Zendesk unique web address.
+2. On sidebar, click **Admin**.
+![Admin](img/admin.png)
+2. Scroll down to Channels, and then click **API**.
+![Channels](img/channels.png)
+4. Click **OAuth Clients**, and then click the application that you want to connect.
+3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
+3. Record the **{{page.callbackURL}}** for your app.
+![Key secret and URL](img/zendesk-creds.png)
 
-7. Input “Redirect URLs” – this is for authenticating into your application
+## Create an Application
 
-6. Copy “Secret”
+If you have not created an application, you need one to authenticate with {{page.heading}}.
 
-9. Click “Save”
-![Zendesk Connected App step 4](http://cloud-elements.com/wp-content/uploads/2015/04/ZendeskAPI4.png)
+To create an application:
 
-Next [create an instance](authenticate.html).
+1. Log in to Zendesk unique web address.
+2. On sidebar, click **Admin**.
+![Admin](img/admin.png)
+2. Scroll down to Channels, and then click **API**.
+![Channels](img/channels.png)
+4. Click **OAuth Clients**, and then click the + button.
+![Create Button](img/btn_create.png)
+3. Complete the required information.
+3. Record the **{{page.apiKey}}**  and the **{{page.callbackURL}}s** for your app.
+4. Click **Save**.
+5. Record the **{{page.apiSecret}}**.
+6. Click **Save**.
+![Key secret and URL](img/zendesk-creds.png)
+
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
