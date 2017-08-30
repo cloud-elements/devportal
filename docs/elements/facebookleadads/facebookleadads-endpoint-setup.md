@@ -37,4 +37,4 @@ To create an app:
 
 Once you are ready to release to production, you will need to submit your app for testing.  You can read more about the process at: [https://developers.facebook.com/docs/facebook-login/review/requirements](https://developers.facebook.com/docs/facebook-login/review/requirements)
 
-Next [create an instance](facebook-create-instance.html).
+Next [create an instance](facebookleadads-create-instance.html).
