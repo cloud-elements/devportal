@@ -128,7 +128,7 @@ To create an element instance:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "filter.response.nulls": true
+        "zendesk.subdomain": "zendesk_subdomain"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -163,7 +163,7 @@ curl -X POST \
     "oauth.callback.url": "https://www.mycoolapp.com/auth",
     "oauth.api.key": "zendesk_unique_identifier",
     "oauth.api.secret": "fake_api_secret",
-    "zendesk.subdomain": "zendesk_subdomain"
+    "zendesk.subdomain": "mycoolapp"
   },
   "tags": [
     "For Docs"

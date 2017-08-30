@@ -44,25 +44,34 @@ You can configure polling through the UI or in the JSON body of the `/instances`
 
 To set up polling when creating an authenticated instance:
 
-1. Complete the Configuration section as described in [Authenticate](authenticate.html)
-2. Switch **Events Enabled** on.
-3. Add an **Event Notification Callback URL**.
-4. Optionally enter an **Event Notification Signature Key**.
-4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
-5. Select and configure the resources to poll.
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. Enable events: Switch **Events Enabled** on.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling. | Edit the JSON to add or remove resources and optionally change the `datesConfiguration`.  |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
 
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
-     1. Click __Done__.
+8. Add an **Event Notification Callback URL**.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Select and configure the resources to poll.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-8. Take a look at the documentation for the element resources now available to you.
+
+    | Cloud Elements 2.0 | Earlier UI  |
+    | :------------- | :------------- |
+    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
 
 ### Configure Polling Through API
 
