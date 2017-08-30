@@ -12,7 +12,7 @@ order: 5
 
 # Service Provider Setup
 
-To authenticate a {{page.heading}} element instance you must have a project withe the Google Drive API enabled..
+To authenticate a {{page.heading}} element instance you must have a project withe the Google Drive API enabled.
 
 
 {% include note.html content="Google Drive provides the most up-to-date and detailed setup instructions <a href=https://developers.google.com/drive/web/enable-sdk>here</a>." %}
