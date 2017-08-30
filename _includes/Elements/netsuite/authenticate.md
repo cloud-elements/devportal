@@ -42,15 +42,15 @@ To authenticate an element instance:
     * Select `true` to you ensure that Cloud Elements does not send multiple requests to your {{page.heading}} at one time. This may be necessary for certain trial NetSuite accounts.
     * Select `false` to allow multiple requests. You must also provide a **Single Session Lock Key** which can be any alphanumeric value that is unique within the Cloud Elements environment.
 
-1. Optionally add tags in Cloud Elements 2.0.
-1. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-1. Optionally add tags in the earlier UI:
- - On the "Tag It" page, enter any tags that might help further
-    define the instance.
- - To add more than one tag, click __Add__ after each tag.
-![Add tag](../img/Add-Tag.png)
-1. Click __Done__.
+9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+8. Provide your {{page.heading}} credentials, and then allow the connection.
+
+    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
+
+8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
+![Authenticated Element Instance](../img/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through the API

@@ -1,4 +1,4 @@
-# Service Provider Setup
+# API Provider Setup
 
 To set up a new application in {{page.heading}}, you must have Administrator integration privileges. Contact your system administrator if you do not have those privileges.
 

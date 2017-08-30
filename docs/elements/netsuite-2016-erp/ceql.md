@@ -1,11 +1,11 @@
 ---
-heading: NetSuite 2016 Human Capital
-seo: Query Language | NetSuite 2016 Human Capital | Cloud Elements API Docs
+heading: NetSuite 2016 ERP
+seo: Query Language | NetSuite 2016 ERP | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 1688
+elementId: 987
 parent: Back to Element Guides
 order: 45
 sitemap: false
@@ -19,9 +19,33 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
-* GET /employees
-* GET /{objectName}/{objectId}/{childObjectName}
-* GET /payroll-items
+* GET /accounts
+* GET /bills
 * POST /bulk/query
+* GET /cases
+* GET /cases/{id}/messages
+* GET /contacts
+* GET /credit-terms
+* GET /custom-fields
+* GET /customers
+* GET /employees
+* GET /estimates
+* GET /invoices
+* GET /journal-entries
+* GET /leads
+* GET /ledger-accounts
+* GET /opportunities
+* GET /payment-methods
+* GET /payments
+* GET /products
+* GET /projects
+* GET /prospects
+* GET /purchase-orders
+* GET /tax-codes
+* GET /tax-rates
+* GET /time-activities
+* GET /transaction-summaries
+* GET /vendor-payments
+* GET /vendors
 
 {% include ceql-ref.md%}
