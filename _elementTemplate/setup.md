@@ -24,7 +24,7 @@ See the latest setup instructions in the [{{page.heading}} documentation](https:
 
 ## Locate Credentials for Authentication
 
-If you already created an application, see below to locate the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}**. If you have not created an app, see [Create an Application](#create-an-application).
+If you already created an application, follow the steps below to locate the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}**. If you have not created an app, see [Create an Application](#create-an-application).
 
 To find your OAuth 2.0 credentials:
 
