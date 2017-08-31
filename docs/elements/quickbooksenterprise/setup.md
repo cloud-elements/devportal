@@ -1,15 +1,12 @@
 ---
-heading: Name of Element
+heading: Quickbooks Enterprise
 seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: key
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 195
+elementKey: quickbooksonprem
 parent: Back to Element Guides
 order: 5
 ---
@@ -40,7 +37,7 @@ Your Cloud Elements CSM or Delivery Manager typically helps with the initial set
 1. Run the Ground2Cloud Setup Wizard.
 
     After installing Ground2Cloud, the wizard prompts you to install the CE Connector application.
-    
+
 3. Click **Install**.
 4. Finish the Ground2Cloud Setup Wizard.
 
@@ -49,6 +46,7 @@ Your Cloud Elements CSM or Delivery Manager typically helps with the initial set
 4. Click **Edit**, and then click **Authorize**.
 ![Authorize](img/authorize.png)
 4. In **Authorized App Name** enter a name for the connection. The name is used as the **Configured Application Name** when you authenticate an element instance.
+![Authorization Window](img/auth-window.png)
 5. Keep the default port number and click **OK**.
 6. Note the url under Registrations. This is used as the **Host Name/IP** when you authenticate an element instance.
 If you have not created an application, you need one to authenticate with {{page.heading}}.
