@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce REST
+heading: WooCommerce
 seo: Tips | WooCommerce REST | Cloud Elements API Docs
 title: Tips
 description: WooCommerce REST API Documentation.

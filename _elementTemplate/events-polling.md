@@ -138,45 +138,45 @@ To authenticate an element instance with polling:
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 
 
-### Example JSON with Polling
+### Example cURL with Polling
 
-instance JSON with polling events enabled:
-
-```json
-{
-  "element":{
-    "key":"{{page.elementKey}}"
-  },
-  "providerData":{
-    "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
-  },
-  "configuration":{
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
-    "oauth.callback.url": "https://mycoolapp.com",
-    "event.notification.enabled":true,
-    "event.notification.callback.url":"http://mycoolapp.com",
-    "event.poller.refresh_interval":"15",
+```bash
+curl -X POST \
+https://api.cloud-elements.com/elements/api-v2/instances \
+-H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+-H 'content-type: application/json' \
+-d '{
+"element": {
+  "key": "{{page.elementKey}}"
+},
+"providerData":{
+  "code": "<AUTHORIZATION_GRANT_CODE>"
+},
+"configuration": {
+  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "event.notification.enabled": true,
+    "event.vendor.type": "polling",
+	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+    "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-      "customers":{
-        "url":"/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' and attributes='created_at,updated_at",
-        "idField":"id",
-        "datesConfiguration":{
-          "updatedDateField":"updated_at",
-          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-          "updatedDateTimezone":"GMT",
-          "createdDateField":"created_at",
-          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-          "createdDateTimezone":"GMT"
-        }
-      }
+    	"contacts": {
+    		"url":"/hubs/ecommerce/customers",
+            "idField":"id",
+            "datesConfiguration":{
+              "updatedDateField":"date_modified",
+              "updatedDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''",
+              "createdDateField":"date_created",
+              "createdDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''"
+            }
+    	}
     }
   },
-  "tags":[
-    "Test"
+  "tags": [
+    "Docs"
   ],
-  "name":"API_Polling"
-}
+  "name": "API Instance with Polling"
+}'
 ```
 
 ## Parameters
