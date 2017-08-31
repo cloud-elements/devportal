@@ -1,5 +1,5 @@
 ---
-heading: WooCommerce REST
+heading: WooCommerce
 seo: Query Language | WooCommerce | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
@@ -11,4 +11,22 @@ order: 45
 sitemap: false
 ---
 
-{% include ceql.md %}
+# Cloud Elements Query Language
+
+The Cloud Elements Query Language (CEQL) is a query language used by Cloud Elements to standardize searching across all of our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all of our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint.
+
+## CEQL in {{page.heading}}
+
+Use CEQL to query the following endpoints:
+
+* GET /projects
+* GET /products-categories
+* GET /discounts
+* GET /{objectName}
+* GET /{objectName}/{objectId}/{childObjectName}
+* GET /orders
+* GET /orders/{id}/refunds
+* GET /customers
+* POST /bulk/query
+
+{% include ceql-ref.md%}
