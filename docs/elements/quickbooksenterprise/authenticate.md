@@ -120,8 +120,8 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | Key<br/>`key` | The element key.<br/>{{page.elementKey}}  | string  |
 |  Name<br/>`name` |  The name for the element instance created during authentication.   | Body  |
-| Configured Application Name</br>`app.name` | The application name that is configured in the Quickbooks application. | string |
-| Host Name/IP</br>`host.ip` | The URL of the server hosting Quickbooks Enterprise | string |
+| Configured Application Name</br>`app.name` | The **Configured Application Name** that you noted in [API Provider Setup](setup.html). | string |
+| Host Name/IP</br>`host.ip` | The **Host Name/IP** that you noted in [API Provider Setup](setup.html). | string |
 | Filter null values from the response <br/>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. <br/>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
