@@ -14,7 +14,7 @@ layout: sidebarelementtile
 * [![Amazon S3](/assets/img/element-logos/amazons3.png)Amazon S3 Beta](./elements/amazons3/)
 * [![Evernote](/assets/img/element-logos/evernote.png)Evernote Beta](./elements/evernote/)
 * [![Autopilot](/assets/img/element-logos/autopilot.png)Autopilot](./elements/autopilot/)
-* [![Autotask CRM](/assets/img/element-logos/autotask.png)Autotask CRM Beta](./elements/autotask-crm/)
+* [![Autotask CRM](/assets/img/element-logos/autotask.png)Autotask CRM](./elements/autotask-crm/)
 * [![Autotask Help Desk](/assets/img/element-logos/autotask.png)Autotask Help Desk](./elements/autotask-helpdesk/)
 * [![BaseCRM](/assets/img/element-logos/basecrm.png)BaseCRM](./elements/basecrm/)
 * [![BigCommerce](/assets/img/element-logos/bigcommerce.png)BigCommerce](./elements/bigcommerce/)

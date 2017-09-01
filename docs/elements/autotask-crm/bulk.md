@@ -1,5 +1,5 @@
 ---
-heading: Autotask CRM Beta
+heading: Autotask CRM
 seo: Bulk APIs | Autotask CRM | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
@@ -11,4 +11,4 @@ order: 35
 sitemap: false
 ---
 
-{% include bulk-apis.md %}
+{% include Elements/autotask/bulk.md%}

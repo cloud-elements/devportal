@@ -6,73 +6,25 @@ description: Enable Autotask Help Desk events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 123
+elementKey: autotaskhelpdesk
+hdOrcrm: helpdesk
+pollObject: incidents
 parent: Back to Element Guides
 order: 30
 ---
 
-## Events
+# Events
 
-{% include polling_and_webhooks_defined.md %}
+Cloud Elements supports events via polling or webhooks depending on the API provider. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#polling>Polling</a></br><a href=#parameters>Parameters</a>" type="info" %}
 
-```JSON
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.configuration": "<SEE_BELOW>"
-```
+## Supported Events and Resources
 
-NOTE: The `objects` in the `event.poller.configuration` are the default configurations we support.  Feel free to remove any objects that do not fit your needs.
+Cloud Elements supports polling events for {{page.heading}}.
 
-instance JSON with polling events enabled:
+You can set up polling for the `incidents` resource. You can also copy the `incidents` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
 
-```json
-{
-  "element": {
-    "key": "autotaskhelpdesk"
-  },
-  "configuration": {
-    "helpdesk.autotask.username": "<INSERT_AUTOTASK_USERNAME>",
-    "helpdesk.autotask.password": "<INSERT_AUTOTASK_PASSWORD>",
-    "helpdesk.autotask.server.url": "<INSERT_AUTOTASK_SERVER_URL>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.poller.configuration": {
-      "attachments": {
-        "url": "/hubs/helpdesk/attachments?where=lastActivityDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
-        "idField": "id",
-        "datesConfiguration": {
-          "updatedDateField": "lastActivityDate",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
-          "createdDateField": "createDate",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
-        }
-      },
-      "comments": {
-        "url": "/hubs/helpdesk/comments?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
-        "idField": "id",
-        "datesConfiguration": {
-          "updatedDateField": "lastModifiedDate",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
-          "createdDateField": "createDate",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
-        }
-      },
-      "incidents": {
-        "url": "/hubs/helpdesk/tasks?where=lastActivityDateTime>='${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
-        "idField": "id",
-        "datesConfiguration": {
-          "updatedDateField": "lastActivityDateTime",
-          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ",
-          "createdDateField": "createDateTime",
-          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ssZ"
-        }
-      }
-    }
-  },
-  "tags": [
-    "<INSERT_TAGS>"
-  ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
-```
+{% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
+
+{% include Elements/autotask/events.md%}
