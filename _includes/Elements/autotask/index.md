@@ -1,21 +1,6 @@
----
-heading: Name of Element
-seo: Overview | Name of Element | Cloud Elements API Docs
-title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: nn
-parent: Back to Element Guides
-order: 1
-sitemap: false
----
-
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} provides on-demand customer relationship management (CRM) services.
-
-<A great place to get this initial paragraph is from Programmableweb or the vendor's website.>
+{{page.heading}} is a cloud based business management software platform that provides and end-to-end software suite.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -23,13 +8,13 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
-| Authentication | OAuth 2.0  |
-| Events | Webhooks and polling |
+| API Documentation | [{{page.heading}} API documentation](https://www.autotask.net/help/Content/AdminSetup/2ExtensionsIntegrations/APIs/WebServicesAPI.htm) |
+| Authentication | Basic: user name, password, and Server URL  |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
+| Rate Limits | Review the API Call Threshold documentation. You can check your threshold with the getThresholdAndUsageInfo() request to the AutoTask API. |
+
 
 ## Base URL
 
@@ -55,7 +40,7 @@ To find your Element instance token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs).
+An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
 
 Pass tokens and secrets as basic HTTP Header values.
 
