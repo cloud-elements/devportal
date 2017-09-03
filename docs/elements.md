@@ -77,6 +77,7 @@ layout: sidebarelementtile
 * [![Magento SOAP](/assets/img/element-logos/magento.png)Magento SOAP V1.9 Beta](./elements/magento-soap/)
 * [![Marketo](/assets/img/element-logos/marketo.png)Marketo](./elements/marketo/)
 * [![Microsoft SQL Server](/assets/img/element-logos/sqlserver.png)Microsoft SQL Server](./elements/sqlserver/)
+* [![Mixpanel](https://uxcam.com/images/mixpanel-logo.png)Mixpanel](./elements/mixpanel/)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
 * [![NetSuite CRM 2016](/assets/img/element-logos/netsuite.png)NetSuite CRM 2016](./elements/netsuite-2016-crm/)
 * [![NetSuite Human Capital 2016](/assets/img/element-logos/netsuite.png)NetSuite Human Capital 2016](./elements/netsuite-2016-human-capital/)
