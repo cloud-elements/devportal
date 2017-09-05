@@ -205,3 +205,14 @@ The following example shows how to include a `customFieldList`in the JSON body o
 ## Limitations
 
 Netsuite querying does not currently support the “OR” functionality.
+
+## Search Using internalId
+
+Each object has its own `internalId`, but you can still search for more than one object by replacing `internalId` with the object name.
+
+For example, if an entity has an internalId of 1769, and a salesRep has an internalId of 36, you can include `entity=11769` or `salesRep=36` in a query. 
+
+## Netsuite Finance
+
+* Instead of an `/accounts` resource, Netsuite Finance supports the `/ledger-accounts` resources.
+* Items
