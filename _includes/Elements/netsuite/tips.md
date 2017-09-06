@@ -1,4 +1,4 @@
-{% include callout.html content="<strong>On this page</strong></br><a href=#working-with-objects>Working With Objects</a></br><a href=#retrieving-custom-fields-and-records>Retrieving Custom Fields and Records</a></br><a href=#retrieve-custom-fields>Retrieving Custom Fields</a></br><a href=#retrieve-custom-records-and-associated-custom-fields>Retrieve Custom Records and Associated Custom Fields</a></br><a href=#retrieve-list-items>Retrieve List Items</a></br><a href=#search-custom-fields>Search Custom Fields</a></br><a href=#update-custom-fields>Update Custom Fields</a></br><a href=#limitations>Limitations</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#working-with-objects>Working With Objects</a></br><a href=#retrieving-custom-fields-and-records>Retrieving Custom Fields and Records</a></br><a href=#retrieve-custom-fields>Retrieving Custom Fields</a></br><a href=#retrieve-custom-records-and-associated-custom-fields>Retrieve Custom Records and Associated Custom Fields</a></br><a href=#retrieve-list-items>Retrieve List Items</a></br><a href=#search-custom-fields>Search Custom Fields</a></br><a href=#update-custom-fields>Update Custom Fields</a></br><a href=#limitations>Limitations</a></br><a href=#netsuite-finance>Netsuite Finance</a>" type="info" %}
 
 ## Working With Objects
 
@@ -205,3 +205,13 @@ The following example shows how to include a `customFieldList`in the JSON body o
 ## Limitations
 
 Netsuite querying does not currently support the “OR” functionality.
+
+## Search Using internalId
+
+Each object has its own `internalId`, but you can still search for more than one object by replacing `internalId` with the object name.
+
+For example, if an entity has an internalId of 1769, and a salesRep has an internalId of 36, you can include `entity=11769` or `salesRep=36` in a query.
+
+## Netsuite Finance
+
+Instead of an `/accounts` resource, Netsuite Finance supports the `/ledger-accounts` resources.

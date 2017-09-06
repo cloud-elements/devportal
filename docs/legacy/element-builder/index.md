@@ -14,7 +14,7 @@ redirect_from:
   - /docs/products/element-builder/
 ---
 
-{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../elements/index.html>Manage Elements</a>." type="info" %}
+{% include callout.html content="The documentation in this section is for Cloud Elements 1.0. Find Cloud Elements 2.0 documentation at <a href=../../guides/elements/index.html>Manage Elements</a>." type="info" %}
 
 # Overview
 

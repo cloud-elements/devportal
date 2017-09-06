@@ -11,7 +11,7 @@ parent: Back to Guides
 order: 1
 ---
 
-{% include callout.html content="<i>Manage Elements</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../element-builder/index.html>Element Builder</a>." type="info" %}
+{% include callout.html content="<i>Manage Elements</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../../legacy/element-builder/index.html>Element Builder</a>." type="info" %}
 
 # Overview
 

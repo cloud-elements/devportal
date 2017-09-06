@@ -119,7 +119,6 @@ To create an element instance:
 
     ```json
     {
-      "name": "<INSTANCE_NAME>",
       "element": {
         "key": "{{page.elementKey}}"
       },
@@ -134,7 +133,8 @@ To create an element instance:
       },
       "tags": [
         "<Add_Your_Tag>"
-      ]
+      ],
+      "name":"API Instance"
     }
     ```
 
@@ -185,6 +185,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.callback.url` | The Callback URL that was registered when creating credentials in your Google Drive project. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
 | `oauth.api.key` | The OAuth Client ID from Google Drive. This is the Client ID that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
 | `oauth.api.secret` | The OAuth Client Secret from Google Drive. This is the Client Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| Document Root Folder</br>`document.root.folder.name` | The directory on Google Drive that contains the documents that you want to connect.  | string  |
 
 ## Example Response
 
