@@ -214,4 +214,5 @@ For example, if an entity has an internalId of 1769, and a salesRep has an inter
 
 ## Netsuite Finance
 
-Instead of an `/accounts` resource, Netsuite Finance supports the `/ledger-accounts` resources.
+* Instead of an `/accounts` resource, Netsuite Finance supports the `/ledger-accounts` resources.
+* When working with the `/items` object, you need to include the `_objType` to make POST /Items/{{id}} requests. You can retrieve an `_objType` by making a GET /Items/{id} request.
