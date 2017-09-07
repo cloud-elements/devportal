@@ -32,6 +32,9 @@ To start building an element and provide the basic information:
   * **Element Key** &mdash; Generated from the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
   * **Description** &mdash; The description helps to clarify the purpose of the element. The description appears in the response when you authenticate an instance of the element.
 1. Choose the hub associated with the new element. Make sure that you choose an accurate hub because the you can leverage existing hub resources when you [add resources to the element](resources.html).
+
+    {% include note.html content="You can create your own hub by entering the name of the hub.   " %}, 
+
 2. Select the API type used by the API provider. You can usually find the API type in an _Overview_ or _Introduction_ section of the API documentation.
  * **REST API** &mdash; Select if the API is a REST or RESTful API.
  * **SOAP API** &mdash; Select if the API is a SOAP API.

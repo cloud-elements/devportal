@@ -24,6 +24,8 @@ This guide is intended for individuals familiar with APIs, Javascript, and JSON.
 * The API provider's API documentation.
 * The Cloud Elements Hub APIs
 
+{% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
+
 ## The Workflow
 
 While you can work on different parts of an element throughout the entire creation process, in general you will follow the high-level workflow shown below.
@@ -50,3 +52,47 @@ If you have already built a custom element or imported an element, you can manag
 
 To manage an existing custom element, hover over the element card, and then click **Configuration**.
 ![Configuration](img/configuration.gif)
+
+## Custom Element Checklist
+
+After you build an element, we recommend that you review the checklist below:
+
+{% icon fa-check-square-o %} Each GET resources includes CEQL (the where clause) and pagination.
+
+{% icon fa-check-square-o %} The element includes an informative description.
+
+{% icon fa-check-square-o %} If building an OAuth 2.0 element in multiple Cloud Elements environments, confirm that the API providers supports all environments.
+
+{% icon fa-check-square-o %} Check pagination &mdash; pageSize and Pagination type &mdash; to ensure correct information.
+
+{% icon fa-check-square-o %} POST and PATCH resource bodies include the correct object data type and models.
+
+{% icon fa-check-square-o %} Map an authenticated element instance to a common resource.
+
+{% icon fa-check-square-o %} For polling events, confirm the dates are configured correctly, using the same format as the API provider. Also ensure that the time zone format matches.
+
+{% icon fa-check-square-o %} For bulk, confirm the dates are configured correctly, using the same format as the API provider.
+
+## Element Conventions
+
+To align your custom elements with those created by Cloud Elements, we recommend that you follow our conventions:
+
+* Resource names: Lowercase the name and use the plural form.
+  * Correct: /contacts
+  * Incorrect: /contact
+* Spaces in paths: Replace spaces with dashes.
+  * Correct: /hubs/finance/sales-receipts
+  * Incorrect: /hubs/finance/sales_receipts
+* Spaces in configuration or parameter names: Use camelCase.
+  * Correct: /hubs/finance/sales-receipts/{salesReceiptId}/details
+  * Correct: /hubs/crm/contacts/{contactId}/notes
+  * Incorrect: /hubs/finance/sales-receipts/{salesreceiptId}/details
+  * Incorrect: /hubs/crm/contacts/{contact-Id}/notes
+* Descriptions by method:
+  * GET &mdash; "Search for resources."  Or, if no CEQL query was configured for the endpoint, use "List all resources".
+  * GET/{id} &mdash; "Retrieve a(n) resource".
+  * POST &mdash; "Create a(n) resource".
+  * PATCH &mdash; "Update a(n) resource".
+  * DELETE &mdash;"Delete a(n) resource"
+* `where` parameter descriptions: Following the default "The CEQL search expression." add an example for the specific element.
+  * Example: The CEQL search expression, or the where clause, without the WHERE keyword, in a typical SQL query. For example, to search for contacts last modified on or after ‘Jan 15, 2014’, the search expression is where=LastModifiedDate>=’2014-01-15T00:00:00.000Z’. When this parameter is omitted, all contacts are returned in a paginated fashion.

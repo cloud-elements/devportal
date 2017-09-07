@@ -31,7 +31,7 @@ To set up webhooks:
 
 ## Configure Polling Events
 
-Even if the API provider does not explicitly support events, you can set up polling on any resource that that include `created`, `updated`, and `deleted` data.
+Even if the API provider does not explicitly support events, you can set up polling on any resource that that include `created` and `updated` data.
 
 To set up polling:
 
@@ -39,7 +39,7 @@ To set up polling:
 2. Switch **Enable Events** on.
 3. From **Event Types**, select **Polling**.
 4. Use the **Default Interval Polling Time (in minutes)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
-5. In **resource name**, enter the name of a resource that contains acceptable polling data (`created`, `updated`, and `deleted` data).
+5. In **resource name**, enter the name of a resource that contains acceptable polling data (`created` and `updated` data).
 6. Click **Add Polling Resource**.
 7. Complete the resource properties:
   * URL The hub url with any query parameters needed to identify that the resource is updated. For example: `/hubs/finance/customers?where=lastModifiedDate>='${date:yyyy-MM-dd'T'HH:mm:ss'Z'}' `

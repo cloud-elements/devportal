@@ -43,7 +43,9 @@ The last step in setting up an element is to add resources to it. To add a resou
 
 Defining a resource is a multi-step process, but you do not need to complete each step. For example, you need to add hooks only for advanced or complex use cases. You need to configure bulk for only the resources that you you plan to download or upload bulk changes.
 
-When defining resources, begin by adding a resource and providing basic information about the resource as a whole. For each endpoint, provide a description and add any endpoint-level configuration. If needed, add parameters to pass along with each request to each endpoint. For more complex use cases, write hooks needed to perform complex tasks. If the method requires models (POST, PUT, PATCH), define the models for each request and response.Lastly, if you want to be able to upload or download bulk CSV or JSON files, configure bulk for the endpoint.
+When defining resources, begin by adding a resource and providing basic information about the resource as a whole. For each endpoint, provide a description and add any endpoint-level configuration. If needed, add parameters to pass along with each request to each endpoint. For more complex use cases, write hooks needed to perform complex tasks. If the method requires models (POST, PUT, PATCH), define the models for each request and response. Lastly, if you want to be able to upload or download bulk CSV or JSON files, configure bulk for the endpoint.
+
+Before you begin, review the [Element Conventions](custom-elements.html#element-conventions) so your element will align with others in the Elements Catalog.
 
 ### Add a Resource
 
@@ -104,7 +106,10 @@ To set up endpoints:
     ```
 
 6. In **Pagination Type** select to override the default pagination settings of the element. If you select nothing, the default is **Supported**.
-7. In **Resource Type** select a resource type other than API only if you want to alter how the API documentation treats the endpoint.
+
+    {% include note.html content="If the API provider does not support paging, Cloud Elements uses the `page` or `nextPage` and `pageSize` parameters to page through the result set. " %}
+
+7. In **Resource Type** select a resource type other than **API** only if you want to alter how the API documentation treats the endpoint.
 7. In **Next Resource** select another endpoint if your use case requires requests to multiple endpoints one after another.
 8. Continue to [Add Parameters](#add-parameters).
 
@@ -113,24 +118,23 @@ To set up endpoints:
 | Parameter | Description   | Required   |
 | :------------- | :------------- | :------------- |
 |  RootKey  |  Identifies the root object in the JSON that contains the relevant information about the resource.  |  No  |
-|  Pagination Type  |  Identifies whether the resource supports the default pagination settings of the element. If you leave this parameter empty it defaults to Supported.  |  N  |
+|  Pagination Type  |  Identifies whether the resource supports the default pagination settings of the element. If you leave this parameter empty it defaults to Supported.  |  No  |
 |  Resource Type  |  Describes the endpoint, when it executes, and whether it appears in the API documentation.  |  Yes  |
-|    |  API  |  The default resource type where the endpoint makes a request to the API provider and is documented within the API documentation.  |
-|    |  API No Documentation  |  The endpoint makes a request to the API provider but it is hidden from the API documentation.  |
-|    |  On Delete  |  The endpoint makes a request when you delete an element instance. Use this type of resource to clean up after someone deletes an instance of the element.   |
-|    |  On Provision  |  The endpoint makes a request when you authenticate an element instance. Use this type of resource to extract information during the authentication process to add to the element configuration.  |
-|    |  On Request  |  The endpoint makes a request when you make another request.  |
-|    |  On Refresh  |  The endpoint makes a request after the element makes an OAuth2 token refresh request.  |
-|    |  Provision Auth Validation  |  The endpoint makes a request during authentication validation.   |
-|    |  On Provision Webhook  |  The endpoint makes a request during authentication of an element instance to register one or more webhooks with the API provider.   |
-|    |  On Delete Webhook  | The endpoint makes a request during deletion of an element instance to remove one or more webhooks from the API provider.    |
-|    |  OAuth On Authorize URL  |  The endpoint makes a request bypassing the generic OAuth flow.  |
-|    |  OAuth On Token Exchange  |  The endpoint makes a request bypassing the generic OAuth flow.   |
-|    |  OAuth On Token Refresh  | The endpoint makes a request bypassing the generic OAuth flow.    |
-|    |  OAuth On Token Revoke  |  The endpoint makes a request bypassing the generic OAuth flow.   |
-|    |  OAuth On Token Request  | The endpoint makes a request bypassing the generic OAuth flow.    |
-|    |  OAuth1 On Token Request   |  The endpoint makes a request bypassing the generic OAuth flow.   |
-|  Next Resource  |  If [chaining resources](#chain-resources), identifies the endpoint request that follows this request in the chain.  |  N  |
+|    |  API &mdash; The default resource type where the endpoint makes a request to the API provider and is documented within the API documentation.  |  |
+|    |  API No Documentation &mdash; The endpoint makes a request to the API provider but it is hidden from the API documentation.  |  |
+|    |  On Delete &mdash; The endpoint makes a request when you delete an element instance. Use this type of resource to clean up after someone deletes an instance of the element.   |  |
+|    |  On Provision &mdash; The endpoint makes a request when you authenticate an element instance. Use this type of resource to extract information during the authentication process to add to the element configuration.  |  |
+|    |  On Refresh &mdash; The endpoint makes a request after the element makes an OAuth2 token refresh request.  |  |
+|    |  Provision Auth Validation &mdash; The endpoint makes a request during authentication validation.   |  |
+|    |  On Provision Webhook &mdash; The endpoint makes a request during authentication of an element instance to register one or more webhooks with the API provider.   |  |
+|    |  On Delete Webhook &mdash; The endpoint makes a request during deletion of an element instance to remove one or more webhooks from the API provider.    |  |
+|    |  OAuth On Authorize URL &mdash; The endpoint makes a request bypassing the generic OAuth flow.  |  |
+|    |  OAuth On Token Exchange &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
+|    |  OAuth On Token Refresh &mdash; The endpoint makes a request bypassing the generic OAuth flow.    |  |
+|    |  OAuth On Token Revoke &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
+|    |  OAuth On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.    |  |
+|    |  OAuth1 On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
+|  Next Resource  |  If [chaining resources](#chain-resources), identifies the endpoint request that follows this request in the chain.  |  No  |
 
 ### Add Parameters
 
