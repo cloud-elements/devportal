@@ -1,7 +1,7 @@
 ---
 heading: Salesforce Sales Cloud
 seo: Endpoint Setup | Salesforce Sales Cloud | Cloud Elements API Docs
-title: Service Provider Setup
+title: API Provider Setup
 description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance you must have the {{page.heading}} Enterprise edition or Professional edition with API support. Also, to set up a new application in {{page.heading}}, you must have Administrator privileges. Contact your system administrator if you do not have those privileges.
 

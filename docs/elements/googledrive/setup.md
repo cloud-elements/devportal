@@ -1,8 +1,8 @@
 ---
 heading: Google Drive
-seo: Endpoint Setup | Service provider setup | Google Drive | Cloud Elements API Docs
-title: Service Provider Setup
-description: Service provider setup
+seo: API Provider Setup | API Provider setup | Google Drive | Cloud Elements API Docs
+title: API Provider Setup
+description: API Provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 21
@@ -10,14 +10,14 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance you must have a project withe the Google Drive API enabled.
 
 
 {% include note.html content="Google Drive provides the most up-to-date and detailed setup instructions <a href=https://developers.google.com/drive/web/enable-sdk>here</a>." %}
 
-To set up the service provider:
+To set up the API Provider:
 
 1. Navigate to <a href=https://console.developers.google.com/apis/dashboard>your Google Drive developer dashboard</a> and select your Google Drive project.
 

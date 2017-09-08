@@ -42,7 +42,7 @@ You can configure polling [through the UI](#configure-polling-through-the-ui) or
 
 For more information about each field described here, see [Parameters](#parameters).
 
-{% include note.html content="To set up polling, the Sage CRM server time zone, system administrator time zone, and polling configuration must match. See <a href=setup.html>Service Provider Setup</a> for instructions.  " %}
+{% include note.html content="To set up polling, the Sage CRM server time zone, system administrator time zone, and polling configuration must match. See <a href=setup.html>API Provider Setup</a> for instructions.  " %}
 
 To authenticate an element instance with polling:
 

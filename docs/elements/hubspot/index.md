@@ -67,4 +67,4 @@ Pass your tokens and secrets in an Authorization header on a HTTP request.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](setup.html).
+Get started by [setting up the API provider](setup.html).
