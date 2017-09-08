@@ -1,8 +1,8 @@
 ---
 heading: Zendesk
-seo: API Provider Setup | Service provider setup | Zendesk | Cloud Elements API Docs
+seo: API Provider Setup | API Provider setup | Zendesk | Cloud Elements API Docs
 title: API Provider Setup
-description: Service provider setup
+description: API Provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41

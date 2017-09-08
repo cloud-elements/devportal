@@ -13,7 +13,7 @@ sitemap: false
 
 ## Welcome to the BrightTALK Element
 
-BrightTALK is a webinar and video meeting service provider. BrightTALK uses the web service called Bulkloader to provide connections to other services like Oracle Eloqua, HubSpot, and Salesforce Sales Cloud.
+BrightTALK is a webinar and video meeting API provider. BrightTALK uses the web service called Bulkloader to provide connections to other services like Oracle Eloqua, HubSpot, and Salesforce Sales Cloud.
 
 This overview describes basic element details, the Base URL for API calls, and information about authenticating with Cloud Elements.
 

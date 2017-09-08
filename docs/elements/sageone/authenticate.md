@@ -2,7 +2,7 @@
 heading: Sage One
 seo: Authenticate | Sage One | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider
+description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 3458
@@ -38,7 +38,7 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-6. You can choose to authenticate with the default APIM Subscription Key, or you can enter your own. The APIM Subscription Key is the subscription Primary key that you noted in the [Service Provider Setup section](setup.html).
+6. You can choose to authenticate with the default APIM Subscription Key, or you can enter your own. The APIM Subscription Key is the subscription Primary key that you noted in the [API Provider Setup section](setup.html).
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
@@ -68,9 +68,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Service Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider Setup section](setup.html).  |
 
 #### Example cURL
 
@@ -186,11 +186,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [Service Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [Service Provider Setup section](setup.html).| string |
-| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [Service Provider Setup section](setup.html). | string |
-| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [Service Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
+| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [API Provider Setup section](setup.html). | string |
+| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [API Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
 | `country` | The two digit country code associated with the account of the authenticating user. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

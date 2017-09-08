@@ -13,7 +13,7 @@ sitemap: false
 
 # Welcome to the {{page.heading}} Element
 
-The {{page.heading}} element is a part of the the Cloud Elements Accounting Hub. The element provides access to the service provider's accounting features to integrate into applications.
+The {{page.heading}} element is a part of the the Cloud Elements Accounting Hub. The element provides access to the API provider's accounting features to integrate into applications.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](setup.html).
+Get started by [setting up the API provider](setup.html).

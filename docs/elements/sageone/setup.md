@@ -1,7 +1,7 @@
 ---
 heading: Sage One
-seo: Service Provider Setup | Sage One | Cloud Elements API Docs
-title: Service Provider Setup
+seo: API Provider Setup | Sage One | Cloud Elements API Docs
+title: API Provider Setup
 description: Integrate Sage One into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -9,7 +9,7 @@ elementId: 3458
 parent: Back to Element Guides
 order: 2
 ---
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance you must have a developer account with Sage and a GitHub account. You need to provide the following Sage information during the authentication process:
 

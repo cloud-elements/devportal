@@ -22,7 +22,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [service provider's documentation](https://msdn.microsoft.com/library/gg309408.aspx.) |
+|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://msdn.microsoft.com/library/gg309408.aspx.) |
 | Upsert Support | Yes |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select attributes.accountid from accounts`.|
 | Order By Support | No, `order by fieldName` is not supported for this element. |

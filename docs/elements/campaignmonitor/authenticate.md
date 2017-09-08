@@ -2,7 +2,7 @@
 heading: Campaign Monitor
 seo: Authenticate | Name of Element | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider
+description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 3928
@@ -56,7 +56,7 @@ Authenticating through API is a multi-step process that involves:
 
 ### Getting a Redirect URL
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 curl -X GET /elements/api-v2/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>

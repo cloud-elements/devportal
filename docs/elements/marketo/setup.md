@@ -1,8 +1,8 @@
 ---
 heading: Marketo
-seo: Endpoint Setup | Service provider setup | Marketo | Cloud Elements API Docs
-title: Service Provider Setup
-description: Service provider setup
+seo: Endpoint Setup | API Provider setup | Marketo | Cloud Elements API Docs
+title: API Provider Setup
+description: API Provider setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 85
@@ -10,11 +10,11 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance you must first belong to the [LaunchPoint Technology Partner Program](http://pages2.marketo.com/launchpoint-partner.html).  Once you have a Developer Sandbox, complete the setup steps described in this section.
 
-To set up the service provider:
+To set up the API provider:
 
 1. Via a web browser, log in to your Marketo account at [https://login.marketo.com/ ](https://login.marketo.com/ ).
 1. Navigate to the admin area of the Marketo application.

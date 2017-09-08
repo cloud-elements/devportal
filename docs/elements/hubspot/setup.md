@@ -1,6 +1,6 @@
 ---
 heading: Hubspot Marketing
-seo: API Provider Setup | Service provider setup | Hubspot Marketing | Cloud Elements API Docs
+seo: API Provider Setup | API Provider setup | Hubspot Marketing | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup
 layout: sidebarelementdoc

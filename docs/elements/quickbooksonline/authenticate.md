@@ -2,7 +2,7 @@
 heading: Quickbooks Online
 seo: Authenticate | Quickbooks Online | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider
+description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
@@ -77,8 +77,8 @@ GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&call
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
 
 ##### Example cURL
@@ -100,7 +100,7 @@ You will use the token returned on this call to get the redirect URL and to prov
 
 #### Getting a Redirect URL
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&requestToken=insert_fake_request_token&state=quickbooks
@@ -110,8 +110,8 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [Service Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [Service Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
 | requestToken | The token returned from the previous step.
 

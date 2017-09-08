@@ -2,7 +2,7 @@
 heading: LinkedIn
 seo: Authenticate | LinkedIn | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider
+description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 4169
@@ -68,7 +68,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>

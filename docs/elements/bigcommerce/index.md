@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](bigcommerce-endpoint-setup).
+Get started by [setting up the API provider](bigcommerce-endpoint-setup).
