@@ -2,7 +2,7 @@
 heading: Microsoft Dynamics CRM
 seo: Authenticate | MS Dynamics CRM | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider.
+description: Authenticate an element instance with the API provider.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 190
@@ -38,7 +38,7 @@ If you are configuring events, see the [Events section](events.html).
 5. Enter a name for the element instance.
 6. Select an **Authentication Type**:
   * Choose **Custom** to authenticate through user name and password.
-  * Choose **oauth2** to authenticate using the key and client id that you identified in [Service Provider Setup](#setup.html).
+  * Choose **oauth2** to authenticate using the key and client id that you identified in [API Provider Setup](#setup.html).
 6. Enter the parameters required by your selected authentication type. See [Custom Parameters](#custom-parameters) or [OAuth2 Parameters](#oauth-2-0-parameters) for details.
 
     | Custom Authentication | OAuth2 Authentication  |
@@ -153,7 +153,7 @@ Using OAuth 2.0 to authenticate through API follows a multi-step process that in
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>

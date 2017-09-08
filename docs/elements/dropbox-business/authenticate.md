@@ -1,8 +1,8 @@
 ---
 heading: Dropbox Business
-seo: Create Instance | Dropbox Business | Cloud Elements API Docs
-title: Create Instance
-description: Create Instance
+seo: Authenticate | Dropbox Business | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1780

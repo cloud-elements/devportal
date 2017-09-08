@@ -1,7 +1,7 @@
 ---
 heading: QuickBooks Online
-seo: Service Provider Setup | QuickBooks Online | Cloud Elements API Docs
-title: Service Provider Setup
+seo: API Provider Setup | QuickBooks Online | Cloud Elements API Docs
+title: API Provider Setup
 description: Endpoint Setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,11 +10,11 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate a {{page.heading}} element instance, complete the setup steps described in this section.
 
-To set up the service provider:
+To set up the API provider:
 
 1. Via a web browser, log in to your QuickBooks account at [https://developer.intuit.com/us](https://developer.intuit.com/us).
 2. In the menu on the top, click __My Apps__.

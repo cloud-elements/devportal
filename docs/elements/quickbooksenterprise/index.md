@@ -13,7 +13,7 @@ sitemap: false
 
 # Welcome to the {{page.heading}} Element
 
-The {{page.heading}} element is a part of the the Cloud Elements Finance Hub. The element provides access to the service provider's financing features to integrate into applications.
+The {{page.heading}} element is a part of the the Cloud Elements Finance Hub. The element provides access to the API provider's financing features to integrate into applications.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 

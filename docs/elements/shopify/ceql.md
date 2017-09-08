@@ -19,7 +19,15 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 When querying in {{page.heading}}, keep the following in mind:
 
-* You can search by a different set of fields for each resource. You can find more details about which fields you can search by on [Shopify's API resource specific documentation](https://help.shopify.com/api/reference).
+* You can search by a different set of fields for each resource. You can find more details about which fields you can search by on [Shopify's API resource specific documentation](https://help.shopify.com/api/reference). For example, you can search the following fields in `/orders`:
+  * financial_status
+  * fulfillment_status
+  * name
+  * created_since
+  * created_at_max
+  * updated_at_min
+  * updated_at_max
+  * status
 * To query by date for most resources you need to use where = `created_at_min='2017-06-01T07:12:57-04:00'` instead of just querying using the created_at field name.
 * Querying using AND is supported, but OR is not.
 * Use CEQL to query the following endpoints:

@@ -1,8 +1,8 @@
 ---
 heading: ServiceNow OAuth Beta
-seo: Authenticate Instance | ServiceNow OAuth | Cloud Elements API Docs
-title: Authenticate Instance
-description: Authenticate Instance
+seo: Authenticate | ServiceNow OAuth | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 566
@@ -69,7 +69,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>

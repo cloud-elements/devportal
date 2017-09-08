@@ -1,7 +1,7 @@
 ---
 heading: SAP Hybris Cloud for Customer CRM
 seo: Endpoint Setup | SAP Hybris Cloud for Customer CRM | Cloud Elements API Docs
-title: Service Provider Setup
+title: API Provider Setup
 description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
@@ -10,7 +10,7 @@ parent: Back to Element Guides
 order: 5
 ---
 
-# Service Provider Setup
+# API Provider Setup
 
 To authenticate an element instance, use credentials associated with a Development User. The user credentials associated with an authenticated element instance must have access to any resources that you access.
 

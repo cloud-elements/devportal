@@ -1,8 +1,8 @@
 ---
 heading: HubSpot CRM
-seo: Create Instance | HubSpot CRM | Cloud Elements API Docs
-title: Create Instance
-description: Create Instance
+seo: Authenticate | HubSpot CRM | Cloud Elements API Docs
+title: Authenticate
+description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 168

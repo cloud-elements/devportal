@@ -27,27 +27,29 @@ Parameters enable you to configure what you need to send to an API provider with
 
 Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. Therefore, the Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
 
-| OAuth Keys   | Basic and AWS Keys   | Properties Keys |
-| :------------- | :------------- | :------------- |
-|  oauth.basic.header  |  username  | base.url  |
-|  oauth.user.refresh_time  |  password  | pagination.type |
-|  oauth.user.refresh_token  |  aws.api.key  |  pagination.max  |
-|  oauth.user.refresh_interval  |  aws.api.secret  |  pagination.page.startindex  |
-|  oauth.user.token  |  aws.region  |  |
-|  oauth.api.key  |    |  |
-|  oauth.scope  |    |  |
-|  oauth.token.url  |    |  |
-|  oauth.api.secret  |    |  |
-|  oauth.authorization.url  |    |  |
-|  oauth.token.refresh_url  |    |  |
-|  oauth.callback.url  |    |  |
-|  oauth.request.authorization.type  |    |  |
-|  oauth.request.url  |    |  |
+| OAuth Keys   | Basic, Custom, and AWS Keys   | Properties Keys | Events and Bulk |
+| :------------- | :------------- | :------------- | :------------- |
+|  oauth.basic.header  |  username  | base.url  | Any keys beginning bulk. |
+|  oauth.user.refresh_time  |  password  | pagination.type | Any keys beginning event. |
+|  oauth.user.refresh_token  |  aws.api.key  |  pagination.max  | event.notification.instance.finder |
+|  oauth.user.refresh_interval  |  aws.api.secret  |  pagination.page.startindex  | event.vendor.type |
+|  oauth.user.token  |  aws.region  |  | event.poller.refresh_interval |
+|  oauth.api.key  | expires   |  | event.notification.enabled |
+|  oauth.scope  |  expires_in  |  | event.notification.callback.url |
+|  oauth.token.url  |    |  | event.poller.configuration |
+|  oauth.api.secret  |    |  | event.notification.subscription.id |
+|  oauth.authorization.url  |    |  | event.metadata |
+|  oauth.token.refresh_url  |    |  | event.helper.key |
+|  oauth.callback.url  |    |  |  |
+|  oauth.request.authorization.type  |    |  |  |
+|  oauth.request.url  |    |  |  |
 
 
 ## Set Up Element Configuration
 
 The element configuration is the storage place for any data that you need to operate on with parameters and hooks. For example, if the API provider requires something very specific with each request, you can add that to the configuration and then define a parameter that passes the data with each request. You can expose this configuration to the user so they can supply the information when they authenticate. Or, if it is not user specific information, you can store a default value in the configuration to act on later.
+
+Before you set up configurations, review the [Element Conventions](custom-elements.html#element-conventions) so your element will align with others in the Elements Catalog.
 
 To set up a configuration:
 
@@ -69,6 +71,8 @@ To set up a configuration:
 
 Element parameters allow you to pass various properties with each request. You can create parameters that require user input or parameters that get their values from other sources. Use the element parameters to configure searches, pagination, ids, and required fields. You can configure most required and optional parameters for most APIs using parameters and configurations. Map parameters that you send as part of the request from Cloud Elements on the left side of the page to parameters available to the resource at the API provider on the right side.
 ![Add parameters UI](img/resource-parameter.png)
+
+Before you set up parameters, review the [Element Conventions](custom-elements.html#element-conventions) so your element will align with others in the Elements Catalog.
 
 To define a parameter :
 

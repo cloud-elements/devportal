@@ -81,7 +81,6 @@ layout: sidebarelementtile
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
 * [![NetSuite CRM 2016](/assets/img/element-logos/netsuite.png)NetSuite CRM 2016](./elements/netsuite-2016-crm/)
 * [![NetSuite Human Capital 2016](/assets/img/element-logos/netsuite.png)NetSuite Human Capital 2016](./elements/netsuite-2016-human-capital/)
-* [![NetSuite Finance](/assets/img/element-logos/netsuite.png)NetSuite Finance](./elements/netsuite-finance/)
 * [![NetSuite Finance 2016](/assets/img/element-logos/netsuite.png)NetSuite Finance 2016](./elements/netsuite-2016-finance/)
 * [![NetSuite ERP 2016](/assets/img/element-logos/netsuite.png)NetSuite ERP 2016](./elements/netsuite-2016-erp/)
 * [![OneDrive](/assets/img/element-logos/onedrive.png)OneDrive](./elements/onedrive/)

@@ -2,7 +2,7 @@
 heading: Netsuite 2016 Finance
 seo: Authenticate | Netsuite 2016 Finance | Cloud Elements API Docs
 title: Authenticate
-description: Authenticate an element instance with the service provider
+description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 988

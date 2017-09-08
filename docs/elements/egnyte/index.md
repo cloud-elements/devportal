@@ -71,4 +71,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
 {% include error-codes.md %}
 
-Get started by [setting up the service provider](setup.html).
+Get started by [setting up the API provider](setup.html).
