@@ -7,8 +7,8 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
 elementKey: fake
-username: API Secret
-password: password
+username: API Secret  # In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: password # In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 20
 ---

@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Query Language | Name of Element | Cloud Elements API Docs
+heading: Mixpanel
+seo: Query Language | Mixpanel | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
@@ -19,10 +19,9 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
-* GET /messages
+* GET /activities/top
 * GET /{objectName}
 * GET /{objectName}/{objectId}/{childObjectName}
-* GET /social-profiles
 * POST /bulk/query
 * GET /users
 

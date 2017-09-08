@@ -1,8 +1,8 @@
 ---
-heading: Name of Element
-seo: API Docs | Name of Element | Cloud Elements API Docs
+heading: Mixpanel
+seo: API Docs | Mixpanel | Cloud Elements API Docs
 title: API Docs
-description: Name of Element API Documentation.
+description: Mixpanel API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: nn
