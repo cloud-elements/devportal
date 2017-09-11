@@ -1,6 +1,0 @@
-extends: substitution
-message: "'Consider '%s' instead of '%s'"
-ignorecase: true
-level: warning
-swap:
-  hubs: dropping the hubs part

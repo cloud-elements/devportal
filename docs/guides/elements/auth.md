@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Authentication Setup
@@ -9,13 +10,15 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 23
+ValeOn: <!-- vale on -->
 ---
 
 # Custom Authentication Setup
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Authentication"%}
 
-The information that you need to enter to set up authentication with the API provider differs depending on the authentication type. You can use the default flows on this page, but if the API provider requires complex authentication, you can override the default information with configurations, parameters , and hooks.
+The information that you need to enter to set up authentication with the API provider differs depending on the authentication type. If the API provider requires complex authentication you can override the default information with configurations, parameters , and hooks.
+
 
 Click the authentication type that you selected to see configuration instructions. If you selected Custom, you can skip directly to [Configuration and Parameters](config.html).
 
@@ -23,7 +26,7 @@ Click the authentication type that you selected to see configuration instruction
 
 ## Configure OAuth 2.0
 
-Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Prior to setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
+Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Before setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
 To configure OAuth 2.0 elements:
 
@@ -38,7 +41,7 @@ To configure OAuth 2.0 elements:
 3. If the API provider expires tokens, complete the following fields:
   * OAuth Refresh Interval (s)
   * OAuth Token Refresh URL
-  * Oauth Revoke Token URL
+  * OAuth Revoke Token URL
 
 ### OAuth 2.0 Parameters
 
@@ -56,19 +59,19 @@ To configure OAuth 2.0 elements:
 
 ## Configure OAuth 1.0
 
-Cloud Elements provides the [properties](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement these parameters with additional configuration.
+Cloud Elements provides the [parameters](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement the parameters with additional configuration.
 
 To configure OAuth 1.0 elements:
 
 1. Click **Authentication**.
-2. Complete the fields needed to obtain an OAuth Request Token to request user authorization
+2. Complete the fields needed to get an OAuth Request Token to request user authorization
   * OAuth API Key
   * OAuth API Secret
   * OAuth Request URL
   * OAuth Callback URL
 3. In **OAuth Authorization URL** enter the URL where Cloud Elements redirects the user to authorize access.
 4. In **OAuth Token URL** enter the URL where Cloud Elements fetches an access token.
-5. In **OAuth Authorization Type (Header or Query)** select the way that authorization information is passed to the API provider.
+5. In **OAuth Authorization Type (Header or Query)** select how the request passes authorization information to the API provider.
 6. In **OAuth Scope** enter a comma separated list of the permissions that the user will authorize your integration to have.
 7. In **OAuth User Secret** enter
 
@@ -76,7 +79,7 @@ To configure OAuth 1.0 elements:
 
 | Name | Description   | Required   |
 | :------------- | :------------- | :------------- |
-|  OAuth Request URL  |  The URL used to obtain an unauthorized request token. A value used by the Consumer to obtain authorization from the User, and exchanged for an Access Token. |  Y  |
+|  OAuth Request URL  |  The URL used to get an unauthorized request token. |  Y  |
 |  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
 |  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
 |  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
@@ -88,7 +91,7 @@ To configure OAuth 1.0 elements:
 
 ## Configure Basic Authentication
 
-In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with **Username** and **Password** configurations. If you need to add any additional configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
+In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with **Username** and **Password** configurations. If you need to add any other configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
 ### Basic Authentication Parameters
 
@@ -111,7 +114,7 @@ Cloud Elements provides default authentication fields for API providers that use
 
 ## Change the Authentication Type
 
-If you selected the incorrect authentication type, or find that you need to change the authentication for any reason, select another authentication type from the **type** list in the Authentication heading.
+If you selected the incorrect authentication type, or find that you need to change the authentication, select another authentication type from the **type** list in the Authentication heading.
 
 Continue to the next step, [Custom Configuration and Parameters](config.html).
 

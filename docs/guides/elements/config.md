@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Config & Parameters
@@ -9,6 +10,7 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 24
+ValeOn: <!-- vale on -->
 ---
 
 # Custom Configuration and Parameters
@@ -17,7 +19,7 @@ order: 24
 
 Element configuration and parameters work together solve various scenarios presented by API providers. When you set up your element configuration, you define the information that you want to store with the element. The information can include data that you collect from the user when they authenticate an instance of an element. You can also store variables in the configuration that you can act on with parameters and hooks. You can also store information that you need to pass with each request to the API provider.
 
-Parameters enable you to configure what you need to send to an API provider with each request and how the provider expects to receive the information. You can pass variables that you added to the configuration, information provided by the user, specific values, and more.
+Parameters enable you to configure information that you need to send to an API provider with each request and how they expect to receive it. You can pass variables that you added to the configuration, information provided by the user, specific values, and more.
 
 {% include note.html content="The configuration and parameters that you define here affect all requests made by the element. You will also define configurations and parameters specific to each endpoint when you <a href=resources.html>set up resources</a>.  " %}
 
@@ -25,7 +27,7 @@ Parameters enable you to configure what you need to send to an API provider with
 
 ## Reserved Configurations
 
-Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. Therefore, the Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
+Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. The Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
 
 | OAuth Keys   | Basic, Custom, and AWS Keys   | Properties Keys | Events and Bulk |
 | :------------- | :------------- | :------------- | :------------- |
@@ -47,7 +49,7 @@ Each parameter that you set up when [defining the authentication information](au
 
 ## Set Up Element Configuration
 
-The element configuration is the storage place for any data that you need to operate on with parameters and hooks. For example, if the API provider requires something very specific with each request, you can add that to the configuration and then define a parameter that passes the data with each request. You can expose this configuration to the user so they can supply the information when they authenticate. Or, if it is not user specific information, you can store a default value in the configuration to act on later.
+The element configuration is the storage place for any data that you need to operate on with parameters and hooks. For example, if the API provider requires something specific with each request, you can add that to the configuration and then define a parameter that passes the data with each request. You can expose the configuration to the user so that they can supply the information when they authenticate. Or, if it is not user specific information, you can store a default value in the configuration to act on later.
 
 Before you set up configurations, review the [Element Conventions](custom-elements.html#element-conventions) so your element will align with others in the Elements Catalog.
 
@@ -95,7 +97,7 @@ To define a parameter :
 |  Parameter Type  |  The source of the parameter value on the Cloud Elements side.   |  Y  |
 |    |  configuration &mdash; The value of the parameter is the value of the configuration identified by the Configuration Key specified in the Parameter Name. The Parameter Name must match a Configuration Key in the element configuration. |   |
 |    |  header &mdash; The value is the request header parameter that matches the Parameter Name. |    |
-|    |  path &mdash; The value is the portion of the request path that matches the Parameter Name. |    |
+|    |  path &mdash; The value is the part of the request path that matches the Parameter Name. |    |
 |    |  body &mdash; The value is the part of the request body that matches the Parameter Name. |    |
 |    |  query &mdash;  The value is the query parameter that matches the Parameter Name. |    |
 |    |  form  &mdash; The value is the value of the key that matches the Parameter Name in the x-www-form-urlencoded body of a request. If a file, then use "file" as the Parameter Name. |  |
@@ -118,7 +120,7 @@ To define a parameter :
 |    |  no-op &mdash;  Indicates that the API provider does not need to operate on the parameter. Use no-op if you use the parameter in hooks.  |    |
 |  Parameter Source  |  Identifies the side that represents the source, or left side of the parameter. The default request identifies Cloud Elements as the source. If you choose response, you effectively flip the Cloud Elements and API provider sides.  |  Y  |
 |  Parameter Description  |  A free text area to describe the parameter.   |  Y  |
-|  Required  |  Identifies whether the parameter is required. |  Y  |
+|  Required  |  Identifies if the parameter is required. |  Y  |
 
 ## Delete Configurations and Parameters
 

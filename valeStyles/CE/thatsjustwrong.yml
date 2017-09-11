@@ -1,0 +1,6 @@
+extends: substitution
+message: "'Hey! It is '%s' not '%s'"
+ignorecase: false
+level: error
+swap:
+  (?:javascript|Javascript): JavaScript

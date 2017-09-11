@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Resources
@@ -9,6 +10,7 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 40
+ValeOn: <!-- vale on -->
 ---
 
 # Custom Resources
@@ -41,7 +43,7 @@ The last step in setting up an element is to add resources to it. To add a resou
 
 ## Define New Resources
 
-Defining a resource is a multi-step process, but you do not need to complete each step. For example, you need to add hooks only for advanced or complex use cases. You need to configure bulk for only the resources that you you plan to download or upload bulk changes.
+Defining a resource is a multi-step process, but you do not need to complete each step. For example, you need to add hooks only for advanced or complex use cases. You need to configure bulk for only the resources that you plan to download or upload bulk changes.
 
 When defining resources, begin by adding a resource and providing basic information about the resource as a whole. For each endpoint, provide a description and add any endpoint-level configuration. If needed, add parameters to pass along with each request to each endpoint. For more complex use cases, write hooks needed to perform complex tasks. If the method requires models (POST, PUT, PATCH), define the models for each request and response. Lastly, if you want to be able to upload or download bulk CSV or JSON files, configure bulk for the endpoint.
 
@@ -124,7 +126,7 @@ To set up endpoints:
 |    |  API No Documentation &mdash; The endpoint makes a request to the API provider but it is hidden from the API documentation.  |  |
 |    |  On Delete &mdash; The endpoint makes a request when you delete an element instance. Use this type of resource to clean up after someone deletes an instance of the element.   |  |
 |    |  On Provision &mdash; The endpoint makes a request when you authenticate an element instance. Use this type of resource to extract information during the authentication process to add to the element configuration.  |  |
-|    |  On Refresh &mdash; The endpoint makes a request after the element makes an OAuth2 token refresh request.  |  |
+|    |  On Refresh &mdash; The endpoint makes a request after the element makes an OAuth 2.0 token refresh request.  |  |
 |    |  Provision Auth Validation &mdash; The endpoint makes a request during authentication validation.   |  |
 |    |  On Provision Webhook &mdash; The endpoint makes a request during authentication of an element instance to register one or more webhooks with the API provider.   |  |
 |    |  On Delete Webhook &mdash; The endpoint makes a request during deletion of an element instance to remove one or more webhooks from the API provider.    |  |
@@ -142,7 +144,7 @@ To set up endpoints:
 
 Endpoint parameters allow you to pass various properties to the endpoint. Use the endpoint parameters to configure searches, pagination, ids, and required fields. You can configure most required and optional parameters for most endpoints. Cloud Elements provides some default common parameters for each method, except DELETE.
 
-#### Default Parameters for each Method
+#### Default Parameters for Each Method
 
 | GET | GET {id} | POST, PATCH & PUT| DELETE |
 | :------------- | :------------- | :------------- | :------------- |
