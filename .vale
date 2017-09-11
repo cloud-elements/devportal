@@ -4,7 +4,7 @@ MinAlertLevel = suggestion
 
 [*.{md,txt,js,html}] # Only Markdown and .txt files
 # List of styles to load
-BasedOnStyles = vale, write-good, CE
+BasedOnStyles = write-good, CE
 # Style.Rule = {YES, NO, suggestion, warning, error} to
 # enable/disable a rule or change its level.
 write-good.E-Prime = No

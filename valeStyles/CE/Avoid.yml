@@ -3,7 +3,6 @@ message: "Consider removing '%s'"
 ignorecase: true
 level: warning
 tokens:
-  - hubs
   - disruption
   - thought leader
   - internets

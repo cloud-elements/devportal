@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Hooks
@@ -9,13 +10,14 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 26
+ValeOn: <!-- vale on -->
 ---
 
 # Custom Hooks
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
 
-Hooks enable you to execute custom Javascript before an API request (pre-request hook) and after the API provider sends a response (post-response hook). You can use two types of hooks when you create an element: global hooks and resource hooks. Global hooks happen on every request or response, while resource hooks happen only on requests to and responses from specific endpoints.
+Hooks enable you to execute custom JavaScript before an API request (pre-request hook) and after the API provider sends a response (post-response hook). You can use two types of hooks when you create an element: global hooks and resource hooks. Global hooks happen on every request or response, while resource hooks happen only on requests to and responses from specific endpoints.
 
 Use hooks to manipulate any part of a request or response or to operate on a configuration. You might need a hook due to the authentication expected by the endpoint. You might need to send a value to an endpoint, but it requires a different data type than what Cloud Elements supports. You might also need to manipulate headers to extract an ID to include in a response.  See [Examples](#examples) for more use cases.
 
@@ -46,9 +48,9 @@ You can create pre-request and post-response hooks as part of the whole element 
 * To add event hooks: [configure events](events.html), click **Add an event hook**, and then write the script.
 
 
-## Javascript for Hooks
+## JavaScript for Hooks
 
-Use Javascript to write your global or resource hooks. The function signature for all JS in Element Builder looks like:
+Use JavaScript to write your global or resource hooks. The function signature for all JS when building elements looks like:
 
 ```javascript
 /**
@@ -73,14 +75,14 @@ Use Javascript to write your global or resource hooks. The function signature fo
  * @param  {Function} done                   The callback function that you will need to call at the end of your JS
  */
 function(request_body, request_body_map, request_headers, request_path, request_parameters, request_vendor_parameters, request_method, request_vendor_method, request_vendor_path, request_vendor_headers, request_vendor_body, request_vendor_body_map, request_vendor_url, request_expression, request_previous_response, request_previous_response_headers, meta_data, configuration, done) {
-	// your Javascript goes here
+	// your JavaScript goes here
 }
 ```
 
 Note the following when writing javascript in formulas:
 
-* For all scripts, Javascript `strict` mode is enforced.
-* You can use `console.log` to log data to the Javascript console to help debug your formula.
+* For all scripts, JavaScript `strict` mode is enforced.
+* You can use `console.log` to log data to the JavaScript console to help debug your formula.
 * You can use `notify.email` to send an email notification.
 * ES6 is supported.
 * The function parameters are immutable, meaning they cannot be assigned to directly. To change an object or value passed into the function, first copy it to your own local variable and then make the necessary changes.
@@ -105,7 +107,7 @@ In the above example, the `request_vendor_parameters` that are returned will ove
 
 ## Examples
 
-This section presents some possible use cases for hooks. Because you can write Javascript, the possibilities available are limited only to your needs and imagination.
+This section presents some possible use cases for hooks. Because you can write JavaScript, the possibilities available are limited only to your needs and imagination.
 
 * [Global Pre-Request Hook for All Delete Methods](#global-pre-request-hook-for-all-delete-methods)
 * [Pre-Request Hook Using Element Configuration](#pre-request-hook-using-element-configuration)
