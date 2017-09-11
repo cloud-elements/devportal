@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Custom Element Information
@@ -9,6 +10,7 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 22
+ValeOn: <!-- vale on -->
 ---
 
 # Custom Element Information
@@ -28,14 +30,14 @@ To start building an element and provide the basic information:
 ![Build Element](img/btn_build.png)
 1. Review the information on the Builder page, and then click **Create**.
 1. Name and describe the element:
-  * **Element Name** &mdash; The name appears on the element card and should clearly identify the API provider associated with it.
-  * **Element Key** &mdash; Generated from the Element Name by default, but you can enter any text. The element key is used in API requests, so make sure that it easily identifies the element.
+  * **Element Name** &mdash; The name appears on the element card and should identify the API provider associated with it.
+  * **Element Key** &mdash; Generated from the Element Name by default, but you can enter any text. API requests use the element key, so make sure that it identifies the element.
   * **Description** &mdash; The description helps to clarify the purpose of the element. The description appears in the response when you authenticate an instance of the element.
 1. Choose the hub associated with the new element. Make sure that you choose an accurate hub because the you can leverage existing hub resources when you [add resources to the element](resources.html).
 
-    {% include note.html content="You can create your own hub by entering the name of the hub.   " %}, 
+    {% include note.html content="You can create your own hub by entering the name of the hub.   " %},
 
-2. Select the API type used by the API provider. You can usually find the API type in an _Overview_ or _Introduction_ section of the API documentation.
+2. Select the API type used by the API provider. You can find the API type in an _Overview_ or _Introduction_ section of the API documentation.
  * **REST API** &mdash; Select if the API is a REST or RESTful API.
  * **SOAP API** &mdash; Select if the API is a SOAP API.
  * **Database** &mdash; Select of the API is for a database application.
@@ -73,8 +75,8 @@ To start building an element and provide the basic information:
 |   | Database &mdash; for APIs provided by database applications.|  |
 | Authentication Type | The authorization type used by the API provider. Find this in the API docs under _Authorization_ or _Authentication_.  | Y |
 |  | Basic &mdash; Integrations authenticate with the API provider via user name and password.   |
-|  | OAUth 1.0 &mdash; Integrations authenticate with the cloud service via OAuth 1.0. OAuth 1.0 does not require users to expose their credentials. OAuth 1.0 is a three step authentication process. The OAuth 1.0 protocol involves signing the payload on every request and thus is used by many financial services. <br /> While OAuth 1.0 provides a standard way to authenticate, many cloud services implement it in unique ways. Cloud Elements implements OAuth 1.0 to the specification defined at  [OAuth 1.0 specification](https://tools.ietf.org/html/rfc5849). |  |
-|  | OAuth 2.0 &mdash; A newer two step process employed by many of the today’s modern cloud services. OAuth 2.0 is not very strongly specified and many API providers implement it differently,  so make sure that you read the API provider's documentation. Cloud Elements implements OAuth 2 to the specification defined at [OAuth 2.0 specification](https://oauth.net/2/). |  |
+|  | OAuth 1.0 &mdash; Integrations authenticate with the API provider via OAuth 1.0. OAuth 1.0 does not require users to expose their credentials. OAuth 1.0 is a three step authentication process. The OAuth 1.0 protocol involves signing the payload on every request and thus is used by many financial services. <br /> While OAuth 1.0 provides a standard way to authenticate, many cloud services implement it in unique ways. Cloud Elements implements OAuth 1.0 to the specification defined at  [OAuth 1.0 specification](https://tools.ietf.org/html/rfc5849). |  |
+|  | OAuth 2.0 &mdash; A newer two step process employed by many of the todays modern API providers. OAuth 2.0 is not strongly specified and many API providers implement it differently,  so make sure that you read the API provider's documentation. Cloud Elements implements OAuth 2.0 to the specification defined at [OAuth 2.0 specification](https://oauth.net/2/). |  |
 |  | AWS V2 &mdash; Amazon Web Services Signature Version 2 for older AWS resources. |  |
 |  | AWS V4 &mdash; Amazon Web Services Signature Version 4 for the latest AWS resources. |  |
 |  | Custom &mdash; For user-defined authentications, such as passing an API key in the header or login requests made during authentication where tokens are passed. Because OAuth 1.0 and 2.0 are implemented differently at different cloud services, you might need to choose Custom. |  |

@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Element Info | Elements | Cloud Elements API Docs
 title: Build Custom Elements
@@ -9,18 +10,19 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 20
+ValeOn: <!-- vale on -->
 ---
 
 # Build Custom Elements
 
-You can build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can aggregate services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also utilize the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
+You can build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can combine services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also use the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
 
-This guide is intended for individuals familiar with APIs, Javascript, and JSON. To create an element we recommend that you have a thorough understanding of:
+Users of this guide should be familiar with APIs, JavaScript, and JSON. To create an element we recommend that you have a thorough understanding of:
 
 * API authorization concepts
 * Any setup required with the API provider
-* Javascript
-* The API of the API provider that you you are connecting to.
+* JavaScript
+* The API of the API provider that you are connecting to.
 * The API provider's API documentation.
 * The Cloud Elements Hub APIs
 
@@ -32,7 +34,7 @@ While you can work on different parts of an element throughout the entire creati
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active=""%}
 
-## Before you Begin
+## Before You Begin
 
 Before you begin, here is a sampling of questions you need to know the answers to. You can find most of the information needed in the API provider's documentation
 
@@ -48,7 +50,7 @@ Before you begin, here is a sampling of questions you need to know the answers t
 
 ## Manage Custom Elements
 
-If you have already built a custom element or imported an element, you can manage the configuration to keep up with changes at the API provider, add or remove resources, or fine-tune the element. You can identify a custom element by the **private** label that appears on the element card.
+If you have already built or imported a custom element, you can manage the configuration to keep up with changes at the API provider, add or remove resources, or fine-tune the element. You can identify a custom element by the **private** label that appears on the element card.
 
 To manage an existing custom element, hover over the element card, and then click **Configuration**.
 ![Configuration](img/configuration.gif)
@@ -61,7 +63,7 @@ After you build an element, we recommend that you review the checklist below:
 
 {% icon fa-check-square-o %} The element includes an informative description.
 
-{% icon fa-check-square-o %} If building an OAuth 2.0 element in multiple Cloud Elements environments, confirm that the API providers supports all environments.
+{% icon fa-check-square-o %} If building an OAuth 2.0 element in different Cloud Elements environments, confirm that the API providers supports all environments.
 
 {% icon fa-check-square-o %} Check pagination &mdash; pageSize and Pagination type &mdash; to ensure correct information.
 
@@ -69,9 +71,9 @@ After you build an element, we recommend that you review the checklist below:
 
 {% icon fa-check-square-o %} Map an authenticated element instance to a common resource.
 
-{% icon fa-check-square-o %} For polling events, confirm the dates are configured correctly, using the same format as the API provider. Also ensure that the time zone format matches.
+{% icon fa-check-square-o %} For polling events, confirm the correct configuration of dates, using the same format as the API provider. Also ensure that the time zone format matches.
 
-{% icon fa-check-square-o %} For bulk, confirm the dates are configured correctly, using the same format as the API provider.
+{% icon fa-check-square-o %} For bulk, confirm the dates are configured using the same format as the API provider.
 
 ## Element Conventions
 

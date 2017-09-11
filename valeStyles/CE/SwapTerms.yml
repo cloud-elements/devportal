@@ -3,33 +3,36 @@ message: "'Consider using '%s' instead of '%s'"
 ignorecase: true
 level: warning
 swap:
-  provision: authenticate an instance
-  instantiatie: authenticate an instance
-  platform: Cloud Elements
-  console: Cloud Elements
-  Cloud Elements API Management Platform: Cloud Elements
-  Cloud Elements API Manager Console: Cloud Elements
-  Cloud Elements API Integration Platform: Cloud Elements
-  CE Integration Platform: Cloud Elements
-  Cloud Elements Console UI: Cloud Elements
-  API Integration Toolkit: Cloud Elements
-  API Manager Console: Cloud Elements
-  our Console: Cloud Elements
-  Cloud Elements API Manager Console: Cloud Elements
-  Cloud Elements Console: Cloud Elements
-  Manager Console: Cloud Elements
-  Console: Cloud Elements
-  Console UI: Cloud Elements
-  Cloud Elements Console UI: Cloud Elements
-  Cloud Elements Developer Console: Cloud Elements
-  connector: element
-  Element Catalog: Elements Catalog
+  and/or: and
   API call: request, response, or endpoint
   API calls: requests, responses, or endpoints
+  API Integration Toolkit: Cloud Elements
+  API Manager Console: Cloud Elements
+  CE Integration Platform: Cloud Elements
   Cloud elements: Cloud Elements
   cloud elements: Cloud Elements
   cloud Elements: Cloud Elements
-  'java[ -]?scripts?': JavaScript
-  one to many: one-to-many
+  Cloud Elements API Integration Platform: Cloud Elements
+  Cloud Elements API Management Platform: Cloud Elements
+  Cloud Elements API Manager Console: Cloud Elements
+  Cloud Elements Console: Cloud Elements
+  Cloud Elements Developer Console: Cloud Elements
+  Cloud Elements Console UI: Cloud Elements
+  cloud service: API provider
+  connector: element
+  console: Cloud Elements
+  Console: Cloud Elements
+  Console UI: Cloud Elements
+  Element Catalog: Elements Catalog
+  instantiatie: authenticate an instance
   log into: log in to
- Elements Manager: Cloud Elements
+  Manager Console: Cloud Elements
+  (?:OAuth2|OAuth 2 ): OAuth 2.0
+  (?:OAuth1|OAuth 1 ): OAuth 1.0
+  one to many: one-to-many
+  our Console: Cloud Elements
+  platform: Cloud Elements
+  (?:Post-Hook|Post Hook): Post-Response Hook
+  (?:Pre-Hook|Pre Hook): Pre-Request Hook
+  provision: authenticate an instance
+  element token: element instance token

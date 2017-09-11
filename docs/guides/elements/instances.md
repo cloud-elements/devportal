@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Authenticating an Element Instance | Elements | Cloud Elements API Docs
 title: Authenticated Element Instances
@@ -9,6 +10,7 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 10
+ValeOn: <!-- vale on -->
 ---
 
 # Authenticated Element Instances
@@ -25,7 +27,7 @@ Each API provider is different. You can authenticate an element instance through
 
 ## View Element Instance Information
 
-Each authenticated element instance is identifiable by it's unique element instance ID and element instance token. Use the element instance ID to refer to the instance in formulas and scripts. Cloud elements uses the element instance token to authenticate with an API provider. You must pass the element token in the header of any API requests to the element.
+Each authenticated element instance is identifiable by it's unique element instance ID and element instance token. Use the element instance ID to refer to the instance in formulas and scripts. Cloud Elements uses the element instance token to authenticate with an API provider. You must pass the element instance token in the header of any API requests to the element.
 
 To locate your element instance ID and element instance token:
 

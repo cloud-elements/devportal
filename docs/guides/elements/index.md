@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Manage Elements
 seo: Elements | Connectors | Cloud Elements API Docs
 title: Overview
@@ -9,6 +10,7 @@ platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1
+ValeOn: <!-- vale on -->
 ---
 
 {% include callout.html content="<i>Manage Elements</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../../legacy/element-builder/index.html>Element Builder</a>." type="info" %}
