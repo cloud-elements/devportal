@@ -1,11 +1,11 @@
 ---
-heading: Name of Element
-seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+heading: Mixpanel
+seo: API Provider Setup | API provider setup | Mixpanel | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 4441
 username: API Secret  #In Basic authentication, this is the term that we have mapped to our "username" parameter
 password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 callbackURL: Callback URL Name
