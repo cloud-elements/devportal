@@ -7,9 +7,9 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
 elementKey: key
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 5
 ---
@@ -28,7 +28,7 @@ If you already created an application, follow the steps below to locate the **{{
 
 To find your OAuth 2.0 credentials:
 
-1. Log in to your developer account at [{{page.heading}}](https://apiprovider.com).
+1. Log in to your account at [{{page.heading}}](https://apiprovider.com).
 2. Click the application that you want to connect.
 3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
 3. Record the **{{page.callbackURL}}** for your app.
