@@ -85,7 +85,7 @@ GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&call
 ```
 curl -X GET
 -H 'Content-Type: application/json'
-https://api.cloud-elements.com/elements/api-v2/elements/elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>'
+https://api.cloud-elements.com/elements/api-v2/elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>'
 ```
 
 ##### Example Response

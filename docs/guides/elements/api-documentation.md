@@ -2,7 +2,7 @@
 heading: Element Builder
 seo: API Docs | Element Builder | Cloud Elements API Docs
 tags: random, something, else
-title: Platform Documentation
+title: API Reference
 description: Element Builder API Documentation.
 layout: sidebarapidocs
 apis: API Docs
@@ -12,4 +12,4 @@ parent: Back to Guides
 order: 90
 ---
 
-See the  API Documentation in [Manage Elements](../../guides/elements/index.html).
+{% include swagger.html %}

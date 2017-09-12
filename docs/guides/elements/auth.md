@@ -49,7 +49,7 @@ To configure OAuth 2.0 elements:
 | :------------- | :------------- | :------------- |
 |  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
 |  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
-|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
+|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} For authentication through Cloud Elements, use `https://auth.cloudelements.io/oauth`. |  Y  |
 |  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
 |  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
 | OAuth Scope | {{site.data.glossary.eb-scope}} | N |

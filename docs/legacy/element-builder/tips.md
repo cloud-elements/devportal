@@ -3,7 +3,7 @@ heading: Element Builder
 seo: Tips | Element Builder | Cloud Elements API Docs
 title: Tips
 description: Element Builder API Documentation.
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html

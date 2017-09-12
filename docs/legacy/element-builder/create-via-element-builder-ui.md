@@ -3,7 +3,7 @@ heading: Element Builder
 seo: Create Element via Element Builder UI | Element Builder | Cloud Elements API Docs
 title: Create Element via Element Builder UI
 description: Create a new Element via the Element Builder UI.
-layout: sidebarleft
+layout: sidebarelementdoc
 apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
@@ -13,7 +13,7 @@ order: 3
 
 ## Element Builder UI BETA
 
-Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.  
+Element Builder gives you the ability to create custom integrations to cloud services using the Cloud Elements API Management Platform.
 
 Twitter will be used for this demonstration.  A new Twitter connected app must be created prior to building the Element.
 

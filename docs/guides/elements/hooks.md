@@ -21,6 +21,8 @@ Hooks enable you to execute custom JavaScript before an API request (pre-request
 
 Use hooks to manipulate any part of a request or response or to operate on a configuration. You might need a hook due to the authentication expected by the endpoint. You might need to send a value to an endpoint, but it requires a different data type than what Cloud Elements supports. You might also need to manipulate headers to extract an ID to include in a response.  See [Examples](#examples) for more use cases.
 
+{% include callout.html content="<strong>On this page</strong></br><a href=#definitions>Definitions</a></br><a href=#add-hooks>Add Hooks</a></br><a href=#javascript-for-hooks>JavaScript for Hooks</a></br><a href=#the-done-function>The done Function</a></br><a href=#examples>Examples</a>" type="info" %}
+
 ## Definitions
 
 <dl>
