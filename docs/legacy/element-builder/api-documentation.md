@@ -1,7 +1,6 @@
 ---
 heading: Element Builder
 seo: API Docs | Element Builder | Cloud Elements API Docs
-tags: random, something, else
 title: Platform Documentation
 description: Element Builder API Documentation.
 layout: sidebarapidocs
