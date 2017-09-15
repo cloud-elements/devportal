@@ -21,13 +21,13 @@ The information that you need to enter to set up authentication with the API pro
 
 Click the authentication type that you selected to see configuration instructions. If you selected Custom, you can skip directly to [Configuration and Parameters](config.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About Oauth Authentication</a>" type="info" %}
 
 ## Configure OAuth 2.0
 
 Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Before setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
-The [OAuth 2.0](#oauth-2-0) entry in the [About Authentication](#about-authentication) section includes more details about the most common OAuth 2.0 authentication flow and example OAuth 2.0 element to download and import.
+The [OAuth 2.0](#oauth-2-0) entry in the [About Authentication](#about-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
 
 To configure OAuth 2.0 elements:
 
@@ -61,6 +61,8 @@ To configure OAuth 2.0 elements:
 ## Configure OAuth 1.0
 
 Cloud Elements provides the [parameters](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement the parameters with additional configuration.
+
+The [OAuth 1.0](#oauth-1-0) entry in the [About Authentication](#about-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
 
 To configure OAuth 1.0 elements:
 
@@ -124,6 +126,8 @@ Continue to the next step, [Custom Configuration and Parameters](config.html).
 
 ## About Authentication
 
+OAuth is a common authentication protocol for REST APIs and Cloud Elements supports both [OAuth 2.0](#oauth-2-0) and [OAuth 1.0](##oauth-1-0). You need to set up more information for OAuth elements than other authentication types. This section provides more details about how these authentication types work and how Cloud Elements uses the information you provide when building custom elements.
+
 ### OAuth 2.0
 
 The OAuth 2.0 protocol lets external applications &mdash; your application or Cloud Elements &mdash; request authorization to access and update a users data without asking users for sensitive user names and passwords. OAuth 2.0 is flexible, but that also means that each API provider implements it differently.
@@ -138,7 +142,7 @@ This section describes how Cloud Elements supports the [Authorization Code Grant
 
 ![OAuth 2 Flow](img/OAuth-2-flow.png)
 
-The typical Authorization Code Grant as supported by Cloud Elements includes the following steps:
+The typical Authorization Code Grant flow as supported by Cloud Elements includes the following steps:
 
 1. Cloud Elements requests authorization on behalf of your app by redirecting a user to the API provider's **Authorization URL**. Cloud Elements includes the following parameters as part of the request:
   * **OAuth API Key**
@@ -158,13 +162,13 @@ The typical Authorization Code Grant as supported by Cloud Elements includes the
 7. If the tokens expire, Cloud Elements sends the refresh token to the **OAuth Token Refresh URL** at the specified **OAuth Refresh Interval (s)**.
 8. The API provider responds with a new access token and refresh token to be used at the next refresh.
 
-#### Prerequisites
+#### OAuth 2.0 Prerequisites
 
-Before you can authenticate an element instance, you must register your application with the API provider. Each registration is assigned some form of an API key (client id, client key, etc.) and secret. In Cloud Elements, these are the **OAuth API Key** and **OAuth API Secret**. You also usually need to provide a redirect URI which should match what you include in the **OAuth Callback URL**. If you want users to authentciate through Cloud Elements as opposed to programmatically through APIs in your application, use `https://auth.cloudelements.io/oauth`.
+Before you can authenticate an element instance, you must register your application with the API provider. Each registration is assigned some form of an API key (client id, client key, etc.) and secret. In Cloud Elements, these are the **OAuth API Key** and **OAuth API Secret**. You also usually need to provide a redirect URI which should match what you include in the **OAuth Callback URL**. If you want users to authenticate through Cloud Elements as opposed to programmatically through APIs in your application, use `https://auth.cloudelements.io/oauth`.
 
 Some API provider require scopes let you limit the authorization to a subset of the data. When users grant authorization, they are shown the scopes and acknowledge that they grant access to them. The user must allow access to all or to none. The scopes that you set up in the application should match the **OAuth Scope**.
 
-#### Authentication JSON
+#### OAuth 2.0 Authentication JSON
 
 The JSON used to authenticate an element instance looks like this:
 
@@ -186,5 +190,61 @@ The JSON used to authenticate an element instance looks like this:
     "<Add_Your_Tag>"
   ],
   "name": "<INSTANCE_NAME>"
+}
+```
+
+### OAuth 1.0
+
+OAuth 1.0 is an older version of the OAuth protocol. Like OAuth 2.0, the OAuth 1.0 protocol lets external applications &mdash; your application or Cloud Elements &mdash; request authorization to access and update a users data without asking users for sensitive user names and passwords. OAuth 1.0 is also flexible with multiple different ways to implement it.
+
+This section describes how Cloud Elements supports the [OAuth Core 1.0 Revision A](https://oauth.net/core/1.0a/) authentication flow. The typical OAuth 1.0 authorization flow is a three-legged authentication process:
+
+1. Request temporary credentials. Cloud Elements requests temporary credentials in the form of a Request Token from the API provider.
+2. Authorize. The user logs in to the API provider and grants the temporary Request Token access.
+3. Token exchange. Cloud Elements exchanges the temporary Request Token for a more long-term access token.
+
+#### Cloud Elements OAuth 1.0 Flow
+
+![OAuth 1 Flow](img/OAuth-1-flow.png)
+
+The typical OAuth 1.0 flow as supported by Cloud Elements includes the following steps:
+
+1. Cloud Elements sends a request to the API provider's **OAuth Request URL** for a Request Token. Cloud Elements includes the following parameters as part of the request:
+  * **OAuth API Key**
+  * **OAuth API Secret**
+  * **OAuth Callback URL**
+2. The API provider returns the temporary Request Token and a secret associated with the token.
+2. Cloud Elements directs the user to the **OAuth Authorization URL** where they log in and grant access. If the request included **OAuth Scope**, the user must grant access to all scopes or none.
+3. The API provider authorizes the temporary Request Token and redirects the user back to the **OAuth Callback URL** with the authorized Request Token and an OAuth verifier.
+4. Cloud Elements sends a request to the **OAuth Token URL** and exchanges the authorized Request Token for a long-term Access Token.
+6. Cloud Elements associates an element instance token with the Access Token. You will use that element instance token in future requests.
+
+#### OAuth 1.0 Prerequisites
+
+Before you can authenticate an element instance, you must register your application with the API provider. Each registration is assigned some form of an API key (client id, client key, etc.) and secret. In Cloud Elements, these are the **OAuth API Key** and **OAuth API Secret**. You also usually need to provide a redirect URI which should match what you include in the **OAuth Callback URL**. If you want users to authenticate through Cloud Elements as opposed to programmatically through APIs in your application, use `https://auth.cloudelements.io/oauth`.
+
+#### OAuth 1.0 Authentication JSON
+
+The JSON used to authenticate an element instance looks like this:
+
+```json
+{
+  "element": {
+    "key": "twitter"
+  },
+  "providerData": {
+    "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
+    "oauth_verifier": "<OAUTH_VERIFIER_RETURNED_IN_OAUTH_EXCHANGE>",
+    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>"
+  },
+  "configuration": {
+    "oauth.api.key": "<INSERT_QUICKBOOKS_API_KEY>",
+    "oauth.api.secret": "<INSERT_QUICKBOOKS_API_SECRET>",
+    "oauth.callback.url": "<SAME CALLBACK URL USED IN STEP 2>"
+  },
+  "tags": [
+    "<INSERT_TAGS>"
+  ],
+  "name": "<INSERT_INSTANCE_NAME>"
 }
 ```

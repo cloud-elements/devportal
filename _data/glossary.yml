@@ -52,7 +52,7 @@ eb-callback-url: "The URL that will receive the authorization code from the API 
 
 eb-auth-url: "The URL where a user authorizes the application to access their information at the API provider."
 
-eb-token-url: "The URL where the application exchanges the authorization grant code for an access token."
+eb-token-url: "The URL where the application exchanges the authorization grant code or request token for an access token."
 
 eb-scope: "A comma separated list of the permissions that the user will authorize your integration to have."
 
