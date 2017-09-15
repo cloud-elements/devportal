@@ -21,13 +21,13 @@ The information that you need to enter to set up authentication with the API pro
 
 Click the authentication type that you selected to see configuration instructions. If you selected Custom, you can skip directly to [Configuration and Parameters](config.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About Oauth Authentication</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About OAuth Authentication</a>" type="info" %}
 
 ## Configure OAuth 2.0
 
 Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Before setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
-The [OAuth 2.0](#oauth-2-0) entry in the [About Authentication](#about-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
+The [OAuth 2.0](#oauth-2-0) entry in the [About OAuth Authentication](#about-oauth-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
 
 To configure OAuth 2.0 elements:
 
@@ -124,9 +124,9 @@ Continue to the next step, [Custom Configuration and Parameters](config.html).
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
 
 
-## About Authentication
+## About OAuth Authentication
 
-OAuth is a common authentication protocol for REST APIs and Cloud Elements supports both [OAuth 2.0](#oauth-2-0) and [OAuth 1.0](##oauth-1-0). You need to set up more information for OAuth elements than other authentication types. This section provides more details about how these authentication types work and how Cloud Elements uses the information you provide when building custom elements.
+OAuth is a common authentication protocol for REST APIs and Cloud Elements supports both [OAuth 2.0](#oauth-2-0) and [OAuth 1.0](#oauth-1-0). You need to set up more information for OAuth elements than other authentication types. This section provides more details about how these authentication types work and how Cloud Elements uses the information you provide when building custom elements.
 
 ### OAuth 2.0
 
