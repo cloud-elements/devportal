@@ -52,7 +52,7 @@ eb-callback-url: "The URL that will receive the authorization code from the API 
 
 eb-auth-url: "The URL where a user authorizes the application to access their information at the API provider."
 
-eb-token-url: "The URL where the application exchanges the authorization grant code for an access token."
+eb-token-url: "The URL where the application exchanges the authorization grant code or request token for an access token."
 
 eb-scope: "A comma separated list of the permissions that the user will authorize your integration to have."
 
@@ -72,9 +72,9 @@ element-auth-api-key: "The API key or client ID obtained from registering your a
 
 element-auth-api-secret: "The client secret obtained from registering your app with the API provider.  "
 
-element-auth-oauth-callback: "The Callback URL  for the connected app you created."
+element-auth-oauth-callback: "The URL that the API provider returns a user to after they authorize access. "
 
-element-auth-grant-code: "The authorization grant code returned from the API provider in an OAuth2 authentication workflow. Cloud Elements uses the code to retrieve the OAuth access and refresh tokens from the endpoint"
+element-auth-grant-code: "The authorization grant code returned from the API provider in an OAuth 2.0 authentication workflow. Cloud Elements uses the code to retrieve the OAuth access and refresh tokens from the endpoint"
 
 element-auth-tags: "<em>Optional</em>. User-defined tags to further identify the instance."
 
