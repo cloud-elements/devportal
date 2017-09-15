@@ -13,4 +13,5 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem 'redcarpet' 
   gem 'jekyll-youtube'
+  gem 'html-proofer'
 end
