@@ -60,6 +60,7 @@ layout: sidebarelementtile
 * [![Hootsuite](/assets/img/element-logos/hootsuite.png)Hootsuite](./elements/hootsuite/)
 * [![HubSpot CRM](/assets/img/element-logos/hubspot.png)HubSpot CRM](./elements/hubspot-crm/)
 * [![HubSpot Marketing](/assets/img/element-logos/hubspot.png)HubSpot Marketing](./elements/hubspot/)
+* [![iContact](/assets/img/element-logos/provider_icontact.png)iContact](./elements/icontact/)
 * [![Infusionsoft CRM](/assets/img/element-logos/infusionsoft.png)Infusionsoft CRM Beta](./elements/infusionsoft-crm/)
 * [![Infusionsoft eCommerce](/assets/img/element-logos/infusionsoft.png)Infusionsoft eCommerce](./elements/infusionsoft-ecommerce/)
 * [![Infusionsoft Marketing](/assets/img/element-logos/infusionsoft.png)Infusionsoft Marketing Beta](./elements/infusionsoft-marketing/)

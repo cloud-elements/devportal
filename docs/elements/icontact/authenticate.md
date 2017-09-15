@@ -1,14 +1,14 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: iContact
+seo: Authenticate | iContact | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-username: username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
-password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
+elementId: 4376
+elementKey: icontact
+username: iContact username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: API password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 20
 ---
@@ -21,7 +21,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **Username**  and **Password** that you identified in [API Provider Setup](#setup.html).
+Use the UI to authenticate with {{page.heading}} and create an element instance. You will need the information that you identified in [API Provider Setup](#setup.html).
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -32,7 +32,10 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](../img/Create-Instance.gif)
 5. Enter a name for the element instance.
-6. In **User Name** and **Password** enter the  **{{page.username}}** and **{{page.password}}** that you identified in [API Provider Setup](#setup.html).
+6. In **API-Version** enter the API version that you identified in [API Provider Setup](#setup.html).
+7. In **AppID** enter the API-AppID that you identified in [API Provider Setup](#setup.html).
+8. In API -Username enter the {{page.username}} used to log in.
+6. In API-Password enter the **{{page.password}}** that you identified in [API Provider Setup](#setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 
@@ -53,8 +56,10 @@ To authenticate an element instance:
         "key": "{{page.elementKey}}"
       },
       "configuration": {
-        "username": "<{{page.heading}} {{page.username}}>",
-        "password": "<{{page.heading}} {{page.password}}>"
+        "api.version": "<{{page.heading}} Api version>",
+        "AppID": "<{{page.heading}} Api-AppId>",
+        "api.username": "<{{page.heading}} {{page.username}}>",
+        "api.password": "<{{page.heading}} {{page.password}}>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -83,8 +88,10 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "configuration": {
-    "username": "xxxxxxxxxxxxxxxxxx",
-    "password": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "api.version": "2.0",
+    "AppID": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "api.username": "xxxxxxx@mycoolapp.com",
+    "api.password": "xxxxxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -101,9 +108,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| Username</br>`username` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
-| Password</br>`password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
+| Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| API Version</br>`api.version` |  The {{page.heading}} API version that you noted in [API Provider Setup](setup.html). |  string |  | string  |
+| AppId</br>`AppID` |  The {{page.heading}} API-AppId that you noted in [API Provider Setup](setup.html). |  string |  | string  |
+| API-Username</br>`api.username` | The {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+| API-Password</br>`api.password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
