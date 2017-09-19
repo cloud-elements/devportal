@@ -1,48 +1,20 @@
 account: "The second level of the accounts and users hierarchy that represents your customers."
 
+bulk: "The Cloud Elements APIs used to move large amounts of data."
+
+bulk-full: "Bulk APIs are the Cloud Elements APIs used to move large amounts of data. Cloud Elements provides the ability to upload and download data in bulk from an endpoint in a normalized way. Cloud Elements will leverage the provider bulk endpoints whenever that is available. But, when the API provider has no bulk endpoints, we provide a pseudo bulk service for uploading and downloading data from the endpoint. For uploads, we accept a file, and then create objects at the endpoint on a record-by-record basis. For downloads, we execute a search API against the endpoint, and loop through all results until we have retrieved all the data. Cloud Elements stores these files (encrypted) in our platform for a maximum of three days."
+
 ce-ui: "The Cloud Elements user interface that provides access to the features and APIs avalable with Cloud Elements."
 
-common_resource: "An API resource that defines normalized fields for frequently used resources that you can use in place of specific elements to facilitate one-to-many integrations. You map fields from element resources to the common resource fields to create transformations."
+ceql: "Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all of our different elements. "
 
-element: "An enhanced connector that provides a unified developer experience into a specific cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo)."
+ceql-full: "CEQL is the Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all of our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all of our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint."
 
-element-instance: "The specific authenticated instance of an element."
+common_resource: "A stand-alone resource, created and defined by a user with the intention of creating a one-to-many transformation."
 
-element-instance-resource: "The resources available to the element instance through its API."
+common-resource-full: "A Common Resource is a stand-alone resource, created and defined by a user with the intention of creating a one-to-many transformation. Common resources define normalized fields that you can use in place of specific elements to facilitate one-to-many integrations. You map fields from element resources to the common resource fields to create transformations."
 
-field: "Data within a resource."
-
-formula-instance: "A specific instance of a formula template configured with explicit variables and associated with specific element instances."
-
-formula-step: "An individual step within a formula workflow that can include branches to subsequent success and failure steps."
-
-formula-template: "A reusable workflow that is independent of the Element and includes the triggers, steps, and variables for a formula instance to execute the workflow. "
-
-formula-trigger: "An action that occurs and kicks off a formula. Triggers can be events set up on an element instance, an API call to an element instance, a scheduled occurrence, or manually triggered."
-
-formula-variable: "Variables that represent either element instances or specific values that must be supplied for each formula instance."
-
-hub: "A collection of elements where the APIs of those elements have been normalized to a standard defined by the Hub."
-
-map: "The process of associating objects within a vendor's resource to objects in a common resource so the vendor objects can be transformed."
-
-normalize: "Relates to transforming information from vendors to a common language within Cloud Elements."
-
-one-to-many: "Enables developers to write to one API to integrate multiple elements."
-
-organization: "The top level of the accounts and users hierarchy that represents the Cloud Elements customer."
-
-organization-administrator: "The user  that can manage accounts and is associated with the initial sign up with Cloud Elements."
-
-polling: "An event option where Cloud Elements checks for changes to a resource in a configurable duration and captures the changed information"
-
-resource: "Specific endpoints within an API that contain objects accessible via the API. "
-
-transformation: "The conversion of objects in the vendor's resource to objects in a common resource."
-
-user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
-
-webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."
+discovery-service: "Cloud Elements includes a comprehensive data discovery service that provides normalized metadata, such as the list of  field names and types. Additional information, if available from an endpoint, may also be obtained such as: display name, read-only, etc. If an endpoint doesn’t provide discovery service APIs, Cloud Elements will still provide a minimum set of metadata about the given resource (e.g., name and type). Cloud Elements also allows you to discover custom fields (as long as the values are not empty), by supplying an object Id when a native discovery service is not available. The Discovery Service is used along with the Transformation Service to normalize the responses across endpoints."
 
 eb-api-key: "The default API Key used to authenticate with the API provider. Most API providers call this some variation of key or id, such as Key, API Key, or Client ID."
 
@@ -66,6 +38,16 @@ eb-post-response-hook: "A script that executes after recieving a response from a
 
 eb-hook: "A script that you build for elements that operates on reequests and responses and that can be applied to all requests or resposnes or specific endpoints."
 
+element: "An enhanced connector that provides a unified developer experience into a specific cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo)."
+
+element-full: "An Element is a pre-built API integration that enables a connection into a specific API Provider endpoint (e.g., Salesforce, Quickbooks, or Marketo). All Elements start with a normalized set of features, including authentication, resources, paging, errors, events and search. At the hub level, we also seek to support the richer set of APIs that an application provides, even when not all of the Elements in that category share that resource. "
+
+element-instance: "The specific authenticated instance of an element."
+
+element-instance-full: "An Authenticated Element Instance is single authenticated connection of an element between Cloud Elements and an account at an API provider such as a Salesforce, Marketo, or Netsuite. An authenticated element instance can access all of the objects, fields, and data for that account &mdash; including custom data. An authenticated element instance is created when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials for that Element, and optional event configuration. "
+
+element-instance-resource: "The resources available to the element instance through its API."
+
 element-card: "Each element appears in the elements catalog on its own card that shows basic information about the element and enables access to the ways that you can your with an element."
 
 element-auth-api-key: "The API key or client ID obtained from registering your app with the provider. "
@@ -81,3 +63,53 @@ element-auth-tags: "<em>Optional</em>. User-defined tags to further identify the
 element-auth-state: "A customizable identifier, typically the element key"
 
 element-auth-name: "The name of the element instance created during authentication. "
+
+endpoint: "A unique URI that represents a resource and includes the HTTP method and resource."
+
+endpoint-full: "A unique URI that represents a resource and includes the HTTP method and resource. it includes the method (GET, PUT, PATCH), the base URL, and the resource."
+
+event: "An action that occurs at an API provider associated with an authenticated element instance and is monitored either through Polling or Webhooks."
+
+field: "Data within a resource."
+
+formula-instance: "A specific instance of a formula template configured with explicit variables and associated with specific element instances."
+
+formula-step: "An individual step within a formula workflow that can include branches to subsequent success and failure steps."
+
+formula-template: "A reusable workflow that is independent of the Element and includes the triggers, steps, and variables for a formula instance to execute the workflow. "
+
+formula-template-full: "A Formula Template is a reusable workflow that is independent of the element and includes the triggers, steps, and variables for a formula instance to execute the workflow. The steps in a formula template accomplish a wide variety of use cases across different services, such as keeping systems in sync, migrating data between systems, and automating business workflows."
+
+formula-trigger: "An action that occurs and kicks off a formula. Triggers can be events set up on an element instance, an API call to an element instance, a scheduled occurrence, or manually triggered."
+
+formula-variable: "Variables that represent either element instances or specific values that must be supplied for each formula instance."
+
+hub: "A collection of elements where the APIs of those elements have been normalized to a standard defined by the Hub."
+
+hub-full: "An API Hub (Hub) provides uniform APIs to access a collection of resources enabling one-to-many API access to multiple API providers. For example, the CRM hub provides normalized access to multiple CRM application services including Salesforce, Microsoft Dynamics, Netsuite CRM, Sugar CRM, Zoho CRM, and Autotask (we call a connection to each service an Element). Your application can write to the “One” uniform API and get access to “Many” application services in that category. Within the CRM Hub, Cloud Elements has normalized the API calls to multiple resources such as Accounts, Contacts, Leads, Opportunities and more. Hubs represent the intersection of resources across the Elements within that category of application services."
+
+map: "The process of associating objects within a vendor's resource to objects in a common resource so the vendor objects can be transformed."
+
+normalize: "Relates to transforming information from vendors to a common language within Cloud Elements."
+
+oauth-proxy: "The OAuth Proxy feature gives you the capability to have multiple environments, such as development, QA, etc, with one endpoint application. For example some vendors only allow one callback URL per application. The proxy will allow for the same callback URL to be used with multiple application endpoints. You would then use the proxy address as the Callback URL instead of your own Callback URL. This permits multiple endpoint applications to one callback URL."
+
+one-to-many: "Enables developers to write to one API to integrate multiple elements."
+
+organization: "The top level of the accounts and users hierarchy that represents the Cloud Elements customer."
+
+organization-administrator: "The user  that can manage accounts and is associated with the initial sign up with Cloud Elements."
+
+payload: "The data returned from an API response. Or, the body of an API request."
+
+polling: "An event option where Cloud Elements checks for changes to a resource in a configurable duration and captures the changed information"
+
+resource: "An object or entity that can be accessed via a URI request. "
+
+transformation: "The result of mapping an API provider resource to a common resource."
+
+transformation-full: "A Transformation is the result of mapping an API provider resource to a common resource. This allows you to define the fields to include in a specific resource, map those fields to the fields cotaining the same data in the provider resource, and then transform the data to match the common resource."
+
+user: "The third level of the accounts and users hierarchy that represents individual instances of elements and transformations."
+
+webhooks: "An event option where the service provider notifies Cloud Elements that changes to a resouce occurred. Typically you must configure webhooks settings at the service provider prior to implementing webhooks for your authenticated element instance."

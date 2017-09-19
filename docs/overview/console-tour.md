@@ -11,9 +11,30 @@ sitemap: false
 
 ## Cloud Elements Tour
 
-### Element Catalog
+![Welcome](img/welcome.png)
 
-After logging into Cloud Elements, you will see our Elements Catalog.  This list contains all of the leading cloud services that we have enabled through our platform.  Don’t see an Element you need?  Build it yourself through our Element Builder!
+<img src="img/1.png" alt="1" class="inlineImage"> Wherever you are in Cloud Elements, click to return to the Welcome page.
+
+<img src="img/2.png" alt="1" class="inlineImage"> Visit the Elements Catalog to see the list of  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a>, our enhanced connectors.
+
+<img src="img/3.png" alt="1" class="inlineImage"> Define a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a>, map fields to it, and  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.transformation}}">transform</a> your API provider data.
+
+<img src="img/4.png" alt="1" class="inlineImage"> Build a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.formula-template}}">formula template</a> and manage individual  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.formula-instance}}">formula instances</a>.
+
+<img src="img/5.png" alt="1" class="inlineImage"> See system logs and review metrics.
+
+<img src="img/6.png" alt="1" class="inlineImage"> Review any system alerts and messages.
+
+<img src="img/7.png" alt="1" class="inlineImage"> Get to know our APIs through our interactive API docs.
+
+<img src="img/8.png" alt="1" class="inlineImage"> Access profile information including your accounts and access credentials, contact support, or learn something in our developer documentation, Cloud Elements University, or Release Notes.
+
+<img src="img/9.png" alt="9" class="inlineImage"> Get familiar with the application through a brief introductory video.
+
+
+### Elements Catalog
+
+The Elements Catalog provides a list of the API providers available through our platform.  If you don’t see an element that you need, build it yourself. 
 
 
 ### Menu Items
