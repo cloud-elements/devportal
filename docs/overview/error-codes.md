@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Standard Error Codes
 seo: Standard Error Codes | Cloud Elements API Docs
 title: Standard Error Codes
@@ -8,6 +9,7 @@ order: 6
 breadcrumbs: /docs/guides/home.html
 published: true
 sitemap: true
+ValeOn: <!-- vale on -->
 ---
 
 {% include error-codes.md %}

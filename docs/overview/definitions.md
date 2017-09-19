@@ -1,4 +1,5 @@
 ---
+valeOff: <!-- vale off -->
 heading: Cloud Elements Definitions
 seo: Cloud Elements Definitions | Cloud Elements API Docs
 title: Definitions
@@ -7,6 +8,7 @@ layout: sidebarleft
 order: 2
 published: true
 sitemap: false
+ValeOn: <!-- vale on -->
 ---
 
 See the entries below for definitions of some common terms that you'll encounter while using Cloud Elements.
@@ -17,7 +19,7 @@ See the entries below for definitions of some common terms that you'll encounter
 
 {{site.data.glossary.hub-full}}
 
-We normalize our API calls for all endpoints, to enable calls between services e.g. Salesforce to HubSpot. However, with this feature, certain endpoint resources cannot be mapped for each hub.
+We normalize our API calls for all endpoints, to enable calls between services e.g., Salesforce to HubSpot. However, with this feature, certain endpoint resources cannot be mapped for each hub.
 
 * Hubs provide uniform APIs to access any collection of elements or a set of resources.
 * Hubs enable “One-to-Many” access to an entire category of services.

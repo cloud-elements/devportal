@@ -2,13 +2,13 @@ account: "The second level of the accounts and users hierarchy that represents y
 
 bulk: "The Cloud Elements APIs used to move large amounts of data."
 
-bulk-full: "Bulk APIs are the Cloud Elements APIs used to move large amounts of data. Cloud Elements provides the ability to upload and download data in bulk from an endpoint in a normalized way. Cloud Elements will leverage the provider bulk endpoints whenever that is available. But, when the API provider has no bulk endpoints, we provide a pseudo bulk service for uploading and downloading data from the endpoint. For uploads, we accept a file, and then create objects at the endpoint on a record-by-record basis. For downloads, we execute a search API against the endpoint, and loop through all results until we have retrieved all the data. Cloud Elements stores these files (encrypted) in our platform for a maximum of three days."
+bulk-full: "Bulk APIs are the Cloud Elements APIs used to move large amounts of data. Cloud Elements provides the ability to upload and download data in bulk from an endpoint in a normalized way. Cloud Elements will leverage the provider bulk endpoints whenever that is available. But, when the API provider has no bulk endpoints, we provide a pseudo bulk service for uploading and downloading data from the endpoint. For uploads, we accept a file, and then create objects at the endpoint on a record-by-record basis. For downloads, we execute a search API against the endpoint, and loop through all results until we have retrieved all the data. Cloud Elements stores the files (encrypted) on Cloud Elements servers for a maximum of three days."
 
 ce-ui: "The Cloud Elements user interface that provides access to the features and APIs avalable with Cloud Elements."
 
-ceql: "Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all of our different elements. "
+ceql: "Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all our different elements. "
 
-ceql-full: "CEQL is the Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all of our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all of our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint."
+ceql-full: "CEQL is the Cloud Elements Query Language. The search and filter language used by Cloud Elements to standardize searching across all our different elements. Many APIs support some form of searching in their APIs but they’re almost all different, so we have standardized a common way to search across all our elements. Cloud Elements translates the CEQL to the endpoint’s searching syntax, however at times, CEQL supports more than the endpoint."
 
 common_resource: "A stand-alone resource, created and defined by a user with the intention of creating a one-to-many transformation."
 
@@ -40,11 +40,11 @@ eb-hook: "A script that you build for elements that operates on reequests and re
 
 element: "An enhanced connector that provides a unified developer experience into a specific cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo)."
 
-element-full: "An Element is a pre-built API integration that enables a connection into a specific API Provider endpoint (e.g., Salesforce, Quickbooks, or Marketo). All Elements start with a normalized set of features, including authentication, resources, paging, errors, events and search. At the hub level, we also seek to support the richer set of APIs that an application provides, even when not all of the Elements in that category share that resource. "
+element-full: "An Element is a pre-built API integration that enables a connection into a specific API Provider endpoint (e.g., Salesforce, Quickbooks, or Marketo). All Elements start with a normalized set of features, including authentication, resources, paging, errors, events and search. At the hub level, we also seek to support the richer set of APIs that an application provides, even when not all the Elements in that category share that resource. "
 
 element-instance: "The specific authenticated instance of an element."
 
-element-instance-full: "An Authenticated Element Instance is single authenticated connection of an element between Cloud Elements and an account at an API provider such as a Salesforce, Marketo, or Netsuite. An authenticated element instance can access all of the objects, fields, and data for that account &mdash; including custom data. An authenticated element instance is created when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials for that Element, and optional event configuration. "
+element-instance-full: "An Authenticated Element Instance is single authenticated connection of an element between Cloud Elements and an account at an API provider such as a Salesforce, Marketo, or Netsuite. An authenticated element instance can access all the objects, fields, and data for that account &mdash; including custom data. An authenticated element instance is created when a user successfully connects to the endpoint by providing an instance name, the required authentication credentials for that Element, and optional event configuration. "
 
 element-instance-resource: "The resources available to the element instance through its API."
 

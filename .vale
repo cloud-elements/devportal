@@ -2,7 +2,7 @@
 StylesPath = valeStyles
 MinAlertLevel = suggestion
 
-[*.{md,txt,js,html}] # Only Markdown and .txt files
+[*.{md,txt,js,html,yml}] # Which file types to check
 # List of styles to load
 BasedOnStyles = write-good, CE
 # Style.Rule = {YES, NO, suggestion, warning, error} to
