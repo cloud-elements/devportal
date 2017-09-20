@@ -15,7 +15,7 @@ ValeOn: <!-- vale on -->
 
 Take a look at the information below to get familiar with Cloud Elements.
 
-![Welcome](img/welcome.png)
+![Welcome](img/welcome2.png)
 
 <img src="img/1.png" alt="1" class="inlineImage"> Wherever you are in Cloud Elements, click to return to the Welcome page.
 
