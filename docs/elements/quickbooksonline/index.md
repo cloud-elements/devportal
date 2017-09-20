@@ -15,7 +15,7 @@ sitemap: false
 
 {{page.heading}} provides on-demand customer relationship management (CRM) services.
 
-{% include note.html content="As of July 17, 2017 you cannot authenticate a new instance with Quickbooks Online. Cloud Elements supports OAuth 1.0 authentication which is no longer supported for new apps.  We expect to release an updated element in the 3rd quarter of 2017. See [Intuit's documentation on OAuth 2.0](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app) for more." %}
+{% include note.html content="As of July 17, 2017 you cannot authenticate a new instance with Quickbooks Online. Cloud Elements supports OAuth 1.0 authentication which is no longer supported for new apps.  We expect to release an updated element in the 3rd quarter of 2017. See <a href=https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app>Intuit's documentation on OAuth 2.0</a> for more." %}
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
