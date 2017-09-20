@@ -11,4 +11,4 @@ order: 30
 sitemap: false
 ---
 
-{% include Elements/Hubspot/authenticate.md %}
+{% include Elements/Hubspot/bulk.md %}

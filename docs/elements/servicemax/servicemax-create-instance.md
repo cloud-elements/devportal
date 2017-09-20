@@ -43,7 +43,7 @@ Response:
 ```json
 {
 "element": "servicemax",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_servicemax_consumer_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=servicemax"
+"oauthUrl": "https://login.servicemax.com/services/oauth2/authorize?response_type=code&client_id=fake_servicemax_consumer_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state=servicemax"
 }
 ```
 
@@ -132,26 +132,7 @@ Below is a successful JSON response:
     "disabled": false,
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
-    "configuration": {
-      "base.url": "https://servicemaxdemo-1504.cloudforce.com/services/data/v33.0",
-      "oauth.api.secret": "SERVICE_MAX_CONSUMER_SECRET",
-      "oauth.token.url": "https://login.salesforce.com/services/oauth2/token",
-      "pagination.max": "2000",
-      "event.vendor.type": "webhook",
-      "oauth.scope": "full refresh_token",
-      "version": "/services/data/v33.0",
-      "oauth.user.token": "00Dj0000001uSrd!ARoAQCswfZmn2S_mq5mYnhL5lwMGfyWeG.FeVAJvry__",
-      "oauth.revoke.url": "https://login.salesforce.com/services/oauth2/revoke",
-      "oauth.authorization.url": "https://login.salesforce.com/services/oauth2/authorize",
-      "pagination.type": "offset",
-      "event.notification.callback.url": null,
-      "oauth.callback.url": "https://www.mycoolapp.com/auth",
-      "oauth.user.refresh_token": "5Aep861E3ECfhV22nYVdih6QOYAv2V2v.ME.r12xglHhIGVOMtzFHiF",
-      "oauth.user.refresh_interval": "3600",
-      "oauth.api.key": "SERVICE_MAX_CONSUMER_KEY",
-      "oauth.user.refresh_time": "1433347393998",
-      "event.notification.enabled": "false"
-    },
+    "configuration": {    },
     "eventsEnabled": false,
     "cachingEnabled": false
   }

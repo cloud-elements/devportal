@@ -2,7 +2,7 @@
 heading: SAP Anywhere
 seo: Authentication | SAP Anywhere | Cloud Elements API Docs
 title: Authentication
-description: Integrate Salesforce into your application via the Cloud Elements APIs.
+description: Integrate SAP Anywhere into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 1468

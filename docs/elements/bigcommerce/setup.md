@@ -16,7 +16,7 @@ To authenticate a {{page.heading}} element instance you must use a Legacy API ac
 
 See the latest setup instructions in the [{{page.heading}} documentation](https://support.bigcommerce.com/articles/Public/Legacy-API-Accounts#creating).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a></br><a href=#set-up-events>Set Up Events</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a>" type="info" %}
 
 ## Locate Credentials for Authentication
 

@@ -123,7 +123,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | API Key</br>username | The Freshdesk API Key that you noted in the [API Provider Setup section](setup.html). | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
-## Example Response for an Authenticated Element Instance
+## Example Response
 
 In this example, the instance ID is `12345` and the instance token starts with "ABC/D...". The actual values returned to you will be unique: make sure you save them for future requests to this new instance.
 

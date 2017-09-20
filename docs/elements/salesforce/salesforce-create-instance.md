@@ -20,7 +20,7 @@ You can authenticate with Salesforce to create your own instance of the {{page.h
 
 Use {{site.console}} to authenticate with Salesforce and create an element instance. Salesforce authentication follows the typical OAuth 2 framework and you will need to sign in to Salesforce as part of the process.
 
-If you are configuring events, see the [Events section](events.html).
+If you are configuring events, see the [Events section](salesforce-events.html).
 
 1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
 
@@ -118,7 +118,7 @@ https://<callbackurl>?code=xoz8AFqScK2ngM04kSSM&state=sfdc
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
 
-Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with Salesforce and create an element instance. If you are configuring events, see the [Events section](salesforce-events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
@@ -182,7 +182,7 @@ curl -X POST \
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>" %}
+{% include note.html content="Event related parameters are described in <a href=salesforce-events.html>Events</a>" %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

@@ -22,7 +22,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **API Token** and **API Path** that you identified in [API Provider Setup](#setup.html).
+Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **API Token** and **API Path** that you identified in [API Provider Setup](setup.html).
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -41,7 +41,7 @@ To authenticate an element instance:
     | Hover over the element card, and then click **Authenticate**.</br> ![Create Instance](../img/Create-Instance.gif)  | Click **Add Instance**.</br> ![Search](../img/Add-Instance.png)  |
 
 5. Enter a name for the element instance.
-6. In **Username**, **API Token**, and **API Path** enter the values from the Legacy API Account Details that you identified in [API Provider Setup](#setup.html).
+6. In **Username**, **API Token**, and **API Path** enter the values from the Legacy API Account Details that you identified in [API Provider Setup](setup.html).
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
 8. Provide your {{page.heading}} credentials, and then allow the connection.

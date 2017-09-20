@@ -81,7 +81,7 @@ GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&call
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](setup.html).  |
 
 ##### Example cURL
 ```
@@ -114,7 +114,7 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](setup.html).  |
 | requestToken | The token returned from the previous step.
 
 ##### Example cURL
@@ -242,9 +242,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in Quickbooks Online. |
 | `state` | This should always be {{page.elementKey}} |
 | `dataSource` | This value determines what data source should be used for the connection. It is returned after authentication. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](quickbooks-edpoint-setup.html)| string |
+| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
@@ -326,9 +326,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `quickbooks.realm.id` | The unique Identifier for the authorized Quickbooks company. |
 | `state` | This should always be {{page.elementKey}} |
 | `quickbooks.dataSource` | This value determines what data source should be used for the connection. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](quickbooks-edpoint-setup.html)| string |
+| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

@@ -21,7 +21,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **API Secret**  that you identified in [API Provider Setup](#setup.html).
+Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **API Secret**  that you identified in [API Provider Setup](setup.html).
 
 To authenticate an element instance:
 
@@ -30,7 +30,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](../img/Create-Instance.gif)
 5. Enter a name for the element instance.
-6. In **{{page.username}}** enter the credentials that you identified in [API Provider Setup](#setup.html).
+6. In **{{page.username}}** enter the credentials that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Authenticate**.
 
@@ -91,8 +91,6 @@ curl -X POST \
 ## Parameters
 
 API parameters not shown in {{site.console}} are in `code formatting`.
-
-{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

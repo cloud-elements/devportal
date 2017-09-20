@@ -54,7 +54,7 @@ To find your Element instance token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
+An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see the Hub API docs in the navigation area.
 
 Pass tokens and secrets as basic HTTP Header values.
 

@@ -301,9 +301,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in Quickbooks Online. |
 | `state` | This should always be {{page.elementKey}} |
 | `dataSource` | This value determines what data source should be used for the connection. It is returned after authentication. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](quickbooks-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](quickbooks-edpoint-setup.html)| string |
+| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |

@@ -90,7 +90,6 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To authenticate an element instance with polling:
 
-1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
     ```json

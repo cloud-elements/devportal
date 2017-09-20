@@ -85,6 +85,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 }
 ```
 
+### Authenticating users and receiving the authorization grant code
+
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
 Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
@@ -168,7 +170,7 @@ curl -X POST \
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

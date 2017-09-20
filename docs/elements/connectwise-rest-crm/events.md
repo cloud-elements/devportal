@@ -179,8 +179,8 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | Connectwise URL</br>`baseUrl` | The url of your ConnectWise site with `api-` appended.</br> Be sure to add your url only to the siteURL section of the entire URL, so the entire value looks like: `https://<api-myconnectwise.com>/v4_6_release/apis/3.0`.<br> Where `<api-myconnectwise.com>` is one of the following: <ul><li>`api-eu.myconnectwise.net`</li><li>`api-au.myconnectwise.net`</li><li>`api-na.myconnectwise.net`</li><li>`api-staging.connectwisedev.com`</li></ul>| string |
 | Company</br>`company` | The company name that you use to log in. |  string |
-| Public Key</br>`public.key` |  The Public Key from ConnectWise. See [API Provider Setup](connectwise-rest-endpoint-setup.html)| string |
-| Private Key</br>`private.key` | The Private Key from ConnectWise. See [API Provider Setup](connectwise-rest-endpoint-setup.html)| string |
+| Public Key</br>`public.key` |  The Public Key from ConnectWise. See [API Provider Setup](setup.html)| string |
+| Private Key</br>`private.key` | The Private Key from ConnectWise. See [API Provider Setup](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`  | boolean |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |

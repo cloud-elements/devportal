@@ -17,7 +17,7 @@ To authenticate a {{page.heading}} you need to install Ground2Cloud and the Clou
 
 After you install Ground2Cloud and the CE Connector, use the **Configured Application Name** and **Host Name/IP** to authenticate an element instance. If you already installed Ground2Cloud and just need to locate your information, see [Locate Credentials for Authentication](#locate-credentials-for-authentication). If you need to install Ground2Cloud, see [Install Ground2Cloud](#install-ground2cloud)
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a></br><a href=#set-up-events>Set Up Events</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#install-and-set-up-ground2Cloud>Install and Set Up Ground2Cloud</a>" type="info" %}
 
 ## Locate Credentials for Authentication
 

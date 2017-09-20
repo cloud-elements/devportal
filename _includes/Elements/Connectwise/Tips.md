@@ -2,7 +2,7 @@
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-{% include callout.html content="<strong>On this page</strong><br/><a href=#general>General</a><br/><a href=#WSDL path>WSDL Path</a><br/><a href=#bulk metadata>Bulk Metadata</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong><br/><a href=#general>General</a><br/><a href=#wsdl-path>WSDL Path</a><br/><a href=#bulk-metadata>Bulk Metadata</a>" type="info" %}
 
 ## General
 

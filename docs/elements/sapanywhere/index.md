@@ -16,11 +16,11 @@ sitemap: false
 
 #### At a Glance
 
-In order to create a connection to Salesforce the following steps are required:
+In order to create a connection to SAP Anywhere the following steps are required:
 
 1. Set up the [endpoint](sapanywhere-endpoint-setup.html)
-2. Call the `GET /elements/sapanywhere/oauth/url` with your Salesforce API key and secret
-3. Call the `POST /instances` API to instantiate your Salesforce connected app
+2. Call the `GET /elements/sapanywhere/oauth/url` with your SAP Anywhere API key and secret
+3. Call the `POST /instances` API to instantiate your SAP Anywhere connected app
 
 #### In Depth
 

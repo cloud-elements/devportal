@@ -27,7 +27,7 @@ If you already created an application, follow the steps below to locate the **AP
 
 To find your credentials:
 
-1. Log in to your account at [{{page.heading}}](https://app.icontact.com).
+1. Log in to your account at [{{page.heading}}](https://icontact.com).
 
     The **{{page.username}}** that you use to log in is used as the **API-Username** when you authenticate.
 
@@ -45,7 +45,7 @@ If you have not registered an application, you need one to authenticate with {{p
 
 To register an application:
 
-1. Log in to your account at [{{page.heading}}](https://app.icontact.com).
+1. Log in to your account at [{{page.heading}}](https://icontact.com).
 2. Click the account name on the top-right side, and then click **Settings and Billing**.
 ![Settings and Billing](img/settings-billing.png)
 3. Click **iContact API** at bottom of the list.

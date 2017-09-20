@@ -6,7 +6,7 @@ description: Cloud Storage Hub API Documentation.
 layout: sidebarapidocs
 apis: API Docs
 platform: documents
-breadcrumbs: /docs/hubs/hub-docs.html
+breadcrumbs: /docs/hub-docs.html
 parent: Back to Hub Docs
 order: 90
 ---

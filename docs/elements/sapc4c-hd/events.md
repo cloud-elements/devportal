@@ -142,7 +142,7 @@ To authenticate an element instance with polling:
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

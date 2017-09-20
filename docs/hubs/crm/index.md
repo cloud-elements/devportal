@@ -5,7 +5,7 @@ title: Overview
 description: Find API documentation and example API calls.
 layout: sidebarleft
 platform: crm
-breadcrumbs: /docs/hubs/hub-docs.html
+breadcrumbs: /docs/hub-docs.html
 parent: Back to Hub Docs
 order: 1
 sitemap: false

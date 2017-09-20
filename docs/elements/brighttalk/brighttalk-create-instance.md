@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance
 
-You can provision instances through Cloud Elemens or through APIs. This section describes both methods and includes parameter details, a request sample, and a response sample.
+You can provision instances through Cloud Elements or through APIs. This section describes both methods and includes parameter details, a request sample, and a response sample.
 
 [Provision an Instance in Cloud Elements](#provision-an-instance-in-cloud-elements)
 
@@ -20,9 +20,9 @@ You can provision instances through Cloud Elemens or through APIs. This section 
 
 [Parameters](#parameters)
 
-[Request Sample](#request-sample)
+[Request Body](#request-body)
 
-[Response Sample](#response-sample)
+[Sample Response](#sample-response)
 
 ### Provision an Instance in Cloud Elements
 

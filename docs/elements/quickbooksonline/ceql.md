@@ -97,20 +97,20 @@ CEQL, or at least parts of CEQL, can be used in most of our find or search relat
 
 * Select from `products` where the `name` equals a specific value:
   * __API Docs:__ where name=’Foo Product’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D%E2%80%99Foo%20Product%E2%80%99
+  * __Request URL:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’`
+  * __Encoded:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D%E2%80%99Foo%20Product%E2%80%99`
 * Select from `products` where the `name` equals a specific value and the type equals a specific value:
   * __API Docs:__ where name=’Foo Product’ AND type=’SERVICE’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’ AND type=’SERVICE’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D’Foo%20Product’%20AND%20type%3D’SERVICE’
+  * __Request URL:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name=’Foo Product’ AND type=’SERVICE’`
+  * __Encoded:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%3D’Foo%20Product’%20AND%20type%3D’SERVICE’`
 * Select from products where the name is like a specific value:
   * __API Docs:__ where name LIKE ‘%Foo%’
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name LIKE ‘%Foo%’
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%20LIKE%20’%25Foo%25′
+  * __Request URL:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name LIKE ‘%Foo%’`
+  * __Encoded:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=name%20LIKE%20’%25Foo%25′`
 * Select from products where the createTime is greater than a specific value:
   * __API Docs:__ where metaData.createTime>'2017-01-14T00:36:24Z'
-  * __Request URL:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime > '2017-01-14T00:36:24Z'
-  * __Encoded:__ https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime+%3E+%272017-01-14T00:36:24Z%27
+  * __Request URL:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime > '2017-01-14T00:36:24Z'`
+  * __Encoded:__ `https://console.cloud-elements.com:443/elements/api-v2/hubs/finance/products?where=metaData.createTime+%3E+%272017-01-14T00:36:24Z%27`
 
 ### CEQL Limitations
 

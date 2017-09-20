@@ -124,10 +124,10 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
-| `marketo.identity.url` | The Identity URL from Marketo. This is the Identity URL that you noted at the end of the [Endpoint Setup section](marketo-endpoint-setup.html).  |
-| `oauth.api.key` | The API Key from Marketo. This is the API Key that you noted at the end of the [Endpoint Setup section](marketo-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Marketo. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](marketo-endpoint-setup.html)| string |
-| `base.url` | The Marketo REST URL. This is the REST URL that you noted at the end of the [Endpoint Setup section](marketo-endpoint-setup.html)| string |
+| `marketo.identity.url` | The Identity URL from Marketo. This is the Identity URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The API Key from Marketo. This is the API Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from Marketo. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| `base.url` | The Marketo REST URL. This is the REST URL that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

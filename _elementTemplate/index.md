@@ -22,12 +22,12 @@ order: 1
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [{{page.heading}} API documentation](https://www.google.com/search?q={{page.heading}}+api+documentation) |
 | Authentication | OAuth 2.0  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm)|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://www.google.com/search?q={{page.heading}}+api+rate+limits)|
 
 ## Base URL
 
@@ -53,7 +53,7 @@ To find your Element instance token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs).
+An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see the Hub API docs in the navigation area.
 
 Pass tokens and secrets as basic HTTP Header values.
 
