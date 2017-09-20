@@ -14,7 +14,7 @@ order: 20
 
 # Authenticate with {{page.heading}}
 
-{% include note.html content="As of July 17, 2017 you cannot authenticate a new instance with Quickbooks Online. Cloud Elements supports OAuth 1.0 authentication which is no longer supported for new apps.  We expect to release an updated element in the 3rd quarter of 2017. See [Intuit's documentation on OAuth 2.0](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app) for more." %}
+{% include note.html content="As of July 17, 2017 you cannot authenticate a new instance with Quickbooks Online. Cloud Elements supports OAuth 1.0 authentication which is no longer supported for new apps.  We expect to release an updated element in the 3rd quarter of 2017. See <a href=https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app>Intuit's documentation on OAuth 2.0</a> for more." %}
 
 You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
