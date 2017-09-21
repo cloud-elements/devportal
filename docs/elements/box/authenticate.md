@@ -76,7 +76,7 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 | :------------- | :------------- |
 | apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider section](salesforce-endpoint-setup.html).  |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider section](setup.html).  |
 
 #### Example cURL
 
@@ -189,9 +189,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  name:`name` |  A unique name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The Redirect URL from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html).  | string |
-| `oauth.api.key` | The Client Id from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html) |  string |
-| `oauth.api.secret` | The Client Secret from Box that you noted at the end of the [Endpoint Setup section](box-endpoint-setup.html)| string |
+| `oauth.callback.url` | The Redirect URL from Box that you noted at the end of the [Endpoint Setup section](setup.html).  | string |
+| `oauth.api.key` | The Client Id from Box that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Client Secret from Box that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response

@@ -28,10 +28,10 @@ To register a connected app:
 2. Scroll down, and then click **OAuth Registration** under the available integrations.
 ![OAuth Registration](img/oauth-reg.png)
 3. Complete the required information and upload a logo.
-4. Record the URL you enter in **Redirect to here after granted access** as your Callback URL where the user returns after authentication. Enter this URL whenever prompted to enter a **Callback URL** when you [authenticate an element instance](#authenticate.html).
+4. Record the URL you enter in **Redirect to here after granted access** as your Callback URL where the user returns after authentication. Enter this URL whenever prompted to enter a **Callback URL** when you [authenticate an element instance](authenticate.html).
 ![Callback URL](img/callback-url.png)
 6. Click **Register**.
-7. Record the  **Client ID** and **Client Secret**. When you [authenticate an element instance](#authenticate.html), use **Client ID** as the `apiKey` and **Client Secret** as the `apiSecret`.
+7. Record the  **Client ID** and **Client Secret**. When you [authenticate an element instance](authenticate.html), use **Client ID** as the `apiKey` and **Client Secret** as the `apiSecret`.
 
 ## Find a List ID
 

@@ -22,4 +22,4 @@ Follow these steps to set up a Dynamics Great Plains application with the endpoi
 
 Please contact [support@cloud-elements.com](mailto:support@cloud-elements.com) for the IP addresses to our app server.
 
-Next [create an instance](salesforce-create-instance.html).
+Next [create an instance](greatplains-create-instance.html).

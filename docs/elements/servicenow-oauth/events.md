@@ -48,7 +48,7 @@ To authenticate an element instance with polling:
     | :------------- | :------------- |
     | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
 
-9. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate/#manage-your-developer-instance).
+9. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate.html#manage-your-developer-instance).
 
 ### Configure Polling Through API
 
@@ -104,7 +104,7 @@ To authenticate an element instance with polling:
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
-2. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate/#manage-your-developer-instance).
+2. Follow up on the developer instance by following the instructions in [Manage Your Developer Instance](authenticate.html#manage-your-developer-instance).
 
 
 

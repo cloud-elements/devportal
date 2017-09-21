@@ -18,7 +18,7 @@ You can access reports in QuickBooks Enterprise via API. Cloud Elements provides
 * `GET /report-types`
 * `GET /reports`
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#get-a-list-of-eports-and-categories>Get a List of Reports and Categories</a></br><a href=#pulling-reports>Pulling Reports</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#get-a-list-of-reports-and-categories>Get a List of Reports and Categories</a></br><a href=#pulling-reports>Pulling Reports</a>" type="info" %}
 
 
 ## Get a List of Reports and Categories

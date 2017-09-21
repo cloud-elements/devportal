@@ -130,7 +130,7 @@ The following user attributes are deprecated and you can ignore them:
 
 ## Add a User
 
-Because you must associate each user with an account, you use an account `id` and the  `POST /accounts/{accountId}/users` endpoint. See [Add Users to Accounts](account-managementAPI#add-users-to-accounts).
+Because you must associate each user with an account, you use an account `id` and the  `POST /accounts/{accountId}/users` endpoint. See [Add Users to Accounts](account-managementAPI.html#add-users-to-accounts).
 
 ## Get a Specific User
 
@@ -261,7 +261,7 @@ You can deactivate a user or activate an already deactivated user with the user 
 | :------------- | :------------- | :------------- |
 |  id  |  {{site.data.table-desc.account-id}}  | Y |
 
-To get a list of users including ids see [[Find Users](#find-users).
+To get a list of users including ids see [[Get all Users](#get-all-users).
 
 ### Deactivate Account Example Request
 
@@ -300,7 +300,7 @@ To reactivate a deactivated user, set `active` to `true`.
 
 If you reactivate a user, `active` is set to `true` in the response.
 
-See [Account Attributes](#account-attributes) for descriptions of each attribute.
+See [User Attributes](#user-attributes) for descriptions of each attribute.
 
 
 

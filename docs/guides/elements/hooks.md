@@ -113,11 +113,10 @@ This section presents some possible use cases for hooks. Because you can write J
 
 * [Global Pre-Request Hook for All Delete Methods](#global-pre-request-hook-for-all-delete-methods)
 * [Pre-Request Hook Using Element Configuration](#pre-request-hook-using-element-configuration)
-* [post-response Hook Reading Response Headers](#post-response-hook-reading-response-headers)
+* [Post-Response Hook Reading Response Headers](#post-response-hook-reading-response-headers)
 * [Reading Event Webhooks](#reading-event-webhooks)
 * [Removing Headers](#removing-headers)
 * [HTTP and HTTPS Library Examples](#http-and-https-library-examples)
-* [Parse an ID from a request path](#parse-an-id-from-a-request-path)
 
 
 ### Global Pre-Request Hook for All Delete Methods
@@ -155,7 +154,7 @@ return {
 }
 ```
 
-### Post-Hook Reading Response Headers
+### Post-Response Hook Reading Response Headers
 
 This hook is an example of reading the response headers to retrieve a value, then extracting that value as an ID and sending it as a response.
 

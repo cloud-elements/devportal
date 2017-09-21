@@ -18,7 +18,7 @@ sitemap: false
 
 In order to create a connection to Adobe Sign the following steps are required:
 
-1. Set up the [endpoint](adobe-esign-endpoint-setup.html)
+1. Set up the [endpoint](adobe-sign-endpoint-setup.html)
 2. Call the `GET /elements/adobe-esign/oauth/url` with your Adobe Sign API key and secret
 3. Call the `POST /instances` API to instantiate your Adobe Sign connected app
 

@@ -195,8 +195,7 @@ Below is a successful JSON response:
 
 Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
-Retrieve Instance ID from the create instance response:
-![Pipedrive Retrieve Instance ID](http://cloud-elements.com/wp-content/uploads/2015/08/PipedriveWebHookID.png)
+Retrieve Instance ID from the create instance response.
 
 Copy the Instance ID and go to a 64Base Encoding website.
 

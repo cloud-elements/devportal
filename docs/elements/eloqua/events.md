@@ -15,11 +15,11 @@ order: 30
 
 Cloud Elements supports events via polling or webhooks depending on the endpoint. If you would like to see more information on our Events framework, please see the [Event Management Guide](/docs/platform/event-management/index.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events </a></br><a href=#configure-polling-through-the-ui>Configure Polling Through the UI</a></br><a
+{% include callout.html content="<strong>On this page</strong></br><a href=#supported-events-and-resources>Supported Events and Resources</a></br><a href=#configure-polling-through-the-ui>Configure Polling Through the UI</a></br><a
 href=#configure-polling-through-api>Configure Polling Through API</a></br><a
 href=#parameters>Parameters</a>" type="info" %}
 
-## Supported Events
+## Supported Events and Resources
 
 Cloud Elements supports polling events for {{page.heading}}.
 

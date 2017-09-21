@@ -95,7 +95,7 @@ To set up a common resource based on an existing common resource:
           GET /organizations/objects/{objectName}/definitions
 
 2. Copy the `fields` array in the response to the JSON body for `POST /organizations/objects/definitions` (see [Create a New Common Resource](#create-a-new-common-resource)).
-3. Continue to the next step: [map fields to create a transformation](#mappingapi.html).
+3. Continue to the next step: [map fields to create a transformation](mappingapi.html).
 
 ### cURL Example
 
@@ -197,7 +197,7 @@ curl --request GET \
     "fields": [
       {
         "type": "string",
-        "path": "FirstName" 
+        "path": "FirstName"
       },
       {
         "type": "string",

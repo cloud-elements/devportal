@@ -5,7 +5,7 @@ seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Accounts
 description: Find API documentation, account management guides, and more on all of the currently supported Account APIs.
 layout: sidebarleft
-restContentVersion: account-managementAPI
+restContentVersion: account-managementAPI.html
 platform: accounts
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 
 If you are the user who created the organization, you are the organization administrator and you can manage the accounts related to it. You can create, retrieve, update, delete, and search accounts. To manage accounts, you must log in as the organization administrator. Even a user that you add to the default account cannot access the account management pages.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#find-accounts>Find Accounts</a></br><a href=#add-an-account>Add an Account</a></br><a href=#add-users-to-accounts>Add Users to Accounts</a></br><a href=#get-a-specific-account>Get a Specific Account</a></br><a href=#update-an-account>Update an Account</a></br><a href=#deactivate-and-reactivate-an-account>Deactivate and Reactivate an Account</a></br><a href=#delete-an-account>Delete an Account</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#find-accounts>Find Accounts</a></br><a href=#add-an-account>Add an Account</a></br><a href=#add-users-to-accounts>Add Users to Accounts</a></br><a href=#change-an-account-name-or-description>Change an Account Name or Description</a></br><a href=#deactivate-and-reactivate-an-account>Deactivate and Reactivate an Account</a></br><a href=#delete-an-account>Delete an Account</a>" type="info" %}
 
 ## Find Accounts
 

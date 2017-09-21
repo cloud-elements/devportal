@@ -2,7 +2,7 @@
 heading: Sage Live
 seo: Authentication | Sage Live | Cloud Elements API Docs
 title: Authentication
-description: Integrate Salesforce into your application via the Cloud Elements APIs.
+description: Integrate Sage Live into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 676

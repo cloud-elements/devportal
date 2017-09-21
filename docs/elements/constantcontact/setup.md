@@ -21,10 +21,10 @@ To register an app:
 
 1. Log in to the {{page.heading}} [Constant Contact Mashery page](https://constantcontact.mashery.com/).
 1. Follow the steps provided to register your app.
-7. Record the  **Key** and **Secret**. When you [authenticate an element instance](#authenticate.html), use **Key** as the `apiKey` and **Secret** as the `apiSecret`.
+7. Record the  **Key** and **Secret**. When you [authenticate an element instance](authenticate.html), use **Key** as the `apiKey` and **Secret** as the `apiSecret`.
 3. Click the **my account** link below the API information or click the **Apps & API Keys** tab.
 4. Click **Applications** under My API Keys, find your app, and then click **Edit**.
-5. In **Redirect URI for OAuth calls**, enter the Callback URL where the user returns after authentication. Enter this URL whenever prompted to enter a **Callback URL** when you [authenticate an element instance](#authenticate.html).
+5. In **Redirect URI for OAuth calls**, enter the Callback URL where the user returns after authentication. Enter this URL whenever prompted to enter a **Callback URL** when you [authenticate an element instance](authenticate.html).
 6. Click **Save**.
 
 Next [authenticate an element instance with {{page.heading}}](authenticate.html).

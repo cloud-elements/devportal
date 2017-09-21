@@ -102,7 +102,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Heading | Heading   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>connectwisecrmrest  | string  |
+| 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
 | Server URL</br>`helpdesk.connectwise.server.url` | The url of your ConnectWise site with `api-` appended. | string |
 | Company</br>`company` | The company name that you use to log in. |  string |

@@ -17,7 +17,7 @@ ValeOn: <!-- vale on -->
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Resources"%}
 
-[Extend an element by adding resources](#extend-element) to existing elements or [define resources for a custom element](#add-resources) all within a familiar API documentation format. As you create new resources, keep the API documentation of the API provider close. You will refer to it often.
+[Extend an element by adding resources](#add-resources-to-an-existing-element) to existing elements or [define resources for a custom element](#define-new-resources) all within a familiar API documentation format. As you create new resources, keep the API documentation of the API provider close. You will refer to it often.
 
 If you are creating an element, certain resources automatically appear based on the hub. For example, if you create an element in the CRM hub, Cloud Elements creates endpoints resources like accounts, contacts, leads, and opportunities. The resources created differ from hub to hub, but we will always create the following resources:
 
@@ -32,12 +32,12 @@ If you are creating an element, certain resources automatically appear based on 
 
 ## Add Resources to an Existing Element
 
-You can extend an element by adding resources. To add a resource, hover over an element card, and then click **My Resources**. After you arrive on the editable Resources page, follow the instructions in [Add Resources](#add-resources).
+You can extend an element by adding resources. To add a resource, hover over an element card, and then click **My Resources**. After you arrive on the editable Resources page, follow the instructions in [Define New Resources](#define-new-resources).
 ![My Resources](img/my-resources.gif)
 
 ## Add Resources to a New Element
 
-The last step in setting up an element is to add resources to it. To add a resource, click **My Resources** in the toolbar. After you arrive on the editable Resources page, follow the instructions in [Add Resources](#add-resources).
+The last step in setting up an element is to add resources to it. To add a resource, click **My Resources** in the toolbar. After you arrive on the editable Resources page, follow the instructions in [Define New Resources](#define-new-resources).
 ![My Resources](img/eb-my-resources.png)
 
 
@@ -67,7 +67,7 @@ To add a resource:
 4. In **Vendor Resource Name** add the path to the resource at the API provider. The value that you enter is appended directly to the Base URL. If your Base URL ends with a slash `/` then do not enter a slash before the resource name. If your Base URL does not end in a slash `/`, then add one before the resource name.
 5. In **Primary Key** enter the property that uniquely identifies the resource. Primary keys are typically ID fields associated with the resource. In this example, a primary key could be `id`.
 6. In **Created Date Key** and **Updated Date Key** enter the properties that identify the created and updated dates. Created and updated date keys vary widely, but can be `created`, `createdate`, or `timecreated` and  `updated`, `lastModified`, or `dateModified`.
-7. Select the methods to add. You will define the methods that you select when you [set up the endpoints](#add-description-and-configure). Make sure that the methods that you select are supported by the API provider.
+7. Select the methods to add. You will define the methods that you select when you [set up the endpoints](#configure-endpoints). Make sure that the methods that you select are supported by the API provider.
 
     For a new deals resource with all methods, our basic resource information looks like this:
     ![Basic Resource Information](img/resource-basic-info.png)
@@ -136,7 +136,7 @@ To set up endpoints:
 |    |  OAuth On Token Revoke &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
 |    |  OAuth On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.    |  |
 |    |  OAuth1 On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
-|  Next Resource  |  If [chaining resources](#chain-resources), identifies the endpoint request that follows this request in the chain.  |  No  |
+|  Next Resource  |  If [chaining resources](#chaining-resources), identifies the endpoint request that follows this request in the chain.  |  No  |
 
 ### Add Parameters
 
@@ -266,10 +266,9 @@ To configure bulk:
 
 1. Click the **Bulk** tab.
 2. Select to enable bulk upload, download, or both.
-3. In **Primary Key** enter the field that makes the object unique, such as `id`.
-2. Select the Method for the new endpoint. The left side represents the Cloud Elements side of the endpoint.
-3. On the right side, select the vendor method associate with the endpoint, and then enter the URL of that endpoint.
-4. Click **Go**, and then follow the steps to [add a description and configuration information](#add-description-and-configuration), [add parameters](#add-parameters), and [add hooks](#add-hooks).
+3. In each of the fields, select the format that the endpoint expects.
+2. Select to enable upload, download, or both.
+4. Click **Save Bulk Configuration**.
 
 ### Add Endpoints
 
@@ -282,7 +281,7 @@ To add an endpoint:
 1. Under the last endpoint associated with the resource, click **Add a new endpoint**.
 2. Select the Method for the new endpoint. The left side represents the Cloud Elements side of the endpoint.
 3. On the right side, select the vendor method associate with the endpoint, and then enter the URL of that endpoint.
-4. Click **Go**, and then follow the steps to [add a description and configuration information](#add-description-and-configuration), [add parameters](#add-parameters), and [add hooks](#add-hooks).
+4. Click **Go**, and then follow the steps to [define the resource](#define-new-resources).
 
 ## Delete Endpoints
 

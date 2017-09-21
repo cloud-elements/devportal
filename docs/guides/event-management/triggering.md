@@ -48,7 +48,7 @@ with the following in `TestFolderCreate.json`:
 Once that's done, we would expect to eventually see the following
 webhook content made to the endpoint we specified in the instance's
 "event.notification.callback.url" configuration
-("http://my-cool-site/callback" in our example):
+(`http://my-cool-site/callback` in our example):
 
 ```json
 {

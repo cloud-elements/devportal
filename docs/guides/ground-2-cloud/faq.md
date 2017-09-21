@@ -20,8 +20,7 @@ Manual](http://developers.cloud-elements.com/docs/products/ground-2-cloud/index.
 before reading this F.A.Q.
 
 The latest version of this document is always found on Cloud Elements
-Devportal
-[here](http://developers.cloud-elements.com/docs/products/ground-2-cloud/faq.html).
+Devportal [here](faq.html).
 
 - [Fundamentals](#fundamentals)
     - [Why would I want to use Ground2Cloud?](#why-would-i-want-to-use-ground2cloud)
@@ -123,8 +122,7 @@ QuickBooks version has "Qb" in the installer name). Use the QuickBooks
 installer if you want to use Ground2Cloud with QuickBooks. Use the
 Unbundled installer for everything else.
 
-Follow [these
-instructions](http://developers.cloud-elements.com/docs/products/ground-2-cloud/installing-ground2cloud.html)
+Follow [these instructions](installing-ground2cloud.html)
 on Cloud Elements devportal to learn how to use these installers to
 install Ground2Cloud.
 
@@ -459,15 +457,6 @@ Until the queueing feature is complete, when a service is unavailable,
 Ground2Cloud returns with a predictable response that can be parsed by
 applications to perform any further actions deemed necessary, which may
 include the user or application retrying the request.
-
-The Cloud Elements API Toolkit provides
-[formulas](http://developers.cloud-elements.com/docs/guides/formulasC2/index.html)
-and
-[events](http://developers.cloud-elements.com/docs/products/element-builder/enhance-existing-elements.html)
-which might help construct simple or complex retry scenarios for
-specific use cases. Contact our service team if you want assistance
-using these technologies.
-
 
 ## Troubleshooting
 

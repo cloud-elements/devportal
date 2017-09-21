@@ -53,7 +53,7 @@ To find your Element token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
+An Element token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see the Hub API docs in the navigation area.
 
 Pass tokens and secrets as basic HTTP Header values.
 
@@ -65,4 +65,4 @@ Pass tokens and secrets as basic HTTP Header values.
 
         Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_USER_SECRET>, Element <INSERT_ELEMENT_TOKEN>
 
-Get started by [setting up the endpoint](concur-endpoint-setup.html).
+Get started by [setting up the endpoint](setup.html).

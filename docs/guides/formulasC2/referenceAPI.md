@@ -18,7 +18,7 @@ Formulas are comprised of triggers that kick off formulas, steps that the trigge
 
 This section provides configuration information about each formula component.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#json-example>JSON Example</a></br><a href=#triggers>Triggers</a></br><a href=#steps>Steps</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#json-example>JSON Example</a></br><a href=#triggers>Triggers</a></br><a href=#step-types>Step Types</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
 
 ## JSON Example
@@ -120,7 +120,7 @@ If an Event trigger's Element Instance is set up for polling instead of webhooks
 To see event triggers in action, see the following examples:
 
 * [CRM to Messages](examples.html)
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Add New Contact Created in One System to Another](examples.html#add-new-contact-created-in-one-system-to-another)
 
 {% include Formulas/scope-trigger-event.md %}
 
@@ -206,7 +206,7 @@ To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html
 
 ### Manual
 
-Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration. You can use formulas triggered manually as synchronous API calls. See [Use a Formula as an API Call](#build-template.html/#use-a-formula-as-an-api-call) for setup instructions.
+Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration. You can use formulas triggered manually as synchronous API calls. See [Formula as a Resource](faar.html) for setup instructions.
 
 To set up a Manual trigger specify the `type` as `manual`.
 
@@ -305,7 +305,7 @@ The Element API Request (`elementRequest`) step makes an API call to a specific 
 To see an Element API Request step in action see:
 
 * [CRM to Messages](examples.html#crm-to-messages)
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Add New Contact Created in One System to Another](examples.html#add-new-contact-created-in-one-system-to-another)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 
@@ -371,7 +371,7 @@ Use JS Filter steps to specify only certain event types, field values, or other 
 
 To see a JS Filter step in action see:
 
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Add New Contact Created in One System to Another](examples.html#add-new-contact-created-in-one-system-to-another)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 {% include Formulas/scope-filter.md %}

@@ -5,7 +5,7 @@ title: Javascript in Formulas
 description: How to Use Javascript in Formulas
 layout: sidebarleft
 apis: API Docs
-restContentVersion: referenceapi
+restContentVersion: referenceapi.html
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides

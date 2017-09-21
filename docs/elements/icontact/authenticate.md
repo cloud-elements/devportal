@@ -21,7 +21,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need the information that you identified in [API Provider Setup](#setup.html).
+Use the UI to authenticate with {{page.heading}} and create an element instance. You will need the information that you identified in [API Provider Setup](setup.html).
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -32,10 +32,10 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](../img/Create-Instance.gif)
 5. Enter a name for the element instance.
-6. In **API-Version** enter the API version that you identified in [API Provider Setup](#setup.html).
-7. In **AppID** enter the API-AppID that you identified in [API Provider Setup](#setup.html).
+6. In **API-Version** enter the API version that you identified in [API Provider Setup](setup.html).
+7. In **AppID** enter the API-AppID that you identified in [API Provider Setup](setup.html).
 8. In API -Username enter the {{page.username}} used to log in.
-6. In API-Password enter the **{{page.password}}** that you identified in [API Provider Setup](#setup.html).
+6. In API-Password enter the **{{page.password}}** that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 

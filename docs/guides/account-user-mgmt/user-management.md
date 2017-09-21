@@ -5,7 +5,7 @@ seo: Account APIs Overview | Cloud Elements API Docs
 title: Manage Users
 description: Find API documentation, account management guides, and more on all of the currently supported Account APIs.
 layout: sidebarleft
-restContentVersion: user-managementAPI
+restContentVersion: user-managementAPI.html
 platform: accounts
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
@@ -30,7 +30,7 @@ To see the users associated with an account:
 1. Open the User Profile menu at the top of the page, and then click **Manage Accounts.**
 1. Hover over the account card, and then click **Open**.
 
-The users associated with an account appear on the left. Because you add users as part of the account creation process, see [Add Users to Accounts](account-managementAPI#add-users-to-accounts) for the steps to create a new user.
+The users associated with an account appear on the left. Because you add users as part of the account creation process, see [Add Users to Accounts](account-management.html#add-users-to-accounts) for the steps to create a new user.
 ![Users](img/users.png)
 
 ## Update a User

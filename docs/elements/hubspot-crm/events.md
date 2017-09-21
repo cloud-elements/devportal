@@ -11,4 +11,4 @@ parent: Back to Element Guides
 order: 30
 ---
 
-{% include Elements/Hubspot/authenticate.md %}
+{% include Elements/Hubspot/events.md %}

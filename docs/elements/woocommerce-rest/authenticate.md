@@ -22,7 +22,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **{{page.apiKey}}** and **{{page.apiSecret}}** that you identified in [API Provider Setup](#setup.html).
+Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **{{page.apiKey}}** and **{{page.apiSecret}}** that you identified in [API Provider Setup](setup.html).
 
 If you are configuring events, see the [Events section](events.html).
 

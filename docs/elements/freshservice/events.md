@@ -171,7 +171,6 @@ Log in to your Freshservice domain.
 8. Under “Select Actions”
 
 9. Choose “Trigger Webhook”
-![Freshservice Wehhook Setup step 3](http://cloud-elements.com/wp-content/uploads/2015/12/FreshserviceEvents4.png)
 
 10. Select POST
 

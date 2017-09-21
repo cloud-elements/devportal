@@ -12,7 +12,7 @@ order: 2
 ## Endpoint Setup
 
 In order to interact with the Intacct API, you must subscribe to web services.
-Please see the [developer documentation](https://developer.intacct.com/wiki/web-services-v21-quick-start-guide) for more information on the Intacct API.
+Please see the [developer documentation](https://developer.intacct.com/web-services/) for more information on the Intacct API.
 
 __NOTE FROM INTACCT:  SenderId and password are your api gateway credentials, one level above your company credentials. Only Intacct can issue these to you. Contact support or your account manager at Intacct for more details.__
 
@@ -28,8 +28,8 @@ Next [create an instance](intacct-create-instance.html) with your Intacct Compan
 
 **Single-Entity Account**
 
-1. In Intacct, go to **Company** > **Users** 
-2. Locate the user, and click Subscriptions 
+1. In Intacct, go to **Company** > **Users**
+2. Locate the user, and click Subscriptions
 3. Click each individual permission and select All
   1. You may need to click into the permission link on each module
   ![Intacct Permissions](/assets/img/elements/intacct/IntacctPermissions.gif)

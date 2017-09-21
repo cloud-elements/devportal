@@ -47,7 +47,7 @@ Via a web browser, go to [https://console.developers.google.com](https://console
 
 This URL will be in your application’s address space. You will be required to retrieve some information returned on this URL by the endpoint.
 
-For our example, we’ll use a callback URL of https://www.mycompanyapp.com/oauth2callback.
+For our example, we’ll use a callback URL of `https://www.mycompanyapp.com/oauth2callback`.
 
 13. Click “Create Client ID” - This will take you back to the “Credentials” Screen.
 ![Google Sheets Connected App step 7](http://cloud-elements.com/wp-content/uploads/2015/03/GoogleDriveAPI7.png)

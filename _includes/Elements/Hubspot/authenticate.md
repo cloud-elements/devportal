@@ -88,7 +88,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 ```json
 {
 "element": "{{page.elementKey}}",
-"oauthUrl": "https://login.salesforce.com/services/oauth2/authorize?response_type=code&client_id=fake_salesforce_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
+"oauthUrl": "https://login.hubpot.com/services/oauth2/authorize?response_type=code&client_id=fake_api_key&client_secret=xyz789&scope=full%20refresh_token&redirect_uri=https://www.mycoolapp.com/auth&state={{page.elementKey}}"
 }
 ```
 

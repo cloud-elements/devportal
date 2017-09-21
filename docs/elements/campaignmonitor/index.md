@@ -21,13 +21,12 @@ sitemap: false
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.heading}} API documentation](https://developer.salesforce.com/docs/) |
+| API Documentation | [{{page.heading}} API documentation](https://www.campaignmonitor.com/api/getting-started/) |
 | Authentication | OAuth 2  |
 | Events | Webhooks |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://www.campaignmonitor.com/api/getting-started/#rate-limiting)|
-| Authentication Requirements |  Salesforce Professional or Enterprise Edition with administrator privileges.|
 
 ## Base URL
 
@@ -53,7 +52,7 @@ To find your Element instance token:
 
         GET /instances/<INSTANCE_ID>
 
-An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see [Hub API Docs](../../hubs/hub-docs)
+An Element Instance token and a User secret are required to execute one of our Hub API calls (e.g. `/hubs/documents/files` or `/hubs/crm/contacts`). For more information about Hubs, see the Hub API docs in the navigation area.
 
 Pass tokens and secrets as basic HTTP Header values.
 

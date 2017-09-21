@@ -38,7 +38,7 @@ If you are configuring events, see the [Events section](events.html).
 5. Enter a name for the element instance.
 6. Select an **Authentication Type**:
   * Choose **Custom** to authenticate through user name and password.
-  * Choose **oauth2** to authenticate using the key and client id that you identified in [API Provider Setup](#setup.html).
+  * Choose **oauth2** to authenticate using the key and client id that you identified in [API Provider Setup](setup.html).
 6. Enter the parameters required by your selected authentication type. See [Custom Parameters](#custom-parameters) or [OAuth2 Parameters](#oauth-2-0-parameters) for details.
 
     | Custom Authentication | OAuth2 Authentication  |
@@ -62,7 +62,7 @@ If you are configuring events, see the [Events section](events.html).
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-You can authenticate using either [custom authentication](#custom-authentication) or [OAuth 2.0](#oauth-authentication).
+You can authenticate using either [custom authentication](#custom-authentication) or [OAuth 2.0](#oauth-2-0-authentication).
 
 ### Custom Authentication
 
@@ -127,7 +127,7 @@ curl -X POST \
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
@@ -212,7 +212,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To create an element instance:
 
-1. Construct a JSON body as shown below (see [OAuth2 Parameters](#oauth2-parameters)):
+1. Construct a JSON body as shown below (see [OAuth2 Parameters](#oauth-2-0-parameters)):
 
     ```json
             {
@@ -275,7 +275,7 @@ curl -X POST \
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
-{% include note.html content="Event related parameters are described in <a href=slaesforce-events.html>Events</a>." %}
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |

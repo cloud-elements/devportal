@@ -21,7 +21,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).   |
+|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](http://developers.marketo.com/rest-api/).   |
 | Upsert Support | Yes |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select name,id from contacts`. |
 | Order By Support | Yes, you can add `order by fieldName` to the query. |

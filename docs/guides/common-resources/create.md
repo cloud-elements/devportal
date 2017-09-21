@@ -4,7 +4,7 @@ seo: Creating | Common Resources | Cloud Elements API Docs
 title: Creating Common Resources
 description: Common Resources Overview
 layout: sidebarleft
-restContentVersion: createapi
+restContentVersion: createapi.html
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

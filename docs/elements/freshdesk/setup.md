@@ -1,6 +1,6 @@
 ---
 heading: Freshdesk V2
-seo: API Provider Setup | API Provider setup | Salesforce Sales Cloud | Cloud Elements API Docs
+seo: API Provider Setup | API Provider setup | Freshdesk Sales Cloud | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider setup
 layout: sidebarelementdoc
