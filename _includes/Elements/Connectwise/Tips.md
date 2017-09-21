@@ -33,3 +33,13 @@ The resulting WSDL path is `/v2017_2/apis/2.0/`.
 * The default payload format is .csv. To specify the format, include the following:
 
         "format":"json"
+
+## SOAP Elements and Rest Resources
+
+Description Big POS here, but you need to download their [web service client](https://university.connectwise.com/university/pageview.aspx?short_name=workstation-installation) _on a windows box_ to access this ability. Once you have that downloaded, you will login and look for the left menu. From the menu select System and then Setup Tables. Here you can type the name of a table. You will want to search for Integrator Login. Once you have that open you can click into the user account that you are using and enable the tick box for time entries (or whichever API you're interested in).
+
+ConnectWise CRM and ConnectWise help desk support the SOAP API. However, you can still access Rest resources with the ConnectWise desktop app on a windows machine.
+
+To enable a resource:
+
+1. 
