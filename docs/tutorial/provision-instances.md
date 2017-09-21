@@ -32,8 +32,8 @@ There are a couple configuration properties that are important for this example.
 
 ![Event setup](https://cl.ly/1u0n2F1R3909/Screen%20Shot%202017-01-26%20at%2012.47.56%20PM.png)
 
-It's also important to set the `Event poller refresh interval` and `Event Poller URLs`. These properties tell the instance how often to check for changes, and what resources to check.  
-The `Event poller refresh interval` is set in minutes, in this case, the interval is set to 2 minutes. `Event Poller URLs` is pointing to `contacts`, which will check Hubspot's contact resources for changes. 
+It's also important to set the `Event poller refresh interval` and `Event Poller URLs`. These properties tell the instance how often to check for changes, and what resources to check.
+The `Event poller refresh interval` is set in minutes, in this case, the interval is set to 2 minutes. `Event Poller URLs` is pointing to `contacts`, which will check Hubspot's contact resources for changes.
 
 ![Event Interval](https://cl.ly/212d1t3O162Q/Screen%20Shot%202017-01-26%20at%2012.48.33%20PM.png)
 
@@ -43,9 +43,9 @@ We can ignore the other fields in the configuration.
 
 Follow the same steps as above to provision a Salesforce instance.
 
-In the case of Salesforce `Objects to Monitor for Changes` should be set to `Contact`. Note that this is a different field from Hubspot. When creating instances of different Elements, the configuration settings will differ slightly. 
+In the case of Salesforce `Objects to Monitor for Changes` should be set to `Contact`. Note that this is a different field from Hubspot. When creating instances of different Elements, the configuration settings will differ slightly.
 
-The Salesforce configuration should like this:  
+The Salesforce configuration should like this:
 ![Salesforce configuration](https://cl.ly/3O0i2v0U0E25/Screen%20Shot%202017-01-26%20at%201.15.50%20PM.png)
 
 
@@ -56,4 +56,4 @@ Under the **MyInstances** tab of **Elements**, there should be an instance of Sa
 **Reminder:** Provisioning instances of Salesforce and Hubspot can also be accomplished via the Cloud Elements API. Check of the element guides for more details:
 
 - [Salesforce Element Guide](https://developers.cloud-elements.com/docs/elements/salesforce/salesforce-create-instance.html)
-- [Hubspot Element Guide](https://developers.cloud-elements.com/docs/elements/hubspot-crm/hubspot-crm-create-instance.html)
+- [Hubspot Element Guide](https://developers.cloud-elements.com/docs/elements/hubspot-crm/authenticate.html)

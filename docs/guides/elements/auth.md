@@ -62,7 +62,7 @@ To configure OAuth 2.0 elements:
 
 Cloud Elements provides the [parameters](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement the parameters with additional configuration.
 
-The [OAuth 1.0](#oauth-1-0) entry in the [About Authentication](#about-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
+The [OAuth 1.0](#oauth-1-0) entry in the [About Authentication](#about-oauth-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
 
 To configure OAuth 1.0 elements:
 
@@ -102,7 +102,7 @@ In Basic access authentication, you typically provide a user name and password. 
 
 ## Configure Custom Authentication
 
-To configure custom authentication information, use the [Configuration](config.html), [Parameters](config.html/#set-up-element-parameters), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
+To configure custom authentication information, use the [Configuration](config.html#set-up-element-configuration), [Parameters](config.html/#set-up-element-parameters), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
 
 ## Configure AWS Authentication
 

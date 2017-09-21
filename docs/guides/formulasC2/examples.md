@@ -15,7 +15,7 @@ order: 25
 
 The examples in this section show a selection of common use cases for formulas. Each example includes a table that identifies the types of triggers, steps, and variables used in the formula. The table also identifies any prerequisites required, like an element with events. Lastly, each example includes a downloadable JSON file that you can use to create your own version of the example template with the `POST /formulas` endpoint.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#crm-to-messages>CRM to Messages</a></br><a href=#retrieve-transform-and-sync-contact>Retrieve, Transform, and Sync Contact</a></br><a href=#bulk-transfer-crm-data>Bulk Transfer CRM Data</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#crm-to-messages>CRM to Messages</a></br><a href=#add-new-contact-created-in-one-system-to-another>Add New Contact Created in One System to Another</a></br><a href=#bulk-transfer-crm-data>Bulk Transfer CRM Data</a>" type="info" %}
 
 ## CRM to Messages
 
@@ -23,11 +23,11 @@ This example listens for an event on a CRM element and then sends an email with 
 
 | Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- |:------------- | :------------- |
-|  [Event] (reference.html/#event) |  <ul><li>[JS Script] (reference.html/#js-script)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub element instance with events</li><li>Messaging hub authenticated element instance</li></ul> | [Formula JSON][4]  |
+|  [Event] (reference.html#event) |  <ul><li>[JS Script] (reference.html#js-script)</li><li>[Element API Request] (reference.html#element-api-request)</li></ul>  | [Element Instance] (reference.html#formula-variables) | <ul><li>CRM hub element instance with events</li><li>Messaging hub authenticated element instance</li></ul> | [Formula JSON][4]  |
 
 To create a formula that listens for an event and emails a message:
 
-1. [Build a formula template](#build-a-formula-template) and select **Event** as the trigger.
+1. [Build a formula template](build-template.html#build-a-formula-template) and select **Event** as the trigger.
 2. Because the trigger is a change to a CRM element, add an element instance variable that refers to a CRM element.
   3. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">.
   3. Click **Add New Variable**, and then click **Element Instance**.
@@ -82,11 +82,11 @@ This example was tested with the [Salesforce Sales Cloud](../../elements/salesfo
 
 | Trigger | Step Types   | Variable Types | Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- |:------------- | :------------- |
-|  [Event] (reference.html/#event)  |  <ul><li>[JS Filter] (reference.html/#js-filter)</li><li>[Element API Request] (reference.html/#element-api-request)</li></ul>  | [Element Instance] (reference.html/#element-instance-variable) | <ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li><li>A common resource that transforms contacts</li><li>A common resource mapped to the origin and destination element instances</li></ul> | [Formula JSON][5]  |
+|  [Event] (reference.html#event)  |  <ul><li>[JS Filter] (reference.html#js-filter)</li><li>[Element API Request] (reference.html#element-api-request)</li></ul>  | [Element Instance] (reference.html#formula-variables) | <ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li><li>A common resource that transforms contacts</li><li>A common resource mapped to the origin and destination element instances</li></ul> | [Formula JSON][5]  |
 
 To create a formula that adds new contacts created in one system to another:
 
-1. [Build a formula template](#build-a-formula-template) and select **Event** as the trigger.
+1. [Build a formula template](build-template.html#build-a-formula-template) and select **Event** as the trigger.
 2. Because the trigger originates from an element instance configured to listen for events, add an element instance variable.
   3. Click <img src="img/btn-Add.png" alt="Alt Text" class="inlineImage">.
   3. Click **Add New Variable**, and then click **Element Instance**.
@@ -150,13 +150,13 @@ Bulk data transfer is a common use case. For example, your first sync between CR
 
 | Trigger | Step Types   | Variable Types| Prerequisites | Template JSON  |
 | :------------- | :------------- |:------------- | :------------- |:------------- |
-|  <ul><li>[Scheduled] (reference.html/#scheduled) (Formula 1)</li><li>[Manual] (reference.html/#manual) (Formula 2)</li></ul> |  <ul><li>[JS Script] (reference.html/#js-script) </li><li>[Element API Request] (reference.html/#element-api-request)</li><li>[JS Filter] (reference.html/#js-filter) (Formula 2)</li><li>[Stream File] (reference.html/#stream-file) (Formula 2)</li></ul>  | <ul><li>[Value] (reference.html/#value-variable)</li><li>[Element Instance] (reference.html/#element-instance-variable)</li>  |<ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li></ul> | <ul><li>[Step 1 Formula JSON][6]</li><li>[Step 1 Formula JSON][7]</li></ul>  |
+|  <ul><li>[Scheduled] (reference.html#scheduled) (Formula 1)</li><li>[Manual] (reference.html#manual) (Formula 2)</li></ul> |  <ul><li>[JS Script] (reference.html#js-script) </li><li>[Element API Request] (reference.html#element-api-request)</li><li>[JS Filter] (reference.html#js-filter) (Formula 2)</li><li>[Stream File] (reference.html#stream-file) (Formula 2)</li></ul>  | <ul><li>[Value] (reference.html#formula-variables)</li><li>[Element Instance] (reference.html#formula-variables)</li>  |<ul><li>CRM hub authenticated element instance with events</li><li>CRM hub authenticated element instance to sync new contact to</li></ul> | <ul><li>[Step 1 Formula JSON][6]</li><li>[Step 1 Formula JSON][7]</li></ul>  |
 
 ### Formula 1
 
 To create a formula that makes a bulk query and then triggers the second formula that will download and then upload the bulk files:
 
-1. [Build a formula template](#build-a-formula-template) and select **Scheduled** as the trigger.
+1. [Build a formula template](build-template.html#build-a-formula-template) and select **Scheduled** as the trigger.
 2. Add a cron string to identify when the sync occurs.
 
     This example fires every Monday through Friday at 1:00 a.m..
@@ -208,7 +208,7 @@ The first formula should look like the visualization below. It should include a 
 
 To create a formula that receives the notification that the job completes, downloads the file from the original element, and posts to the destination:
 
-1. [Build a formula template](#build-a-formula-template) and select **Manual** as the trigger, and then click **Save**.
+1. [Build a formula template](build-template.html#build-a-formula-template) and select **Manual** as the trigger, and then click **Save**.
 
     {% include note.html content="You do not need to configure anything for the manual trigger, but take note of the endpoint that you will need to trigger the formula: `POST /formulas/instances/:id/executions`" %}
 

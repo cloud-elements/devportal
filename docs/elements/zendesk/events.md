@@ -15,7 +15,7 @@ order: 25
 
 {% include polling_and_webhooks_defined.md %}
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#polling>Polling</a></br><a href=#link>Webhooks</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#polling>Polling</a></br><a href=#webhooks>Webhooks</a>" type="info" %}
 
 ## Polling
 

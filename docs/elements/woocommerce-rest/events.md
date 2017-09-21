@@ -240,7 +240,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To authenticate an element instance with webhooks:
 
-1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+1. Construct a JSON body as shown below (see [Webhook Parameters](#webhook-parameters)):
 
     ```json
     {

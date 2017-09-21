@@ -16,7 +16,7 @@ Follow these steps to set up a Weebly application with the endpoint.
 
 Before you can use the portal, you need to create a developer account. You also need to create a web site to test your applications or themes.
 
-If you don't already have one, create a basic Weebly account. Visit [weebly.com](weebly.com), create your account, and create a test web site. Once your account and site are created, access the [Developer Admin](https://www.weebly.com/developer-admin/) portal from [dev.weebly.com](dev.weebly.com) (click Admin Login) and log in.
+If you don't already have one, create a basic Weebly account. Visit [weebly.com](https://www.weebly.com/), create your account, and create a test web site. Once your account and site are created, access the [Developer Admin](https://www.weebly.com/developer-admin/) portal from [dev.weebly.com](https://dev.weebly.com) (click Admin Login) and log in.
 
 The dialog displays the name and email associated with your standard account. By default, these will be used for your developer account. Add the following information that will be used to create your App card in the App Center:
 
@@ -26,7 +26,7 @@ The dialog displays the name and email associated with your standard account. By
 
 Accept the Developer agreement and save your information. The Developer Admin portal page displays your account. From this point on, when you log into the Developer site, your Developer Admin portal will display.
 
-Please review the steps necessary to [create your Weebly App](https://dev.weebly.com/develop-an-app.html).
+Please review the steps necessary to [create your Weebly App](https://dev.weebly.com/get-started-with-developing-apps.html).
 
 Weebly requires a zip file be uploaded to their Admin Dashboard with a `manifest.json` file indicating the app file structure.
 
@@ -58,7 +58,7 @@ Example `manifest.json`
 }
 ```
 
-Review how to [configure the Manifest for OAuth](https://dev.weebly.com/authentication-using-oauth2.html).
+Review how to [configure the Manifest for OAuth](https://dev.weebly.com/app-authorization-and-install-flow.html).
 
 1. Click “Create New App”.
 ![Weebly Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI1.png)
@@ -101,5 +101,3 @@ Review how to [configure the Manifest for OAuth](https://dev.weebly.com/authenti
 ![Weebly Connected App step 10](http://cloud-elements.com/wp-content/uploads/2016/04/WeeblyAPI10.png)
 
 This Connection will kick off the [reverse OAuth](https://dev.weebly.com/authentication-using-oauth2.html) process needed to provision a Weebly Instance.
-
-Next [create an instance](weebly-create-instance.html).

@@ -4,7 +4,7 @@ seo: Formula Steps | Formula Step Types | Cloud Element Formulas
 title: Formula Triggers, Steps, and Variables
 description: Reference for Triggers, Steps, and Variables
 layout: sidebarleft
-restContentVersion: referenceAPI
+restContentVersion: referenceAPI.html
 apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
@@ -40,7 +40,7 @@ If an Event trigger's Element Instance is set up for polling instead of webhooks
 To see event triggers in action, see the following examples:
 
 * [CRM to Messages](examples.html)
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Add New Contact Created in One System to Another](examples.html#add-new-contact-created-in-one-system-to-another)
 
 {% include Formulas/scope-trigger-event.md %}
 
@@ -88,7 +88,7 @@ To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html
 
 ### Manual <img src="img/trigger-icon-manual.png" alt="Manual" class="inlineImage">
 
-Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration. You can use formulas triggered manually as synchronous API calls. See [Use a Formula as an API Call](#build-template.html/#use-a-formula-as-an-api-call) for setup instructions.
+Triggered via a manual API call to `POST /formulas/instances/:id/executions`. Manual triggers do not require any specific configuration. You can use formulas triggered manually as synchronous API calls. See [Formula as a Resource](faar.html) for setup instructions.
 
 To see a Scheduled trigger in action, see [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
@@ -130,7 +130,7 @@ The Element API Request (`elementRequest`) step makes an API call to a specific 
 To see an Element API Request step in action see:
 
 * [CRM to Messages](examples.html#crm-to-messages)
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Add New Contact Created in One System to Another](examples.html#add-new-contact-created-in-one-system-to-another)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 When you set up an Element API Request step, include the following information:
@@ -162,7 +162,7 @@ Use JS Filter steps to specify only certain event types, field values, or other 
 
 To see a JS Filter step in action see:
 
-* [Retrieve, Transform, and Sync Contact](examples.html#retrieve-transform-and-sync-contact)
+* [Retrieve, Transform, and Sync Contact](examples.html#add-new-contact-created-in-one-system-to-another)
 * [Bulk Transfer CRM Data](examples.html#bulk-transfer-crm-data)
 
 {% include Formulas/scope-filter.md %}

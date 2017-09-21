@@ -32,7 +32,7 @@ Via a web browser, login to your ServiceMax account:
 
 5. Make sure to select "Enable OAuth Settings"
 
-6. You’ll be required to enter a callback URL from the endpoint. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint. For our example,we’ll use a callback URL of https://mycoolapp.com/auth
+6. You’ll be required to enter a callback URL from the endpoint. This URL will be in your application’s address space, and you will be required to retrieve some information returned on this URL by the endpoint. For our example, we’ll use a callback URL of `https://mycoolapp.com/auth`
 
 7. Choose from the "Selected OAuth Scopes". "Full Access" and "Perform requests on your behalf at any time (refresh_token_, offline_access)" are the minimum needed scopes.
 

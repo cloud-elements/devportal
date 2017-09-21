@@ -21,7 +21,7 @@ Formula templates enable you to build a single template for a formula that you c
 
 Formula templates include a trigger that kicks off the formula, steps that execute as a result of the trigger, and variables to represent input required to run an instance of the formula. You can build formulas that use triggers that kick off when something happens to an element instance, you can schedule triggers, or you can manually kick off a trigger. See [Triggers, Steps, and Variables](reference.html) for more information about each component.
 
-As you build a formula, you also build context consisting of triggers, variables, steps, and values created by steps. You can refer to that context in later steps in the formula. Consider each part as a building block that has a name and information that you can refer to. For example, in a formula that sends an email notification for a new contact, you build the body of the email in one step. In a later step when you actually send the message, refer to the step where you built the body. See [Reference Syntax](#reference-syntax) for ways to refer to triggers.
+As you build a formula, you also build context consisting of triggers, variables, steps, and values created by steps. You can refer to that context in later steps in the formula. Consider each part as a building block that has a name and information that you can refer to. For example, in a formula that sends an email notification for a new contact, you build the body of the email in one step. In a later step when you actually send the message, refer to the step where you built the body.
 
 {% include note.html content="Use these steps to get started building a formula template. Consider using some of <a href=examples.html>the example formulas</a> to get a deeper understanding of how to build a formula template.  " %}
 
@@ -58,7 +58,7 @@ To build a new formula template:
   ![Variables](img/variables.png)
   6. Select the type of variable, and then enter a name.
 
-        Takes note of the Formula Step Variable Name, which is how you will [refer to the variable](#reference-syntax) throughout the formula.
+        Takes note of the Formula Step Variable Name, which is how you will refer to the variable throughout the formula.
 
   8. Click **Save**.
 
@@ -237,7 +237,7 @@ To delete a formula template:
 
 You can deactivate a formula template to prevent any executions of formula instances of the template.
 
-{% include note.html content="You can also deactivate a specific formula instance. See <a href=formula-instance/#deactivate-a-formula-instance>Deactivate a Formula Instance</a>. " %}
+{% include note.html content="You can also deactivate a specific formula instance. See <a href=formula-instance.html#deactivate-a-formula-instance>Deactivate a Formula Instance</a>. " %}
 
 To deactivate a formula:
 

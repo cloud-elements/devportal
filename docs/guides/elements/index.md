@@ -26,7 +26,7 @@ Elements are enhanced connectors that provide a unified developer experience int
 The Elements Catalog shows a list of  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.gloss_entry}}">element cards</a> that represent all of the elements available to you. Elements with your existing authenticated <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance}}">element instances</a> appear at the top of the catalog. Each card shows the name and id of the element, the number of authenticated element instances, and the  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> associated with the element.
 ![Elements Catalog](img/catalog.png)
 
-To work with an element, hover over the element card.  You can [authenticate an element instance](instances.html), [see the API docs](#view-element-api-docs) associated with the element, [export the element](export.html) in JSON format, and [add your own resources](resources.html) to the element.
+To work with an element, hover over the element card.  You can [authenticate an element instance](instances.html), [see the API docs](#view-element-api-docs) associated with the element, [export the element](#import-and-export) in JSON format, and [add your own resources](resources.html) to the element.
 
 You can also [build your own custom elements](custom-elements.html). These include a **private** label because they are available only to users in your organization.
 

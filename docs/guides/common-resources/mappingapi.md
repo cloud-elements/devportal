@@ -31,7 +31,7 @@ To retrieve a list of common resources:
           GET /organizations/objects/definitions
 
 
-1. Continue to the next step: [map fields to create a transformation](#map-resources-for-transformation).
+1. Continue to the next step: [map fields to create a transformation](#map-fields-to-create-a-default-transformation).
 
 ### cURL Example
 

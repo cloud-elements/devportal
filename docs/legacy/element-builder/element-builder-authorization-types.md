@@ -37,7 +37,7 @@ Box will be used to demonstrate the OAuth 2 authentication type.  As a best prac
 This excerpt is from the Box API docs:
 >Before you can start using OAuth2 with your application, you’ll need to tell Box a bit of information about your application
 
->Register your application [here](https://app.box.com/login?redirect_url=%2Fdevelopers%2Fservices%2Fedit%2F).
+>Register your application [here](https://app.box.com/).
 Set your redirect url
 Select your scope
 Make a note of both your client_id and client_secret.
@@ -48,7 +48,7 @@ Now that we familiar with the Box auth flow, let’s take a look at the Configur
 
 ###### CONFIGURATION TAB
 
-Add the base URL to the endpoint. The base URL is the endpoint where all API requests will be sent, e.g. [https://api.box.com/2.0](https://api.box.com/2.0).
+Add the base URL to the endpoint. The base URL is the endpoint where all API requests will be sent, e.g. `https://api.box.com/2.0`.
 The Base URL can be found in most endpoint API Documentation within the Overview, Authentication, or Resources/Entities sections.
 The Box Base URL can be found in the Get Started with the Box Content API section
 
@@ -210,7 +210,7 @@ Now that we familiar with the Typeform auth flow, let’s take a look at the Con
 
 ###### CONFIGURATION TAB
 
-Add the base URL to the endpoint. The base URL is the endpoint where all API requests will be sent, e.g. https://api.typeform.io/v0.4.
+Add the base URL to the endpoint. The base URL is the endpoint where all API requests will be sent, e.g. `https://api.typeform.io/v0.4`.
 The Base URL can be found in most endpoint API Documentation within the Overview, Authentication, or Resources/Entities sections.
 The Typeform Base URL can be found in the General > Versioning section.
 

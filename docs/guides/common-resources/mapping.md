@@ -4,7 +4,7 @@ seo: Mapping Fields to Common Resources | Common Resources | Cloud Elements API 
 title: Transforming Fields
 description: Creating Transformations
 layout: sidebarleft
-restContentVersion: mappingapi
+restContentVersion: mappingapi.html
 apis: API Docs
 platform: organizations
 breadcrumbs: /docs/guides/home.html

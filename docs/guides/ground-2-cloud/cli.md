@@ -11,13 +11,13 @@ order: 11
 
 ## Cloud Elements On-Prem CLI
 
-The Ground2Cloud CLI can be used to install and configure the Ground2Cloud Client. 
+The Ground2Cloud CLI can be used to install and configure the Ground2Cloud Client.
 
-The G2C client is a NPM package, and requires **Node.js** in order to be installed. To check that Node.js is installed:  
-    
+The G2C client is a NPM package, and requires **Node.js** in order to be installed. To check that Node.js is installed:
+
     $ node -v
 
-Node and NPM aren't currently installed go to the [NPM docs and install Node.js and NPM](https://docs.npmjs.com/getting-started/installing-node.)
+Node and NPM aren't currently installed go to the [NPM docs and install Node.js and NPM](https://docs.npmjs.com).
 
 
 ### Installation
@@ -32,13 +32,13 @@ The Cloud Elements G2C client is called **petit-client**
 
 The configuration settings for the G2C client live in `config.toml`.
 
-To create the to config file, run the command  
+To create the to config file, run the command
 
     $ petit-client init
 
 This will create the config file as well as print the path to the created file, usually under `{user_home}/.petit/config.toml`
 
-Open config.toml and check that the **client** configuration matches the following:  
+Open config.toml and check that the **client** configuration matches the following:
 
     [client]
     host = "g2c.cloud-elements.com"
@@ -51,7 +51,7 @@ Open config.toml and check that the **client** configuration matches the followi
 
 This sets the petit-client to talk to the production g2c server.
 
-To connect your local service to the G2C client, configure the `[client.local]` to match the local settings. 
+To connect your local service to the G2C client, configure the `[client.local]` to match the local settings.
 
 `host` should point to the url of the service you are connecting to, and `port` is the port the service is exposed to.
 
@@ -62,7 +62,7 @@ For example, if I'm running a PostgreSQL server locally, my configuration would 
     port = 5432
 
 **Note:** Every time the configuration file is changed, the petit-client needs to be restarted.
-    
+
     $ petit-client reload
 
 ### Connecting the G2C local client to an Element Instance
@@ -112,4 +112,3 @@ Make a note of the **port** and **endpoint**, in the example above they are `"po
 This information can be used to create an Element Instance. Using the example above, we could create a PostgreSQL instance using the database host: `9886.g2c.cloud-elements.com:40967`.
 
 ![PostgreSQL Instance](https://cl.ly/3S33403m0p0k/Screen%20Shot%202017-01-23%20at%203.11.17%20PM.png)
-

@@ -39,7 +39,7 @@ Let’s get started with the construction of the Twitter Element by first creati
 
 Follow these steps to set up a Twitter application with the endpoint.
 
-Via a web browser, go to [https://apps.twitter.com/app/new](https://apps.twitter.com/app/new).
+Via a web browser, go to [https://apps.twitter.com/](https://apps.twitter.com/).
 
 1. Click “Create application”.
 
@@ -94,7 +94,7 @@ Click “Next”
 
 #### Configuration Tab
 
-Add the base URL to the endpoint.  The base URL is the endpoint where all API requests will be sent, e.g. [https://api.twitter.com/1.1](https://api.twitter.com/1.1).
+Add the base URL to the endpoint.  The base URL is the endpoint where all API requests will be sent, e.g. `https://api.twitter.com/1.1`.
 The Base URL can be found in most endpoint API Documentation within the Overview, Authentication, or Resources/Entities sections.
 The Twitter Base URL can be found in the Resources/Entities section.
 
@@ -186,7 +186,7 @@ The pre-built GET /users API call will have some fields already populated.  In o
 In our example, Twitter provides API documentation for the GET /users/search resource here:  [https://dev.twitter.com/rest/reference/get/users/search](https://dev.twitter.com/rest/reference/get/users/search)
 
 The Twitter documentation reveals the vendor path to the resource:
-[https://api.twitter.com/1.1/users/search.json](https://api.twitter.com/1.1/users/search.json)
+`https://api.twitter.com/1.1/users/search.json`
 
 Since the base URL was inputted on the Configuration Tab, only the `/users/search.json` is needed.
 

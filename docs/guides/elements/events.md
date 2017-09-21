@@ -21,7 +21,7 @@ In many cases you want your element to be updated when an event occurs at an API
 
 ## Configure Webhook Events
 
-To see if the API provider provides webhooks, review the API documentation. Webhooks often require specific setup steps at the API provider. Adding webhooks to an element does not require any specific configuration. However, if you need to perform any configuration, you must do so using an [event hook](hooks.html). For example, if the API provider sends event webhook types in a different format you can manipulate the types using a event hook. See the code for this example in [Custom Hooks](custom-hooks-html#reading-event-webhooks).
+To see if the API provider provides webhooks, review the API documentation. Webhooks often require specific setup steps at the API provider. Adding webhooks to an element does not require any specific configuration. However, if you need to perform any configuration, you must do so using an [event hook](hooks.html). For example, if the API provider sends event webhook types in a different format you can manipulate the types using a event hook. See the code for this example in [Custom Hooks](hooks.html#reading-event-webhooks).
 
 To set up webhooks:
 

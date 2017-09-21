@@ -22,7 +22,7 @@ __For this guide, a sample database was created called `mydb`.  This database co
 
 __NOTE: We currently limit result sets to 50 rows for all Database Elements__
 
-- [Element Builder Tabs](#element-builder-tabs])
+- [Element Builder Tabs](#element-builder-tabs)
     - [Info Tab](#info-tab)
     - [Configuration Tab](#configuration-tab)
     - [Instance Tab](#instance-tab)
@@ -32,7 +32,7 @@ __NOTE: We currently limit result sets to 50 rows for all Database Elements__
     - [Bulk Tab](#bulk-tab)
     - [Documentation Tab](#documentation-tab)
 - [Admin Dashboard](#admin-dashboard)
-    - [Import our Sample Element](#import-out-sample-element)
+    - [Import our Sample Element](#import-our-sample-element)
 - [Support](#support)
 
 PostGreSQL will be used for this demonstration.
@@ -805,7 +805,7 @@ The Ground2Cloud Client installation program is a self-unpacking executable. Onc
 
 The installer also installs a GUI (Graphical User Interface) program, which can be used to monitor and manage the Ground2Cloud Client. When launched, it opens a window with simple dialogs that let you browse logs files, change configuration, and perform other management operations. Details on how to use the GUI is described in the [User’s Manual](/docs/products/ground-2-cloud/index.html).
 
-If you are interested in using our Ground2Cloud Service, please [contact us](info@cloud-elements.com) for details.
+If you are interested in using our Ground2Cloud Service, please [contact us](mailto:info@cloud-elements.com) for details.
 
 #### Support
 

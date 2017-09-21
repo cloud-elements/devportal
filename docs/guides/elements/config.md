@@ -69,7 +69,7 @@ To set up a configuration:
 
 {% include elements-guide/table-config-params.md%}
 
-## Set Up Parameters
+## Set Up Element Parameters
 
 Element parameters allow you to pass various properties with each request. You can create parameters that require user input or parameters that get their values from other sources. Use the element parameters to configure searches, pagination, ids, and required fields. You can configure most required and optional parameters for most APIs using parameters and configurations. Map parameters that you send as part of the request from Cloud Elements on the left side of the page to parameters available to the resource at the API provider on the right side.
 ![Add parameters UI](img/resource-parameter.png)

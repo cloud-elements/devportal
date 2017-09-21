@@ -37,7 +37,7 @@ To create a formula instance:
 
 You can deactivate a formula to temporarily stop executions until you reactivate it.
 
-{% include note.html content="You can also deactivate a formula template to stop the executions of all formula instances. See <a href=build-template/#deactivate-a-formula-template>Deactivate a Formula Template</a>. " %}
+{% include note.html content="You can also deactivate a formula template to stop the executions of all formula instances. See <a href=build-template.html#deactivate-a-formula-template>Deactivate a Formula Template</a>. " %}
 
 To deactivate a formula instance:
 
