@@ -84,7 +84,6 @@ To define a parameter :
 6. In **Parameter Type** select the source of the parameter.
 7. In **Vendor Type** select how the API provider receives the parameter.
 9. If you want to switch the standard workflow where the parameters on the left are part of the request from Cloud Elements, and want the parameters on the left to represent the response from the API provider, click **Parameter Source**, and then select **Response**.
-10. To make the parameter a required part of the request, switch **Required** on. For parameters that require user input, the parameter becomes required when testing an element instance in the API documentation.
 11. In **Parameter Description** enter a brief description of the parameter. If the parameter appears in the API documentation, this description also appears.
 8. Click **Save**.
 
@@ -120,7 +119,6 @@ To define a parameter :
 |    |  no-op &mdash;  Indicates that the API provider does not need to operate on the parameter. Use no-op if you use the parameter in hooks.  |    |
 |  Parameter Source  |  Identifies the side that represents the source, or left side of the parameter. The default request identifies Cloud Elements as the source. If you choose response, you effectively flip the Cloud Elements and API provider sides.  |  Y  |
 |  Parameter Description  |  A free text area to describe the parameter.   |  Y  |
-|  Required  |  Identifies if the parameter is required. |  Y  |
 
 ## Delete Configurations and Parameters
 
@@ -131,3 +129,13 @@ To delete a configuration or parameter, open the configuration or parameter, and
 Continue to the next step, [Custom Hooks](hooks.html).
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
+
+## Test Authentication
+
+After you set up authentication and any additional configurations or parametrs, you can authentciate an element instance to see if you can create a connection.
+
+To test your authentication:
+
+1. Click Authenticate Instance.
+![Authenticate Instance](img/auth-instance.png)
+2. dsfsad

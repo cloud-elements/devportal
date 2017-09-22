@@ -20,7 +20,7 @@ ValeOn: <!-- vale on -->
 
 When you create an element, the first step is to provide some basic information about the element. To build the element, we need to know how you identify the element, the hub it belongs to, the type of service to connect to, the authentication type of the element, and information about the API provider.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#basic-element-information-setup>Basic Element Information Setup</a></br><a href=#element-information-parameters>Element Information Parameters</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#basic-element-information-setup>Basic Element Information Setup</a></br><a href=#element-information-parameters>Element Information Parameters</a></br><a href=#properties-setup>Properties Setup</a>" type="info" %}
 
 ## Basic Element Information Setup
 
@@ -30,22 +30,27 @@ To start building an element and provide the basic information:
 ![Build Element](img/btn_build.png)
 1. Review the information on the Builder page, and then click **Create**.
 1. Name and describe the element:
+![Name and Description](img/info-name.png)
   * **Element Name** &mdash; The name appears on the element card and should identify the API provider associated with it.
   * **Element Key** &mdash; Generated from the Element Name by default, but you can enter any text. API requests use the element key, so make sure that it identifies the element.
   * **Description** &mdash; The description helps to clarify the purpose of the element. The description appears in the response when you authenticate an instance of the element.
 1. Choose the hub associated with the new element. Make sure that you choose an accurate hub because the you can leverage existing hub resources when you [add resources to the element](resources.html).
+![Name and Description](img/hub-select.png)
 
-    {% include note.html content="You can create your own hub by entering the name of the hub.   " %},
+    {% include note.html content="You can create your own hub by entering the name of the hub.   " %}
 
 2. Select the API type used by the API provider. You can find the API type in an _Overview_ or _Introduction_ section of the API documentation.
+![Name and Description](img/api-type.png)
  * **REST API** &mdash; Select if the API is a REST or RESTful API.
  * **SOAP API** &mdash; Select if the API is a SOAP API.
  * **Database** &mdash; Select of the API is for a database application.
-2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an _Authorization_ or _Authentication_ section of the provider's API documentation. For example, Harvest provides an [Authentication section](http://help.getharvest.com/api-v1/authentication/) that describes both Basic and OAuth 2.0 authentication.
+2. Select the type of authentication needed to connect with the API provider. You can typically find this information in an _Authorization_ or _Authentication_ section of the provider's API documentation.
+![Name and Description](img/auth-type.png)
 
     {% include note.html content=" Your authentication selection affects the configuration values that you will need to complete when you configure the element. " %}
 
 3. Add reference information that you will need while building the element:
+![Reference Info](img/reference.png)
   * **Documentation URL** &mdash; Add a link to the API documentation. You will reference this throughout the element building process.
   * **Vendor API Version** &mdash; Add a version number here if available so you always know what version of the API the element was built for.
 4. Optionally upload an image to associate with the element.
@@ -54,13 +59,7 @@ To start building an element and provide the basic information:
 
 6. Click **Next**.
 
-    The element Setup page appears.
-
-7. On the element Setup page, complete the Properties section:
-  * In **Base URL** enter the URL where all API Requests will be sent. When you [add resources](resources.html), they are relative to the Base URL. Most API providers identify the Base URL in an _Introduction_, _Getting Started_,  or _Overview_ section.
-  * **Max Page Size** the maximum number of returned records supported by the API provider. Some API providers describe Max Page Size as limit. Find pagination information in the API documentation in a _Pagination_ or _Paging_ section.
-  * **Pagination Type** the approach to pagination supported by the API provider.
-7. [Define authentication information](auth.html).
+    The element Setup page appears. Continue to [Properties Setup](#properties-setup).
 
 ## Element Information Parameters
 
@@ -88,6 +87,34 @@ To start building an element and provide the basic information:
 |    | Page starts with n &mdash; Pagination begins with either 1 or 0.  |    |
 |    | Offset &mdash; A numeric offset identifies the first page.  |    |
 |    |  Cursor &mdash; A unique key element identifies the first page entry   |    |
+
+## Properties Setup
+
+After completing the basic element information, configure the Properties section on the Setup page. Properties include the Base URL, pagination information, and header formats.
+![Properties](img/properties.png)
+
+To complete the Properties section:
+
+1. In **Base URL** enter the URL where all API Requests will be sent. When you [add resources](resources.html), they are relative to the Base URL. Most API providers identify the Base URL in an _Introduction_, _Getting Started_,  or _Overview_ section.
+3. In **Pagination Type** select the approach to pagination supported by the API provider.
+2. In **Max Page Size** enter the maximum number of returned records supported by the API provider. Some API providers describe Max Page Size as limit. Find pagination information in the API documentation in a _Pagination_ or _Paging_ section.
+3. In **Content-Type Header** select the media type that the API provider expects when they receive a request.
+4. In **Accept Header** to configure the response body media type that you expect to receive from the API provider.
+
+7. [Define authentication information](auth.html).
+
+### Properties Parameters
+
+| Parameter | Description    | Required |
+| :------------- | :------------- | :------------- |
+|  Base URL  |  Endpoints are appended to the base URL. So, with an endpoint like `https://api.example.com/v1/users?role=admin&status=active`, the base URL is `https://api.example.com/v1/`.  Many API providers explicitly state the base URL, but in some cases you can find it by looking at examples in the API documentation. |  Y  |
+|  Max Page Size  |  The maximum number of records the API provider returns in a response.   |  Y  |
+|  Pagination Type  | How the API provider provides pages of data. Find the pagination types in a Pagination section of the API documentation.   |  Y  |
+|    | Page starts with n &mdash; Pagination begins with either 1 or 0.  |    |
+|    | Offset &mdash; A numeric offset identifies the first page.  |    |
+|    |  Cursor &mdash; A unique key element identifies the first page entry   |    |
+|  Content-Type Header  | The supported request media type.   |  Y  |
+|  Pagination Type  | The supported response media type.   |  Y  |
 
 Continue to the next step, [Custom Authentication Setup](auth.html).
 
