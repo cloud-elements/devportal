@@ -101,6 +101,8 @@ To complete the Properties section:
 3. In **Content-Type Header** select the media type that the API provider expects when they receive a request.
 4. In **Accept Header** to configure the response body media type that you expect to receive from the API provider.
 
+    {% include note.html content="The Content-Type Header and Accept Headers have accompanying element parameters. You can change the values in the Properties section or in <a href=config.html#set-up-element-parameters>Parameters</a>.   " %}
+
 7. [Define authentication information](auth.html).
 
 ### Properties Parameters

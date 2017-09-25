@@ -132,10 +132,13 @@ Continue to the next step, [Custom Hooks](hooks.html).
 
 ## Test Authentication
 
-After you set up authentication and any additional configurations or parametrs, you can authentciate an element instance to see if you can create a connection.
+After you set up authentication and any additional configurations or parameters required to authenticate an element instance, you can authenticate an element instance to see if you can create a connection.
 
 To test your authentication:
 
-1. Click Authenticate Instance.
+1. Click **Authenticate Instance**.
 ![Authenticate Instance](img/auth-instance.png)
-2. dsfsad
+2. On the authentication page, enter a name, and then complete any required configuration fields. These are the fields that you chose to appear on the UI.
+3. Click **Create Instance**.
+
+If the authentication succeeds, Cloud Elements creates an authenticated instance which you can use to test your authentication. You can also use it later when you test resources.

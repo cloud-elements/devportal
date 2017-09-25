@@ -256,6 +256,59 @@ To add a response model:
 4. Enter the model as a schema object as defined in the [OpenAPI version 2.0 Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md#schemaObject).
 3. When complete, close the model drawer.
 
+#### Sample Model
+
+The following sample model is a request model called postDeals for a `deals` resource.
+
+```json
+{
+    "postDeals": {
+        "id": "postDeals",
+        "properties": {
+            "deal": {
+                "type": "deal"
+            }
+        }
+    },
+    "deal": {
+        "id": "deal",
+        "properties": {
+            "owner": {
+                "type": "string"
+            },
+            "stage": {
+                "type": "string"
+            },
+            "contact": {
+                "type": "string"
+            },
+            "currency": {
+                "type": "string"
+            },
+            "title": {
+                "type": "string"
+            },
+            "percent": {
+                "type": "unknown"
+            },
+            "value": {
+                "format": "int32",
+                "type": "integer"
+            },
+            "group": {
+                "type": "string"
+            },
+            "status": {
+                "format": "int32",
+                "type": "integer"
+            }
+        }
+    }
+}
+
+```
+
+
 ### Configure Bulk
 
 {% include workflow.html displayNames="Add,Configure,Parameters,Hooks,Models,Bulk,Endpoints" links="#add-a-resource,#configure-endpoints,#add-parameters,#add-hooks,#add-models,#configure-bulk,#add-endpoints" active="Bulk"%}
