@@ -26,7 +26,10 @@ Users of this guide should be familiar with APIs, JavaScript, and JSON. To creat
 * The API provider's API documentation.
 * The Cloud Elements Hub APIs
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#navigate-custom-element-pages>Navigate Custom Element Pages</a></br><a href=#clone-and-delete-custom-elements>Clone and Delete Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
+
+
+Navigate Custom Element Pages
 
 ## The Workflow
 
@@ -54,6 +57,31 @@ If you have already built or imported a custom element, you can manage the confi
 
 To manage an existing custom element, hover over the element card, and then click **Configuration**.
 ![Configuration](img/configuration.gif)
+
+## Navigate Custom Element Pages
+
+Use the element toolbar to move through the various pages where you configure an element and it resources, clone an element, and delete an element.
+
+![Custom Element Toolbar](img/toolbar.png)
+
+<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Edit Element returns you to the custom element start page where you configure [information like the name, description, and hub](define-info.html).
+
+<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Setup returns you to the custom element Setup page where you configure the [properties](define-info.html), [authentication](auth.html), [configuration](config.html), [parameters](config.html#set-up-element-parameters), [hooks](hooks.html), and [events](events.html).
+
+<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> My Resources returns you to the custom element Resources page where you [create and manage the custom resources of the element](resources.html).
+
+<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> API Docs returns you to the [read-only API Docs](instances.html#test-an-element-instance) for the element where you review the docs and use an authenticated element instance to test requests.
+
+## Clone and Delete Custom Elements
+
+Use the custom element toolbar to make a copy &mdash; or clone &mdash; a custom element or to delete a custom element.
+
+To clone or delete a custom element:
+
+1. Open the element configuration.
+![Configuration](img/configuration.gif)
+2. Click <img src="img/btn_clone.png" alt="Alt Text" class="inlineImage"> to clone the element.
+3. Click <img src="img/resource-trash.png" alt="Alt Text" class="inlineImage"> to delete the element.
 
 ## Custom Element Checklist
 
