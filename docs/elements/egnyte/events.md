@@ -6,7 +6,7 @@ description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 4016
-elementKey: fake
+elementKey: egnyte
 parent: Back to Element Guides
 order: 25
 ---
@@ -131,7 +131,7 @@ instance JSON with polling events enabled:
 ```json
 {
   "element":{
-    "key":"sageone"
+        "key":"{{page.elementKey}}"
   },
   "providerData":{
     "code":"1c6ff4089d58d80e86482ab7d5b97f15dd7b041d"
