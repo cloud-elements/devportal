@@ -40,7 +40,7 @@ To authenticate an element instance with webhooks:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
 
@@ -57,7 +57,7 @@ To authenticate an element instance with webhooks:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+    | ![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png) | ![Authenticated Element Instance 1.0](/assets/img/elements/element-instance1.png)  |
 
 10. Use a Base 64  encoding tool, such as [Base64(https://www.base64encode.org/)], to encode the element ID.
 11. Follow the steps in [API Provider Setup](setup.html/#set-up-events) to define the **Webhook URL** at Hootsuite.

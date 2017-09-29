@@ -28,9 +28,9 @@ If you are configuring events, see the [Events section](events.html).
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-![Search](../img/Element-Search2.png)
+![Search](/assets/img/elements/element-search2.png)
 4. Hover over the element card, and then click **Authenticate**.
-![Create Instance](../img/Create-Instance.gif)
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. In **API-Version** enter the API version that you identified in [API Provider Setup](setup.html).
 7. In **AppID** enter the API-AppID that you identified in [API Provider Setup](setup.html).

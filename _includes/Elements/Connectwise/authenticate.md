@@ -16,13 +16,13 @@ To authenticate an element instance:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
 
 3. Authenticate an element instance.
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click **Authenticate**.</br> ![Create Instance](../img/Create-Instance.gif)  | Click **Add Instance**.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click **Authenticate**.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click **Add Instance**.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance
 6. In **Server URL** enter your server URL which is typically your ConnectWise URL prepended with `api-`.
@@ -32,7 +32,7 @@ To authenticate an element instance:
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](../img/element-instance.png)
+![Authenticated Element Instance](/assets/img/elements/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API

@@ -47,7 +47,7 @@ To authenticate an element instance with polling:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
 5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
@@ -56,7 +56,7 @@ To authenticate an element instance with polling:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](/assets/img/elements/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](/assets/img/elements/configure-polling.png) |
 
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
@@ -69,7 +69,7 @@ To authenticate an element instance with polling:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+    | ![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png) | ![Authenticated Element Instance 1.0](/assets/img/elements/element-instance1.png)  |
 
 ### Configure Polling Through API
 

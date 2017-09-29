@@ -32,7 +32,7 @@ To authenticate an element instance with polling:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. In **Vendor Event Type**, select **Polling**.
 8. Add an **Event Notification Callback URL**.
@@ -42,7 +42,7 @@ To authenticate an element instance with polling:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](/assets/img/elements/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](/assets/img/elements/configure-polling.png) |
 
 8. If using Cloud Elements 2.0, optionally add tags.
 7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
@@ -145,7 +145,7 @@ To authenticate an element instance with webhooks:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. In **Vendor Event Type**, select **Webhooks**.
 8. Add an **Event Notification Callback URL**.

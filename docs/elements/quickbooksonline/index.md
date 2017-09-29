@@ -47,7 +47,7 @@ To find your Organization and User Secret:
 
 | Latest UI | Earlier UI  |
 | :------------- | :------------- |
-| Open the profile menu.</br> ![Search](../img/Org-User-Secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](../img/Org-User-Secret.png)  |
+| Open the profile menu.</br> ![Search](/assets/img/elements/org-user-secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](/assets/img/elements/org-user-secret.png)  |
 
 When you create a new connection to an endpoint, you will receive an Element token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
 

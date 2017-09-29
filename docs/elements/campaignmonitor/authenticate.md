@@ -29,13 +29,13 @@ To authenticate an element instance:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
 
 3. Create an element instance.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance.
 {% include note.html content="The optional List IDs field is needed only for event setup. See <a href=events.html>Events</a>.  " %}

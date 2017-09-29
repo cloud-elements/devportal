@@ -47,13 +47,13 @@ To authenticate an element instance with polling:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
 
 3. Create an element instance.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance.
 7. Switch **Events Enabled** on.
@@ -69,7 +69,7 @@ To authenticate an element instance with polling:
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
       * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
+      ![Add tag](/assets/img/elements/add-tag.png)
      1. Click __Done__.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.

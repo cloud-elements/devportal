@@ -23,7 +23,7 @@ To authenticate an element instance with webhooks:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
@@ -38,7 +38,7 @@ To authenticate an element instance with webhooks:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+    | ![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png) | ![Authenticated Element Instance 1.0](/assets/img/elements/element-instance1.png)  |
 
 ### Configure Webhooks Through API
 

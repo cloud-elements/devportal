@@ -148,7 +148,7 @@ Endpoint parameters allow you to pass various properties to the endpoint. Use th
 
 | GET | GET {id} | POST, PATCH & PUT| DELETE |
 | :------------- | :------------- | :------------- | :------------- |
-|  **where**: CEQL search expression.  |  **id**: The id of a specific object. | **body**: The object payload to create or update.  | No default, but the id of the deleted object is a common parameter. |
+|  **where**: CEQL search expression.</br>In Vendor Name, keep the default `converter: toQueryParameters` in most cases. For some API providers that use an OData service you can use `converter: toODataFilter`. In some cases querying in the API provider cannot be supported by the existing parameters and you should contact Cloud Elements support.  |  **id**: The id of a specific object. | **body**: The object payload to create or update.  | No default, but the id of the deleted object is a common parameter. |
 |  **page**: The next token or link to get additional results.   |  |   |  |
 |  **pageSize**: The number of records to return.  |   |  |   |
 
