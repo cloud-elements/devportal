@@ -30,13 +30,13 @@ To authenticate an element instance:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
 
 3. Create an element instance.
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance.
 7. Enter the **Subdomain** and **API Key**.
@@ -48,7 +48,7 @@ To authenticate an element instance:
 
 8. If using the earlier UI, optionally add tags to the authenticated element instance.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](../img/element-instance.png)
+![Authenticated Element Instance](/assets/img/elements/element-instance.png)
 8. Take a look at the documentation for the element resources now available to you.
 
 ## Authenticate Through API

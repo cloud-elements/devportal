@@ -26,9 +26,9 @@ Use the UI to authenticate with {{page.heading}} and create an element instance.
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-![Search](../img/Element-Search2.png)
+![Search](/assets/img/elements/element-search2.png)
 4. Hover over the element card, and then click **Authenticate**.
-![Create Instance](../img/Create-Instance.gif)
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. In **{{page.username}}** enter the credentials that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.

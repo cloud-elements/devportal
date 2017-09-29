@@ -29,13 +29,13 @@ To authenticate an element instance:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    |  ![Search](../img/Element-Search2.png)  |  ![Search](../img/Element-Search.png)  |
+    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
 
 3. Create an element instance.
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](../img/Create-Instance.gif)  | Click __Add Instance__.</br> ![Search](../img/Add-Instance.png)  |
+    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance.
 6. In **The Egnyte Subdomain** enter your Egnyte Domain, which appears in the URL between `https://` and `egnyte.com`.
@@ -53,7 +53,7 @@ To authenticate an element instance:
 
     | Cloud Elements 2.0 | Earlier UI  |
     | :------------- | :------------- |
-    | ![Authenticated Element Instance 2.0](../img/element-instance.png) | ![Authenticated Element Instance 1.0](../img/element-instance1.png)  |
+    | ![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png) | ![Authenticated Element Instance 1.0](/assets/img/elements/element-instance1.png)  |
 
 
 8. Take a look at the documentation for the element resources now available to you.

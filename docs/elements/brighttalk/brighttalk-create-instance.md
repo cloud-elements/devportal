@@ -29,14 +29,14 @@ You can provision instances through Cloud Elements or through APIs. This section
 Use <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> to provision an instance using our user interface. We provide a Provision Instance workflow that includes two steps: Provision it and Tag it.
 
 1. Sign in, and then search for the element in our Elements Catalog.
-  ![Search](../img/Element-Search.png)
+  ![Search](/assets/img/elements/element-search.png)
 1. Click __Add Instance__.
 1. Enter your __Instance Name__.
 1. Complete the Instance Configuration parameters. See [Parameters](#parameters) or hover over the information icon for information about each parameter.
 1. Click __Next__.
 1. On the Tag It page, enter any tags that might help further define the instance.
   * To add more than one tag, click __Add__ after each tag.
-  ![Add tag](../img/Add-Tag.png)
+  ![Add tag](/assets/img/elements/add-tag.png)
 1. Click __Done__.
 1. Take a look at the documentation for the element resources now available to you.
   ![Documentation Tab](img/Element-Instance.png)

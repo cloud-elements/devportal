@@ -70,6 +70,10 @@ endpoint-full: "A unique URI that represents a resource and includes the HTTP me
 
 event: "An action that occurs at an API provider associated with an authenticated element instance and is monitored either through Polling or Webhooks."
 
+event-polling-refresh-interval: "The number in minutes that specifies how often the poller should check for changes."
+
+event-resource-name: "The name of the resource that you want to monitor at the API provider."
+
 field: "Data within a resource."
 
 formula-instance: "A specific instance of a formula template configured with explicit variables and associated with specific element instances."

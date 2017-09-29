@@ -38,7 +38,7 @@ To authenticate an element instance with webhooks:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. Add an **Event Notification Callback URL**.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.

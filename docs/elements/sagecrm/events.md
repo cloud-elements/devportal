@@ -51,7 +51,7 @@ To authenticate an element instance with polling:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](../img/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](../img/event-enabled-true.png) |
+    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
 
 8. Add an Event Notification Callback URL.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
@@ -59,7 +59,7 @@ To authenticate an element instance with polling:
 
     | Latest UI | Earlier UI  |
     | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](../img/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](../img/configure-polling.png) |
+    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](/assets/img/elements/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](/assets/img/elements/configure-polling.png) |
 
     {% include note.html content="If the time zones that you set up in Sage CRM are not UTC+00:00, make sure that you update the time zones in the poller configuration to match.  " %}
 
@@ -67,7 +67,7 @@ To authenticate an element instance with polling:
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
       * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](../img/Add-Tag.png)
+      ![Add tag](/assets/img/elements/add-tag.png)
      1. Click __Done__.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.

@@ -37,7 +37,7 @@ To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Switch **Events Enabled** on.
-![event-enabled-on](../img/event-enabled-on.png)
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
 5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
@@ -48,7 +48,7 @@ To authenticate an element instance with polling:
     After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
 
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance 2.0](../img/element-instance.png)
+![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png)
 
 ### Configure Polling Through API
 

@@ -1,73 +1,69 @@
 ---
 heading: Event Management
 seo: Event Management | Cloud Elements API Docs
-title: Provisioning via UI
+title: Authenticate With Events - UI
 description: View the Event Management Guide explaining the Cloud Elements Events Framework.
 layout: sidebarleft
+restContentVersion: provisioning-apis.html
 breadcrumbs: /docs/platform/platform-docs.html
 parent: Back to Platform Docs
 order: 10
 sitemap: false
 ---
 
-### Provisioning
+# Authenticate an Element Instance with Events
 
-Elements can be provisioned with Event Management Integration via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> or APIs. [Click here for provisioning via APIs](provisioning-apis.html).
+This section provides a summary of how to authenticate an element instance with events. Each element is different, so take a look at the [Events section of the specific Element guide](/docs/elements.html). You can authenticate  via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a> or APIs. Use the UI/API switch at the top of this page to switch between UI or API steps.
 
-#### **Provisioning via Cloud Elements**
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-an-element-instance-with-polling>Authenticate an Element Instance with Polling</a></br><a href=#polling-parameters>Polling Parameters</a></br><a href=#authenticate-an-element-instance-with-webhooks>Authenticate an Element Instance with Webhooks</a></br><a href=#webhook-parameters>Webhook Parameters</a>" type="info" %}
 
-__Dropbox__ will be used for most of this demonstration.  However the
-majority of our Elements support events.
+## Authenticate an Element Instance with Polling
 
-To start, sign into the Elements Manager and click "Elements Catalog"
-![Cloud Elements Events 2](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide1.png)
+Authenticating an element instance with events works the same as authenticating an instance, you just need to turn on events and set a few more parameters.
 
-Click "Documents"
-![Cloud Elements Events 3](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide2.png)
+For more information about each field described here, see [Parameters](#parameters).
 
-Click "Create Instance for Dropbox"
-![Cloud Elements Events 4](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide3.png)
+To authenticate an element instance with polling:
 
-Click "+"
-![Cloud Elements Events 5](http://cloud-elements.com/wp-content/uploads/2014/10/quickGuide4.png)
+1. Enter the Name of the element instance and any configuration parameters need to authenticate the element instance.
+2. Enable events: Switch **Events Enabled** on.
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
+3. If the element supports both polling and webhooks, select **polling** in **Event Type**.
+8. Add an **Event Notification Callback URL** to receive information about the events.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Click <img src="/assets/img/elements/polling-resource-select.png" alt="Polling Resource Select" class="inlineImage"> to select a resource to poll.
 
-The "Provision It" tab is where you set the event configuration. In the
-Box example, you provide a name and tagging selection as normal (tagging
-is optional so you may leave it set to “No”). To enable notifications,
-select “True” on the "Enable/Disable Event Notifications" option, and
-enter the callback URL to your application. Once your event
-configuration is to your liking, click "Next".
-![Cloud Elements Events 6](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance11.png)
+    The code view on the right updates the `event.poller.configuration` JSON object with the default polling configuration. You can change the polling configuration for each authenticated instance.
 
-**Sidenote**: If an Element supports polling, then you may be asked for
-the event poller refresh internal (in minutes). Depending on the
-Element, you may also be asked for one of the the following: (1) Polling
-objects: a comma-separated list of objects to poll for, as shown in the
-Salesforce Element ...
-![Cloud Elements Event Config GUI](/assets/img/events/events-objects-console.png)
+6. Optionally, click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to update the polling configuration, which appears in the Event Poller Configuration pane on the right.
 
-... (2) polling URLs: a line-by-line list of objects, pipe-separated
-with a URL template that retrieves that object; demonstrated in this
-Sharepoint Element ...
-![Cloud Elements Event Config GUI](/assets/img/events/events-urls-console.png)
+    {% include note.html content="The default polling configuration represents the optimal configuration. Although you can change anything in the poller configuration, we recommend that you do so rarely and in conjunction with Cloud Elements support.  " %}
 
-... or (3) a polling configuration JSON block, which allows for even
-tighter control over polling. Here you can see the start of that
-configuration in this Stripe Element configuration.
-![Cloud Elements Event Config GUI](/assets/img/events/events-config-console.png)
-The details of the configuration JSON are described below in the section
-titled "Polling Configuration": it's the same JSON format used when creating an instance via our APIs.
+7. In the Event Poller Configuration pane, you can update any of the fields, including the date fields under **Advanced Filtering**. After you make changes, click **Save**.
 
-**Let's return** now to the Dropbox demo, where we've been redirected to
-the Dropbox Login page. As per the typical OAuth Web Flow, login to your
-Dropbox Account and click "Allow":
-![Cloud Elements Events 7](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance22.png)
+Your polling configuration is complete and you can authenticate the element instance. Use the events to build formulas to accomplish a wide variety of workflows.
 
-And finally, click "Done". (As always, you can enter some tag
-information here to help track your Element instances.)
-![Cloud Elements Events 8](http://cloud-elements.com/wp-content/uploads/2015/01/DropboxCreateInstance31.png)
+{% include events/polling-parameters.md%}
 
-And that's it! You've successfully provisioned a new Element instance
-with notifications via <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.ce-ui}}">Cloud Elements</a>.
+## Authenticate an Element Instance with Webhooks
 
-[Provision via APIs](provisioning-apis.html)
+Authenticating an element instance with events works the same as authenticating an instance, you just need to turn on events and set a few more parameters.
+
+{% include note.html content="When you authenticate an element instance with webhook events, make sure that you check the Element Guide for any additional setup you need at the API provider." %}
+
+To authenticate an element instance with webhooks:
+
+1. Enter the Name of the element instance and any configuration parameters need to authenticate the element instance.
+2. Enable events: Switch **Events Enabled** on.
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
+3. If the element supports both polling and webhooks, select **webhooks** in **Event Type**.
+8. Add an **Event Notification Callback URL** to receive information about the events.
+
+    {% include note.html content="In most cases you must set up the event callback URL as part of API provider's webhook setup, and what you enter here should match. " %}
+
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
+
+Your webhooks configuration is complete and you can authenticate the element instance. Use the events to build formulas to accomplish a wide variety of workflows.
+
+{% include events/webhook-parameters.md%}

@@ -116,7 +116,7 @@ To complete the Properties section:
 |    | Offset &mdash; A numeric offset identifies the first page.  |    |
 |    |  Cursor &mdash; A unique key element identifies the first page entry   |    |
 |  Content-Type Header  | The supported request media type.   |  Y  |
-|  Pagination Type  | The supported response media type.   |  Y  |
+|  Accept Header  | The supported response media type.   |  Y  |
 
 Continue to the next step, [Custom Authentication Setup](auth.html).
 
