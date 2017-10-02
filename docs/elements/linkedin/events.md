@@ -30,6 +30,7 @@ You can set up events for the following resources:
 
 * companies/{id}/updates/comments
 * companies/{id}/updates/likes
+* companies/{id}/updates/
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
