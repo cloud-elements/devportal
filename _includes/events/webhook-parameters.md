@@ -1,7 +1,7 @@
 ## Webhook Parameters
 
 Labels and buttons on the UI correspond to parameters in the JSON. The table below shows UI labels and buttons in **bold** and the equivalent parameters in the configuration JSON object in `code formatting`.
-![UI and JSON](/assets/img/events/ui-to-json.png)
+![UI and JSON](/assets/img/events/ui-to-json-hooks.png)
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
