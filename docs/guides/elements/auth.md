@@ -21,13 +21,15 @@ The information that you need to enter to set up authentication with the API pro
 
 Click the authentication type that you selected to see configuration instructions. If you selected Custom, you can skip directly to [Configuration and Parameters](config.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About OAuth Authentication</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About OAuth Authentication</a><br><a href=#override-standard-oauth-2-0-flow>Override Standard OAuth 2.0 Flow</a>" type="info" %}
 
 ## Configure OAuth 2.0
 
 Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Before setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
 The [OAuth 2.0](#oauth-2-0) entry in the [About OAuth Authentication](#about-oauth-authentication) section includes more details about the most common OAuth 2.0 authentication flow.
+
+{% include note.html content="Each of the parameters contributes to the configuration of the element. You can use the configurations in parameters and hooks by referring to the Configuration Key shown in the table below.  " %}
 
 To configure OAuth 2.0 elements:
 
@@ -46,17 +48,17 @@ To configure OAuth 2.0 elements:
 
 ### OAuth 2.0 Parameters
 
-| Name | Description   | Required   |
-| :------------- | :------------- | :------------- |
-|  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
-|  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
-|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} For authentication through Cloud Elements, use `https://auth.cloudelements.io/oauth`. |  Y  |
-|  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
-|  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
-| OAuth Scope | {{site.data.glossary.eb-scope}} | N |
-|  OAuth Refresh Interval (s)  |  If the access token expires, the time frame in seconds when Cloud Elements sends a request to the OAuth Token Refresh URL. The default is 3600, which is one hour.  |  N  |
-|  OAuth Token Refresh URL  |  The URL to send a refresh request.  |  N  |
-| OAuth Revoke Token URL | The URL to send requests to revoke refresh or access tokens. | N |
+| Name | Key  | Description   | Required   |
+| :------------- | :------------- | :------------- | :------------- |
+|  OAuth API Key  | oauth.api.key | {{site.data.glossary.eb-api-key}} |  Y  |
+|  OAuth API Secret  | oauth.api.secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
+|  OAuth Callback URL  | oauth.callback.url  | {{site.data.glossary.eb-callback-url}} For authentication through Cloud Elements, use `https://auth.cloudelements.io/oauth`. |  Y  |
+|  OAuth Authorization URL  | oauth.authorization.url  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
+|  OAuth Token URL  |  oauth.token.url | {{site.data.glossary.eb-token-url}}  |  Y  |
+| OAuth Scope |  oauth.scope	  | {{site.data.glossary.eb-scope}} | N |
+|  OAuth Refresh Interval (s)  | oauth.user.refresh_interval  | If the access token expires, the time frame in seconds when Cloud Elements sends a request to the OAuth Token Refresh URL. The default is 3600, which is one hour.  |  N  |
+|  OAuth Token Refresh URL  | oauth.token.refresh_url | The URL to send a refresh request.  |  N  |
+| OAuth Revoke Token URL | oauth.token.revoke_url  |The URL to send requests to revoke refresh or access tokens. | N |
 
 ## Configure OAuth 1.0
 
@@ -80,21 +82,21 @@ To configure OAuth 1.0 elements:
 
 ### OAuth 1.0 Parameters
 
-| Name | Description   | Required   |
-| :------------- | :------------- | :------------- |
-|  OAuth Request URL  |  The URL used to get an unauthorized request token. |  Y  |
-|  OAuth Callback URL  |  {{site.data.glossary.eb-callback-url}} |  Y  |
-|  OAuth API Key  | {{site.data.glossary.eb-api-key}} |  Y  |
-|  OAuth API Secret  |  {{site.data.glossary.eb-api-secret}}  |  Y  |
-|  OAuth Authorization URL  |  {{site.data.glossary.eb-auth-url}}  |  Y  |
-|  OAuth Token URL  |  {{site.data.glossary.eb-token-url}}  |  Y  |
-|  OAuth Authorization Type (Header or Query)  |  How the API provider receives authentication information, either in the header or as a query parameter.  |  Y  |
-|  OAuth Scope  |  {{site.data.glossary.eb-scope}}  |  N  |
-|  OAuth User Secret  | The user secret associated with the application authenticating with the API provider.   |  N  |
+| Name | Key  | Description   | Required   |
+| :------------- | :------------- | :------------- | :------------- |
+|  OAuth Request URL  | oauth.request.url | The URL used to get an unauthorized request token. |  Y  |
+|  OAuth Callback URL  | oauth.callback.url  | {{site.data.glossary.eb-callback-url}} |  Y  |
+|  OAuth API Key  | oauth.api.key | {{site.data.glossary.eb-api-key}} |  Y  |
+|  OAuth API Secret  | oauth.api.secret  | {{site.data.glossary.eb-api-secret}}  |  Y  |
+|  OAuth Authorization URL  | oauth.authorization.url | {{site.data.glossary.eb-auth-url}}  |  Y  |
+|  OAuth Token URL  | oauth.token.url | {{site.data.glossary.eb-token-url}}  |  Y  |
+|  OAuth Authorization Type (Header or Query)  | oauth.request.authorization.type | How the API provider receives authentication information, either in the header or as a query parameter.  |  Y  |
+|  OAuth Scope  | oauth.scope | {{site.data.glossary.eb-scope}}  |  N  |
+|  OAuth User Secret  | oauth.user.token.secret | The user secret associated with the application authenticating with the API provider.   |  N  |
 
 ## Configure Basic Authentication
 
-In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with **Username** and **Password** configurations. If you need to add any other configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
+In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with **Username** (key:`username`) and **Password**(key:`password`) configurations. If you need to add any other configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
 ### Basic Authentication Parameters
 
@@ -225,7 +227,7 @@ Before you can authenticate an element instance, you must register your applicat
 
 #### OAuth 1.0 Authentication JSON
 
-The JSON used to authenticate an element instance looks like this:
+The JSON used to authenticate an element instance looks like:
 
 ```json
 {
@@ -248,3 +250,79 @@ The JSON used to authenticate an element instance looks like this:
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+
+## Override Standard OAuth 2.0 Flow
+
+Many API providers implement OAuth 2.0 in unique ways. When you create an element and need to deviate from the standard [Cloud Elements OAuth 2.0 Flow](#cloud-elements-authorization-code-grant-oauth-2-0-flow), you can use specific endpoints to override each step in the flow. In each endpoint, use a combination of configurations, parameters, and hooks to override the standard OAuth 2.0 flow.
+
+The resources available to override OAuth 2.0 flows are:
+
+* `GET/oauth-authorize` &mdash; Overrides the first step in the OAuth 2.0 flow where Cloud Elements requests authorization on behalf of your app by redirecting a user to the API provider's Authorization URL.
+* `POST/oauth-token-exchange` &mdash; Overrides the second step in the flow where Cloud Elements exchanges the code returned from the API provider for an access token.
+* `POST/oauth-token-refresh` &mdash; Overrides the refresh step where Cloud Elements exchanges a refresh token for an updated access token.
+
+Overriding the OAuth 2.0 flow is a complex task and the number of ways to perform the overrides are limited only to your imagination and ability to write JavaScript code. The steps below do not provide details of how to override specific steps, but serve as a guide to get you started. See [Custom Resources](resources.html#add-resources-to-an-existing-element) for general steps to add a resource to an element.
+
+To add the `GET/oauth-authorize` resource:
+
+1. Click **Add a new resource** at the top of the page.
+2. In **Cloud Elements Resource Name** enter `/oauth-authorize`.
+3. Do not enter anything in **Vendor Resource Name**.
+4. Select only the **GET** method.
+
+    Your new resource should like:
+    ![oauth-authorize Resource](img/oauth-authorize.png)
+
+5. Click **Go**.
+6. Find the endpoint, and then click <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+7. Change the description to something like: "Overriding the OAuth 2.0 authorization".
+8. From **Resource Type**, select **OAUTH ON AUTHORIZE URL**.
+9. Some common configurations that you can use in the parameters of the endpoint or in the hooks to manipulate the request include:
+  - OAuth API Key (`oauth.api.key`)
+  - OAuth API Secret (`oauth.api.secret`)
+  - OAuth Callback URL (`oauth.callback.url`)
+  - OAuth Authorization URL (`oauth.authorization.url`)
+  - OAuth Scope (`oauth.scope`)
+
+  To add the `POST/oauth-token-exchange` resource:
+
+  1. Click **Add a new resource** at the top of the page.
+  2. In **Cloud Elements Resource Name** enter `/oauth-authorize`.
+  3. Do not enter anything in **Vendor Resource Name**.
+  4. Select only the **POST** method.
+
+      Your new resource should like:
+      ![oauth-authorize Resource](img//oauth-token-exchange.png)
+
+  5. Click **Go**.
+  6. Find the endpoint, and then click <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+  7. Change the description to something like: "Overriding the OAuth 2.0 token exchange".
+  8. From **Resource Type**, select **OAUTH ON TOKEN EXCHANGE**.
+  9. Some common configurations that you can use in the parameters of the endpoint or in the hooks to manipulate the request and response include:
+    - OAuth Callback URL (`oauth.callback.url`)
+    - `oauth.user.refresh_token` (from the response)
+    - `oauth.user.token` (from the response)
+    - OAuth Refresh Interval (s) (`oauth.user.refresh_interval`)
+    - The authorization code from the response
+
+To add the `POST/oauth-token-refresh` resource:
+
+1. Click **Add a new resource** at the top of the page.
+2. In **Cloud Elements Resource Name** enter `/oauth-authorize`.
+3. Do not enter anything in **Vendor Resource Name**.
+4. Select only the **POST** method.
+
+    Your new resource should like:
+    ![oauth-authorize Resource](img/oauth-token-refresh.png)
+
+5. Click **Go**.
+6. Find the endpoint, and then click <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+7. Change the description to something like: "Overriding the OAuth 2.0 token refresh".
+8. From **Resource Type**, select **OAUTH ON TOKEN REFRESH**.
+9. Some common configurations that you can use in the parameters of the endpoint or in the hooks to manipulate the request and response include:
+  - OAuth Token Refresh URL (`oauth.token.refresh_url`)
+  - OAuth Revoke Token URL (`oauth.token.revoke_url`)
+  - OAuth Refresh Interval (s) (`oauth.user.refresh_interval`)
+  - OAuth Token URL (`oauth.token.url`)
+  - The refresh token code from the response
+  - `oauth.user.token` (from the response)
