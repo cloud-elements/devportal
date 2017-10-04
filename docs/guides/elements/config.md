@@ -45,6 +45,8 @@ Each parameter that you set up when [defining the authentication information](au
 |  oauth.callback.url  |    |  |  |
 |  oauth.request.authorization.type  |    |  |  |
 |  oauth.request.url  |    |  |  |
+| oauth.token.revoke_url   |   |   |   |
+| oauth.user.token.secret   |   |   |   |
 
 
 ## Set Up Element Configuration

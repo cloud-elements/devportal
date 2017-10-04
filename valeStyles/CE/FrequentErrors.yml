@@ -5,3 +5,4 @@ level: warning
 swap:
   form: from
   deader: header
+  and element instance: an element instance
