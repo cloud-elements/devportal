@@ -18,7 +18,7 @@ The Ground2Cloud integration consists of two parts: Client and Server.
 
 The Ground2Cloud Client creates a tunnel to a public Ground2Cloud Server, and enables requests from the Cloud Elements Production Cloud to transparently pass through that tunnel to reach the Client Service.
 
-The Ground2Cloud developer docs are broken down into three guides:
+The Ground2Cloud developer docs are broken down into eight sections:
 
 * [Who is this Manual for?](who-is-this-for.html)
 * [How It Works](how-it-works.html)
