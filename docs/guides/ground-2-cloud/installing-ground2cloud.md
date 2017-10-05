@@ -1,7 +1,7 @@
 ---
 heading: Ground2Cloud
 seo: Installation | Ground2Cloud | Cloud Elements API Docs
-title: Installing Ground2Cloud
+title: Install Ground2Cloud
 description: Information about how Ground2Cloud is installed.
 layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
@@ -9,7 +9,21 @@ parent: Back to Guides
 order: 6
 ---
 
-## Installing Ground2Cloud
+# Install Ground2Cloud
+
+How you install Ground2Cloud varies depending on the API provider that you want to connect to. We offer both a bundled installer and a stand-alone installer. The stand-alone installer installs just the Ground2Cloud client and GUI, while the bundled installer also installs additional software to connect with specific API provider application.  
+
+Your Cloud Elements CSM or Delivery Manager typically helps with the initial setup of Ground2Cloud and the CE Connector. The following steps describe the installation process at a high level.
+
+
+There are actually two different types of installers: a __Standalone Installer__, and __Bundled Installer__. The Standalone Installer installs only the Ground2Cloud Client and GUI. The Bundled Installer installs those things, __and additional software__ for specific types of Client Services.
+
+For example, QuickBooks Enterprise requires the Intuit QuickBooks SDK and a protocol translator program named “Cloud Elements QuickBooks Connector” to be installed before the Cloud Elements Platform can communicate with it. So, the __Ground2Cloud Bundled Installer For QuickBooks__ also attempts to install all of those things, in addition to the Ground2Cloud Client itself.
+
+You should download the Standalone Installer if your Client Service works out-of-the-box with Cloud Elements Instances. Generally, these types of Client Services natively provide a REST or SOAP API. Or, download the Standalone Installer if you have separately installed all of the other required software for Client Service.
+
+Download the Bundled Installer if you know what kind of Client Service you have, and have not installed (or are not sure if you have) all of the necessary connecting software. Contact your Cloud Elements representative if you have questions about the type of service you have, what installer type you need to download, and/or what other pieces of software need to be installed.
+
 
 ### Choosing an Installer
 
