@@ -14,10 +14,10 @@ redirect_from:
 
 # Overview
 
-Ground2Cloud helps connect to an API provider application, like QuickBooks Enterprise or MySQL, that runs in a private cloud which is not publicly available. Cloud Elements Ground2Cloud manages a reverse SSH (sometime called a “forward in”) tunnel from the application to the Cloud Elements Ground2Cloud Server. The Ground2Cloud Client creates a tunnel to the public Ground2Cloud Server, and enables requests from the Cloud Elements Production Cloud to transparently pass through that tunnel to reach the application running in the private cloud.
+Ground2Cloud helps connect to an API provider application that runs in a private cloud which is not publicly available, like QuickBooks Enterprise or MySQL. Cloud Elements Ground2Cloud manages a reverse SSH (sometime called a “forward in”) tunnel from the application to the Cloud Elements Ground2Cloud Server. The Ground2Cloud Client creates a tunnel to the public Ground2Cloud Server, and enables requests from the Cloud Elements Production Cloud to transparently pass through that tunnel to reach the application running in the private cloud.
 ![Cloud Elements Ground2Cloud 1](/assets/img/ground2cloud/how-it-works.png)
 
-The Ground2Cloud Client installation program is a self-unpacking executable. The Ground2Cloud Client runs as Windows Service which constantly runs to keep the tunnel open. Once installed, the service automatically restarts in case of failure, or when the Windows machine is rebooted.
+The Ground2Cloud Client installation program is a self-unpacking executable. The Ground2Cloud Client runs as Windows service which constantly runs to keep the tunnel open. Once installed, the service automatically restarts in case of failure, or when the Windows machine is rebooted.
 
 Ground2Cloud also includes a GUI (Graphical User Interface), which you can use to monitor and manage the Ground2Cloud Client. The Ground2Cloud GUI includes a window with simple dialogs that let you browse logs files, change configuration, and perform other management operations.
 
@@ -46,4 +46,4 @@ The Ground2Cloud Client runs machine running the following versions of Windows:
 * Windows Server 2012
 * Windows Server 2016
 
-If the machine running the application is not on Windows, you can still install the client via npm.
+If the machine running the application is not on Windows, you can still install the client via [npm](https://www.npmjs.com/get-npm). 
