@@ -1,8 +1,8 @@
 ---
-heading: Quickbooks Enterprise
-seo: Tips | Quickbooks Enterprise | Cloud Elements API Docs
+heading: QuickBooks Enterprise
+seo: Tips | QuickBooks Enterprise | Cloud Elements API Docs
 title: Tips
-description: Quickbooks Enterprise Tips
+description: QuickBooks Enterprise Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 195
@@ -14,11 +14,14 @@ order: 75
 
 The Tips section includes more information about the element including FAQs, endpoint limitations, and general tips.
 
-* To successfully authenticate an instance with Quickbooks Enterprise, both the Ground2Cloud and Quickbooks connector services need to be running. You may need to actively restart your connector if your instance is not working.  For more information on Ground2Cloud, see the [Ground2Cloud documentation](https://developers.cloud-elements.com/docs/guides/ground-2-cloud/?resource=).
+## Ground2Cloud
+
+* To successfully authenticate an instance with QuickBooks Enterprise, both the Ground2Cloud and QuickBooks connector services need to be running. You may need to actively restart your connector if your instance is not working.  For more information on Ground2Cloud, see the [Ground2Cloud documentation](https://developers.cloud-elements.com/docs/guides/ground-2-cloud/?resource=).
+* 
 
 * When setting up polling, you may need to specify a timezone specific to the location of your server. The default time zone is UTC.
 
-    {% include note.html content="Quickbooks Enterprise has a known limitation where It currently does not support daylight savings, which may impact your time zone settings.  " %}
+    {% include note.html content="QuickBooks Enterprise has a known limitation where It currently does not support daylight savings, which may impact your time zone settings.  " %}
 
     Example polling configuration:
 
@@ -37,6 +40,6 @@ The Tips section includes more information about the element including FAQs, end
 	}
 	```
 
-* Quickbooks cannot search by `customerref.name` in invoices. For more information, reference the [Quickbooks documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0300_references/0000_programming_guide/0050_data_queries).
+* QuickBooks cannot search by `customerref.name` in invoices. For more information, reference the [QuickBooks documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0300_references/0000_programming_guide/0050_data_queries).
 
-* Quickbooks Bulk does not support doing selects with specific column names in your CEQL. The best practice to achieve this functionality is to use transformations.
+* QuickBooks Bulk does not support doing selects with specific column names in your CEQL. The best practice to achieve this functionality is to use transformations.

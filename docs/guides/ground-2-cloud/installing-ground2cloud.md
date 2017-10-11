@@ -14,13 +14,14 @@ order: 6
 
 How you install Ground2Cloud varies depending on the API provider that you want to connect to. We offer both a bundled installer and a stand-alone installer. The stand-alone installer installs just the Ground2Cloud client and GUI, while the bundled installer also installs a Cloud Elements connector and the specific software needed to connect with an API provider application. Your Cloud Elements CSM or Delivery Manager typically helps with the initial setup of Ground2Cloud and will provide the appropriate installer.
 
-The bundled installer includes both a connector and the files, libraries, or SDK needed to communicate with the application. On-premise applications like QuickBooks do not natively provide a REST or SOAP API, so we install the connector and additional software to faciliate communication.
+The bundled installer includes both a connector and the files, libraries, or SDK needed to communicate with the application. On-premise applications like QuickBooks do not natively provide a REST or SOAP API, so we install the connector and additional software to facilitate communication.
 
-The following steps describe the installation process at a high level. For instructions specific to each Element, see:
+The following steps describe a generic installation process. For instructions specific to each Element, see :
 
-* QuickBooks
-* MySQL
-*
+* [QuickBooks Enterprise](../../elements/quickbooksenterprise/setup.html)
+* [MySQL](../../elements/mysql/mysql-endpoint-setup.html)
+* [PostgreSQL](../../elements/postgresql/postgresql-endpoint-setup.html)
+* [Microsoft SQL Server](../../elements/sqlserver/sqlserver-endpoint-setup.html)
 
 ## Install and Set Up Ground2Cloud
 
@@ -30,3 +31,15 @@ The stand-alone Ground2Cloud installer (**{{page.g2c}}**) installs the Ground2Cl
 
 {% include g2c/install-steps.md%}
 6. Check the installation by opening the Ground2Cloud GUI. If you created a desktop shortcut, click that. Otherwise open **Ground2Cloud** from your programs list.
+
+## Troubleshoot Installation
+
+If you experience security warnings while installing Ground2Cloud, it's generally a result of normal administrator verification, or firewall,
+anti-virus, or other security applications being over-zealous. Either click **Run anyway** (or equivalent) if it's available, or disable your
+anti-virus or security programs and try again.
+
+Recently, Microsoft has disavowed certain certification schemes that it previously acknowledged, which may affect you if you are installing
+Ground2Cloud using Microsoft Windows desktop, Microsoft Edge, or Microsoft Explorer 11.
+
+If the following message (or similar) shows up in Microsoft Edge or Microsoft Explorer: "The signature for Ground2CloudSetup.exe is
+corrupt or invalid". Click **View Downloads**, then **Open Folder**, and finally double-click on **Ground2CloudSetup.exe**. When you run Ground2Cloud, you should see a verification window that says "Do you want to allow this app to make changes to your PC?". It should list the Verified Publisher as "Cloud Elements, Inc." If you do not see this dialog, or if you see a different message or publisher on this dialog, contact Cloud Elements.

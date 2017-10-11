@@ -1,5 +1,5 @@
----
-heading: Quickbooks Enterprise
+QuickBooks---
+heading: QuickBooks Enterprise
 seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
@@ -14,9 +14,11 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} instance you must first run the bundled Ground2Cloud installer for QuickBooks on the machine running QuickBooks. The bundled installer walks you through the steps to install Ground2Cloud, the Cloud Elements QuickBooks Connector (CE Connector), and the Intuit QuickBooks SDK. Ground2Cloud and the CE Connector enable the Cloud Elements servers to communicate with an on premise installation of Quickbooks Enterprise. The Intuit QuickBooks SDK facilitates communication between the connector and QuickBooks.
+To authenticate a {{page.heading}} instance you must first run the bundled Ground2Cloud installer for QuickBooks on the machine running QuickBooks. The bundled installer walks you through the steps to install Ground2Cloud, the Cloud Elements QuickBooks Connector (CE Connector), and the Intuit QuickBooks QBXML SDK. Ground2Cloud and the CE Connector enable the Cloud Elements servers to communicate with an on premise installation of QuickBooks Enterprise. The Intuit QuickBooks SDK facilitates communication between the connector and QuickBooks.
 
 Your Cloud Elements CSM or Delivery Manager typically helps with the initial setup of Ground2Cloud and will provide the appropriate installer.
+
+{% include note.html content="The QuickBooks Enterprise element and Ground2Cloud support all versions of QuickBooks Enterprise supported by the Intuit QuickBooks QBXML SDK. As of October 2017, the SDK does not support QuickBooks Desktop Enterprise 18.0. " %}
 
 After you install Ground2Cloud and the CE Connector, use the **Configured Application Name** and **Host Name/IP** to authenticate an element instance. If you already installed Ground2Cloud and just need to locate your information, see [Locate Credentials for Authentication](#locate-credentials-for-authentication). If you need to install Ground2Cloud, see [Install Ground2Cloud](#install-and-set-up-ground2cloud)
 
@@ -39,7 +41,7 @@ The bundled Ground2Cloud installer for QuickBooks (**Ground2CloudQbSetup_n.n.n.e
 
 {% include g2c/install-steps.md%}
 
-    The installation prompts you to install the CE Connector application.
+    The installation adds the QuickBooks QBXML SDK and prompts you to install the CE Connector application.
 
 3. Click **Install**.
 
