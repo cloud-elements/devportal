@@ -34,8 +34,6 @@ The Symbol Character Set defines the allowed symbols. So if you require symbols 
 
 If you make a mistake or just want to return to the original default password policy, click **Reset**.
 
-01W@$hingt0n
-
 To configure passwords:
 
 1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
@@ -57,7 +55,7 @@ If you set up two-factor authentication with SMS, users receive an authenticatio
 
 Google Authenticator is an app that generates two-factor authentication codes. Before you set up two-factor authentication with Google Authenticator, make sure that your users have the Google Authenticator app for [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en) or [iOS](https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8).
 
-After you set up two-factor authentication with Google Authenticator, the next time that users in your organization log in, they will be prompted to scan a QR code with the Google Authenticator app. After scanning the code, the app displays an authentication code. After the first login, users just enter a code and do not need to scan another QR code.
+After you set up two-factor authentication with Google Authenticator, the next time that users in your organization log in, they will be prompted to scan a QR code with the Google Authenticator app. After scanning the code, the app displays an authentication code. After the first login, users just retrieve a new code from the app and do not need to scan another QR code.
 
 To set up two-factor authentication:
 
