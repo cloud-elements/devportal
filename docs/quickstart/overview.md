@@ -15,7 +15,7 @@ sitemap: false
 
 We're glad that you're trying out Cloud Elements and hope you use this section to get familiar with the application. In this section, we'll give you some basic information to acquaint you with Cloud Elements, and then show you how to integrate the Salesforce and Shopify elements so you can sync your contacts between the two.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#link>Heading</a></br><a href=#link>Heading</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#documentation-and-resources>Documentation and Resources</a></br><a href=#definitions>Definitions</a>" type="info" %}
 
 ## Documentation and Resources
 
