@@ -55,7 +55,9 @@ To create a user for an account:
 
 1. Access the Accounts Edit page, either by creating a new account or click the account name in the list of accounts.
 2. In the **Users** section click **Add User**.
-3. Complete the required fields.
+3. Complete the **First Name**, **Last Name** and **Email** fields.
+4. Complete the **Password** field with a password that meets the [password policy](security-settings.html#configure-passwords) you configured on the Settings tab.
+5. Select **Active** to allow them to access Cloud Elements. You can [deactivate the user](user-managemnet.html#deactivate-and-reactivate-a-user) later if they no longer need access.
 4. Click <img src="img/btn-save.png" alt="Save" class="inlineImage">.
 
 After you create a user, they do not receive any notification. This is because many users do not need to access Cloud Elements directly. If the new user needs to access Cloud Elements, either give them the password that you entered or encourage them to reset their password.

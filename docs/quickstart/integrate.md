@@ -1,15 +1,17 @@
 ---
 heading: Create Element Instances
 seo: Create Element Instances | Create Salesforce and Shopify Instances
-title: Authenticate
-description: Create an instance of Salesforce and Shopify
+title: First Integration
+description: Set Up Your First Integration
 layout: sidebarleft
-order: 52
+order: 30
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
 sitemap: false
 ---
+
+# Set Up Your First Integration
 
 The first step in setting up our contact sync from Salesforce to Shopify, is to create an `Element Instance` of both Salesforce and Shopify.
 
