@@ -224,9 +224,12 @@ To build a new formula template:
 
 5. Click **Event**.
 
-    As mentioned earlier, formula templates consist of variables. The variables can represent authenticated element instances or values. In this formula, the variables will represent the two element instances that you authenticated earlier.
+    As mentioned earlier, formula templates consist of variables. The variables can represent authenticated element instances or values. In this formula, the variables will represent the two element instances that you authenticated earlier. Because you have not yet created a variable you need to create one to represent the element that kicks off the formula.
 
-6. Name the variable that represents the element that kicks off the template **OriginInstance**. In our example, this would be Salesforce Sales Cloud.
+6. Click the add button <img src="/assets/img/platform-icons/btn-add-black.png" alt="Add" class="inlineImage">.
+7. On the Formula Variables window, click **Add New Variable**, and then  click **Element Instance**.
+8. Name the variable that represents the element that kicks off the template **OriginInstance**. In our example, this will be Salesforce Sales Cloud.
+9. Click **Save**.
 7. Now add a variable for the element that gets updated when a contact is created (Shopify): Click **Variables** in the menu bar.
 ![Variables](../guides/formulasC2/img/variables.png)
 7. Click **Element Instance**.
@@ -241,8 +244,59 @@ Now we'll build the steps needed. They include
 1. Create a Filter.
 2. Retrieve the contact.
 3. Create a new contact.
-6.
-    * Choose **Event** for a formula triggered by an event configured on an element instance.
-    * Choose **Element Request** for a formula triggered when a specific request is made to an element instance.
-    * Choose **Scheduled** for a formula to occur at a specific time or regular interval.
-    * Chose **Manual** to trigger the formula with an API call to `POST /formulas/instances/:id/executions`.
+
+1. Under the trigger click <img src="../guides/formulasC2/img/btn-add-step.gif" alt="Add a Step" class="inlineImage">.
+
+    You can use many different kinds of steps in a formula. Because we're going to write some logic to make sure that the event we receive is for a created contact, we'll use the JS Script step type.
+
+2. Click **JS Script**.
+3. Enter a name for the step like "IsCreateContact".
+3. In the code area, enter the following, and then click **Save**.
+
+```js
+let theEvent = trigger.event.eventType;
+let theObject = trigger.event.objectType;
+
+done((theEvent === 'CREATED') && (theObject === 'Contact' || theObject === 'contact'));
+```
+
+4. Now add the next step to retrieve the created contact from the element represented by the `OriginInstance` variable &mdash; Salesforce Sales Cloud. Click the "IsCreateContact" step that you just created, and then click **Add OnSuccess**.
+![Add On Success](img/add-onsuccess.png)
+5. This time select the **Element API Request** step type. With this type of step, you need to identify the element variable to request and what the endpoint should be.
+6.  In the **Add Formula Step** window, enter the name for the step: "RetrieveContact".
+7. In Element Instance Variable either enter **OriginInstance**, or click <img src="/assets/img/platform-icons/btn-add-black.png" alt="Add" class="inlineImage"> and select **OriginInstance**.
+8. In **Method**, select **GET**.
+9. In **API** enter `/hubs/crm/myContact`. This is the endpoint of the Common Resource that you created earlier.
+10. Click **Save**.
+11. Now create the final step, which is posting the created contact to the element represented by the destination variable &mdash; Shopify.
+12. Because we are posting the contact to an element, create another Element API Request with the information below:
+
+| Field | Value |
+| ------ | ------ |
+| Name | `CreateContact` |
+| Element Instance | `config.destinationinstance` |
+| Method | `POST` |
+| API | `/hubs/ecommerce/MyContact` |
+| Body | `steps.RetrieveContact.response.body` |
+
+13. Create a formula instance.
+
+
+## Create and Run a Formula Instance
+
+
+1. Navigate to the Formulas page. From anywhere in the application, click **Formulas** on the left side.
+2. Hover over the **Sync Contacts** card, and then click **Create Instance**.
+3. Name the instance something more specific than the template like "Salesforce to Shopify Contact Sync."
+5. Click`OriginInstance`, and then select the Salesforce instance that you authenticated earlier &mdash; Salesforce Contacts.
+5. Click`DestinationInstance`, and then select the Shopify instance that you authenticated earlier &mdash; Shopify Contacts.
+7. Click **Create Instance**.
+
+
+### Try it out
+1. Login into your salesforce account and create a new contact.
+2. Under the formulas tab select Executions.
+3. Select the formula instance you created.
+4. If no executions appear, wait a couple minutes for the event in Salesforce to fire.
+5. Once the formula has executed, this screen will show if it was successful or not.
+6. Login into Shopify to see the new Customer that has been created in your account.
