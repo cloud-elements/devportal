@@ -16,16 +16,18 @@ sitemap: false
 In this Getting Started Guide, we'll walk you through the steps to integrate your contacts in Salesforce with your customers in Shopify. The data sync use case is a simple example that demonstrates the power of Cloud Elements. We'll set up your  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a>, create a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a> to transform the data into what we need, and then we'll set up a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.formula-template}}">formula</a> to automatically perform the sync.
 
 The three steps in this process are:
-{% include workflow.html displayNames="Authorize,Transform,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active=""%}
+{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active=""%}
 
 
 ## <img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Authenticate an Element Instance
 
-{% include workflow.html displayNames="Authorize,Transform,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active="Authorize"%}
+{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active="Authenticate"%}
 
-The first step in setting up our contact sync from Salesforce to Shopify, is to authorize the Salesforce and Shopify elements to cnnect to your accounts. To do so, you will authenticate  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance}}">element instances</a> of both Salesforce Sales Cloud and Shopify. We'll walk you through a simple authentication below, but if you want more information take a look at the Element Guides for [Salesforce](../elements/salesforce-service-cloud/authentication.html) and [Shopify](../elements/shopify/authenticate.html).
+The first step in setting up our contact sync from Salesforce to Shopify, is to authorize the Salesforce Sales Cloud and Shopify elements to connect to your accounts. To do so, you will authenticate  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance}}">element instances</a> of both Salesforce Sales Cloud and Shopify. We'll walk you through a simple authentication below, but if you want more information take a look at the Element Guides for [Salesforce Sales Cloud](../elements/salesforce-service-cloud/authentication.html) and [Shopify](../elements/shopify/authenticate.html).
 
-### Create a Salesforce Sales Cloud Instance
+### Authenticate a Salesforce Sales Cloud Instance
+
+In this step you will authenticate an element instance with Salesforce Sales Cloud. As part of that authentication, you will enable events so Cloud Elements will monitor any additions or changes to your list of contacts.
 
 To authenticate a Salesforce Sales Cloud instance:
 
@@ -36,35 +38,211 @@ To authenticate a Salesforce Sales Cloud instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 
+    The Authentication page includes the fields you need to complete on the left and a code view on the right. When you start building our APIs into your app, you can use this code view to see how we build our requests. You can see the steps to authenticate by using our APIs in [the Salesforce Sales Cloud Element Guide](../elements/salesforce-service-cloud/authentication.html).
 
-- From the Elements Catalog, find Salesforce in the CRM Hub and click `Add Instance`.
-- Enter any value into `Instance Name` (like "Salesforce Instance 1") field.
-- To set up automatic contact sync, enable events for this instance:
-  - Set `Enable/Disable Event Notification` to true
-  - Set `Event poller refresh interval` to `4`, this will set the poller to check every 4 minutes
-  - Set `Objects to Monitor for Changes` to `Contact`, this will set the poller to monitor the Contact objects for changes.
-  - Set the `Event Type` to `polling`
-- Login to your Salesforce Account.
+    Because authentication between Cloud Elements and Salesforce Sales Cloud is done using OAuth 2.0, all you need to do is provide a name for the instance and set up events.
 
-Once provisioned, you can see your new Salesforce Element instance under My Instances in the Elements Menu.  If you click the Documentation tab of the instance, you are presented with the RESTful Swagger API docs that allow you to make live API calls to Salesforce.
+5. In **Name** enter a descriptive name for the instance. For this tutorial, we'll call it "Salesforce Contacts".
+6. If you need to log in to a Sandbox environment for Salesforce, click **Show Optional Fields**, and then change the **Endpoint Address** to `https://login.salesforce.com`.
+7. Click **Events Enabled**.
+8. In **Event Type**, choose **Polling**. We also offer webhooks for Salesforce Sales Cloud, but it requires more setup.
 
-![Salesforce Instance 1](https://cl.ly/3J3B2a1P3S2k/Image%202017-03-08%20at%204.09.27%20PM.public.png)
+<span style="color:red">Maybe leave URL empty?</span>
 
-<br>
-### 2. Create a Shopify Instance
-Creating a Shopify Instance Requires a few more configuration values in order to provision.
+9. In **Event Notification Callback UR>** enter `https://my.cloudelements.io/elements/api-v2/events/23`.
+10. Leave **Event Notification Signature Key** empty. You can use the signature key for enhanced security when you build the APIs into your app.
+11. In **Objects to Monitor for Changes** enter `Contact`.
+12. Change the `Event poller refresh interval` to 4. This sets the poller to check every 4 minutes.
+13. Click **Create Instance**.
+14. Log in to Salesforce and allow the connection to Cloud Elements.
 
-- `shopaddress` this is the name of your Shopify account
-- `username` your shopify username
-- `password` your shopify password
+After you authenticate the element instance we suggest that you test it out using the API docs. Click **Test in the API** docs, open `GET /contacts`, click **Try it out**, and then click **Execute**. The response body includes all of the contacts in your Salesforce account.
 
-Since our example Formula is just one-directional from Salesforce, leave `events` disabled for this Shopify Instance.
+When you finish testing, move on to Shopify.
 
-Once you have entered the fields above, click Next.
+
+### Authenticate a Shopify Instance
+
+In this step you will authenticate an element instance with Shopify. Because this example creates a one-directional sync from Salesforce to Shopify, you do not need to configure events.
+
+To authenticate a Shopify instance:
+
+1. Navigate to the Elements Catalog. From anywhere in the application, click **Elements** on the left side.
+1. In the Elements Catalog, search for Shopify.
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
+
+    Like Salesforce, Cloud Elements also uses OAuth 2.0 to authenticate with Shopify, but you also need to configure your Shopify Site Address. Because each element has its own authentciation requirements, make sure you check out the Element Guides like [Shopify's Element Guide](../elements/shopify/authenticate.html).
+
+5. In **Name** enter "Shopify Customers".
+5. In **Shopify Site Address** enter the personalized portion of your `myshopify.com` URL. For example, in `https://cloud-elements.myshopify.com` just enter `cloud-elements`.
+13. Click **Create Instance**.
+14. Log in to Shopify, and then click **Install unlisted app**.
+
+Like the Salesforce Sales Cloud instance, we suggest that you test Shopify out using the API docs. Click **Test in the API** docs, open `GET /customers`, click **Try it out**, and then click **Execute**. The response body includes all of the contacts in your Salesforce account.
+
+With two authenticated instances, you're now ready to map the Salesforce `/contacts` object and the Shopify `/customers` object to a common resource that you define and that contains only the data you want.
 
 ## <img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Map to a Common Resource
 
-dasfklkdsalf;k
+{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active="Map to Common Resource"%}
 
+To move a contact from Salesforce to Shopify, we need to map the Salesforce `/Contact` object and the Shopify `/customer` object to a common resource: {{site.data.glossary.common_resource}} We'll help you set up a common resource below, but if you want more information take a look at [Defining Common Resources & Transformations](../guides/common-resources/index.html).
+
+The process to map to a common resource involves three primary steps:
+
+1. [Define a Common Resource](#define-a-common-resource)
+2. [Map and Transform Salesforce Contacts](#map-and-transform-salesforce-contacts)
+3. [Map and Transform Shopify Customers](#map-and-transform-shopify-customers)
+
+### Define a Common Resource
+
+To define a common resource:
+
+{% include common-resources/steps-define-cr.md%}
+
+3. In Field Name, enter `Email`.
+4. Repeat to create the following fields:
+  - `Last Name`
+  - `First Name`
+1. Click **Save**.
+
+Your myContact common resource should look like the example below. Notice that you can now create a transformation on the right side of the page. We'll do that next.
+![Common Resource Defined](img/defined-cr.png)
+
+### Map and Transform Salesforce Contacts
+
+Now that you created a common resource, you'll map fields in the Salesforce `/Contact` object to the common resource. After you map the fields, Cloud Elements transforms the data from Salesforce to match the fields in the common resource.
+
+To map fields and transform the data:
+
+1. Click **Create New Transformation for "myContact"**.
+
+    The two authenticated element instances that you created in Step 1 appear on the left side of the list.
+    ![Authentciated Instances](img/auth-instances.png)
+
+2. Click **Salesforce Contacts**.
+
+    The resources &mdash; or objects &mdash; available to you appear on the right side. Salesforce has many resources, but instead of scrolling through the list we'll search.
+
+3. In Search type `contact`.
+4. Click the **Contact** resource in the list.
+![Contact Object](img/contact-search.png)
+
+    Back on the Transformations page you see the fields in the `myContact` common resource on the left and empty fields to map on the right.
+    ![Mapping](img/mapping.png)
+
+5. In the first empty field type `email`. The list filters the fields until you can select the Email field, like the example below.
+![Filtering Resources](../guides/common-resources/img/gif-filter.gif)
+6. Repeat to map the following fields:
+  - `First Name` map to `FirstName`.
+  - `id` map to `Id`
+  - `Last Name` map to `LastName`
+
+    Your mapping should match the the example below:
+    ![Salesforce Mapping](img/sfdc-mapping.png)
+
+1. Click **Save**.
+2. To be able to test the mapping and transformation in the API docs, switch the API docs on: Click <img src="../guides/common-resources/img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">, switch on **Add to API Docs**, and then click **Save**.
+
+    {% include note.html content="<strong>Remove Unmapped Fields</strong> is on by default. This ensures that we return only the fields that you identify in your common resource. If it is not on, switch it on. " %}
+
+1. Test it out: Click <img src="../guides/common-resources/img/btn-Try.png" alt="Try it out" class="inlineImage">.
+
+    On the **Transformed** tab, you see a payload with just the fields that you defined in the common resource.
+    ![Transformed Payload](img/transformed.png)
+
+1. As a comparison, click **Original** to see the payload before Cloud Elements transformed it.
+2. Click **Cancel** to return to the Transformations page.
+
+Now that you mapped the Salesforce `/Contact` object to your `myContacts` common resource, let's map the Shopify `/customers` resource.
+
+### Map and Transform Shopify Customers
+
+To map the fields in the Shopify `/customer` object, we just need to repeat the steps that you just completed for your authenticated Shopify instance.
+
+To map fields and transform the data:
+
+1. From the Transformations page with the mapped Salesforce Contacts instance, click **/myContact** in the **My Resources** list.
+![Navigate to CR](img/click-myContact.png)
+
+    The Salesforce Contact instance that you just mapped appears in the **Mapped Transformations** section.
+    ![Mapped Transformations](img/mapped-transformations.png)
+
+1. Click **Create New Transformation for "myContact"**.
+2. This time, click the **Shopify Contacts** instance on the left, and then locate and select the **customer** resource on the right.
+![Shopify Customers](img/shopify-customers.png)
+3. Map the fields to:
+  - `Email` map to `email`
+  - `First Name` map to `first_name`
+  - `id` map to `id`
+  - `Last Name` map to `last_name`
+4. Click **Save**.
+5. Switch on the API docs: Click <img src="../guides/common-resources/img/btn-Advanced-Settings.png" alt="Advanced Settings" class="inlineImage">, switch on **Add to API Docs**, and then click **Save**.
+
+    {% include note.html content="Make sure that <strong>Remove Unmapped Fields</strong> is on so you see only the fields in the common resource.  " %}
+
+1. Test it out: Click <img src="../guides/common-resources/img/btn-Try.png" alt="Try it out" class="inlineImage">.
+
+Like the Salesforce element, your response includes only the fields defined in your common resource.
+![Transformed Shopify](img/transformed-shopify.png)
 
 ## <img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> Build a Formula
+
+{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula" links="#authenticate-an-element-instance,#map-to-a-common-resource,#build-a-formula" active="Build a Formula"%}
+
+In Cloud Elements you can build **formula templates** &mdash; reusable workflow templates that are independent of API providers. Formula templates include triggers, like events or schedules, that kick off a series of steps. Formulas support a large variety of different use cases across different services.  For example, they can keep systems in sync, migrate data between systems, or automate business workflows.
+
+For this tutorial, you'll create a formula template that:
+
+1. Kicks off when you update a contact.
+2. Checks to see if the contact is new or if it was updated (which it will ignore).
+3. Gets the contact your Salesforce Sales Cloud element instance and posts it to your Shopify instance.
+
+Before we start, it's important to understand the difference between a formula template and a formula instance. The template defines how the formula works regardless of variables like the kind of element or a user input. With formula instances you plug actual values into the variables in the template. With this approach you can plug different element instances into the formula so you can sync contacts with Hubspot, Woocommerce, Zoho, Etsy, Magento, or any of our elements.
+
+In this section you complete the following steps to create a formula template and then you will plug in to a formula instance your Salesforce Sales Cloud and Shopify element instances.
+
+1. [Build the Formula Template](#build-the-formula-template)
+2. Add Steps to the Formula Template
+3. Create the Formula Instance
+
+### Build the Formula Template
+
+To build a new formula template:
+
+1. Navigate to the Formulas page. From anywhere in the application, click **Formulas** on the left side.
+1. On the Formulas page, click **Build New Formula Template**.
+
+    You can build formula templates based on existing templates or by importing a JSON file that defines the template. For this tutorial, you will build the formula template from scratch. However, if you want to test your formula with ours, download our copy, and then import it later.
+
+3. Click **Build New Formula**.
+4. Enter a name for your formula like "Sync Contacts", and then click **Create**.
+
+    {{site.console}} provides you a list of triggers. Triggers define how the formula starts. Because we want to automatically sync contacts when our event framework discovers a new `/Contact`, we'll use an Event trigger. When new or updated contacts appear in Salesforce, our Event framework builds a payload that can trigger a Formula.
+    ![New Formula Template](../guides/formulasC2/img/triggers.png)
+
+5. Click **Event**.
+
+    As mentioned earlier, formula templates consist of variables. The variables can represent authenticated element instances or values. In this formula, the variables will represent the two element instances that you authenticated earlier.
+
+6. Name the variable that represents the element that kicks off the template **OriginInstance**. In our example, this would be Salesforce Sales Cloud.
+7. Now add a variable for the element that gets updated when a contact is created (Shopify): Click **Variables** in the menu bar.
+![Variables](../guides/formulasC2/img/variables.png)
+7. Click **Element Instance**.
+![Element Instance](img/formula-variables.png)
+5. Name the variable **DestinationInstance**, and then click **Save**.
+
+At this point you built a template based on an Event trigger with two variables to represent the origin and destination elements. Next, add the steps needed to perform the sync.
+
+### Add Steps to the Formula Template
+
+Now we'll build the steps needed. They include
+1. Create a Filter.
+2. Retrieve the contact.
+3. Create a new contact.
+6.
+    * Choose **Event** for a formula triggered by an event configured on an element instance.
+    * Choose **Element Request** for a formula triggered when a specific request is made to an element instance.
+    * Choose **Scheduled** for a formula to occur at a specific time or regular interval.
+    * Chose **Manual** to trigger the formula with an API call to `POST /formulas/instances/:id/executions`.
