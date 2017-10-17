@@ -5,7 +5,7 @@ seo: Standard Error Codes | Cloud Elements API Docs
 title: Standard Error Codes
 description: List of the Cloud Elements standard error codes.
 layout: sidebarleft
-order: 6
+order: 50
 breadcrumbs: /docs/guides/home.html
 published: true
 sitemap: true

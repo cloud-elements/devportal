@@ -1,7 +1,7 @@
 ---
-heading: Create Element Instances
-seo: Create Element Instances | Create Salesforce and Shopify Instances
-title: First Integration
+heading: Your First Integration
+seo: Create Your First Integration | Integrate Salesforce and Shopify
+title: Your First Integration
 description: Set Up Your First Integration
 layout: sidebarleft
 order: 30
@@ -198,6 +198,8 @@ For this tutorial, you'll create a formula template that:
 
 Before we start, it's important to understand the difference between a formula template and a formula instance. The template defines how the formula works regardless of variables like the kind of element or a user input. With formula instances you plug actual values into the variables in the template. With this approach you can plug different element instances into the formula so you can sync contacts with Hubspot, Woocommerce, Zoho, Etsy, Magento, or any of our elements.
 
+If you want to see a completed formula template for comparison, [download oursample copy][1], and then import it.
+
 {% include callout.html content="The process to map to a create a formula template involves three primary steps:</ul><li><a href=#set-up-the-formula-triggers-and-variables>Set Up the Formula Triggers and Variables</a></li><li><a href=#link>Add Steps to the Formula Template</a></li></ul>" type="info" %}
 
 
@@ -212,7 +214,7 @@ To set up triggers and variables:
 1. Navigate to the Formulas page. From anywhere in the application, click **Formulas** on the left side.
 1. On the Formulas page, click **Build New Formula Template**.
 
-    You can build formula templates based on existing templates or by importing a JSON file that defines the template. For this tutorial, you will build the formula template from scratch. However, if you want to test your formula with ours, download our copy, and then import it later.
+    You can build formula templates based on existing templates or by importing a JSON file that defines the template. For this tutorial, you will build the formula template from scratch. However, if you want to test your formula with ours, [download our copy][1], and then import it later.
 
 3. Click **Build New Formula**.
 4. Enter a name for your formula like "Sync Contacts", and then click **Create**.
@@ -298,7 +300,7 @@ The formula instance actually performs the sync. In this case we're going to ass
 
 To create a formula instance:
 
-1. Navigate back to the main Formulas page. 
+1. Navigate back to the main Formulas page.
 2. Hover over the **Sync Contacts** card, and then click **Create Instance**.
 3. Name the instance something more specific than the template like "Salesforce to Shopify Contact Sync."
 5. Click`OriginInstance`, and then select the Salesforce instance that you authenticated earlier &mdash; Salesforce Contacts.
@@ -313,8 +315,11 @@ To create a formula instance:
 ## Try it Out
 
 1. Log in in your Salesforce account and create a new contact.
-2. Under the formulas tab select Executions.
-3. Select the formula instance you created.
-4. If no executions appear, wait a couple minutes for the event in Salesforce to fire.
-5. Once the formula has executed, this screen will show if it was successful or not.
-6. Login into Shopify to see the new Customer that has been created in your account.
+2. Wait a few minutes &mdash; remember that we set the polling interval for five minutes &mdash; and return to Cloud Elements.
+2. On the Formulas page, hover over the **Sync Contacts** card, and then click **Executions**.
+3. The executions appear on the left side, listed by Object ID. You can click the Execution itself to see the series of steps, and you can get even more detailed by click ing on each step.
+6. Lastly, log in to Shopify to see the new Customer that has been created in your account.
+
+Congratulations! You created your first integration. Email [documentation@cloud-elements.com](mailto:documentation@cloud-elements.com) if you have any feedback on this tutorial.
+
+[1]:{{ site.url }}/download/Sync-Contacts.json
