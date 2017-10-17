@@ -4,7 +4,7 @@ seo: Create Element Instances | Create Salesforce and Shopify Instances
 title: Authenticate
 description: Create an instance of Salesforce and Shopify
 layout: sidebarleft
-order: 2
+order: 52
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
@@ -15,7 +15,7 @@ The first step in setting up our contact sync from Salesforce to Shopify, is to 
 
 ### 1. Create a Salesforce Instance
 
-- From the Elements Catalog, find Salesforce in the CRM Hub and click `Add Instance`.  
+- From the Elements Catalog, find Salesforce in the CRM Hub and click `Add Instance`.
 - Enter any value into `Instance Name` (like "Salesforce Instance 1") field.
 - To set up automatic contact sync, enable events for this instance:
   - Set `Enable/Disable Event Notification` to true
@@ -32,8 +32,8 @@ Once provisioned, you can see your new Salesforce Element instance under My Inst
 ### 2. Create a Shopify Instance
 Creating a Shopify Instance Requires a few more configuration values in order to provision.
 
-- `shopaddress` this is the name of your Shopify account  
-- `username` your shopify username  
+- `shopaddress` this is the name of your Shopify account
+- `username` your shopify username
 - `password` your shopify password
 
 Since our example Formula is just one-directional from Salesforce, leave `events` disabled for this Shopify Instance.

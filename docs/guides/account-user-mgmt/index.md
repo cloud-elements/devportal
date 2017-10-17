@@ -1,6 +1,6 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Accounts and Users
+heading: Manage Organization Security and Accounts
 seo: Account Overview | Cloud Elements  Docs
 title: Overview
 description: Manage organizations, users, and accounts
@@ -18,14 +18,18 @@ ValeOn: <!-- vale on -->
 
 # Overview
 
-When a user signs up for a new account in Cloud Elements, we create an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization}}">organization</a> as well.  That organization has an associated Organization Secret.  The new user is the default user of the organization and they are the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization-administrator}}">organization administrator</a>. The organization administrator can create and manage the accounts within the organization and the users associated with those accounts
+When a user signs up for a new account in Cloud Elements, we create an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization}}">organization</a> as well.  That organization has an associated Organization Secret.  The new user is the default user of the organization and they are the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization-administrator}}">organization administrator</a>. The organization administrator can create and manage the accounts within the organization and the users associated with those accounts.
 
 Accounts that are created within an organization can contain one or more users and are isolated from all other accounts. Cloud Elements assigns each user a User Secret. With the Organization Secret representing the organization and the User Secret representing a discrete user associated with an account, users can make requests to the Cloud Elements APIs.
-![Organizations Accounts and Users](img/Hierarchy.png)
+![Organizations Accounts and Users](img/Security.png)
 
 Organizations and accounts can hold <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a>, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.formula-template}}">formula templates</a>, <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resources</a>, and <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.transformation}}">default transformations</a>.  Users within an account create individual instances of these, specific to their own account.  Those users then use their Organization Secret and User Secret to make API calls.
 
 When creating transformations, any transformation created at the Organization level applies to all users of the organization. This includes every user of every account in it. Currently, account level transformation applies to all accounts.
+
+## Security
+
+The organization administrator is the only user with access to the security section of Cloud Elements. In the Security section, an organization administrator can [manage security settings](security-settings.html) like the password policy and two-factor authentication. The Security section also includes [account](account-management.html) and [user](user-management.html) management.
 
 ## Definitions
 
