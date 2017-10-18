@@ -14,7 +14,7 @@ label: Production
 * Added resource parameter to `GET /users` in FreshService allowing user to search by email.
 
 
-### Eloqua Element: New `custom-objects`Resource and Poling
+### Eloqua Element: New `custom-objects`Resource and Polling
 
 Added create, retrieve, update, delete, and search for `custom-objects` resource in Eloqua.
 Also added support for polling on this resource.
