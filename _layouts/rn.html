@@ -44,7 +44,7 @@
       <h1>Cloud Elements Release Notes</h1>
 
       <div class="right">
-        <h5>Recent Releases</h5>
+        <h5 class="release-notes">Recent Releases</h5>
         {% for post in site.posts limit:5 %}
           <p>
             <a href="{{ post.url }}">{{ post.title }}</a>
@@ -61,7 +61,7 @@
       {% for post in paginator.posts %}
       {% include padding-bottom.html %}
         <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-<h4> {{post.label}} {{post.date | date: "%B %-d, %Y"}}</h4>
+<h4 class="release-notes"> {{post.date | date: "%B %-d, %Y"}}</h4>
 
   {{post.content}}
           <script>
