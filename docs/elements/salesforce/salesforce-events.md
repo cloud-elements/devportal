@@ -85,7 +85,7 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<Insert_Client_Secret>",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-    "event.notification.callback.url": "https://mycoolapp.com",
+    "event.notification.callback.url": "https://staging.cloud-elements.com/elements/api-v2/instances/events",
     "event.notification.signature.key": "12345",
     "event.objects": "Contact,Account",
     "event.poller.refresh_interval": "5"

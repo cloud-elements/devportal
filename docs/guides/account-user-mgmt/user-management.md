@@ -27,10 +27,10 @@ User management happens at the account level, so you must first access an accoun
 
 To see the users associated with an account:
 
-1. Open the User Profile menu at the top of the page, and then click **Manage Accounts.**
-1. Hover over the account card, and then click **Open**.
+1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
+2. Click the **Accounts** tab.
 
-The users associated with an account appear on the left. Because you add users as part of the account creation process, see [Add Users to Accounts](account-management.html#add-users-to-accounts) for the steps to create a new user.
+The users associated with an account appear in the User section. Because you add users as part of the account creation process, see [Add Users to Accounts](account-management.html#add-users-to-accounts) for the steps to create a new user.
 ![Users](img/users.png)
 
 ## Update a User
@@ -39,7 +39,9 @@ You can change the first and last name of a user or their email address in Cloud
 
 To update a user:
 
-1. Access the account, and then click the user name in the list on the left.
+1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
+2. Click the **Accounts** tab.
+2. Click <img src="/assets/img/platform-icons/pencil-blue.png" alt="Edit Button" class="inlineImage">.
 2. Make your changes.
 3. Click **Update**.
 
@@ -49,8 +51,9 @@ You can use Cloud Elements 2.0 to deactivate a user or activate an already deact
 
 To deactivate or activate a user:
 
-1. Access the account, and the click then user name in the list on the left.
-2. Toggle the **Active** switch, blue is active and gray is inactive.
+1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
+2. Click the **Accounts** tab.
+2. Clear or select the **Active** checkbox.
 3. Click **Update**.
 
 ## Delete a User
@@ -59,5 +62,6 @@ Deleting users removes them from Cloud Elements entirely. You cannot recover del
 
 To delete a user:
 
-1. Access the account, and the click then user name in the list on the left.
+1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
+2. Click the **Accounts** tab.
 3. Click **Delete**, and the confirm the deletion.

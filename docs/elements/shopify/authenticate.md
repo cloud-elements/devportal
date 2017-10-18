@@ -38,7 +38,7 @@ To authenticate an element instance:
     | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
 
 5. Enter a name for the element instance.
-6. Enter your shop URL in **Shopify Site Address**.
+6. In **Shopify Site Address** enter the personalized portion of your `myshopify.com` URL. For example, in `https://cloud-elements.myshopify.com` just enter `cloud-elements`.
 7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
 8. Optionally add tags in the earlier UI:
      1. On the Tag It page, enter any tags that might help further define the instance.
@@ -170,7 +170,7 @@ curl -X POST \
     "configuration": {
       "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
       "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx",
-      "shopify.site.address": "xxxxxxxxxxxxxxxxxxxxxxxxx",
+      "shopify.site.address": "mycoolapp",
       "oauth.scope": "write_orders,write_products,write_customers",
       "oauth.callback.url": "https://mycoolapp.com"
     },
@@ -193,7 +193,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [API Provider Setup section](setup.html).  |
 | `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
 | `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
-| Shopify Site Address</br> `shopify.site.address` | The site address of your Shopify Store | string |
+| Shopify Site Address</br> `shopify.site.address` | The personalized portion of your `myshopify.com` URL. For example, in `https://cloud-elements.myshopify.com` just enter `cloud-elements`. | string |
 | `oauth.scope` | The permissions granted to the user when they authenticate to your application | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

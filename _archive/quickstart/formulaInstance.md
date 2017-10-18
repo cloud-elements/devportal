@@ -4,7 +4,7 @@ seo: Create a Formula Instance | How to create a Formula Instance
 title: Formula Instance
 description: Create an instance of your formula template
 layout: sidebarleft
-order: 5
+order: 55
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
