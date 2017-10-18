@@ -32,13 +32,7 @@ Follow the instructions in this section to create an entirely new common resourc
 
 To create a new common resource:
 
-1. On the Common Resources page, click **Create New Common Resource**.
-![Create New Common Resource](img/create-new.png)
-1. Enter a name for your resource.
-
-    The Create page shows your new Common Resource with a default organization-level field of __id__.
-    ![New Resource from Scratch](img/New-Common_Resource.png)
-
+{% include common-resources/steps-define-cr.md%}
 1. Click **Save**.
 1. Continue to the next step: [map fields to the common resource](mapping.html).
 

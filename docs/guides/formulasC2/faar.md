@@ -52,12 +52,12 @@ To include a parameter in a formula as a resource:
 
 1. When you make the request, pass the parameter. An example cURL request with a query parameter to the resource called `formula1`, your endpoint would be:
 
-```bash
-curl -X GET \
-  https://api.cloud-elements.com/elements/api-v2/formula1?<queryParameter> \
-  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
-  -H 'elements-formula-instance-id: 28683' \
-```
+    ```bash
+    curl -X GET \
+      https://api.cloud-elements.com/elements/api-v2/formula1?<queryParameter> \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'elements-formula-instance-id: 28683' \
+    ```
 2. Access data returned in the response to the request by using a script step. The data is available through `trigger.args.request.query`.  An example script that passes query data containing an email address to the console would be:
 
 ```js
