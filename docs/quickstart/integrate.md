@@ -15,13 +15,13 @@ sitemap: false
 
 In this Getting Started Guide, we'll walk you through the steps to integrate your contacts in Salesforce with your customers in Shopify. The data sync use case is a simple example that demonstrates the power of Cloud Elements. We'll set up your  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a>, create a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.common_resource}}">common resource</a> to transform the data into what we need, and then we'll set up a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.formula-template}}">formula</a> to automatically perform the sync.
 
-The three steps in this process are:
+The four steps in this process are:
 {% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula,Create Formula Instance" links="#authenticate-element-instances,#map-to-a-common-resource,#build-a-formula,#create-a-formula-instance" active=""%}
 
 
 ## <img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Authenticate Element Instances
 
-{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula,Create Formula Instance" links="#authenticate-element-instances,#map-to-a-common-resource,#build-a-formula#create-a-formula-instance" active="Authenticate"%}
+{% include workflow.html displayNames="Authenticate,Map to Common Resource,Build a Formula,Create Formula Instance" links="#authenticate-element-instances,#map-to-a-common-resource,#build-a-formula,#create-a-formula-instance" active="Authenticate"%}
 
 The first step in setting up our contact sync from Salesforce to Shopify, is to authorize the Salesforce Sales Cloud and Shopify elements to connect to your accounts. To do so, you will authenticate  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element-instance}}">element instances</a> of both Salesforce Sales Cloud and Shopify. We'll walk you through a simple authentication below, but if you want more information take a look at the Element Guides for [Salesforce Sales Cloud](../elements/salesforce-service-cloud/authentication.html) and [Shopify](../elements/shopify/authenticate.html).
 
@@ -198,9 +198,9 @@ For this tutorial, you'll create a formula template that:
 
 Before we start, it's important to understand the difference between a formula template and a formula instance. The template defines how the formula works regardless of variables like the kind of element or a user input. With formula instances you plug actual values into the variables in the template. With this approach you can plug different element instances into the formula so you can sync contacts with Hubspot, Woocommerce, Zoho, Etsy, Magento, or any of our elements.
 
-If you want to see a completed formula template for comparison, [download oursample copy][1], and then import it.
+If you want to see a completed formula template for comparison, [download our sample copy][1], and then import it.
 
-{% include callout.html content="The process to map to a create a formula template involves three primary steps:</ul><li><a href=#set-up-the-formula-triggers-and-variables>Set Up the Formula Triggers and Variables</a></li><li><a href=#link>Add Steps to the Formula Template</a></li></ul>" type="info" %}
+{% include callout.html content="The process to map to a create a formula template involves two primary steps:</ul><li><a href=#set-up-the-formula-triggers-and-variables>Set Up the Formula Triggers and Variables</a></li><li><a href=#link>Add Steps to the Formula Template</a></li></ul>" type="info" %}
 
 
 ### Set Up the Formula Triggers and Variables
