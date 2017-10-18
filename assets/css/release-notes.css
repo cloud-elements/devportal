@@ -1,19 +1,11 @@
-h2 {
-  border-top: solid;
-}
-
-h3 {
-  padding-top: 200 px !important;
-}
-
-h4 {
+h4.release-notes {
     background-color: #4d82bf;
     color: white;
     width: 50%;
     padding: 5px;
 }
 
-h5 {
+h5.release-notes {
   font-weight: bold;
 }
 
