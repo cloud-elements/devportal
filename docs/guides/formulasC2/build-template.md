@@ -30,7 +30,7 @@ To build a new formula template:
 1. Click **Formulas**, and then on the Formulas page, click **Build New Formula Template**.
 ![New Formula Template](img/new-formula.png)
 3. Click **Build New Formula**.
-4. Enter a name for your formula, and then click **Build**.
+4. Enter a name for your formula, and then click **Create**.
 
     {{site.console}} provides you a list of triggers. For details about each trigger, see [Triggers, Steps, and Variables](reference.html).
     ![Triggers](img/triggers.png)
