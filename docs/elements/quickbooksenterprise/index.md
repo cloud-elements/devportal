@@ -15,6 +15,8 @@ sitemap: false
 
 The {{page.heading}} element is a part of the the Cloud Elements Finance Hub. The element provides access to the API provider's financing features to integrate into applications.
 
+{% include note.html content="QuickBooks Enterprise uses Ground2Cloud to communicate with Cloud Elements. See the <a href=(../../guides/ground-2-cloud/>Ground2Cloud guide</a> for more information.  " %}
+
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
 ## Element Details

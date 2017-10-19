@@ -5,7 +5,7 @@ seo: Tour | Cloud Elements API Docs
 title: Cloud Elements Tour
 description: A Brief Tour of Cloud Elements
 layout: sidebarleft
-order: 4
+order: 10
 published: true
 sitemap: false
 ValeOn: <!-- vale on -->

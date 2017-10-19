@@ -9,15 +9,17 @@ parent: Back to Guides
 order: 11
 ---
 
-## Cloud Elements On-Prem CLI
+# Cloud Elements On-Prem CLI
 
 The Ground2Cloud CLI can be used to install and configure the Ground2Cloud Client.
 
-The G2C client is a NPM package, and requires **Node.js** in order to be installed. To check that Node.js is installed:
+The G2C client is a NPM package, and requires **Node.js**. To check that Node.js is installed:
 
     $ node -v
 
-Node and NPM aren't currently installed go to the [NPM docs and install Node.js and NPM](https://docs.npmjs.com).
+The response should include a version number such as `v7.5.0`.
+
+If Node and NPM aren't currently installed go to the [NPM docs and install Node.js and NPM](https://docs.npmjs.com).
 
 
 ### Installation

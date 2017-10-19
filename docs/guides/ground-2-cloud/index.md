@@ -46,4 +46,4 @@ The Ground2Cloud Client runs machine running the following versions of Windows:
 * Windows Server 2012
 * Windows Server 2016
 
-If the machine running the application is not on Windows, you can still install the client via [npm](https://www.npmjs.com/get-npm). 
+If the machine running the application is not on Windows, you can still install the client via [npm](https://www.npmjs.com/get-npm).

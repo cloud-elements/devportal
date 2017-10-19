@@ -18,7 +18,7 @@ The bundled installer includes both a connector and the files, libraries, or SDK
 
 The following steps describe a generic installation process. For instructions specific to each Element, see :
 
-* [QuickBooks Enterprise](../../elements/quickbooksenterprise/setup.html)
+* [QuickBooks Enterprise](../../elements/quickbooksenterprise/setup.html?elementId=195)
 * [MySQL](../../elements/mysql/mysql-endpoint-setup.html)
 * [PostgreSQL](../../elements/postgresql/postgresql-endpoint-setup.html)
 * [Microsoft SQL Server](../../elements/sqlserver/sqlserver-endpoint-setup.html)

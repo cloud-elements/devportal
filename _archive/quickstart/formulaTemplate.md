@@ -4,7 +4,7 @@ seo: Formula Templates | Cloud Element Formulas | Creating Formula Templates
 title: Formula Template
 description: Creating a formula template
 layout: sidebarleft
-order: 4
+order: 54
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
@@ -26,7 +26,7 @@ For a more detailed explanation, let’s discuss each step in our example Formul
 - Give the formula a name.
 
 ## Variables
-The first step is to define the variables for our formula. 
+The first step is to define the variables for our formula.
 
 1. Select the Variables tab under the formula builder window.
 2. Create two `elementInstance` variables:
@@ -87,8 +87,8 @@ The Element Request step performs a simple API call to an Element instance. In o
     | Name | `RetrieveContact` |
     | Element Instance | `config.origininstance` |
     | Method | `GET` |
-    | API | `/hubs/crm/MyContact/${trigger.event.objectId}` |  
-3. Save the step configuration  
+    | API | `/hubs/crm/MyContact/${trigger.event.objectId}` |
+3. Save the step configuration
 4. Click the green checkmark under IsCreateContact and select `RetrieveContact`
 
 ### Step Three: Create a new contact
@@ -102,11 +102,10 @@ The last step is to take the retrieved Contact and `POST` it to the `Destination
     | Name | `CreateContact` |
     | Element Instance | `config.destinationinstance` |
     | Method | `POST` |
-    | API | `/hubs/ecommerce/MyContact` |  
+    | API | `/hubs/ecommerce/MyContact` |
     | Body | `steps.RetrieveContact.response.body` |
 3. Save the step configuration.
 4. Click the green checkmark under IsCreateContact and select `CreateContact`
 5. Your completed formula template should look like this:
     ![Steps](https://cl.ly/032k2o3u2z0u/Image%202017-03-10%20at%201.42.32%20PM.public.png)
 6. You now have a complete formula template!
-

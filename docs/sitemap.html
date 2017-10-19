@@ -34,7 +34,7 @@ title: sitemap
               <a class="accordionLink" href="{{p.url}}?resource={{p.platform}}" > {{p.title}} </a>
             </li>
             {% endfor %}
-          </ul>            
+          </ul>
       </li>
       {% endif %}
     {% endfor %}
@@ -70,7 +70,7 @@ title: sitemap
         <button class="subHeading"> {{pages[0].heading}}</button>
         <ul>
           {% for p in pages %}
-          <li class="subItem">            
+          <li class="subItem">
             <a class="accordionLink" href="{{p.url}}?resource={{p.platform}}" > {{p.title}}</a>
           </li>
           {% endfor %}
@@ -80,4 +80,5 @@ title: sitemap
     {% endfor %}
   </ul>
 <button class="headerButton" onClick="window.location='https://cloudelements.docebosaas.com'">Training</button>
+<button class="headerButton" onClick="window.location='/docs/release-notes/index.html'">Release Notes</button>
 <button class="headerButton" onClick="location.href= 'mailto:documentation@cloud-elements.com'">Docs Feedback</button>

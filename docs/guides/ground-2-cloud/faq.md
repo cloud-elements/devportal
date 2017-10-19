@@ -11,39 +11,20 @@ order: 10
 
 # Ground2Cloud F.A.Q.
 
-
-This is the **Frequently Asked Questions** listing for Ground2Cloud
-(G2C). It's a compilation of many of the questions (and their answers)
-asked about Ground2Cloud. You should read the rest of the [Ground2Cloud
-Manual](http://developers.cloud-elements.com/docs/products/ground-2-cloud/index.html)
-before reading this F.A.Q.
-
-The latest version of this document is always found on Cloud Elements
-Devportal [here](faq.html).
-
 - [Fundamentals](#fundamentals)
-    - [Why would I want to use Ground2Cloud?](#why-would-i-want-to-use-ground2cloud)
-    - [What is Ground2Cloud, really?](#what-is-ground2cloud-really)
+    - [What are some other use cases for Ground2Cloud?](#what-are-some-other-use-cases-for-ground2cloud)
     - [How does Ground2Cloud work with Cloud Elements?](#how-does-ground2cloud-work-with-cloud-elements)
-    - [How do I install Ground2Cloud?](#how-do-i-install-ground2cloud)
-    - [What are these security warnings?](#what-are-these-security-warnings)
-- [Platforms](#platforms)
-    - [What platforms (Windows, MacOS, etc) does Ground2Cloud support?](#what-platforms-windows-macos-etc-does-ground2cloud-support)
 - [QuickBooks](#quickbooks)
+    - [Where are the element docs for QuickBooks?](#where-are-the-element-docs-for-quickbooks)
     - [Why is there a separate QuickBooks installer?](#why-is-there-a-separate-quickbooks-installer)
     - [What is the QuickBooks SDK?](#what-is-the-quickbooks-sdk)
     - [What versions of QuickBooks are supported?](#what-versions-of-quickbooks-are-supported)
     - [What is the QuickBooks Connector?](#what-is-the-quickbooks-connector)
-    - [Does the Connector need to be running for Ground2Cloud to work with QuickBooks?](#does-the-connector-need-to-be-running-for-ground2cloud-to-work-with-quickbooks)
     - [Does QuickBooks have to be running?](#does-quickbooks-have-to-be-running)
     - [Does the QuickBooks Connector support multi-user mode?](#does-the-quickbooks-connector-support-multi-user-mode)
 - [Using Ground2Cloud](#using-ground2cloud)
-    - [How do I start the GUI?](#how-do-i-start-the-gui)
-    - [Can I quit the GUI without stopping the connection?](#can-i-quit-the-gui-without-stopping-the-connection)
     - [How do I change what environment I'm connected to?](#how-do-i-change-what-environment-im-connected-to)
-    - [How do I create an element instance?](#how-do-i-create-an-element-instance)
-    - [What endpoint / hostname do I use?](#what-endpoint-hostname-do-i-use)
-    - [How do I connect to the Cloud Elements API?](#how-do-i-connect-to-the-cloud-elements-api)
+    - [When authenticating an element instance what endpoint / hostname do I use?](#when-authenticating-an-element-instance-what-endpoint-hostname-do-i-use)
 - [Security and Firewalls](#security-and-firewalls)
     - [What security features are in G2C?](#what-security-features-are-in-g2c)
     - [How are my keys created / used?](#how-are-my-keys-created-used)
@@ -92,6 +73,10 @@ Imagine being notified when changes occur to your database table; integrating yo
 uniform data feed from your users' diverse CRM applications. This is just scratching the surface of what Cloud Elements Platform and Ground2Cloud can do.
 
 ## QuickBooks
+
+### Where are the element docs for QuickBooks
+
+The [element documentation for QuickBooks Enterprise](../../elements/quickbooksenterprise/) includes installation instructions for Ground2Cloud as well as other details about the element.
 
 ### Why is there a separate QuickBooks installer?
 
