@@ -28,4 +28,4 @@ We architected Cloud Elements from the ground-up to support the deployment optio
 * Build formulas to automatically sync data between services.
 * Manage your integration response times, activity levels, and error rates via searchable logs.
 
-Start by familiarizing yourself with the Cloud Elements Platform by viewing our [Definitions](definitions.html) section.
+Start by familiarizing yourself with the Cloud Elements Platform by viewing our [Definitions](../quickstart/overview.html#definitions) section.
