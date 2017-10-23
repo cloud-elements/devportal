@@ -1,4 +1,4 @@
-QuickBooks---
+---
 heading: QuickBooks Enterprise
 seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
