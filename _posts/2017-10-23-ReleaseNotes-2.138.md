@@ -5,14 +5,6 @@ layout: release-note-item
 label: Production
 ---
 
-### Autotask Finance Element
-
-Added the new Autotask Finance element in the Finance hub. Now you can handle Autotask's invoices, Billing Items and accounts from Cloud Elements.
-
-### GoogleSheets V4
-
-Added the new GoogleSheetsV4 element in the General hub. Now you can manage Google Sheets with Cloud Elements.
-
 ### Bullhorn Element: Model Verification
 
 Added model verification to the Bullhorn element.
