@@ -1,6 +1,6 @@
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} is a cloud based business management software platform that provides and end-to-end software suite.
+{{page.heading}} is a cloud based business management software platform that provides an end-to-end software suite.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -13,7 +13,7 @@
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | Review the API Call Threshold documentation. You can check your threshold with the getThresholdAndUsageInfo() request to the AutoTask API. |
+| Rate Limits | Review the API Call Threshold documentation. You can check your threshold with the `getThresholdAndUsageInfo()` request to the AutoTask API. |
 
 
 ## Base URL
