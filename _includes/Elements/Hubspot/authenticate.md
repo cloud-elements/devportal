@@ -11,33 +11,21 @@ Use the UI to authenticate with {{page.heading}} and create an element instance.
 If you are configuring events, see the [Events section](events.html).
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Create an element instance.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. Choose the **Authentication Type**.
   * **oauth2**: Skip to the next step.
-  * **apiKey**: Add your HAPIKey that you noted in the [API Provider Setup](setup.html). In Cloud Elements 2.0, click **Show Optional Fields**.  Enter the HAPIKey in **Hubspot API Key**.
+  * **apiKey**: Add your HAPIKey that you noted in the [API Provider Setup](setup.html).
+8. Click **Show Optional Fields**.  Enter the HAPIKey in **Hubspot API Key**.
 7. To allow for bulk uploads, set **Create Bulk Properties for Migration** to **True**.
 8. Ignore any other settings.
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
-
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](/assets/img/elements/element-instance.png)
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 

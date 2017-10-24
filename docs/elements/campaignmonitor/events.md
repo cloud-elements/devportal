@@ -32,17 +32,13 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with webhooks:
 
 1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to naming the authenticated element instance.
-2. In Cloud Elements 2.0, click Show Optional Fields to show the List ID's field.
+2. Click **Show Optional Fields** to show the **List IDs** field.
 3. Enter a comma separated list of List IDs that represent the lists that you want to monitor with events. See [Find a List ID in API Provider Setup](setup.html#find-a-list-id) for more information about locating the List IDs.
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. If using the earlier UI, optionally add tags.
 9. Note the **Token** and **ID** and save them for all future requests using the element instance.
 8. Take a look at the documentation for the element resources now available to you.

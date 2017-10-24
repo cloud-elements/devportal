@@ -39,7 +39,7 @@ To authenticate an element instance with webhooks:
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 

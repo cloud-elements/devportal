@@ -12,18 +12,10 @@ If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
-1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-1. Create an element instance.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 1. Enter a name for the element instance.
 1. Choose if you are connecting to a NetSuite sandbox.
 1. Enter the **Account ID** that you identified in the [Service Provider Setup](setup.html) section.
@@ -42,16 +34,11 @@ To authenticate an element instance:
     * Select `true` to you ensure that Cloud Elements does not send multiple requests to your {{page.heading}} at one time. This may be necessary for certain trial NetSuite accounts.
     * Select `false` to allow multiple requests. You must also provide a **Single Session Lock Key** which can be any alphanumeric value that is unique within the Cloud Elements environment.
 
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
-
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](/assets/img/elements/element-instance.png)
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through the API
 
