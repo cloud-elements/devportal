@@ -5,7 +5,7 @@ title: Authenticate
 description: Authenticate
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 50
+elementId: 4895
 elementKey: autotaskfinance
 hdOrcrm: finance
 parent: Back to Element Guides
