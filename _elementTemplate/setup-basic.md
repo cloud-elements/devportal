@@ -15,7 +15,7 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must use a Legacy API account from {{page.heading}}. When you authenticate, use the **{{page.username}}** and **{{page.password}}** from {{page.heading}}.
+To authenticate a {{page.heading}} element instance you must use the **{{page.username}}** and **{{page.password}}** that you use to log in to {{page.heading}}.
 
 See the latest setup instructions in the [{{page.heading}} documentation](https://support.bigcommerce.com/articles/Public/Legacy-API-Accounts#creating).
 
