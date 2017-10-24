@@ -29,11 +29,7 @@ To authenticate an element instance with polling:
 
 1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to completing **Create Bulk Properties for Migration**.
 2. Enable events: Switch **Events Enabled** on.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. In **Vendor Event Type**, select **Polling**.
 8. Add an **Event Notification Callback URL**.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
@@ -142,11 +138,7 @@ To authenticate an element instance with webhooks:
 
 1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to completing **Create Bulk Properties for Migration**.
 2. Enable events: Switch **Events Enabled** on.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. In **Vendor Event Type**, select **Webhooks**.
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.

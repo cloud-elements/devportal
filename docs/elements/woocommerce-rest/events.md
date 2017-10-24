@@ -47,11 +47,7 @@ To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Select **polling** from **Event Type**.
 8. Add an **Event Notification Callback URL**.
 5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
@@ -215,11 +211,7 @@ To authenticate an element instance with webhooks:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Select **webhook** from **Event Type**.
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.

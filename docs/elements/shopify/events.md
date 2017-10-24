@@ -33,11 +33,7 @@ To authenticate an element instance with webhooks:
 1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
 2. Click **Show Optional Fields**, and then in **Webhook Topics** enter a comma separated list of supported webhook topics that you want to monitor. See [{{page.heading}}'s webhooks documentation](https://help.shopify.com/api/reference/webhook) for a list of supported wehooks.
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.

@@ -37,11 +37,7 @@ To authenticate an element instance with webhooks:
 
 1. Complete the authentication steps in [Authenticate with {{page.heading}}](authenticate.html#authenticate-through-the-ui).
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
 
     {% include note.html content="When you first authenticate the element instance, enter a placeholder URL such as <code>https://api.cloud-elements.com/elements/api-v2/events/hootsuite</code>. After you update the Webhook URL in Hootsuite, you can update the instance with the complete URL including the Base 64 encoded Element ID." %}
