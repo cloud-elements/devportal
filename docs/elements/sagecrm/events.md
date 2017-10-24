@@ -51,22 +51,18 @@ To authenticate an element instance with polling:
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an Event Notification Callback URL.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
-5. Select and configure the resources to poll.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](/assets/img/elements/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](/assets/img/elements/configure-polling.png) |
+5. Select the resources to poll.
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 
     {% include note.html content="If the time zones that you set up in Sage CRM are not UTC+00:00, make sure that you update the time zones in the poller configuration to match.  " %}
 
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](/assets/img/elements/add-tag.png)
-     1. Click __Done__.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-8. Take a look at the documentation for the element resources now available to you.
+7. Click **Create Instance**.
+
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ### Configure Polling Through API
 

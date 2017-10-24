@@ -14,11 +14,12 @@ To authenticate an element instance with polling, sign in to Cloud Elements, and
 1. Add an Event Notification Callback URL.
 1. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 
-1. Select and configure the resources to poll.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling. | Edit the JSON to add or remove resources and optionally change the `datesConfiguration`.  |
+5. Select the resources to poll.
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 
 Once you're done with event configuration, you can complete the steps to finish creating the instance, which will have events enabled.
 

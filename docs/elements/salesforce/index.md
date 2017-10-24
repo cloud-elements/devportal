@@ -41,11 +41,8 @@ To authenticate with Cloud Elements, you need to know your Organization Secret a
 
 When you create an account with us, we assign you an Organization Secret and a User Secret. An Organization is a customer of Cloud Elements (`/organizations`). The User and Organization secrets represent your account with Cloud Elements.
 
-To find your Organization and User Secret:
-
-| Latest UI | Earlier UI  |
-| :------------- | :------------- |
-| Open the profile menu.</br> ![Search](/assets/img/elements/org-user-secret-C2.png)  | Click __Secrets__ in the header.</br> ![Search](/assets/img/elements/org-user-secret.png)  |
+To find your Organization and User Secret open the profile menu.
+![Search](/assets/img/elements/org-user-secret-C2.png)
 
 When you create a new connection to an endpoint, you will receive an Element token. After you create an instance, Cloud Elements automatically refreshes the token behind the scenes so that you won't need to connect your application again.
 

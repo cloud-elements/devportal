@@ -21,28 +21,16 @@ You can authenticate with Concur to create your own instance of the Concur eleme
 
 Use {{site.console}} to authenticate with Concur and create an element instance.
 
-1. Sign in, and then search for the element in our Elements Catalog.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Create an element instance.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. Complete the Instance Configuration parameters. See [Parameters](#parameters) for information about each parameter.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](/assets/img/elements/add-tag.png)
-     1. Click __Done__.
+7. Click **Create Instance**.
 8. Provide your Concur credentials, and then allow the connection.
-8. Take a look at the documentation for the element resources now available to you.
+
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
