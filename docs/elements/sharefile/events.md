@@ -14,6 +14,8 @@ order: 30
 
 {% include polling_and_webhooks_defined.md %}
 
+{% include note.html content="Sharefile webhooks do not currently support created or updated events for folders. If you need these types of events, use polling. For more information on what events are supported by Sharefile webhooks, review their <a href=https://api.sharefile.com/rest/webhooks/events.aspx>webhooks documentation<a>.   " %}
+
 In order to enable polling, add these extra configurations to your instance JSON:
 
 ```JSON
