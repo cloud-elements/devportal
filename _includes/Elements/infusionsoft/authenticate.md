@@ -15,7 +15,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **Infusionsoft Server** enter the account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`.
+6. In **Infusionsoft Server** enter the account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com` or `https://dt123.infusionsoft.com`.
 7. In **Infusionsoft Encrypted Key** enter the encrypted API key that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
@@ -171,6 +171,6 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
 | `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
-| Infusionsoft Server</br>`infusionsoft.server`   | The account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`.  | string |
+| Infusionsoft Server</br>`infusionsoft.server`   | The account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`. You can also enter `https://dt123.infusionsoft.com`. | string |
 | Infusionsoft Encrypted Key</br>`infusionsoft.private.key`  | The encrypted API key that you noted in [API Provider Setup](setup.html).  | string |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
