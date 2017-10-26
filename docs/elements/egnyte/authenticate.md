@@ -42,7 +42,7 @@ After successfully authenticating, we give you several options for next steps. [
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send API calls to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a **token** and **id**  for future API calls.
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send API calls to our `instances` endpoint. The end result is the same, though: an authenticated element instance with a **token** and **id**  for future API calls.
 
 Authenticating through API is a multi-step process that involves:
 

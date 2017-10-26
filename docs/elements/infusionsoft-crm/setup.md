@@ -12,6 +12,8 @@ order: 5
 
 ## Endpoint Setup
 
+https://help.infusionsoft.com/userguides/get-started/tips-and-tricks/api-key
+
 Follow these steps to setup your Infusionsoft CRM application with the endpoint.
 
 Sign in to your developer account at:
