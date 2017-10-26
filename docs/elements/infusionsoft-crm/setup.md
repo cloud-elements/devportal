@@ -6,32 +6,73 @@ description: Endpoint setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 191
+elementKey: infusionsoftcrm
+apiKey: client_id #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: client_secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Callback URL  #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 5
 ---
 
-## Endpoint Setup
+# API Provider Setup
 
-https://help.infusionsoft.com/userguides/get-started/tips-and-tricks/api-key
+To authenticate n {{page.heading}} element instance you must register an app with Infusionsoft. You also must establish an API key for your account. When you authenticate, use the encrypted API key (**Encrypted Key**) from your account and the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** from your registered app.
 
-Follow these steps to setup your Infusionsoft CRM application with the endpoint.
+| Infusionsoft Credential | Cloud Elements Parameter   |
+| :------------- | :------------- |
+|  Encrypted Key  | Infusionsoft Encrypted Key</br>`infusionsoft.private.key`  |
+|  {{page.apiKey}} | `oauth.api.key`  |
+|  {{page.apiSecret}}  |oauth.api.secret |
+|  {{page.callbackURL}}  |  oauth.callback.url  |
 
-Sign in to your developer account at:
-[https://keys.developer.infusionsoft.com/apps/mykeys](https://keys.developer.infusionsoft.com/apps/mykeys)
+{% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a>" type="info" %}
 
-1. Select the Applications tab and click “Create a New Application”
-![Infusionsoft Connected App step 1](http://cloud-elements.com/wp-content/uploads/2015/07/InfusionsoftAPI1.png)
+## Locate Credentials for Authentication
 
-2. Input the app details
+If you already created an application and set up an API Key, follow the steps below to locate the **Encrypted Key**, **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}**. If you have not created an app, see [Create an Application](#create-an-application).
 
-3. Input a callback URL
+To find your **Encrypted Key**:
 
-4. Click “Register Application
-![Infusionsoft Connected App step 2](http://cloud-elements.com/wp-content/uploads/2015/07/InfusionsoftAPI2.png)
+1. Log in to your account at [Infusionsoft](https://www.infusionsoft.com/).
+2. Navigate to **Admin>Settings**.
+![Admin Settings](/assets/img/elements/infusionsoft/admin-settings.png)
+3. In Application Settings, click **Application**.
+4. Scroll down to the API section and record the **Encrypted Key**.
+![Encrypted key](/assets/img/elements/infusionsoft/encrypted-key.png)
 
-5. Under the “Keys” Tab: Copy the “Key”
+To find your OAuth 2.0 credentials:
 
-6. Copy the “Secret”
-![Infusionsoft Connected App step 3](http://cloud-elements.com/wp-content/uploads/2015/07/InfusionsoftAPI3.png)
+1. Sign in to your [developer account](https://keys.developer.infusionsoft.com/apps/mykeys).
+3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
+![Key secret and URL](/assets/img/elements/infusionsoft/infusionsoft_creds.png)
+4. Click **Applications**, and then click **Edit**.
+3. Scroll down to **Register Callback URL** and record the **{{page.callbackURL}}** for your app.
 
-Next [create an instance](infusionsoft-crm-create-instance.html).
+## Create an Application
+
+If you have not created an application, you need one to authenticate with Infusionsoft. You also must generate an encrypted API key. The latest Infusionsoft documentation for each of these tasks are:
+
+* [Creating an application](https://developer.infusionsoft.com/getting-started-oauth-keys/)
+* [Setting up an encrypted API Key](https://help.infusionsoft.com/userguides/get-started/tips-and-tricks/api-key)
+
+To create an application:
+
+1. Log in to your [developer account](https://keys.developer.infusionsoft.com/apps/).
+3. Complete the required information.
+4. Enter the OAuth callback URL of your application in Register Callback URL.
+4. Click **Register Application**.
+3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}**.
+![Key secret and URL](/assets/img/elements/infusionsoft/infusionsoft_creds.png)
+
+To set up an encrypted API key:
+
+1. Log in to your account at [Infusionsoft](https://www.infusionsoft.com/).
+2. Navigate to **Admin>Settings**.
+![Admin Settings](/assets/img/elements/infusionsoft/admin-settings.png)
+3. In Application Settings, click **Application**.
+4. Scroll down to the API section and enter a password in **API Passphrase**.
+5. Click **Save**.
+6. Record the **Encrypted Key** that Infusionsoft generate from your passphrase.
+![Encrypted key](/assets/img/elements/infusionsoft/encrypted-key.png)
+
+Next [authenticate an element instance with {{page.heading}}](authenticate.html).
