@@ -1,12 +1,12 @@
 ---
-heading: Infusionsoft CRM Beta
-seo: API Provider Setup | Infusionsoft CRM | Cloud Elements API Docs
+heading: Infusionsoft Marketing Beta
+seo: API Provider Setup | Infusionsoft Marketing | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 191
-elementKey: infusionsoftcrm
+elementId: 192
+elementKey: infusionsoftmarketing
 apiKey: client_id #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
 apiSecret: client_secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
 callbackURL: Callback URL  #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL

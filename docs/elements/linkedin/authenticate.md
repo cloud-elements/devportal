@@ -41,7 +41,7 @@ After successfully authenticating, we give you several options for next steps. [
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
@@ -65,9 +65,9 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted at the end of the [API Provider Setup section](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted at the end of the [API Provider Setup section](setup.html)   |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 #### Example cURL
 
@@ -180,9 +180,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted at the end of the [API Provider Setup section](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html).  |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance

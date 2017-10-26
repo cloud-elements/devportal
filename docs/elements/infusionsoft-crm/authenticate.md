@@ -13,6 +13,7 @@ callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the ca
 parent: Back to Element Guides
 order: 20
 ---
+{% include Elements/infusionsoft/authenticate.md%}
 
 ## Example Response for an Authenticated Element Instance
 

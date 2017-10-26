@@ -1,27 +1,12 @@
----
-heading: Zendesk
-seo: Authenticate | Zendesk | Cloud Elements API Docs
-title: Authenticate
-description: Authenticate an element instance with the API provider
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: 41
-elementKey: zendesk
-parent: Back to Element Guides
-order: 20
----
+# Authenticate with Infusionsoft
 
-# Authenticate with {{page.heading}}
+You can authenticate with Infusionsoftto create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the Infusionsoft platform.
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
-
-{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-If you are configuring events, see the [Events section](events.html).
+Use the UI to authenticate with Infusionsoft and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
 
 To authenticate an element instance:
 
@@ -30,16 +15,19 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **Subdomain** enter your unique Zendesk subdomain, such as `https://{subdomain}.zendesk.com`.
+6. In **Infusionsoft Server** enter the account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`.
+7. In **Infusionsoft Encrypted Key** enter the encrypted API key that you identified in [API Provider Setup](setup.html).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Optionally add tags in the earlier UI
-8. Provide your Zendesk credentials, and then allow the connection.
+8. Provide your {{page.heading}} credentials, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
-Authenticating through API is a multi-step process that involves:
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+
+Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
 
@@ -51,25 +39,25 @@ Authenticating through API is a multi-step process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
-Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<zendesk_subdomain>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
 ```
 
 #### Query Parameters
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Unique Identifier** that you recorded in [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Secret** that you recorded in [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you recorded in [API Provider Setup section](setup.html).  |
-| siteAddress | Your unique Zendesk subdomain (i.e. - https://{subdomain}.zendesk.com) |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 #### Example cURL
 
 ```bash
-curl -X GET "https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_zendesk_unique_identifier&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&siteAddress=zendesk_subdomain" -H  "accept: application/json" -H  "content-type: application/json"
+curl -X GET \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
 ```
 
 #### Example Response
@@ -78,8 +66,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"element": "{{page.elementKey}}",
-"oauthUrl": "https://zendesk_subdomain.zendesk.com/oauth/authorizations/new?scope=read+write&response_type=code&redirect_uri=https://www.mycool.app.com/auth&state=zendesk&client_id=zendesk_unique_identifier"
+  "oauthUrl": "https://signin.infusionsoft.com/app/oauth/authorize?scope=full&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=infusionsoftcrm&client_id=4ynetc9z7v6vajwvkwvxvgxj",
+  "element": "infusionsoftcrm"
 }
 ```
 
@@ -94,8 +82,8 @@ Provide the response from the previous step to the users. After they authenticat
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
-| code | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
-| state | A customizable identifier, typically the element key (`{{page.elementKey}}`) . |
+| code | {{site.data.glossary.element-auth-grant-code}} |
+| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
@@ -105,15 +93,15 @@ Provide the response from the previous step to the users. After they authenticat
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
-{% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
-To create an element instance:
+To authenticate an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
+
     ```json
     {
-      "name": "<INSTANCE_NAME>",
       "element": {
         "key": "{{page.elementKey}}"
       },
@@ -124,11 +112,13 @@ To create an element instance:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "zendesk.subdomain": "zendesk_subdomain"
+        "infusionsoft.server": "<ACOUNT_URL>",
+        "infusionsoft.private.key": "<ENCRYPTED_KEY>"
       },
       "tags": [
         "<Add_Your_Tag>"
-      ]
+      ],
+      "name": "<INSTANCE_NAME>"
     }
     ```
 
@@ -148,22 +138,23 @@ curl -X POST \
   -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
   -H 'content-type: application/json' \
   -d '{
-  "name": "Zendesk_Instance"
   "element": {
     "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "xoz8AFqScK2ngM04kSSM"
+    "code": "xxxxxxxxxxxxxxxxxxxxxxx"
   },
   "configuration": {
-    "oauth.callback.url": "https://www.mycoolapp.com/auth",
-    "oauth.api.key": "zendesk_unique_identifier",
-    "oauth.api.secret": "fake_api_secret",
-    "zendesk.subdomain": "mycoolapp"
+    "oauth.callback.url": "https;//mycoolapp.com",
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "infusionsoft.server": "dt123.infusionsoft.com",
+    "infusionsoft.private.key": "47dxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
-    "For Docs"
-  ]
+    "Docs"
+  ],
+  "name": "API Instance"
 }'
 ```
 ## Parameters
@@ -175,29 +166,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-|  `name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL from Zendesk. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
-| `oauth.api.key` | The Unique Identifier from Zendesk. This is the Unique Identifier that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Secret from Zendesk. This is the Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
-| `zendesk.subdomain` | Your unique Zendesk subdomain | string |
-| `tags` | *Optional*. User-defined tags to further identify the instance. | string |
-
-## Example Response
-
-```json
-{
-    "id": 123,
-    "name": "test",
-    "token": "3sU/S/kZD36BaABPS7EAuSGHF+1wsthT+mvoukiE",
-    "element": {
-        "id": 41,
-        "name": "Zendesk",
-        "key": "zendesk",
-        "description": "",
-        "active": true,
-        "deleted": false
-    },
-    "valid": true,
-    "disabled": false
-}
-```
+| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| Infusionsoft Server</br>`infusionsoft.server`   | The account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`.  | string |
+| Infusionsoft Encrypted Key</br>`infusionsoft.private.key`  | The encrypted API key that you noted in [API Provider Setup](setup.html).  | string |
+| tags | {{site.data.glossary.element-auth-tags}} | string |
