@@ -18,7 +18,7 @@ ValeOn: <!-- vale on -->
 
 # Overview
 
-When a user signs up for a new account in Cloud Elements, we create an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization}}">organization</a> as well.  That organization has an associated Organization Secret.  The new user is the default user of the organization and they are the <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization-administrator}}">organization administrator</a>. The organization administrator can create and manage the accounts within the organization and the users associated with those accounts.
+When a user signs up for a new account in Cloud Elements, we create an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization}}">organization</a> as well.  That organization has an associated Organization Secret.  The new user is the default user of the organization and they are an <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.organization-administrator}}">organization administrator</a>. The organization administrator can create and manage the accounts within the organization and the users associated with those accounts. You can add additional organization administrators 
 
 Accounts that are created within an organization can contain one or more users and are isolated from all other accounts. Cloud Elements assigns each user a User Secret. With the Organization Secret representing the organization and the User Secret representing a discrete user associated with an account, users can make requests to the Cloud Elements APIs.
 ![Organizations Accounts and Users](img/Security.png)

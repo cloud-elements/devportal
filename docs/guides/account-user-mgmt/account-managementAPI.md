@@ -196,6 +196,7 @@ curl -X POST \
     "accountExpired": false,
     "accountLocked": false,
     "credentialsExpired": false,
+    "roles": [ ],
     "secret": "pgJTa2A3Lxr/7o/fN7NlRb1ATrgc4JlXVKFq7HpcF74=",
     "lastLoginDate": "1970-01-01",
     "emailValid": true,

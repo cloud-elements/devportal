@@ -17,7 +17,7 @@ ValeOn: <!-- vale on -->
 
 # Manage Users
 
-As the organization administrator you can manage the users related to the accounts in your organization with the `/users` endpoint. You can create, retrieve, update, delete, and search users. To manage users, you must include a valid Organization Secret and the User Secret of the organization administrator in the header of any API requests to `/user`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
+Organization administrators can manage the users related all accounts in your organization, while account administrators can manage users in specific accounts with the `/users` endpoint. You can create, retrieve, update, delete, and search users. To manage users, you must include a valid Organization Secret and the User Secret of an organization administrator in the header of any API requests to `/user`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#get-all-users>Get All Users</a></br><a href=#add-a-user>Add a User</a></br><a href=#get-a-specific-user>Get a Specific User</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
@@ -52,7 +52,7 @@ curl -X GET \
         "firstName": "Neta",
         "password": "secured",
         "email": "Alfaro@mycompany.com",
-        "active": false,
+        "active": true,
         "lastName": "Alfaro",
         "accountExpired": false,
         "accountLocked": false,
@@ -134,7 +134,7 @@ Because you must associate each user with an account, you use an account `id` an
 
 ## Get a Specific User
 
-You can get information about a specific user with the user `id` or `email` and the `GET/users/{emailOrId}` endpoint.
+You can get information about a specific user with the user `id` or `email` and the `GET/users/{emailOrId}` endpoint. If you know the user's password, you can also retrieve the user secret.
 
 You can also get a specific user of an account with the account `id`, the user `id` or `email`, and the `GET/accounts/{id}/users/{emailOrId}` endpoint.
 
@@ -144,19 +144,30 @@ You can also get a specific user of an account with the account `id`, the user `
 | :------------- | :------------- | :------------- |
 |  id (user) |  {{site.data.table-desc.user-id}}  | Y or `email` |
 | email | The email address of the user. | Y or `id` |
-| id (account) | {{site.data.table-desc.user-id}} | Y if using `GET/accounts/{id}/users/{emailOrId}`  |
+| elements-user-password   | Header parameter that is the password associated with the user ID in a `GET/users/{emailOrId}` request.  | N  |
+| id (user) | {{site.data.table-account.user-id}} | Y if using `GET/accounts/{id}/users/{emailOrId}`  |
 
 To get a list of users including ids see [Get All Users](#get-all-users). To get a list of accounts including ids see [[Find Accounts](account-managementAPI.html#find-accounts).
 
 ### Get Specific User Example Request
 
-* `GET/users/{emailOrId}` with ID
+* `GET/users/{emailOrId}` with user ID
 
     ```bash
     curl -X GET \
       https://api.cloud-elements.com/elements/api-v2/users/3814 \
       -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
       -H 'content-type: application/json' \
+      ```
+
+* `GET/users/{emailOrId}` with user ID and user password
+
+    ```bash
+    curl -X GET \
+      https://api.cloud-elements.com/elements/api-v2/users/3814 \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'content-type: application/json' \
+      -H 'elements-user-password: <USER_PASSWORD>' \
       ```
 
 * `GET/users/{emailOrId}` with email
@@ -168,7 +179,7 @@ To get a list of users including ids see [Get All Users](#get-all-users). To get
       -H 'content-type: application/json' \
       ```
 
-* `GET/accounts/{id}/users/{emailOrId}` with id
+* `GET/accounts/{id}/users/{emailOrId}` with account id and user id
 
     ```bash
     curl -X GET \
@@ -190,6 +201,7 @@ To get a list of users including ids see [Get All Users](#get-all-users). To get
     "accountExpired": false,
     "accountLocked": false,
     "credentialsExpired": false,
+    "secret": "qp8ExXXXXXXXXXXXXXXXXXX",
     "lastLoginDate": "1970-01-01",
     "emailValid": true,
     "accountNonExpired": true,
@@ -199,6 +211,63 @@ To get a list of users including ids see [Get All Users](#get-all-users). To get
     "fullName": "Sharda Sisson"
 }
 ```
+
+## Assign a Role
+
+You can assign the following roles to Cloud Elements users:
+
+* Organization Administrator (`org-admin`)
+* Account Administrator (`admin`)
+* Organization User (`org`)
+
+### Assign Role Parameters
+
+| Name | Description   | Required |
+| :------------- | :------------- | :------------- |
+|  id  |  {{site.data.table-desc.user-id}}  | Y |
+| key   | The unique identifier for each role type. Use `org-admin` for the Organization Administrator role. Use `admin` for an Account Administrator. Use `org` for a default account user.  | Y  |
+
+### Assign Role Example Request
+
+* Assign Organization Administrator Role
+
+    ```bash
+    curl -X PUT \
+      https://staging.cloud-elements.com/elements/api-v2/users/4378/roles/org-admin \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'content-type: application/json' \
+      ```
+
+* Assign Account Administrator Role
+
+    ```bash
+    curl -X PUT \
+      https://staging.cloud-elements.com/elements/api-v2/users/4378/roles/admin \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'content-type: application/json' \
+      ```
+
+* Assign Organization User Role
+
+    ```bash
+    curl -X PUT \
+      https://staging.cloud-elements.com/elements/api-v2/users/4378/roles/org \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'content-type: application/json' \
+  ```
+
+  ### Assign Administrator Role Example Response
+
+  ```json
+  {
+    "id": 930,
+    "name": "Organization Administrator",
+    "key": "org-admin",
+    "active": true,
+    "description": "Organization Administrator",
+    "features": []
+  }
+  ```
 
 ## Update a User
 
@@ -242,6 +311,16 @@ The `password` appears in the response only if you change the password.
     "accountExpired": false,
     "accountLocked": false,
     "credentialsExpired": true,
+    "roles": [
+        {
+        "id": 15,
+        "name": "Administrator",
+        "key": "admin",
+        "active": true,
+        "description": "Cloud Elements Application Administrator.",
+        "features": []
+      }
+    ],
     "emailValid": true,
     "accountNonLocked": true,
     "credentialsNonExpired": false,
