@@ -1,29 +1,12 @@
----
-heading: Oracle Eloqua
-seo: Authenticate | Oracle Eloqua | Cloud Elements API Docs
-title: Authenticate
-description: Create Instance
-layout: sidebarelementdoc
-breadcrumbs: /docs/elements.html
-elementId: 27
-elementKey: eloqua
-parent: Back to Element Guides
-order: 20
----
+# Authenticate with Infusionsoft
 
-# Authenticate with {{page.heading}}
-
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with Infusionsoftto create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the Infusionsoft platform.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
-
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
-
-If you are configuring events, see the [Events section](events.html).
+Use the UI to authenticate with Infusionsoft and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
 
 To authenticate an element instance:
 
@@ -32,6 +15,8 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. In **Infusionsoft Server** enter the account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com` or `https://dt123.infusionsoft.com`.
+7. In **Infusionsoft Encrypted Key** enter the encrypted API key that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -54,7 +39,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
-Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
+Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
 curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
@@ -64,9 +49,9 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you recorded in [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 #### Example cURL
 
@@ -81,8 +66,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"element": "{{page.elementKey}}",
-"oauthUrl": "https://login.eloqua.com/auth/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fauth.cloudelements.io%2Fauth&state=eloqua&client_id=53447ea9-158e-452d-8ea3-e6a501555f43"
+  "oauthUrl": "https://signin.infusionsoft.com/app/oauth/authorize?scope=full&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=infusionsoftcrm&client_id=4ynetc9z7v6vajwvkwvxvgxj",
+  "element": "infusionsoftcrm"
 }
 ```
 
@@ -97,8 +82,8 @@ Provide the response from the previous step to the users. After they authenticat
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
-| code | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
-| state | A customizable identifier, typically the element key (`{{page.elementKey}}`) . |
+| code | {{site.data.glossary.element-auth-grant-code}} |
+| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
@@ -110,7 +95,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
-To create an element instance:
+To authenticate an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
@@ -126,7 +111,9 @@ To create an element instance:
       "configuration": {
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>"
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "infusionsoft.server": "<ACOUNT_URL>",
+        "infusionsoft.private.key": "<ENCRYPTED_KEY>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -160,7 +147,9 @@ curl -X POST \
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "infusionsoft.server": "dt123.infusionsoft.com",
+    "infusionsoft.private.key": "47dxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -177,71 +166,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Callback URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
-| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html). | string |
-| tags | *Optional*. User-defined tags to further identify the instance. | string |
-
-## Example Response for an Authenticated Element Instance
-
-In this example, the instance ID is `12345` and the instance token starts with "ABC/D...". The actual values returned to you will be unique: make sure you save them for future requests to this new instance.
-
-```json
-{
-  "id": 12345,
-  "name": "API Instance",
-  "createdDate": "2017-08-07T18:46:38Z",
-  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  "element": {
-      "id": 27,
-      "name": "Oracle Eloqua",
-      "hookName": "Eloqua",
-      "key": "eloqua",
-      "description": "Add an Eloqua Instance to connect your existing Eloqua account to the Marketing Hub, allowing you to manage accounts, campaigns, contacts etc. across multiple Marketing Elements. You will need your Eloqua account information to add an instance.",
-      "image": "elements/provider_eloqua.png",
-      "active": true,
-      "deleted": false,
-      "typeOauth": true,
-      "trialAccount": false,
-      "configDescription": "If you do not have a Eloqua account, you can create one at <a href=\"http://topliners.eloqua.com\" target=\"_blank\">Eloquq Registration</a>",
-      "signupURL": "http://topliners.eloqua.com",
-      "defaultTransformations": [ ],
-      "objectMetadata": [ ],
-      "resources": [ ],
-      "transformationsEnabled": true,
-      "bulkDownloadEnabled": true,
-      "bulkUploadEnabled": true,
-      "cloneable": false,
-      "extendable": false,
-      "beta": false,
-      "authentication": {
-          "type": "oauth2"
-      },
-      "extended": false,
-      "hub": "marketing",
-      "protocolType": "http",
-      "parameters": [],
-      "private": false
-    },
-    "elementId": {{page.elementId}},
-    "tags": [
-      "Docs"
-      ],
-    "provisionInteractions": [  ],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "configuration": {    },
-    "eventsEnabled": false,
-    "traceLoggingEnabled": false,
-    "cachingEnabled": false,
-    "externalAuthentication": "none",
-    "user": {
-        "id": 12345
-      }
-    }
-
-```
+| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| Infusionsoft Server</br>`infusionsoft.server`   | The account portion of your Infusionsoft URL. For example, if your account url is `https://dt123.infusionsoft.com` enter `dt364.infusionsoft.com`. You can also enter `https://dt123.infusionsoft.com`. | string |
+| Infusionsoft Encrypted Key</br>`infusionsoft.private.key`  | The encrypted API key that you noted in [API Provider Setup](setup.html).  | string |
+| tags | {{site.data.glossary.element-auth-tags}} | string |
