@@ -65,8 +65,8 @@ GET /elements/{keyOrId}/oauth/token?apiKey=<api_key>&apiSecret=<api_secret>&call
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you recorded in [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](setup.html).  |
 
 ##### Example cURL
@@ -98,8 +98,8 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **Consumer Key** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you recorded in [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [Endpoint Setup section](setup.html).  |
 | requestToken | The token returned from the previous step.
 

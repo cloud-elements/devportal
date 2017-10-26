@@ -61,9 +61,9 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Unique Identifier** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **Unique Identifier** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **Secret** that you recorded in [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you recorded in [API Provider Setup section](setup.html).  |
 | siteAddress | Your unique Zendesk subdomain (i.e. - https://{subdomain}.zendesk.com) |
 
 #### Example cURL

@@ -56,9 +56,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you recorded in [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Callback URL** that you recorded in [API Provider Setup section](setup.html).  |
 
 #### Example cURL
 
@@ -174,11 +174,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [API Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
-| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [API Provider Setup section](setup.html). | string |
-| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [API Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you recorded in [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you recorded in [API Provider Setup section](setup.html).| string |
+| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you recorded in [API Provider Setup section](setup.html). | string |
+| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you recorded in [API Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
 | `country` | The two digit country code associated with the account of the authenticating user. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

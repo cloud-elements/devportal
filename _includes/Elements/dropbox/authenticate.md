@@ -49,9 +49,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **App key** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **App secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Redirect URI** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **App key** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **App secret** that you recorded in [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Redirect URI** that you recorded in [API Provider Setup section](setup.html).  |
 
 #### Example cURL
 
@@ -163,7 +163,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the **Redirect URI** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **App key** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **App secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the **Redirect URI** that you recorded in [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **App key** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **App secret** that you recorded in [API Provider Setup section](setup.html).| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
