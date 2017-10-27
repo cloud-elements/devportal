@@ -43,36 +43,23 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with polling:
 
-1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Create an element instance.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 7. Switch **Events Enabled** on.
 8. Add an Event Notification Callback URL.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
-5. Select and configure the resources to poll.
+5. Select the resources to poll.
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
+7. Click **Create Instance**.
 
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling. | Edit the JSON to add or remove resources and optionally change the `datesConfiguration`.  |
-
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-8. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](/assets/img/elements/add-tag.png)
-     1. Click __Done__.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ### Configure Polling Through API
 
@@ -188,11 +175,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you noted at the end of the [API Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
-| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you noted at the end of the [API Provider Setup section](setup.html). | string |
-| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you noted at the end of the [API Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the Callback URL that you recorded in [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **Client Secret** that you recorded in [API Provider Setup section](setup.html).| string |
+| `signature.secret` | The signing secret obtained from registering your app with the provider.  This is the **Signing Secret** that you recorded in [API Provider Setup section](setup.html). | string |
+| APIM Subscription Key</br> `apim.subscription.key` | The subscription primary key obtained from subscribing to the Sage One API.  This is the **Primary Key** that you recorded in [API Provider Setup section](setup.html). <br> {% include note.html content=" When authenticating through the UI, you can use the default or your own subscription primary key. " %} | string |
 | `country` | The two digit country code associated with the account of the authenticating user. | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |

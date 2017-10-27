@@ -26,32 +26,19 @@ If you are configuring events, see the [Events section](events.html).
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Authenticate an element instance.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click **Create Instance**.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click **Add Instance**.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
-
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](/assets/img/elements/element-instance.png)
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
@@ -71,8 +58,8 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **REST API Client ID** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The secret obtained from registering your app with the provider.  This is the **REST API Client Secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
+| apiKey | The key obtained from registering your app with the provider. This is the **REST API Client ID** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The secret obtained from registering your app with the provider.  This is the **REST API Client Secret** that you recorded in [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
 
 #### Example cURL

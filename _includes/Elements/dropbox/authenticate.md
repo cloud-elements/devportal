@@ -13,30 +13,17 @@ If you are configuring events, see the [Events section](events.html).
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Create an element instance.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. For Dropbox Business, enter your **App key** and **App secret** in **API Key** and **API Secret**.
 6. With **Document Hub Tagging** select whether you want to enable document tagging.
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-    After you authenticate with the API Provider, the authentication flow returns you to {{site.console}}.
-
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](/assets/img/elements/element-instance.png)
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
@@ -62,9 +49,9 @@ GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callba
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey | The key obtained from registering your app with the provider. This is the **App key** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **App secret** that you noted at the end of the [API Provider Setup section](setup.html).   |
-| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Redirect URI** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| apiKey | The key obtained from registering your app with the provider. This is the **App key** that you recorded in [API Provider Setup section](setup.html).  |
+| apiSecret |  The client secret obtained from registering your app with the provider.  This is the **App secret** that you recorded in [API Provider Setup section](setup.html).   |
+| callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. This is the **Redirect URI** that you recorded in [API Provider Setup section](setup.html).  |
 
 #### Example cURL
 
@@ -176,7 +163,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the **Redirect URI** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **App key** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **App secret** that you noted at the end of the [API Provider Setup section](setup.html).| string |
+| `oauth.callback.url` | The Callback URL  for the connected app you created for {{page.heading}}. This is the **Redirect URI** that you recorded in [API Provider Setup section](setup.html).  |
+| `oauth.api.key` | The key obtained from registering your app with the provider. This is the **App key** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | The client secret obtained from registering your app with the provider.  This is the **App secret** that you recorded in [API Provider Setup section](setup.html).| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

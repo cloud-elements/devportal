@@ -24,17 +24,9 @@ Use the UI to authenticate with {{page.heading}} and create an element instance.
 If you are configuring events, see the [Events section](events.html).
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-3. Authenticate an element instance.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click **Authenticate**.</br> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click **Add Instance**.</br> ![Search](/assets/img/elements/add-instance.png)  |
-
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 6. Select an **Authentication Type**:
   * Choose **Custom** to authenticate through user name and password.
@@ -47,20 +39,15 @@ If you are configuring events, see the [Events section](events.html).
     |  Password  |  OAuth Client Secret in Azure AD  |
     |  Dynamics CRM URL  |  Microsoft Dynamics CRM Tenant URL  |
 
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
+9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
+7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 
-    After you authenticate with the API provider, the authentication flow returns you to Cloud Elements.
-
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-![Authenticated Element Instance](/assets/img/elements/element-instance.png)
-8. Take a look at the documentation for the element resources now available to you.
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
 You can authenticate using either [custom authentication](#custom-authentication) or [OAuth 2.0](#oauth-2-0-authentication).
 
@@ -163,9 +150,9 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted at the end of the [API Provider Setup section](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted at the end of the [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted at the end of the [API Provider Setup section](setup.html)   |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 ##### Example cURL
 
@@ -283,9 +270,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
 | Authentication Type</br>`authentication.type` | Optional. Identifies the type of authentication used in the request. Use `oauth2`. | string |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted at the end of the [API Provider Setup section](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted at the end of the [API Provider Setup section](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted at the end of the [API Provider Setup section](setup.html).  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html).  |
 | `oauth.resource.url` | The Microsoft Dynamics Tenant URL. | string |
 | `tags` | *Optional*. User-defined tags to further identify the instance. | string |
 
