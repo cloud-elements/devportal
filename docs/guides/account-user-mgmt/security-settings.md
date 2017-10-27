@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 Use the Security Settings page to manage organization information, reset your organization secret, configure passwords, and set up two-factor authentication. Only the organization administrator can access the Security page.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#configure-passwords>Configure Passwords</a></br><a href=#set-up-two-factor-authentication>Set up Two-Factor Authentication</a></br><a href=#reset-organization-token>Reset Organization Token
-</a></br><a href=#change-an-account-name-or-description>Change an Account Name or Description</a>" type="info" %}
+</a>" type="info" %}
 
 
 ## Configure Passwords

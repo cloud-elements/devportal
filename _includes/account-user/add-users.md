@@ -8,7 +8,7 @@ To create a user for an account:
 4. Complete the **Password** field with a password that meets the [password policy](security-settings.html#configure-passwords) you configured on the Settings tab.
 5. If you want the user to be an organization or account administrator, select **Org Admin** or **Account Admin**. Otherwise continue to the next step. See [User Roles](user-management.html#user-roles) for more information about what each role can access.
 
-    <span style="color:red">Doe these cascade, like what if I select org but not account.</span>
+    {% include note.html content="You can assign the Organization Administrator roll only to users in the default company account. If you assign a user the Organization Administrator roll, you do not need to assign the Account Administrator roll also.  " %}
 
 4. Click <img src="img/btn-save.png" alt="Save" class="inlineImage">.
 

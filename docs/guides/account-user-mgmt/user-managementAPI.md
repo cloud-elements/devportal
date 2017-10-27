@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 
 Organization administrators can manage the users related all accounts in your organization, while account administrators can manage users in specific accounts with the `/users` endpoint. You can create, retrieve, update, delete, and search users. To manage users, you must include a valid Organization Secret and the User Secret of an organization administrator in the header of any API requests to `/user`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#get-all-users>Get All Users</a></br><a href=#add-a-user>Add a User</a></br><a href=#get-a-specific-user>Get a Specific User</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#get-all-users>Get All Users</a></br><a href=#add-a-user>Add a User</a></br><a href=#get-a-specific-user>Get a Specific User</a></br><a href=#assign-a-role>Assign a Role</a></br><a href=#remove-a-role>Remove a Role</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
 ## Get All Users
 
@@ -105,6 +105,12 @@ curl -X GET \
     }
 ]
 ```
+
+## User Roles
+
+{% include account-user/roles.md%}
+
+See [Assign a Role](#assign-a-role) for steps to add roles to your users.
 
 ### User Attributes
 
@@ -214,11 +220,12 @@ To get a list of users including ids see [Get All Users](#get-all-users). To get
 
 ## Assign a Role
 
-You can assign the following roles to Cloud Elements users:
+You can assign the following roles to Cloud Elements users with the `PUT /users/id/roles/role/rolekey` endpoint:
 
 * Organization Administrator (`org-admin`)
 * Account Administrator (`admin`)
-* Organization User (`org`)
+
+You can also assign roles when you [update users](#update-a-user) with the `PATCH /users/{id}` endpoint.
 
 ### Assign Role Parameters
 
@@ -247,16 +254,7 @@ You can assign the following roles to Cloud Elements users:
       -H 'content-type: application/json' \
       ```
 
-* Assign Organization User Role
-
-    ```bash
-    curl -X PUT \
-      https://staging.cloud-elements.com/elements/api-v2/users/4378/roles/org \
-      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
-      -H 'content-type: application/json' \
-  ```
-
-  ### Assign Administrator Role Example Response
+### Assign Role Example Response
 
   ```json
   {
@@ -269,9 +267,34 @@ You can assign the following roles to Cloud Elements users:
   }
   ```
 
+## Remove a Role
+
+If you no longer want a user to be an organization or account administrator, you can remove roles using the `DELETE /users/{userId}/roles/{roleKey}` endpoint with the user `id` and the role `key` of the role to remove.
+
+### Remove Role Parameters
+
+| Name | Description   | Required |
+| :------------- | :------------- | :------------- |
+|  id  |  {{site.data.table-desc.user-id}}  | Y |
+| key   | The unique identifier for each role type. Use `org-admin` for the Organization Administrator role. Use `admin` for an Account Administrator. Use `org` for a default account user.  | Y  |
+
+To get a list of roles assigned to a user make a `GET /users/{id}/roles` request.
+
+### Remove Role Example Request
+
+    ```bash
+    curl -X PUT \
+      https://staging.cloud-elements.com/elements/api-v2/users/4378/roles/org-admin \
+      -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+      -H 'content-type: application/json' \
+      ```
+### Remove Role Example Response
+
+  Cloud Elements returns a response with a code of 200 indicating success. You can check to see the roles assigned to the user with a `GET /users/{id}/roles` request.
+
 ## Update a User
 
-Change the `password`, `firstName`, `lastName`, or `email` of a specific user with the user `id` and the `PATCH /users/{id}` endpoint.
+Change the `password`, `firstName`, `lastName`, or `email` of a specific user or assign roles with the user `id` and the `PATCH /users/{id}` endpoint.
 
 ### Update User Parameters
 
@@ -292,11 +315,16 @@ curl -X PATCH \
     "firstName": "Sharda",
     "email": "shardhughes@mycompany.com",
     "lastName": "Hughes",
-    "password": "password"
+    "password": "password",
+    "roles":[
+      {
+      "key": "admin"
+    }
+  ]
 }'
   ```
 
-  ### Update User Example Response
+### Update User Example Response
 
 The `password` appears in the response only if you change the password.
 
@@ -381,8 +409,6 @@ If you reactivate a user, `active` is set to `true` in the response.
 
 See [User Attributes](#user-attributes) for descriptions of each attribute.
 
-
-
 ## Delete a User
 
 Delete users with the user `id` and the `DELETE /accounts/{id}` endpoint. You cannot recover deleted users. If you think that you might need to access the user later, consider deactivating the user instead.
@@ -404,6 +430,6 @@ curl -X DELETE \
   -H 'content-type: application/json' \
   ```
 
-  ### Delete User Example Response
+### Delete User Example Response
 
-  The response is empty. You can confirm that you deleted the user with `GET /users/{id}`.
+  Cloud Elements returns a code of 200 indicating success. You can confirm that you deleted the user with `GET /users/{id}`.
