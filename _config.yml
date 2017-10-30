@@ -20,6 +20,8 @@ gems:
   - jekyll-redirect-from
   - jekyll-youtube
   - algoliasearch-jekyll
+  - jekyll-paginate
+
 
 algolia:
   application_id: 'G8W6UO94HX'
@@ -43,3 +45,6 @@ algolia:
       - 'text'
 
 console: 'Cloud Elements'
+
+paginate_path: "/docs/release-notes/page:num"
+paginate: 2

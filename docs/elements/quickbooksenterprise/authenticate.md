@@ -1,6 +1,6 @@
 ---
-heading: Quickbooks Enterprise
-seo: Authenticate | Quickbooks Enterprise | Cloud Elements API Docs
+heading: QuickBooks Enterprise
+seo: Authenticate | QuickBooks Enterprise | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
@@ -19,35 +19,22 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} uses a simple authentication method for its connections. All we need is the _exact_ app name that is setup in Quickbooks, and the endpoint IP or URL (most likely a [Ground2Cloud](/docs/guides/ground-2-cloud) URL).
+Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} uses a simple authentication method for its connections. All we need is the _exact_ app name that is setup in QuickBooks, and the endpoint IP or URL (most likely a [Ground2Cloud](/docs/guides/ground-2-cloud) URL).
 
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
 
-1. Sign in to Cloud Elements, and then search for the element in our Elements Catalog.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    |  ![Search](/assets/img/elements/element-search2.png)  |  ![Search](/assets/img/elements/element-search.png)  |
-
-1. Create an element instance.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Hover over the element card, and then click __Create Instance__.<br/> ![Create Instance](/assets/img/elements/authenticate-instance.gif)  | Click __Add Instance__.<br/> ![Search](/assets/img/elements/add-instance.png)  |
-
+1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
+![Search](/assets/img/elements/element-search2.png)
+4. Hover over the element card, and then click **Authenticate**.
+![Create Instance](/assets/img/elements/authenticate-instance.gif)
 1. Enter a name for the element instance.
-2. In **Configured Application Name**, enter the application name that is configured in the Quickbooks application.
-3. In **Host Name/IP**, enter the address of the application endpoint. In most cases, this will be a [Ground2Cloud](/docs/guides/ground-2-cloud) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of Quickbooks Enterprise, without the need to open up firewalls to your site.
-1. Click __Create Instance__ (latest UI) or __Next__ (earlier UI).
-1. Optionally add tags in the earlier UI:
-     1. On the Tag It page, enter any tags that might help further define the instance.
-      * To add more than one tag, click __Add__ after each tag.
-      ![Add tag](/assets/img/elements/add-tag.png)
-     1. Click __Done__.
-1. Note the **Token** and **ID** and save them for all future requests using the element instance.
-1. Take a look at the documentation for the element resources now available to you.
+2. In **Configured Application Name**, enter the application name that is configured in the QuickBooks application.
+3. In **Host Name/IP**, enter the address of the application endpoint. In most cases, this will be a [Ground2Cloud](/docs/guides/ground-2-cloud) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of QuickBooks Enterprise, without the need to open up firewalls to your site.
+1. Click **Create Instance**.
+
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ## Authenticate Through API
 
@@ -105,9 +92,9 @@ curl -X POST \
     "host.ip": "<HOST_IP>"
   },
   "tags": [
-    "Quickbooks"
+    "QuickBooks"
   ],
-  "name": "Quickbooks Enterprise"
+  "name": "QuickBooks Enterprise"
 }'
 ```
 ## Parameters
@@ -130,7 +117,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 ```json
 {
 	"id": 1,
-	"name": "Quickbooks Enterprise",
+	"name": "QuickBooks Enterprise",
 	"createdDate": "2017-06-06T19:08:52Z",
 	"token": "pIHuafNc/17ADfEjcqIsFZ9eNNk58dXSEdqhC5QnQBk=",
 	"element": {
@@ -144,7 +131,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 		"deleted": false,
 		"typeOauth": true,
 		"trialAccount": false,
-		"configDescription": "Quickbooks Desktop Element",
+		"configDescription": "QuickBooks Desktop Element",
 		"defaultTransformations": [{"...": "..."}]
   },
   "elementId": 195,

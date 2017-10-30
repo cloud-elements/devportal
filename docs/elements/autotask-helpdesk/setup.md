@@ -7,6 +7,8 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 123
 elementKey: autotaskhelpdesk
+username: Username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: Password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 5
 ---

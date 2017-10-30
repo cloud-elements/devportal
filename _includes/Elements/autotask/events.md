@@ -12,28 +12,20 @@ To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
-
-    | Latest UI | Earlier UI  |
-    | :------------- | :------------- |
-    | Switch **Events Enabled** on. </br>![event-enabled-on](/assets/img/elements/event-enabled-on.png)|  In **Event Notifications Enabled**, select **True**.</br>![event-enabled-true](/assets/img/elements/event-enabled-true.png) |
-
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
-5. Select and configure the resources to poll.
+5. Select the resources to poll.
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
+  9. Optionally type or select one or more tags to add to the authenticated element instance.
+  7. Click **Create Instance**.
 
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | Select the resources to poll. </br>Optionally, click the pencil icon to further configure polling.</br>![Configure Polling](/assets/img/elements/configure-polling2.gif) | Edit the JSON to add or remove resources and optionally change the Event Poller Resources Configuration . </br>![Configure Polling](/assets/img/elements/configure-polling.png) |
+  After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
-9. In Cloud Elements 2.0, optionally type or select one or more tags to add to the authenticated element instance.
-7. Click **Create Instance** (Cloud Elements 2.0) or **Next** (earlier UI).
-8. If using the earlier UI, optionally add tags to the authenticated element instance.
-9. Note the **Token** and **ID** and save them for all future requests using the element instance.
-
-    | Cloud Elements 2.0 | Earlier UI  |
-    | :------------- | :------------- |
-    | ![Authenticated Element Instance 2.0](/assets/img/elements/element-instance.png) | ![Authenticated Element Instance 1.0](/assets/img/elements/element-instance1.png)  |
 
 ### Configure Polling Through API
 
@@ -102,10 +94,10 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "{{page.hdOrcrm}}.autotask.password": "xxxxxxxxxxxxxxxxxxxxxxxx",
   "{{page.hdOrcrm}}.autotask.server.url": "https://ww2.autotask.net",
     "event.notification.enabled": true,
-	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/{{page.elementKey}}/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-    	"{{site.pollObject}}": {
+    	"{{page.pollObject}}": {
     		"url":"/hubs/{{page.hdOrcrm}}/{{page.pollObject}}?where=lastActivityDate>='${date:yyyy-MM-dd'T'HH:mm:ssZ}'",
             "idField":"id",
             "datesConfiguration":{
@@ -139,7 +131,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling</br>`event.poller.configuration`  | _Optional_. Configuration parameters for polling. | JSON object |
-| Resource to Poll  | The polling event configuration of the resource that you will monitor. | JSON object |
+| Resource to Poll (`{{page.pollObject}}`) | The polling event configuration of the resource that you will monitor. | JSON object |
 | URL</br>`url` | The url to query for updates to the resource.  | String |
 | ID Field</br>`idField` | The field in the resource that is used to uniquely identify it.  | String |
 | Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |

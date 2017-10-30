@@ -46,10 +46,7 @@ For more information about each field described here, see [Parameters](#paramete
 5. Enter each object that you want to poll for changes separated by commas.
 
 When finished adding your polling configuration, the Event Configuration section should look like this:
-
-| Latest UI | Earlier UI  |
-| :------------- | :------------- |
-|  ![Polling](img/Polling-C2.png)  |  ![Polling](img/Polling-C1.png)  |
+ ![Polling](img/Polling-C2.png)
 
 ### Configure Polling Through API
 
@@ -85,7 +82,7 @@ instance JSON with polling events enabled:
     "oauth.api.secret": "<Insert_Client_Secret>",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-    "event.notification.callback.url": "https://mycoolapp.com",
+    "event.notification.callback.url": "https://staging.cloud-elements.com/elements/api-v2/instances/events",
     "event.notification.signature.key": "12345",
     "event.objects": "Contact,Account",
     "event.poller.refresh_interval": "5"
@@ -129,10 +126,7 @@ For more information about each field described here, see [Parameters](#paramete
 5. Enter each object that you want to poll for changes separated by commas.
 
 When finished adding your polling configuration, the Event Configuration section should look like this:
-
-| Latest UI | Earlier UI  |
-| :------------- | :------------- |
-|  ![Polling](img/Webhooks-C2.png)  |  ![Polling](img/Webhooks-C1.png)  |
+![Polling](img/Webhooks-C2.png) 
 
 ### Configure Webhooks Through API
 
