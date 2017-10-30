@@ -1,8 +1,6 @@
 {% assign id = page.path | shard_id %}
 {% assign shard = site.shards[id] | sort:"order" %}
 
-{% assign overviewshard = site.shards['docs_overview'] | sort:"order" %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
