@@ -1,6 +1,6 @@
 ---
-heading: Quickbooks Online
-seo: Bulk APIs | Quickbooks Online| Cloud Elements API Docs
+heading: QuickBooks Online
+seo: Bulk APIs | QuickBooks Online| Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc

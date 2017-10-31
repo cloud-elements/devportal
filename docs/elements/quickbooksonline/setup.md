@@ -6,6 +6,9 @@ description: Endpoint Setup
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 5
 ---
@@ -21,9 +24,11 @@ To set up the API provider:
 3. Click __Create new app__.
 4. Click __Select APIs__ under __Just start coding__.
 5. Select __Accounting__ and __Payments__ and click __Create app__.
-6. Note the following in the __Keys__ section, which you will need to authenticate a Cloud Elements Quickbooks element instance with Quickbooks.
- * App token
- * OAuth Consumer Key
- * OAuth Consumer Secret
+6. Note the following in the __Keys__ section, which you will need to authenticate a Cloud Elements QuickBooks element instance with QuickBooks.
+
+    | OAuth 2.0 | OAuth 1.0   |
+    | :------------- | :------------- |
+    |  {{page.apiKey}} </br> {{page.apiSecret}} </br> {{page.callbackURL}}  |  App token</br>OAuth Consumer Key</br>OAuth Consumer Secret  |
+
 
 Next [authenticate an element instance with {{page.heading}}](authenticate.html).
