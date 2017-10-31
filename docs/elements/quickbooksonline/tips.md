@@ -29,3 +29,15 @@ The Tips section includes more information about the element including FAQs, end
 
 * QuickBooks Online supports only one user per authenticated instance. If one user tries to authenticate to multiple instances, the oldest instance will get wiped out.
 * Auth Tokens are good for 180 days and they can be refreshed within 30 days of expiration.
+
+## Errors
+
+If you receive the following 400 error when making requests, make sure that you authenticated with Development Keys and not Production Keys associated with a sandbox.
+
+```json
+{
+  "requestId": "59f894e3e4b03f1001b9ac63",
+  "message": "Bad Request",
+  "providerMessage": "3100 - message=AuthorizationFailed; errorCode=003100; statusCode=403 - null"
+}
+```
