@@ -1,26 +1,258 @@
 ---
-heading: Quickbooks Online
-seo: Authenticate | Quickbooks Online | Cloud Elements API Docs
+heading: QuickBooks Online
+seo: Authenticate | QuickBooks Online | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
 elementKey: quickbooks
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
 
-
 # Authenticate with {{page.heading}}
 
-{% include note.html content="As of July 17, 2017 you cannot authenticate a new instance with Quickbooks Online. Cloud Elements supports OAuth 1.0 authentication which is no longer supported for new apps.  We expect to release an updated element in the 3rd quarter of 2017. See <a href=https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app>Intuit's documentation on OAuth 2.0</a> for more." %}
+You can authenticate with QuickBooks using either [OAuth 2.0 authentication](#authenticate-with-oauth-2-0) or [OAuth 1.0 authentication](#authenticate-with-oauth-1-0). OAuth 2.0 is available for new apps created after July 17, 2017, while OAuth 1.0 is available for apps created before then. See [Intuit's documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0100_essentials/000500_authentication_and_authorization/connect_from_within_your_app) about OAuth 2.0 for more details.
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+For apps created prior to July 2017, QuickBooks authentication also supports [Token Based authentication](#token-based-authentication).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response>Example Response</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-with-oauth-2-0>Authenticate with OAuth 2.0</a></br><a href=#authenticate-with-oauth-1-0>Authenticate with OAuth 1.0</a>" type="info" %}
 
-## Authenticate Through the UI
+## Authenticate with OAuth 2.0
+
+You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element only through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+
+Authenticating through API follows a multi-step OAuth 2.0 process that involves:
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
+
+* [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
+* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
+* [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
+
+### Getting a Redirect URL
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
+
+Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`. Note the `scope` and `authentciation.type` parameters that are unique to QuickBooks Online.
+
+```bash
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>&scope=com.intuit.quickbooks.accounting openid profile email phone address&authentication.type=oauth2
+```
+
+#### Query Parameters
+
+| Query Parameter | Description   |
+| :------------- | :------------- |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| scope   | The scope provided is required to access data in QuickBooks online.  |
+| authentication.type   | Identifies that you are authenticating with OAuth 2.0.  |
+
+#### Example cURL
+
+```bash
+curl -X GET \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&scope=com.intuit.quickbooks.accounting%20openid%20profile%20email%20phone%20address&authentication.type=oauth2' \
+```
+
+#### Example Response
+
+Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
+
+<Replace the below oauthUrl value with an actual one from Postman.>
+
+```json
+{
+"oauthUrl": "https://appcenter.intuit.com/connect/oauth2?scope=com.intuit.quickbooks.accounting+openid+profile+email+phone+address&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=quickbooks&client_id=Q0rGWmlUp1UFMHPqaZ8nwjyiA5linuQ23RmjsMPHL658osSGlk",
+"element": "{{page.elementKey}}"
+}
+```
+
+### Authenticating Users and Receiving the Authorization Grant Code
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
+
+Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+
+```json
+{
+    "code": "Q011xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "realmId": "1231xxxxxxxxxxxxx",
+    "state": "quickbooks"
+  }
+  ```
+
+| Response Parameter | Description   |
+| :------------- | :------------- |
+| code | {{site.data.glossary.element-auth-grant-code}} |
+| realmID   | An identifier unique to QuickBooks associated with the authenticated element instance.  |
+| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+
+{% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
+
+### Authenticating the Element Instance
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
+
+Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
+
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance:
+
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+
+    ```json
+    {
+      "element": {
+        "key": "{{page.elementKey}}"
+      },
+      "providerData": {
+        "code": "<AUTHORIZATION_GRANT_CODE>",
+        "realmId": "<REALMID_FROM_PREVIOUS_STEP>"
+      },
+      "configuration": {
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "oauth.api.key": "<CONSUMER_KEY>",
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "authentication.type" : "oauth2",
+        "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
+      },
+      "tags": [
+        "<Add_Your_Tag>"
+      ],
+      "name": "<INSTANCE_NAME>"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
+#### Example cURL
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
+  "element": {
+    "key": "{{page.elementKey}}"
+  },
+  "providerData": {
+    "code": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "realmId": "xxxxxxxxxxxxxxxxx"
+  },
+  "configuration": {
+    "oauth.callback.url": "https;//mycoolapp.com",
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "authentication.type" : "oauth2",
+    "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
+    },
+  "tags": [
+    "Docs"
+  ],
+  "name": "API Instance"
+}'
+```
+## Parameters
+
+API parameters not shown in {{site.console}} are in `code formatting`.
+
+{% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
+
+| Parameter | Description   | Data Type |
+| :------------- | :------------- | :------------- |
+| `key` | The element key.<br>{{page.elementKey}}  | string  |
+| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+| `realmId`   | The realmId returned upon user authorization.  | string  |
+|  `name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+|  `authentication.type`  |  Identifies the authentication type to use with the request. |  string |
+| scope   |  Identifies the QuickBooks API access that your application is requesting. | string  |
+| `tags` | {{site.data.glossary.element-auth-tags}} | string |
+
+## Example Response for an OAuth 2.0 Authenticated Element Instance
+
+In this example, the instance ID is `12345` and the instance token starts with "ABC/D...". The actual values returned to you will be unique: make sure you save them for future requests to this new instance.
+
+```json
+{
+  "id": 12345,
+  "name": "API Instance",
+  "createdDate": "2017-08-07T18:46:38Z",
+  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "element": {
+      "id": 39,
+      "name": "QuickBooks Online",
+      "hookName": "QuickBooksOnline",
+      "key": "quickbooks",
+      "description": "Add a QuickBooks Online Instance to connect your existing QuickBooks Online account to the Finance Hub, allowing you to manage your customers, employees, invoices, purchase orders etc. across multiple Finance Elements. You will need your QuickBooks Online account information to add an instance.",
+      "image": "elements/provider_quickbooks.png",
+      "active": true,
+      "deleted": false,
+      "typeOauth": true,
+      "trialAccount": false,
+      "configDescription": "If you do not have an QuickBooks account, you can create one at <a href=\"http://quickbooks.intuit.com/signup/\" target=\"_blank\">QuickBooks Signup</a>",
+      "signupURL": "http://quickbooks.intuit.com/signup/",
+      "defaultTransformations": [ ],
+      "objectMetadata": [ ],
+      "transformationsEnabled": true,
+      "bulkDownloadEnabled": true,
+      "bulkUploadEnabled": true,
+      "cloneable": false,
+      "extendable": true,
+      "beta": false,
+      "authentication": {
+          "type": "oauth1"
+      },
+      "extended": false,
+      "hub": "finance",
+      "protocolType": "http",
+      "parameters": [],
+      "private": false
+  },
+  "elementId": 39,
+  "tags": [
+      "Docs"
+  ],
+  "provisionInteractions": [],
+  "valid": true,
+  "disabled": false,
+  "maxCacheSize": 0,
+  "cacheTimeToLive": 0,
+  "cacheTimeToLive": 0,
+  "configuration": {    },
+  "eventsEnabled": false,
+  "traceLoggingEnabled": false,
+  "cachingEnabled": false,
+  "externalAuthentication": "none",
+  "user": {
+        "id": 12345
+      }
+}
+```
+
+## Authenticate with OAuth 1.0
+
+You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} in the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+
+### Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 1 framework and you will need to sign in to {{page.heading}} as part of the process.
 
@@ -34,18 +266,11 @@ To authenticate an element instance:
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
 7. Click **Create Instance**.
-8. Provide your Quickbooks Online, and then allow the connection.
+8. Provide your QuickBooks Online, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
-## Authenticate Through API
-
-Quickbooks Online has two possible authentication methods when authenticating via the APIs:
-
-* [Oauth 1.0](#oauth-1-0)
-* [Token Based Authentication](#token-based-authentication)
-
-### Oauth 1.0
+### Authenticate Through API
 
 Authenticating through API is a multi-step process that involves:
 
@@ -54,7 +279,7 @@ Authenticating through API is a multi-step process that involves:
 * [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
 * [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
 
-#### Getting an Oauth Token
+#### Getting an OAuth Token
 Use the following API call to request an Oauth Token. Replace 'keyOrId' with the element key, `{{page.elementKey}}`. You will also need to replace 'api_key', 'api_secret' and 'callbackUrl'.
 
 ```bash
@@ -132,14 +357,14 @@ Provide the response from the previous step to the users. After they authenticat
 | Response Parameter | Description   |
 | :------------- | :------------- |
 | oauth_verifier | The Authorization Grant Code required by Cloud Elements to retrieve the OAuth access and refresh tokens from the endpoint.|
-| realmID | The unique identifier for the authorized Quickbooks Online company. |
+| realmID | The unique identifier for the authorized QuickBooks Online company. |
 | dataSource | This value determines what data source should be used for the connection. |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
 #### Authenticating the Element Instance
 
-Use the `/instances` endpoint to authenticate with Quickbooks and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with QuickBooks and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an Element token upon successful completion. Retain the token for all subsequent requests involving this element instance.  " %}
 
@@ -225,12 +450,12 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth_verifier` | A verification code generated by Intuit that an App is supposed to pass back during the get_access_token step. |
 | `oauth_token` | The token retrieve in the [Getting an Oauth Token step](#getting-an-oauth-token). |
 | `secret` | A secret to establish the ownership of the token. |
-| `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in Quickbooks Online. |
+| `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in QuickBooks Online. |
 | `state` | This should always be {{page.elementKey}} |
 | `dataSource` | This value determines what data source should be used for the connection. It is returned after authentication. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| `oauth.callback.url` | The Callback URL from QuickBooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Consumer Key from QuickBooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from QuickBooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
@@ -263,11 +488,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 }
 ```
 
-### Token Based Authentication
+## Token Based Authentication
 
-The Quickbooks Online element also allows for token based authentication. To provision an instance using this method, you are still required to have all of the oauth information ahead of time.
+The QuickBooks Online element also allows for token based authentication. To provision an instance using this method, you are still required to have all of the OAuth information ahead of time.
 
-#### Example cURL
+### Example cURL
 
 ```bash
 curl -X POST \
@@ -296,7 +521,7 @@ curl -X POST \
 }'
 ```
 
-#### Parameters for Token Based Authentication
+### Parameters for Token Based Authentication
 
 API parameters not shown in {{site.console}} are in `code formatting`.
 
@@ -306,19 +531,19 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | 'key' | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `"oauth.user.refresh_interval"` | In seconds, the amount of time that should pass before a refresh needs to take place. The default for Quickbooks Online is 151 days or 13046400. |
+| `"oauth.user.refresh_interval"` | In seconds, the amount of time that should pass before a refresh needs to take place. The default for QuickBooks Online is 151 days or 13046400. |
 | `oauth.user.token` | The token retrieve in the [Getting an Oauth Token step](#getting-an-oauth-token). |
 | `oauth.user.token.secret` | A secret to establish the ownership of the token. |
-| `quickbooks.realm.id` | The unique Identifier for the authorized Quickbooks company. |
+| `quickbooks.realm.id` | The unique Identifier for the authorized QuickBooks company. |
 | `state` | This should always be {{page.elementKey}} |
 | `quickbooks.dataSource` | This value determines what data source should be used for the connection. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
+| `oauth.callback.url` | The Callback URL from QuickBooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
+| `oauth.api.key` | The Consumer Key from QuickBooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Consumer Secret from QuickBooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
 | Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
-#### Example Response
+### Example Response
 
 ```json
 {

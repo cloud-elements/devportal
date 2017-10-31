@@ -1,12 +1,15 @@
 ---
-heading: Quickbooks Online
-seo: Events | Quickbooks Online | Cloud Elements API Docs
+heading: QuickBooks Online
+seo: Events | QuickBooks Online | Cloud Elements API Docs
 title: Events
-description: Enable Quickbooks Online events for your application.
+description: Enable QuickBooks Online events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 39
 elementKey: quickbooks
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -48,10 +51,9 @@ You can set up events for the following resources:
 
 ## Polling
 
-You can configure polling through the UI or in the JSON body of the `/instances` API call.
+You can configure polling through the UI (for OAuth 1.0 authentication) or in the JSON body of the `/instances` API call.
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
-
 
 ### Configure Polling Through the UI
 
@@ -81,198 +83,153 @@ After successfully authenticating, we give you several options for next steps. [
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
 
-In order to enable polling, add these extra configurations to your instance JSON:
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
-```JSON
-"event.notification.enabled": "true",
-"event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-"event.poller.refresh_interval":"<POLLER_REFRESH_INTERVAL>"
-"event.poller.urls": "bill-payments|bills|classes|credit-memos|credit-terms|currencies|customers|employees|invoices|journal-entries|ledger-accounts|payment-methods|payments|products|purchase-orders|refund-receipts|sales-receipts|tax-codes|tax-rates|time-activities|vendor-credits|vendors"
-```
+To authenticate an element instance with polling:
 
-instance JSON with polling events enabled:
+1. Complete the authentication steps for the [OAuth 2.0](authenticate.html#authenticate-with-oauth-2-0) or [OAuth 1.0](authenticate.html#authenticate-with-oauth-1-0) authentication up to constructing the final authentication JSON body.
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
-### Step 1. Get Elements OAuth Token
+    **OAuth 2.0**
 
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{keyOrId}/oauth/token
-Request Body: None
-Query Parameters:
+    ```json
+       {
+         "element":{
+           "key":"{{page.elementKey}}"
+         },
+         "providerData":{
+           "code": "<AUTHORIZATION_GRANT_CODE>",
+           "realmId": "<REALMID_FROM_PREVIOUS_STEP>"
+         },
+         "configuration":{
+           "oauth.callback.url": "<CALLBACK_URL>",
+           "oauth.api.key": "<CONSUMER_KEY>",
+         	"oauth.api.secret": "<CONSUMER_SECRET>",
+           "authentication.type" : "oauth2",
+           "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
+           "event.notification.enabled": true,
+           "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+           "event.poller.refresh_interval": "15",
+           "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
+         },
+         "tags":[
+           "<Add_Your_Tag>"
+         ],
+         "name":"<INSTANCE_NAME>"
+       }
+       ```
 
-* __key__ - quickbooks
-* __apiKey–__ - the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app
+      **OAuth 1.0**
 
-Description: The result of this API invocation returns a requestToken and Secret from the endpoint, which are used to retrieve the redirect URL.  The requestToken is used in the GET /elements/{keyOrId}/oauth/url call.
+    ```json
+    {
+     "element": {
+       "key": "{{page.elementKey}}"
+     },
+     "providerData": {
+       "oauth_token": "<OAUTH_TOKEN>",
+       "realmId": "<REALMID>",
+       "oauth_verifier": "<OAUTH_VERIFIER>",
+       "secret": "<OAUTH_USER_SECRET>",
+       "state": "quickbooks",
+       "dataSource": "<dataSource>"
+     },
+     "configuration": {
+       "oauth.callback.url": "<CALLBACK_URL>",
+       "oauth.api.key": "<CONSUMER_KEY>",
+       "oauth.api.secret": "<CONSUMER_SECRET>",
+       "filter.response.nulls": true,
+       "event.notification.enabled": true,
+       "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+       "event.poller.refresh_interval": "15",
+       "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
+     },
+     "tags": [
+       "<Add_Your_Tag>"
+     ],
+     "name": "<INSTANCE_NAME>"
+    }
+    ```
 
-Each of the OAuth API calls will be shown below.
+1. Call the following, including the JSON body you constructed in the previous step:
 
-Example cURL Command:
+        POST /instances
 
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/quickbooks/oauth/token?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly'
-```
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
-Response:
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 
-```json
-{
-  "token": "qyprd1Twij60MH06lKGUZTJwx7tbzpPQx6aZnvKe0xI7",
-  "secret": "KKSbL0J2wLGMqhMXTEh1ERkSx9tsIbAHUevF"
-}
-```
 
-QuickBooks Online expects a token and secret. These are contained in the response to the initial GET request. Please make note of the token and secret. The token is needed in the GET /elements/{keyOrId}/oauth/url call which is shown below.
+### Example cURL with Polling
 
-### Step 2. Get Elements OAuth URL
-
-HTTP Header: None
-HTTP Verb: GET
-Request URL: /elements/{keyOrId}/oauth/url
-Request Body: None
-Query Parameters:
-
-* __key__ - quickbooks
-* __apiKey–__ - the key obtained from registering your app with the provider
-* __apiSecret__ – the secret obtained from registering your app with the provider
-* __callbackUrl__ – the URL that you supplied to the provider when registering your app,
-* __requestToken__ - the token obtained from the GET /elements/{keyOrId}/oauth/token call (previous step).
-
-Description: The result of this API invocation is an OAuth redirect URL from the endpoint. Your application should now redirect to this URL, which in turn will present the OAuth authentication and authorization page to the user. When the provided callback URL is executed, a code value will be returned, which is required for the Create Instance API.
-
-Example cURL Command:
-
-```bash
-curl -X GET
--H 'Content-Type: application/json'
-'https://api.cloud-elements.com/elements/api-v2/elements/quickbooks/oauth/url?apiKey=insert_fake_api_key&apiSecret=insert_fake_api_secret&callbackUrl=http://www.demonstrab.ly&requestToken=insert_fake_request_token&state=quickbooks'
-```
-
-Response:
-
-```json
-{
-    "element": "quickbooks",
-    "oauthUrl": "https://appcenter.intuit.com/Connect/Begin?oauth_token=qyprdJHtIbwm3sGOoOCvXuv2Cs8fsQrZFjJWe4HEZAyb0&oauth_callback=http%3A%2F%2Fwww.cloud-elements.com%3Fstate%3Dquickbooks"
-}
-```
-
-### Step 3. Create an Instance
-
-Your application should now redirect to the oauthUrl returned in step 2, which in turn will present the OAuth authentication and authorization page to the user.
-
-HANDLE CALLBACK FROM THE ENDPOINT
-
-After the user successfully authenticates, the provided callback URL is executed. The callback URL will contain several parameters, listed below.  These additional parameters, along with the original API key and API secret are required for the Create Instance API.
-
-The parameters that you will need to parse from the callback URL are listed below, along with an example of what the callback URL should look like.
-__oauth_token__
-__oauth_verifier__
-__realmId__
-__dataSource__
-
-`http://demonstrab.ly/?state=quickbooks&oauth_token=qyprdlGChtClXwBpAw1vm1fJSC3mQqS3dGX0PPphEzNEUI9s&oauth_verifier=br6qctk&realmId=12345678910&dataSource=QBO`
-
-These values will be used to create an Instance. An example of this process along with sample JSON will be shown in the next section.
-
-To provision your QuickBooks Online Element, use the /instances API.
-
-Below is an example of the provisioning API call.
-
-* __HTTP Headers__: Authorization- User <user secret>, Organization <organization secret>
-* __HTTP Verb__: POST
-* __Request URL__: /instances
-* __Request Body__: Required – see below
-* __Query Parameters__: none
-
-Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
-
-A sample request illustrating the /instances API is shown below.
-
-HTTP Headers:
+**OAuth 2.0**
 
 ```bash
-Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
-
-```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements QuickBooks Online is “quickbooks”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
-
-```json
-{
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
   "element": {
-    "key": "quickbooks"
+    "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "oauth_token": "<OAUTH_TOKEN_RETURNED_IN_OAUTH_EXCHANGE>",
-    "realmId": "<REALMID_RETURNED_IN_OAUTH_EXCHANGE>",
-    "oauth_verifier": "<OAUTH_VERIFIER_RETURNED_IN_OAUTH_EXCHANGE>",
-    "secret": "<SECRET_RETURNED_IN_OAUTH_EXCHANGE>",
-    "state": "quickbooks",
-    "dataSource": "<RETURNED_IN_OAUTH_EXCHANGE>"
+    "code": "xxxxxxxxxxxxxxxxxxxxxxx",
+    "realmId": "xxxxxxxxxxxxxxxxx"
   },
   "configuration": {
-    "oauth.api.key": "<INSERT_QUICKBOOKS_API_KEY>",
-    "oauth.api.secret": "<INSERT_QUICKBOOKS_API_SECRET>",
-    "oauth.callback.url": "<SAME CALLBACK URL USED IN STEP 2>",
-    "event.notification.enabled": "true",
-    "event.notification.callback.url": "<INSERT_YOUR_APPS_CALLBACK_URL>",
-    "event.poller.refresh_interval":"<POLLER_REFRESH_INTERVAL>"
-    "event.poller.urls":"bill-payments|bills|classes|credit-memos|credit-terms|currencies|customers|employees|invoices|journal-entries|ledger-accounts|payment-methods|payments|products|purchase-orders|refund-receipts|sales-receipts|tax-codes|tax-rates|time-activities|vendor-credits|vendors"
-  },
+    "oauth.callback.url": "https;//mycoolapp.com",
+    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "authentication.type" : "oauth2",
+    "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
+    "event.notification.enabled": true,
+    "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+    "event.poller.refresh_interval": "15",
+    "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
+    },
   "tags": [
-    "<INSERT_TAGS>"
+    "Docs"
   ],
-  "name": "<INSERT_INSTANCE_NAME>"
-}
+  "name": "API Instance"
+}'
 ```
 
-Here is an example cURL command to create an instance using /instances API.
-
-Example Request:
+**OAuth 1.0**
 
 ```bash
-curl -X POST
--H 'Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>'
--H 'Content-Type: application/json'
--d @instance.json
-'https://api.cloud-elements.com/elements/api-v2/instances'
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
+  "element": {
+    "key": "{{page.elementKey}}"
+  },
+  "providerData": {
+    "oauth_token": "<OAUTH_TOKEN>",
+    "realmId": "<REALMID>",
+    "oauth_verifier": "<OAUTH_VERIFIER>",
+    "secret": "<OAUTH_USER_SECRET>",
+    "state": "quickbooks",
+    "dataSource": "QBO"
+  },
+  "configuration": {
+    "oauth.callback.url": "<CALLBACK_URL>",
+    "oauth.api.key": "<CONSUMER_KEY>",
+    "oauth.api.secret": "<CONSUMER_SECRET>"
+    "event.notification.enabled": true,
+    "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+    "event.poller.refresh_interval": "15",
+    "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
+  },
+  "tags": [
+    "For Docs",
+    "tag 2"
+  ],
+  "name": "QBO_Instance"
+}'
 ```
-
-If the user does not specify a required config entry, an error will result notifying her of which entries she is missing.
-
-Below is a successful JSON response:
-
-```json
-{
-    "id": 1234,
-    "name": "test",
-    "token": "3sU/S/kZC46BaABPS7EAuhT+ukiEHkI=",
-    "element": {
-        "id": 1234,
-        "name": "QuickBooks",
-        "key": "quickbooks",
-        "description": "Run your entire business with QuickBooks. Track your sales and expenses, get paid faster, and even run payroll with it.",
-        "active": true,
-        "deleted": false,
-        "typeOauth": true,
-        "trialAccount": false,
-        "configDescription": "If you do not have an QuickBooks account, you can create one at QuickBooks Signup",
-        "signupURL": "http://quickbooks.intuit.com/signup"
-    },
-    "provisionInteractions": [],
-    "valid": true,
-    "disabled": false,
-    "maxCacheSize": 0,
-    "cacheTimeToLive": 0,
-    "cachingEnabled": false
-}
-```
-
-Note:  Make sure you have straight quotes in your JSON files and cURL commands.  Please use plain text formatting in your code.  Make sure you do not have spaces after the in the cURL command.
 
 ## Parameters
 
@@ -280,19 +237,6 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
-| 'key' | The element key.<br>{{page.elementKey}}  | string  |
-|  Name</br>`name` |  The name for the element instance created during authentication.   | Body  |
-| `oauth_verifier` | A verification code generated by Intuit that an App is supposed to pass back during the get_access_token step. |
-| `oauth_token` | The token retrieved in the OAuth 1.0 workflow. |
-| `secret` | A secret to establish the ownership of the token. |
-| `realmId` | The unique Identifier for the authorized quickbooks company, which is returned after authentication in Quickbooks Online. |
-| `state` | This should always be {{page.elementKey}} |
-| `dataSource` | This value determines what data source should be used for the connection. It is returned after authentication. |
-| `oauth.callback.url` | The Callback URL from Quickbooks. This is the Callback URL that you noted at the end of the [Endpoint Setup section](setup.html).  |
-| `oauth.api.key` | The Consumer Key from Quickbooks. This is the Consumer Key that you noted at the end of the [Endpoint Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Consumer Secret from Quickbooks. This is the Consumer Secret that you noted at the end of the [Endpoint Setup section](setup.html)| string |
-| Filter null values from the response </br>`filter.response.nulls` | *Optional*. Determines if null values in the response JSON should be filtered from the response. Yes or `true` indicates that Cloud Elements will filter null values. </br>Default: `true`.  | boolean |
-| tags | *Optional*. User-defined tags to further identify the instance. | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
