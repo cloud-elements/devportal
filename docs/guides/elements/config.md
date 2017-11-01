@@ -29,24 +29,24 @@ Parameters enable you to configure information that you need to send to an API p
 
 Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. The Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
 
-| OAuth Keys   | Basic, Custom, and AWS Keys   | Properties Keys | Events and Bulk |
-| :------------- | :------------- | :------------- | :------------- |
-|  oauth.basic.header  |  username  | base.url  | Any keys beginning bulk. |
-|  oauth.user.refresh_time  |  password  | pagination.type | Any keys beginning event. |
-|  oauth.user.refresh_token  |  aws.api.key  |  pagination.max  | event.notification.instance.finder |
-|  oauth.user.refresh_interval  |  aws.api.secret  |  pagination.page.startindex  | event.vendor.type |
-|  oauth.user.token  |  aws.region  |  | event.poller.refresh_interval |
-|  oauth.api.key  | expires   |  | event.notification.enabled |
-|  oauth.scope  |  expires_in  |  | event.notification.callback.url |
-|  oauth.token.url  |    |  | event.poller.configuration |
-|  oauth.api.secret  |    |  | event.notification.subscription.id |
-|  oauth.authorization.url  |    |  | event.metadata |
-|  oauth.token.refresh_url  |    |  | event.helper.key |
-|  oauth.callback.url  |    |  |  |
-|  oauth.request.authorization.type  |    |  |  |
-|  oauth.request.url  |    |  |  |
-| oauth.token.revoke_url   |   |   |   |
-| oauth.user.token.secret   |   |   |   |
+| OAuth Keys   | Basic Keys    | Properties Keys | Events and Bulk | AWS Keys |
+| :------------- | :------------- | :------------- | :------------- | :------------- |
+|  oauth.basic.header  |  username  | base.url  | Any keys beginning bulk. | aws.api.key |
+|  oauth.user.refresh_time  |  password  | pagination.type | Any keys beginning event. | aws.api.secret |
+|  oauth.user.refresh_token  |    |  pagination.max  | event.notification.instance.finder | aws.region |
+|  oauth.user.refresh_interval  |    |  pagination.page.startindex  | event.vendor.type | expires |
+|  oauth.user.token  |    |  | event.poller.refresh_interval |  expires_in |
+|  oauth.api.key  |    |  | event.notification.enabled |  |
+|  oauth.scope  |    |  | event.notification.callback.url |  |
+|  oauth.token.url  |    |  | event.poller.configuration |  |
+|  oauth.api.secret  |    |  | event.notification.subscription.id |  |
+|  oauth.authorization.url  |    |  | event.metadata |  |
+|  oauth.token.refresh_url  |    |  | event.helper.key |  |
+|  oauth.callback.url  |    |  |  |  |
+|  oauth.request.authorization.type  |    |  |  |  |
+|  oauth.request.url  |    |  |  |  |
+| oauth.token.revoke_url   |   |   |   |  |
+| oauth.user.token.secret   |   |   |   |  |
 
 
 ## Set Up Element Configuration
