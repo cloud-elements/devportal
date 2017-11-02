@@ -15,7 +15,7 @@ Have questions? Need to know how to build an element, set up a formula template,
 
 * [Manage Elements](elements/) &mdash; Work with elements including authentication, creating your own element, and adding resources to an existing element.
 * [Defining Common Resources & Transformations](common-resources/) &mdash; Define a common resource and map your data to it.
-* [Building Formulas](formulasC2) &mdash; Build your own workflow using formulas.
+* [Building Formulas](formulasC2/) &mdash; Build your own workflow using formulas.
 * [Manage Organization Security and Accounts](account-user-mgmt/) &mdash; Manage your organization, accounts and users.
 * [Bulk](bulk/) &mdash; Move large amounts of data using the Cloud Element Bulk service.
 * [Event Management](event-management/) &mdash; Set up events &mdash; changes in data at your API provider &mdash; to kick off workflows in Cloud Elements.
