@@ -50,6 +50,7 @@ To authenticate an element instance with polling:
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
+8. In **Event Type** select **Polling**.
 8. Add an **Event Notification Callback URL**.
 5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
@@ -140,11 +141,14 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "oauth.callback.url": "<CALLBACK_URL>",
+    "oauth.api.key": "<CONSUMER_KEY>",
+    "oauth.api.secret": "<CONSUMER_SECRET>",
+    "document.root.folder.name": "</ROOT_DIR>",
+    "sharefile.subdomain": "<SUBDOMAIN>"
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
+	  "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
     	"contacts": {
@@ -204,7 +208,8 @@ To authenticate an element instance with webhooks:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
-![event-enabled-on](/assets/img/elements/event-enabled-on.png) 
+![event-enabled-on](/assets/img/elements/event-enabled-on.png)
+8. In **Event Type** select **Webhook**.
 8. Add an **Event Notification Callback URL**.
 9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
@@ -236,6 +241,7 @@ To authenticate an element instance with webhooks:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "event.vendor.type": "webhook",
         "event.notification.enabled": true,
         "event.notification.callback.url": "<CALLBACK_URL>",
         "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"

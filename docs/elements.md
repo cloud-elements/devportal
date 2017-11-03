@@ -100,7 +100,7 @@ layout: sidebarelementtile
 * [![QuickBooks Online](/assets/img/element-logos/quickbooksonline.png)QuickBooks Online](./elements/quickbooksonline/)
 * [![Salesforce Files](/assets/img/element-logos/salesforce.png)Salesforce Files](./elements/salesforce-files/)
 * [![Salesforce Libraries](/assets/img/element-logos/salesforce.png)Salesforce Libraries](./elements/salesforce-libraries/)
-* [![Salesforce Marketing Cloud Beta](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud Beta](./elements/salesforce-marketing-cloud)
+* [![Salesforce Marketing Cloud Beta](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud Beta](./elements/salesforce-marketing-cloud/)
 * [![Salesforce Sales Cloud](/assets/img/element-logos/salesforce.png)Salesforce Sales Cloud](./elements/salesforce/)
 * [![Salesforce Service Cloud](/assets/img/element-logos/salesforce.png)Salesforce Service Cloud](./elements/salesforce-service-cloud/)
 * [![Sage CRM](/assets/img/element-logos/sagecrm.png)Sage CRM](./elements/sagecrm/)
