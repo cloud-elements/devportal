@@ -20,7 +20,7 @@ ValeOn: <!-- vale on -->
 
 As the organization administrator you can manage the users related to the accounts in your organization. You can create, retrieve, update, delete, and search users. To manage users, you must log in as the organization administrator. Even a user that you add to the default account cannot access the account management pages unless they are designated an organization administrator.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#user-roles>User Roles</a></br><a href=#update-user-roles-and-information>Update User Roles and Information</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
 ## Access User Management
 
