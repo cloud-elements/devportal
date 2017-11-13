@@ -19,11 +19,19 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
-* GET /messages
+* GET /payment-methods
+* GET /ledger-accounts
+* GET /payments
+* GET /expense-receipts
+* GET /products
+* GET /tax-rates
+* GET /invoices
+* GET /sales-receipts
 * GET /{objectName}
 * GET /{objectName}/{objectId}/{childObjectName}
-* GET /social-profiles
+* GET /customers
+* GET /employees
 * POST /bulk/query
-* GET /users
+* GET /vendors
 
 {% include ceql-ref.md%}

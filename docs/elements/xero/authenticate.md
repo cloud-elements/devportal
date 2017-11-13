@@ -31,7 +31,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In API Secret, enter the {{page.apiSecret}} of the Cloud Elements app &mdash; contact support for the credentials.
+6. In **API Secret**, enter the {{page.apiSecret}} of the Cloud Elements app &mdash; contact support for the credentials.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -42,21 +42,20 @@ After successfully authenticating, we give you several options for next steps. [
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-
-
 Authenticating through API follows a multi-step OAuth 1.0 process that involves:
 
-{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
+{% include workflow.html displayNames="Request Token,Authorization URL,Authorize Access,Authenticate Instance" links="#get-a-request-token-and-secret,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
 
-* [Get a request token and secret](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
-* [Authorize access](#authenticating-users-and-receiving-the-authorization-grant-code). Use the token to get an authorization URL where a user user logs in and authorizes your app. The vendor makes a callback to the specified url with the credentials need to authenticate an element instance.
-* [Authenticate the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
+* [Get a Request Token and Secret](#get-a-request-token-and-secret). Use the request token to exchange for a more permanent token. Use the secret later to authenticate the element instance.
+* [Get the Authorization URL](#get-authorization-url). Get the authorization URL to provide the app user to grant access.
+* [Authorize access](#authorize-access). A user user logs in and authorizes your app. The API provider makes a call back to the specified url with the credentials needed to authenticate an element instance.
+* [Authenticate the element instance](#authenticating-the-element-instance). Using the access token, secret, and other credentials from theA PI provider, authenticate to create an element instance at Cloud Elements.
 
 ### Get a Request Token and Secret
 
-{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
+{% include workflow.html displayNames="Request Token,Authorization URL,Authorize Access,Authenticate Instance" links="#get-a-request-token-and-secret,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Request Token"%}
 
-```bash
+```
 GET /elements/{{page.elementKey}}/oauth/token?apiKey={xeroConsumerKey}&apiSecret={xeroConsumerSecret}&callbackUrl={OAuthCallbackURL}
 ```
 
@@ -64,9 +63,9 @@ GET /elements/{{page.elementKey}}/oauth/token?apiKey={xeroConsumerKey}&apiSecret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| `apiKey` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| `apiSecret` |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| `callbackUrl` |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 #### Example cURL
 
@@ -84,11 +83,13 @@ curl -X GET \
 }
 ```
 
-### Get Authorization URL Access
+### Get Authorization URL
 
-Use the `token` in the previous response to get a URL where the user can log in to the API provider and authorize access.
+{% include workflow.html displayNames="Request Token,Authorization URL,Authorize Access,Authenticate Instance" links="#get-a-request-token-and-secret,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authorization URL"%}
 
-```bash
+Use the `token` in the previous response as the `requestToken` to get a URL where the user can log in to the API provider and authorize access.
+
+```
 GET /elements/{{page.elementKey}}/oauth/url?apiKey={xeroConsumerKey}&apiSecret={xeroConsumerSecret}&callbackUrl={OAuthCallbackURL}&requestToken={tokenFromPreviousRequest}
 ```
 
@@ -96,10 +97,10 @@ GET /elements/{{page.elementKey}}/oauth/url?apiKey={xeroConsumerKey}&apiSecret={
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
-| requestToken  | The token returned by the previous GET /elements/{{page.elementKey}}/oauth/token? request. |
+| `apiKey` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| `apiSecret` |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| `callbackUrl` |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| `requestToken`  | The token returned by the previous `GET /elements/{{page.elementKey}}/oauth/token?` request. |
 
 #### Example cURL
 
@@ -119,11 +120,11 @@ curl -X GET \
 
 ### Authorize Access
 
-{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
+{% include workflow.html displayNames="Request Token,Authorization URL,Authorize Access,Authenticate Instance" links="#get-a-request-token-and-secret,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authorize Access"%}
 
-Provide the URL from the previous step to the users. After they authenticate, {{page.heading}} swaps the request token for a more permanent access token. The response looks like this and includes additional parameters needed to authenticate an element instance:
+Provide the `oauthUrl` from the previous step to your users. After they authenticate, {{page.heading}} swaps the request token for a more permanent access token. The response looks like this and includes additional parameters needed to authenticate an element instance:
 
-```JSON
+```json
 {
   "args": {
     "oauth_token": "ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
@@ -141,16 +142,14 @@ Provide the URL from the previous step to the users. After they authenticate, {{
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
-| oauth_token | The Access Token   |
-| oauth_verifier | A unique identifier. |
-| org  | The organization code associated with the user.  |
-| state   | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) .  |
-
-{% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
+| `oauth_token` | The Access Token required to authenticate with {{page.heading}}.  |
+| `oauth_verifier` | A unique identifier. |
+| `org`  | The organization code associated with the user.  |
+| `state` | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) .  |
 
 ### Authenticating the Element Instance
 
-{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
+{% include workflow.html displayNames="Request Token,Authorization URL,Authorize Access,Authenticate Instance" links="#get-a-request-token-and-secret,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
 
 Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
@@ -167,7 +166,10 @@ To authenticate an element instance:
         "key": "{{page.elementKey}}"
       },
       "providerData": {
-        "code": "<AUTHORIZATION_GRANT_CODE>"
+        "oauth_token": "<oauth_token-FROM-PREVIOUS-RESPONSE>",
+        "oauth_verifier": "<oauth_verifier-FROM-PREVIOUS-RESPONSE>",
+        "org": "<org-FROM-PREVIOUS-RESPONSE>",
+        "secret": "<secret-FROM-STEP-1-RESPONSE>"
       },
       "configuration": {
         "oauth.callback.url": "<CALLBACK_URL>",
@@ -201,12 +203,15 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "xxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth_token": "B5BYxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "oauth_verifier": "451nnnnnnn",
+    "org": "kfNxxxxxxxxxxxxxxxxxxxxxx
+    "secret": "NU3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
   },
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.key": "2OFxxxxxxxxxxxxxxxxxxxxxx",
+    "oauth.api.secret": "7SMxxxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -223,8 +228,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| `oauth_token` | The Access Token required to authenticate with {{page.heading}} returned in [Step 3. Authorize Access](#authorize-access).  | string |
+| `oauth_verifier` | A unique identifier returned in [Step 3. Authorize Access](#authorize-access). |string |
+| `org`  | The organization code associated with the user returned in [Step 3. Authorize Access](#authorize-access).  |string |
+| `secret` | The `secret` returned in [Step 1. Get a Request Token and Secret](#get-a-request-token-and-secret).  | string |
 | `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
 | `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
@@ -241,40 +249,45 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
-      "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
+      "id": 44,
+      "name": "Xero",
+      "hookName": "Xero",
+      "key": "xero",
+      "description": "Xero Finance Element",
+      "image": "elements/provider_xero.png",
       "active": true,
       "deleted": false,
-      "typeOauth": false,
+      "typeOauth": true,
       "trialAccount": false,
-      "resources": [ ],
+      "configDescription": "If you do not have an Xero account, you can create one at <a href=\"http://www.xero.com\" target=\"_blank\">Xero Signup</a>",
+      "signupURL": "https://www.xero.com/#signup",
+      "defaultTransformations": [     ],
+      "objectMetadata": {    },
       "transformationsEnabled": true,
       "bulkDownloadEnabled": true,
       "bulkUploadEnabled": true,
-      "cloneable": true,
-      "extendable": true,
+      "cloneable": false,
+      "extendable": false,
       "beta": true,
       "authentication": {
-          "type": "oauth2"
+          "type": "oauth1"
       },
       "extended": false,
-      "hub": "helpdesk",
+      "hub": "finance",
       "protocolType": "http",
-      "parameters": [  ]
+      "parameters": [],
+      "private": false
     },
-    "elementId": {{page.elementId}},
+    "elementId": 44,
     "tags": [
       "Docs"
       ],
-    "provisionInteractions": [  ],
+    "provisionInteractions": [],
     "valid": true,
     "disabled": false,
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
+    "providerData": {    },
     "configuration": {    },
     "eventsEnabled": false,
     "traceLoggingEnabled": false,
