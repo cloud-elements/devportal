@@ -685,6 +685,11 @@ tr:nth-child(odd) td { background: #FEFEFE; }
       padding-right: 0px;
 }
 
+/* for checkboxes */
+
+StyledCheckbox checked={false} disabled
+
+
 /*////////////////////////////////////////////
 /// For definitions  ///
 ///////////////////////////////////////////*/

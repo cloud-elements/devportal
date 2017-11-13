@@ -8,7 +8,7 @@ layout: sidebarleft
 platform: accounts
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
-order: 15
+order: 5
 redirect_from:
   - /docs/platform/accounts/account-management.html
 ValeOn: <!-- vale on -->
@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 Use the Security Settings page to manage organization information, reset your organization secret, configure passwords, and set up two-factor authentication. Only the organization administrator can access the Security page.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#configure-passwords>Configure Passwords</a></br><a href=#set-up-two-factor-authentication>Set up Two-Factor Authentication</a></br><a href=#reset-organization-token>Reset Organization Token
-</a></br><a href=#change-an-account-name-or-description>Change an Account Name or Description</a>" type="info" %}
+</a>" type="info" %}
 
 
 ## Configure Passwords
@@ -29,7 +29,7 @@ Configure the password policy for the users in your organization on the Security
 The password configurations for length and complexity identify the minimum required. For example, the following length and complexity requirements mean that user passwords must be at least eight characters, and include at least one uppercase and lowercase character, one number, and one symbol.
 ![Length and Complexity](img/length-complexity.png)
 
-The Symbol Character Set defines the allowed symbols. So if you require symbols as part of your password policy, you can define which specific symbols.
+The **Symbol Character Set** defines the allowed symbols. So if you require symbols as part of your password policy, you can add or remove specific symbols.
 
 If you make a mistake or just want to return to the original default password policy, click **Reset**.
 

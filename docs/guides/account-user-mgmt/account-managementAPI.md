@@ -158,15 +158,25 @@ To get a list of accounts including ids see [Find Accounts](#find-accounts).
 * `email`
 * `password`
 
-You can also include the following optional attributes to provide more details about the user. The attributes do not appear in {{site.console}}.
+You can also include the following optional attributes to provide more details about the user. The attributes do not appear in {{site.console}}:
 
-* `"city": "string"`
-* `"country": "string"`
-* `"phone": "string"`
-* `"postalCode": "string"`
-* `"stateProvince": "string"`
-* `"street1": "string"`
-* `"street2": "string"`
+```json
+{
+  "city": "string",
+  "country": "string",
+  "phone": "string",
+  "postalCode": "string",
+  "stateProvince": "string",
+  "street1": "string",
+  "street2": "string",
+  "roles":[
+        {
+        "key": "role key either admin or org-admin"
+      }
+    ]
+}
+
+```
 
 ### Add Users Example Request
 
@@ -179,7 +189,12 @@ curl -X POST \
   "firstName": "First",
   "lastName": "Last",
   "email": "FirstLast@company.com",
-  "password": "password"
+  "password": "password",
+  "roles":[
+      {
+      "key": "admin"
+    }
+  ]
 }'
 ```
 
@@ -196,6 +211,24 @@ curl -X POST \
     "accountExpired": false,
     "accountLocked": false,
     "credentialsExpired": false,
+    "roles": [
+      {
+            "id": 3,
+            "name": "Administrator",
+            "key": "admin",
+            "active": true,
+            "description": "Cloud Elements Application Administrator.",
+            "features": []
+        },
+        {
+            "id": 2717,
+            "name": "Organization User",
+            "key": "org",
+            "active": true,
+            "description": "Organization User",
+            "features": []
+        }
+    ],
     "secret": "pgJTa2A3Lxr/7o/fN7NlRb1ATrgc4JlXVKFq7HpcF74=",
     "lastLoginDate": "1970-01-01",
     "emailValid": true,

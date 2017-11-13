@@ -9,9 +9,6 @@ platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1
-sitemap: false
-redirect_from:
-  - /docs/products/formulas/
 ---
 
 {% include callout.html content="<i>Building Formulas</i> includes steps to use Cloud Elements 2.0. The earlier version of Cloud Elements shares much of the same functionality. See documentation specific to that version at <a href=../../legacy/formulas/index.html>Formulas</a>." type="info" %}
