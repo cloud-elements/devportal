@@ -41,7 +41,7 @@ MySQL is a database element that is constructed from your database table structu
 
 ## Events
 
-Events are based on timestamp in the database with or without timezone.
+Events are based on timestamp in the database with or without time zone.
 
 ## API Documentation
 

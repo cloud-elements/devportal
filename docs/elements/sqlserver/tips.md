@@ -41,7 +41,7 @@ Microsoft SQL server is a database element that is constructed from your databas
 
 ## Events
 
-Events are based on timestamp in the database with or without timezone.
+Events are based on timestamp in the database with or without time zone.
 
 ## API Documentation
 
