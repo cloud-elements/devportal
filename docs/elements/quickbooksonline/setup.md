@@ -17,7 +17,7 @@ order: 5
 
 To authenticate a {{page.heading}} element instance, complete the setup steps described in this section.
 
-Before authenticating be sure that you know whether you should se the OAuth 2.0 flow or OAuth 1.0 flow. OAuth 2.0 is available for new apps created after July 2017, while OAuth 1.0 is available for apps created before then. Each app page on the Intuit Developer website include a note at the top indicating what type of authentication to use.
+Before authenticating be sure that you know whether you should use the OAuth 2.0 flow or OAuth 1.0 flow. OAuth 2.0 is available for new apps created after July 2017, while OAuth 1.0 is available for apps created before then. Each app page on the Intuit Developer website include a note at the top indicating what type of authentication to use.
 ![](img/auth-note.png)
 
 {% include note.html content="You must authenticate using Production Keys, not Development Keys. You can still authenticate with Development Keys for sandbox environments, but QuickBooks Online returns a 400 code with a <code>Bad Request</code> message for most requests.   " %}

@@ -12,14 +12,15 @@ parent: Back to Guides
 order: 20
 redirect_from:
   - /docs/platform/accounts/account-management.html
+Instructions: # To add the Roles table: From the Skeletor project, SecurityRoles.jsx file, copy the <StyledTable>. In this file, change the <StyledTable> to <table>. Find and replace <StyledCheckbox checked disabled /> with {% icon fa-check-square-o %}. Find and replace <StyledCheckbox checked={false} disabled /> with {% icon fa-square-o %}.
 ValeOn: <!-- vale on -->
 ---
 
 # Manage Users
 
-As the organization administrator you can manage the users related to the accounts in your organization. You can create, retrieve, update, delete, and search users. To manage users, you must log in as the organization administrator. Even a user that you add to the default account cannot access the account management pages.
+As the organization administrator you can manage the users related to the accounts in your organization. You can create, retrieve, update, delete, and search users. To manage users, you must log in as the organization administrator. Even a user that you add to the default account cannot access the account management pages unless they are designated an organization administrator.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#user-roles>User Roles</a></br><a href=#update-user-roles-and-information>Update User Roles and Information</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
 ## Access User Management
 
@@ -30,20 +31,32 @@ To see the users associated with an account:
 1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
 2. Click the **Accounts** tab.
 
-The users associated with an account appear in the User section. Because you add users as part of the account creation process, see [Add Users to Accounts](account-management.html#add-users-to-accounts) for the steps to create a new user.
+The users associated with an account appear in the User section.
 ![Users](img/users.png)
 
-## Update a User
+## User Roles
 
-You can change the first and last name of a user or their email address in Cloud Elements 2.0. If you need to change their password, you need to [use the APIs](user-managementAPI.html#update-a-user).
+{% include account-user/roles.md%}
 
-To update a user:
+## Add a User
+
+{% include account-user/add-users.md%}
+
+## Update User Roles and Information
+
+You can reassign a user as an organization or account administrator or change their first and last name or email address in Cloud Elements 2.0. If you need to change a user password, you need to [use the APIs](user-managementAPI.html#update-a-user).
+
+If you want to reassign a user as an organization administrator, they must be in the Company Default Account.
+
+To update a user's role or information:
 
 1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
 2. Click the **Accounts** tab.
 2. Click <img src="/assets/img/platform-icons/pencil-blue.png" alt="Edit Button" class="inlineImage">.
-2. Make your changes.
-3. Click **Update**.
+2. Update the user role or information.
+  - To reassign the user to be an organization or account administrator, select **Org Admin** or **Account Admin**.  See [User Roles](user-management.html#user-roles) for more information about what each role can access.
+  - To update the user's name or email overwrite the existing information.
+3. Click <img src="img/btn-save.png" alt="Save" class="inlineImage">.
 
 ## Deactivate and Reactivate a User
 
