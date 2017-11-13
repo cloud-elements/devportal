@@ -22,7 +22,7 @@ The Tips section includes more information about the element including FAQs, end
 
 ## Events
 
-* Events are based on timestamp in the database with or without timezone.
+* Events are based on timestamp in the database with or without time zone.
 
 ## Documentation
 

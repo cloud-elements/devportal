@@ -7,9 +7,9 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 40
 elementKey: xero
-apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
-apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
-callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
+apiKey: Consumer Key #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Consumer Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: OAuth callback domain #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -24,10 +24,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
-
-If you are configuring events, see the [Events section](events.html).
-
 To authenticate an element instance:
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
@@ -35,6 +31,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. In API Secret, enter the {{page.apiSecret}} of the Cloud Elements app &mdash; contact support for the credentials.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -45,22 +42,22 @@ After successfully authenticating, we give you several options for next steps. [
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-Authenticating through API follows a multi-step OAuth 2.0 process that involves:
+
+
+Authenticating through API follows a multi-step OAuth 1.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
 
-* [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
-* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
-* [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
+* [Get a request token and secret](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
+* [Authorize access](#authenticating-users-and-receiving-the-authorization-grant-code). Use the token to get an authorization URL where a user user logs in and authorizes your app. The vendor makes a callback to the specified url with the credentials need to authenticate an element instance.
+* [Authenticate the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
 
-### Getting a Redirect URL
+### Get a Request Token and Secret
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
-Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
-
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+GET /elements/{{page.elementKey}}/oauth/token?apiKey={xeroConsumerKey}&apiSecret={xeroConsumerSecret}&callbackUrl={OAuthCallbackURL}
 ```
 
 #### Query Parameters
@@ -75,35 +72,79 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 ```bash
 curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/token?apiKey=2OFxxxxxxxxxxxxxxxxxxxxxx&apiSecret=7SMxxxxxxxxxxxxxxxxxxxxxx&callbackUrl=https%3A%2F%2Fmycoolapp.com%2Fauth'
 ```
 
 #### Example Response
 
-Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
-
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
-"element": "{{page.elementKey}}"
+    "secret": "NU3xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "token": "ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 ```
 
-### Authenticating Users and Receiving the Authorization Grant Code
+### Get Authorization URL Access
+
+Use the `token` in the previous response to get a URL where the user can log in to the API provider and authorize access.
+
+```bash
+GET /elements/{{page.elementKey}}/oauth/url?apiKey={xeroConsumerKey}&apiSecret={xeroConsumerSecret}&callbackUrl={OAuthCallbackURL}&requestToken={tokenFromPreviousRequest}
+```
+
+#### Query Parameters
+
+| Query Parameter | Description   |
+| :------------- | :------------- |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| requestToken  | The token returned by the previous GET /elements/{{page.elementKey}}/oauth/token? request. |
+
+#### Example cURL
+
+```bash
+curl -X GET \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=2OFxxxxxxxxxxxxxxxxxxxxxx&apiSecret=7SMxxxxxxxxxxxxxxxxxxxxxx&callbackUrl=https%3A%2F%2Fmycoolapp.com%2Fauth&requestToken=ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+```
+
+#### Example Response
+
+```json
+{
+  "oauthUrl": "https://api.xero.com/oauth/Authorize?oauth_token=ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "element": "xero"
+}
+```
+
+### Authorize Access
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
-Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+Provide the URL from the previous step to the users. After they authenticate, {{page.heading}} swaps the request token for a more permanent access token. The response looks like this and includes additional parameters needed to authenticate an element instance:
 
-* code
-* state
+```JSON
+{
+  "args": {
+    "oauth_token": "ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "oauth_verifier": "451nnnnnnn",
+    "org": "kfNxxxxxxxxxxxxxxxxxxxxxx",
+    "state": "xero"
+  },
+  "headers": {    },
+  "origin": "nnn.nnnn.nn.nnn",
+  "url": "https://mycoolapp.com/auth?state=xero&oauth_token=ELOxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&oauth_verifier=451nnnnnnn&org=kfNxxxxxxxxxxxxxxxxxxxxxx"
+}
+```
+
+#### Parameters
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
-| code | {{site.data.glossary.element-auth-grant-code}} |
-| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+| oauth_token | The Access Token   |
+| oauth_verifier | A unique identifier. |
+| org  | The organization code associated with the user.  |
+| state   | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) .  |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 

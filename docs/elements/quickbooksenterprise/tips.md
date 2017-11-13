@@ -17,9 +17,9 @@ The Tips section includes more information about the element including FAQs, end
 ## Ground2Cloud
 
 * To successfully authenticate an instance with QuickBooks Enterprise, both the Ground2Cloud and QuickBooks connector services need to be running. You may need to actively restart your connector if your instance is not working.  For more information on Ground2Cloud, see the [Ground2Cloud documentation](https://developers.cloud-elements.com/docs/guides/ground-2-cloud/?resource=).
-* 
+*
 
-* When setting up polling, you may need to specify a timezone specific to the location of your server. The default time zone is UTC.
+* When setting up polling, you may need to specify a time zone specific to the location of your server. The default time zone is UTC.
 
     {% include note.html content="QuickBooks Enterprise has a known limitation where It currently does not support daylight savings, which may impact your time zone settings.  " %}
 
