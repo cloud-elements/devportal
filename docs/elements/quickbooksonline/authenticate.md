@@ -26,6 +26,8 @@ For apps created prior to July 2017, QuickBooks authentication also supports [To
 
 You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element only through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
+{% include note.html content="Use only Production Keys to authenticate with QuickBooks. You cannot make API requests with sandbox credentials.  " %}
+
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
