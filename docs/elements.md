@@ -129,7 +129,6 @@ layout: sidebarelementtile
 * [![WooCommerce](/assets/img/element-logos/woocommerce.png)WooCommerce](./elements/woocommerce-rest/)
 * [![Wrike](/assets/img/element-logos/wrike.png)Wrike](./elements/wrike/)
 * [![Wufoo](/assets/img/element-logos/wufoo.png)Wufoo](./elements/wufoo/)
-* [![Xero](/assets/img/element-logos/xero.png)Xero](./elements/xero/)
 * [![Zendesk](/assets/img/element-logos/zendesk.png)Zendesk](./elements/zendesk/)
 * [![ZohoCRM](/assets/img/element-logos/zohocrm.png)ZohoCRM](./elements/zohocrm/)
 * [![Zuora](/assets/img/element-logos/zuora-logoblue.png)Zuora](./elements/zuora/)
