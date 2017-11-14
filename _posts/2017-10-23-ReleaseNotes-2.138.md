@@ -5,6 +5,8 @@ layout: release-note-item
 label: Production
 ---
 
+{% include important.html content="Cloud Elements version 2.138 was removed from the production environment to identify the cause of reported performance issues." %}
+
 ### Elements
 
 #### Bullhorn Element: Model Verification

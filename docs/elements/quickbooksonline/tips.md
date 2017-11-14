@@ -19,13 +19,25 @@ The Tips section includes more information about the element including FAQs, end
 
 ## General
 
-* Quickbooks Online does not allow you to update taxes via third-party service, including API calls. If you need this functionality, delete the transaction and re-create it using the correct taxes.
-* Quickbooks Online does not currently support the "OR" operator in the where/search clause.
-* When you `GET /records`, Quickbooks Online returns a sync token in the format of (22|33). The first number represents the ID, the second represents the sync token, which is not a static value. To update a record, you must provide the most recent sync token. If you try to update a record with an old sync token, you will get an error message. It is best practice to retrieve the record right before you update to ensure that you have the latest sync token.
+* QuickBooks Online does not allow you to update taxes via third-party service, including API calls. If you need this functionality, delete the transaction and re-create it using the correct taxes.
+* QuickBooks Online does not currently support the "OR" operator in the where/search clause.
+* When you `GET /records`, QuickBooks Online returns a sync token in the format of (22|33). The first number represents the ID, the second represents the sync token, which is not a static value. To update a record, you must provide the most recent sync token. If you try to update a record with an old sync token, you will get an error message. It is best practice to retrieve the record right before you update to ensure that you have the latest sync token.
 * To search by Account Type in the `GET /ledger-accounts` API, use spaces in your accountType, such as 'Accounts Payable', 'Credit Card' etc. List of account types can be found at https://developer.intuit.com/docs/api/accounting/account
 * When using paging for `GET /tax-codes`, ensure you are setting the active flag to true to get a valid count returned.
 
 ## Authentication
 
-* Quickbooks Online supports only one user per authenticated instance. If one user tries to authenticate to multiple instances, the oldest instance will get wiped out.
+* QuickBooks Online supports only one user per authenticated instance. If one user tries to authenticate to multiple instances, the oldest instance will get wiped out.
 * Auth Tokens are good for 180 days and they can be refreshed within 30 days of expiration.
+
+## Errors
+
+If you receive the following 400 error when making requests, make sure that you authenticated with Development Keys and not Production Keys associated with a sandbox.
+
+```json
+{
+  "requestId": "59f894e3e4b03f1001b9ac63",
+  "message": "Bad Request",
+  "providerMessage": "3100 - message=AuthorizationFailed; errorCode=003100; statusCode=403 - null"
+}
+```

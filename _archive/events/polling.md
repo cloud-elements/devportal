@@ -25,7 +25,7 @@ The URL based poller configuration is the legacy event poller configuration, whi
 The format of the legacy URL based poller configuration is as follows -
 
 ```
-<resource>|<pollerUrl>|<xPathFilter>|<updatedDateField>|<updatedDateFormat>|<updatedDateTimezone>|<createdDateField>|<createdDateFormat>|<createdDateTimezone>
+<resource>|<pollerUrl>|<xPathFilter>|<updatedDateField>|<updatedDateFormat>|<updatedDateTimeZone>|<createdDateField>|<createdDateFormat>|<createdDateTimeZone>
 ```
 
 Each polled resource is on a single line, i.e., multiple polled resources are configured via multiple lines with the above configuration format. For example, if a given element instance needs to poll `accounts` and `contacts`, the poller configuration may be as follows -
@@ -49,11 +49,11 @@ The JSON poller configuration format is stored in the `event.poller.configuratio
 * `idField`: The JSON path to ID field in the returned payload. This configuration parameter is used to set the objectId in the normalized event payload
 * `datesConfiguration`: A JSON object which has the following keys:
   * `updatedDateField`: This parameter, when specified, is used to retrieve the updated date value from the payload to filter out the non-updated or records that haven't changed since the last poll date/time.
-  * `updatedDateFormat`: This parameter is used to ensure that any date comparison occurs with dates in the same timezone for accuracy.
-  * `updatedDateTimezone`: The `timezone` to use to parse the updated date from the response payload. Examples of the `timezone` are `GMT`, `EST`, etc. This field is optional, but may be required in order to parse the dates accurately.
+  * `updatedDateFormat`: This parameter is used to ensure that any date comparison occurs with dates in the same time zone for accuracy.
+  * `updatedDateTimezone`: The time zone to use to parse the updated date from the response payload. Examples of the time zone are `GMT`, `EST`, etc. This field is optional, but may be required in order to parse the dates accurately.
   * `createdDateField`: This field is used when the event type, UPDATED or CREATED needs to be determined by comparing the updated date and the created date.
-  * `createdDateTimezone`: The `timezone` to use to parse the record created date from the response payload. Examples of the `timezone` are `GMT`, `EST`, etc. This field is optional, but may be required in order to parse the dates accurately.
-  * `createdDateFormat`: This parameter is used to ensure that any date comparison occurs with dates in the same timezone for accuracy.
+  * `createdDateTimezone`: The time zone to use to parse the record created date from the response payload. Examples of the time zone are `GMT`, `EST`, etc. This field is optional, but may be required in order to parse the dates accurately.
+  * `createdDateFormat`: This parameter is used to ensure that any date comparison occurs with dates in the same time zone for accuracy.
 * `createdCheckTolerance`: An integer indicating the number of seconds to use as a tolerance for the comparison between created and updated date to determine if the record was CREATED or UPDATED.
 * `pageSize`: The number of records to retrieve per page. When not specified, the default page size is used. supplied in the updated date format
 * `pollDelay`: The number of seconds to subtract from the last poll date to ensure that records created but not yet available for search, are also included in the poller search run. If omitted, the value of this attribute defaults to 0
