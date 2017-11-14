@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Bulk  | Name of Element | Cloud Elements API Docs
+heading: Square
+seo: Bulk  | Square | Cloud Elements API Docs
 title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
@@ -21,7 +21,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://en.wikipedia.org/wiki/Rate_limiting).   |
+|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](https://docs.connect.squareup.com/articles/getting-started).   |
 | Upsert Support | No |
 | Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
-| Order By Support | Yes, you can add `orderby=fieldName` to the query. |
+| Order By Support | No. |

@@ -1,8 +1,8 @@
 ---
-heading: Name of Element
-seo: Overview | Name of Element | Cloud Elements API Docs
+heading: Square
+seo: Overview | Square | Cloud Elements API Docs
 title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
+description: Integrate Square into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: nn
