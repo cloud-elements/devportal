@@ -98,6 +98,7 @@ layout: sidebarelementtile
 * [![QuickBase](/assets/img/element-logos/quickbase.png)QuickBase](./elements/quickbase/)
 * [![QuickBooks Enterprise](/assets/img/element-logos/quickbooksenterprise.png)QuickBooks Enterprise](./elements/quickbooksenterprise/)
 * [![QuickBooks Online](/assets/img/element-logos/quickbooksonline.png)QuickBooks Online](./elements/quickbooksonline/)
+* [![Revel](/assets/img/element-logos/revel.png)Revel](./elements/revel/)
 * [![Salesforce Files](/assets/img/element-logos/salesforce.png)Salesforce Files](./elements/salesforce-files/)
 * [![Salesforce Libraries](/assets/img/element-logos/salesforce.png)Salesforce Libraries](./elements/salesforce-libraries/)
 * [![Salesforce Marketing Cloud Beta](/assets/img/element-logos/salesforce.png)Salesforce Marketing Cloud Beta](./elements/salesforce-marketing-cloud/)
