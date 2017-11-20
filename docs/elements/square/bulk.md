@@ -5,7 +5,7 @@ title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5124
 parent: Back to Element Guides
 order: 30
 sitemap: false
