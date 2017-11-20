@@ -50,6 +50,7 @@
             <a href="{{ post.url }}">{{ post.title }}</a>
           </p>
         {% endfor %}
+
       </div>
 
 
@@ -69,6 +70,10 @@
                   $('.box{{page.box_number}}').addClass('active');
               });
           </script>
+          <div style="background: #44c8f5; padding: 10px">
+            <h3>Subscribe to Release Note updates</h3>
+            {% include notifications.html %}
+          </div>
 
 
 
