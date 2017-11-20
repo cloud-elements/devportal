@@ -273,6 +273,6 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | \<resource name\>Advanced Filtering</br>`datesConfiguration` | Configuration parameters for dates in polling | JSON Object |
 | \<resource name\>Updated Date Field</br>`updatedDateField` | The field that identifies an updated object. | String |
 | \<resource name\>Updated Date Format</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
-| \<resource name\>Created Date Field</br>`createdDateField` | The field that identifies an created object. | String |
-| \<resource name\>Created Date Format</br>`createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| \<resource name\>Created Date Field</br>`createdDateField` | The field that identifies a created object. | String |
+| \<resource name\>Created Date Format</br>`createdDateFormat` | The date format of the field that identifies a created object.  | String |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

@@ -17,5 +17,5 @@ Labels and buttons on the UI correspond to parameters in the JSON. The table bel
 | **Advanced Filtering**</br>`datesConfiguration` | Configuration parameters for dates in polling. | JSON Object |
 | **Updated Date Field**</br>`updatedDateField` | The field that identifies an updated object. | String |
 | **Updated Date Format**</br>`updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
-| **Created Date Field**</br>`createdDateField` | The field that identifies an created object. | String |
-| **Created Date Format**</br>`createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| **Created Date Field**</br>`createdDateField` | The field that identifies a created object. | String |
+| **Created Date Format**</br>`createdDateFormat` | The date format of the field that identifies a created object.  | String |
