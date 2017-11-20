@@ -1,15 +1,15 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Square
+seo: Authenticate | Square | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
-apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
-callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
+elementId: 5124
+elementKey: square
+apiKey: Application ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Application Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URL #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -23,6 +23,8 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 ## Authenticate Through the UI
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
+
+<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -41,7 +43,7 @@ After successfully authenticating, we give you several options for next steps. [
 
 ## Authenticate Through API
 
-Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `instance` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
@@ -73,18 +75,16 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 ```bash
 curl -X GET \
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
 ```
 
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
+"oauthUrl": "https://connect.squareup.com/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=square&client_id=sq0idp-3fu9k3r2rBJzd3ZpnMeM-Q",
 "element": "{{page.elementKey}}"
 }
 ```
@@ -127,9 +127,9 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>"
+        "oauth.callback.url": "<{{page.heading}} {{page.callbackURL}}>",
+        "oauth.api.key": "<{{page.heading}} {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.heading}} {{page.apiSecret}}>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -184,7 +184,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
 | `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -198,12 +198,11 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
-      "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
+      "id": 8374,
+      "name": "Square",
+      "key": "square",
+      "description": "Add a Square Instance to connect your existing Square account to the Employees Hub, allowing you to manage roles, timesheets, employees, etc. across multiple Employee Elements. You will need your Square  account information to add an instance.",
+      "image": "https://www.seeklogo.net/wp-content/uploads/2012/12/square-logo-vector.png",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -213,25 +212,27 @@ In this example, the instance ID is `12345` and the instance token starts with "
       "bulkDownloadEnabled": true,
       "bulkUploadEnabled": true,
       "cloneable": true,
-      "extendable": true,
-      "beta": true,
+      "extendable": false,
+      "beta": false,
       "authentication": {
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "helpdesk",
+      "hub": "employee",
       "protocolType": "http",
-      "parameters": [  ]
+      "parameters": [],
+      "private": false
     },
-    "elementId": {{page.elementId}},
+    "elementId": 8374,
     "tags": [
-      "Docs"
-      ],
-    "provisionInteractions": [  ],
+        "Docs"
+    ],
+    "provisionInteractions": [],
     "valid": true,
     "disabled": false,
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
+    "providerData": {    },
     "configuration": {    },
     "eventsEnabled": false,
     "traceLoggingEnabled": false,

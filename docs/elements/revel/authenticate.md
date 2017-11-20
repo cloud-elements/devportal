@@ -1,14 +1,14 @@
 ---
-heading: Name of Element
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Revel
+seo: Authenticate | Revel | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
-apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+elementId: 5125
+elementKey: revel
+apiKey: API Key #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: API Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
 callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
@@ -33,6 +33,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. In **Subdomain**, enter the unique subdomain part of your Revel URL. For example, if your url is `https://cloud-elements.revelup.com`, enter `cloud-elements`.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -57,34 +58,35 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
-```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+{% include note.html content="The <code>subdomain</code> parameter is unique to the Revel element, so if you have coded OAuth 2.0 authentication for other elements, this is an additional parameter.  " %}
+
+```
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>&subdomain=<yourSubDomain>
 ```
 
 #### Query Parameters
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| subdomain   |  The unique subdomain part of your Revel URL. For example, if your url is `https://cloud-elements.revelup.com`, enter `cloud-elements`. |
 
 #### Example cURL
 
 ```bash
 curl -X GET \
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=123xxxxxxxxx&apiSecret=456xxxxxxxxxxxx&callbackUrl=https://www.mycoolapp.com/auth&subdomain=cloud-elements&subdomain=cloud-elements' \
 ```
 
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
+"oauthUrl": "https://cloud-elements.revelup.com/external/authenticate/?callback=https%3A%2F%2Fauth.cloudelements.io%2Fget%3Fcode%3D123",
 "element": "{{page.elementKey}}"
 }
 ```
@@ -93,15 +95,15 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
-Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+Provide the `oauthUrl` from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
 
 * code
-* state
+* token
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
 | code | {{site.data.glossary.element-auth-grant-code}} |
-| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+| token | A temporary access token to be used during authentication. |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
@@ -124,12 +126,15 @@ To authenticate an element instance:
         "key": "{{page.elementKey}}"
       },
       "providerData": {
-        "code": "<AUTHORIZATION_GRANT_CODE>"
+        "code": "<AUTHORIZATION_GRANT_CODE>",
+        "token": "<TEMPORARY_TOKEN_FROM_PREVIOUS_STEP"
       },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>"
+        "oauth.callback.url": "<{{page.heading}} {{page.apiKey}} >",
+        "oauth.api.key": "<{{page.heading}} {{page.apiSecret}}>",
+      	"oauth.api.secret": "<{{page.callbackURL}}>",
+        "subdomain": "testhumanity"
+
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -158,12 +163,14 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "providerData": {
-    "code": "xxxxxxxxxxxxxxxxxxxxxxx"
+    "code": "xxx"
+    "token": "xxxxxxxxxxxxxxxxxx"
   },
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "subdomain": "cloud-elements"
   },
   "tags": [
     "Docs"
@@ -181,6 +188,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+| `token`   | The temporary access token returned in the previous response. |  string |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
 | `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
@@ -198,31 +206,31 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
-      "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
-      "active": true,
-      "deleted": false,
-      "typeOauth": false,
-      "trialAccount": false,
-      "resources": [ ],
-      "transformationsEnabled": true,
-      "bulkDownloadEnabled": true,
-      "bulkUploadEnabled": true,
-      "cloneable": true,
-      "extendable": true,
-      "beta": true,
-      "authentication": {
-          "type": "oauth2"
-      },
-      "extended": false,
-      "hub": "helpdesk",
-      "protocolType": "http",
-      "parameters": [  ]
+    "id": 8375,
+    "name": "Revel",
+    "key": "revel",
+    "description": "Add a Revel Instance to connect your existing Revel account to the Employees Hub, allowing you to manage roles, timesheets, employees, etc. across multiple Employee Elements. You will need your Revel  account information to add an instance.",
+    "image": "https://www.revelsystems.com/wp-content/themes/reveldown/-/img_min/logo.jpg",
+    "active": true,
+    "deleted": false,
+    "typeOauth": false,
+    "trialAccount": false,
+    "resources": [ ],
+    "transformationsEnabled": true,
+    "bulkDownloadEnabled": true,
+    "bulkUploadEnabled": true,
+    "cloneable": true,
+    "extendable": false,
+    "beta": false,
+    "authentication": {
+        "type": "oauth2"
     },
+    "extended": false,
+    "hub": "employee",
+    "protocolType": "http",
+    "parameters": [  ]
+    },
+    "private": false
     "elementId": {{page.elementId}},
     "tags": [
       "Docs"

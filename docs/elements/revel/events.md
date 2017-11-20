@@ -1,14 +1,15 @@
 ---
-heading: iContact
-seo: Events | iContact | Cloud Elements API Docs
+heading: Revel
+seo: Events | Revel | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 4376
-elementKey: icontact
-username: iContact username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
-password: API password #In Basic authentication, this is the term that we have mapped to our "password" parameter
+elementId: 5125
+elementKey: revel
+apiKey: API Key #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: API Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -23,7 +24,13 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
 
-You can set up polling for the `contacts` and messages `resources`.
+You can set up events for the following resources:
+
+* employees
+* timesheets
+* employeeSchedules
+* payments
+* tips
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -44,12 +51,17 @@ To authenticate an element instance with polling:
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
+5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select the resources to poll.
-6. Optionally, click the pencil icon to further configure polling.
-![Configure Polling](/assets/img/elements/configure-polling2.gif)
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
+8. Provide your {{page.heading}} credentials, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -61,6 +73,7 @@ Use the `/instances` endpoint to authenticate with {{page.heading}} and create a
 
 To authenticate an element instance with polling:
 
+1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
     ```json
@@ -69,37 +82,31 @@ To authenticate an element instance with polling:
         "key":"{{page.elementKey}}"
       },
       "providerData":{
-        "code": "<AUTHORIZATION_GRANT_CODE>"
+        "code": "<AUTHORIZATION_GRANT_CODE>",
+        "token": "<TEMPORARY_TOKEN_FROM_PREVIOUS_STEP"
       },
       "configuration":{
-        "api.version": "<{{page.heading}} Api version>",
-        "AppID": "<{{page.heading}} Api-AppId>",
-        "api.username": "<{{page.heading}} {{page.username}}>",
-        "api.password": "<{{page.heading}} {{page.password}}>",
+        "oauth.callback.url": "<{{page.heading}} {{page.apiKey}} >",
+        "oauth.api.key": "<{{page.heading}} {{page.apiSecret}}>",
+      	"oauth.api.secret": "<{{page.callbackURL}}>",
+        "subdomain": "testhumanity",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/general/contacts}'",
-            "idField":"contactId",
+          "employees":{
+            "url": "/hubs/employee/employees?where=updated_date__gte='${DateTimeZone:PST:yyyy-MM-dd'T'HH:mm:ss.SSS}'",
+            "idField":"id",
             "datesConfiguration":{
-              "updatedDateField":"createDate",
-              "updatedDateFormat":"yyyy-MM-dd' 'HH:mm:ss",
-              "createdDateField":"createDate",
-              "createdDateFormat":"yyyy-MM-dd' 'HH:mm:ss"
+              "updatedDateField": "updated_date",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+              "updatedDateTimezone": "PST",
+              "createdDateField": "created_date",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+              "createdDateTimezone": "PST"
             }
           },
-          "message":{
-            "url":"/hubs/general/messages}'",
-            "idField":"messageId",
-            "datesConfiguration":{
-              "updatedDateField":"createDate",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
-              "createdDateField":"createDate",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
-            }
-          }
+            "timesheets": {  }
         }
       },
       "tags":[
@@ -130,26 +137,42 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "key": "{{page.elementKey}}"
 },
 "providerData":{
-  "code": "<AUTHORIZATION_GRANT_CODE>"
+  "code": "xxx"
+  "token": "xxxxxxxxxxxxxxxxxx"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
-    "event.notification.enabled": true,
-    "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
-    "event.poller.refresh_interval": "15",
-    "event.poller.configuration":{
-    	"contacts": {
-    		"url":"/hubs/general/contacts",
-        "idField":"messageId",
-            "datesConfiguration":{
-              "updatedDateField":"createDate",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX",
-              "createdDateField":"createDate",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ssXXX"
+  "oauth.callback.url": "https;//mycoolapp.com",
+  "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+  "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+  "subdomain": "cloud-elements"
+  "event.notification.enabled": true,
+  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/{{page.elementKey}}/",
+  "event.poller.refresh_interval": "15",
+  "event.poller.configuration":{
+    "employees": {
+      "url": "/hubs/employee/employees?where=updated_date__gte='${DateTimeZone:PST:yyyy-MM-dd'T'HH:mm:ss.SSS}'",
+      "idField": "id",
+      "datesConfiguration": {
+        "updatedDateField": "updated_date",
+        "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+        "updatedDateTimezone": "PST",
+        "createdDateField": "created_date",
+        "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+        "createdDateTimezone": "PST"
+      }
+    },
+      "timesheets": {
+        "url": "/hubs/employee/timesheets?where=updated_date__gte='${DateTimeZone:PST:yyyy-MM-dd'T'HH:mm:ss.SSS}'",
+        "idField": "id",
+        "datesConfiguration": {
+          "updatedDateField": "updated_date",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+          "updatedDateTimezone": "PST",
+          "createdDateField": "created_date",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS",
+          "createdDateTimezone": "PST"
         }
-    	}
+      }
     }
   },
   "tags": [
@@ -166,11 +189,12 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| API Version</br>`api.version` |  The {{page.heading}} API version that you noted in [API Provider Setup](setup.html). |  string |  | string  |
-| AppId</br>`AppID` |  The {{page.heading}} API-AppId that you noted in [API Provider Setup](setup.html). |  string |  | string  |
-| API-Username</br>`api.username` | The {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
-| API-Password</br>`api.password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
+| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+| `token`   | The temporary access token returned in the previous response. |  string |
+|  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
