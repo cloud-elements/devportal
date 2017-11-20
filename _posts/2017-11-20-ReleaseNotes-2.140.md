@@ -42,3 +42,13 @@ Added the `projects` resource to the JIRA element.
 ### Formula as a Resource
 
 Fixed an issue where you could not disable FaaR on a formula via a `PATCH /formulas/{id}` request.
+
+### Security
+
+Added a Roles list to the Users table on the Accounts page where you can more quickly select roles to assign to a user.
+![Roles Table](/assets/img/rn/roles-table.png)
+
+### Alerts
+
+Alert messages update automatically with new alerts.
+![Alerts](https://camo.githubusercontent.com/18912fd861858f922e5600947df06ef51cc41253/68747470733a2f2f636c2e6c792f3259306633753038337832752f53637265656e2532305265636f7264696e67253230323031372d31312d3136253230617425323030312e3335253230504d2e676966)
