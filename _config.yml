@@ -22,7 +22,6 @@ gems:
   - algoliasearch-jekyll
   - jekyll-paginate
 
-
 algolia:
   application_id: 'G8W6UO94HX'
   index_name:     'developer_portal_pages'

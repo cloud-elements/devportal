@@ -24,8 +24,6 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
 
-<Use this paragraph to identify the type of authentication. The sample is for OAuth2, but there are obviously others.>
-
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
@@ -50,7 +48,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
 
 * [Getting a redirect URL](#getting-a-redirect-url). This URL sends users to the vendor to log in to their account.
-* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a callback to the specified url with an authorization grant code.
+* [Authenticating users and receiving the authorization grant code](#authenticating-users-and-receiving-the-authorization-grant-code). After the user logs in, the vendor makes a call back to the specified url with an authorization grant code.
 * [Authenticating the element instance](#authenticating-the-element-instance). Using the authorization code from the vendor, authenticate with the vendor to create an element instance at Cloud Elements.
 
 ### Getting a Redirect URL
@@ -67,15 +65,15 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 | Query Parameter | Description   |
 | :------------- | :------------- |
-| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
-| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup](setup.html). |
+| apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
+| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
 
 #### Example cURL
 
 ```bash
 curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
 ```
 
 #### Example Response

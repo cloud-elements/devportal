@@ -85,5 +85,5 @@ This example JSON shows the parameters that can be sent to the `/instances` API 
 | `datesConfiguration` | Configuration parameters for dates in polling | JSON Object. |
 | `updatedDateField` | The field that identifies an updated object. | String |
 | `updatedDateFormat` | The date format of the field that identifies an updated object.  | String |
-| `createdDateField` | The field that identifies an created object. | String |
-| `createdDateFormat` | The date format of the field that identifies an created object.  | String |
+| `createdDateField` | The field that identifies a created object. | String |
+| `createdDateFormat` | The date format of the field that identifies a created object.  | String |

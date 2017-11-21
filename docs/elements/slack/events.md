@@ -18,10 +18,10 @@ order: 30
 
 Slack requires an extra specification to be entered once an Element instance has been created. The Slack Instance ID must be 64 base encoded, then included in the webhook callback URL. This document will walk you through the entire workflow:
 
-* create an instance
-* retrieve the instance ID
-* 64base Encode Instance ID
-* webhook setup
+* Creating an instance
+* Retrieving the instance ID
+* Base64 encoding the instance ID
+* Webhook setup
 
 ### Step 1. Get Elements OAuth Information
 
