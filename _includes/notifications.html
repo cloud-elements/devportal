@@ -2,18 +2,18 @@
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
 <![endif]-->
 <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+<button class="btn btn-primary"  type="button" id="showPanel">
+  Subscribe
+</button>
+<div id="panel">
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-
-<!-- <script>
-$(document).ready(function(){
-
-
-
-});
-</script> -->
 <script>
   hbspt.forms.create({
     portalId: '440197',
     formId: 'd4123ea2-50e0-43f4-95bd-b25e5d670fcf'
   });
+  $("#showPanel").click(function(){
+      $("#panel").show();
+  });
+});
 </script>
