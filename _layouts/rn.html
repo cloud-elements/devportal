@@ -68,11 +68,26 @@
           <script>
               $(document).ready ( function(){
                   $('.box{{page.box_number}}').addClass('active');
+                  $("#showPanel").click(function(){
+                      $("#panel").show();
+                  });
+
+                  $("#hidePanel").click(function(){
+                      $("#panel").hide();
+                  });
               });
           </script>
           <div style="background: #44c8f5; padding: 10px">
             <h3>Subscribe to Release Note updates</h3>
-            {% include notifications.html %}
+            <button type="button" id="showPanel">
+              Show Me
+            </button>
+            <button type="button" id="hidePanel">
+              Hide Me
+            </button>
+            <div id="panel">
+              {% include notifications.html %}
+            </div>
           </div>
 
 
