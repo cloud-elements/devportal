@@ -1,15 +1,16 @@
 ---
 heading: Google Calendar
+apiProvider: Google
 seo: Events | Google Calendar | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 5126
+elementKey: googlecalendar
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Authorized redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -22,7 +23,12 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 ## Supported Events and Resources
 
-Cloud Elements supports polling events for Google Calendar. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
+Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
+
+You can set up events for your the authenticated user's primary calendar or a specific calendar with the following resources:
+
+* calendars/{calendarId}/changed-events
+* calendars/primary/changed-events
 
 ## Polling
 
@@ -41,15 +47,24 @@ To authenticate an element instance with polling:
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
+5. Select the resources to poll.
+
+    {% include note.html content="To poll the <code>calendars/{calendarId}/changed-events</code> resource, replace <code>{calendarId}</code> in the polling configuration with the id of the calendar that you want monitor. See the next step for ways to edit the polling configuration.  " %}
+
+6. Advanced users can further configure polling:
+  - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
+  ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
+  - Click <img src="/assets/img/platform-icons/pencil.png" alt="Edit Button" class="inlineImage"> to access the poller configuration.
+  ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Provide your {{page.heading}} credentials, and then allow the connection.
+8. Provide your {{page.apiProvider}} credentials, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ### Configure Polling Through API
 
-Use the `/instances` endpoint to authenticate with Google Calendar and create an element instance with polling enabled.
+Use the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance with polling enabled.
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
@@ -67,18 +82,38 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
+        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
+        "oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "polling":{
-            "url":"/hubs/general/polling",
-            "idField":"fileId"
+          "calendars/{calendarId}/changed-events": {
+            "url": "/hubs/scheduling/calendars/{calendarId}/changed-events",
+            "idField": "",
+            "datesConfiguration": {
+              "updatedDateField": "updated",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "updatedDateTimezone": "GMT",
+              "createdDateField": "created",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "createdDateTimezone": "GMT"
+            }
+          },
+            "calendars/primary/changed-events": {
+              "url": "/hubs/scheduling/calendars/primary/changed-events",
+              "idField": "",
+              "datesConfiguration": {
+                "updatedDateField": "updated",
+                "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                "updatedDateTimezone": "GMT",
+                "createdDateField": "created",
+                "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+                "createdDateTimezone": "GMT"
+              }
+            }
           }
-        }
       },
       "tags":[
         "<Add_Your_Tag>"
@@ -86,6 +121,8 @@ To authenticate an element instance with polling:
       "name":"<INSTANCE_NAME>"
     }
     ```
+
+    {% include note.html content="To poll the <code>calendars/{calendarId}/changed-events</code> resource, replace <code>{calendarId}</code> in the polling configuration with the id of the calendar that you want monitor.   " %}
 
 1. Call the following, including the JSON body you constructed in the previous step:
 
@@ -111,18 +148,25 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
-    "oauth.callback.url":"https://auth.mycoolapp.com/oauth",
-    "event.notification.enabled": true,
-    "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://cloud-element.com/elements/api-v2/events/page.elementKey/",
-    "event.poller.refresh_interval": "15",
-    "event.poller.configuration":{
-    	"polling": {
-        "url":"/hubs/general/polling",
-        "idField":"fileId"
-    	}
+  "oauth.callback.url": "https;//mycoolapp.com",
+  "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
+  "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+  "event.notification.enabled": true,
+  "event.vendor.type": "polling",
+  "event.notification.callback.url": "https://cloud-element.com/elements/api-v2/events/{{page.elementKey}}/",
+  "event.poller.refresh_interval": "15",
+  "event.poller.configuration":{
+    "calendars/{calendarId}/changed-events": {
+      "url": "/hubs/scheduling/calendars/ov7i6xxxxxxxxxxxxxxxxxx@group.calendar.google.com/changed-events",
+      "idField": "",
+      "datesConfiguration": {
+        "updatedDateField": "updated",
+        "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+        "updatedDateTimezone": "GMT",
+        "createdDateField": "created",
+        "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+        "createdDateTimezone": "GMT"
+      }
     }
   },
   "tags": [
