@@ -27,7 +27,7 @@ Parameters enable you to configure information that you need to send to an API p
 
 ## Reserved Configurations
 
-Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. The Configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved Configuration Key. The following table shows reserved Configuration Keys.
+Each parameter that you set up when [defining the authentication information](auth.html) is available as an element configuration. The element configuration also includes the properties of the element: pagination information and base URL. The configuration Keys associated with the authorization and pagination parameters are reserved. You will receive an error if you try to create a configuration with a reserved configuration Key. The following table shows reserved configuration Keys.
 
 | OAuth Keys   | Basic Keys    | Properties Keys | Events and Bulk | AWS Keys |
 | :------------- | :------------- | :------------- | :------------- | :------------- |
@@ -59,12 +59,12 @@ To set up a configuration:
 
 1. Open Configuration, and then click **Add New Configuration**.
 2. Enter the name of the configuration. If you choose to show this on the UI, Cloud Elements will show the configuration name as you define it here.
-3. In **Configuration Key** you can choose to update the value automatically created from the configuration name or leave it. The configuration key identifies the configuration property in the element configuration. You also use the configuration key to refer to the configuration in parameters and hooks.
-4. In **Default Value** enter any default value for the configuration. If shown on the UI, a user can overwrite the default value.
-5. In **Configuration Description** enter a brief description of the configuration. If the configuration appears in Cloud Elements, the description is available as hover help.
-5. In **Configuration Type** select the type of configuration. Configurations can be text strings, boolean, or passwords.
+3. In **Key** you can choose to update the value automatically created from the configuration name or leave it. The configuration Key identifies the configuration property in the element configuration. You also use the configuration Key to refer to the configuration in parameters and hooks.
+5. In **Type** select the type of configuration. Configurations can be text strings, boolean, or passwords.
 10. To make the configuration a required part of authentication, switch **Required** on.
 7. Switch **Hide on UI** to on to prevent the configuration from appearing on the UI when the user authenticates. By default, the configuration appears on the UI.
+5. In **Configuration Description** enter a brief description of the configuration. If the configuration appears in Cloud Elements, the description is available as hover help.
+4. In **Default Value** enter any default value for the configuration. If shown on the UI, a user can overwrite the default value.
 8. Click **Save**.
 
 ### Element Configuration Parameters
@@ -81,7 +81,7 @@ Before you set up parameters, review the [Element Conventions](custom-elements.h
 To define a parameter :
 
 2. Click **Add New Parameter**.
-3. In **Parameter Name** enter the name of the parameter. The name appears in the API documentation in some cases, can be a value passed to the API provider, or matches the Configuration Key of an element configuration.
+3. In **Parameter Name** enter the name of the parameter. The name appears in the API documentation in some cases, can be a value passed to the API provider, or matches the configuration Key of an element configuration.
 4. In **Vendor Name** enter the name of the parameter to map to.
 6. In **Parameter Type** select the source of the parameter.
 7. In **Vendor Type** select how the API provider receives the parameter.
@@ -97,7 +97,7 @@ To define a parameter :
 |  Parameter Name  |  The Parameter Name acts as a key and provides values to the Parameter Types.   | Required  |
 |  Vendor Name  |  The parameter at the API provider that equals the parameter that you are defining.  | Required  |
 |  Parameter Type  |  The source of the parameter value on the Cloud Elements side.   |  Y  |
-|    |  configuration &mdash; The value of the parameter is the value of the configuration identified by the Configuration Key specified in the Parameter Name. The Parameter Name must match a Configuration Key in the element configuration. |   |
+|    |  configuration &mdash; The value of the parameter is the value of the configuration identified by the configuration Key specified in the Parameter Name. The Parameter Name must match a configuration Key in the element configuration. |   |
 |    |  header &mdash; The value is the request header parameter that matches the Parameter Name. |    |
 |    |  path &mdash; The value is the part of the request path that matches the Parameter Name. |    |
 |    |  body &mdash; The value is the part of the request body that matches the Parameter Name. |    |
