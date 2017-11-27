@@ -52,6 +52,7 @@ layout: sidebarelementtile
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/)
 * [![Freshservice](/assets/img/element-logos/freshservice.png)Freshservice](./elements/freshservice/)
 * [![GoodData](/assets/img/element-logos/gooddata.png)GoodData](./elements/gooddata/)
+* [![Google Calendar](https://my.cloudelements.io/assets/img/elements/googlecalendar.svg)Google Calendar](./elements/google-calendar/)
 * [![Google Drive](/assets/img/element-logos/googledrive.png)Google Drive](./elements/googledrive/)
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/)
 * [![GoToWebinar](/assets/img/element-logos/gotowebinar.png)GoToWebinar](./elements/gotowebinar/)
