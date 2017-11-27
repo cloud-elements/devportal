@@ -86,16 +86,9 @@ If you have any authenticated element instances for the element, they appear on 
 
 To set up endpoints:
 
-1. Expand an endpoint, and then click **Go** or <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
-
-    {% include note.html content="After you edit an endpoint for the first time, the <b>Go</b> button is replace by a toolbar. " %}
-
-2. Enter a description. This appears in the API documentation and should help a user understand what the request is for and what to expect in the response. A description of the `GET /deals` endpoint could be: "Retrieves a list of deals. Use CEQL to filter by related fields like company and contact."
-
-    {% include tip.html content="The descriptions that you enter for each endpoint should help a user understand what the endpoint does. Keep the descriptions short, no more than three sentences. Start with a verb associated with a method like gets, retrieves, checks, creates, returns, updates, or deletes. Then describe what resource is being manipulated and add any other helpful information about required fields, filtering, or formatting. " %}
-
-3. After you complete your description, click or tab out of the description.
-5. Add a **Root Key** to identify the top level field of the resource and limit what you send or receive. For example, if you receive the following payload, but only want `items`, not `numberOfItems` and `items`, enter `items`.
+1. Click <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+7. In **Resource Type** select a resource type other than **API** only if you want to alter how the API documentation treats the endpoint.
+5. Add a  **Root Key** to identify the top level field of the resource and limit what you send (**Request Root Key**) or receive (**Response Root Key**). For example, if you receive the following payload, but only want `items`, not `numberOfItems` and `items`, enter `items`.
 
     ```json
     {
@@ -111,16 +104,15 @@ To set up endpoints:
 
     {% include note.html content="If the API provider does not support paging, Cloud Elements uses the `page` or `nextPage` and `pageSize` parameters to page through the result set. " %}
 
-7. In **Resource Type** select a resource type other than **API** only if you want to alter how the API documentation treats the endpoint.
 7. In **Next Resource** select another endpoint if your use case requires requests to multiple endpoints one after another.
-8. Continue to [Add Parameters](#add-parameters).
+2. Enter a description. This appears in the API documentation and should help a user understand what the request is for and what to expect in the response. A description of the `GET /deals` endpoint could be: "Retrieves a list of deals. Use CEQL to filter by related fields like company and contact."
+
+    {% include tip.html content="The descriptions that you enter for each endpoint should help a user understand what the endpoint does. Keep the descriptions short, no more than three sentences. Start with a verb associated with a method like gets, retrieves, checks, creates, returns, updates, or deletes. Then describe what resource is being manipulated and add any other helpful information about required fields, filtering, or formatting. " %}8. Continue to [Add Parameters](#add-parameters).
 
 #### Endpoint Configuration Parameters
 
 | Parameter | Description   | Required   |
 | :------------- | :------------- | :------------- |
-|  RootKey  |  Identifies the root object in the JSON that contains the relevant information about the resource.  |  No  |
-|  Pagination Type  |  Identifies whether the resource supports the default pagination settings of the element. If you leave this parameter empty it defaults to Supported.  |  No  |
 |  Resource Type  |  Describes the endpoint, when it executes, and whether it appears in the API documentation.  |  Yes  |
 |    |  API &mdash; The default resource type where the endpoint makes a request to the API provider and is documented within the API documentation.  |  |
 |    |  API No Documentation &mdash; The endpoint makes a request to the API provider but it is hidden from the API documentation.  |  |
@@ -136,7 +128,10 @@ To set up endpoints:
 |    |  OAuth On Token Revoke &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
 |    |  OAuth On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.    |  |
 |    |  OAuth1 On Token Request  &mdash; The endpoint makes a request bypassing the generic OAuth flow.   |  |
-|  Next Resource  |  If [chaining resources](#chaining-resources), identifies the endpoint request that follows this request in the chain.  |  No  |
+| Request Root Key  |  Identifies the root object in the JSON request that contains the relevant information about the resource.  |  No  |
+| Response Root Key  |  Identifies the root object in the JSON response that contains the relevant information about the resource.  |  No  |
+| Pagination Type  |  Identifies whether the resource supports the default pagination settings of the element. If you leave this parameter empty it defaults to Supported.  |  No  |
+| Next Resource  |  If [chaining resources](#chaining-resources), identifies the endpoint request that follows this request in the chain.  |  No  |
 
 ### Add Parameters
 
@@ -157,7 +152,7 @@ Map parameters that you send as part of the request from Cloud Elements on the l
 
 To define a parameter :
 
-1. Select an endpoint, and then click **Go** or <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
+1. Select an endpoint, and then click <img src="img/resource-pencil.png" alt="Edit" class="inlineImage">.
 2. If you need to add a parameter, click **Add New Parameter**.
 3. In **Parameter Name**, enter the name of the parameter. The name appears in the API documentation in some cases or can be a value passed to the API provider.
 5. In **Vendor Name** enter the name of the parameter to map to. For example, if you are adding an `id` parameter, **Vendor Name** should be the unique id field for the resource like `dealId`.
@@ -320,7 +315,6 @@ To configure bulk:
 1. Click the **Bulk** tab.
 2. Select to enable bulk upload, download, or both.
 3. In each of the fields, select the format that the endpoint expects.
-2. Select to enable upload, download, or both.
 4. Click **Save Bulk Configuration**.
 
 ### Add Endpoints
