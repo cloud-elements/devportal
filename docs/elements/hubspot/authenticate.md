@@ -8,6 +8,7 @@ breadcrumbs: /docs/elements.html
 elementId: 43
 elementKey: hubspot
 parent: Back to Element Guides
+scopes: contacts%20timeline%20files%20content%20reports%20social%20automation%20forms
 order: 20
 ---
 
