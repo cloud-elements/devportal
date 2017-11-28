@@ -8,6 +8,8 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2 framework and you will need to sign in to {{page.heading}} as part of the process.
 
+When you authenticate through the Cloud Elements UI, you pass different scopes depending on the Cloud Elements version (see below). If you cannot authenticate with the default scopes used by the UI, you can pass specific scopes when [authenticating via API](#authenticate-through-api).
+
 If you are configuring events, see the [Events section](events.html).
 
 1. Sign in to Cloud Elements, and then search for {{page.heading}} in our Elements Catalog.
@@ -48,10 +50,25 @@ Authenticating through API using OAuth 2.0 is a multi-step process that involves
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Redirect URL"%}
 
+Use `GET /{page.elementKey}/oauth/url` to request a redirect URL and pass scope to Hubspot. The scope parameter values that you include in the request must match the permissions granted to the authorizing user and their account. Some scopes apply only to Marketing accounts (such as content, reports, social, and automation) while others apply to both Marketing and CRM accounts (such as contacts, timeline, and files). If you include Marketing scopes when authenticating with Hubspot CRM, users will receive a Permissions error if their account does not include Marketing permissions.
+
+To be certain that your users can authenticate, you should pass the specific scopes granted to the users and their account. Review the [Hubspot OAuth 2.0 scope documentation](https://developers.hubspot.com/docs/methods/oauth2/initiate-oauth-integration#scopes) for the complete list of scopes.
+
+However, if you do not pass any scopes or pass scope without any values, see the table below for the default scopes passed with the `GET /{page.elementKey}/oauth/url` request.
+
+| Scope Parameter| Default Scope   |
+| :------------- | :------------- |
+| Hubspot CRM with no scope parameter</br>ex. `GET /{page.elementKey}/oauth/url?apiKey=...&apiSecret=...&callbackUrl=...` |  contacts, timeline, and files  |
+| Hubspot CRM with a scope parameter with no value</br>ex. `GET /hubspotcrm/oauth/url?apiKey=...&apiSecret=...&callbackUrl=...&scope=`   | contacts, timeline, files, content, reports, social, automation, forms  |
+| Hubspot Marketing with no scope parameter</br>ex. `GET /{hubspot}/oauth/url?apiKey=...&apiSecret=...&callbackUrl=...` |  contacts, timeline, files, content, reports, social, automation, forms  |
+| Hubspot Marketing with a scope parameter with no value</br>ex. `GET /hubspot/oauth/url?apiKey=...&apiSecret=...&callbackUrl=...&scope=`   | contacts, timeline, files, content, reports, social, automation, forms  |
+
+The examples below include recommended scope values. For Hubspot Marketing Basic account users, we recommend not including the automation scope.
+
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET "/elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>"
+curl -X GET "/elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&scope={{page.scopes}}"
 ```
 
 #### Query Parameters
@@ -61,12 +78,13 @@ curl -X GET "/elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secre
 | apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Consumer Secret** that you recorded in [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance. |
+| scope   | A space separated set of Hubspot scopes that your app can access. Scopes listed in this parameter are required for your app, and the user will see an error if they do not have access to any scope that you included.   |
 
 #### Example cURL
 
 ```bash
 curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}&scope={{page.scopes}}' \
 ```
 
 #### Example Response

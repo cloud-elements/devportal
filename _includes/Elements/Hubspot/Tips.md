@@ -6,11 +6,28 @@ The Tips section includes more information about the element including FAQs, end
 
 ## Authentication
 
-* Hubspot supports two different authentication mechanisms: API Key (Basic) and OAuth 2.0. When you authenticate an instance and include the HubSpot Portal ID, you use the latest OAuth 2 authentication
-* If you intend to use the new OAuth 2, you must also provide scope.  In Sandbox or developer accounts, HubSpot Marketing will never have appropriate scope to authenticate an instance. To authenticate an element instance with a HubsSpot Marketing trial account, you must create your own connected app with limited scope.
-* If you receive the following error message, verify that the scopes selected in your registered app are aligned with the permissions allowed under the selected Portal ID.
+* Hubspot supports two different authentication mechanisms: API Key (Basic) and OAuth 2.0.0. When you authenticate an instance and include the HubSpot Portal ID, you use the latest OAuth 2.0 authentication.
+* If you intend to use the new OAuth 2.0, you must also provide scope.  In Sandbox or developer accounts, HubSpot Marketing will never have appropriate scope to authenticate an instance. To authenticate an element instance with a HubsSpot Marketing trial account, you must create your own connected app with limited scope. See [Scope below](#scope) and [Authenticate](authenticate.html) for more information about how to pass scope when you authenticate with Hubspot.
 
+
+## Scope
+
+When users authenticate an element instance, they authorize your app to access the data allowed by the scopes that you pass to Hubspot. The user and their associated account must have access to all scopes that you pass. In addition to user permissions, Hubspot includes two types of scopes based on account level: **Marketing only** and **Marketing and CRM**.
+
+| Marketing Only | Marketing and CRM   |
+| :------------- | :------------- |
+|  content  |  contacts  |
+| reports   |  timeline |
+| social   |  files  |
+| automation   |   |
+| forms   |   |
+| hubdb </br>For website add on   |   |
+| transactional-email </br>For Transactional-email add on   |   |
+
+If you receive the following error message when authenticating, verify that the scopes you pass as part of authentication, the scopes selected in your registered app, user permissions, and account type scopes align. See [Authenticate](authenticate.html) for more information about how to pass scope when you authenticate with Hubspot.
 ![HubSpot Scope](img/scope.png)
+
+Review the [Hubspot OAuth 2.0 scope documentation](https://developers.hubspot.com/docs/methods/oauth2/initiate-oauth-integration#scopes) for the complete list of scopes.
 
 ## Bulk
 
