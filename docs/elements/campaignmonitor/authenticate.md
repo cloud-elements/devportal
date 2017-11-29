@@ -1,6 +1,6 @@
 ---
 heading: Campaign Monitor
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+seo: Authenticate | Campaign Monitor | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
