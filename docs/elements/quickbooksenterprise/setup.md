@@ -1,6 +1,6 @@
 ---
 heading: QuickBooks Enterprise
-seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+seo: API Provider Setup | API provider setup | QuickBooks Enterprise | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
@@ -41,7 +41,7 @@ The bundled Ground2Cloud installer for QuickBooks (**Ground2CloudQbSetup_n.n.n.e
 
 {% include g2c/install-steps.md%}
 
-    The installation adds the QuickBooks QBXML SDK and prompts you to install the CE Connector application. 
+    The installation adds the QuickBooks QBXML SDK and prompts you to install the CE Connector application.
 
 3. Click **Install**.
 
