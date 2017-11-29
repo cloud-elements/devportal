@@ -7,6 +7,7 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 168
 elementKey: hubspotcrm
+scopes: contacts%20timeline%20files
 parent: Back to Element Guides
 order: 15
 ---
