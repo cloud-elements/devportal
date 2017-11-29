@@ -1,6 +1,6 @@
 ---
-heading: Name of Element
-seo: Bulk  | Name of Element | Cloud Elements API Docs
+heading: LinkedIn
+seo: Bulk  | LinkedIn | Cloud Elements API Docs
 title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
