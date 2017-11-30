@@ -1,12 +1,12 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Overview | Name of Element | Cloud Elements API Docs
+heading: Maximizer
+apiProvider: Maximizer # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Overview | Maximizer | Cloud Elements API Docs
 title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
+description: Integrate Maximizer into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5127
 parent: Back to Element Guides
 order: 1
 ---
@@ -21,11 +21,10 @@ order: 1
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://www.google.com/search?q={{page.heading}}+api+documentation) |
+| API Documentation | [{{page.apiProvider}} API documentation](https://developer.maximizer.com/) |
 | Authentication | OAuth 2.0  |
-| Events | Webhooks and polling |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://www.google.com/search?q={{page.heading}}+api+rate+limits)|
 
 {% include Elements/index.md%}

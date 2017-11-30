@@ -19,7 +19,7 @@ To authenticate an element instance:
 5. Enter a name for the element instance.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Provide your {{page.apiProvider}} credentials, and then allow the connection.
+8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -109,9 +109,9 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
-        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
-      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>"
+        "oauth.callback.url": "https;//mycoolapp.com",
+        "oauth.api.key": "Rand0MAP1-key",
+        "oauth.api.secret": "fak3AP1-s3Cr3t"
       },
       "tags": [
         "<Add_Your_Tag>"

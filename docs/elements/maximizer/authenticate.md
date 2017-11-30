@@ -1,16 +1,16 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Maximizer
+apiProvider: Maximizer # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Maximizer | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
-apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
-callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
+elementId: 5127
+elementKey: maximizer
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -25,6 +25,8 @@ You can authenticate with {{page.apiProvider}} to create your own instance of th
 
 Use the UI to authenticate with {{page.apiProvider}} and create a {{page.heading}} element instance.  {{page.apiProvider}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.apiProvider}} as part of the process.
 
+{% include note.html content="You cannot authenticate a Maximizer instance in the UI unless you have access to the default account. If you want authenticate without the default credentials, <a href=#authenticate-through-api>authenticate via API</a>.   " %}
+
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
@@ -34,6 +36,11 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. In **Alias** enter the account-specific portion of your URL. For example, if your URL is `https://caw.maximizercrmlive.com/Cloud-Elements` enter `Cloud-Elements`.
+7. In **Api Url** enter the API Base URL provided to you when Maximizer granted API access.
+
+    {% include note.html content="If you don't know your URL, go to <code>https://caw.maximizercrmlive.com/{alias}?request=api</code>, with the same alias from the previous step.  " %}
+
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
@@ -81,11 +88,9 @@ curl -X GET \
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
+"oauthUrl": "https://caw.maximizercrmlive.com/OAuth2/CloudElements/Authorize?scope=data&response_type=code&redirect_uri=https%3A%2F%2Fconsole.cloud-elements.com%2Felements%2Fjsp%2Fhome.jsp&state=maximizer&client_id=Rand0MAP1-key",
 "element": "{{page.elementKey}}"
 }
 ```
