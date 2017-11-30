@@ -1,5 +1,6 @@
 ---
 heading: Name of Element
+apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Events | Name of Element | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
@@ -67,13 +68,13 @@ To authenticate an element instance with polling:
   ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Provide your {{page.heading}} credentials, and then allow the connection.
+8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
 ### Configure Polling Through API
 
-Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance with polling enabled.
+Use the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance with polling enabled.
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 

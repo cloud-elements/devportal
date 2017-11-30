@@ -1,5 +1,6 @@
 ---
 heading: Name of Element
+apiProvider: 
 seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
@@ -28,4 +29,4 @@ To find your credentials:
 3. Record the **{{page.username}}** and **{{page.password}}**.
 ![Key secret and URL](img/bigcommerce-creds.png)
 
-Next [authenticate an element instance with {{page.heading}}](authenticate.html).
+Next [authenticate an element instance with {{page.apiProvider}}](authenticate.html).

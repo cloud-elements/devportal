@@ -5,7 +5,7 @@ title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5127
 parent: Back to Element Guides
 order: 45
 sitemap: false
@@ -19,11 +19,14 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
-* GET /messages
+* GET /companies
+* GET /addresses
 * GET /{objectName}
 * GET /{objectName}/{objectId}/{childObjectName}
-* GET /social-profiles
+* GET /custom-records
 * POST /bulk/query
-* GET /users
+* GET /addressbook-entries
+* GET /opportunities
+* GET /contacts
 
 {% include ceql-ref.md%}

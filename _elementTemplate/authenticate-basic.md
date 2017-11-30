@@ -1,5 +1,6 @@
 ---
 heading: Name of Element
+apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Authenticate | Name of Element | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
@@ -13,15 +14,15 @@ parent: Back to Element Guides
 order: 20
 ---
 
-# Authenticate with {{page.heading}}
+# Authenticate with {{page.apiProvider}}
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with {{page.apiProvider}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. You will need your **Username**  and **Password** that you identified in [API Provider Setup](setup.html).
+Use the UI to authenticate with {{page.apiProvider}} and create an element instance. You will need your **Username**  and **Password** that you identified in [API Provider Setup](setup.html).
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -53,8 +54,8 @@ To authenticate an element instance:
         "key": "{{page.elementKey}}"
       },
       "configuration": {
-        "username": "<{{page.heading}} {{page.username}}>",
-        "password": "<{{page.heading}} {{page.password}}>"
+        "username": "<{{page.apiProvider}} {{page.username}}>",
+        "password": "<{{page.apiProvider}} {{page.password}}>"
       },
       "tags": [
         "<Add_Your_Tag>"

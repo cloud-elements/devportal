@@ -25,6 +25,8 @@ You can authenticate with {{page.apiProvider}} to create your own instance of th
 
 Use the UI to authenticate with {{page.apiProvider}} and create a {{page.heading}} element instance.  {{page.apiProvider}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.apiProvider}} as part of the process.
 
+{% include note.html content="You cannot authenticate a Maximizer instance in the UI unless you have access to the default account. If you want authenticate without the default credentials, <a href=#authenticate-through-api>authenticate via API</a>.   " %}
+
 If you are configuring events, see the [Events section](events.html).
 
 To authenticate an element instance:
