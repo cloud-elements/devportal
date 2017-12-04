@@ -2,6 +2,7 @@
 title: Cloud Elements Version 2.134
 date: 2017-09-25
 layout: release-note-item
+heading: Release Notes
 label: "Staging"
 ---
 

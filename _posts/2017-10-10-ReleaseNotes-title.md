@@ -2,6 +2,7 @@
 title: "Cloud Elements Version 2.136"
 date: 2017-10-10
 layout: release-note-item
+heading: Release Notes
 label: "Production"
 ---
 
