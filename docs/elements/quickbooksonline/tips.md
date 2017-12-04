@@ -32,7 +32,7 @@ The Tips section includes more information about the element including FAQs, end
 
 ## Errors
 
-If you receive the following 400 error when making requests, make sure that you authenticated with Development Keys and not Production Keys associated with a sandbox.
+If you receive the following 400 error when making requests, you likely authenticated an element instance with Development Keys and did not specify that you were connecting a sandbox account. Either authenticate with Production Keys or set `use_sandbox` to `true` when you authenticate with  Development Keys.
 
 ```json
 {
