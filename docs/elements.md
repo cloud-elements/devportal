@@ -79,6 +79,7 @@ layout: sidebarelementtile
 * [![Magento 2.0](/assets/img/element-logos/magento.png)Magento 2.0](./elements/magentov2/)
 * [![Magento SOAP](/assets/img/element-logos/magento.png)Magento SOAP V1.9 Beta](./elements/magento-soap/)
 * [![Marketo](/assets/img/element-logos/marketo.png)Marketo](./elements/marketo/)
+* [![Maximizer](https://my.cloudelements.io/assets/img/elements/maximizer.svg)Maximizer](./elements/maximizer/)
 * [![Microsoft SQL Server](/assets/img/element-logos/sqlserver.png)Microsoft SQL Server](./elements/sqlserver/)
 * [![Mixpanel](https://uxcam.com/images/mixpanel-logo.png)Mixpanel](./elements/mixpanel/)
 * [![MySQL](/assets/img/element-logos/mysql.png)MySQL](./elements/mysql/)
