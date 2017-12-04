@@ -32,6 +32,8 @@ Enhanced QB Element to support Sandbox developer accounts. When authenticating a
 }
 ```
 
+See updated authentication steps in the [QuickBooks Online Element docs](/docs/elements/quickbooksonline/authenticate.html).
+
 #### Box: New endpoints in `custom-fields` resource
 
 * Added the `PUT /files/{id}/custom-fields/{templateKey}` endpoint to update the custom fields value associated with a given file.
