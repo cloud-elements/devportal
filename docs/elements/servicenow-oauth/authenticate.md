@@ -34,7 +34,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **The ServiceNow Subdomain** enter your subdomain. This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
+6. In **The ServiceNow Subdomain** enter your subdomain or entire URL. The subdomain is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
 7. In **OAuth API Key** enter the {{page.apiKey}} that you identified in [API Provider Setup](setup.html).
 8. In **OAuth API Secret** enter the {{page.apiSecret}} that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
