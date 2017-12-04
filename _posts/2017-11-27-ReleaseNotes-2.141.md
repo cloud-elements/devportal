@@ -1,5 +1,5 @@
 ---
-title: Cloud Elements Version 2.140
+title: Cloud Elements Version 2.141
 date: 2017-11-20
 layout: release-note-item
 label: Production
