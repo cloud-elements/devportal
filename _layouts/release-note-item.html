@@ -44,13 +44,6 @@
       {% include contentToggle.html %}
       {% if page.simple_map == true %}
 
-
-      <script>
-          $(document).ready ( function(){
-              $('.box{{page.box_number}}').addClass('active');
-          });
-      </script>
-
       {% endif %}
       <h1>Cloud Elements Release Notes</h1>
       <div class="right">
@@ -61,6 +54,12 @@
             <a href="{{ post.url }}">{{ post.title }}</a>
           </p>
         {% endfor %}
+        <div class="notification-form-wrapper">
+          <h3 id="showPanel">Subscribe to Release Note updates</h3>
+          <div id="notificationForm" class="notification-form">
+            {% include notifications.html %}
+          </div>
+        </div>
       </div>
 
       {% include padding-bottom.html %}
@@ -70,10 +69,6 @@
 <h4 class="release-notes"> {{page.date | date: "%B %-d, %Y"}}</h4>
 
       {{content}}
-        <div style="background: #44c8f5; padding: 10px">
-          <h3>Subscribe to Release Note updates</h3>
-          {% include notifications.html %}
-        </div>
     </div>
   </div>
   <script src="/assets/js/chart.js"></script>
@@ -86,6 +81,18 @@
   <script>
   // execute/clear BS loaders for docs
   $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+  $(document).ready ( function(){
+      $('.box{{page.box_number}}').addClass('active');
+      $("#notificationForm").hide()
+      $("#showPanel").click(function(){
+          if ($('#notificationForm').is(':hidden')) {
+            $("#notificationForm").show();
+          } else  {
+            $("#notificationForm").hide();
+          }
+      });
+  });
   </script>
+
 </body>
 </html>
