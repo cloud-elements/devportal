@@ -25,19 +25,12 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
 
-<Use the following paragraph if you can poll only one resource>
-
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<Alternatively, if there are multiple supported resources, you can go with something like this:>
-
 You can set up events for the following resources:
 
-* accounts
-* contacts
-* leads
-* opportunities
-* users
+* timesheets
+* employees
+* payments
+* roles
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -46,7 +39,6 @@ You can set up events for the following resources:
 You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-polling-through-api) .
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
-
 
 ### Configure Polling Through the UI
 
@@ -58,7 +50,6 @@ To authenticate an element instance with polling:
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select the resources to poll.
 6. Advanced users can further configure polling:
@@ -92,27 +83,32 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
+        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
+        "clover.sandbox": "<true or false>",
+        "merchantId": "<{{page.heading}} app Merchant ID>",
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "createdDateTimezone":"GMT"
-            }
-          }
+        "timesheets": {
+          "url": "/hubs/employee/timesheets?where=out_and_override_time >'${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "employees": {
+          "url": "/hubs/employee/employees?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "payments": {
+          "url": "/hubs/employee/payments?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "roles": {
+          "url": "/hubs/employee/roles?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
         }
+      }
       },
       "tags":[
         "<Add_Your_Tag>"
@@ -145,23 +141,29 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
-    "event.notification.enabled": true,
-    "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/woocommercerest/",
-    "event.poller.refresh_interval": "15",
-    "event.poller.configuration":{
-    	"contacts": {
-    		"url":"/hubs/ecommerce/customers",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"date_modified",
-              "updatedDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''",
-              "createdDateField":"date_created",
-              "createdDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''"
-            }
-    	}
+  "oauth.callback.url": "https;//mycoolapp.com",
+  "oauth.api.key": "Rand0MAP1-key",
+  "oauth.api.secret": "fak3AP1-s3Cr3t",
+  "clover.sandbox": "false",
+  "merchantId": "5HBxxxxxxxxxxxx",
+  "event.poller.configuration":{
+        "timesheets": {
+          "url": "/hubs/employee/timesheets?where=out_and_override_time >'${date:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "employees": {
+          "url": "/hubs/employee/employees?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "payments": {
+          "url": "/hubs/employee/payments?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        },
+        "roles": {
+          "url": "/hubs/employee/roles?where=modifiedTime>'${gmtDate:yyyy-MM-dd'T'HH:mm:ssXXX}'",
+          "idField": "id"
+        }
+      }
     }
   },
   "tags": [
@@ -178,11 +180,13 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | {{site.data.glossary.element-auth-grant-code}}  | string |
-|  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
+| `code` | {{site.data.glossary.element-auth-grant-code}} | string |
+|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| OAuth API Key</br>`oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| OAuth API Secret</br>`oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| OAuth Callback URL</br>`oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| Sandbox</br>`clover.sandbox`  | For connecting to an app on a Clover Sandbox server select `True`. Otherwise keep the default `False`. | boolean  |
+| Merchant ID </br>`merchantId`  | The **Merchant ID** that you recorded in [API Provider Setup](setup.html).  | string  |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|

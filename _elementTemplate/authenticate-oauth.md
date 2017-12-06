@@ -34,10 +34,6 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **OAuth API Key** and **OAuth API Secret** enter the **{{page.apiKey}}** and **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).
-7. In **OAuth Callback URL** enter the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html).
-8. In **Sandbox** select **true** if the app is on the Clover Sandbox server.
-9. In **Merchant ID**, enter the **Merchant ID** you recorded in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
@@ -63,7 +59,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.apiKey}}>&apiSecret=<{{page.apiProvider}} {{page.apiSecret}}> &callbackUrl=<{{page.apiProvider}} {{page.callbackURL}}>
 ```
 
 #### Query Parameters
@@ -132,9 +128,9 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
         "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
-      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>"
+      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -166,9 +162,9 @@ curl -X POST \
     "code": "xxxxxxxxxxxxxxxxxxxxxxx"
   },
   "configuration": {
-    "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "Rand0MAP1-key",
-    "oauth.api.secret": "fak3AP1-s3Cr3t"
+    "oauth.api.secret": "fak3AP1-s3Cr3t",
+    "oauth.callback.url": "https;//mycoolapp.com"
   },
   "tags": [
     "Docs"

@@ -34,6 +34,10 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. 6. In **OAuth API Key** and **OAuth API Secret** enter the **{{page.apiKey}}** and **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).
+7. In **OAuth Callback URL** enter the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html).
+8. In **Sandbox** select **true** if the app is on the Clover Sandbox server.
+9. In **Merchant ID** enter the **Merchant ID** that you recorded in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
@@ -59,7 +63,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.apiKey}}>&apiSecret=<{{page.apiProvider}} {{page.apiSecret}}> &callbackUrl=<{{page.apiProvider}} {{page.callbackURL}}>&merchantId=<{{page.apiProvider}} Merchant ID>
 ```
 
 #### Query Parameters
@@ -69,23 +73,23 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 | apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup](setup.html). |
 | apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
 | callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
+| Merchant ID  |  The Merchant ID that you recorded in [API Provider Setup](setup.html).  |
 
 #### Example cURL
 
 ```bash
 curl -X GET \
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https:%3A%2F%2Fwww.mycoolapp.com%2auth' \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https:%3A%2F%2Fwww.mycoolapp.com%2auth&merchantId=5HBxxxxxxxxxxxxx' \
 ```
 
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
 
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
+"oauthUrl": "https://clover.com/oauth/authorize?client_id=Rand0MAP1-key&merchant_id=5HBxxxxxxxxxxxx",
 "element": "{{page.elementKey}}"
 }
 ```
@@ -94,15 +98,19 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
-Provide the response from the previous step to the users. After they authenticate, {{page.apiProvider}} provides the following information in the response:
+Provide the response from the previous step to the users. After they authenticate, {{page.apiProvider}} provides the following information in the response, where `code` is the primary information required for the next step:
 
-* code
 * state
+* code
+* merchant_id
+* employee_id
+* client_id
 
 | Response Parameter | Description   |
 | :------------- | :------------- |
-| code | {{site.data.glossary.element-auth-grant-code}} |
-| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+| `code` | {{site.data.glossary.element-auth-grant-code}} |
+| `state` | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+|  `merchant_id`, `employee_id`, `client_id`  | Additional identifiers related to the request.  |
 
 {% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
 
@@ -128,9 +136,11 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
         "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
-      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>"
+      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
+        "clover.sandbox": "<true or false>",
+        "merchantId": "<{{page.heading}} app Merchant ID>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -164,7 +174,9 @@ curl -X POST \
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "Rand0MAP1-key",
-    "oauth.api.secret": "fak3AP1-s3Cr3t"
+    "oauth.api.secret": "fak3AP1-s3Cr3t",
+    "clover.sandbox": "false",
+    "merchantId": "5HBxxxxxxxxxxxx"
   },
   "tags": [
     "Docs"
@@ -183,9 +195,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| OAuth API Key</br>`oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| OAuth API Secret</br>`oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| OAuth Callback URL</br>`oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| Sandbox</br>`clover.sandbox`  | For connecting to an app on a Clover Sandbox server select `True`. Otherwise keep the default `False`. | boolean  |
+| Merchant ID </br>`merchantId`  | The **Merchant ID** that you recorded in [API Provider Setup](setup.html).  | string  |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -199,11 +213,12 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-11-30T21:53:35Z",
   "token": "ABC/D...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 5127,
-      "name": "Maximizer",
-      "key": "maximizer",
-      "description": "Add a Maximizer CRM  Instance to connect your existing Maximizer account to the MaximizerCRM Hub, allowing you to manage addressbookentries, companies, contacts, addresses, and opportunities,etc. across multiple Maximizer Elements. You will need your Maximizer CRM account information to add an instance.",
-      "image": "https://yt3.ggpht.com/-_XlPkEWDufA/AAAAAAAAAAI/AAAAAAAAAAA/7DjVZVGU1IM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "id": 5217,
+      "name": "Clover",
+      "hookName": "Clover",
+      "key": "clover",
+      "description": "Add a Clover Instance to connect your existing Clover account to the Employees Hub, allowing you to manage roles, timesheets, employees, etc. across multiple Employee Elements. You will need your Clover  account information to add an instance.",
+      "image": "elements/custom-element-default-logo.png",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -219,11 +234,12 @@ In this example, the instance ID is `12345` and the instance token starts with "
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "crm",
+      "hub": "employee",
       "protocolType": "http",
-      "parameters": [  ]
+      "parameters": [  ],
+      "private": false
     },
-    "elementId": 5127,
+    "elementId": 5217,
     "tags": [
         "Docs"
     ],
@@ -233,7 +249,7 @@ In this example, the instance ID is `12345` and the instance token starts with "
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
     "providerData": {
-        "code": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        "code": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
     },
     "configuration": {    },
     "eventsEnabled": false,
