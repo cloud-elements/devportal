@@ -37,11 +37,11 @@ To find your OAuth 2.0 credentials:
 
 ## Create an Application
 
-If you have not created an application, you need one to authenticate with {{page.heading}}.
+If you have not created an application, you need one to authenticate with {{page.apiProvider}}.
 
 To create an application:
 
-1. Log in to your developer account at [{{page.apiProvider}}](https://apiprovider.com).
+1. Log in to your account at [{{page.apiProvider}}](https://apiprovider.com).
 2. Click **Create New App**.
 3. Complete the required information.
 4. If you plan to monitor events at {{page.apiProvider}}, enter `https://console.cloud-elements.com/elements/api-v2/events/{{page.heading}}`.
@@ -53,7 +53,7 @@ To create an application:
 
 ## Set Up Events
 
-{{page.heading}} supports webhooks. If you want to enable events when you authenticate and element instance, complete the steps below to set up webhooks with {{page.heading}}.
+{{page.apiProvider}} supports webhooks. If you want to enable events when you authenticate an element instance, complete the steps below to set up webhooks with {{page.heading}}.
 
 1. Log in to your developer account at [{{page.apiProvider}}](https://apiprovider.com).
 2. Click the application that you want to connect.
