@@ -1,5 +1,6 @@
 ---
 heading: Name of Element
+apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Authenticate | Name of Element | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
@@ -14,15 +15,15 @@ parent: Back to Element Guides
 order: 20
 ---
 
-# Authenticate with {{page.heading}}
+# Authenticate with {{page.apiProvider}}
 
-You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with {{page.apiProvider}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
+Use the UI to authenticate with {{page.apiProvider}} and create a {{page.heading}} element instance.  {{page.apiProvider}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.apiProvider}} as part of the process.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -35,7 +36,7 @@ To authenticate an element instance:
 5. Enter a name for the element instance.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Provide your {{page.heading}} credentials, and then allow the connection.
+8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -58,7 +59,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>
 ```
 
 #### Query Parameters
@@ -73,7 +74,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 ```bash
 curl -X GET \
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https:%3A%2F%2Fwww.mycoolapp.com%2auth' \
 ```
 
 #### Example Response
@@ -93,7 +94,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
-Provide the response from the previous step to the users. After they authenticate, {{page.heading}} provides the following information in the response:
+Provide the response from the previous step to the users. After they authenticate, {{page.apiProvider}} provides the following information in the response:
 
 * code
 * state
@@ -109,7 +110,7 @@ Provide the response from the previous step to the users. After they authenticat
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
 
-Use the `/instances` endpoint to authenticate with {{page.heading}} and create an element instance. If you are configuring events, see the [Events section](events.html).
+Use the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance. If you are configuring events, see the [Events section](events.html).
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 
@@ -127,9 +128,9 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>"
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
+        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -162,8 +163,8 @@ curl -X POST \
   },
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.key": "Rand0MAP1-key",
+    "oauth.api.secret": "fak3AP1-s3Cr3t"
   },
   "tags": [
     "Docs"
@@ -194,16 +195,15 @@ In this example, the instance ID is `12345` and the instance token starts with "
 ```json
 {
   "id": 12345,
-  "name": "API Instance",
-  "createdDate": "2017-08-07T18:46:38Z",
-  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "name": "Instance via API",
+  "createdDate": "2017-11-30T21:53:35Z",
+  "token": "ABC/D...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 1323,
-      "name": "ServiceNow OAuth",
-      "hookName": "ServiceNow",
-      "key": "servicenowoauth",
-      "description": "ServiceNow is changing the way people work, offering service management for every department in the enterprise including IT, human resources, facilities & more.",
-      "image": "https://pbs.twimg.com/profile_images/378800000041139697/cf1e6299ecb533ed82725abe96bb96a9_400x400.png",
+      "id": 5127,
+      "name": "Maximizer",
+      "key": "maximizer",
+      "description": "Add a Maximizer CRM  Instance to connect your existing Maximizer account to the MaximizerCRM Hub, allowing you to manage addressbookentries, companies, contacts, addresses, and opportunities,etc. across multiple Maximizer Elements. You will need your Maximizer CRM account information to add an instance.",
+      "image": "https://yt3.ggpht.com/-_XlPkEWDufA/AAAAAAAAAAI/AAAAAAAAAAA/7DjVZVGU1IM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -213,32 +213,38 @@ In this example, the instance ID is `12345` and the instance token starts with "
       "bulkDownloadEnabled": true,
       "bulkUploadEnabled": true,
       "cloneable": true,
-      "extendable": true,
-      "beta": true,
+      "extendable": false,
+      "beta": false,
       "authentication": {
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "helpdesk",
+      "hub": "crm",
       "protocolType": "http",
       "parameters": [  ]
     },
-    "elementId": {{page.elementId}},
+    "elementId": 5127,
     "tags": [
-      "Docs"
-      ],
-    "provisionInteractions": [  ],
+        "Docs"
+    ],
+    "provisionInteractions": [],
     "valid": true,
     "disabled": false,
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
+    "providerData": {
+        "code": "xxxxxxxxxxxxxxxxxxxxxxxxxxx"
+    },
     "configuration": {    },
     "eventsEnabled": false,
     "traceLoggingEnabled": false,
     "cachingEnabled": false,
     "externalAuthentication": "none",
     "user": {
-        "id": 12345
-      }
+        "id": 123456,
+        "emailAddress": "claude.elements@cloud-elements.com",
+        "firstName": "Claude",
+        "lastName": "Elements"
+    }
 }
 ```

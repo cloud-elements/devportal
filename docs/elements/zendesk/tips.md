@@ -2,7 +2,7 @@
 heading: Zendesk
 seo: Tips | Zendesk | Cloud Elements API Docs
 title: Tips
-description: Name of Element Tips
+description: Zendesk Tips
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 41
