@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- History.js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -17,33 +18,34 @@
   <link href="/assets/css/toolkit-light.css" rel="stylesheet">
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
-  <link href="/assets/css/custom-styles.css" rel="stylesheet">
-  <link href="/assets/css/release-notes.css" rel="stylesheet">
-  {% include favicon.html %}
+  <link href="/assets/css/custom-styles.css" rel="stylesheet"> {% include favicon.html %}
   <style>
-  /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-  /* this chunk of css is not part of the toolkit :) */
-  body {
-    width: 1px;
-    min-width: 100%;
-    *width: 100%;
-  }
+    /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+
+    /* this chunk of css is not part of the toolkit :) */
+
+    body {
+      width: 1px;
+      min-width: 100%;
+      *width: 100%;
+    }
   </style>
 </head>
+
 <body class="with-top-navbar">
   {% include nav.html %}
   <div class="container-fluid pageContainer">
     <div class="col-md-3 sidebar">
-    {% include sidebar.html %}
+      {% include sidebar.html %}
     </div>
     <div class="col-md-9 contentWrapper">
+      <link href="/assets/css/release-notes.css" rel="stylesheet">
       <h1>Cloud Elements Release Notes</h1>
       <div class="right">
-        <h5 class="release-notes">Recent Releases</h5>
-        {% for post in site.posts limit:5 %}
-          <p>
-            <a href="{{ post.url }}">{{ post.title }}</a>
-          </p>
+        <h5 class="release-notes">Recent Releases</h5> {% for post in site.posts limit:5 %}
+        <p>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </p>
         {% endfor %}
         <div class="notification-form-wrapper">
           <h3 id="showPanel">Subscribe to Release Note updates</h3>
@@ -52,60 +54,57 @@
           </div>
         </div>
       </div>
-      {% for post in paginator.posts %}
-      {% include padding-bottom.html %}
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-<h4 class="release-notes"> {{post.date | date: "%B %-d, %Y"}}</h4>
-  {{post.content}}
-        {% endfor %}
-        <!-- Pagination links -->
-        {% if paginator.total_pages > 1 %}
-        <div class="pagination">
-          {% if paginator.previous_page %}
-          <span class="previous ">  <a class="prev-next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a></span>
-          {% else %}
-            <span>&laquo; Prev</span>
-          {% endif %}
-          {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <em>{{ page }}</em>
-            {% elsif page == 1 %}
-              <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-            {% else %}
-              <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-            {% endif %}
-          {% endfor %}
-          {% if paginator.next_page %}
-            <span class="next ">  <a class="prev-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a></span>
-          {% else %}
-            <span>Next &raquo;</span>
-          {% endif %}
-        </div>
-        {% endif %}
-  </div>
+      {% for post in paginator.posts %} {% include padding-bottom.html %}
+      <h2>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+      </h2>
+      <h4 class="release-notes"> {{post.date | date: "%B %-d, %Y"}}</h4> {{post.content}} {% endfor %}
+      <!-- Pagination links -->
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+        <span class="previous ">
+          <a class="prev-next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
+        </span> {% else %}
+        <span>&laquo; Prev</span> {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
+        <em>{{ page }}</em> {% elsif page == 1 %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a> {% else %}
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a> {% endif %} {% endfor %} {% if paginator.next_page %}
+        <span class="next ">
+          <a class="prev-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+        </span> {% else %}
+        <span>Next &raquo;</span> {% endif %}
+      </div>
+      {% endif %}
+      <script>
+        $(document).ready(e => {
+          console.log('this did load');
+          $('.box{{page.box_number}}').addClass('active');
+          $("#notificationForm").hide()
+          $("#showPanel").click(function () {
+            if ($('#notificationForm').is(':hidden')) {
+              $("#notificationForm").show();
+            } else {
+              $("#notificationForm").hide();
+            }
+          });
+        });
+      </script>
+    </div>
   </div>
   <script src="/assets/js/chart.js"></script>
   <script src="/assets/js/tablesorter.min.js"></script>
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
-  <script src="/assets/js/ajaxLoading.js"></script>
-  {% include google_analytics.html %}
-  {% include hubspot-tracking.html %}
+  <script src="/assets/js/ajaxLoading.js"></script> {% include google_analytics.html %} {% include hubspot-tracking.html %}
   <script>
-  // execute/clear BS loaders for docs
-  $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
-  $(document).ready ( function(){
-      $('.box{{page.box_number}}').addClass('active');
-      $("#notificationForm").hide()
-      $("#showPanel").click(function(){
-          if ($('#notificationForm').is(':hidden')) {
-            $("#notificationForm").show();
-          } else  {
-            $("#notificationForm").hide();
-          }
-      });
-  });
-
+    // execute/clear BS loaders for docs
+    $(function () {
+      while (window.BS && window.BS.loader && window.BS.loader.length) {
+        (window.BS.loader.pop())()
+      }
+    })
   </script>
 </body>
+
 </html>
