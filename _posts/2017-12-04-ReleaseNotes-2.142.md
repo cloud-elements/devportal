@@ -10,7 +10,7 @@ heading: Release Notes
 
 #### Clover: New Element
 
-We added a new Clover element to manage employees, timesheets, and roles for the employees based on their location.
+We added a new Clover element to manage employees, time sheets, and roles for the employees based on their location. Take a look at the [Clover Element docs](/docs/elements/clover/) and get started today.
 
 #### Facebook: Updated `/comments` resource
 
