@@ -28,6 +28,7 @@ layout: sidebarelementtile
 * [![Cisco Spark](/assets/img/element-logos/ciscospark.png)Cisco Spark](./elements/cisco-spark/)
 * [![Citrix ShareFile](/assets/img/element-logos/sharefile.png)Citrix ShareFile](./elements/sharefile/)
 * [![Close.io](/assets/img/element-logos/closeio.png)Close.io](./elements/closeio/)
+* [![Clover](https://my.cloudelements.io/assets/img/elements/clover.svg)Clover](./elements/clover/)
 * [![Concur](http://assets.concur.com/logos/Concur_Logo_VT_Color_500px.png)Concur Beta](./elements/concur/)
 * [![ConnectWise CRM](/assets/img/element-logos/connectwise.png)ConnectWise CRM](./elements/connectwise-crm/)
 * [![ConnectWise CRM REST](/assets/img/element-logos/connectwise.png)ConnectWise CRM REST](./elements/connectwise-rest-crm/)

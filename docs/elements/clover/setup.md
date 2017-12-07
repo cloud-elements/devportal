@@ -54,7 +54,9 @@ To create an application:
 7. Click **Save**.
 6. Record the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** for your app.
 ![Key secret and URL](img/clover-creds.png)
-7. Click **Pricing** and set up your pricing options. You must add at least one subscription in addition to a free trial to preview the app.
+7. Scroll down, and then click **Required Permissions**.
+8. Select all applicable permissions for your app, and then click **Save**.
+7. Click **Pricing** on the left, and then set up your pricing options. You must add at least one subscription in addition to a free trial to preview the app.
 8. Return to **Your Apps** .
 9. Click **Preview in App Market**.
 ![Preview](img/preview.png)
