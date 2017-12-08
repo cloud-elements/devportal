@@ -3,7 +3,7 @@ title: Cloud Elements Version 2.134
 date: 2017-09-25
 layout: release-note-item
 heading: Release Notes
-label: "Staging"
+release: 2.134
 ---
 
 ### Added analytic-conversation by ID resource to the Lithium element

@@ -3,7 +3,7 @@ title: Cloud Elements Version 2.140
 date: 2017-11-20
 layout: release-note-item
 heading: Release Notes
-label: Production
+release: 2.140
 ---
 
 ### Elements
