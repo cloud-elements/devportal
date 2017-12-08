@@ -55,3 +55,35 @@ a.prev-next {
   padding: 10px;
   text-align: left;
 }
+
+.notification-form-wrapper {
+  background-color: #f6f6f6;
+}
+
+.notification-form-wrapper h3 {
+  background-color: #6EC6EB;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+.notification-form-wrapper h3:hover {
+  text-decoration: underline;
+}
+
+.notification-form {
+  padding: 12px;
+  background-color: #f6f6f6;
+}
+
+.notification-form form{
+  margin: 0;
+}
+
+.notification-form form .actions {
+  margin: 0 !important;
+  padding: 0 !important;
+}
