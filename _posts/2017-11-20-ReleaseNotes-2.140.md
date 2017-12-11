@@ -6,37 +6,37 @@ heading: Release Notes
 release: 2.140
 ---
 
-### Elements
+## Elements
 
-#### Square
+### Square
 
 Add the Square element to the new Employee hub. Use the Square element to manage time sheets, roles, employees and more based on employee location. Take a look at the [Square Element docs](/docs/elements/square/) and get started today.
 
-#### Revel
+### Revel
 
 Add the Revel element to the new Employee hub. Use the Revel element to manage time sheets, roles, brands, tips and more based. Take a look at the [Revel Element docs](/docs/elements/revel/) and get started today.
 
-#### Oracle Eloqua: Support for bulk on `custom-objects` resource
+### Oracle Eloqua: Support for bulk on `custom-objects` resource
 
 Added support for bulk upload and download on the Oracle Eloqua `custom-objects` resource.
 
-#### Box: Enhanced `PATCH /documents/files/{id}/custom-fields`
+### Box: Enhanced `PATCH /documents/files/{id}/custom-fields`
 
 Now you can add `operation` as a query parameter to a `PATCH /documents/files/{id}/custom-fields` request.
 
-#### Xero: Authenticate in Cloud Elements 2.0
+### Xero: Authenticate in Cloud Elements 2.0
 
 You can authenticate an instance of the Xero element in Cloud Elements 2.0.
 
-#### Google Calendar
+### Google Calendar
 
 Use the new Google Calendar element to manage the calendar-list, calendar's event, and access-controls-list.
 
-#### Cisco Spark: Authenticate in Cloud Elements 2.0
+### Cisco Spark: Authenticate in Cloud Elements 2.0
 
 You can authenticate an instance of the Cisco Spark element in Cloud Elements 2.0.
 
-#### JIRA: `projects` resource
+### JIRA: `projects` resource
 
 Added the `projects` resource to the JIRA element.
 
