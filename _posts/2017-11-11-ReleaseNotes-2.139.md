@@ -6,9 +6,9 @@ layout: release-note-item
 release: 2.139
 ---
 
-### Elements
+## Elements
 
-#### Salesforce Libraries: Now Handles Implicit Path Creation
+### Salesforce Libraries: Now Handles Implicit Path Creation
 
 The Salesforce Libraries element now creates a path when creating a file or updating file metadata if the path does not exist. Implicit path creation works for the following endpoints:
 
@@ -16,19 +16,19 @@ The Salesforce Libraries element now creates a path when creating a file or upda
 * `PATCH /files/metadata `
 * `PATCH /files/{id}/metadata`
 
-#### Act-On: Implemented CSV file upload functionality for POST /lists
+### Act-On: Implemented CSV file upload functionality for POST /lists
 
 You can now upload a CSV file to POST the contents of the list along with the list headers. Uploading a file is an optional parameter. You can directly create the list without the contents of the list or can create the list along with its contents in the CSV file.
 
-#### BigCommerce: Updated `DELETE /product/{id}/sku/{skuId}`
+### BigCommerce: Updated `DELETE /product/{id}/sku/{skuId}`
 
 Changed `DELETE /product/{id}/sku/{imageId}` to `DELETE /product/{id}/sku/{skuId}`.
 
-#### QuickBooks Online: Customer Bill and Shipping Address transformations
+### QuickBooks Online: Customer Bill and Shipping Address transformations
 
 We've fixed the transformation of Bill and Shipping Address lines 2 and 3 so that they are now available for transformation in the `Customer` object.
 
-#### Marketo: Added endpoints
+### Marketo: Added endpoints
 
 We added the following endpoints:
 
@@ -42,7 +42,7 @@ We added the following endpoints:
 * Retrieve a program
 * Update a program
 
-#### Salesforce Marketing Cloud: Added endpoints
+### Salesforce Marketing Cloud: Added endpoints
 
 We added the following endpoints:
 
@@ -51,11 +51,11 @@ We added the following endpoints:
 * `PATCH /data-extensions/{id}/rows`
 * `GET /attribute-sets endpoint`
 
-#### Citrix ShareFile: Polling
+### Citrix ShareFile: Polling
 
 Configure ShareFile events with either polling or webhooks.
 
-#### Zuora: Supports OAuth 2.0 authentication
+### Zuora: Supports OAuth 2.0 authentication
 
 You can authenticate the Zuora element using OAuth 2.0 or Basic authentication.
 
@@ -65,7 +65,7 @@ Added the ability to create a formula as a resource on an element level. Create 
 
 ### User Profile
 
-#### Bug: Passwords could not be changed in Cloud Elements 2.0
+### Bug: Passwords could not be changed in Cloud Elements 2.0
 
 You can now change passwords in Cloud Element 2.0.
 

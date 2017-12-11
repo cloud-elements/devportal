@@ -6,23 +6,23 @@ release: 2.142
 heading: Release Notes
 ---
 
-### Elements
+## Elements
 
-#### Clover: New Element
+### Clover: New Element
 
 We added a new Clover element to manage employees, time sheets, and roles for the employees based on their location. Take a look at the [Clover Element docs](/docs/elements/clover/) and get started today.
 
-#### Facebook: Updated `/comments` resource
+### Facebook: Updated `/comments` resource
 
 We updated the `POST /comments` and `DELETE /comments` endpoints to support an update to Facebook `/comments` API's. Now for each request you must add a page access token.
 
-#### Xero: Updates
+### Xero: Updates
 
 * Added polling for UPDATED events.
 * Added support for element extendability. Add a resource and try it out!
 * Added three new resources: contacts, credit-memos & bank-transfers.
 
-#### QuickBooks Online: Added support for sandbox accounts
+### QuickBooks Online: Added support for sandbox accounts
 
 Enhanced QB Element to support Sandbox developer accounts. When authenticating an element instance, add the following to the `configuration` section of the authentication JSON:
 
@@ -34,7 +34,7 @@ Enhanced QB Element to support Sandbox developer accounts. When authenticating a
 
 See updated authentication steps in the [QuickBooks Online Element docs](/docs/elements/quickbooksonline/authenticate.html).
 
-#### Box: New endpoints in `custom-fields` resource
+### Box: New endpoints in `custom-fields` resource
 
 * Added the `PUT /files/{id}/custom-fields/{templateKey}` endpoint to update the custom fields value associated with a given file.
 * Added the `PUT /files/{id}/custom-fields/{templateKey}` endpoint to update custom field values associated with a given file.
