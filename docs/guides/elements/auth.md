@@ -1,8 +1,8 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
-seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Authentication Setup
+heading: Manage, Build and Extend Elements
+seo: Element Info | Element Builder | Cloud Elements API Docs
+title: Element Builder Authentication Setup
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -13,9 +13,9 @@ order: 23
 ValeOn: <!-- vale on -->
 ---
 
-# Custom Authentication Setup
+# Element Builder Authentication Setup
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Authentication"%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Authentication"%}
 
 The information that you need to enter to set up authentication with the API provider differs depending on the authentication type. If the API provider requires complex authentication you can override the default information with configurations, parameters , and hooks.
 
@@ -123,7 +123,7 @@ If you selected the incorrect authentication type, or find that you need to chan
 
 Continue to the next step, [Custom Configuration and Parameters](config.html).
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
 
 
 ## About OAuth Authentication

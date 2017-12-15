@@ -1,8 +1,8 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
-seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Config & Parameters
+heading: Manage, Build and Extend Elements
+seo: Element Info | Element Builder | Cloud Elements API Docs
+title: Element Builder Config & Parameters
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -13,9 +13,9 @@ order: 24
 ValeOn: <!-- vale on -->
 ---
 
-# Custom Configuration and Parameters
+# Element Builder Configuration and Parameters
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
 
 Element configuration and parameters work together solve various scenarios presented by API providers. When you set up your element configuration, you define the information that you want to store with the element. The information can include data that you collect from the user when they authenticate an instance of an element. You can also store variables in the configuration that you can act on with parameters and hooks. You can also store information that you need to pass with each request to the API provider.
 
@@ -90,7 +90,7 @@ To define a parameter :
 11. In **Parameter Description** enter a brief description of the parameter. If the parameter appears in the API documentation, this description also appears.
 8. Click **Save**.
 
-#### Element Parameter Parameters
+#### Element Parameter Fields
 
 | Parameter | Description   | Required   |
 | :------------- | :------------- | :------------- |
@@ -131,7 +131,7 @@ To delete a configuration or parameter, open the configuration or parameter, and
 
 Continue to the next step, [Custom Hooks](hooks.html).
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
 
 ## Test Authentication
 
