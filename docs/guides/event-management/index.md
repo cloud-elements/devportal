@@ -27,6 +27,6 @@ With Polling Cloud Elements executes a configured query every __n minutes__ and 
 With Webhooks the API provider lets Cloud Elements know what information has changed. Some API providers require some additional configuration setup for Event Management. Instructions and screen shots for these configurations can be found in the [Element Guides](/docs/elements.html) under Events for each API provider.
 
 ## Receiving Events
-Events can be sent to your application by setting the Event Notification Callback URL (`event.notification.callback.url`) configuration value to your application's URL during provisioning, such as `https://mycoolapp.com/callback`. You can also return events to the elements with an Event Notification Callback URL like `https://my.cloudelements.io/elements/api-v2/events/<Element-Key>/`.
+Events can be sent to your application by setting the Event Notification Callback URL (`event.notification.callback.url`) configuration value to your application's URL during provisioning, such as `https://mycoolapp.com/callback`. You can also return events to the elements with an Event Notification Callback URL like `https://api.cloud-elements.com/elements/api-v2/events/<Element-Key>/`.
 
 To update an active instance use the __PATCH__ __/instances__ or __PATCH__ __/instances/{id}/configuration/{configurationId}__ endpoints to add an Event Notification Callback URL.
