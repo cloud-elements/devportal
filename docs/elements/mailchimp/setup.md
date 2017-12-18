@@ -1,5 +1,6 @@
 ---
-heading: MailChimp
+heading: MailChimp v3.0
+apiProvider: MailChimp # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Endpoint Setup | MailChimp | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
@@ -16,7 +17,7 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must register an app with {{page.apiProvider}}. When you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** as the **API Key**, **API Secret**, and **Callback URL**.  If you plan to monitor events, also configure the **Webhook URL**.
+To authenticate a {{page.heading}} element instance you must register an app with {{page.apiProvider}}. When you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** as the **API Key**, **API Secret**, and **Callback URL**.  If you plan to monitor events, also set up webhooks by following the steps in [Set Up Events](#set-up-events).
 
 See the latest setup instructions in the [{{page.apiProvider}} documentation](https://developer.mailchimp.com/documentation/mailchimp/reference/authorized-apps/).
 
@@ -28,7 +29,7 @@ If you already created an application, follow the steps below to locate the **{{
 
 To find your OAuth 2.0 credentials:
 
-1. Log in to your account at [{{page.apiProvider}}](mailchimp.com).
+1. Log in to your account at [{{page.apiProvider}}](https://mailchimp.com/).
 2. In the upper right corner, click your name, and then select **Account**.
 ![Account](img/account.png)
 3. Click **Extras**, and then select **Registered apps**.
@@ -43,7 +44,7 @@ If you have not created an application, you need one to authenticate with {{page
 
 To create an application:
 
-1. Log in to your account at [{{page.apiProvider}}](mailchimp.com).
+1. Log in to your account at [{{page.apiProvider}}](https://mailchimp.com/).
 2. In the upper right corner, click your name, and then select **Account**.
 ![Account](img/account.png)
 3. Click **Extras**, and then select **Registered apps**.
@@ -57,49 +58,18 @@ To create an application:
 
 ## Set Up Events
 
-{{page.apiProvider}} supports webhooks. If you want to enable events when you authenticate an element instance, complete the steps below to set up webhooks with {{page.heading}}.
+{{page.apiProvider}} supports webhooks. If you want to enable events when you authenticate an element instance, complete the steps below to set up webhooks with {{page.apiProvider}}. You can set up webhooks after you authenticate with a `POST /lists/{id}/webhook` request.
 
-1. Log in to your account at [{{page.apiProvider}}](mailchimp.com).
+To set up webhooks:
+
+1. Log in to your account at [{{page.apiProvider}}](https://mailchimp.com/).
 2. Navigate to your **Lists**
 3. Choose the list to add a webhook to, and then navigate to the Settings.
 ![Settings](img/settings.png)
 4. Scroll down and click **Webhooks**.
 5. Click **Create New Webhook**.
+3. In **Callback URL** enter the URL to receive webhook notifications, such as `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}`.
 6. Set up your webhook, and then click **Save**.
-3. In **Webhook URL** enter `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}`.
-4. Click **Save**.
-5. Test the webhook. Click **Send ping webhook** and watch for a status code of 200.
-6. Record the **Webhook URL** which you will use when you set up events as the **Event Notification Callback URL**.
+6. Record the **Callback URL** which you will use when you set up events as the **Event Notification Callback URL**.
 
 Next [authenticate an element instance with {{page.apiProvider}}](authenticate.html).
-
-
-## Endpoint Setup
-
-Follow these steps to setup your MailChimp application with the endpoint.
-
-Via a web browser, login to your MailChimp account:
-[http://mailchimp.com/](http://mailchimp.com/)
-
-1. Click the arrow up near your profile
-
-2. Select ‘Account’
-![MailChimp Connected App step 1](http://cloud-elements.com/wp-content/uploads/2016/01/MailchimpAPI1.png)
-
-3. Under ‘Extras’ select ‘Registered apps’
-![MailChimp Connected App step 2](http://cloud-elements.com/wp-content/uploads/2016/01/MailchimpAPI2.png)
-
-4. Click ‘Register an app’
-![MailChimp Connected App step 3](http://cloud-elements.com/wp-content/uploads/2016/01/MailchimpAPI3.png)
-
-5. Input app info
-
-6. Input a ‘Redirect URI’
-
-7. Click ‘Create’
-![MailChimp Connected App step 4](http://cloud-elements.com/wp-content/uploads/2016/01/MailchimpAPI4.png)
-
-8. Make note of the ‘Client ID’, ‘Client Secret’ and ‘Redirect URI’ as they are needed for provisioning
-![MailChimp Connected App step 5](http://cloud-elements.com/wp-content/uploads/2016/01/MailchimpAPI5.png)
-
-Next [create an instance](mailchimp-create-instance.html).
