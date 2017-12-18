@@ -48,7 +48,7 @@ For more information about each field described here, see [Parameters](#paramete
 
 To authenticate an element instance with polling:
 
-1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.apiProvider}}](authenticate.html) .
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. In **Event Type** select **Polling**.

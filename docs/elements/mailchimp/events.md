@@ -1,16 +1,16 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+heading: MailChimp v3.0
+apiProvider: MailChimp # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Events | Name of Element | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 527
+elementKey: mailchimpv3
+apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URLparent: Back to Element Guides
 parent: Back to Element Guides
 order: 25
 ---
@@ -24,6 +24,8 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 ## Supported Events and Resources
 
 Cloud Elements supports webhook events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance. For more information about webhooks at {{page.apiProvider}} including the currently available webhooks, see [{{page.apiProvider}}'s webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
+
+To use webhooks you must set up a webhook for a list in MailChimp. You can either follow the steps in [API Provider Setup](setup.hrml) or make a `POST /lists/{id}/webhook` request after you authenticate an instance.
 
 ## Webhooks
 
@@ -39,7 +41,6 @@ To authenticate an element instance with webhooks:
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
@@ -66,12 +67,11 @@ To authenticate an element instance with webhooks:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
         "event.notification.enabled": true,
-        "event.notification.callback.url": "<CALLBACK_URL>",
-        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
+        "event.notification.callback.url": "<CALLBACK_URL>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -105,12 +105,11 @@ curl -X POST \
     "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "oauth.callback.url": "https://mycoolapp.com",
-    "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.key": "Rand0MAP1-key",
+    "oauth.api.secret": "fak3AP1-s3Cr3t",
+    "oauth.callback.url": "https;//mycoolapp.com",
     "event.notification.enabled": true,
-    "event.notification.callback.url": "https://mycoolapp.com/events",
-    "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxxxxx"
+    "event.notification.callback.url": "https://mycoolapp.com/events"
   },
   "tags": [
     "Docs"

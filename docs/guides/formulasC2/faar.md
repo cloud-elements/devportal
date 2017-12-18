@@ -1,6 +1,6 @@
 ---
 heading: Building Formulas
-seo: Build a Formula Template | Formulas | Cloud Elements API Docs
+seo: Build a Formula Template | Formulas | Cloud Elements API Docs | FaaR
 title: Use a Formula as a Resource
 description: How to build a formula template
 layout: sidebarleft
@@ -13,7 +13,7 @@ order: 27
 
 # Formula as a Resource
 
-You can expose formulas that have manual triggers as a resource. This enables you to use the formula as a synchronous API request.  After you update a formula to be used as a resource, you can make API requests to it at `https://api.cloud-elements.com/elements/api-v2/<resourceName>`. Using a formula as a resource enables you to further remove logic from your applications and also provides the ability to more efficiently chain requests together.
+You can expose formulas that have manual triggers as a resource, known as Formula as a Resource or FaaR. This enables you to use the formula as a synchronous API request.  After you update a formula to be used as a resource, you can make API requests to it at `https://api.cloud-elements.com/elements/api-v2/<resourceName>`. Using a formula as a resource enables you to further remove logic from your applications and also provides the ability to more efficiently chain requests together.
 
 The API requests are synchronous and so a response is required for further processing. To maintain efficiency, Cloud Elements imposes a processing time limit. If the request reaches that limit, the response notifies you.
 
