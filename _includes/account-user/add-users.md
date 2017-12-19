@@ -1,4 +1,4 @@
-As the organization-level user, you can add users to any accounts that you create.
+As the organization-level user, you can add users to any accounts that you create. When you create or update a user, you can assign specific roles to them. You can assign the Organization Administrator role to any user in the default account, but not to users outside of the default account. See [Manage Roles](roles.html) for more about roles and privileges.
 
 To create a user for an account:
 
@@ -6,10 +6,7 @@ To create a user for an account:
 2. In the **Users** section click **Add User**.
 3. Complete the **First Name**, **Last Name** and **Email** fields.
 4. Complete the **Password** field with a password that meets the [password policy](security-settings.html#configure-passwords) you configured on the Settings tab.
-5. If you want the user to be an organization or account administrator, select **Org Admin** or **Account Admin**. Otherwise continue to the next step. See [User Roles](user-management.html#user-roles) for more information about what each role can access.
-
-    {% include note.html content="You can assign the Organization Administrator roll only to users in the default company account. If you assign a user the Organization Administrator roll, you do not need to assign the Account Administrator roll also.  " %}
-
+5. If you want the user to be an organization or account administrator, select **Org Admin** or **Account Admin**. If you do not select either administrator role, the user receives a default role. See [Manage Roles](roles.html) for more information about what each role can access.
 4. Click <img src="img/btn-save.png" alt="Save" class="inlineImage">.
 
 After you create a user, they do not receive any notification. This is because many users do not need to access Cloud Elements directly. If the new user needs to access Cloud Elements, either give them the password that you entered or encourage them to reset their password.
