@@ -36,7 +36,7 @@ While you can work on different parts of an element throughout the entire creati
 
 <img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Define the basic element information (name, key, description, authentication type, API type, documentation URL, API version, and image).
 
-<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Configure the element properties (base URL pagination, and header information).
+<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Configure the element properties (base URL, pagination, and header information).
 
 <img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> Set up authentication information based on authentication types.
 
