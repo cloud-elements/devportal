@@ -1,5 +1,6 @@
 ---
-heading: MailChimp
+heading: MailChimp v3.0
+apiProvider: MailChimp # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Overview | MailChimp | Cloud Elements API Docs
 title: Overview
 description: Integrate MailChimp into your application via the Cloud Elements APIs.
@@ -11,21 +12,21 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the MailChimp Element
+# Welcome to the {{page.heading}} Element
 
+{{page.apiProvider}} provides marketing automation for e-commerce businesses.
 
-#### At a Glance
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
-In order to create a connection to MailChimp the following steps are required:
+## Element Details
 
-1. Set up the [endpoint](mailchimp-endpoint-setup.html)
-2. Call the `GET /elements/mailchimpv3/oauth/url` with your MailChimp API key and secret
-3. Call the `POST /instances` API to instantiate your MailChimp connected app
+| Element Information | Details     |
+| :------------- | :------------- |
+| API Documentation | [{{page.apiProvider}} API documentation](https://developer.mailchimp.com/documentation/mailchimp/reference/overview/) |
+| Authentication | OAuth 2.0  |
+| Events | Webhooks  |
+| Bulk | Supported for both upload and download. |
+| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://developer.mailchimp.com/documentation/mailchimp/guides/get-started-with-mailchimp-api-3/#throttling)|
 
-#### In Depth
-
-The MailChimp Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
-
-All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
-
-Get started by [setting up the endpoint](mailchimp-endpoint-setup.html).
+{% include Elements/index.md%}
