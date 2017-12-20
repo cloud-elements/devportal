@@ -1,5 +1,3 @@
-When you log in to Cloud Elements we'll ask if you'd like to switch the home page to the new Dashboard. If you want to return to the new user Welcome page, click **Switch to New User Experience** at the upper right.
-
 The Welcome Dashboard is a tabbed page where you can see information about your element instances, formula instances, recent errors, recent activity, recent formula execution errors, and recent formula executions.
 ![Welcome Dashboard](/assets/img/welcome-dashboard.png)
 
