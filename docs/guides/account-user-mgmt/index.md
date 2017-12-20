@@ -30,6 +30,7 @@ When creating transformations, any transformation created at the Organization le
 ## Security
 
 The organization administrator is the only user with access to the security section of Cloud Elements. In the Security section, an organization administrator can:
+
 * [Manage security settings](security-settings.html) like the password policy and two-factor authentication.
 * Add, update, and delete [Accounts](account-management.html) and [users](user-management.html).
 * Manage the [privileges assigned to roles](roles.html) in Cloud Elements.
