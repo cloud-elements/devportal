@@ -53,7 +53,7 @@ To start building an element:
 
     {% include note.html content="Cloud Elements accepts .jpg, jpeg, .png, and .gif image files." %}
 
-6. Click **Save and Next**.
+6. Click **Save & Next**.
 ![Save and Next](img/save-next.png)
 
 Continue to the next step, [Element Builder Properties](properties.html).

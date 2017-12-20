@@ -76,13 +76,18 @@ Use the Element Builder toolbar to move through the various pages in Element Bui
 
 ![Custom Element Toolbar](img/toolbar.png)
 
-<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Edit Element returns you to the custom element start page where you configure [information like the name, description, and hub](define-info.html).
+<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> **Information** navigates to the custom element start page where you configure [information like the name, description, and hub](define-info.html).
 
-<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Setup returns you to the custom element Setup page where you configure the [properties](define-info.html), [authentication](auth.html), [configuration](config.html), [parameters](config.html#set-up-element-parameters), [hooks](hooks.html), and [events](events.html).
+<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> **Setup** navigates to the custom element Setup page where you configure the [properties](define-info.html), [authentication](auth.html), [configuration](config.html), [parameters](config.html#set-up-element-parameters), [hooks](hooks.html), and [events](events.html).
 
-<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> My Resources returns you to the custom element Resources page where you [create and manage the custom resources of the element](resources.html).
+<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> **Resources** navigates to the custom element Resources page where you [create and manage the custom resources of the element](resources.html).
 
-<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> API Docs returns you to the [read-only API Docs](instances.html#test-an-element-instance) for the element where you review the docs and use an authenticated element instance to test requests.
+<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> **Revisions** navigates to the audit log.
+
+<img src="/assets/img/callouts/5.png" alt="5" class="inlineImage"> **API Docs** navigates to the [read-only API Docs](instances.html#test-an-element-instance) for the element where you review the docs and use an authenticated element instance to test requests.
+
+<img src="/assets/img/callouts/6.png" alt="6" class="inlineImage"> **Clone Element** begins the element cloning process.
+
 
 ## Clone and Delete Custom Elements
 
