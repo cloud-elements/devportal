@@ -30,6 +30,7 @@ To complete the Properties section:
 
     {% include note.html content="The Content-Type Header and Accept Headers have accompanying element parameters. You can change the values in the Properties section or in <a href=config.html#set-up-element-parameters>Parameters</a>.   " %}
 
+7. Click **Save**.
 7. [Define authentication information](auth.html).
 
 ### Properties Parameters

@@ -21,9 +21,10 @@ The information that you need to enter to set up authentication with the API pro
 
 Click the authentication type that you selected to see configuration instructions. If you selected Custom, you can skip directly to [Configuration and Parameters](config.html).
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#about-oauth-authentication> About OAuth Authentication</a><br><a href=#override-standard-oauth-2-0-flow>Override Standard OAuth 2.0 Flow</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#configure-oauth-2-0>Configure OAuth 2.0</a></br><a href=#configure-oauth-1-0>Configure OAuth 1.0</a></br><a href=#configure-basic-authentication>Configure Basic Authentication</a></br><a href=#configure-custom-authentication>Configure Custom Authentication</a></br><a href=#configure-aws-authentication>Configure AWS Authentication</a></br><a href=#change-the-authentication-type>Change the Authentication Type</a></br><a href=#test-authentication>Test Authentication</a></br><a href=#about-oauth-authentication> About OAuth Authentication</a><br><a href=#override-standard-oauth-2-0-flow>Override Standard OAuth 2.0 Flow</a>" type="info" %}
 
 ## Configure OAuth 2.0
+![OAuth 2.0 Authentication](img/oauth2.png)
 
 Cloud Elements provides the [properties](#oauth-2-0-parameters) needed to support a standard OAuth 2.0 flow. Each API provider implements OAuth 2.0 differently so you might need to supplement the parameters with additional configuration. Before setting up the OAuth 2.0 information, you need to create a Cloud Elements app at the API provider. Use the default information from that app. When users authenticate through Cloud Elements, they will connect with that app.
 
@@ -45,6 +46,7 @@ To configure OAuth 2.0 elements:
   * OAuth Refresh Interval (s)
   * OAuth Token Refresh URL
   * OAuth Revoke Token URL
+4. Unless you need to perform additional configuration, authenticate a test instance by clicking **Try it Out**.
 
 ### OAuth 2.0 Parameters
 
@@ -61,6 +63,7 @@ To configure OAuth 2.0 elements:
 | OAuth Revoke Token URL | oauth.token.revoke_url  |The URL to send requests to revoke refresh or access tokens. | N |
 
 ## Configure OAuth 1.0
+![OAuth 1.0 Authentication](img/oauth1.png)
 
 Cloud Elements provides the [parameters](#oauth-1-0-parameters) required to support a standard OAuth 1.0 flow. Each API provider implements OAuth 1.0 differently so you might need to supplement the parameters with additional configuration.
 
@@ -79,6 +82,7 @@ To configure OAuth 1.0 elements:
 5. In **OAuth Authorization Type (Header or Query)** select how the request passes authorization information to the API provider.
 6. In **OAuth Scope** enter a comma separated list of the permissions that the user will authorize your integration to have.
 7. In **OAuth User Secret** enter
+4. Unless you need to perform additional configuration, authenticate a test instance by clicking **Try it Out**.
 
 ### OAuth 1.0 Parameters
 
@@ -95,6 +99,7 @@ To configure OAuth 1.0 elements:
 |  OAuth User Secret  | oauth.user.token.secret | The user secret associated with the application authenticating with the API provider.   |  N  |
 
 ## Configure Basic Authentication
+![Basic Authentication](img/basic.png)
 
 In Basic access authentication, you typically provide a user name and password. In some cases you also provide an API Key. When setting up an element with Basic authentication we start you off with **Username** (key:`username`) and **Password**(key:`password`) configurations. If you need to add any other configurations like an API Key, do so in the Configuration step. API providers typically do not vary from the standard Basic authentication, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
@@ -107,6 +112,7 @@ In Basic access authentication, you typically provide a user name and password. 
 To configure custom authentication information, use the [Configuration](config.html#set-up-element-configuration), [Parameters](config.html/#set-up-element-parameters), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
 
 ## Configure AWS Authentication
+![AWSv4 Authentication](img/awsv4.png)
 
 Cloud Elements provides default authentication fields for API providers that use [Amazon Web Services Signature Version 4](http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) and [Version 2](http://docs.aws.amazon.com/general/latest/gr/signature-version-2.html). API providers typically do not vary from the standard AWS authentications, so you should keep the default properties. If you do need to make changes, you can update the properties or delete unneeded configurations.
 
@@ -116,6 +122,7 @@ Cloud Elements provides default authentication fields for API providers that use
 | :------------- | :------------- | :------------- |
 |  AWS Access Key ID  | The ID associated with your AWS access key.   |  Y  |
 |  AWS Secret Access Key  | The secret key used in the Signature Version 2 signing process |  Yes for version 2 only |
+| AWS Region Name, e.g., us-west-2   | The [Amazon API Gateway](http://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region) region name.  |  Yes for version 4 only |
 
 ## Change the Authentication Type
 
@@ -125,6 +132,17 @@ Continue to the next step, [Custom Configuration and Parameters](config.html).
 
 {% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Config & Parameters"%}
 
+## Test Authentication
+
+After you set up authentication you can authenticate an element instance to see if you can create a connection. If you chose Custom authentication or need to add additional configurations and parameters, you should set those up before testing authentication.
+
+To test your authentication:
+
+1. Navigate to **Configuration**, and then click **Try it Out**.
+2. On the authentication page, enter a name, and then complete any required configuration fields. These are the fields that you chose to appear on the UI.
+3. Click **Create Instance**.
+
+If the authentication succeeds, Cloud Elements creates an authenticated instance which you can use to test your authentication. You can also use it later when you test resources.
 
 ## About OAuth Authentication
 
