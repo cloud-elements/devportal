@@ -1,7 +1,7 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
-seo: Element Info | Elements | Cloud Elements API Docs
+heading: Manage, Build and Extend Elements
+seo: Element Info | Element Builder | Cloud Elements API Docs
 title: Build Custom Elements
 description: Defining element name and authentication
 layout: sidebarleft
@@ -15,7 +15,7 @@ ValeOn: <!-- vale on -->
 
 # Build Custom Elements
 
-You can build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can combine services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also use the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
+You can use Element Builder to build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. You can build elements for Rest APIs, SAP APIs, or even database applications. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can combine services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also use the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
 
 Users of this guide should be familiar with APIs, JavaScript, and JSON. To create an element we recommend that you have a thorough understanding of:
 
@@ -26,16 +26,28 @@ Users of this guide should be familiar with APIs, JavaScript, and JSON. To creat
 * The API provider's API documentation.
 * The Cloud Elements Hub APIs
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#navigate-custom-element-pages>Navigate Custom Element Pages</a></br><a href=#clone-and-delete-custom-elements>Clone and Delete Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
-
-
-Navigate Custom Element Pages
+{% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#navigate-element-builder>Navigate Element Builder</a></br><a href=#clone-and-delete-custom-elements>Clone and Delete Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
 
 ## The Workflow
 
 While you can work on different parts of an element throughout the entire creation process, in general you will follow the high-level workflow shown below.
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active=""%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active=""%}
+
+<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Define the basic element information (name, key, description, authentication type, API type, documentation URL, API version, and image).
+
+<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Configure the element properties (base URL, pagination, and header information).
+
+<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> Set up authentication information based on authentication types.
+
+<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> Define the configurations and related parameters needed to authenticate.
+
+<img src="/assets/img/callouts/5.png" alt="5" class="inlineImage"> Write custom pre-request and post-request hooks.
+
+<img src="/assets/img/callouts/6.png" alt="6" class="inlineImage"> Set up polling or webhook events.
+
+<img src="/assets/img/callouts/7.png" alt="4" class="inlineImage"> Define the API provider resources to connect to.
+
 
 ## Before You Begin
 
@@ -58,19 +70,24 @@ If you have already built or imported a custom element, you can manage the confi
 To manage an existing custom element, hover over the element card, and then click **Configuration**.
 ![Configuration](img/configuration.gif)
 
-## Navigate Custom Element Pages
+## Navigate Element Builder
 
-Use the element toolbar to move through the various pages where you configure an element and it resources, clone an element, and delete an element.
+Use the Element Builder toolbar to move through the various pages in Element Builder where you configure an element and it resources, clone an element, and delete an element.
 
 ![Custom Element Toolbar](img/toolbar.png)
 
-<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> Edit Element returns you to the custom element start page where you configure [information like the name, description, and hub](define-info.html).
+<img src="/assets/img/callouts/1.png" alt="1" class="inlineImage"> **Information** navigates to the custom element start page where you configure [information like the name, description, and hub](define-info.html).
 
-<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> Setup returns you to the custom element Setup page where you configure the [properties](define-info.html), [authentication](auth.html), [configuration](config.html), [parameters](config.html#set-up-element-parameters), [hooks](hooks.html), and [events](events.html).
+<img src="/assets/img/callouts/2.png" alt="2" class="inlineImage"> **Setup** navigates to the custom element Setup page where you configure the [properties](define-info.html), [authentication](auth.html), [configuration](config.html), [parameters](config.html#set-up-element-parameters), [hooks](hooks.html), and [events](events.html).
 
-<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> My Resources returns you to the custom element Resources page where you [create and manage the custom resources of the element](resources.html).
+<img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> **Resources** navigates to the custom element Resources page where you [create and manage the custom resources of the element](resources.html).
 
-<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> API Docs returns you to the [read-only API Docs](instances.html#test-an-element-instance) for the element where you review the docs and use an authenticated element instance to test requests.
+<img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> **Revisions** navigates to the audit log.
+
+<img src="/assets/img/callouts/5.png" alt="5" class="inlineImage"> **API Docs** navigates to the [read-only API Docs](instances.html#test-an-element-instance) for the element where you review the docs and use an authenticated element instance to test requests.
+
+<img src="/assets/img/callouts/6.png" alt="6" class="inlineImage"> **Clone Element** begins the element cloning process.
+
 
 ## Clone and Delete Custom Elements
 

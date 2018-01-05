@@ -1,8 +1,8 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
-seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Events
+heading: Manage, Build and Extend Elements
+seo: Element Info | Element Builder | Cloud Elements API Docs
+title: Element Builder Events
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -13,7 +13,7 @@ order: 28
 ValeOn: <!-- vale on -->
 ---
 
-# Events
+# Element Builder Events
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Events"%}
 

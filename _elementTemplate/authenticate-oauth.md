@@ -19,7 +19,7 @@ order: 20
 
 You can authenticate with {{page.apiProvider}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.apiProvider}} platform.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#authentication-parameters>Authentication Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
@@ -70,7 +70,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.ap
 | apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
 | callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
 
-#### Example cURL
+#### Example Request
 
 ```bash
 curl -X GET \
@@ -80,8 +80,6 @@ curl -X GET \
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
-
-<Replace the below oauthUrl value with an actual one from Postman.>
 
 ```json
 {
@@ -94,7 +92,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
 
-Provide the response from the previous step to the users. After they authenticate, {{page.apiProvider}} provides the following information in the response:
+Provide the `code` in the response from the previous step to the users. After users authenticate, {{page.apiProvider}} provides the following information in the response:
 
 * code
 * state
@@ -128,9 +126,9 @@ To authenticate an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.api.key": "<{{page.heading}} app {{page.apiKey}}>",
-      	"oauth.api.secret": "<{{page.heading}} app {{page.apiSecret}}>",
-        "oauth.callback.url": "<{{page.heading}} app {{page.callbackURL}} >",
+        "oauth.api.key": "<{{page.apiProvider}} app {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.apiProvider}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -147,7 +145,7 @@ To authenticate an element instance:
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 
-#### Example cURL
+#### Example Request
 
 ```bash
 curl -X POST \
@@ -172,9 +170,9 @@ curl -X POST \
   "name": "API Instance"
 }'
 ```
-## Parameters
+## Authentication Parameters
 
-API parameters not shown in {{site.console}} are in `code formatting`.
+API parameters in the UI are **bold**, while parameters available in the instances API are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
@@ -182,11 +180,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
-|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+|  **Name**</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
 | `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
-| tags | {{site.data.glossary.element-auth-tags}} | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+| Tags</br>`tags` | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
 
