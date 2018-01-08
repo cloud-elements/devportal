@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing Beta
+heading: Infusionsoft Marketing Automation Beta
 seo: API Docs | Infusionsoft Marketing | Cloud Elements API Docs
 title: API Docs
 description: Infusionsoft Marketing API Documentation.

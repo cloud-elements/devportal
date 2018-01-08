@@ -1,6 +1,6 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Transform Data | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Transform Data | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc

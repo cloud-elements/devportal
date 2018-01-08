@@ -1,8 +1,10 @@
 ---
-heading: Infusionsoft eCommerce
-seo: API Docs | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: API Docs | Infusionsoft Online Sales
+ | Cloud Elements API Docs
 title: API Docs
-description: Infusionsoft eCommerce API Documentation.
+description: Infusionsoft Online Sales
+ API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 321

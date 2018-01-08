@@ -1,8 +1,8 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Overview | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Overview | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Overview
-description: Integrate Infusionsoft eCommerce into your application via the Cloud Elements APIs.
+description: Integrate Infusionsoft Online Sales into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 321
@@ -11,12 +11,12 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the Infusionsoft eCommerce Element
+## Welcome to the Infusionsoft Online Sales Element
 
 
 #### At a Glance
 
-In order to create a connection to Infusionsoft eCommerce the following steps are required:
+In order to create a connection to Infusionsoft Online Sales the following steps are required:
 
 1. Set up the [endpoint](infusionsoft-ecommerce-endpoint-setup.html)
 2. Call the `GET /elements/infusionsoftecommerce/oauth/url` with your Infusionsoft API key and secret

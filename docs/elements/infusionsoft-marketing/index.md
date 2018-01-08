@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing Beta
+heading: Infusionsoft Marketing Automation Beta
 seo: Overview | Infusionsoft Marketing | Cloud Elements API Docs
 title: Overview
 description: Integrate Infusionsoft Marketing into your application via the Cloud Elements APIs.
