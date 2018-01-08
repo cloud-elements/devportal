@@ -1,6 +1,6 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Error Codes | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Error Codes | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: sidebarelementdoc

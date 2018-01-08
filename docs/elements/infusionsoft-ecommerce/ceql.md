@@ -1,6 +1,6 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Query Language | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Query Language | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

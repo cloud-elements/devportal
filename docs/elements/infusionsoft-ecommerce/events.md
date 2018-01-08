@@ -1,8 +1,8 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Events | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Events | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Events
-description: Enable Infusionsoft eCommerce events for your application.
+description: Enable Infusionsoft Online Sales events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 321

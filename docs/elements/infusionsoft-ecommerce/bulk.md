@@ -1,6 +1,6 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Bulk APIs | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Bulk APIs | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Bulk APIs
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
