@@ -55,7 +55,7 @@ To update a user's role or information:
 
 ## Deactivate and Reactivate a User
 
-You can use Cloud Elements 2.0 to deactivate a user or activate an already deactivated user. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs. Deactivating a user also stops all active jobs associated with the user.
+You can use Cloud Elements 2.0 to deactivate a user or activate an already deactivated user. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs. Deactivating a user also stops all active jobs associated with the user. Jobs include bulk jobs, element instance pollers, and formula instance cron triggers.
 
 {% include note.html content="When you deactivate a user we maintain all of their element and formula instances. If you want to remove those instances, you must <a href=user-managementAPI.html#deactivate-and-reactivate-a-user>use the API</a>.  " %}
 

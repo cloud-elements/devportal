@@ -355,7 +355,7 @@ The `password` appears in the response only if you change the password.
 
 You can deactivate a user or activate an already deactivated user with the user `id` and the `PATCH /users/{id}` endpoint. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs. Deactivating a user also stops all active jobs associated with the user.
 
-{% include note.html content="When you deactivate a user we maintain all of their element and formula instances. If you want to remove those instances, add <code>permanent=true</code> to the request.  " %}
+{% include note.html content="When you deactivate a user we maintain all of their element and formula instances. If you want to remove those instances, add <code>?permanent=true</code> to the request as a query parameter. For example, <code>https://api.cloud-elements.com/elements/api-v2/users/3833?permanent=true</code>.  " %}
 
 ### Deactivate and Reactivate Account Parameters
 
@@ -363,7 +363,7 @@ You can deactivate a user or activate an already deactivated user with the user 
 | :------------- | :------------- | :------------- |
 |  id  |  {{site.data.table-desc.account-id}}  | Y |
 | active   | Set to `false` to deactivate a user and set to `true` to activate a user.  | Boolean  |
-| permanent   | When `active` is also set to `false` and `permanent` is set to `true`, Cloud Elements discards all instances associated with the user.  | Boolean  |
+| permanent   | Query parameter. When `active` is also set to `false` and `permanent` is set to `true`, Cloud Elements discards all instances associated with the user.  | Boolean  |
 
 ### Deactivate Account Example Request
 
