@@ -6,7 +6,7 @@ title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: id
+elementId: 5601
 elementKey: googlesuite
 apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
 apiSecret: Client secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret

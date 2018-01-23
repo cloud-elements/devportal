@@ -6,7 +6,7 @@ title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5601
 elementKey: googlesuite
 apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
 apiSecret: Client secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
@@ -59,7 +59,7 @@ After successfully authenticating, we give you several options for next steps. [
 
 ### Configure Polling Through API
 
-Use the `/instances` endpoint to authenticate with Google Sheets and create an element instance with polling enabled.
+Use the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance with polling enabled.
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
 

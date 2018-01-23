@@ -6,7 +6,7 @@ title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5601
 elementKey: googlesuite
 apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
 apiSecret: Client secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
@@ -102,4 +102,4 @@ To enable APIs:
 3. Record the **{{page.apiKey}}** and **{{page.apiSecret}}** to use when you authenticate.
 ![Key Secret and URL](img/sheets-creds.png)
 
-Next [authenticate an element instance with Google Sheets](authenticate.html).
+Next [authenticate an element instance with Google Suite](authenticate.html).
