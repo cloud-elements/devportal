@@ -56,6 +56,7 @@ layout: sidebarelementtile
 * [![Google Calendar](https://my.cloudelements.io/assets/img/elements/googlecalendar.svg)Google Calendar](./elements/google-calendar/)
 * [![Google Drive](/assets/img/element-logos/googledrive.png)Google Drive](./elements/googledrive/)
 * [![Google Sheets](/assets/img/element-logos/googlesheets.png)Google Sheets](./elements/googlesheets/)
+* [![Google Suite](/assets/img/element-logos/lockup_gsuite.svg)Google Suite](./elements/google-suite/)
 * [![GoToWebinar](/assets/img/element-logos/gotowebinar.png)GoToWebinar](./elements/gotowebinar/)
 * [![Great Plains](/assets/img/element-logos/greatplains.png)MS Great Plains Beta](./elements/greatplains/)
 * [![Help Scout](/assets/img/element-logos/helpscout.png)Help Scout](./elements/helpscout/)
