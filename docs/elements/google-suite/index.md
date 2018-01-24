@@ -13,7 +13,7 @@ order: 1
 
 # Welcome to the {{page.heading}} Element
 
-Google Suites provides access to your messages, calendars, contacts and other Google Suite data.
+{{page.heading}} provides access to your messages, calendars, contacts and other Google Suite data.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
