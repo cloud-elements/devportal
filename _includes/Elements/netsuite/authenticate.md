@@ -6,7 +6,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication uses either the NetSuite supported __Token-Based__ or __Basic__ authentication, and you'll need to sign in to {{page.heading}} as part of the process. See the [setup page](setup.html) for more details on how to obtain the authentication information you'll need.
+Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} authentication uses either **Custom** (Netsuite's Token-Based) or __Basic__ authentication, and you'll need to sign in to {{page.heading}} as part of the process. See the [setup page](setup.html) for more details on how to obtain the authentication information you'll need.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -18,22 +18,21 @@ To authenticate an element instance:
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 1. Enter a name for the element instance.
 1. Choose if you are connecting to a NetSuite sandbox.
-1. Enter the **Account ID** that you identified in the [Service Provider Setup](setup.html) section.
-1. Select the Authentication Type for the element instance. Choose **Basic** or **TokenBasedAuthentication**, based on the type of authentication you are using.
-2. Click **Show Optional Fields**.
+1. Enter the **Account ID** that you identified in the [API Provider Setup](setup.html) section.
+1. Select the Authentication Type for the element instance. Choose **Basic** or **Custom**, based on the type of authentication you are using.
 3. Complete the fields required for your selected authentication type:
 
-    | Basic | TokenBasedAuthentication   |
+    | Basic | Custom   |
     | :------------- | :------------- |
     |  Email  |  Consumer Key  |
     |  User Password  |  Consumer Secret  |
-    |  Email  |  Access Token ID  |
-    |  App ID  |  Access Token Secret  |
+    |  App ID  |  Access Token ID  |
+    |    |  Access Token Secret  |
 
+2. Click **Show Optional Fields**.
 1. Choose whether to enforce single sessions:
     * Select `true` to you ensure that Cloud Elements does not send multiple requests to your {{page.heading}} at one time. This may be necessary for certain trial NetSuite accounts.
     * Select `false` to allow multiple requests. You must also provide a **Single Session Lock Key** which can be any alphanumeric value that is unique within the Cloud Elements environment.
-
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -48,7 +47,7 @@ If you are configuring events, see the [Events section](events.html).
 
 To create an element instance:
 
-1. Construct a JSON body based on your authentication type, either Basic or Token Based. See [Parameters](#parameters) for detailed descriptions.
+1. Construct a JSON body based on your authentication type, either Basic or Custom. See [Parameters](#parameters) for detailed descriptions.
 
     **Basic Authentication**
 
@@ -75,7 +74,7 @@ To create an element instance:
     }
     ```
 
-    **Token Based Authentication**
+    **Custom Authentication**
 
      ```json
      {
@@ -83,17 +82,17 @@ To create an element instance:
          "key": "{{page.elementKey}}"
        },
        "configuration": {
-         "netsuite.sandbox": false,
-         "netsuite.accountId": "my_account_id",
-         "netsuite.single.session": true,
-         "netsuite.single.session.key": "my_unique_key",
-         "authentication.type": "TokenBasedAuthentication",
-         "consumer_key": "consumer_key_1234567",
-        "consumer_secret": "secret_1234567",
-        "token_id": "token_1234",
-        "token_secret": "token_secret_1234",
-        "filter.response.nulls": true,
-         "event.notification.enabled": false
+          "netsuite.sandbox": false,
+          "netsuite.accountId": "my_account_id",
+          "netsuite.single.session": true,
+          "netsuite.single.session.key": "my_unique_key",
+          "authentication.type": "custom",
+          "consumer_key": "consumer_key_1234567",
+          "consumer_secret": "secret_1234567",
+          "token_id": "token_1234",
+          "token_secret": "token_secret_1234",
+          "filter.response.nulls": true,
+          "event.notification.enabled": false
        },
        "tags": [
          "<Add_Your_Tag>"
@@ -141,7 +140,7 @@ curl -X POST \
 }'
 ```
 
-#### Token Based Authentication
+#### Custom Authentication
 
 ```bash
 curl -X POST \
@@ -157,7 +156,7 @@ curl -X POST \
     "netsuite.accountId": "my_account_id",
     "netsuite.single.session": true,
     "netsuite.single.session.key": "my_unique_key",
-    "authentication.type": "TokenBasedAuthentication",
+    "authentication.type": "custom",
     "consumer_key": "consumer_key_1234567",
     "consumer_secret": "secret_1234567",
     "token_id": "token_1234",
@@ -186,14 +185,14 @@ See [setting up the NetSuite service](setup.html) for information on how to obta
 | Account ID</br>`netsuite.accountId` | the NetSuite account ID | string | Y |
 | Enforce Single Session </br>`netsuite.single.session` | whether to use single session to limit API requests to this account | boolean | N |
 | Specify Single Session Lock Key</br>`netsuite.single.session.key` | the unique key for this single session (only applicable if single session = true) | Y if enforcing |
-| Authentication Type</br>`authentication.type` | the authentication type, which must be either `Basic` or `TokenBasedAuthentication` | string | Y |
+| Authentication Type</br>`authentication.type` | the authentication type, which must be either `casic` or `custom` | string | Y |
 | Email</br>`user.username` | the email of a NetSuite authenticated user (only applicable for `Basic` authentication) | string | Y if Basic Authentication |
 | User Password</br>`user.password` | the password of a NetSuite authenticated user (only applicable for `Basic` authentication) | string | Y if Basic Authentication |
 | App ID `netsuite.appId` | the App ID of a NetSuite integration (only applicable for `Basic` authentication) | string | Y if Basic Authentication |
-| Consumer Key</br>`consumer_key` | the consumer key of a token-based NetSuite integration (only applicable for `TokenBasedAuthentication` authentication) | string | Y if Token Based Authentication |
-| Consumer Secret</br>`consumer_secret` | the consumer secret of a token-based NetSuite integration (only applicable for `TokenBasedAuthentication` authentication) | string |Y if Token Based Authentication |
-| Access Token ID</br> `token_id` | the token ID of a token-based NetSuite integration (only applicable for `TokenBasedAuthentication` authentication) | string |Y if Token Based Authentication |
-| Access Token Secret</br>`token_secret` | the token secret of a token-based NetSuite integration (only applicable for `TokenBasedAuthentication` authentication) | string |Y if Token Based Authentication |
+| Consumer Key</br>`consumer_key` | For Custom authentication, the consumer key of a token-based NetSuite integration. | string | Y if Token Based Authentication |
+| Consumer Secret</br>`consumer_secret` | For Custom authentication, the consumer secret of a token-based NetSuite integration. | string |Y if Token Based Authentication |
+| Access Token ID</br> `token_id` | For Custom authentication, the token ID of a token-based NetSuite integration. | string |Y if Token Based Authentication |
+| Access Token Secret</br>`token_secret` | For Custom authentication, the token secret of a token-based NetSuite integration. | string |Y if Token Based Authentication |
 | Filter null values from the response</br>`filter.response.nulls` | whether or not to filter out _null_ values from the response | boolean | N |
 
 ## Example Response
