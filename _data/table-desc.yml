@@ -17,7 +17,7 @@ retry-status-codes: "A comma-separated list (<code>500,502</code>) of codes, ran
 
 formula-path: "Support earlier formulas where <code>path</code> defined variables, such as an {ID} variable in an endpoint. In the latest version, the path parameter is unnecessary. "
 
-formula-body: "Specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the <code>body</code> parameter. For example, <code>{$steps.previousStep.body}</code>. "
+formula-body: "Specifies the JSON body to send with the related request. Construct the JSON body in another step and refer to it in the <code>body</code> parameter. For example, <code>${steps.previousStep.body}</code>. "
 
 acceptable-codes: "A comma-separated list (<code>200,201</code>) of codes, range (<code>200-205</code>), or both (<code>200-205,208</code>) returned in the response that indicates success. "
 

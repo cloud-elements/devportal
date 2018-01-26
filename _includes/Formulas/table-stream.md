@@ -6,5 +6,5 @@
 | Download/Upload API</br>`uploadApi`/`downloadApi`  |  The endpoint, such as `hubs/crm/contacts`.  | Y |
 | Download/UploadHeaders</br>`uploadHeaders`/`downloadHeaders`  |  {{site.data.table-desc.formula-headers}}  | N |
 | Download/UploadQuery</br>`uploadQuery`/`downloadQuery`  |  {{site.data.table-desc.formula-query}}  | N |
-| Upload Form Data</br>`uploadFormData` | Specifies the form data to send with the related request. Construct the form data in another step and refer to it in the Upload Form Data parameter. For example, <code>$steps.previousStep.formdata</code>. | N |
+| Upload Form Data</br>`uploadFormData` | Specifies the form data to send with the related request. Construct the form data in another step and refer to it in the Upload Form Data parameter. For example, <code>${steps.previousStep.formdata}</code>. | N |
 | Upload Form Parameter Name</br>`uploadFormDataName` | Specifies the name of the form parameter. | N |
