@@ -2,7 +2,7 @@ User roles define the information that a specific user assigned to the role can 
 
 Cloud Elements supports the following roles:
 
-* Organization Administrator &mdash; The Organization Administrator can manage all aspects of security; create elements, formula templates, and common resources for the organization;  and can access all logs in Activity.
-* Account Administrator &mdash; The Organization Administrator performs the same function of the Organization Administrator, but only on the account where they are the administrator. Account Administrator cannot create or manage accounts or set security rules.
+* Organization Administrator &mdash; Manage all aspects of security; create elements, formula templates, and common resources for the organization;  and can access all logs in Activity.
+* Account Administrator &mdash; Performs the same function of the Organization Administrator, but only on the account where they are the administrator. Account Administrator cannot create or manage accounts or set security rules.
 * Default User &mdash; A non-administrator role for users in non-default accounts.
 * Organization User &mdash; non-administrator users in the default company account. Users with the Organization User have no different privileges than other default users.
