@@ -1,5 +1,5 @@
 ---
-title: Cloud Elements Version 2.149
+title: Cloud Elements Version 2.150
 date: 2018-01-28
 layout: release-note-item
 release: 2.150
