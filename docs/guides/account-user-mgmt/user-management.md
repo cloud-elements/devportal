@@ -12,7 +12,6 @@ parent: Back to Guides
 order: 20
 redirect_from:
   - /docs/platform/accounts/account-management.html
-Instructions: # To add the Roles table: From the Skeletor project, SecurityRoles.jsx file, copy the <StyledTable>. In this file, change the <StyledTable> to <table>. Find and replace <StyledCheckbox checked disabled /> with {% icon fa-check-square-o %}. Find and replace <StyledCheckbox checked={false} disabled /> with {% icon fa-square-o %}.
 ValeOn: <!-- vale on -->
 ---
 
@@ -20,7 +19,7 @@ ValeOn: <!-- vale on -->
 
 As the organization administrator you can manage the users related to the accounts in your organization. You can create, retrieve, update, delete, and search users. To manage users, you must log in as the organization administrator. Even a user that you add to the default account cannot access the account management pages unless they are designated an organization administrator.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#user-roles>User Roles</a></br><a href=#update-user-roles-and-information>Update User Roles and Information</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#access-user-management>Access User Management</a></br><a href=#add-a-user>Add a User</a></br><a href=#update-user-roles-and-information>Update User Roles and Information</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
 ## Access User Management
 
@@ -33,10 +32,6 @@ To see the users associated with an account:
 
 The users associated with an account appear in the User section.
 ![Users](img/users.png)
-
-## User Roles
-
-{% include account-user/roles.md%}
 
 ## Add a User
 
@@ -60,7 +55,9 @@ To update a user's role or information:
 
 ## Deactivate and Reactivate a User
 
-You can use Cloud Elements 2.0 to deactivate a user or activate an already deactivated user. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs.
+You can use Cloud Elements 2.0 to deactivate a user or activate an already deactivated user. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs. Deactivating a user also stops all active jobs associated with the user. Jobs include bulk jobs, element instance pollers, and formula instance cron triggers.
+
+{% include note.html content="When you deactivate a user we maintain all of their element and formula instances. If you want to remove those instances, you must <a href=user-managementAPI.html#deactivate-and-reactivate-a-user>use the API</a>.  " %}
 
 To deactivate or activate a user:
 

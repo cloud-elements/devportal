@@ -1,6 +1,6 @@
 ---
 heading: Campaign Monitor
-seo: API Provider Setup | API Provider setup | Name of Element | Cloud Elements API Docs
+seo: API Provider Setup | API Provider setup | Campaign Monitor | Cloud Elements API Docs
 title: API Provider Setup
 description: API provider setup
 layout: sidebarelementdoc

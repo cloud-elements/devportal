@@ -9,7 +9,7 @@
 | Element Information | Details     |
 | :------------- | :------------- |
 | API Documentation | [Netsuite API documentation](http://www.netsuite.com/help/helpcenter/en_US/srbrowser/Browser2016_2/schema/record/account.html) |
-| Authentication | Custom  |
+| Authentication | Custom and Basic  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|

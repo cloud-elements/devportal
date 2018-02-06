@@ -1,7 +1,12 @@
 ---
+<<<<<<< HEAD
 heading: Manage Elements
+=======
+valeOff: <!-- vale off -->
+heading: Manage, Build and Extend Elements
+>>>>>>> fae395840cef81b92ea53f3894f4d1ce01786a40
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Resources
+title: Element Builder Resources
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -14,8 +19,9 @@ map_name: usermap
 box_number: 5
 ---
 
-# Custom Resources
+# Element Builder Resources
 
+<<<<<<< HEAD
 Add resources to existing elements or define resources for a custom element all within a familiar API documentation format. As you create new resources, keep the API documentation of the API provider close. You will refer to it often.
 
 ## Add Resources
@@ -191,3 +197,26 @@ To configure the endpoint:
 ## Delete
 
 ## Extend
+=======
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Resources"%}
+
+
+
+After you set up your element, you can add resources to start making requests. As you create new resources, keep the API documentation of the API provider close. You will refer to it often.
+
+The last step in setting up an element is to add resources to it. To add a resource, click **Resources** in the toolbar. After you arrive on the editable Resources page, follow the instructions in [Define New Resources](#define-new-resources).
+![My Resources](img/eb-my-resources.png)
+
+
+Certain resources automatically appear based on the hub. For example, if you create an element in the CRM hub, Cloud Elements creates endpoints resources like accounts, contacts, leads, and opportunities. The resources created differ from hub to hub, but we will always create the following resources:
+
+* /ping
+* /objects
+* /objectName
+
+{% include note.html content="Throughout this section, we provide several examples. To keep them consistent, we are using the use case of adding a <code>/deals</code> resource to a CRM element.  " %}
+
+{% include callout.html content="<strong>On this page</strong></br><a href=#define-new-resources>Define New Resources</a></br><a href=#delete-endpoints>Delete Endpoints</a></br><a href=#copy-endpoints>Copy Endpoints</a></br><a href=#chaining-resources>Chaining Resources</a>" type="info" %}
+
+{% include elements-guide/define-new-resource.md%}
+>>>>>>> fae395840cef81b92ea53f3894f4d1ce01786a40

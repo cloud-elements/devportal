@@ -34,14 +34,14 @@ Each account includes attributes that you can use to identify the account or int
 
 ## Add an Account
 
-As an organization administrator, you can add an account to your organization.
+As an organization administrator, you can add an account to your organization. Accounts typically represent your customer.
 
 To add an account:
 
 1. Click <img src="img/btn-security.png" alt="Security" class="inlineImage"> to open the the Security Settings page.
 2. Click the **Accounts** tab.
 3. Click the add accounts button.
-![Add Accounts](img/)
+![Add Accounts](img/Create_New_Account.png)
 2. Enter a name for the account, and then click **Create**.
 3. Update the description to provide more information about the account.
 

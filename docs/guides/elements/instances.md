@@ -1,6 +1,6 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
+heading: Manage, Build and Extend Elements
 seo: Authenticating an Element Instance | Elements | Cloud Elements API Docs
 title: Authenticated Element Instances
 description: Authenticating an element instance with an API provider

@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 
 Organization administrators can manage the users related all accounts in your organization, while account administrators can manage users in specific accounts with the `/users` endpoint. You can create, retrieve, update, delete, and search users. To manage users, you must include a valid Organization Secret and the User Secret of an organization administrator in the header of any API requests to `/user`. If any requests come from someone else, even a user that you add to the default account, they will receive a `401 Unauthorized` error code.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#get-all-users>Get All Users</a></br><a href=#user-roles>User Roles</a><a href=#add-a-user>Add a User</a></br><a href=#get-a-specific-user>Get a Specific User</a></br><a href=#assign-a-role>Assign a Role</a></br><a href=#remove-a-role>Remove a Role</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#get-all-users>Get All Users</a></br><a href=#add-a-user>Add a User</a></br><a href=#get-a-specific-user>Get a Specific User</a></br><a href=#assign-a-role>Assign a Role</a></br><a href=#remove-a-role>Remove a Role</a></br><a href=#update-a-user>Update a User</a></br><a href=#deactivate-and-reactivate-a-user>Deactivate and Reactivate a User</a></br><a href=#delete-a-user>Delete a User</a>" type="info" %}
 
 ## Get All Users
 
@@ -126,12 +126,6 @@ The following user attributes are deprecated and you can ignore them:
 * `credentialsNonExpired`
 * `accountNonExpired`
 * `enabled`
-
-## User Roles
-
-{% include account-user/roles.md%}
-
-See [Assign a Role](#assign-a-role) for steps to add roles to your users.
 
 ## Add a User
 
@@ -359,15 +353,17 @@ The `password` appears in the response only if you change the password.
 
 ## Deactivate and Reactivate a User
 
-You can deactivate a user or activate an already deactivated user with the user `id` and the `PATCH /users/{id}` endpoint. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs.
+You can deactivate a user or activate an already deactivated user with the user `id` and the `PATCH /users/{id}` endpoint. After you deactivate a user, they still appear in Cloud Elements 2.0, but can no longer access the Cloud Elements APIs. Deactivating a user also stops all active jobs associated with the user.
+
+{% include note.html content="When you deactivate a user we maintain all of their element and formula instances. If you want to remove those instances, add <code>?permanent=true</code> to the request as a query parameter. For example, <code>https://api.cloud-elements.com/elements/api-v2/users/3833?permanent=true</code>.  " %}
 
 ### Deactivate and Reactivate Account Parameters
 
 | Name | Description   | Required |
 | :------------- | :------------- | :------------- |
 |  id  |  {{site.data.table-desc.account-id}}  | Y |
-
-To get a list of users including ids see [[Get all Users](#get-all-users).
+| active   | Set to `false` to deactivate a user and set to `true` to activate a user.  | Boolean  |
+| permanent   | Query parameter. When `active` is also set to `false` and `permanent` is set to `true`, Cloud Elements discards all instances associated with the user.  | Boolean  |
 
 ### Deactivate Account Example Request
 

@@ -1,8 +1,8 @@
 ---
 valeOff: <!-- vale off -->
-heading: Manage Elements
+heading: Manage, Build and Extend Elements
 seo: Element Info | Elements | Cloud Elements API Docs
-title: Custom Hooks
+title: Element Builder Hooks
 description: Defining element name and authentication
 layout: sidebarleft
 apis: API Docs
@@ -13,9 +13,9 @@ order: 26
 ValeOn: <!-- vale on -->
 ---
 
-# Custom Hooks
+# Element Builder Hooks
 
-{% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
+{% include workflow.html displayNames="Info,Properties,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,properties.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Hooks"%}
 
 Hooks enable you to execute custom JavaScript before an API request (pre-request hook) and after the API provider sends a response (post-response hook). You can use two types of hooks when you create an element: global hooks and resource hooks. Global hooks happen on every request or response, while resource hooks happen only on requests to and responses from specific endpoints.
 

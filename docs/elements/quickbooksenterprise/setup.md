@@ -1,6 +1,6 @@
 ---
 heading: QuickBooks Enterprise
-seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+seo: API Provider Setup | API provider setup | QuickBooks Enterprise | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc

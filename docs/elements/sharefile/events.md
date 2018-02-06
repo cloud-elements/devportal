@@ -131,7 +131,7 @@ https://api.cloud-elements.com/elements/api-v2/instances \
     "sharefile.subdomain": "cloud-elements",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://my.cloudelements.io/elements/api-v2/events/{{page.elementKey}}/",
+	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
     	"documents": {

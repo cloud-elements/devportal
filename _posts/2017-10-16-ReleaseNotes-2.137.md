@@ -1,9 +1,12 @@
 ---
 title: Cloud Elements Version 2.137
 date: 2017-10-16
+heading: Release Notes
 layout: release-note-item
-label: Production
+release: 2.137
 ---
+
+## Elements
 
 ### Updated ConnectWise CRM REST and FreshService Elements
 

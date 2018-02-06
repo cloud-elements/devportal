@@ -2,7 +2,8 @@
 title: Cloud Elements Version 2.133
 date: 2017-09-19
 layout: release-note-item
-label: "Production"
+heading: Release Notes
+release: 2.133
 ---
 
 ### Enhanced OneDrive for Business element to handle implicit path creation

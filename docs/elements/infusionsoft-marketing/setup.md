@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing Beta
+heading: Infusionsoft Marketing Automation Beta
 seo: API Provider Setup | Infusionsoft Marketing | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup

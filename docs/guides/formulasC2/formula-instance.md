@@ -33,6 +33,33 @@ To create a formula instance:
   * In **Webhook URL** enter a comma-separated list of URLs.
 4. Click **Create Instance**.
 
+You can create temporary formula instances that exist for a specified amount of time. Specify the time in seconds, such as `86400` for a day or `3600` for an hour. Every hour, Cloud Elements checks for temporary formula instances that have expired and deletes them. You can create temporary formula instances only through the Cloud Elements APIs.
+
+To create a temporary formula instance, add `"formula.instance.time.to.live": <seconds> ` to the `settings` object in a `POST /formulas/{id}/instances` request. Here's an example where the formula instance expires after one hour:
+
+```json
+{
+  "active": true,
+  "configuration": {
+    "<key>": "string"
+  },
+  "settings": {
+    "notification.email": "string",
+    "notification.webhook.url": "string",
+    "api": "string",
+    "formula.instance.time.to.live": 3600
+  },
+  "createdDate": "2018-01-23T16:33:47.431Z",
+  "formula": {
+    "active": true,
+    "id": 0
+  },
+  "name": "string",
+  "updatedDate": "2018-01-23T16:33:47.431Z"
+}
+```
+
+
 ## Deactivate a Formula Instance
 
 You can deactivate a formula to temporarily stop executions until you reactivate it.

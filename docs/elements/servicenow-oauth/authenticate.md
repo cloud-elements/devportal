@@ -1,5 +1,6 @@
 ---
 heading: ServiceNow OAuth Beta
+apiProvider: ServiceNow
 seo: Authenticate | ServiceNow OAuth | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate
@@ -7,19 +8,22 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 566
 elementKey: servicenowoauth
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URL #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
 
-# Authenticate with {{page.heading}}
+# Authenticate with {{page.apiProvider}}
 
-You can authenticate with ServiceNow to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
+You can authenticate with {{page.apiProvider}} to create your own instance of the {{page.heading}} element through the UI or through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.apiProvider}} platform.
 
-{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a>" type="info" %}
+{% include callout.html content="<strong>On this page</strong></br><a href=#authenticate-through-the-ui>Authenticate Through the UI</a></br><a href=#authenticate-through-api>Authenticate Through API</a></br><a href=#parameters>Parameters</a></br><a href=#example-response-for-an-authenticated-element-instance>Example Response for an Authenticated Element Instance</a></br><a href=#manage-your-developer-instance>Manage Your Developer Instance</a>" type="info" %}
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with ServiceNow and create an element instance. {{page.heading}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.heading}} as part of the process.
+Use the UI to authenticate with {{page.apiProvider}} and create an element instance. {{page.apiProvider}} authentication follows the typical OAuth 2.0 framework and you will need to sign in to {{page.apiProvider}} as part of the process.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -30,7 +34,9 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **The ServiceNow Subdomain**, enter your subdomain. This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
+6. In **The ServiceNow Subdomain** enter your subdomain or entire URL. The subdomain is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.
+7. In **OAuth API Key** enter the {{page.apiKey}} that you identified in [API Provider Setup](setup.html).
+8. In **OAuth API Secret** enter the {{page.apiSecret}} that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -128,10 +134,10 @@ To create an element instance:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration": {
-        "oauth.callback.url": "<CALLBACK_URL>",
-        "oauth.api.key": "<CONSUMER_KEY>",
-      	"oauth.api.secret": "<CONSUMER_SECRET>",
-        "servicenow.subdomain": "<YOUR_SUBDOMAIN>"
+        "oauth.callback.url": "<{{page.apiProvider}} {{page.callbackURL}}>",
+        "oauth.api.key": "<{{page.apiProvider}} {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.apiProvider}} {{page.apiSecret}}>",
+        "servicenow.subdomain": "<{{page.apiProvider}} Subdomain>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -186,9 +192,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | The authorization grant code returned from the API provider in an OAuth2 authentication workflow. | string |
 |  Name</br>`name` |  The name for the element instance created during authentication.   | string  |
-| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **Redirect URL** that you noted in the [API Provider Setup section](setup.html).  | string  |
-| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **Client ID** that you noted in the [API Provider Setup section](setup.html) |  string |
-| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html). | string |
+| `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **{{page.callbackURL}}** that you noted in the [API Provider Setup section](setup.html).  | string  |
+| `oauth.api.key` | The Client ID from {{page.heading}}. This is the **{{page.apiKey}}** that you noted in the [API Provider Setup section](setup.html) |  string |
+| `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **{{page.apiSecret}}** that you noted in the [API Provider Setup section](setup.html). | string |
 | The ServiceNow Subdomain</br>`servicenow.subdomain` | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 

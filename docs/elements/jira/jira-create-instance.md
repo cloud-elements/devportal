@@ -44,9 +44,9 @@ This instance.json file must be included with your instance request.  Please fil
     "key": "jira"
   },
   "configuration": {
-    "jira.username": "<INSERT_JIRA_USERNAME>",
-    "jira.password": "<INSERT_JIRA_PASSWORD>",
-    "jira.api.url": "<INSERT_JIRA_SUBDOMAIN_URL>"
+    "username": "<INSERT_JIRA_USERNAME>",
+    "password": "<INSERT_JIRA_PASSWORD>",
+    "base.url": "<INSERT_JIRA_SUBDOMAIN_URL>"
   },
   "tags": [
     "<INSERT_TAGS>"

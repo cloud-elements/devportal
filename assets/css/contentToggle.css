@@ -36,3 +36,13 @@
 .active:hover {
   color: WHITE;
 }
+
+/*////////////////////////////////////////////
+/// For definitions  ///
+///////////////////////////////////////////*/
+
+a[data-toggle="tooltip"] {
+    color: #40b6e4;
+    font-style: italic;
+    cursor: default;
+}

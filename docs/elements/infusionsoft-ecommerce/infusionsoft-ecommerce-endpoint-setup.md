@@ -1,6 +1,6 @@
 ---
-heading: Infusionsoft eCommerce
-seo: Endpoint Setup | Infusionsoft eCommerce | Cloud Elements API Docs
+heading: Infusionsoft Online Sales
+seo: Endpoint Setup | Infusionsoft Online Sales | Cloud Elements API Docs
 title: Endpoint Setup
 description: Endpoint setup
 layout: sidebarelementdoc
@@ -12,7 +12,7 @@ order: 5
 
 ## Endpoint Setup
 
-Follow these steps to setup your Infusionsoft eCommerce application with the endpoint.
+Follow these steps to setup your Infusionsoft Online Sales application with the endpoint.
 
 Sign in to your developer account at:
 [https://keys.developer.infusionsoft.com/apps/mykeys](https://keys.developer.infusionsoft.com/apps/mykeys)

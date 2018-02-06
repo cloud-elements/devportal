@@ -35,6 +35,8 @@ Take a look at the information below to get familiar with Cloud Elements.
 
 <img src="/assets/img/callouts/9.png" alt="9" class="inlineImage"> Get familiar with the application through a brief introductory video.
 
+{% include callout.html content="<strong>On this page</strong></br><a href=#elements-catalog>Elements Catalog</a></br><a href=#common-resources-and-transformations>Common Resources and Transformations</a><a href=#formulas>Formulas</a></br><a href=#activity>Activity</a></br><a href=#api-docs>API Docs</a></br><a href=#welcome-dashboard>Welcome Dashboard</a></br>" type="info" %}
+
 
 ## Elements Catalog
 
@@ -110,3 +112,7 @@ Everything you can do in Cloud Element, you can accomplish with a uniform API. Y
 <img src="/assets/img/callouts/3.png" alt="3" class="inlineImage"> View our interactive API docs.
 
 <img src="/assets/img/callouts/4.png" alt="4" class="inlineImage"> What the button says: select a resource and try it out. In this case, you'll authenticate an element instance.
+
+## Welcome Dashboard
+
+{% include platform/welcome-dashboard.md%}

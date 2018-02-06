@@ -15,4 +15,4 @@ ValeOn: <!-- vale on -->
 
 ## Cloud Elements Documentation
 
-Cloud Elements is the leading API integration platform for app providers and the digital enterprise. Our 100% API based service can be embedded seamlessly into your app, making it easy to build and offer an integration marketplace to your customers. 
+Cloud Elements is an API integration platform that unifies APIs so developers can make all of the apps in their ecosystem work together.  Our elements catalog of more than 130 pre-built integrations to cloud and on-premises applications unifies the developer experience across every endpoint. We eliminate the point-to-point integration hairball by putting your data model at the center of your application ecosystem, allowing you to focus on managing the data you care about versus becoming an expert in each application API.

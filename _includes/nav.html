@@ -17,7 +17,7 @@
         content.hits.forEach(element => {
           let listItem = document.createElement('li');
           listItem.setAttribute("class", "resultsItem");
-          listItem.innerHTML = 
+          listItem.innerHTML =
             listItem.innerHTML + '<a class=\'resultItemLink\' href='+element.url+'>' + element.heading + ' | ' + element.title + '</a>' + '<br/>' + element._snippetResult.text.value;
           resultsList.appendChild(listItem);
         })
@@ -57,13 +57,13 @@
     </div>
     <div class="searchBoxContainer col-md-4 hidden-sm hidden-xs">
       <div class="searchBoxWrapper">
-        <input 
-          id="searchBox" 
-          class="searchBox" 
-          type="text" 
+        <input
+          id="searchBox"
+          class="searchBox"
+          type="text"
           placeholder="Search the docs..."
           onkeyup="executeSearch()"
-          autocomplete="off" 
+          autocomplete="off"
         >
         <span class="icon icon-magnifying-glass"></span>
       </div>
@@ -74,13 +74,10 @@
           <a href="http://status.cloud-elements.com/">Status</a>
         </li>
         <li>
-          <a href="http://changelog.cloud-elements.com/">Change Log</a>
-        </li>
-        <li>
           <a href="https://support.cloud-elements.com/hc/en-us">Support</a>
         </li>
         <li>
-          <a href="https://my.cloudelements.io/signup" target="_blank">
+          <a href="https://offers.cloud-elements.com/cloud-elements-free-trial-sign-up" target="_blank">
           <button type="button" class="btn btn-lg btn-danger try-it">Try it For Free! <i class="fa fa-caret-right"></i></button>
           </a>
         </li>
@@ -99,7 +96,7 @@
   <script>
     // $(document).ready(function(){
     //   console.log('its ready');
-      
+
     // })
   </script>
 </nav>

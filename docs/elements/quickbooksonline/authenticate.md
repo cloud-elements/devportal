@@ -26,7 +26,7 @@ For apps created prior to July 2017, QuickBooks authentication also supports [To
 
 You can authenticate with {{page.heading}} to create your own instance of the {{page.heading}} element only through APIs. Once authenticated, you can use the element instance to access the different functionality offered by the {{page.heading}} platform.
 
-{% include note.html content="Use only Production Keys to authenticate with QuickBooks. You cannot make API requests with sandbox credentials.  " %}
+{% include note.html content="You can connect to sandbox accounts by specifying <code> use_sandbox</code> as <code>true</code> when you authenticate an element instance.  " %}
 
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
@@ -125,6 +125,7 @@ To authenticate an element instance:
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
         "authentication.type" : "oauth2",
+        "use_sandbox": "<true_or_false>",
         "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
       },
       "tags": [
@@ -162,6 +163,7 @@ curl -X POST \
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
     "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
     "authentication.type" : "oauth2",
+    "use_sandbox": "true",
     "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
     },
   "tags": [
