@@ -21,6 +21,7 @@
   <link href="/assets/css/application.css" rel="stylesheet">
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
   <link href="/assets/css/elementTiles.css" rel="stylesheet">
+  <link rel="canonical" href="{{ page.url | prepend: site.url }}">
   {% include favicon.html %}
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -55,7 +56,7 @@
       <script src="/assets/js/filter.js"></script>
     </div>
   </div>
-  
+
   <script src="/assets/js/ajaxLoading.js"></script>
   {% include google_analytics.html %}
   {% include hubspot-tracking.html %}
