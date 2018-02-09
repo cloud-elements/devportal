@@ -129,7 +129,7 @@ Using the Cloud Elements `instances` endpoint, you can map fields at the instanc
 
 To create an instance level common resource and map fields to it:
 
-1. Construct a JSON body for the instance level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
+1. Construct a JSON body for the instance level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html#new-common-resource-json-parameters)):
 
     ```json
     {
@@ -217,7 +217,7 @@ Using the Cloud Elements `accounts` endpoint, you can map fields at the account 
 
 To create an account level common resource and map fields to it:
 
-1. Construct a JSON body for the account level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html/#new-common-resource-json-parameters)):
+1. Construct a JSON body for the account level common resource as shown below (see [New Common Resource JSON Parameters](createapi.html#new-common-resource-json-parameters)):
 
     ```json
     {
