@@ -8,6 +8,7 @@ layout: default
 order: 1
 published: true
 sitemap: false
+canonical_url: '{{site.url}}{{page.url}}'
 redirect_from:
   - /docs/getstarted/
 ValeOn: <!-- vale on -->
