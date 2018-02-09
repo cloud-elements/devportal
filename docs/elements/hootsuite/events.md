@@ -46,8 +46,8 @@ To authenticate an element instance with webhooks:
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
 10. Use a Base 64  encoding tool, such as [Base64(https://www.base64encode.org/)], to encode the element ID.
-11. Follow the steps in [API Provider Setup](setup.html/#set-up-events) to define the **Webhook URL** at Hootsuite.
-12. Update the **Event Notification Callback URL** in the element instance: Open the element instance for editing, change the **Event Notification Callback URL**, and then click **Update**. 
+11. Follow the steps in [API Provider Setup](setup.html#set-up-events) to define the **Webhook URL** at Hootsuite.
+12. Update the **Event Notification Callback URL** in the element instance: Open the element instance for editing, change the **Event Notification Callback URL**, and then click **Update**.
 
 ### Configure Webhooks Through API
 
@@ -93,7 +93,7 @@ To authenticate an element instance with webhooks:
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
 10. Use a Base 64  encoding tool, such as [Base64(https://www.base64encode.org/)], to encode the element ID.
-11. Follow the steps in [API Provider Setup](setup.html/#set-up-events) to define the **Webhook URL** at Hootsuite.
+11. Follow the steps in [API Provider Setup](setup.html#set-up-events) to define the **Webhook URL** at Hootsuite.
 12. Use `PATCH /instances` to update the `event.notification.callback.url` in the element instance.
 
 
