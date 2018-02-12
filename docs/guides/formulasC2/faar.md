@@ -44,6 +44,10 @@ curl -X GET \
   -H 'elements-formula-instance-id: 28683' \
 ```
 
+## Status Codes
+
+{% include Formulas/faar-status-codes.md%}
+
 ## Work with Parameters
 
 You can pass parameters into formulas as a resource, and then access the results of the response within the context of the formula.
@@ -66,7 +70,6 @@ var queryObject = trigger.args.request.query;
 function getThatEmailAddress(emailAddressObject){
 	console.log(emailAddressObject['email']);
 }
-
 
 done(getThatEmailAddress(queryObject))
 ```
