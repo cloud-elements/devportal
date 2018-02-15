@@ -1,15 +1,16 @@
 ---
 heading: Microsoft Graph
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+apiProvider: Microsoft  # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Microsoft Graph | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId:
 elementKey: microsoftgraph
-apiKey: Application Id
-apiSecret: Application Secret
-callbackURL: Redirect URLs
+apiKey: Application Id #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Password/PublicKey #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URL #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -82,7 +83,7 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b",
+"oauthUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=Calendars.Read+Calendars.ReadWrite+offline_access&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2auth&state=microsoftgraph&client_id=Rand0MAP1-key",
 "element": "{{page.elementKey}}"
 }
 ```
@@ -196,11 +197,11 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-11-30T21:53:35Z",
   "token": "ABC/D...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 5127,
-      "name": "Maximizer",
-      "key": "maximizer",
-      "description": "Add a Maximizer CRM  Instance to connect your existing Maximizer account to the MaximizerCRM Hub, allowing you to manage addressbookentries, companies, contacts, addresses, and opportunities,etc. across multiple Maximizer Elements. You will need your Maximizer CRM account information to add an instance.",
-      "image": "https://yt3.ggpht.com/-_XlPkEWDufA/AAAAAAAAAAI/AAAAAAAAAAA/7DjVZVGU1IM/s900-c-k-no-mo-rj-c0xffffff/photo.jpg",
+      "id": 17314,
+      "name": "Microsoft Graph",
+      "key": "microsoftgraph",
+      "description": "Add a Microsoft Graph instance to connect your existing account allowing you to manage calendars and sync to a variety of microsoft endpoints. You will need your AWS account information to add an instance",
+      "image": "http://developers.cloud-elements.com/assets/img/default-ce-logo-element-builder.png",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -210,17 +211,17 @@ In this example, the instance ID is `12345` and the instance token starts with "
       "bulkDownloadEnabled": true,
       "bulkUploadEnabled": true,
       "cloneable": true,
-      "extendable": false,
+      "extendable": true,
       "beta": false,
       "authentication": {
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "crm",
+      "hub": "general",
       "protocolType": "http",
       "parameters": [  ]
     },
-    "elementId": 5127,
+    "elementId": 17314,
     "tags": [
         "Docs"
     ],

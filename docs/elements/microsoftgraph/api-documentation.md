@@ -1,6 +1,6 @@
 ---
 heading: Microsoft Graph
-seo: API Docs | Name of Element | Cloud Elements API Docs
+seo: API Docs | Microsoft Graph | Cloud Elements API Docs
 title: API Docs
 description: Microsoft Graph
 layout: sidebarapidocs

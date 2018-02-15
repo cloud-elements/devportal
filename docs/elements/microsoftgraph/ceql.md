@@ -1,6 +1,6 @@
 ---
 heading: Microsoft Graph
-seo: Query Language | Name of Element | Cloud Elements API Docs
+seo: Query Language | Microsoft Graph | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
