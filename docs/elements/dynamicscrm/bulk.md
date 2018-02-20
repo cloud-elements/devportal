@@ -26,3 +26,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 | Upsert Support | Yes |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select attributes.accountid from accounts`.|
 | Order By Support | No, `order by fieldName` is not supported for this element. |
+
+## Hash Verification
+
+If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html).

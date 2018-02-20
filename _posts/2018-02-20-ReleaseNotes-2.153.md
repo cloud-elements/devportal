@@ -72,6 +72,6 @@ Previously, authenticating via Cloud Elements 2.0 resulted in errors. You can no
 
 To enable hash verification for bulk job callbacks, we updated the Event Notification Signature Key which is currently used to add an extra layer of security when receiving event callbacks.
 
-In the UI, we renamed **Event Notification Signature Key** to **Callback Notification Signature Key**. The **Callback Notification Signature Key** property is now available as an optional field, rather than part of event setup. If you configure the **Callback Notification Signature Key**, it will be used to provide hash verification in the header of bulk job and event callbacks.
+In the UI, we renamed **Callback Notification Signature Key** to **Callback Notification Signature Key**. The **Callback Notification Signature Key** property is now available as an optional field, rather than part of event setup. If you configure the **Callback Notification Signature Key**, it will be used to provide hash verification in the header of bulk job and event callbacks.
 
 The name of the configuration property `event.notification.signature.key` remains unchanged. If you set it, it will be used for bulk job and event callbacks.

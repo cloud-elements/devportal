@@ -27,3 +27,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 | Upsert Support | Yes |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select name,id from contacts`.</br>No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
 | Order By Support | Yes, you can add `orderby=fieldName` to the query. |
+
+## Hash Verification
+
+If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html).
