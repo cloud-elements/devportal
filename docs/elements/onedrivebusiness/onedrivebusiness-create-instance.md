@@ -14,6 +14,8 @@ order: 20
 
 Microsoft OneDrive for Business Beta is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Microsoft OneDrive for Business Beta platform.
 
+{% include note.html content="When you authenticate an element instance, you can now include the credentials from a converged app &mdash; an app that accepts both MSA & Azure AD sign-in. To authenticate using a converged app, you must authenticate an element instance using the APIs.  " %}
+
 ### Step 1. Get Elements OAuth Information
 
 * HTTP Header: None
