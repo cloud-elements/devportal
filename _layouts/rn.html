@@ -19,7 +19,9 @@
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <link href="/assets/css/custom-styles.css" rel="stylesheet"> {% include favicon.html %}
-  <style>
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+
+<style>
     /* note: this is a hack for ios iframe for bootstrap themes shopify page */
 
     /* this chunk of css is not part of the toolkit :) */
@@ -97,6 +99,7 @@
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
   <script src="/assets/js/ajaxLoading.js"></script> {% include google_analytics.html %} {% include hubspot-tracking.html %}
+  {% include engagio-tracking.html %}
   <script>
     // execute/clear BS loaders for docs
     $(function () {

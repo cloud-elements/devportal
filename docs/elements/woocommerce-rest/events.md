@@ -46,11 +46,11 @@ For more information about each field described here, see [Polling Parameters](#
 To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Select **polling** from **Event Type**.
 8. Add an **Event Notification Callback URL**.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select the resources to poll.
 6. Advanced users can further configure polling:
@@ -205,11 +205,11 @@ For more information about each field described here, see [Webhook Parameters](#
 To authenticate an element instance with webhooks:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Select **webhook** from **Event Type**.
 8. Add an **Event Notification Callback URL**.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 

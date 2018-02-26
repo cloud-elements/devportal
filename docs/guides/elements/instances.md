@@ -39,7 +39,7 @@ To locate your element instance ID and element instance token:
 
 ## Test an Element Instance
 
-After you authenticate an element instance, you can test it with the API docs. So long as you have an authenticated element instance, you can test any of the requests in the API docs. For more information about the element API docs, see the [Overview](index.html/#view-element-api-docs).
+After you authenticate an element instance, you can test it with the API docs. So long as you have an authenticated element instance, you can test any of the requests in the API docs. For more information about the element API docs, see the [Overview](index.html#view-element-api-docs).
 
 To test your element instance:
 

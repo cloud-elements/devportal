@@ -9,6 +9,8 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
+redirect_from:
+  - /docs/guides/formulasC2/referenceapi.html
 order: 18
 ---
 

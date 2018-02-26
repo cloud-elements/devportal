@@ -2,12 +2,13 @@
 valeOff: <!-- vale off -->
 heading: Platform Overview
 seo: Cloud Elements Platform Overview | Cloud Elements API Docs
-title: Overview
+title: Cloud Elements Documentation
 description: Overview of the Cloud Elements Platform and how to integrate it into your application.
 layout: default
 order: 1
 published: true
 sitemap: false
+canonical_url: '{{site.url}}{{page.url}}'
 redirect_from:
   - /docs/getstarted/
 ValeOn: <!-- vale on -->

@@ -32,10 +32,10 @@ To authenticate an element instance with webhooks:
 
 1. Complete the [authentication steps(authenticate.html#authenticate-through-the-ui)] up to entering the Shopify URL.
 2. Click **Show Optional Fields**, and then in **Webhook Topics** enter a comma separated list of supported webhook topics that you want to monitor. See [{{page.heading}}'s webhooks documentation](https://help.shopify.com/api/reference/webhook) for a list of supported wehooks.
+2. To enable hash verification in the headers of event callbacks add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. If using the earlier UI, optionally add tags.
@@ -131,6 +131,6 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **Client Secret** that you noted in the [API Provider Setup section](setup.html)| string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | Webhook Topics</br>`shopify.webhook.topics` | Comma separated list of supported webhook topics that you want to monitor. See [{{page.heading}}'s webhooks documentation](https://help.shopify.com/api/reference/webhook) for a list of supported wehooks. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

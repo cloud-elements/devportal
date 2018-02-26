@@ -20,6 +20,8 @@
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
   <link href="/assets/css/release-notes.css" rel="stylesheet">
   <script src="/api-docs/swagger-ui.js" type="text/javascript"></script>
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
+
   {% include favicon.html %}
   <style>
   /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -104,6 +106,7 @@
   <script src="/assets/js/ajaxLoading.js"></script>
   {% include google_analytics.html %}
   {% include hubspot-tracking.html %}
+  {% include engagio-tracking.html %}
   <script>
     // execute/clear BS loaders for docs
     $(function () {

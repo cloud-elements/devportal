@@ -2,7 +2,7 @@ account: "The second level of the accounts and users hierarchy that represents y
 
 bulk: "The Cloud Elements APIs used to move large amounts of data."
 
-bulk-full: "Bulk APIs are the Cloud Elements APIs used to move large amounts of data. Cloud Elements provides the ability to upload and download data in bulk from an endpoint in a normalized way. Cloud Elements will leverage the provider bulk endpoints whenever that is available. But, when the API provider has no bulk endpoints, we provide a pseudo bulk service for uploading and downloading data from the endpoint. For uploads, we accept a file, and then create objects at the endpoint on a record-by-record basis. For downloads, we execute a search API against the endpoint, and loop through all results until we have retrieved all the data. Cloud Elements stores the files (encrypted) on Cloud Elements servers for a maximum of three days."
+bulk-full: "Bulk APIs are the Cloud Elements APIs used to move large amounts of data. Cloud Elements provides the ability to upload and download data in bulk from an endpoint in a normalized way. Cloud Elements will leverage the provider bulk endpoints whenever that is available. But, when the API provider has no bulk endpoints, we provide a pseudo bulk service for uploading and downloading data from the endpoint. For uploads, we accept a file, and then create objects at the endpoint on a record-by-record basis. For downloads, we execute a search API against the endpoint, and loop through all results until we have retrieved all the data. Cloud Elements stores the files (encrypted) on Cloud Elements servers for a maximum of seven days."
 
 ce-ui: "The Cloud Elements user interface that provides access to the features and APIs avalable with Cloud Elements."
 

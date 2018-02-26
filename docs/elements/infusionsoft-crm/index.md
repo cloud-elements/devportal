@@ -8,6 +8,8 @@ breadcrumbs: /docs/elements.html
 elementId: 191
 parent: Back to Element Guides
 order: 1
+redirect_from:
+  - docs/elements/infusionsoft-crm/events.html
 sitemap: false
 ---
 

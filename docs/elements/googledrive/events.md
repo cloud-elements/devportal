@@ -36,10 +36,10 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.heading}}](authenticate.html) .
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 9. Optionally type or select one or more tags to add to the authenticated element instance.
 7. Click **Create Instance**.
@@ -142,5 +142,5 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Event Type</br>`event.vendor.type` | *Optional*. The event type used to monitor events. Polling is the default and only supported event type for Google Drive. | string  |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
-| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

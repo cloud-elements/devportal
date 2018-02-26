@@ -26,11 +26,11 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with polling:
 
 1. Enter the Name of the element instance and any configuration parameters need to authenticate the element instance.
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 3. If the element supports both polling and webhooks, select **polling** in **Event Type**.
 8. Add an **Event Notification Callback URL** to receive information about the events.
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the **Event poller refresh interval (mins)** slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Click <img src="/assets/img/elements/polling-resource-select.png" alt="Polling Resource Select" class="inlineImage"> to select a resource to poll.
 
@@ -55,14 +55,13 @@ Authenticating an element instance with events works the same as authenticating 
 To authenticate an element instance with webhooks:
 
 1. Enter the Name of the element instance and any configuration parameters need to authenticate the element instance.
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 3. If the element supports both polling and webhooks, select **webhooks** in **Event Type**.
 8. Add an **Event Notification Callback URL** to receive information about the events.
 
     {% include note.html content="In most cases you must set up the event callback URL as part of API provider's webhook setup, and what you enter here should match. " %}
-
-5. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 
 Your webhooks configuration is complete and you can authenticate the element instance. Use the events to build formulas to accomplish a wide variety of workflows.
 
