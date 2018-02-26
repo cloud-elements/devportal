@@ -6,8 +6,8 @@ title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
+elementId: 5836
+elementKey: microsoftgraph
 apiKey: Key Name
 apiSecret: Secret Name
 callbackURL: Callback URL Name
@@ -68,6 +68,7 @@ To authenticate an element instance with webhooks:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access",
         "event.notification.enabled": true,
         "event.notification.callback.url": "<CALLBACK_URL>"
       },
@@ -106,6 +107,7 @@ curl -X POST \
     "oauth.callback.url": "https://mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
     "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access",
     "event.notification.enabled": true,
     "event.notification.callback.url": "https://mycoolapp.com/events"
   },

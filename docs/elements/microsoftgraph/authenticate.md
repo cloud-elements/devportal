@@ -6,7 +6,7 @@ title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId:
+elementId: 5836
 elementKey: microsoftgraph
 apiKey: Application Id #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
 apiSecret: Password/PublicKey #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
@@ -34,6 +34,9 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+6. In **OAuth API Key** enter your app's **{{page.apiKey}}**.
+6. In **OAuth API Secret** enter your app's **{{page.apiSecret}}**.
+7. In **OAuth Scope** leave the default scopes unless you extended the element. If so, add the required scopes for any resources that you add.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
@@ -128,7 +131,8 @@ To authenticate an element instance:
       "configuration": {
         "oauth.api.key": "<{{page.apiProvider}} app {{page.apiKey}}>",
       	"oauth.api.secret": "<{{page.apiProvider}} app {{page.apiSecret}}>",
-        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >"
+        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >",
+        "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -162,7 +166,8 @@ curl -X POST \
   "configuration": {
     "oauth.api.key": "Rand0MAP1-key",
     "oauth.api.secret": "fak3AP1-s3Cr3t",
-    "oauth.callback.url": "https;//mycoolapp.com"
+    "oauth.callback.url": "https;//mycoolapp.com",
+    "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access"
   },
   "tags": [
     "Docs"
@@ -176,14 +181,19 @@ API parameters in the UI are **bold**, while parameters available in the instanc
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
+6. In **OAuth API Key** enter your app's **{{page.apiKey}}**.
+6. In **OAuth API Secret** enter your app's **{{page.apiSecret}}**.
+
+
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  **Name**</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| **OAuth API Key**</br>`oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+| **OAuth API Secret**</br>`oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
 | `oauth.callback.url` | {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
+|  **OAuth Scope**</br> `oauth.scope`  | The permissions required to access resources set up on the element.  | string  |
 | Tags</br>`tags` | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance

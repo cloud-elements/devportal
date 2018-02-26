@@ -58,39 +58,31 @@ To create an application:
 ![Key secret and URL](./img/microsoftgraph_app_registration.gif)
 
 ## Permissions
-When creating your app be aware of the permissions that you set. For Calendar endpoints in the Delegated Permission section you need:
+
+When creating your app be aware of the permissions that you set. Each resource requires specific permissions. For example, the Calendar resource requires:
+
+| Permission Type | Permissions   |
+| :------------- | :------------- |
+|  Delegated (work or school account)  |  Calendars.Read, Calendars.ReadWrite  |
+| Delegated (personal Microsoft account)	   |Calendars.Read, Calendars.ReadWrite |
+| Application   | Calendars.Read, Calendars.ReadWrite  |
+
+For more information see: https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list_calendars.
+
+When setting up your app, in the Delegated Permission section you need:
 
 * Calendars.Read
 * Calendars.ReadWrite
 
-To authenticate you need:
+In addition, to authenticate you need:
+
 * Delegated Permission: Users.Read.All (if an admin Users.Read)
 * Delegated Permission: Users.ReadWrite.All (non-admin Users.ReadWrite)
 * Application Permissions: Users.Read.All
 * Application Permissions: Users.ReadWrite.All.
 
-For more information see: https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list_calendars
 
 ![Permissions](./img/findingPermissions.gif)
-
-
-## Set Up Events
-
-{{page.apiProvider}} supports webhooks. If you want to enable events when you authenticate an element instance, complete the steps below to set up webhooks with {{page.heading}}.
-
-1. Log in to your account at [{{page.apiProvider}}](https://apps.dev.microsoft.com/#/appList).
-2. Click the application that you want to connect.
-3. Click **Edit**.
-3. In **Webhook URL** enter `https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}`.
-4. Click **Save**.
-5. Test the webhook. Click **Send ping webhook** and watch for a status code of 200.
-6. Record the **Webhook URL** which you will use when you set up events as the **Event Notification Callback URL**.
-7. Currently when you set up webhooks in {{page.heading}} it will automatically set up the webhooks your calendar. Meaning events that are accepted or posted on your default calendar will trigger an event. If you need events for other resources (if you extend your element and want webhooks on the extended endpoints or if you want events on a specific element) you can edit the webhook in the element configuration by:
-1. Go to resources
-2. Choosing webhooks
-3. Clicking edit
-4. In the prehook change the body to have the resource of the event you are polling on
-![Key secret and URL](./img/UpdateWebHooks.gif)
 
 
 Next [authenticate an element instance with {{page.apiProvider}}](authenticate.html).
