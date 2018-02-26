@@ -62,22 +62,6 @@
       </h2>
       <h4 class="release-notes"> {{post.date | date: "%B %-d, %Y"}}</h4> {{post.content}}
       <!-- Pagination links -->
-      {% if paginator.total_pages > 1 %}
-      <div class="pagination">
-        {% if paginator.previous_page %}
-        <span class="previous ">
-          <a class="prev-next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
-        </span> {% else %}
-        <span>&laquo; Prev</span> {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
-        <em>{{ page }}</em> {% elsif page == 1 %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a> {% else %}
-        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a> {% endif %} {% endfor %} {% if paginator.next_page %}
-        <span class="next ">
-          <a class="prev-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
-        </span> {% else %}
-        <span>Next &raquo;</span> {% endif %}
-      </div>
-      {% endif %}
       {% endfor %}
       <script>
         $(document).ready(e => {
@@ -92,7 +76,29 @@
           });
         });
       </script>
+
+      {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+        <span class="previous ">
+          <a class="prev-next" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next</a>
+        </span> {% else %}
+        <span>&laquo; Next</span> {% endif %} {% for page in (1..paginator.total_pages) %} {% if page == paginator.page %}
+        <em>{{ page }}</em> {% elsif page == 1 %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a> {% else %}
+        <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a> {% endif %} {% endfor %} {% if paginator.next_page %}
+        <span class="next ">
+          <a class="prev-next" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Prev</a>
+        </span> {% else %}
+        <span>Prev &raquo;</span> {% endif %}
+      </div>
+      {% endif %}
+
     </div>
+
+
+
+
   </div>
   <script src="/assets/js/chart.js"></script>
   <script src="/assets/js/tablesorter.min.js"></script>
