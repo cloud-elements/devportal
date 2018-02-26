@@ -9,14 +9,14 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
+redirect_from:
+  - /docs/guides/formulasC2/referenceapi.html
 order: 18
 ---
 
 # Triggers, Steps, and Variables
 
-Formulas are comprised of triggers that kick off formulas, steps that the trigger executes, and variables used to define inputs to the formula instance. The triggers, steps, and variables build up context that you can refer to as you build a formula. For example, a JS Script step might build a JSON payload that you can refer to in a later step as `$steps.stepName`. You can refer to variables as `$config.variableName`.
-
-This section provides configuration information about each formula component.
+{% include Formulas/reference-intro.md%}
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#json-example>JSON Example</a></br><a href=#triggers>Triggers</a></br><a href=#step-types>Step Types</a></br><a href=#formula-variables>Formula Variables</a>" type="info" %}
 
@@ -230,21 +230,7 @@ To see a Manual trigger in action, see [Bulk Transfer CRM Data](examples.html#bu
 
 ## Step Types
 
-You can choose from several different types of steps to make up your formula. You can refer to any step with the `$steps.stepName syntax`. Because you refer to the step by name, each step name must be unique within each formula. However, you can reuse a step name in a different formula.
-
-You can use the following types of steps in your formulas:
-
-* [ActiveMQ Request](#activemq-request)
-* [Element API Request](#element-api-request)
-* [HTTP Request](#http-request)
-* [JS Filter](#js-filter)
-* [JS Script](#js-script)
-* [Loop Over Variable](#loop-over-variable)
-* [Platform API Request](#platform-api-request)
-* [Retry Formula on Failure](#retry-formula-on-failure)
-* [Stream](#stream-file)
-* [Sub-Formula](#sub-formula)
-
+{% include Formulas/step-types-intro.md%}
 
 ### ActiveMQ Request
 

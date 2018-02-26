@@ -4,7 +4,7 @@ To set up a new application in {{page.heading}}, you must have Administrator int
 
 To authenticate an element instance with {{page.heading}} you must [know your Acount ID](#get-netsuite-account-id) and use one of two authentication methods:
 
-* [Token Based Authentication](#token-based-authentication)
+* [Custom Authentication](#custom-authentication)
 * [Basic Authentication](#basic-authentication)
 
 ## Get NetSuite Account Id
@@ -17,13 +17,13 @@ To locate your Account ID:
 2. In the menu, click __Setup__, __Integration__, then __Webservice Preferences__.
 3. Copy the **ACCOUNT ID**.
 
-## Token Based Authentication
+## Custom Authentication
 
-Cloud Elements supports NetSuite 2016 Token Based Authentication.  Review the detailed information at [NetSuite Token Based Authentication documentation](https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_4247337262.html&whence=).
+Cloud Elements supports NetSuite 2016 Token Based Authentication with a Custom authentication type. Review the detailed information at [NetSuite Token Based Authentication documentation](https://system.na1.netsuite.com/app/help/helpcenter.nl?fid=section_4247337262.html&whence=).
 
-{% include note.html content="To use token based authentication, set up a new user linked to a single role. If you use an existing user, they might have multiple roles. Then the role used by the webservice might not match the role selected as the webservices role.  " %}
+{% include note.html content="To use token based (Custom) authentication, set up a new user linked to a single role. If you use an existing user, they might have multiple roles. Then the role used by the webservice might not match the role selected as the webservices role.  " %}
 
-To set up Token Based Authentication:
+To set up Custom Authentication:
 
 1. Navigate to **Setup > Company > Enable Features > Suite Cloud > Manage Authentication** and enable Token-Based Authentication.
 ![NetSuiteTokenAuthStep1.gif](img/NetSuiteTokenAuthStep1.gif)
@@ -44,7 +44,6 @@ To set up Token Based Authentication:
 7. Create a new Access Token. Go to **Setup > Users/Roles > Access Tokens > New**. Select the Integration Record, User, and Role created or referenced in the previous steps.
 8. On the confirmation screen, note the **Token ID** and **Token Secret**.
 	{% include note.html content="For security reasons, The Token ID and Secret are ONLY DISPLAYED ONCE. After you leave this page, these values cannot be retrieved from the system. If you lose or forget these credentials, you will need to reset them to obtain new values. Treat these values as you would a password. Never share these credentials with unauthorized individuals and never send them by email." %}
-
 
 ## Basic Authentication
 

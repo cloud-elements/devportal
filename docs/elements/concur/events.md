@@ -26,7 +26,7 @@ To add polling when authenticating through the UI:
 
 1. Switch on __Events Enabled__.
 2. Add an Event Notification Callback URL.
-3. Optionally include an Event Notification Signature Key.
+3. Optionally include a Callback Notification Signature Key.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 6. Optionally, click the pencil icon to further configure polling.
 

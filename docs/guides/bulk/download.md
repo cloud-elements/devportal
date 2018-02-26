@@ -15,12 +15,12 @@ order: 2
 Use bulk download to generate a csv or json file from a large number of records. Since the bulk download works asynchronously, you need to make two calls to download a file.
 
 ### 1. Create a Bulk Job
-The `POST /bulk/query` creates a bulk job, which builds out a file in Cloud Elements. Use a CEQL query to specify the records included in the file. Since the job will take an unknown amount of time to complete, add a callback url to the bulk job. When the job completes it will make a callback to the url. 
+The `POST /bulk/query` creates a bulk job, which builds out a file in Cloud Elements. Use a CEQL query to specify the records included in the file. Since the job will take an unknown amount of time to complete, add a callback url to the bulk job. When the job completes it will make a callback to the url.
 
 The bulk query API call is composed of the following parts:
 
 - Headers:
-  - `Elements-Async-Callback-Url`: The webhook to be notified when a job completes.
+  - `Elements-Async-Callback-Url`: The webhook to be notified when a job completes. If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html)
 - Query:
   - `q` : A CEQL query for records to be included in the bulk job, for example: `select * from contacts`.
 

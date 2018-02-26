@@ -109,7 +109,7 @@ In Basic access authentication, you typically provide a user name and password. 
 
 ## Configure Custom Authentication
 
-To configure custom authentication information, use the [Configuration](config.html#set-up-element-configuration), [Parameters](config.html/#set-up-element-parameters), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
+To configure custom authentication information, use the [Configuration](config.html#set-up-element-configuration), [Parameters](config.html#set-up-element-parameters), and, if necessary, [Hooks](hooks.html) sections to construct the authentication information required by the API provider.
 
 ## Configure AWS Authentication
 ![AWSv4 Authentication](img/awsv4.png)

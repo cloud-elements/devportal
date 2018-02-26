@@ -50,7 +50,7 @@ To authenticate a Salesforce Sales Cloud instance:
 
 7. Click **Events Enabled**.
 8. In **Event Type**, select **Polling**. We also offer webhooks for Salesforce Sales Cloud, but it requires more setup.
-9. For this tutorial, leave **Event Notification Callback URL** and **Event Notification Signature Key** empty. When you start integrating our APIs in your apps, you'll use these fields to receive event notifications and to add enhanced security.
+9. For this tutorial, leave **Event Notification Callback URL** and **Callback Notification Signature Key** empty. When you start integrating our APIs in your apps, you'll use these fields to receive event notifications and to add enhanced security.
 11. In **Objects to Monitor for Changes** enter `Contact`.
 12. Change the `Event poller refresh interval` to 4. This sets the poller to check every 4 minutes.
 

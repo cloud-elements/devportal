@@ -38,10 +38,10 @@ You can configure polling through the UI or in the JSON body of the `/instances`
 
 For more information about each field described here, see [Parameters](#parameters).
 
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 1. Switch on __Events Enabled__.
 2. Select **polling** from **Event Type**.
 2. Add an **Event Notification Callback URL**.
-3. Optionally include an **Event Notification Signature Key**.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Enter each object that you want to poll for changes separated by commas.
 
@@ -122,11 +122,11 @@ For more information about each field described here, see [Parameters](#paramete
 1. Switch on __Events Enabled__.
 2. Select **webhooks** from **Event Type**.
 2. Add an **Event Notification Callback URL**.
-3. Optionally include an Event Notification Signature Key.
+3. Optionally include a Callback Notification Signature Key.
 5. Enter each object that you want to poll for changes separated by commas.
 
 When finished adding your polling configuration, the Event Configuration section should look like this:
-![Polling](img/Webhooks-C2.png) 
+![Polling](img/Webhooks-C2.png)
 
 ### Configure Webhooks Through API
 
@@ -186,7 +186,7 @@ API parameters are in `code formatting`.
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`  | boolean |
 | Event Type </br>`event.vendor.type` | *Optional*. Identifies the type of events enabled for the instance, either `webhook` or `polling`. | string |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  *For webhooks and polling.*</br>The URL where your app can receive events.   | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *For webhooks and polling.*</br>*Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *For webhooks and polling.*</br>*Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
 | Objects to Monitor for Changes</br>`event.objects`|  *For webhooks and polling.*</br>*Optional*</br>Comma separated list of objects to monitor for changes. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | *For polling only.*</br>A number in minutes to identify how often the poller should check for changes. |  number|
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

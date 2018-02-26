@@ -7,6 +7,7 @@ layout: guides
 redirect_from:
   - /docs/platform/platform-docs.html
   - /docs/products/api-toolkit.html
+  - /docs/overview/overview.html
 ---
 
 {% include product-guides.html %}

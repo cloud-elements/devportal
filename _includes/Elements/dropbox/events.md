@@ -17,10 +17,10 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with webhooks:
 
 1. Complete the [basic authentication steps(authenticate.html#authenticate-through-the-ui)].
+2. To enable hash verification in the headers of event callbacks, click Show Optional Fields, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**. This should match the **Webhooks URI** for the application.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 8. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Provide your {{page.heading}} credentials, and then allow the connection.
@@ -82,5 +82,5 @@ API parameters are in `code formatting`.
 | `oauth.api.secret` | OAuth 2.0 authentication only. The Client Secret from {{page.heading}}. This is the **App secret** that you noted in the [API Provider Setup section](setup.html). | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where your app can receive events. This is the **Webhook URI** that you noted in the [API Provider Setup section](setup.html).   | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*</br>A user-defined key for added security to show that events have not been tampered with. This can be any custom value that you want passed to the callback handler listening at the provided Event Notification Callback URL.| string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

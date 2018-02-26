@@ -8,6 +8,9 @@ apis: API Docs
 platform: formulas
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
+redirect_from:
+  - /docs/guides/formulas/examples.html
+  - /docs/guides/formulas/example.html
 order: 25
 ---
 

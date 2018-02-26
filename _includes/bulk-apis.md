@@ -1,10 +1,8 @@
 ## Bulk APIs
 
-Cloud Element Bulk API calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once.
+Cloud Element Bulk API calls provide an option to upload a large number of resources, such as contacts, into a Cloud Service all at once. The Bulk APIs require the name of the object identified within the cloud service and a .csv file with populated data included in each request. Cloud Elements provides discovery services to get a list of available objects.
 
-The Bulk APIs require the name of the object identified within the cloud service and a .csv file with populated data included in each request.
-
-Cloud Elements provides discovery services to get a list of available objects.
+If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html)
 
 First we will make the GET /objects call to retrieve a list of available objects
 

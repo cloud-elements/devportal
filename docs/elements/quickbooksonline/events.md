@@ -66,10 +66,10 @@ To authenticate an element instance with polling:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 7. Switch **Events Enabled** on.
 8. In **Event Vendor Type**, select **Polling**.
 8. Add an **Event Notification Callback URL**.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 4. Use the __Event poller refresh interval (mins)__ slider or enter a number in minutes to specify how often Cloud Elements should poll for changes.
 5. Select the resources to poll.
 6. Advanced users can further configure polling:
@@ -250,7 +250,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Vendor Event Type </br>`event.vendor.type` | *Optional*. Identifies the type of events enabled for the instance, either `webhook` or `polling`. | string |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | `event.poller.urls`  | The objects that should be polled. |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
@@ -270,10 +270,10 @@ To authenticate an element instance with webhooks:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
+2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 7. Switch **Events Enabled** on.
 8. In **Event Vendor Type**, select **Webhook**.
 8. Add an **Event Notification Callback URL**.
-9. Optionally include an **Event Notification Signature Key** to identify if events have been tampered with.
 6. Advanced users can further configure polling:
   - Click <img src="/assets/img/platform-icons/code.png" alt="Code Button" class="inlineImage"> to edit the polling configuration JSON directly.
   ![Configure Polling UI](/assets/img/elements/configure-polling-json.gif)
@@ -444,5 +444,5 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Vendor Event Type </br>`event.vendor.type` | *Optional*. Identifies the type of events enabled for the instance, either `webhook` or `polling`. | string |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
-| Event Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |

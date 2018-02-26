@@ -9,6 +9,8 @@ apis: API Docs
 platform: elementsbuilder
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
+redirect_from:
+  - /docs/guides/element-builder/
 order: 20
 ValeOn: <!-- vale on -->
 ---

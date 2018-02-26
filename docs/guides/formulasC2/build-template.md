@@ -44,8 +44,8 @@ To build a new formula template:
     {% include note.html content="If you need to change a trigger in a formula template, you can delete it and start over. Deleting a trigger also deletes all following steps, so do so with caution. " %}
 
 6. Complete the trigger properties, which vary based on the selected trigger.
-    * For **Event** provide an [Element Instance Variable](reference.html/#formula-variables).
-    * For **Element Request** provide an [Element Instance Variable](reference.html/#formula-variables), an API method, and API endpoint.
+    * For **Event** provide an [Element Instance Variable](reference.html#formula-variables).
+    * For **Element Request** provide an [Element Instance Variable](reference.html#formula-variables), an API method, and API endpoint.
     * For **Scheduled** provide a [Cron schedule](reference.html/#scheduled).
     * For **Manual** you do not need to provide any more properties.
 7. Click **Save**.
@@ -64,7 +64,7 @@ To build a new formula template:
 
 5. Add your first step. In the formula visualization, click <img src="img/btn-add-step.gif" alt="Add a Step" class="inlineImage">.
 6. Select the type of step that you want to add.
-7. Complete the step properties, and then click **Save**. For details on each step, see [Element Instance Variable](reference.html/#formula-variables).
+7. Complete the step properties, and then click **Save**. For details on each step, see [Element Instance Variable](reference.html#formula-variables).
 
     {% include note.html content=" Click Add From Existing to find a step to copy. " %}
 
@@ -102,7 +102,7 @@ To test a formula template:
 
 ## Create Variables
 
-You can create two types of variables: **Element Instance** variables &mdash; replaced by element instances in the formula instance &mdash; and **Value** variables &mdash; replaced by values entered in the formula instance. When you create a variable, note the Formula Step Variable Name which is how you refer to the variable in the formula context. See [Formula Variables](reference.html/#formula-variables) for more about variables in the formula context.
+You can create two types of variables: **Element Instance** variables &mdash; replaced by element instances in the formula instance &mdash; and **Value** variables &mdash; replaced by values entered in the formula instance. When you create a variable, note the Formula Step Variable Name which is how you refer to the variable in the formula context. See [Formula Variables](reference.html#formula-variables) for more about variables in the formula context.
 
 To create a formula variable:
 
@@ -225,7 +225,7 @@ To add a description to a formula template:
 
 ## Delete a Formula Template
 
-You can delete a formula template if the template has no instances associated with it. If the formula template includes instances, [delete those first](formula-instance.html/#delete-a-formula-instance).
+You can delete a formula template if the template has no instances associated with it. If the formula template includes instances, [delete those first](formula-instance.html#delete-a-formula-instance).
 
 To delete a formula template:
 

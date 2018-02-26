@@ -17,7 +17,7 @@ ValeOn: <!-- vale on -->
 
 {% include workflow.html displayNames="Info,Authentication,Config & Parameters,Hooks,Events,Resources" links="define-info.html,auth.html,config.html,hooks.html,events.html,resources.html" active="Events"%}
 
-In many cases you want your element to be updated when an event occurs at an API provider. For example, when a user uploads a file to a Dropbox account or when a new contact is added to a CRM element. Cloud Elements supports two types of events: polling and webhooks. With polling, Cloud Elements pings the API provider at configurable intervals to see if a change has occurred. With webhooks, the API provider notifies Cloud Elements when changes occur. You can set up an element to support polling events, or webhooks. If your use case requires both event types, contact Cloud Elements for help.
+In many cases you want your element to be updated when an event occurs at an API provider. For example, when a user uploads a file to a Dropbox account or when a new contact is added to a CRM element. Cloud Elements supports two types of events: polling and webhooks. With polling, Cloud Elements pings the API provider at configurable intervals to see if a change has occurred. With webhooks, the API provider notifies Cloud Elements when changes occur. You can set up an element to support polling events or webhooks. If your use case requires both event types, contact Cloud Elements for help.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#configure-webhook-events>Configure Webhook Events</a></br><a href=#configure-polling-events>Configure Polling Events</a></br><a href=#advanced-polling>Advance Polling</a></br><a href=#polling-parameters>Polling Parameters</a></br><a href=#dates-in-polling>Dates in Polling</a></br><a href=#polling-tips>Polling Tips</a></br>" type="info" %}
 
@@ -41,7 +41,7 @@ The information that you include about the updated and created date fields helps
 
 When users authenticate an element instance, they can customize the polling configuration. Changing polling resource configuration is recommended only for the most technical users, but updating a polling interval can be done by anyone.
 
-The steps outlined below assume that the resource meets two prerequisites. First, the resource supports filtering through a where clause in the request. Second, the resource metadata includes an identifier field (such as `id`, `internalID`, or `resourceId`) and date fields that distinguish between updated and created dates (such as `modifiedDate`, `updatedDate`, or `createdDate`). You can still poll resource that do not meet the prerequisites, but you need to set up additional configurations. See [Advanced Polling](#advanced-polling) and [Polling Tips](#polling-tips).
+The steps outlined below assume that the resource meets two prerequisites. First, the resource supports filtering through a where clause in the request. Second, the resource metadata includes an identifier field (such as `id`, `internalID`, or `resourceId`) and date fields that distinguish between updated and created dates (such as `modifiedDate`, `updatedDate`, or `createdDate`). You can still poll resources that do not meet the prerequisites, but you need to set up additional configurations. See [Advanced Polling](#advanced-polling) and [Polling Tips](#polling-tips).
 
 To set up polling:
 
@@ -178,7 +178,7 @@ Cloud Elements supports the following `dateFieldDescriptor`s:
 
 ### Polling Date Formats
 
-Cloud Elements can handle almost any date format used by API providers. Use the date formats in the URL, Updated date format (`updatedDateFormat`), and Created date format (`createdDateFormat`). Use the following table to help understand some of date formats.
+Cloud Elements can handle almost any date format used by API providers. Use the date formats in the URL, Updated date format (`updatedDateFormat`), and Created date format (`createdDateFormat`). Use the following table to help understand some of the date formats that you can use.
 
 | Format | Example   |
 | :------------- | :------------- |
@@ -193,7 +193,7 @@ Cloud Elements can handle almost any date format used by API providers. Use the 
 | dd/MM/yyyy   |  30-08-2017 |
 | EEE, dd MMM yyyy HH:mm:ss Z   | Saturday, 30-08-2017 13:19:29+0 |
 
-* 'T' separates date and time. If you include 'T', we expect a literal 'T' in the API provider's format. Some API providers use a space between date and time instrad.
+* 'T' separates date and time. If you include 'T', we expect a literal 'T' in the API provider's format. Some API providers use a space between date and time instead.
 * Z indicates a time zone in any accepted format. If you use 'Z', we expect a literal 'Z' in the API Provider's format
 * XXX defines a specific time zone, where each X represents a part of the offset. For example, `XXX` would by EST, or `XXXXXX` would be +06:00.
   - Time zone can be a text string like EDT, MST, or UTC.

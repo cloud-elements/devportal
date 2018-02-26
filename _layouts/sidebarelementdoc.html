@@ -17,6 +17,7 @@
   <link href="/assets/css/docs.css" rel="stylesheet">
   <link href="/assets/css/application.css" rel="stylesheet">
   <link href="/assets/css/custom-styles.css" rel="stylesheet">
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
   <!-- <link href="/api-docs/css/screen.css" media="screen" rel="stylesheet" type="text/css"/> -->
   <!-- <link href="/assets/css/elementDocs.css" rel="stylesheet"> -->
   {% include favicon.html %}
@@ -75,6 +76,7 @@
   <script src="/assets/js/toolkit.js"></script>
   <script src="/assets/js/application.js"></script>
   {% include google_analytics.html %}
+  {% include engagio-tracking.html %}
   {% include hubspot-tracking.html %}
   <script src="/assets/js/ajaxLoading.js"></script>
   <script>

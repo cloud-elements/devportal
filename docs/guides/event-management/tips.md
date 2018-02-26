@@ -73,7 +73,7 @@ Optional Header:
 * __Elements-Async-Callback-URL__ – if not included in request, then the
   app will use the callback URL associated with the instance. If you do
   not have a callback URL associated with the instance configuration or
-  supply one in the request, then an error will be returned.
+  supply one in the request, then an error will be returned. If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html)
 
 For example, this request is asynchronous:
 
