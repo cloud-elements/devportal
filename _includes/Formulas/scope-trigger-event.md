@@ -18,5 +18,5 @@ Event triggers add step execution values like those described in the example JSO
 ```
 Example references to Event trigger scope:
 
-* `${trigger.event.objectType}.`
-* `${trigger.event.eventType}.`
+* `${trigger.event.objectType}`
+* `${trigger.event.eventType}`

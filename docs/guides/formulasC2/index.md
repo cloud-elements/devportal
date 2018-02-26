@@ -23,6 +23,8 @@ After you build formula templates, you can use the templates to create **formula
 
 Formulas are a great way to move the logic out of your apps and into Cloud Elements. This helps keep your code less complex and more maintainable so you can focus on meeting your customers' needs.
 
+{% include callout.html content="<strong>On this page</strong></br><a href=#example>Example</a></br><a href=#definitions>Definitions</a></br><a href=#formula-engine-versions>Formula Engine Versions</a>" type="info" %}
+
 ## Example
 
 We give detailed examples of formulas in the [Examples](examples.html) section. But, to help you understand the power of formulas, here's a common example.
@@ -51,3 +53,9 @@ To help you understand formulas, review the definitions in this section.
 <dd>{{site.data.glossary.formula-variable}} </dd>
 
 </dl>
+
+## Formula Engine Versions
+
+As of the first quarter of 2018, we support two versions of the formula engine: V1 and V3. The V1 engine remains the default engine and all formulas created prior to 2018 were created with the V1 engine. The V3 engine utilizes many architectural and technological improvements to offer efficiency and performance gains. However, your contacts at Cloud Elements will upgrade your formulas for you at first. This helps us to understand the consequences and to evaluate the results of the upgraded formulas. Over time you will be able to upgrade your own formulas, and soon the V3 engine will be the default engine on which you will build all formulas.
+
+While you can access the functionality to upgrade a formula through the Formula Edit page, we encourage you to contact Cloud Elements before doing so. Note that you cannot upgrade a formula that uses single threaded executions.
