@@ -216,3 +216,8 @@ For example, if an entity has an internalId of 1769, and a salesRep has an inter
 
 * Instead of an `/accounts` resource, Netsuite Finance supports the `/ledger-accounts` resources.
 * When working with the `/items` object, you need to include the `_objType` to make POST /Items/{{id}} requests. You can retrieve an `_objType` by making a GET /Items/{id} request.
+* `GET /invoices` returns null values for `amountPaid` and `amountRemaining`. This is expected behavior as described by Netsuite below:
+
+    If a standard field is set to NOT show in the UI, it is not settable through web services, either. If you try to set such a field through web services, an error message is returned.
+
+    This is true for the GET operation of web services as well. Web Services generally mimics the NetSuite UI. The fields available on the invoice form will be the only fields available in the GET response. To show the `amountPaid` and `amountRemaining` fields on the web service response, you customize your form to show the Amount Remaining (Due) and Amount Paid fields on the forms used by your invoices.
