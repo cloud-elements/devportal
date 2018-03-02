@@ -95,7 +95,28 @@ This instance.json file must be included with your instance request.  Please fil
   "name": "<INSERT_INSTANCE_NAME>"
 }
 ```
+If you are using converged apps you will need to add an oauth.scope to the above json payload that is identical to the scope you set in your app and add a "converged_app" field that is set to true For example:
 
+```json
+{
+  "element": {
+    "key": "onedrivev2"
+  },
+
+  "providerData": {
+    "code": "Code on Return the URL"
+  },
+  "configuration": {
+    "oauth.api.key": "<INSERT_ONEDRIVE_CLIENT_ID>",
+     "oauth.api.secret": "<INSERT_ONEDRIVE_CLIENT_SECRET>",
+     "oauth.callback.url": "https://www.yourcallbackurl.com/oauth2callback",
+     "oauth.scope":"openid offline_access https://graph.microsoft.com/mail.read files.readwrite.all directory.readwrite.all sites.readwrite.all",
+     "converged_app": true
+  },
+  "tags": ["<INSERT_TAGS>"],
+  "name": "<INSERT_INSTANCE_NAME>"
+}
+```
 Here is an example cURL command to create an instance using /instances API.
 
 Example Request:
