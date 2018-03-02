@@ -104,7 +104,7 @@ Endpoint parameters allow you to pass various properties to the endpoint. Use th
 |  **page**: The next token or link to get additional results.   |  |   |  |
 |  **pageSize**: The number of records to return.  |   |  |   |
 
-Map parameters that you send as part of the request from Cloud Elements on the left side of the page to parameters available to the resource at the API provider on the right side. The right and left side division is presented as **Cloud Elements Receives As** and **Vendor Receives as** in the example below.
+Map parameters that you send as part of the request from Cloud Elements on the top row to parameters available to the resource at the API provider on the second row.
 ![Add parameters UI](img/resource-parameter.png)
 
 To define a parameter :

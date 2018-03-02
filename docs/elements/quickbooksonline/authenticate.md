@@ -43,7 +43,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`. Note the `scope` and `authentication.type` parameters that are unique to QuickBooks Online.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>&scope=com.intuit.quickbooks.accounting openid profile email phone address&authentication.type=oauth2
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>&scope=com.intuit.quickbooks.accounting&authentication.type=oauth2
 ```
 
 #### Query Parameters
@@ -60,18 +60,16 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 
 ```bash
 curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&scope=com.intuit.quickbooks.accounting%20openid%20profile%20email%20phone%20address&authentication.type=oauth2' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&scope=com.intuit.quickbooks.accounting&authentication.type=oauth2' \
 ```
 
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
-"oauthUrl": "https://appcenter.intuit.com/connect/oauth2?scope=com.intuit.quickbooks.accounting+openid+profile+email+phone+address&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=quickbooks&client_id=Q0rGWmlUp1UFMHPqaZ8nwjyiA5linuQ23RmjsMPHL658osSGlk",
+"oauthUrl": "https://appcenter.intuit.com/connect/oauth2?scope=com.intuit.quickbooks.accounting&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=quickbooks&client_id=Q0rGWmlUp1UFMHPqaZ8nwjyiA5linuQ23RmjsMPHL658osSGlk",
 "element": "{{page.elementKey}}"
 }
 ```

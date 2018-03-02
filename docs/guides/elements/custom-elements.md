@@ -17,15 +17,15 @@ ValeOn: <!-- vale on -->
 
 # Build Custom Elements
 
-You can use Element Builder to build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. You can build elements for Rest APIs, SAP APIs, or even database applications. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can combine services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also use the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
+You can use Element Builder to build your own  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.element}}">elements</a> to create custom integrations to API providers. You can build elements for Rest APIs, SOAP APIs, or even database applications. Publish finished elements to the Elements Catalog while automatically generating interactive API Documentation. You can combine services by creating a  <a href="#" data-toggle="tooltip" data-original-title="{{site.data.glossary.hub}}">hub</a> or mapping your new element to an existing hub. You can also use the normalized resources that we have already organized into hubs, and leverage the same resources across any other element that you build.
 
 Users of this guide should be familiar with APIs, JavaScript, and JSON. To create an element we recommend that you have a thorough understanding of:
 
 * API authorization concepts
 * Any setup required with the API provider
 * JavaScript
-* The API of the API provider that you are connecting to.
-* The API provider's API documentation.
+* The API of the API provider that you are connecting to
+* The API provider's API documentation
 * The Cloud Elements Hub APIs
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#the-workflow>The Workflow</a></br><a href=#before-you-begin>Before you Begin</a></br><a href=#manage-custom-elements>Manage Custom Elements</a></br><a href=#navigate-element-builder>Navigate Element Builder</a></br><a href=#clone-and-delete-custom-elements>Clone and Delete Custom Elements</a></br><a href=#custom-element-checklist>Custom Element Checklist</a></br><a href=#element-conventions>Element Conventions</a>" type="info" %}
@@ -48,7 +48,7 @@ While you can work on different parts of an element throughout the entire creati
 
 <img src="/assets/img/callouts/6.png" alt="6" class="inlineImage"> Set up polling or webhook events.
 
-<img src="/assets/img/callouts/7.png" alt="4" class="inlineImage"> Define the API provider resources to connect to.
+<img src="/assets/img/callouts/7.png" alt="7" class="inlineImage"> Define the API provider resources to connect to.
 
 
 ## Before You Begin

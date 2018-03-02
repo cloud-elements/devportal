@@ -19,7 +19,7 @@ ValeOn: <!-- vale on -->
 
 Elements are enhanced connectors that provide a unified developer experience into a specific cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo). The [Elements Catalog](#elements-catalog) includes a list of all publicly available elements as well as any custom elements that you create. Use these elements to [create authenticated connections](instances.html) &mdash; called element instances &mdash; to your API providers.
 
-I addition to the Elements Catolog, we offer Element Builder to extend the capabilities of existing Cloud Elements integrations or build a new Element from scratch. If we don't have the element you're looking for, or if you want to extend any of the elements in the catalog, you can use Element Builder to extend and create elements.
+I addition to the Elements Catalog, we offer Element Builder to extend the capabilities of existing Cloud Elements integrations or build a new Element from scratch. If we don't have the element you're looking for, or if you want to extend any of the elements in the catalog, you can use Element Builder to extend and create elements.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#elements-catalog>Elements Catalog</a></br><a href=#view-element-api-docs>View Element API Docs</a></br><a href=#import-and-export>Import and Export</a>" type="info" %}
 

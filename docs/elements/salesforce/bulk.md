@@ -19,7 +19,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 Cloud Elements leverages the native provider bulk endpoints whenever available. When there is no bulk available from the provider, Cloud Elements provides a bulk service for uploading and downloading data from the endpoint.
 
-The {{page.heading}} element uses the Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the bulk service, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
+The {{page.heading}} element uses the Salesforce bulk endpoints (batch APIs). Rate limits come into play when the Salesforce batch APIs, so review the limitations in the [API provider's documentation](https://developer.salesforce.com/docs/atlas.en-us.salesforce_app_limits_cheatsheet.meta/salesforce_app_limits_cheatsheet/salesforce_app_limits_platform_api.htm).
 
 ## Hash Verification
 
