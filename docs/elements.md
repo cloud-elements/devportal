@@ -49,6 +49,7 @@ layout: sidebarelementtile
 * [![Facebook Lead Ads](/assets/img/element-logos/facebook.png)Facebook Lead Ads](./elements/facebookleadads/)
 * [![FieldAware](/assets/img/element-logos/fieldaware.png)FieldAware](./elements/fieldaware/)
 * [![Flickr](/assets/img/element-logos/flickr.png)Flickr](./elements/flickr/)
+* [![Fortnox](/assets/img/element-logos/fortnox_logo_svart.svg)Fortnox](./elements/fortnox/)
 * [![FreshBooks Classic](/assets/img/element-logos/freshbooks.png)FreshBooks Classic](./elements/freshbooks/)
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/)
 * [![Freshservice](/assets/img/element-logos/freshservice.png)Freshservice](./elements/freshservice/)
