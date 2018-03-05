@@ -81,6 +81,6 @@ We made several changes to security in this release including:
 
 {% include note.html content="Any deletions of a user, either by deleting or permanently deactivating the account, or directly deleting the user, will in turn delete all of the user's jobs (API scheduled, bulk, formula trigger, and polling). " %}
 
-## Cloud Elements 2.0 supports Custom JS only transformations
+### Cloud Elements 2.0 supports Custom JS only transformations
 
 Previously, if you attempted to create a transformation using only Custom JS, you received an error indicating at least one field level transformation was required. You can now create a transformation exclusively through Custom JS.
