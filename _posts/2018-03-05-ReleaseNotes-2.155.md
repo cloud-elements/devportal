@@ -28,3 +28,7 @@ To switch to serial mode pass `"concurrency":"serial"` in the request metadata.
 ### WooCommerce: Normalized CEQL
 
 We modified the `where` parameter for WooCommerce products and orders to allow native WooCommerce and normalized queries. For example, to search for objects created after 2016-04-28T21:58:25, you can either query `created_date > '2016-04-28T21:58:25'` or `after = '2016-04-28T21:58:25'`.
+
+### Intacct.: Fixed a bug where `GET /bills` and `GET /bills/{id}`returned responses differently
+
+The formate of responses from `GET /bills` and `GET /bills/{id}` match.
