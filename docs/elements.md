@@ -100,6 +100,7 @@ layout: sidebarelementtile
 * [![Pardot](/assets/img/element-logos/pardot.png)Pardot](./elements/pardot/)
 * [![PayPal](/assets/img/element-logos/paypal.png)PayPal](./elements/paypal/)
 * [![Pipedrive](/assets/img/element-logos/pipedrive.png)Pipedrive](./elements/pipedrive/)
+* [![Plaid](/assets/img/element-logos/plaid.svg)Plaid](./elements/plaid/)
 * [![PostgreSQL](/assets/img/element-logos/postgresql.png)PostgreSQL](./elements/postgresql/)
 * [![QuickBase](/assets/img/element-logos/quickbase.png)QuickBase](./elements/quickbase/)
 * [![QuickBooks Enterprise](/assets/img/element-logos/quickbooksenterprise.png)QuickBooks Enterprise](./elements/quickbooksenterprise/)
