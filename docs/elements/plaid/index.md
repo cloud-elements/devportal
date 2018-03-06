@@ -1,19 +1,19 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Overview | Name of Element | Cloud Elements API Docs
+heading: Plaid
+apiProvider: Plaid # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Overview | Plaid | Cloud Elements API Docs
 title: Overview
-description: Integrate Name of Element into your application via the Cloud Elements APIs.
+description: Integrate Plaid into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5865
 parent: Back to Element Guides
 order: 1
 ---
 
 # Welcome to the {{page.heading}} Element
 
-{{page.apiProvider}} provides on-demand customer relationship management (CRM) services.
+Plaid is available in the Finance hub. Connect a Plaid account to integrate with accounts, transactions, institutions, categories, and more.
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -21,11 +21,11 @@ order: 1
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://www.google.com/search?q={{page.heading}}+api+documentation) |
-| Authentication | OAuth 2.0  |
-| Events | Webhooks and polling |
+| API Documentation | [{{page.apiProvider}} API documentation](https://plaid.com/docs/api/) |
+| Authentication | Custom  |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
-| Rate Limits | [{{page.heading}} rate limit documentation](https://www.google.com/search?q={{page.heading}}+api+rate+limits)|
+| Rate Limits | [{{page.heading}} rate limit documentation](https://plaid.com/docs/api/#rate-limit-exceeded-errors)|
 
 {% include Elements/index.md%}

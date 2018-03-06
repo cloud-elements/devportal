@@ -1,16 +1,13 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: Plaid
+apiProvider: Plaid # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | Plaid | Cloud Elements API Docs
 title: Events
-description: Enable Element Name events for your application.
+description: Enable Plaid events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 5865
+elementKey: plaid
 parent: Back to Element Guides
 order: 25
 ---
@@ -25,19 +22,7 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
 
-<Use the following paragraph if you can poll only one resource>
-
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<Alternatively, if there are multiple supported resources, you can go with something like this:>
-
-You can set up events for the following resources:
-
-* accounts
-* contacts
-* leads
-* opportunities
-* users
+You can set up polling for the `transactions` resource. You can also copy the `transactions` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -46,7 +31,6 @@ You can set up events for the following resources:
 You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-polling-through-api) .
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
-
 
 ### Configure Polling Through the UI
 
@@ -68,7 +52,6 @@ To authenticate an element instance with polling:
   ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -83,43 +66,44 @@ To authenticate an element instance with polling:
 1. Get an authorization grant code by completing the steps in [Getting a redirect URL](authenticate.html#getting-a-redirect-url) and  [Authenticating users and receiving the authorization grant code](authenticate.html#authenticating-users-and-receiving-the-authorization-grant-code).
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
-    ```json
-    {
-      "element":{
-        "key":"{{page.elementKey}}"
-      },
-      "providerData":{
-        "code": "<AUTHORIZATION_GRANT_CODE>"
-      },
-      "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
-        "event.notification.enabled": true,
-        "event.notification.callback.url": "http://mycoolapp.com",
-        "event.poller.refresh_interval": "<minutes>",
-        "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "createdDateTimezone":"GMT"
-            }
-          }
+```json
+{
+  "element": {
+    "key": "{{page.elementKey}}"
+  },
+  "configuration": {
+    "public_key": "<{{page.apiProvider}} public_key>",
+    "secret": "<{{page.apiProvider}} secret>",
+    "client_id": "<{{page.apiProvider}} client_id>",
+    "subdomain": "<{{page.apiProvider}} API environment>",
+    "password": "User's password",
+    "username": "User's user name",
+    "bank_name": "Supported Plaid Institution Name",
+    "products": "<Comma separated list of products>",
+    "event.notification.enabled": true,
+    "event.vendor.type": "polling",
+    "event.notification.callback.url": "http://mycoolapp.com",
+    "event.poller.refresh_interval": "<minutes>",
+    "event.poller.configuration":{
+      "transactions": {
+        "url": "/hubs/finance/transactions?where=date>'${date:yyyy-MM-dd}'",
+        "idField": "transaction_id",
+        "xPath": "transaction_id",
+        "datesConfiguration": {
+          "updatedDateField": "date",
+          "updatedDateFormat": "yyyy-MM-dd",
+          "createdDateField": "date",
+          "createdDateFormat": "yyyy-MM-dd"
         }
-      },
-      "tags":[
-        "<Add_Your_Tag>"
-      ],
-      "name":"<INSTANCE_NAME>"
+      }
     }
-    ```
+  },
+  "tags": [
+    "<Add_Your_Tag>"
+  ],
+  "name": "<INSTANCE_NAME>"
+}
+```
 
 1. Call the following, including the JSON body you constructed in the previous step:
 
@@ -145,23 +129,30 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "public_key": "xxxxxxxxxxxxxxxxxx",
+    "secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "client_id": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "subdomain": "sandbox",
+    "username": "user_good",
+    "password": "pass_good",
+    "bank_name": "Tartan Bank",
+    "products": "auth, transactions",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/woocommercerest/",
+	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/plaid/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-    	"contacts": {
-    		"url":"/hubs/ecommerce/customers",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"date_modified",
-              "updatedDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''",
-              "createdDateField":"date_created",
-              "createdDateFormat":"yyyy-MM-dd'\''T'\''HH:mm:ss'\''"
-            }
-    	}
+      "transactions": {
+        "url": "/hubs/finance/transactions?where=date>'${date:yyyy-MM-dd}'",
+        "idField": "transaction_id",
+        "xPath": "transaction_id",
+        "datesConfiguration": {
+          "updatedDateField": "date",
+          "updatedDateFormat": "yyyy-MM-dd",
+          "createdDateField": "date",
+          "createdDateFormat": "yyyy-MM-dd"
+        }
+      }
     }
   },
   "tags": [
@@ -179,10 +170,15 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}}  | string |
-|  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
+|  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
+| Plaid Public Key</br>`public_key` | The Plaid **public_key** that you noted in [API Provider Setup](setup.html). |  string |
+| Plaid Secret</br>`secret` | The Plaid **secret** that you noted in [API Provider Setup](setup.html). | string |
+| Plaid Client Id</br>`client_id`   | The Plaid **client_id** that you noted in [API Provider Setup](setup.html). | string |
+| subdomain</br>`subdomain`   | The Plaid [API environment](https://plaid.com/docs/quickstart/#api-environments) (sandbox, production, or development) to integrate with.  | string  |
+| User' Bank Username</br>`username`   | The user's bank user name.   | string  |
+| User' Bank Password</br>`password`   |  The user's bank password.  | string  |
+| User's Bank Name   | The name of the user's bank that must match an Institution in Plaid  | string  |
+| Products</br>`products`   | A comma-separated list of [Plaid products](https://plaid.com/docs/api/#auth). | string  |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|

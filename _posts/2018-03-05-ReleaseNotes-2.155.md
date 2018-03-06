@@ -9,7 +9,7 @@ heading: Release Notes
 
 ### Plaid: New element
 
-We added the Plaid element to our catalog. Plaid is available in the Finance hub. Connect a Plaid account to integrate with accounts, transactions, institutions, categories, and more.
+We added the Plaid element to our catalog. Plaid is available in the Finance hub. Connect a Plaid account to integrate with accounts, transactions, institutions, categories, and more. Take a look at the [Plaid Element docs](/docs/elements/plaid/) and get started today.
 
 ### Fortnox: New element
 

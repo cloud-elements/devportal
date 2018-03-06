@@ -1,13 +1,13 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Plaid
+apiProvider: Plaid # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Plaid | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
+elementId: 5865
+elementKey: plaid
 username: username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
 password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
@@ -22,7 +22,7 @@ You can authenticate with {{page.apiProvider}} to create your own instance of th
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.apiProvider}} and create an element instance. You will need your **Username**  and **Password** that you identified in [API Provider Setup](setup.html).
+Use the UI to authenticate with {{page.apiProvider}} and create an element instance.
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -33,7 +33,19 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **User Name** and **Password** enter the  **{{page.username}}** and **{{page.password}}** that you identified in [API Provider Setup](setup.html).
+6. Enter the required Plaid information that you identified in [API Provider Setup](setup.html):
+  - **Plaid Public Key**: Enter your **public_key**.
+  - **Plaid Secret**: Enter your **secret**.
+  - **subdomain**: Enter **sandbox**, **production**, or **development** depending on your [API environment](https://plaid.com/docs/quickstart/#api-environments).
+  - **Plaid Client Id**: Enter your **client_id**.
+6. Enter the user's bank information:
+  - **User's Bank Password**
+  - **User's Bank Username**
+  - **User's Bank Name**. This must match an Institution in Plaid.
+7. If you want access to products other than Auth and Transactions, click **Show Optional Fields**, and then add the products that you want to access to the comma separated list. For example, `auth, transactions, identity, income`.
+
+    {% include note.html content="Identity and Income are not available by default. If you do not have access to the specified products you cannot authenticate an element instance." %}
+
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 
@@ -54,8 +66,14 @@ To authenticate an element instance:
         "key": "{{page.elementKey}}"
       },
       "configuration": {
-        "username": "<{{page.apiProvider}} {{page.username}}>",
-        "password": "<{{page.apiProvider}} {{page.password}}>"
+        "public_key": "<{{page.apiProvider}} public_key>",
+        "secret": "<{{page.apiProvider}} secret>",
+        "client_id": "<{{page.apiProvider}} client_id>",
+        "subdomain": "<{{page.apiProvider}} API environment>",
+        "password": "User's password",
+        "username": "User's user name",
+        "bank_name": "Supported Plaid Institution Name",
+        "products": "<Comma separated list of products>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -84,8 +102,14 @@ curl -X POST \
     "key": "{{page.elementKey}}"
   },
   "configuration": {
-    "username": "xxxxxxxxxxxxxxxxxx",
-    "password": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "public_key": "xxxxxxxxxxxxxxxxxx",
+    "secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "client_id": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "subdomain": "sandbox",
+    "username": "user_good",
+    "password": "pass_good",
+    "bank_name": "Tartan Bank",
+    "products": "auth, transactions"
   },
   "tags": [
     "Docs"
@@ -99,12 +123,22 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
+- **User's Bank Name**. This must match an Institution in Plaid.
+7. If you want access to products other than Auth and Transactions, click **Show Optional Fields**, and then add the products that you want to access to the comma separated list. For example, `auth, transactions, identity, income`.
+
+
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| Username</br>`username` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
-| Password</br>`password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
+| Plaid Public Key</br>`public_key` | The Plaid **public_key** that you noted in [API Provider Setup](setup.html). |  string |
+| Plaid Secret</br>`secret` | The Plaid **secret** that you noted in [API Provider Setup](setup.html). | string |
+| Plaid Client Id</br>`client_id`   | The Plaid **client_id** that you noted in [API Provider Setup](setup.html). | string |
+| subdomain</br>`subdomain`   | The Plaid [API environment](https://plaid.com/docs/quickstart/#api-environments) (sandbox, production, or development) to integrate with.  | string  |
+| User' Bank Username</br>`username`   | The user's bank user name.   | string  |
+| User' Bank Password</br>`password`   |  The user's bank password.  | string  |
+| User's Bank Name   | The name of the user's bank that must match an Institution in Plaid  | string  |
+| Products</br>`products`   | A comma-separated list of [Plaid products](https://plaid.com/docs/api/#auth). | string  |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -118,11 +152,11 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-    "id": 13766,
-    "name": "iContact",
-    "key": "icontact",
-    "description": "Add an iContact instance to connect your existing iContact account to the Marketing Hub, allowing you to manage campaigns, lists, contacts etc. across multiple Marketing Elements. You will need your iContact account information to add an instance.",
-    "image": "elements/provider_icontact.png",
+    "id": 5865,
+    "name": "Plaid",
+    "key": "plaid",
+    "description": "Plaid enables applications to connect with users’ bank accounts",
+    "image": "elements/custom-element-default-logo.png",
     "active": true,
     "deleted": false,
     "typeOauth": false,
@@ -132,20 +166,20 @@ In this example, the instance ID is `12345` and the instance token starts with "
     "bulkDownloadEnabled": true,
     "bulkUploadEnabled": true,
     "cloneable": true,
-    "extendable": false,
+    "extendable": true,
     "beta": false,
     "authentication": {
         "type": "custom"
     },
     "extended": false,
-    "hub": "marketing",
+    "hub": "finance",
     "protocolType": "http",
     "parameters": [  ],
     "private": false
     },
-  "elementId": 13766,
+  "elementId": 5865,
   "tags": [
-    "Docs"
+      "Docs"
   ],
   "provisionInteractions": [],
   "valid": true,
@@ -154,6 +188,7 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "cacheTimeToLive": 0,
   "configuration": {    },
   "eventsEnabled": false,
+  "eventsNotificationCallbackUrl": "false",
   "traceLoggingEnabled": false,
   "cachingEnabled": false,
   "externalAuthentication": "none",

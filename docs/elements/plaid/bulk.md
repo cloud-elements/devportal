@@ -1,11 +1,11 @@
 ---
-heading: Name of Element
-seo: Bulk  | Name of Element | Cloud Elements API Docs
+heading: Plaid
+seo: Bulk  | Plaid | Cloud Elements API Docs
 title: Bulk
 description: Add Bulk functionality to your app.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
+elementId: 5865
 parent: Back to Element Guides
 order: 30
 sitemap: false
