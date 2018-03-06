@@ -31,4 +31,4 @@ We modified the `where` parameter for WooCommerce products and orders to allow n
 
 ### Intacct.: Fixed a bug where `GET /bills` and `GET /bills/{id}`returned responses differently
 
-The formate of responses from `GET /bills` and `GET /bills/{id}` match.
+The format of responses from `GET /bills` and `GET /bills/{id}` match.
