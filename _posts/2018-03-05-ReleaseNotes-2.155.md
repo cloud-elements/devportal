@@ -13,7 +13,7 @@ We added the Plaid element to our catalog. Plaid is available in the Finance hub
 
 ### Fortnox: New element
 
-We added the Fortnox element to our catalog. Fortnox is available in the ERP hub. Connect a Fortnox account to integrate with projects, invoices, vouchers, products, and more.
+We added the Fortnox element to our catalog. Fortnox is available in the ERP hub. Connect a Fortnox account to integrate with projects, invoices, vouchers, products, and more. Take a look at the [Fortnox Element docs](/docs/elements/fortnox/) and get started today.
 
 ### QuickBooks Online: Added support for total count in responses
 
