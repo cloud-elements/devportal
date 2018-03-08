@@ -22,7 +22,101 @@ To provision your Ecwid Element, use the /instances API.
 * __Request Body__: Required – see below
 * __Query Parameters__: none
 
-In order to create an Ecwid instance, you will need the Store ID, Order API Key, and Product API Key. For instructions on how to retrieve those credentials, please see our Ecwid Endpoint Setup.
+Ecwid now has two types of authentication- Oauth2 or custom.
+
+#### Oauth2
+
+```bash
+curl -X GET \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=<key>&apiSecret=<secret>&callbackUrl=<callback>' \
+```
+
+### Authenticating Users and Receiving the Authorization Grant Code
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Users"%}
+
+Provide the `oauthUrl` in the response from the previous step to the users. After users authenticate, {{page.apiProvider}} provides the following information in the response:
+
+* code
+* state
+
+| Response Parameter | Description   |
+| :------------- | :------------- |
+| code | {{site.data.glossary.element-auth-grant-code}} |
+| state | {{site.data.glossary.element-auth-state}} (`{{page.elementKey}}`) . |
+
+{% include note.html content="If the user denies authentication and/or authorization, there will be a query string parameter called <code>error</code> instead of the <code>code</code> parameter. In this case, your application can handle the error gracefully." %}
+
+### Authenticating the Element Instance
+
+{% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active="Authenticate Instance"%}
+
+Use the `code` from the previous step and the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance. If you are configuring events, see the [Events section](events.html).
+
+{% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
+
+To authenticate an element instance:
+
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+
+
+    ```json
+    {
+      "element": {
+        "key": "{{page.elementKey}}"
+      },
+      "providerData": {
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
+      "configuration": {
+        "oauth.api.key": "<{{page.apiProvider}} app {{page.apiKey}}>",
+      	"oauth.api.secret": "<{{page.apiProvider}} app {{page.apiSecret}}>",
+        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >"
+      },
+      "tags": [
+        "<Add_Your_Tag>"
+      ],
+      "name": "<INSTANCE_NAME>"
+    }
+    ```
+
+1. Call the following, including the JSON body you constructed in the previous step:
+
+        POST /instances
+
+    {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
+
+1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
+
+#### Example Request
+
+```bash
+curl -X POST \
+  https://api.cloud-elements.com/elements/api-v2/instances \
+  -H 'authorization: User <USER_SECRET>, Organization <ORGANIZATION_SECRET>' \
+  -H 'content-type: application/json' \
+  -d '{
+  "element": {
+    "key": "{{page.elementKey}}"
+  },
+  "providerData": {
+    "code": "xxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "configuration": {
+    "oauth.api.key": "Rand0MAP1-key",
+    "oauth.api.secret": "fak3AP1-s3Cr3t",
+    "oauth.callback.url": "https;//mycoolapp.com",
+  },
+  "tags": [
+    "Docs"
+  ],
+  "name": "API Instance"
+}'
+```
+
+#### Custom Authentication
+
+In order to create an Ecwid instance with custom Authentication (note this is a legacy version of Ecwid so if you do not already have your store ID, order API Key, adn Product API Key you should use oauth2), you will need the Store ID, Order API Key, and Product API Key. For instructions on how to retrieve those credentials, please see our Ecwid Endpoint Setup.
 NOTE: Ecwid currently supports the the GET, PUT/PATCH, DELETE API calls. POST is not available at this time.
 
 Description: An Element token is returned upon successful execution of this API. This token needs to be retained by the application for all subsequent requests involving this element instance.
