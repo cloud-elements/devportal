@@ -47,7 +47,7 @@ Responses to the list of endpoints below return a `tags` object that includes a 
 
 Find and manage cases and knowledge articles in Microsoft Dynamics.
 
-### QuickBooks Enterprise: Updated filtering with TxnDate
+### QuickBooks Enterprise: Updated filtering with `TxnDate`
 
 Added support for `TxnDate` processing on `creditcard-charges` and `creditcard-credits` resources.
 
@@ -57,9 +57,9 @@ Previously when you sent a  `POST /files` with `overwrite=true`, the new file di
 
 Metadata retrieved by `GET /search` did not include `modifiedDate`. We updated `GET /search` to include `modifiedDate` in the metadata.
 
-### Twilio: Added `/addresses` and accounts `/resources`
+### Twilio: Added `/addresses` and and `/accounts` resources
 
-manage your address and resources with the new `/addresses` and /`accounts` resources.
+Manage your address and resources with the new `/addresses` and `/accounts` resources.
 
 ### Chargify: Added `/invoices` resource
 
