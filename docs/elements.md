@@ -51,6 +51,7 @@ layout: sidebarelementtile
 * [![Flickr](/assets/img/element-logos/flickr.png)Flickr](./elements/flickr/)
 * [![Fortnox](/assets/img/element-logos/fortnox_logo_svart.svg)Fortnox](./elements/fortnox/)
 * [![FreshBooks Classic](/assets/img/element-logos/freshbooks.png)FreshBooks Classic](./elements/freshbooks/)
+* [![FreshBooks Cloud Accounting](/assets/img/element-logos/freshbooks-cloud.svg)FreshBooks Cloud Accounting](./elements/freshbooksv2/)
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/)
 * [![Freshservice](/assets/img/element-logos/freshservice.png)Freshservice](./elements/freshservice/)
 * [![GoodData](/assets/img/element-logos/gooddata.png)GoodData](./elements/gooddata/)
