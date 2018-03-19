@@ -58,6 +58,8 @@ Salesforce allows paging only up to 2000 records. If you need to go above 2000 r
 
 * Consider using the Bulk API if you are managing over 2000 records.
 * The Salesforce bulk chunking mechanism allows you to use bulk on large data sets without limitations. If you use an orderBy clause, chunking is disabled. If chunking is enabled, it may take longer to get all the data. Also, be aware that Salesforce has daily upload and download limits.
+* If you encounter record lock issues when performing bulk uploads, you can try serial mode instead of the default parallel node. See the Salesforce documentation topic [General Guidelines for Data Loads](https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_planning_guidelines.htm) for more information about parallel and serial modes. To switch to serial mode pass `"concurrency":"serial"` in the request metadata.
+
 
 ### Version
 
