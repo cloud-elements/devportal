@@ -67,6 +67,7 @@ To import an element:
   * Element &mdash; A JSON file reated by exporting an element.
   * Swagger &mdash; A swagger specification file for an API.
   * SOAP &mdash; An XML file that describes a SOAP API.
+  * OData &mdash; An Open Data Protocol file that describes a REST API.
 3. Select a file stored on your computer or enter the URL of the file.
 4. Click **Next**.
 5. Select the resources that you want to import.
