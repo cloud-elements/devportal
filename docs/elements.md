@@ -39,6 +39,7 @@ layout: sidebarelementtile
 * [![Dropbox](/assets/img/element-logos/dropbox.png)Dropbox](./elements/dropbox/)
 * [![Dropbox Business](/assets/img/element-logos/dropbox.png)Dropbox Business](./elements/dropbox-business/)
 * [![Dynamics CRM](/assets/img/element-logos/dynamicscrm.png)Microsoft Dynamics CRM](./elements/dynamicscrm/)
+* [![E-conomic](https://images.cloudelements.io/2743_2743_e-conomic-logo201712051817.png)E-conomic](./elements/economic/)
 * [![Ecwid](/assets/img/element-logos/ecwid.png)Ecwid](./elements/ecwid/)
 * [![Egnyte](/assets/img/element-logos/egnyte.png)Egnyte](./elements/egnyte/)
 * [![ePages](/assets/img/element-logos/epages.png)ePages](./elements/epages/)

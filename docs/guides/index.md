@@ -7,6 +7,8 @@ layout: sidebarleft
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 1
+redirect_from:
+  - /docs/guides/home
 ---
 
 # Cloud Elements Guides
