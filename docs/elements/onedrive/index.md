@@ -1,5 +1,6 @@
 ---
 heading: OneDrive
+apiProvider: Microsoft # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Overview | OneDrive | Cloud Elements API Docs
 title: Overview
 description: Integrate OneDrive into your application via the Cloud Elements APIs.
@@ -11,21 +12,20 @@ order: 1
 sitemap: false
 ---
 
-## Welcome to the OneDrive Element
+# Welcome to the {{page.heading}} Element
 
+The {page.heading}} element is available in the documents hub and provides access to your files and folders in OneDrive.
 
-#### At a Glance
+{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
-In order to create a connection to OneDrive the following steps are required:
+## Element Details
 
-1. Set up the [endpoint](onedrive-endpoint-setup.html)
-2. Call the `GET /elements/onedrivev2/oauth/url` with your OneDrive API key and secret
-3. Call the `POST /instances` API to instantiate your OneDrive connected app
+| Element Information | Details     |
+| :------------- | :------------- |
+| API Documentation | [{{page.apiProvider}} API documentation](https://docs.microsoft.com/en-us/onedrive/developer/rest-api/) |
+| Authentication | OAuth 2.0  |
+| Events | Polling |
+| Bulk | Not supported. |
+| Transformations | Not supported. |
 
-#### In Depth
-
-The OneDrive Element is a collection of resources providing a pre-built integration into a service endpoint. RESTful methods (POST, GET, PUT, PATCH, DELETE) are used to interact with these resources (accounts, contacts, files) regardless of the type of APIs (SOAP or REST) provided by the endpoint. Elements leverage Cloud Elements API Manager platform services including authentication, data transformation, and event management.  The API is built to allow you to create a functional application or integration quickly and easily.
-
-All API calls to Cloud Elements should be made to the `https://api.cloud-elements.com/elements/api-v2` base domain. Requests are authorized with an Organization and User secret, as well as, an Element token.  We use many standard HTTP features, like HTTP verbs, which can be understood by many HTTP clients. JSON will be returned in all responses from the API, including errors. The APIs are designed to have predictable, straightforward URLs and to use HTTP response codes to indicate API errors.
-
-Get started by [setting up the endpoint](onedrive-endpoint-setup.html).
+{% include Elements/index.md%}
