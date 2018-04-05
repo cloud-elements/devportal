@@ -1,26 +1,25 @@
 ---
-heading: E-conomic
-apiProvider: E-conomic # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Overview | E-conomic | Cloud Elements API Docs
+heading: Insightly
+apiProvider: Insightly # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Overview | Insightly | Cloud Elements API Docs
 title: Overview
-description: Integrate E-conomic into your application via the Cloud Elements APIs.
+description: Integrate Insightly into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 5994
+elementId: 5993
 parent: Back to Element Guides
 order: 1
 ---
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} is available in the ERP hub. Connect a {{page.apiProvider}} account to integrate with accounts, currencies, customers, invoices, and more.
+{{page.heading}} is available in the CRM hub. Connect an {{page.apiProvider}} account to integrate with accounts, contacts, leads, opportunities, and more.
 
 Use this Postman collection and the documentation here to get started.
 
 <div>
-{% include_relative postman/e-conomic-ostman.html %}
+{% include_relative postman/insightly-postman.html %}
 </div>
-
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 
@@ -28,8 +27,8 @@ Use this Postman collection and the documentation here to get started.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://www.e-conomic.com/developer/documentation) |
-| Authentication | OAuth 2.0  |
+| API Documentation | [{{page.apiProvider}} API documentation](https://api.insight.ly/v2.2/Help) |
+| Authentication | Basic |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
