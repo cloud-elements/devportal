@@ -1,16 +1,15 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: Insightly
+apiProvider: Insightly # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | Insightly | Cloud Elements API Docs
 title: Events
 description: Enable Element Name events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 5993
+elementKey: insightly
+username: User Name or Email Address  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: API key #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 25
 ---
@@ -25,19 +24,12 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
 
-<Use the following paragraph if you can poll only one resource>
-
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<Alternatively, if there are multiple supported resources, you can go with something like this:>
-
 You can set up events for the following resources:
 
 * accounts
 * contacts
 * leads
 * opportunities
-* users
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -47,7 +39,6 @@ You can configure polling [through the UI](#configure-polling-through-the-ui) or
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
 
-
 ### Configure Polling Through the UI
 
 For more information about each field described here, see [Parameters](#parameters).
@@ -55,7 +46,6 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with polling:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.apiProvider}}](authenticate.html) .
-2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
 8. Add an **Event Notification Callback URL**.
@@ -68,7 +58,6 @@ To authenticate an element instance with polling:
   ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -77,6 +66,12 @@ After successfully authenticating, we give you several options for next steps. [
 Use the `/instances` endpoint to authenticate with {{page.apiProvider}} and create an element instance with polling enabled.
 
 {% include note.html content="The endpoint returns an element instance token and id upon successful completion. Retain the token and id for all subsequent requests involving this element instance.  " %}
+
+To help you authenticate using our APIs, try the Run in Postman button below. After you import the collection, take a look at the docs.
+
+<div>
+{% include_relative postman/insightly-postman.html %}
+</div>
 
 To authenticate an element instance with polling:
 
@@ -92,27 +87,44 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
+        "username": "<{{page.apiProvider}} {{page.username}}>",
+        "password": "<{{page.apiProvider}} {{page.password}}>",
         "event.notification.enabled": true,
-        "event.notification.callback.url": "http://mycoolapp.com",
+        "event.vendor.type": "polling",
         "event.poller.refresh_interval": "<minutes>",
+        "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "createdDateTimezone":"GMT"
+          "contacts": {
+            "url": "/hubs/crm/contacts?where=updated_after_utc='${gmtDate:yyyy-MM-dd HH:mm:ss}'",
+            "idField": "CONTACT_ID",
+            "datesConfiguration": {
+              "updatedDateField": "DATE_UPDATED_UTC",
+              "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+              "updatedDateTimezone": "GMT",
+              "createdDateField": "DATE_CREATED_UTC",
+              "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
+              "createdDateTimezone": "GMT"
             }
+          },
+            "accounts": {
+              "url": "/hubs/crm/accounts?where=updated_after_utc='${gmtDate:yyyy-MM-dd HH:mm:ss}'",
+              "idField": "ORGANISATION_ID",
+              "datesConfiguration": {
+                "updatedDateField": "DATE_UPDATED_UTC",
+                "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+                "updatedDateTimezone": "GMT",
+                "createdDateField": "DATE_CREATED_UTC",
+                "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
+                "createdDateTimezone": "GMT"
+              }
+            },
+              "leads": {
+
+              },
+              "opportunities": {
+
+              }
           }
-        }
       },
       "tags":[
         "<Add_Your_Tag>"
@@ -145,24 +157,24 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "username": "xxxxxxxxxxxxxxxxxx",
+    "password": "xxxxxxxxxxxxxxxxxxxxxxxx"
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/woocommercerest/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
       "contacts": {
         "url": "/hubs/crm/contacts?where=updated_after_utc='${gmtDate:yyyy-MM-dd HH:mm:ss}'",
         "idField": "CONTACT_ID",
         "datesConfiguration": {
-          "updatedDateField": "DATE_UPDATED_UTC",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "updatedDateTimezone": "GMT",
-          "createdDateField": "DATE_CREATED_UTC",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateTimezone": "GMT"
-          }
+            "updatedDateField": "DATE_UPDATED_UTC",
+            "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+            "updatedDateTimezone": "GMT",
+            "createdDateField": "DATE_CREATED_UTC",
+            "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
+            "createdDateTimezone": "GMT"
+            }
     	}
     }
   },
@@ -180,11 +192,9 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | {{site.data.glossary.element-auth-grant-code}}  | string |
 |  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
+| Username</br>`username` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+| Password</br>`password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
@@ -198,6 +208,3 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Created Date Field</br>`createdDateField` | The field that identifies a created object. | String |
 | Created Date Format</br>`createdDateFormat` | The date format of the field that identifies a created object.  | String |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
-
-
-User {{userSecret}}, Organization {{orgSecret}}, Element {{elementInstanceToken}}

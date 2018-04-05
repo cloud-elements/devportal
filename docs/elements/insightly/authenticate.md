@@ -1,15 +1,15 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Authenticate | Name of Element | Cloud Elements API Docs
+heading: Insightly
+apiProvider: Insightly # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Insightly | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-username: username  #In Basic authentication, this is the term that we have mapped to our "username" parameter
-password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
+elementId: 5993
+elementKey: insightly
+username: User Name or Email Address  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: API key #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 20
 ---
@@ -33,7 +33,7 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **User Name** and **Password** enter the  **{{page.username}}** and **{{page.password}}** that you identified in [API Provider Setup](setup.html).
+6. Enter your  **{{page.username}}** and **{{page.password}}** that you identified in [API Provider Setup](setup.html).
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 
@@ -42,6 +42,13 @@ After successfully authenticating, we give you several options for next steps. [
 ## Authenticate Through API
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
+
+To help you authenticate using our APIs, try the Run in Postman button below. After you import the collection, take a look at the docs.
+
+<div>
+{% include_relative postman/insightly-postman.html %}
+</div>
+
 
 To authenticate an element instance:
 
