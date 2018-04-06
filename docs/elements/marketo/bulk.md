@@ -21,7 +21,7 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 
 | Bulk Information | Details   |
 | :------------- | :------------- |
-|  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations in the [API provider's documentation](http://developers.marketo.com/rest-api/).   |
+|  Bulk Type  |  Marketo's native bulk endpoints  |
 | Upsert Support | Yes |
 | Field Selection Support | Yes. You can specify fields within a resource. For example, `select name,id from contacts`. |
 | Order By Support | Yes, you can add `order by fieldName` to the query. |
@@ -32,7 +32,7 @@ If you configured the **Callback Notification Signature Key** (`event.notificati
 
 ## Limiters
 
-When using our Bulk API's with Marketo you also have the option of using limiters. In order to use the limiters you need to change the query to add a limit. For example if your query was "select * from contacts" you would updated it to "select * from contacts limit 1000" (or however many you want to limit it to). After you create this you will get a response that includes an ID. If you then want to get the next part of this same query you use the ID for that job by clearing out the q (or query) field and instead filling out the field "continueFromJobID" and placing the job id in this field. In this example this would grab the next 1000 items.
+When using our Bulk API's with Marketo you also have the option of using limiters. In order to use the limiters you need to change the query to add a limit. For example if your query was "select * from contacts" you would update it to "select * from contacts limit 1000" (or however many you want to limit it to). After you create this you will get a response that includes an ID. If you then want to get the next part of this same query you use the ID for that job by clearing out the q (or query) field and instead filling out the field "continueFromJobID" and placing the job id in this field. In this example this would grab the next 1000 items.
 
 ## Querying Leads by List
 If querying leads by list, include a where expression with a `listId` specified.

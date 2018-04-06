@@ -38,7 +38,7 @@ eb-post-response-hook: "A script that executes after recieving a response from a
 
 eb-hook: "A script that you build for elements that operates on reequests and responses and that can be applied to all requests or resposnes or specific endpoints."
 
-element: "An enhanced connector that provides a unified developer experience into a specific cloud application endpoint (e.g., Salesforce, Quickbooks, or Marketo)."
+element: "A prebuilt API integration that enables a connection into a specific cloud application or cloud service endpoint (such as Box or Salesforce.com). We organize our Elements into categories called ‘Hubs’, which allow you to integrate an entire category through a single, uniform API."
 
 element-full: "An Element is a pre-built API integration that enables a connection into a specific API Provider endpoint (e.g., Salesforce, Quickbooks, or Marketo). All Elements start with a normalized set of features, including authentication, resources, paging, errors, events and search. At the hub level, we also seek to support the richer set of APIs that an application provides, even when not all the Elements in that category share that resource. "
 
