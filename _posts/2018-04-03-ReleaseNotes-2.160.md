@@ -2,7 +2,7 @@
 title: Cloud Elements Version 2.160
 date: 2018-04-03
 layout: release-note-item
-release: 2.159
+release: 2.160
 heading: Release Notes
 ---
 ## Element Updates
