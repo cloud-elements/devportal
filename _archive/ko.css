@@ -1,0 +1,387 @@
+/* This image class is for something like a button or icon within a sentence or paragraph. */
+
+.hg-article-body img.inlineImage {
+      display: inline;
+      vertical-align: baseline;
+}
+
+/* For TOCs at the top of an article. */
+
+.hg-article-body .ce-toc {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+/* Home page category panels. Styling the panels with more CE blue. Need a better UI designer on this, ugggh. */
+
+.faq-cat-panel {
+    padding: 6px 6px;
+    background: #fff;
+    border: 1px solid #cfcfcf;
+    text-align: left;
+    cursor: hand;
+    box-shadow: 1px 2px 3px #4d82bf;
+    font-size: 12px;
+   	height:125px;
+  padding: 0px 06px;
+    width: 275px;
+
+}
+
+/* Home page category panels. To include the image, title and description as HTML in the KO Category Description. */
+.ce-cat-image {
+
+  float:left
+
+}
+
+/* Image for element cards. */
+.ce-element-image img {
+	height: 50px;
+	text-align: center;
+}
+
+
+/* Home page category panels. To include the image, title and description as HTML in the KO Category Description. */
+.ce-cat-desc {
+margin-left: 45px;
+    font-size: 14px
+
+}
+
+/* Home page category panels. To include the image, title and description as HTML in the KO Category Description. */
+
+.ce-cat-title {
+    margin-left: 45px;
+  font-size: 20px;
+}
+
+/* Home page category panels. Showing the Category Description so only the description appears with all of its HTML. */
+
+.faq-cat-panel .faq-description {
+ 	display: block;
+  font-size:16px;
+}
+
+/* Home page category panels. Hiding the default behavior of showing the Category Title as an H3 so only the description appears with all of its HTML. */
+
+.faq-cat-panel h3 {
+  	 	display: none;
+}
+
+/* Category page with Title and description and articles displayed below sub-categories. Making these faq containers look and behave more like the category boxes. */
+
+.hg-category-page .faq-cat-container {
+  padding: 6px 6px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: #fff;
+    border: 1px solid #cfcfcf;
+    text-align: center;
+    box-shadow: 1px 2px 3px #4d82bf;
+    font-size: 12px;
+    margin-bottom: 15px;
+    margin-top: 15px;
+      height: 125px;
+  width: 250px;
+}
+
+/* Category page with Title and description and articles displayed below sub-categories. Reducing header size to fit in the box */
+
+.documentation-article .faq-nav-content h3 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+/* Category page with Title and description and articles displayed below sub-categories. Adding some background to show some visual space difference between categories and articles */
+.hg-category-page .article-block {
+    margin-bottom: 10px;
+    padding: 6px 6px;
+    font-size: 16px;
+}
+
+/* Category page with Title and description and articles displayed below sub-categories. Adding a line to show some visual space difference between categories and articles */
+.faq-nav-content h2  {
+    border-bottom: solid;
+  border-color: #4d82bf;
+}
+
+/* Fix to accordion topics */
+.ko-collapse-trigger  h2{
+    border-bottom: none;
+      color: #4d82bf;
+    font-size: 20px;
+}
+ /* Aligining alerts with ce */
+
+.alert {
+      padding: 2px 15px 0px 15px;
+}
+
+.alert-info {
+  color:#31708f;
+  background-color:#EDEDEE;
+  border-color:#bce8f1;
+}
+
+.alert-danger {
+  color:#31708f;
+  background-color:#EDEDEE;
+  border-color:#c44445;
+}
+
+.alert-warning {
+  color:#31708f;
+  background-color:#EDEDEE;
+  border-color:#FFD700;
+
+}
+
+.alert-success {
+  color:#31708f;
+  background-color:#EDEDEE;
+  border-color:#8BAC03;
+;
+}
+
+
+/* Fix to prevent the boxes on category pages from rearranging after the first 2 */
+.hg-category-page .clear-left {
+    clear: none;
+}
+
+/* Not sure what I'm trying to solve with this. */
+
+.hg-article-body img.floatRight {
+    float: right;
+      width: 25%;
+    height: auto;
+
+}
+
+/* Not sure what I'm trying to solve with this. */
+.hg-article-body img.clearfix:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+/* I have no idea why I did this. Delete and see if anything breaks? */
+
+.anchor{
+
+  display: block;
+  height: 140px;
+  margin-top: -140px;
+  visibility: hidden;
+}
+
+/* For release note subscriptions */
+.notification-form-wrapper {
+  background-color: #f6f6f6;
+}
+
+.hg-home-page .notification-form-wrapper {
+  display: none;
+}
+
+.notification-form-wrapper h3 {
+  background-color: #6EC6EB;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 0;
+  padding: 10px;
+}
+
+.notification-form-wrapper h3:hover {
+  text-decoration: underline;
+}
+
+.notification-form {
+  padding: 12px;
+  background-color: #f6f6f6;
+}
+
+.notification-form form{
+  margin: 0;
+}
+
+.notification-form form .actions {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+
+/* These are for the CE workflows */
+.workFlowFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f7f7f7;
+
+}
+
+.workFlowStep {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  text-decoration: none;
+  color: #9ca9af;
+  width: auto;
+  align-items: center;
+  cursor: pointer;
+}
+
+.workFlowStepNum {
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #9ca9af;
+  color: #FFF;
+  height: 25px;
+  width: 25px;
+  text-align: center;
+        line-height: 25px;
+
+}
+
+.arrow {
+  border: solid #9ca9af;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  height: 10px;
+  width: 10px;
+  margin-right: 2px;
+}
+
+.activeWorkFlowStep {
+  color: #4d82bf;
+}
+.activeWorkFlowStep .workFlowStepNum{
+  background-color: #4d82bf;
+}
+
+/* Highlight boxes to describe workflow items */
+
+.ce-highlightBox {
+    padding-left: 5px;
+    background-color: #f7f7f7;
+    border: 1px solid #e3e3e3;
+    border-radius: 4px;
+  margin-top: 16px;
+}
+
+/* Inline code */
+:not(pre) > code {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 5px;
+    background: #fafcfc;
+    border: 1px solid #f0f4f7;
+    border-radius: 4px;
+    color: #b93d6a;
+    font-family: Source Code Pro,Menlo,monospace;
+    font-size: inherit;
+    line-height: 20px;
+}
+
+/* Endpoint styling by method*/
+
+.ce-http-method[data-method^=GET] {
+          background: #61affe;
+          font-size: 14px;
+          font-weight: 700;
+          min-width: 80px;
+          padding: 6px 15px;
+          text-align: center;
+          border-radius: 3px;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          font-family: Titillium Web,sans-serif;
+          color: #fff;
+}
+
+.ce-http-method[data-method^=POST] {
+          background: #49cc90;
+          font-size: 14px;
+          font-weight: 700;
+          min-width: 80px;
+          padding: 6px 15px;
+          text-align: center;
+          border-radius: 3px;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          font-family: Titillium Web,sans-serif;
+          color: #fff;
+}
+
+.ce-http-method[data-method^=PATCH] {
+          background: #50e3c2;
+          font-size: 14px;
+          font-weight: 700;
+          min-width: 80px;
+          padding: 6px 15px;
+          text-align: center;
+          border-radius: 3px;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          font-family: Titillium Web,sans-serif;
+          color: #fff;
+}
+
+.ce-http-method[data-method^=PUT] {
+          background: #fca130;
+          font-size: 14px;
+          font-weight: 700;
+          min-width: 80px;
+          padding: 6px 15px;
+          text-align: center;
+          border-radius: 3px;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          font-family: Titillium Web,sans-serif;
+          color: #fff;
+}
+.ce-http-method[data-method^=DELETE] {
+          background: #f93e3e;
+          font-size: 14px;
+          font-weight: 700;
+          min-width: 80px;
+          padding: 6px 15px;
+          text-align: center;
+          border-radius: 3px;
+          text-shadow: 0 1px 0 rgba(0,0,0,.1);
+          font-family: Titillium Web,sans-serif;
+          color: #fff;
+}
+
+pre {
+    background: #292C34;
+  	color: #ffffff;
+}
+
+.cat-icon {
+    color: #4d82bf;
+}
+
+.home-icon {
+    color: #4d82bf;
+}
+
+.alt-icon {
+    color: #4d82bf;
+}
+
+.borderless td, .borderless th {
+    border: none !important;
+}
+
+/* PDF Styles */
+
+.hg-pdf .hg-article-body, .hg-pdf  .hg-article-body p {
+  	font-family: Arial;
+    font-size: 12px;
+}
