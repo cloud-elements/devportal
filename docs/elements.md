@@ -62,6 +62,7 @@ layout: sidebarelementtile
 * [![Google Suite](/assets/img/element-logos/lockup_gsuite.svg)Google Suite](./elements/google-suite/)
 * [![GoToWebinar](/assets/img/element-logos/gotowebinar.png)GoToWebinar](./elements/gotowebinar/)
 * [![Great Plains](/assets/img/element-logos/greatplains.png)MS Great Plains Beta](./elements/greatplains/)
+* [![Greenhouse](https://my.cloudelements.io/assets/img/elements/greenhouse.svg)Greenhouse](./elements/greenhouse/)
 * [![Help Scout](/assets/img/element-logos/helpscout.png)Help Scout](./elements/helpscout/)
 * [![HireRight](/assets/img/element-logos/hireright.png)HireRight](./elements/hireright/)
 * [![Hootsuite](/assets/img/element-logos/hootsuite.png)Hootsuite](./elements/hootsuite/)
