@@ -119,6 +119,7 @@ layout: sidebarelementtile
 * [![Sage Live](/assets/img/element-logos/sagelive.png)Sage Live](./elements/sagelive/)
 * [![Sage One](http://www.merchantmaverick.com/wp-content/uploads/2015/09/sage-one-logo1.jpg)Sage One](./elements/sageone/)
 * [![SAP Anywhere](/assets/img/element-logos/sapanywhere.png)SAP Anywhere](./elements/sapanywhere/)
+* [![SAP Business One](https://my.cloudelements.io/assets/img/elements/sapbusinessone.svg)SAP Business One](./elements/sap-b-one)
 * [![SAP Hybris Cloud for Customer CRM](/assets/img/element-logos/sapc4c.png)SAP Hybris Cloud for Customer CRM](./elements/sapc4c-crm/)
 * [![SAP Hybris Cloud for Customer Helpdesk](/assets/img/element-logos/sapc4c.png)SAP Hybris Cloud for Customer Helpdesk](./elements/sapc4c-hd/)
 * [![SendGrid](/assets/img/element-logos/sendgrid.png)SendGrid](./elements/sendgrid/)
