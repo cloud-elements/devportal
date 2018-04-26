@@ -1,6 +1,6 @@
 ---
 heading: Name of Element
-apiProvider: 
+apiProvider: Company Name
 seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
