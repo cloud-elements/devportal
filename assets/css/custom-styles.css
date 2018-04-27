@@ -715,6 +715,12 @@ a[data-toggle="tooltip"] {
   border-color:#dc5151
 }
 
+.alert-primary {
+  color: #004085;
+      background-color: #4d82bf;
+      border-color: #b8daff;
+    }
+
 .alert-warning {
   color:#31708f;
   background-color:#EDEDEE;
@@ -755,6 +761,7 @@ a[data-toggle="tooltip"] {
 }
 .bs-callout-primary {
     border-left-color: #4d82bf;
+    background-color: #F9F9F9;
 }
 .bs-callout-primary h4 {
     color: #428bca;
