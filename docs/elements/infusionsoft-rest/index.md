@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft CRM
+heading: Infusionsoft REST
 apiProvider: Infusionsoft # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: Overview | Infusionsoft CRM | Cloud Elements API Docs
 title: Overview
@@ -8,9 +8,9 @@ layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 191
 hub: CRM
-auth: OAuth 2.0 with Encrypted Key
-events: Not supported
-bulk: Not supported
+auth: OAuth 2.0
+events: Polling
+bulk: Supported
 parent: Back to Element Guides
 order: 1
 redirect_from:

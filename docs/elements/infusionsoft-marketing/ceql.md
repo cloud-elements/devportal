@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft Marketing Automation Beta
+heading: Infusionsoft Marketing Automation
 seo: Query Language | Infusionsoft Marketing | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
