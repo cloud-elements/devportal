@@ -779,10 +779,10 @@ a[data-toggle="tooltip"] {
     color: #d9534f;
 }
 .bs-callout-warning {
-    border-left-color: #dc5151;
+    border-left-color: #F5B517;
 }
 .bs-callout-warning h4 {
-    color: #f0ad4e;
+    color: #4d82bf;
 }
 .bs-callout-info {
     border-left-color: #44c8f5;
