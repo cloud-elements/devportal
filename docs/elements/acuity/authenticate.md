@@ -1,16 +1,16 @@
 ---
-heading: Infusionsoft REST
-apiProvider: Infusionsoft
-seo: Authenticate | Infusionsoft CRM | Cloud Elements API Docs
+heading: Acuity Scheduling
+apiProvider: Acuity Scheduling # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Acuity Scheduling | Cloud Elements API Docs
 title: Authenticate
 description: Create Instance
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6158
-elementKey: infusionsoftrest
-apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
-apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
-callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
+elementKey: acuityscheduling
+elementId: 6156
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret  #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 20
 ---
@@ -82,8 +82,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-    "oauthUrl": "https://signin.infusionsoft.com/app/oauth/authorize?scope=files.readwrite+offline_access&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=infusionsoftrest&client_id=Rand0MAP1-key",
-    "element": "infusionsoftrest"
+    "oauthUrl": "https://acuityscheduling.com/oauth2/authorize?scope=api-v1&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=acuityscheduling&client_id=Rand0MAP1-key",
+    "element": "{{page.elementKey}}"
   }
 ```
 
@@ -192,20 +192,19 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-08-07T18:46:38Z",
   "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 11748,
-      "name": "Infusionsoft REST",
-      "key": "infusionsoftrest",
-      "description": "Add an Infusionsoft Instance to connect your existing Infusionsoft account to the CRM Hub, allowing you to manage contacts, leads, accounts, opportunities etc. across multiple CRM Elements. You will need your Infusionsoft account information to add an instance.",
-      "image": "elements/provider_infusionsoftrest.png",
+      "id": 6156,
+      "name": "Acuity Scheduling",
+      "key": "acuityscheduling",
+      "description": "Add an Acuity Scheduling Instance to connect your existing Acuity account to the scheduling Hub, allowing you to manage your appointments and events across multiple scheduling Elements.You will need your Google Calendar account information to add an instance",
+      "image": "elements/custom-element-default-logo.png",
       "active": true,
       "deleted": false,
       "typeOauth": false,
       "trialAccount": false,
-      "bulkDownloadEnabled": false,
       "resources": [   ],
       "transformationsEnabled": true,
-      "bulkDownloadEnabled": true,
-      "bulkUploadEnabled": true,
+      "bulkDownloadEnabled": false,
+      "bulkUploadEnabled": false,
       "cloneable": true,
       "extendable": true,
       "beta": false,
@@ -213,23 +212,21 @@ In this example, the instance ID is `12345` and the instance token starts with "
           "type": "oauth2"
       },
       "extended": false,
-      "hub": "crm",
+      "hub": "scheduling",
       "protocolType": "http",
       "parameters": [  ],
       "private": false
     },
-    "elementId": 11748,
+    "elementId": 6156,
     "tags": [
-    "Docs"
+        "Docs"
     ],
     "provisionInteractions": [],
     "valid": true,
     "disabled": false,
     "maxCacheSize": 0,
     "cacheTimeToLive": 0,
-    "providerData": {
-    "code": "evcfr8vfne4smad3nbnw652e"
-    },
+    "providerData": {    },
     "configuration": {    },
     "eventsEnabled": false,
     "traceLoggingEnabled": false,

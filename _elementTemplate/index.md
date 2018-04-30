@@ -19,11 +19,8 @@ order: 1
 Use this Postman collection and the documentation here to get started.
 
 <div>
-{% include_relative postman/{{page.elementKey}}-postman.html %}
+{% include_relative includes/{{page.elementKey}}-postman.html %}
 </div>
-
-{% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
-
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#element-details>Element Details</a></br><a href=#base-url>Base URL</a></br><a href=#authenticating-with-cloud-elements>Authenticating with Cloud Elements</a></br><a href=#error-codes>Error Codes</a>" type="info" %}
 

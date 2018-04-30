@@ -1,16 +1,15 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: SmartRecruiters
+apiProvider: SmartRecruiters # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | SmartRecruiters | Cloud Elements API Docs
 title: Events
-description: Enable Element Name events for your application.
+description: Enable SmartRecruiters events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 6159
+elementKey: smartrecruiters
+username: SmartRecruiters API Key  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 25
 ---
@@ -23,21 +22,10 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 ## Supported Events and Resources
 
-Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
-
-<Use the following paragraph if you can poll only one resource>
-
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<Alternatively, if there are multiple supported resources, you can go with something like this:>
-
 You can set up events for the following resources:
 
-* accounts
-* contacts
-* leads
-* opportunities
-* users
+* candidates
+* jobs
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -88,27 +76,23 @@ To authenticate an element instance with polling:
       "element":{
         "key":"{{page.elementKey}}"
       },
-      "providerData":{
-        "code": "<AUTHORIZATION_GRANT_CODE>"
-      },
       "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
+{% include_relative includes/config-fields.md %},
         "event.notification.enabled": true,
-        "event.notification.callback.url": "http://mycoolapp.com",
+        "event.vendor.type": "polling",
+        "event.notification.callback.url": "<Your Callback URL>",
+        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
+          "candidates":{
+            "url":"/hubs/humancapital/candidates?where=updatedAfter='${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
             "idField":"id",
             "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+              "updatedDateField":"updatedOn",
+              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
               "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
+              "createdDateField":"createdOn",
+              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
               "createdDateTimezone":"GMT"
             }
           }
@@ -141,27 +125,24 @@ https://api.cloud-elements.com/elements/api-v2/instances \
 "element": {
   "key": "{{page.elementKey}}"
 },
-"providerData":{
-  "code": "<AUTHORIZATION_GRANT_CODE>"
-},
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+{% include_relative includes/config-example.md %},
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
 	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+    "event.notification.signature.key": "asdfo08e$fd",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-      "contacts": {
-        "url": "/hubs/crm/contacts?where=updated_after_utc='${gmtDate:yyyy-MM-dd HH:mm:ss}'",
-        "idField": "CONTACT_ID",
-        "datesConfiguration": {
-          "updatedDateField": "DATE_UPDATED_UTC",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "updatedDateTimezone": "GMT",
-          "createdDateField": "DATE_CREATED_UTC",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
-          "createdDateTimezone": "GMT"
+      "candidates":{
+        "url":"/hubs/humancapital/candidates?where=updatedAfter='${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
+        "idField":"id",
+        "datesConfiguration":{
+          "updatedDateField":"updatedOn",
+          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "updatedDateTimezone":"GMT",
+          "createdDateField":"createdOn",
+          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "createdDateTimezone":"GMT"
           }
     	}
     }
@@ -180,13 +161,11 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| `code` | {{site.data.glossary.element-auth-grant-code}}  | string |
 |  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
-| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
-| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  |
+| API Key</br>`api.key` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
+| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | Event poller refresh interval (mins)</br>`event.poller.refresh_interval`  | A number in minutes to identify how often the poller should check for changes. |  number|
 | Configure Polling</br>`event.poller.configuration`  | _Optional_. Configuration parameters for polling. | JSON object |
 | Resource to Poll  | The polling event configuration of the resource that you will monitor. | JSON object |
