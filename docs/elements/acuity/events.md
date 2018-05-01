@@ -1,15 +1,16 @@
 ---
-heading: Greenhouse
-apiProvider: Greenhouse # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | Greenhouse | Cloud Elements API Docs
+heading: Acuity Scheduling
+apiProvider: Acuity Scheduling # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | Acuity Scheduling | Cloud Elements API Docs
 title: Events
-description: Enable Element Name events for your application.
+description: Enable Acuity Scheduling events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6148
-elementKey: greenhouse
-username: Harvest API Key  #In Basic authentication, this is the term that we have mapped to our "username" parameter
-password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
+elementKey: acuityscheduling
+elementId: 6156
+apiKey: Client ID #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Client Secret  #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Redirect URI #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -22,9 +23,10 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 ## Supported Events and Resources
 
-Cloud Elements supports webhook events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance. For more information about webhooks at {{page.apiProvider}} including the currently available webhooks, see [{{page.apiProvider}}'s webhooks documentation](https://developers.greenhouse.io/webhooks.html#introduction).
+Cloud Elements supports webhook events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance. For more information about webhooks at {{page.apiProvider}} including the currently available webhooks, see [{{page.apiProvider}}'s webhooks documentation](https://developers.acuityscheduling.com/docs/webhooks).
 
 After you set up webhook events in Cloud Elements, you also need to configure webhooks at {{page.apiProvider}} with the Webhook URL provided after authentication. See [Webhook Configuration](#webhook-configuration).
+
 
 ## Webhooks
 
@@ -37,16 +39,15 @@ For more information about each field described here, see [Parameters](#paramete
 To authenticate an element instance with webhooks:
 
 1. Enter the basic information required to authenticate an element instance as described in [Authenticate with {{page.apiProvider}}](authenticate.html) .
-2. To enable hash verification in the headers of event callbacks, click **Show Optional Fields**, and then add a key to **Callback Notification Signature Key**.
+2. To enable hash verification in the headers of event callbacks, click Show Optional Fields, and then add a key to **Callback Notification Signature Key**.
 2. Enable events: Switch **Events Enabled** on.
 ![event-enabled-on](/assets/img/elements/event-enabled-on.png)
-8. Add an **Event Notification Callback URL** such as `https://api.cloud-elements.com/elements/api-v2/events/greenhouse/` (the default).
+8. Add an **Event Notification Callback URL**.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, open the authenticated instance that you just created, and then copy the Webhook URL. You'll use the url to [configure webhooks at {{page.apiProvider}}](#webhook-configuration).
-
 
 ### Configure Webhooks Through API
 
@@ -64,12 +65,13 @@ To authenticate an element instance with webhooks:
       "element": {
         "key": "{{page.elementKey}}"
       },
+      "providerData": {
+        "code": "<AUTHORIZATION_GRANT_CODE>"
+      },
       "configuration": {
-        "api.key": "<{{page.apiProvider}} {{page.username}}>",
-        "event.vendor.type": "webhooks",
+{% include_relative includes/config-fields.md %},
         "event.notification.enabled": true,
-        "event.notification.callback.url": "<CALLBACK_URL>",
-        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
+        "event.notification.callback.url": "<CALLBACK_URL>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -86,8 +88,8 @@ To authenticate an element instance with webhooks:
     {% include note.html content="Make sure that you include the User and Organization keys in the header. See <a href=index.html#authenticating-with-cloud-elements>the Overview</a> for details. " %}
 
 1. Locate the `token` and `id` in the response and save them for all future requests using the element instance.
-2. Get the Webhook URL needed to configure webhooks at Greenhouse by logging in to Cloud Elements 2.0. Open your new instance and copy the Webhook URL.
 3. Set up [webhooks at the API provider][#webhook-configuration].
+
 
 #### Example cURL
 
@@ -104,11 +106,9 @@ curl -X POST \
     "code": "xoz8AFqScK2ngM04kSSM"
   },
   "configuration": {
-    "api.key": "xxxxxxxxxxxxxxxxxxxxxxxxx",
-    "event.vendor.type": "webhooks",
+{% include_relative includes/config-example.md %},
     "event.notification.enabled": true,
-    "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/greenhouse/",
-    "event.notification.signature.key": "8e98fjke8jek",
+    "event.notification.callback.url": "https://mycoolapp.com/events"
   },
   "tags": [
     "Docs"
@@ -126,20 +126,22 @@ API parameters not shown in the {{site.console}} are in `code formatting`.
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
-| API Key</br>`api.key` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+| `code` | {{site.data.glossary.element-auth-grant-code}}  | string |
+|  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |  string |
+| `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html). | string |
+| `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html).  | string |
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
-| Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Webhook Configuration
 
-Use the Webhook URL we generated after you authenticated the element Instance to set up webhooks at Greenhouse. Before you begin, [review the Greenhouse documentation on webhooks](https://developers.greenhouse.io/webhooks.html).
+Use the Webhook URL we generated after you authenticated the element Instance to set up webhooks at {{page.apiProvider}}. Before you begin, [review the {{page.apiProvider}} documentation on webhooks](https://developers.acuityscheduling.com/docs/webhooks).
 
-1. Log in to your account at [{{page.heading}}](https://app.greenhouse.io).
-2. Click the Settings icon at the top of the page, or click the **Configure** tab.
-3. Open the Dev Center: click **Dev Center** in the list on the left or the link on the Configure page.
-4. Click **Web Hooks**, and then click **Web Hooks** on more time.
-5.Complete the Create A New Web Hook form, entering the **Webhook URL** from Cloud Elements in the **Endpoint URL** box.
-![webhook setup](img/webhook-setup.png)
-6. Click **Create Webhook**.
+1. Log in to your account at [{{page.heading}}](https://secure.acuityscheduling.com/login.php).
+2. On the left, click **Business Settings**, and then click **Integrations**.
+![integrations](img/integrations.png)
+3. Scroll to the API section, find **Webhooks**, and then click **Set Up**.
+4. In the new window, enter the Webhook URL from the authenticated element instance in any of the webhook types that u want to receive events for.
+6. Click **Save Settings**.

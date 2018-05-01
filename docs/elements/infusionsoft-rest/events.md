@@ -1,16 +1,16 @@
 ---
-heading: Name of Element
-apiProvider: Company Name # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | Name of Element | Cloud Elements API Docs
+heading: Infusionsoft REST
+apiProvider: Infusionsoft # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | Infusionsoft REST | Cloud Elements API Docs
 title: Events
-description: Enable Element Name events for your application.
+description: Enable Infusionsoft events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: nn
-elementKey: fake
-apiKey: Key Name
-apiSecret: Secret Name
-callbackURL: Callback URL Name
+elementId: 6158
+elementKey: infusionsoftrest
+apiKey: Key Name #In OAuth2 this is what the provider calls the apiKey, like Client ID, Consumer Key, API Key, or just Key
+apiSecret: Secret Name #In OAuth2 this is what the provider calls the apiSecret, like Client Secret, Consumer Secret, API Secret, or just Secret
+callbackURL: Callback URL Name #In OAuth2 this is what the provider calls the callbackURL, like Redirect URL, App URL, or just Callback URL
 parent: Back to Element Guides
 order: 25
 ---
@@ -25,19 +25,15 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
 
-<Use the following paragraph if you can poll only one resource>
-
-You can set up polling for the `customers` resource. You can also copy the `customers` configuration to poll other resources. See [Configure Polling Through API](#configure-polling-through-api) for more information.
-
-<Alternatively, if there are multiple supported resources, you can go with something like this:>
-
 You can set up events for the following resources:
 
-* accounts
-* contacts
-* leads
+* appointments
+* tasks
+* files
 * opportunities
-* users
+* contacts
+* orders
+* transactions
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -92,24 +88,21 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
+{% include_relative includes/config-fields.md %},
         "event.notification.enabled": true,
         "event.notification.callback.url": "http://mycoolapp.com",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "contacts":{
-            "url":"/hubs/crm/contacts?where=lastUpdated>'${gmtDate:yyyy-MM-dd'T'HH:mm:ss'Z'}'",
-            "idField":"id",
-            "datesConfiguration":{
-              "updatedDateField":"_info.lastUpdated",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "updatedDateTimezone":"GMT",
-              "createdDateField":"_info.lastUpdated",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss'Z'",
-              "createdDateTimezone":"GMT"
+          "appointments": {
+            "url": "/hubs/crm/appointments",
+            "idField": "id",
+            "datesConfiguration": {
+              "updatedDateField": "modification_date",
+              "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "updatedDateTimezone": "GMT",
+              "createdDateField": "creation_date",
+              "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "createdDateTimezone": "GMT"
             }
           }
         }
@@ -145,22 +138,21 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   "code": "<AUTHORIZATION_GRANT_CODE>"
 },
 "configuration": {
-  	"oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-  	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+{% include_relative includes/config-example.md %},
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-      "contacts": {
-        "url": "/hubs/crm/contacts?where=updated_after_utc='${gmtDate:yyyy-MM-dd HH:mm:ss}'",
-        "idField": "CONTACT_ID",
+      "appointments": {
+        "url": "/hubs/crm/appointments",
+        "idField": "id",
         "datesConfiguration": {
-          "updatedDateField": "DATE_UPDATED_UTC",
-          "updatedDateFormat": "yyyy-MM-dd HH:mm:ss",
+          "updatedDateField": "modification_date",
+          "updatedDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
           "updatedDateTimezone": "GMT",
-          "createdDateField": "DATE_CREATED_UTC",
-          "createdDateFormat": "yyyy-MM-dd HH:mm:ss",
+          "createdDateField": "creation_date",
+          "createdDateFormat": "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
           "createdDateTimezone": "GMT"
           }
     	}

@@ -1,13 +1,13 @@
 # API Provider Setup
 
-To authenticate an {{page.heading}} element instance you must register an app with Infusionsoft. You also must establish an API key for your account. When you authenticate, use the encrypted API key (**Encrypted Key**) from your account and the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** from your registered app.
+To authenticate an {{page.heading}} element instance you must register an app with {{page.apiProvider}}. You also must establish an API key for your account. When you authenticate, use the encrypted API key (**Encrypted Key**) from your account and the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** from your registered app.
 
 | Infusionsoft Credential | Cloud Elements Parameter   |
 | :------------- | :------------- |
 |  Encrypted Key  | Infusionsoft Encrypted Key</br>`infusionsoft.private.key`  |
 |  {{page.apiKey}} | `oauth.api.key`  |
-|  {{page.apiSecret}}  |oauth.api.secret |
-|  {{page.callbackURL}}  |  oauth.callback.url  |
+|  {{page.apiSecret}}  | `oauth.api.secret` |
+|  {{page.callbackURL}}  |  `oauth.callback.url`  |
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a>" type="info" %}
 

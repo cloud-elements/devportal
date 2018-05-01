@@ -1,5 +1,6 @@
 ---
-heading: Infusionsoft CRM Beta
+heading: Infusionsoft CRM
+apiProvider: Infusionsoft # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: API Provider Setup | Infusionsoft CRM | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup

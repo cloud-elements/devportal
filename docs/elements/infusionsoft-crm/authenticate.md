@@ -1,5 +1,5 @@
 ---
-heading: Infusionsoft CRM Beta
+heading: Infusionsoft CRM
 seo: Authenticate | Infusionsoft CRM | Cloud Elements API Docs
 title: Authenticate
 description: Create Instance
