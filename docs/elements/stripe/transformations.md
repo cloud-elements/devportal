@@ -1,6 +1,6 @@
 ---
-heading: Stripe
-seo: Transform Data | Stripe | Cloud Elements API Docs
+heading: Cloud Elements for Stripe
+seo: Transform Data | Cloud Elements for Stripe | Cloud Elements API Docs
 title: Transform Data
 description: Transform and map data.
 layout: sidebarelementdoc

@@ -136,6 +136,7 @@ layout: sidebarelementtile
 * [![Square](/assets/img/element-logos/square.png)Square](./elements/square/)
 * [![Stripe](/assets/img/element-logos/stripe.png)Stripe](./elements/stripe/)
 * [![SugarCRM](/assets/img/element-logos/sugarcrm.png)SugarCRM](./elements/sugarcrm/)
+* [![Taleo Business Edition](https://images.cloudelements.io/Taleo_Symbol201801182318.jpg)Taleo Business Edition](./elements/taleobusiness/)
 * [![Taxify](/assets/img/element-logos/taxify.png)Taxify](./elements/taxify/)
 * [![Twilio SMS](/assets/img/element-logos/twilio.png)Twilio](./elements/twilio/)
 * [![Twilio V2](/assets/img/element-logos/twilio.png)Twilio V2](./elements/twilio-v2/)

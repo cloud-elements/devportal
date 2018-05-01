@@ -43,6 +43,10 @@ After successfully authenticating, we give you several options for next steps. [
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
+<div>
+{% include_relative postman/{{page.elementKey}}-postman.html %}
+</div>
+
 To authenticate an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):

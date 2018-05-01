@@ -1,8 +1,8 @@
 ---
-heading: Infusionsoft CRM Beta
-seo: API Docs | Infusionsoft CRM | Cloud Elements API Docs
+heading: Infusionsoft REST
+seo: API Docs | Infusionsoft REST | Cloud Elements API Docs
 title: API Docs
-description: Infusionsoft CRM API Documentation.
+description: Infusionsoft REST API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 6158
