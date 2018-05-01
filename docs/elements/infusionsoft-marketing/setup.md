@@ -1,5 +1,6 @@
 ---
-heading: Infusionsoft Marketing Automation Beta
+heading: Infusionsoft Marketing Automation
+apiProvider: Infusionsoft # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
 seo: API Provider Setup | Infusionsoft Marketing | Cloud Elements API Docs
 title: API Provider Setup
 description: API Provider Setup

@@ -1,11 +1,11 @@
 ---
-heading: Infusionsoft CRM
+heading: Infusionsoft CRM Beta
 seo: Query Language | Infusionsoft CRM | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 191
+elementId: 6158
 parent: Back to Element Guides
 order: 45
 sitemap: false
@@ -19,7 +19,19 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
+* GET /affiliates/commissions
+* GET /appointments
+* GET /contacts
+* GET /contacts/{id}/emails
+* GET /emails
+* GET /files
 * GET /{objectName}
 * GET /{objectName}/{objectId}/{childObjectName}
+* GET /opportunities
+* GET /orders
+* GET /tags
+* GET /tasks
+* GET /tasks/search
+* GET /transactions
 
 {% include ceql-ref.md%}
