@@ -64,13 +64,13 @@ We upgraded the Hootsuite app in preparation for Hootsuite's [upgraded API platf
 
 We added `/contracts` with the following endpoints:
 
- * POST /contracts
- * GET /contracts
- * PATCH /contracts/{id}
- * GET /contracts/{id}
- * DELETE /contracts/{id}
+* POST /contracts
+* GET /contracts
+* PATCH /contracts/{id}
+* GET /contracts/{id}
+* DELETE /contracts/{id}
 
- ### Intacct.: New `job-orders` resource
+### Bullhorn: New `job-orders` resource
 
  We added `/job-orders` with the following endpoints:
 
