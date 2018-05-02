@@ -1,6 +1,6 @@
 ---
-heading: Stripe
-seo: Error Codes | Stripe | Cloud Elements API Docs
+heading: Cloud Elements for Stripe
+seo: Error Codes | Cloud Elements for Stripe | Cloud Elements API Docs
 title: Error Codes
 description: Cloud Elements Error Codes.
 layout: sidebarelementdoc

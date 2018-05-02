@@ -1,14 +1,14 @@
 ---
-heading: SmartRecruiters
-apiProvider: SmartRecruiters # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Authenticate | SmartRecruiters | Cloud Elements API Docs
+heading: Taleo Business Edition
+apiProvider: Oracle Taleo # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Authenticate | Taleo Business Edition | Cloud Elements API Docs
 title: Authenticate
 description: Authenticate an element instance with the API provider
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6159
-elementKey: smartrecruiters
-username: SmartRecruiters API Key  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+elementId: 6157
+elementKey: taleobusiness
+username: user name #In Basic authentication, this is the term that we have mapped to our "username" parameter
 password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 20
@@ -33,7 +33,8 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **API Key**  enter the  **{{page.username}}** that you identified in [API Provider Setup](setup.html).
+6. In **Taleo Company Code** enter the Oracle Taleo Company Code that you identified in [API Provider Setup](setup.html).
+6. In **Taleo Username** and **Taleo Password**  enter the Oracle Taleo **{{page.username}}** and **{{page.password}}** that you identified in [API Provider Setup](setup.html). Format **Taleo Username** as `username@company_code`.
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 
@@ -43,14 +44,13 @@ After successfully authenticating, we give you several options for next steps. [
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
-To authenticate an element instance:
-
 <div>
-{% include_relative includes/smartrecruiters-postman.html %}
+{% include_relative includes/taleobusiness-postman.html %}
 </div>
 
-1. Construct a JSON body as shown below (see [Parameters](#parameters)):
+To authenticate an element instance:
 
+1. Construct a JSON body as shown below (see [Parameters](#parameters)):
 
     ```json
     {
@@ -105,7 +105,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| API Key</br>`api.key` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+{% include_relative includes/parameters.md %},
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -114,56 +114,57 @@ In this example, the instance ID is `12345` and the instance token starts with "
 
 ```json
 {
-  "id": 12345,
-  "name": "API Instance",
-  "createdDate": "2018-04-04T20:44:36Z",
-  "token": "ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
-  "element": {
-    "id": 6159,
-    "name": "SmartRecruiters ",
-    "hookName": "SmartRecruiters",
-    "key": "smartrecruiters",
-    "description": "Add a SmartRecruiters Instance to connect your existing SmartRecruiters account to the Human Capital Hub, allowing you to manage all of your Human Capital activities across multiple ERP Elements. You will need your SmartRecruiters  account information to add an instance.",
-    "image": "elements/custom-element-default-logo.png",
-    "active": false,
-    "deleted": false,
-    "typeOauth": false,
-    "trialAccount": false,
-    "resources": [ ],
-    "transformationsEnabled": true,
-    "bulkDownloadEnabled": true,
-    "bulkUploadEnabled": true,
-    "cloneable": true,
-    "extendable": true,
-    "beta": false,
-    "authentication": {
-        "type": "custom"
+  "id":12345,
+  "name":"API Instance",
+  "createdDate":"2018-05-01T15:33:36Z",
+  "token":"ABC/Dxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx=",
+  "element":{
+    "id":6157,
+    "name":"Taleo Business Edition",
+    "key":"taleobusiness",
+    "description":"Connect your Taleo Business Edition account to manage accounts, candidates, employees, & requisitions for your recruiting and human resources processes.",
+    "image":"https://images.cloudelements.io/Taleo_Symbol201801182318.jpg",
+    "active":false,
+    "deleted":false,
+    "typeOauth":false,
+    "trialAccount":false,
+    "resources":[  ],
+    "transformationsEnabled":true,
+    "bulkDownloadEnabled":true,
+    "bulkUploadEnabled":true,
+    "cloneable":true,
+    "extendable":true,
+    "beta":false,
+    "authentication":{
+      "type":"basic"
     },
-    "extended": false,
-    "hub": "humancapital",
-    "protocolType": "http",
-    "parameters": [  ],
-    "private": false
+    "extended":false,
+    "hub":"humancapital",
+    "protocolType":"http",
+    "parameters":[  ],
+    "private":false
   },
-  "elementId": 6159,
-  "tags": [
-  "Docs"
+  "elementId":6157,
+  "tags":[
+    "Docs"
   ],
-  "provisionInteractions": [],
-  "valid": true,
-  "disabled": false,
-  "maxCacheSize": 0,
-  "cacheTimeToLive": 0,
-  "configuration": {    },
-  "eventsEnabled": false,
-  "traceLoggingEnabled": false,
-  "cachingEnabled": false,
-  "externalAuthentication": "none",
-    "user": {
-        "id": 123456,
-        "emailAddress": "claude.elements@cloud-elements.com",
-        "firstName": "Claude",
-        "lastName": "Elements"
-    }
+  "provisionInteractions":[
+
+  ],
+  "valid":true,
+  "disabled":false,
+  "maxCacheSize":0,
+  "cacheTimeToLive":0,
+  "configuration":{  },
+  "eventsEnabled":false,
+  "traceLoggingEnabled":false,
+  "cachingEnabled":false,
+  "externalAuthentication":"none",
+  "user":{
+    "id":175127,
+    "emailAddress":"docs@cloud-elements.com",
+    "firstName":"Docs",
+    "lastName":"CloudElements"
+  }
 }
 ```

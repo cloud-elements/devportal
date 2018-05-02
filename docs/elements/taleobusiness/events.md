@@ -1,14 +1,14 @@
 ---
-heading: SmartRecruiters
-apiProvider: SmartRecruiters # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Events | SmartRecruiters | Cloud Elements API Docs
+heading: Taleo Business Edition
+apiProvider: Oracle Taleo # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Events | Taleo Business Edition | Cloud Elements API Docs
 title: Events
-description: Enable SmartRecruiters events for your application.
+description: Enable Taleo Business Edition events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
-elementId: 6159
-elementKey: smartrecruiters
-username: SmartRecruiters API Key  #In Basic authentication, this is the term that we have mapped to our "username" parameter
+elementId: 6157
+elementKey: taleobusiness
+username: user name #In Basic authentication, this is the term that we have mapped to our "username" parameter
 password: password #In Basic authentication, this is the term that we have mapped to our "password" parameter
 parent: Back to Element Guides
 order: 25
@@ -26,8 +26,10 @@ Cloud Elements supports polling events for {{page.heading}}. After receiving an 
 
 You can set up events for the following resources:
 
+* requisitions
+* accounts
+* employees
 * candidates
-* jobs
 
 {% include note.html content="You can set up polling for other resources that include <code>created</code>, <code>updated</code>, and <code>deleted</code> data through our API. Copy the configuration of one of the default resources, and replace the name with the resource that you want to poll.  " %}
 
@@ -36,7 +38,6 @@ You can set up events for the following resources:
 You can configure polling [through the UI](#configure-polling-through-the-ui) or in the JSON body of the `/instances` [API request](#configure-polling-through-api) .
 
 {% include note.html content="Unless configured for a specific time zone, polling occurs in UTC.  " %}
-
 
 ### Configure Polling Through the UI
 
@@ -58,7 +59,6 @@ To authenticate an element instance with polling:
   ![Configure Polling JSON](/assets/img/elements/configure-polling2.gif)
 9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
-8. Log in to {{page.apiProvider}}, and then allow the connection.
 
 After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
 
@@ -86,15 +86,15 @@ To authenticate an element instance with polling:
         "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
-          "candidates":{
-            "url":"/hubs/humancapital/candidates?where=updatedAfter='${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
-            "idField":"id",
+          "requisitions":{
+            "url":"/hubs/humancapital/requisitions?where=lastUpdated_from='${gmtDate:yyyy-MM-dd'T'HH:mmz}'",
+            "idField":"reqId",
             "datesConfiguration":{
-              "updatedDateField":"updatedOn",
-              "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "updatedDateField":"lastUpdated",
+              "updatedDateFormat":"yyyy-MM-dd'T'HH:mmz",
               "updatedDateTimezone":"GMT",
-              "createdDateField":"createdOn",
-              "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+              "createdDateField":"creationDate",
+              "createdDateFormat":"yyyy-MM-dd'T'HH:mmz",
               "createdDateTimezone":"GMT"
             }
           }
@@ -131,19 +131,19 @@ https://api.cloud-elements.com/elements/api-v2/instances \
 {% include_relative includes/config-example.md %},
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
     "event.notification.signature.key": "asdfo08e$fd",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
-      "candidates":{
-        "url":"/hubs/humancapital/candidates?where=updatedAfter='${gmtDate:yyyy-MM-dd'T'HH:mm:ss.SSS'Z'}'",
-        "idField":"id",
+      "requisitions":{
+        "url":"/hubs/humancapital/requisitions?where=lastUpdated_from='${gmtDate:yyyy-MM-dd'T'HH:mmz}'",
+        "idField":"reqId",
         "datesConfiguration":{
-          "updatedDateField":"updatedOn",
-          "updatedDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "updatedDateField":"lastUpdated",
+          "updatedDateFormat":"yyyy-MM-dd'T'HH:mmz",
           "updatedDateTimezone":"GMT",
-          "createdDateField":"createdOn",
-          "createdDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "createdDateField":"creationDate",
+          "createdDateFormat":"yyyy-MM-dd'T'HH:mmz",
           "createdDateTimezone":"GMT"
           }
     	}
@@ -164,7 +164,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 |  Name</br>`name` |   {{site.data.glossary.element-auth-name}}   | Body  |
-| API Key</br>`api.key` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+{% include_relative includes/parameters.md %},
 | Events Enabled </br>`event.notification.enabled` | *Optional*. Identifies that events are enabled for the element instance.</br>Default: `false`.  | boolean |
 | Event Notification Callback URL</br>`event.notification.callback.url` |  The URL where you want Cloud Elements to send the events. | string |
 | Callback Notification Signature Key </br>`event.notification.signature.key` | *Optional*. A user-defined key for added security to show that events have not been tampered with. | string |

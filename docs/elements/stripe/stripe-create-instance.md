@@ -1,6 +1,6 @@
 ---
-heading: Stripe
-seo: Create Instance | Stripe | Cloud Elements API Docs
+heading: Cloud Elements for Stripe
+seo: Create Instance | Cloud Elements for Stripe | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -16,7 +16,7 @@ Stripe is a Payments Platform. When you provision an instance, your app will hav
 
 ### Step 1. Create an Instance
 
-To provision your Stripe Element, use the /instances API.
+To provision your Cloud Elements for Stripe Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -36,7 +36,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Stripe is "stripe".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements for Stripe is "stripe".  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```JSON
 {
@@ -76,7 +76,7 @@ Below is a successful JSON response:
   "token": "mQuw4rrhnrMl1UeDj25v0xDU5TUx6WUw=",
   "element": {
     "id": 483,
-    "name": "Stripe",
+    "name": "Cloud Elements for Stripe",
     "key": "stripe",
     "description": "Add a Stripe Instance to connect your existing Stripe Enterprise account to the Payments Hub, allowing you to manage your customers, plans, charges, tokens, products etc. across multiple Payments Elements. You will need your Stripe Enterprise account information to add an instance.",
     "image": "https://stripe.com/img/about/logos/logos/black.png",

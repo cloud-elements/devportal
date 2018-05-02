@@ -49,7 +49,6 @@ To help you authenticate using our APIs, try the Run in Postman button below. Af
 {% include_relative postman/insightly-postman.html %}
 </div>
 
-
 To authenticate an element instance:
 
 1. Construct a JSON body as shown below (see [Parameters](#parameters)):

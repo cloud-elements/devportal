@@ -43,6 +43,10 @@ After successfully authenticating, we give you several options for next steps. [
 
 Authenticating through API is similar to authenticating via the UI. Instead of clicking and typing through a series of buttons, text boxes, and menus, you will instead send a request to our `/instances` endpoint. The end result is the same, though: an authenticated element instance with a  **token** and **id**.
 
+<div>
+{% include_relative includes/acuity-postman.html %}
+</div>
+
 Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 
 {% include workflow.html displayNames="Redirect URL,Authenticate Users,Authenticate Instance" links="#getting-a-redirect-url,#authenticating-users-and-receiving-the-authorization-grant-code,#authenticating-the-element-instance" active=" "%}
