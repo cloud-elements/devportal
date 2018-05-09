@@ -52,7 +52,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 | :------------- | :------------- |
 | apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
 | apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| callbackUrl |   {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 | scope   | The scope provided is required to access data in QuickBooks online.  |
 | authentication.type   | Identifies that you are authenticating with OAuth 2.0.  |
 
