@@ -68,7 +68,7 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.ap
 | :------------- | :------------- |
 | apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup](setup.html). |
 | apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
-| callbackUrl |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
+| callbackUrl |   {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
 
 #### Example Request
 
