@@ -29,7 +29,7 @@ Formulas are a great way to move the logic out of your apps and into Cloud Eleme
 
 We give detailed examples of formulas in the [Examples](examples.html) section. But, to help you understand the power of formulas, here's a common example.
 
-A common use case is keeping contacts synced across many systems. You might need to make sure that whenever a contact is added to Salesforce, it also syncs to HubSpot. To do this, you must first [transform the data](/docs/guides/common-resources/index.html). Then, create a formula template that listens for updates to contacts in one CRM, and then pushes those contacts to another CRM. After you set up the template, create a formula instance where you plug in Salesforce as the source element and HubSpot as the target element.
+A common use case is keeping contacts synced across many systems. You might need to make sure that whenever a contact is added to Salesforce, it also syncs to HubSpot. To do this, you must first [transform the data](https://docs.cloud-elements.com/home/common-object). Then, create a formula template that listens for updates to contacts in one CRM, and then pushes those contacts to another CRM. After you set up the template, create a formula instance where you plug in Salesforce as the source element and HubSpot as the target element.
 
 ## Definitions
 

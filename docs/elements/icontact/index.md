@@ -24,7 +24,7 @@ order: 1
 | Authentication | Custom  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | 70,000 in 24 hours and 10,000 in 1 hour. |
 
 {% include Elements/index.md%}

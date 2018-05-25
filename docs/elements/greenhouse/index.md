@@ -33,7 +33,7 @@ Use this Postman collection and the documentation here to get started.
 | Authentication | Basic  |
 | Events | Webhooks |
 | Bulk | Not supported |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.apiProvider}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.apiProvider}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://developers.greenhouse.io/harvest.html#throttling)|
 
 {% include Elements/index.md%}

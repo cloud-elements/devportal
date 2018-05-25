@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2  |
 | Events | Webhooks |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://www.campaignmonitor.com/api/getting-started/#rate-limiting)|
 
 {% include Elements/index.md%}

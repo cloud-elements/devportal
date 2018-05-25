@@ -25,7 +25,7 @@ The {{page.heading}} element is available in the Finance hub. Connect a {{page.a
 | Authentication | OAuth 2.0  |
 | Events | Webhooks |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://www.freshbooks.com/api/limits)|
 
 {% include Elements/index.md%}

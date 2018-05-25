@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2  |
 | Events | Polling |
 | Bulk | Not supported. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | Two	Calls per second and 1,000	Calls per day. Your rate limits are stated when you register an application. |
 
 ## Egnyte Element Video

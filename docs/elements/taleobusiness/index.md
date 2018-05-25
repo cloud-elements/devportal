@@ -32,6 +32,6 @@ Use this Postman collection and the documentation here to get started.
 | Authentication | Basic + Company Code  |
 | Events | Polling |
 | Bulk | Supported |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.apiProvider}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.apiProvider}} data.|
 
 {% include Elements/index.md%}

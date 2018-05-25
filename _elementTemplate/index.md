@@ -32,7 +32,7 @@ Use this Postman collection and the documentation here to get started.
 | Authentication | OAuth 2.0  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.apiProvider}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.apiProvider}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://www.google.com/search?q={{page.heading}}+api+rate+limits)|
 
 {% include Elements/index.md%}

@@ -12,5 +12,5 @@ When using the native endpoints, performance is best when calls are limited to 1
 | :------------- | :------------- |
 |  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. |
 | Upsert Support | No |
-| Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
+| Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object). For example, you can use only `select *` for this element. |
 | Order By Support | No, you can not add `order by fieldName` to the query. |

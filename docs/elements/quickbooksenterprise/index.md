@@ -26,6 +26,6 @@ The {{page.heading}} element is a part of the the Cloud Elements Finance Hub. Th
 | API Documentation | [{{page.heading}} SDK Docs](https://developer.intuit.com/docs/0200_quickbooks_desktop/0100_essentials/0000_overview) |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 
 {% include Elements/index.md%}

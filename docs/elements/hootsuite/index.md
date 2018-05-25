@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2.0 |
 | Events | Webhooks |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | 20 requests / second up to a maximum daily quota of 100,000 calls per day. See the [{{page.heading}} rate limit documentation](https://developer.hootsuite.com/v1.0/docs/api-rate-limits) for more information. |
 
 {% include Elements/index.md%}
