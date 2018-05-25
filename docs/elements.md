@@ -17,6 +17,7 @@ layout: sidebarelementtile
 * [![Autotask CRM](/assets/img/element-logos/autotask.png)Autotask CRM](./elements/autotask-crm/)
 * [![Autotask Finance](/assets/img/element-logos/autotask.png)Autotask Finance](./elements/autotask-finance/)
 * [![Autotask Help Desk](/assets/img/element-logos/autotask.png)Autotask Help Desk](./elements/autotask-helpdesk/)
+* [![BambooHR](/assets/img/element-logos/BambooHR.png)BambooHR](./elements/bamboohr/)
 * [![BaseCRM](/assets/img/element-logos/basecrm.png)BaseCRM](./elements/basecrm/)
 * [![BigCommerce](/assets/img/element-logos/bigcommerce.png)BigCommerce](./elements/bigcommerce/)
 * [![Box](/assets/img/element-logos/box.png)Box](./elements/box/)
