@@ -54,7 +54,6 @@
     </div>
     <div class="col-md-9 contentWrapper">
       <link href="/assets/css/landingPage.css" rel="stylesheet">
-      {% include banner.html %}
       {% include contentToggle.html %}
       {% if page.simple_map == true %}
 
@@ -65,6 +64,7 @@
       </script>
 
       {% endif %}
+      {% include banner.html %}
       {{content}}
       <div class="landingPageTileWrapper">
         <a href='/docs/quickstart/overview.html'>
