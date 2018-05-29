@@ -19,7 +19,7 @@ You can authenticate with {{page.heading}} to create your own instance of the {{
 
 ## Authenticate Through the UI
 
-Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} uses a simple authentication method for its connections. All we need is the _exact_ app name that is setup in QuickBooks, and the endpoint IP or URL (most likely a [Ground2Cloud](/docs/guides/ground-2-cloud) URL).
+Use the UI to authenticate with {{page.heading}} and create an element instance. {{page.heading}} uses a simple authentication method for its connections. All we need is the _exact_ app name that is setup in QuickBooks, and the endpoint IP or URL (most likely a [Ground2Cloud](https://docs.cloud-elements.com/home/ground-2-cloud-connect-your-on-premise-apps) URL).
 
 If you are configuring events, see the [Events section](events.html).
 
@@ -31,10 +31,10 @@ To authenticate an element instance:
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 1. Enter a name for the element instance.
 2. In **Configured Application Name**, enter the application name that is configured in the QuickBooks application.
-3. In **Host Name/IP**, enter the address of the application endpoint. In most cases, this will be a [Ground2Cloud](/docs/guides/ground-2-cloud) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of QuickBooks Enterprise, without the need to open up firewalls to your site.
+3. In **Host Name/IP**, enter the address of the application endpoint. In most cases, this will be a [Ground2Cloud](https://docs.cloud-elements.com/home/ground-2-cloud-connect-your-on-premise-apps) address. The Ground2Cloud endpoint will look something like: `https://1234.g2c.cloud-elements.com`. Where `1234` is the number specific to your application. The reason for using Ground2Cloud is so that the Cloud Elements servers can communicate with an on-premise installation of QuickBooks Enterprise, without the need to open up firewalls to your site.
 1. Click **Create Instance**.
 
-After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](https://docs.cloud-elements.com/home/view-element-api-docs) associated with the instance, [map the instance to a virtual data resource](https://docs.cloud-elements.com/home/common-object), or [use it in a formula template](https://docs.cloud-elements.com/home/formula-template).
 
 ## Authenticate Through API
 

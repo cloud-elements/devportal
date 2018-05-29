@@ -33,7 +33,7 @@ To authenticate an element instance:
 7. If you want to add events, go to [Configure Polling Through the UI](events.html#configure-polling-through-the-ui).
 7. Click **Create Instance**.
 
-After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](https://docs.cloud-elements.com/home/view-element-api-docs) associated with the instance, [map the instance to a virtual data resource](https://docs.cloud-elements.com/home/common-object), or [use it in a formula template](https://docs.cloud-elements.com/home/formula-template).
 
 ## Authenticate Through API
 

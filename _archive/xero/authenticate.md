@@ -65,7 +65,7 @@ GET /elements/{{page.elementKey}}/oauth/token?apiKey={xeroConsumerKey}&apiSecret
 | :------------- | :------------- |
 | `apiKey` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
 | `apiSecret` |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| `callbackUrl` |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| `callbackUrl` |   {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 
 #### Example cURL
 
@@ -99,7 +99,7 @@ GET /elements/{{page.elementKey}}/oauth/url?apiKey={xeroConsumerKey}&apiSecret={
 | :------------- | :------------- |
 | `apiKey` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup section](setup.html). |
 | `apiSecret` |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup section](setup.html).  |
-| `callbackUrl` |   {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
+| `callbackUrl` |   {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup section](setup.html)   |
 | `requestToken`  | The token returned by the previous `GET /elements/{{page.elementKey}}/oauth/token?` request. |
 
 #### Example cURL

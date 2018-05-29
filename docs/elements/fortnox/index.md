@@ -25,7 +25,7 @@ The {{page.heading}} Element is available in the ERP hub. Connect a Fortnox acco
 | Authentication | Custom  |
 | Events | Not supported |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://developer.fortnox.se/blog/important-implementation-of-rate-limits/)|
 
 {% include Elements/index.md%}

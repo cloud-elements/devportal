@@ -1,0 +1,3 @@
+| Taleo Userame</br>`username` | The {{page.apiProvider}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+| Taleo Password</br>`pasword` | The {{page.apiProvider}} {{page.password}} that you noted in [API Provider Setup](setup.html). |  string |
+| Taleo Company Code</br>`taleo.company.code` | The Oracle Taleo company code that you noted in [API Provider Setup](setup.html). |  string |

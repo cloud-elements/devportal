@@ -12,7 +12,7 @@
 | Authentication | Basic: user name, password, and Server URL  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | Review the API Call Threshold documentation. You can check your threshold with the `getThresholdAndUsageInfo()` request to the AutoTask API. |
 
 

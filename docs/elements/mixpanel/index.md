@@ -24,7 +24,7 @@ order: 1
 | Authentication | Basic  |
 | Events | Not supported |
 | Bulk | Supported for both upload and download for `/activities` and `/users`.   |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://mixpanel.com/help/questions/articles/are-there-rate-limits-for-the-formatted-and-raw-api-endpoints)|
 
 {% include Elements/index.md%}

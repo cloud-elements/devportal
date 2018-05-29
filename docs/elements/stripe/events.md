@@ -1,8 +1,8 @@
 ---
-heading: Stripe
-seo: Events | Stripe | Cloud Elements API Docs
+heading: Cloud Elements for Stripe
+seo: Events | Cloud Elements for Stripe | Cloud Elements API Docs
 title: Events
-description: Enable Stripe events for your application.
+description: Enable Cloud Elements for Stripe events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 475

@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2  |
 | Events | Webhooks and polling |
 | Bulk | Supported for up, down, and all around |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://developers.hubspot.com/apps/api_guidelines)|
 | Authentication Requirements |  Paid Hubspot marketing account with administrator privileges. Webhooks require a Pro plan. |
 

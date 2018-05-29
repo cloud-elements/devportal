@@ -23,9 +23,9 @@ Cloud Elements Bulk support provides an option to upload a large number of resou
 | :------------- | :------------- |
 |  Bulk Type  |  Cloud Elements bulk service and not native bulk endpoints. Rate limits come into play when using the Cloud Elements bulk service, so review the limitations for your specific registered application. Default rate limits are 70,000 in 24 hours and 10,000 in 1 hour. |
 | Upsert Support | No |
-| Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html). For example, you can use only `select *` for this element. |
+| Field Selection Support | No. To limit the fields returned by the query, you must use a transformation. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object). For example, you can use only `select *` for this element. |
 | Order By Support | No. |
 
 ## Hash Verification
 
-If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](/docs/guides/event-management/security.html).
+If you configured the **Callback Notification Signature Key** (`event.notification.signature.key`) when you authenticated an element instance, the bulk APIs will use the signature key to provide hash verification in the header of bulk jobs. For more on Cloud Elements Hash Verification, see [Event Management: Security](https://docs.cloud-elements.com/home/hash-verification).

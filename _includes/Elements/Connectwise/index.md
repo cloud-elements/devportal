@@ -12,6 +12,6 @@ The {{page.heading}} element provides access to the data and functionality in th
 | Authentication | {{page.auth}}  |
 | Events | {{page.events}} |
 | Bulk | {{page.bulk}} |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 
 {% include Elements/index.md%}

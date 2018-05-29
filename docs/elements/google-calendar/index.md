@@ -24,7 +24,7 @@ Google Calendar provides cloud-based spreadsheets.
 | Authentication | OAuth 2.0  |
 | Events | Polling |
 | Bulk | Not supported |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data. |
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data. |
 | Rate Limits | The Google Calendar API has a courtesy limit of 1,000,000 queries per day. [Google Calendar rate limit documentation](https://developers.google.com/google-apps/calendar/pricing)|
 
 {% include Elements/index.md%}

@@ -11,7 +11,7 @@ order: 2
 ---
 ## Endpoint Setup
 
-Follow these steps to set up SharePoint 2013 with the endpoint. We support SharePoint Online (Office 365) and SharePoint 2013 on premises*.
+Follow these steps to set up SharePoint 2013 with the endpoint. We support SharePoint Online (Office 365).
 
 Via a web browser, go to `http://yourSharePointServerName/_layouts/15/appregnew.aspx`.
 __NOTE: The yourSharePointServerName in the URL is specific to your account.__

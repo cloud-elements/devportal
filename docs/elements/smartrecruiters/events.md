@@ -22,6 +22,8 @@ Cloud Elements supports events via polling or webhooks depending on the API prov
 
 ## Supported Events and Resources
 
+Cloud Elements supports polling events for {{page.heading}}. After receiving an event, Cloud Elements standardizes the payload and sends an event to the configured callback URL of your authenticated element instance.
+
 You can set up events for the following resources:
 
 * candidates
@@ -58,7 +60,7 @@ To authenticate an element instance with polling:
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
 
-After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](/docs/guides/elements/instances.html#test-an-element-instance) associated with the instance, [map the instance to a common resource](/docs/guides/common-resources/mapping.html), or [use it in a formula template](/docs/guides/formulasC2/build-template.html).
+After successfully authenticating, we give you several options for next steps. [Make requests using the API docs](https://docs.cloud-elements.com/home/view-element-api-docs#test-an-element-instance) associated with the instance, [map the instance to a virtual data resource](https://docs.cloud-elements.com/home/common-object), or [use it in a formula template](https://docs.cloud-elements.com/home/formula-template).
 
 ### Configure Polling Through API
 

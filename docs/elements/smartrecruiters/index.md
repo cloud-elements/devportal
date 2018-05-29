@@ -28,10 +28,10 @@ Use this Postman collection and the documentation here to get started.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://developers.acuityscheduling.com/) |
-| Authentication | OAuth 2.0  |
-| Events | Webhooks |
+| API Documentation | [{{page.apiProvider}} API documentation](https://dev.smartrecruiters.com/customer-api/overview/) |
+| Authentication | Basic (API Key)  |
+| Events | Polling |
 | Bulk | Not supported |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.apiProvider}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.apiProvider}} data.|
 
 {% include Elements/index.md%}

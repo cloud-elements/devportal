@@ -25,7 +25,7 @@ sitemap: false
 | Authentication | OAuth 2.0 for apps created after July 2017, OAuth 1.0 for apps created before July 2017 |
 | Events | Polling and webhooks |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | [{{page.heading}} rate limit documentation](https://developer.intuit.com/docs/0100_quickbooks_online/0300_references/0000_programming_guide/0000_rest_api_quick_reference#/Limits_and_throttles)|
 | Authentication Requirements |  Only the Master Administrator or a Company Administrator can authorize access to a QuickBooks company.|
 

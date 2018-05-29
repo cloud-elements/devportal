@@ -1,8 +1,8 @@
 ---
-heading: Stripe
-seo: API Docs | Stripe | Cloud Elements API Docs
+heading: Cloud Elements for Stripe
+seo: API Docs | Cloud Elements for  | Cloud Elements API Docs
 title: API Docs
-description: Stripe API Documentation.
+description: Cloud Elements for  API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 475

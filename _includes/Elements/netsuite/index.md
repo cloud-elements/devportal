@@ -12,7 +12,7 @@
 | Authentication | Custom and Basic  |
 | Events | Polling |
 | Bulk | Supported for both upload and download. |
-| Transformations | Supported. See [Define Common Resources and Transformations](/docs/guides/common-resources/index.html) for more information about transforming your {{page.heading}} data.|
+| Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 | Rate Limits | NetSuite supports only one API call at a time from one unique user. NetSuite does not support concurrent API calls.|
 | Versions Supported | Netsuite 2016_R2 |
 
