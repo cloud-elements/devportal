@@ -57,6 +57,7 @@ layout: sidebarelementtile
 * [![FreshBooks Cloud Accounting](/assets/img/element-logos/freshbooks-cloud.svg)FreshBooks Cloud Accounting](./elements/freshbooksv2/)
 * [![Freshdesk](/assets/img/element-logos/freshdesk.png)Freshdesk](./elements/freshdesk/)
 * [![Freshservice](/assets/img/element-logos/freshservice.png)Freshservice](./elements/freshservice/)
+* [![GitHub](/assets/img/element-logos/github-logo.png)GitHub](./elements/github/)
 * [![GoodData](/assets/img/element-logos/gooddata.png)GoodData](./elements/gooddata/)
 * [![Google Calendar](https://my.cloudelements.io/assets/img/elements/googlecalendar.svg)Google Calendar](./elements/google-calendar/)
 * [![Google Drive](/assets/img/element-logos/googledrive.png)Google Drive](./elements/googledrive/)
