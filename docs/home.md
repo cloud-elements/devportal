@@ -11,6 +11,9 @@ sitemap: false
 canonical_url: '{{site.url}}{{page.url}}'
 redirect_from:
   - /docs/getstarted/
+  - /docs/platform/accounts/account-management.html
+  - /docs/guides/
+
 ValeOn: <!-- vale on -->
 ---
 
