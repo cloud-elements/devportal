@@ -42,6 +42,7 @@
     {% include sidebar.html %}
     </div>
     <div class="col-md-9 contentWrapper">
+      {% include banner.html %}
       {% include contentToggle.html %}
       {% if page.simple_map == true %}
 
@@ -51,7 +52,6 @@
           });
       </script>
       {% endif %}
-
       {{content}}
     </div>
 
