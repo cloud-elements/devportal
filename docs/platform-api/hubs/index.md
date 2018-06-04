@@ -19,18 +19,39 @@ The Hub APIs allow you to retrieve information associated with each of the eleme
 
 There is no Cloud Elements Authorization requirement needed in order to access the Hubs APIs. The API calls allow you view all available Hubs, Hub keys, and Elements available in each hub.
 
-```bash
-Hub Key
+### Hub Keys
 
-"helpdesk",
-"marketing",
-"messaging",
-"crm",
-"documents"
-"finance"
-"ecommerce"
-"social"
-"humancapital"
+```json
+[
+  "messaging",
+  "documents",
+  "esignature",
+  "idmanagement",
+  "marketing",
+  "pointofsale",
+  "general",
+  "finance",
+  "questback",
+  "ocr",
+  "monitoring",
+  "db",
+  "sageaccounting",
+  "sagepayroll",
+  "native",
+  "fsa",
+  "helpdesk",
+  "ecommerce",
+  "collaboration",
+  "conferencing",
+  "payment",
+  "billing",
+  "expense",
+  "employee",
+  "scheduling",
+  "crm",
+  "analytics",
+  "erp"
+]
 ```
 
 Below are example cURL commands and examples of successful responses for each of the Hub API calls.
@@ -96,11 +117,34 @@ Example of Successful Response:
 
 ```JSON
 [
-    "helpdesk",
-    "marketing",
-    "messaging",
-    "crm",
-    "documents"
+  "messaging",
+  "documents",
+  "esignature",
+  "idmanagement",
+  "marketing",
+  "pointofsale",
+  "general",
+  "finance",
+  "questback",
+  "ocr",
+  "monitoring",
+  "db",
+  "sageaccounting",
+  "sagepayroll",
+  "native",
+  "fsa",
+  "helpdesk",
+  "ecommerce",
+  "collaboration",
+  "conferencing",
+  "payment",
+  "billing",
+  "expense",
+  "employee",
+  "scheduling",
+  "crm",
+  "analytics",
+  "erp"
 ]
 ```
 
@@ -118,10 +162,12 @@ Example of Successful Response:
 
 ```JSON
 {
-    "id": 4,
-    "name": "Documents",
-    "key": "documents",
-    "description": "Document Hub includes GoogleDrive, Dropbox, Box.com, OneDrive, Sharepoint, and Amazon s3"
+  "id":4,
+  "name":"Cloud Storage & Documents",
+  "key":"documents",
+  "description":"Document Hub includes GoogleDrive, Dropbox, Box.com, OneDrive, Sharepoint, and Amazon s3",
+  "videoLink":"//player.vimeo.com/video/109624971?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1",
+  "active":true
 }
 ```
 
