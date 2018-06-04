@@ -36,7 +36,7 @@ Ground2Cloud works with following Elements:
 * QuickBooks Enterprise
 * Microsoft SQL Server
 * MySQL
-* PostGreSQL
+* PostgreSQL
 
 The Ground2Cloud Client runs machine running the following versions of Windows:
 
