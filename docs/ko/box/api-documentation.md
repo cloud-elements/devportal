@@ -1,11 +1,11 @@
 ---
-heading: BambooHR
-seo: API Docs | BambooHR | Cloud Elements API Docs
+heading: Box
+seo: API Docs | Box | Cloud Elements API Docs
 title: API Docs
-description: BambooHR API Documentation.
-layout: sidebarapidocs
+description: Box API Documentation.
+layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 6315
+elementId: 22
 parent: Back to Element Guides
 order: 90
 ---
