@@ -1,11 +1,11 @@
 ---
-heading: BambooHR
-seo: API Docs | BambooHR | Cloud Elements API Docs
+heading: Act! Essentials
+seo: API Docs | Act! Essentials | Cloud Elements API Docs
 title: API Docs
-description: BambooHR API Documentation.
+description: Act! Essentials API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 6315
+elementId: 1251
 parent: Back to Element Guides
 order: 90
 ---

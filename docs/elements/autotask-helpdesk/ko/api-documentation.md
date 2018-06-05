@@ -1,11 +1,11 @@
 ---
-heading: BambooHR
-seo: API Docs | BambooHR | Cloud Elements API Docs
+heading: Autotask Help Desk
+seo: API Docs | Autotask Help Desk | Cloud Elements API Docs
 title: API Docs
-description: BambooHR API Documentation.
+description: Autotask API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 6315
+elementId: 123
 parent: Back to Element Guides
 order: 90
 ---

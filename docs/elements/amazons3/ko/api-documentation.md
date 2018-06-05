@@ -1,11 +1,11 @@
 ---
-heading: BambooHR
-seo: API Docs | BambooHR | Cloud Elements API Docs
+heading: Amazon S3 Beta
+seo: API Docs | Amazon S3 | Cloud Elements API Docs
 title: API Docs
-description: BambooHR API Documentation.
+description: Amazon S3 API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 6315
+elementId: 16
 parent: Back to Element Guides
 order: 90
 ---
