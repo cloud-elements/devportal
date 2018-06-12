@@ -139,7 +139,7 @@ https://api.cloud-elements.com/elements/api-v2/instances \
     "products": "auth, transactions",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/plaid/",
+	  "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/plaid/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
       "transactions": {

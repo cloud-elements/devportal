@@ -76,7 +76,7 @@ To authenticate an element instance with polling:
 {% include_relative includes/config-fields.md %},
         "event.notification.enabled": true,
         "event.vendor.type": "polling",
-        "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}",
+        "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.key}}",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
           "events":{
@@ -117,7 +117,7 @@ https://api.cloud-elements.com/elements/api-v2/instances \
   	"oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+	  "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.key}}/",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{
       "events":{

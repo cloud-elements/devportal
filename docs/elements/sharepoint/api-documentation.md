@@ -1,8 +1,8 @@
 ---
-heading: Sharepoint 2013
-seo: API Docs | Sharepoint 2013 | Cloud Elements API Docs
+heading: Sharepoint
+seo: API Docs | Sharepoint  | Cloud Elements API Docs
 title: API Docs
-description: Sharepoint 2013 API Documentation.
+description: Sharepoint API Documentation.
 layout: sidebarapidocs
 breadcrumbs: /docs/elements.html
 elementId: 30

@@ -131,7 +131,7 @@ https://api.cloud-elements.com/elements/api-v2/instances \
 {% include_relative includes/config-example.md %},
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-	  "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.key}}/",
+	  "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.key}}/",
     "event.notification.signature.key": "asdfo08e$fd",
     "event.poller.refresh_interval": "15",
     "event.poller.configuration":{

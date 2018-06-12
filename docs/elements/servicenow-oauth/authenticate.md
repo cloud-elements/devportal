@@ -65,7 +65,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the API provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&siteAddress=<url>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret>&callbackUrl=<url>&servicenow.subdomain=<{{page.apiProvider}} Subdomain>
 ```
 
 #### Query Parameters
@@ -75,24 +75,23 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<api_key>&apiSecret=<api_secret
 | apiKey | The key obtained from registering your app with the provider. This is the **Client ID** that you recorded in [API Provider Setup section](setup.html).  |
 | apiSecret |  The secret obtained from registering your app with the provider.  This is the **Client Secret** that you recorded in [API Provider Setup section](setup.html).   |
 | callbackUrl | The URL that will receive the code from the vendor to be used to create an element instance.   |
+| servicenow.subdomain   | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain.   |
 
 #### Example cURL
 
 ```bash
 curl -X GET \
-  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&state={{page.elementKey}}' \
+  'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=fake_api_key&apiSecret=fake_api_secret&callbackUrl=https://www.mycoolapp.com/auth&servicenow.subdomain=dev1234' \
 ```
 
 #### Example Response
 
 Use the `oauthUrl` in the response to allow users to authenticate with the vendor.
 
-<Replace the below oauthUrl value with an actual one from Postman.>
-
 ```json
 {
 "element": "{{page.elementKey}}",
-"oauthUrl": "https://apis.hootsuite.com/auth/oauth/v2/authorize?scope=oob&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=hootsuite&client_id=l7xx1cf795a3144b42ac96cbb3f301af6b7b"
+"oauthUrl": "https://dev33891.service-now.com/oauth_auth.do?response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=servicenowoauth&client_id=fake_api_key"
 }
 ```
 
@@ -195,7 +194,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.callback.url` | The URL where you want to redirect users after they grant access. This is the **{{page.callbackURL}}** that you noted in the [API Provider Setup section](setup.html).  | string  |
 | `oauth.api.key` | The Client ID from {{page.heading}}. This is the **{{page.apiKey}}** that you noted in the [API Provider Setup section](setup.html) |  string |
 | `oauth.api.secret` | The Client Secret from {{page.heading}}. This is the **{{page.apiSecret}}** that you noted in the [API Provider Setup section](setup.html). | string |
-| The ServiceNow Subdomain</br>`servicenow.subdomain` | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain | string |
+| The ServiceNow Subdomain</br>`servicenow.subdomain` | This is the part of your URL that is specific to your organization, for example in `https://domain12345.service-now.com/` `domain12345` is the subdomain. | string |
 | tags | *Optional*. User-defined tags to further identify the instance. | string |
 
 ## Example Response for an Authenticated Element Instance

@@ -111,7 +111,7 @@ To authenticate an element instance with polling:
            "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
            "event.notification.enabled": true,
            "event.vendor.type": "polling",
-           "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+           "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
            "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>",
             "event.poller.refresh_interval": "15",
            "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
@@ -145,7 +145,7 @@ To authenticate an element instance with polling:
        "filter.response.nulls": true,
        "event.notification.enabled": true,
        "event.vendor.type": "polling",
-       "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+       "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>",
       "event.poller.refresh_interval": "15",
        "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
@@ -191,7 +191,7 @@ curl -X POST \
     "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
     "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxx",
     "event.poller.refresh_interval": "15",
     "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
@@ -228,7 +228,7 @@ curl -X POST \
     "oauth.api.secret": "<CONSUMER_SECRET>"
     "event.notification.enabled": true,
     "event.vendor.type": "polling",
-    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
     "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxx",
     "event.poller.refresh_interval": "15",
     "event.poller.urls": "bill-paymentsbillsclassescredit-memoscredit-termscurrenciescustomersemployeesinvoicesjournal-entriesledger-accountspayment-methodspaymentsproductspurchase-ordersrefund-receiptssales-receiptstax-codestax-ratestime-activitiesvendor-creditsvendors"
@@ -313,7 +313,7 @@ To authenticate an element instance with webhooks:
            "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
            "event.notification.enabled": true,
            "event.vendor.type": "webhooks",
-           "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+           "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
            "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
           },
          "tags":[
@@ -345,7 +345,7 @@ To authenticate an element instance with webhooks:
        "filter.response.nulls": true,
        "event.notification.enabled": true,
        "event.vendor.type": "webhook",
-       "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+       "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
        "event.notification.signature.key": "<OPTIONAL_SIGNATURE_KEY>"
      },
      "tags": [
@@ -389,7 +389,7 @@ curl -X POST \
     "scope" : "com.intuit.quickbooks.accounting openid profile email phone address",
     "event.notification.enabled": true,
     "event.vendor.type": "webhook",
-    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
     "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxx"
     },
   "tags": [
@@ -424,7 +424,7 @@ curl -X POST \
     "oauth.api.secret": "<CONSUMER_SECRET>"
     "event.notification.enabled": true,
     "event.vendor.type": "webhook",
-    "event.notification.callback.url": "https://api.cloud-elements.io/elements/api-v2/events/{{page.elementKey}}/",
+    "event.notification.callback.url": "https://api.cloud-elements.com/elements/api-v2/events/{{page.elementKey}}/",
     "event.notification.signature.key": "xxxxxxxxxxxxxxxxxxxxxx"
   },
   "tags": [

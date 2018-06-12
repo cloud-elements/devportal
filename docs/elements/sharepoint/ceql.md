@@ -1,6 +1,6 @@
 ---
-heading: Sharepoint 2013
-seo: Query Language | Sharepoint 2013 | Cloud Elements API Docs
+heading: Sharepoint
+seo: Query Language | Sharepoint | Cloud Elements API Docs
 title: Querying
 description: Make database queries using Cloud Elements Query Language.
 layout: sidebarelementdoc

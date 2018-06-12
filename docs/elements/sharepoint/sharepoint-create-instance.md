@@ -1,6 +1,6 @@
 ---
-heading: Sharepoint 2013
-seo: Create Instance | Sharepoint 2013 | Cloud Elements API Docs
+heading: Sharepoint
+seo: Create Instance | Sharepoint | Cloud Elements API Docs
 title: Create Instance
 description: Create Instance
 layout: sidebarelementdoc
@@ -12,7 +12,7 @@ order: 20
 
 ## Create Instance
 
-Sharepoint 2013 is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Sharepoint 2013 platform.
+Sharepoint is a Cloud Storage Platform. When you provision an instance, your app will have access to the different functionality offered by the Sharepoint platform.
 
 ### Step 1. Get Elements OAuth Information
 
@@ -50,7 +50,7 @@ Upon successful authentication and authorization by the user, the endpoint will 
 
 ### Step 2. Create an Instance
 
-To provision your Sharepoint 2013 Element, use the /instances API.
+To provision your Sharepoint Element, use the /instances API.
 
 Below is an example of the provisioning API call.
 
@@ -70,7 +70,7 @@ HTTP Headers:
 Authorization: User <INSERT_USER_SECRET>, Organization <INSERT_ORGANIZATION_SECRET>
 
 ```
-This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Sharepoint 2013 is “sharepoint”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
+This instance.json file must be included with your instance request.  Please fill your information to provision.  The “key” into Cloud Elements Sharepoint is “sharepoint”.  This will need to be entered in the “key” field below depending on which Element you wish to instantiate.
 
 ```json
 {

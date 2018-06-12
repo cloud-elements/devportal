@@ -122,6 +122,7 @@ To authenticate an element instance:
         "oauth.callback.url": "<CALLBACK_URL>",
         "oauth.api.key": "<CONSUMER_KEY>",
       	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "quickbooks.minorversion":"<VERSION_NUMBER>",
         "authentication.type" : "oauth2",
         "use_sandbox": "<true_or_false>",
         "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
@@ -159,7 +160,8 @@ curl -X POST \
   "configuration": {
     "oauth.callback.url": "https;//mycoolapp.com",
     "oauth.api.key": "xxxxxxxxxxxxxxxxxx",
-    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx"
+    "oauth.api.secret": "xxxxxxxxxxxxxxxxxxxxxxxx",
+    "quickbooks.minorversion":"23",
     "authentication.type" : "oauth2",
     "use_sandbox": "true",
     "scope" : "com.intuit.quickbooks.accounting openid profile email phone address"
@@ -186,6 +188,7 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | `oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
 | `oauth.callback.url` | {{site.data.glossary.element-auth-api-key}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
 |  `authentication.type`  |  Identifies the authentication type to use with the request. |  string |
+| `quickbooks.minorversion`   | A specific version of the API other than the generally available version. For more information, see [Minor Versions in the QuickBooks docs](https://developer.intuit.com/docs/00_quickbooks_online/2_build/20_explore_the_quickbooks_online_api/80_minor_versions).  | STRING  |
 | scope   |  Identifies the QuickBooks API access that your application is requesting. | string  |
 | `tags` | {{site.data.glossary.element-auth-tags}} | string |
 

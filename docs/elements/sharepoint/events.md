@@ -1,8 +1,8 @@
 ---
-heading: Sharepoint 2013
-seo: Events | Sharepoint 2013 | Cloud Elements API Docs
+heading: Sharepoint
+seo: Events | Sharepoint | Cloud Elements API Docs
 title: Events
-description: Enable Sharepoint 2013 events for your application.
+description: Enable Sharepoint events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementId: 30

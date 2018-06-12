@@ -13,7 +13,9 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must [register a connected app](#register-a-connected-app) with {{page.heading}} and know the **Client ID,** **Client Secret**, and **Callback URL** of the app. Also, if you plan to use events, you need to know the [List ID](#find-a-list-id) of any lists that you want to monitor for events.
+To authenticate a {{page.heading}} element instance you must either use an API Key or [register a connected app](#register-a-connected-app) with {{page.heading}}, and use the **Client ID,** **Client Secret**, and **Callback URL** of the app. Also, if you plan to use events, you need to know the [List ID](#find-a-list-id) of any lists that you want to monitor for events.
+
+Read more about the Campaign Monitor authentication choices: [Authenticating with an API key](https://www.campaignmonitor.com/api/getting-started/#authenticating-api-key) and [Authenticating with OAuth](https://www.campaignmonitor.com/api/getting-started/#authenticating-with-oauth).
 
 ## Register a Connected App
 
