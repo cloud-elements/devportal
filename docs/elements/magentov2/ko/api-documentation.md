@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Magento 2.0
+seo: API Docs | Magento 2.0 | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Magento 2.0 API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 815
 parent: Back to Element Guides
 order: 90
 ---

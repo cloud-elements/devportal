@@ -1,13 +1,13 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Wufoo
+seo: API Docs | Wufoo | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Wufoo API Docs
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 685
 parent: Back to Element Guides
-order: 90
+order: 50
 ---
 
 {% include swagger.html %}

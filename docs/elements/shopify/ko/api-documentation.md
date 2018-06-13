@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Shopify
+seo: API Docs | Shopify | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Shopify API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 48
 parent: Back to Element Guides
 order: 90
 ---

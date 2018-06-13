@@ -12,8 +12,7 @@ order: 5
 
 ## Find API Key
 
-Follow these steps to retrieve your Expensify Partner User ID and Secret.
-Find more information about the Expensify API by visiting the [Expensify Documentation](https://www.expensify.com/api.html).
+Follow these steps to retrieve your Expensify Partner User ID and Secret. Find more information about the Expensify API by visiting the [Expensify Documentation](https://www.expensify.com/api.html).
 
 ### Excerpt from Expensify Getting Started Guide
 

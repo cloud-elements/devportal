@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Taxify
+seo: API Docs | Taxify | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Taxify API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 320
 parent: Back to Element Guides
 order: 90
 ---

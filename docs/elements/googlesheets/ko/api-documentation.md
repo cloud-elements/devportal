@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Google Sheets
+seo: API Docs | Google Sheets | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Google Sheets API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 552
 parent: Back to Element Guides
 order: 90
 ---

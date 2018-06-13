@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Twilio SMS
+seo: API Docs | Twilio SMS | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Twilio SMS API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 7
 parent: Back to Element Guides
 order: 90
 ---

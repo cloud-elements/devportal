@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Help Scout
+seo: API Docs | Help Scout | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Help Scout API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 338
 parent: Back to Element Guides
 order: 90
 ---

@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Twitter
+seo: API Docs | Twitter | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Twitter API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 1359
 parent: Back to Element Guides
 order: 90
 ---

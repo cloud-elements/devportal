@@ -1,11 +1,11 @@
 ---
-heading: Ecwid
-seo: API Docs | Ecwid | Cloud Elements API Docs
+heading: Sage Live
+seo: API Docs | Sage Live | Cloud Elements API Docs
 title: API Docs
-description: Ecwid API Documentation.
+description: Sage Live API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 52
+elementId: 676
 parent: Back to Element Guides
 order: 90
 ---
