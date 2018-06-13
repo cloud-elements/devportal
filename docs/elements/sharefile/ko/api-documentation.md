@@ -1,8 +1,8 @@
 ---
-heading: Adobe Sign
-seo: API Docs | Adobe Sign | Cloud Elements API Docs
+heading: Citrix Sharefile
+seo: API Docs | Citrix Sharefile | Cloud Elements API Docs
 title: API Docs
-description: Adobe Sign API Documentation.
+description: Citrix Sharefile API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
 elementId: 450

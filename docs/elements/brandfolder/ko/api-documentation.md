@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: Brandfolder
+seo: API Docs | Brandfolder | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: Brandfolder API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 492
 parent: Back to Element Guides
 order: 90
 ---

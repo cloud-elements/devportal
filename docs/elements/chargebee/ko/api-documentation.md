@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: Chargebee
+seo: API Docs | Chargebee | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: Chargebee API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 451
 parent: Back to Element Guides
 order: 90
 ---

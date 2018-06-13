@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: BigCommerce
+seo: API Docs | BigCommerce | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: BigCommerce API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 274
 parent: Back to Element Guides
 order: 90
 ---

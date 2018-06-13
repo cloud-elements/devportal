@@ -1,5 +1,5 @@
 ---
-heading: BrightTALK CRM
+heading: BrightTALK
 seo: API Docs | BrightTALK | Cloud Elements API Docs
 title: API Docs
 description: BrightTALK API Documentation.

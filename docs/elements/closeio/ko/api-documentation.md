@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: Close.io
+seo: API Docs | Close.io | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: Close.io API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 166
 parent: Back to Element Guides
 order: 90
 ---

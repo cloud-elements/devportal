@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: ConnectWise
+seo: API Docs | ConnectWise | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: ConnectWise API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 142
 parent: Back to Element Guides
 order: 90
 ---

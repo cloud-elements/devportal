@@ -1,5 +1,5 @@
 ---
-heading: Concur Beta
+heading: Concur 
 seo: API Docs | Concur | Cloud Elements API Docs
 title: API Docs
 description: Concur API Documentation.

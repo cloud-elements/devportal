@@ -1,11 +1,11 @@
 ---
-heading: Box
-seo: API Docs | Box | Cloud Elements API Docs
+heading: Clover
+seo: API Docs | Clover | Cloud Elements API Docs
 title: API Docs
-description: Box API Documentation.
+description: Clover API Documentation.
 layout: swagger-only
 breadcrumbs: /docs/elements.html
-elementId: 22
+elementId: 5217
 parent: Back to Element Guides
 order: 90
 ---
