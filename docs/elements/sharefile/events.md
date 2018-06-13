@@ -72,12 +72,15 @@ To authenticate an element instance with polling:
         "code": "<AUTHORIZATION_GRANT_CODE>"
       },
       "configuration":{
-        "baseUrl": "https://api-<MYCONNECTWISE.COM>/v4_6_release/apis/3.0",
-      	"company": "<COMPANY_NAME>",
-      	"public.key": "<PUBLIC_KEY>",
-      	"private.key": "<PRIVATE_KEY>",
+        "oauth.callback.url": "<CALLBACK_URL>",
+        "oauth.api.key": "<CONSUMER_KEY>",
+      	"oauth.api.secret": "<CONSUMER_SECRET>",
+        "document.root.folder.name": "</ROOT_DIR>",
+        "sharefile.subdomain": "<SUBDOMAIN>",
         "event.notification.enabled": true,
+        "event.vendor.type": "polling",
         "event.notification.callback.url": "http://mycoolapp.com",
+        "event.notification.signature.key": "123456",
         "event.poller.refresh_interval": "<minutes>",
         "event.poller.configuration":{
           "documents":{

@@ -5,6 +5,7 @@ title: Events
 description: Enable Box events for your application.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
+elementKey: box
 elementId: 22
 parent: Back to Element Guides
 order: 30
@@ -18,7 +19,7 @@ Cloud Elements supports events via polling or webhooks depending on the endpoint
 
 ## Supported Events and Resources
 
-Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://www.campaignmonitor.com/api/webhooks/).
+Cloud Elements supports webhook events for {{page.heading}}. For more information about webhooks at {{page.heading}} including the currently available webhooks, see [{{page.heading}}'s webhooks documentation](https://developer.box.com/docs/work-with-webhooks).
 
 Before continuing, be sure that you set up webhooks as describe in [API Provider Setup](setup.html).
 
