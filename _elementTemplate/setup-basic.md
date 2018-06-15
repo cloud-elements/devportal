@@ -1,7 +1,7 @@
 ---
 heading: Name of Element
 apiProvider: Company Name
-seo: API Provider Setup | API provider setup | Name of Element | Cloud Elements API Docs
+seo: API Provider Setup | Name of Element | Cloud Elements API Docs
 title: API Provider Setup
 description: Setup tasks required to authenticate an element instance
 layout: sidebarelementdoc
@@ -16,7 +16,7 @@ order: 5
 
 # API Provider Setup
 
-To authenticate a {{page.heading}} element instance you must use the **{{page.username}}** and **{{page.password}}** that you use to log in to {{page.heading}}.
+To authenticate a {{page.heading}} element instance you must use the **{{page.username}}** and **{{page.password}}** that you use to log in to {{page.apiProvider}}.
 
 See the latest setup instructions in the [{{page.heading}} documentation](https://support.bigcommerce.com/articles/Public/Legacy-API-Accounts#creating).
 
