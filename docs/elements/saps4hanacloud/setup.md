@@ -16,6 +16,6 @@ order: 5
 
 # API Provider Setup
 
-To authenticate an {{page.heading}} element instance you must use your SAP S/4HANA Cloud **{{page.username}}** and **{{page.password}}**. You also must include the URL of you S/4HANA account, for example `https://myserver.s4hana.ondemand.com`, as the **SAP S/4 HANA Cloud URL** .
+To authenticate an {{page.heading}} element instance you must use your SAP S/4HANA Cloud **{{page.username}}** and **{{page.password}}**. You also must include the URL or IP address of your S/4HANA account, for example `https://myserver.s4hana.ondemand.com`, as the **SAP S/4 HANA Cloud URL** .
 
 Next [authenticate an element instance with {{page.apiProvider}}](authenticate.html).

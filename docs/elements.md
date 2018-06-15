@@ -129,6 +129,8 @@ layout: sidebarelementtile
 * [![SAP Business Objects by LaunchBI](https://images.cloudelements.io/launchbi-logo201712291511.png)SAP Business Objects by LaunchBI](./elements/sapbobylaunchbi/)
 * [![SAP Hybris Cloud for Customer CRM](/assets/img/element-logos/sapc4c.png)SAP Hybris Cloud for Customer CRM](./elements/sapc4c-crm/)
 * [![SAP Hybris Cloud for Customer Helpdesk](/assets/img/element-logos/sapc4c.png)SAP Hybris Cloud for Customer Helpdesk](./elements/sapc4c-hd/)
+* [![SAP S/4 BAPI](https://my.cloudelements.io/assets/img/elements/sap.svg)SAP S/4 BAPI](./elements/saps4bapi/)
+* [![SAP R/3 BAPI](https://my.cloudelements.io/assets/img/elements/sap.svg)SAP R/3 BAPI](./elements/sapr3bapi/)
 * [![SAP S/4 HANA Cloud](https://my.cloudelements.io/assets/img/elements/sap.svg)SAP S/4 HANA Cloud](./elements/saps4hanacloud/)
 * [![SendGrid](/assets/img/element-logos/sendgrid.png)SendGrid](./elements/sendgrid/)
 * [![ServiceMax](/assets/img/element-logos/servicemax.png)ServiceMax](./elements/servicemax/)
