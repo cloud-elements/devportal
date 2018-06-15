@@ -56,7 +56,7 @@ To authenticate an element instance:
       "configuration": {
         "username": "<{{page.apiProvider}} {{page.username}}>",
         "password": "<{{page.apiProvider}} {{page.password}}>",
-        "saps4hanacloud.url": "<URL of you S/4HANA account>"
+        "saps4hanacloud.url": "<URL of your SAP S/4HANA account>"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -105,8 +105,8 @@ API parameters not shown in {{site.console}} are in `code formatting`.
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | Name</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| Username</br>`username` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
-| Password</br>`password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
+| **Username**</br>`username` | The {{page.heading}} {{page.username}} that you noted in [API Provider Setup](setup.html). |  string |
+| **Password**</br>`password` | The {{page.heading}} {{page.password}} that you noted in [API Provider Setup](setup.html). | string |
 |  **SAP S/4 HANA Cloud URL**</br>`saps4hanacloud.url` |  The URL of you S/4HANA account, for example `https://myserver.s4hana.ondemand.com`   | string  |
 | tags | {{site.data.glossary.element-auth-tags}} | string |
 
