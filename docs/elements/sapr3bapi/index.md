@@ -1,9 +1,9 @@
 ---
-heading: SAP S/4 HANA Cloud
-apiProvider: SAP S/4HANA Cloud # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
-seo: Overview | SAP S/4 HANA Cloud | Cloud Elements API Docs
+heading: SAP R/3 BAPI
+apiProvider: SAP R/3 # For cases where the API Provider is different than the element name. e;g;, ServiceNow vs. ServiceNow Oauth
+seo: Overview | SAP R/3 BAPI | Cloud Elements API Docs
 title: Overview
-description: Integrate SAP S/4 HANA Cloud into your application via the Cloud Elements APIs.
+description: Integrate SAP R/3 BAPI into your application via the Cloud Elements APIs.
 layout: sidebarelementdoc
 breadcrumbs: /docs/elements.html
 elementKey: sapr3bapi
@@ -14,7 +14,7 @@ order: 1
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} is available in the ERP hub. Connect an SAP S/4 HANA account to integrate with business partners, customers, and more.
+{{page.heading}} is available in the ERP hub. Connect an SSAP R/3 account to integrate with business partners, customers, and more.
 
 Use this Postman collection and the documentation here to get started.
 
@@ -28,7 +28,7 @@ Use this Postman collection and the documentation here to get started.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://api.sap.com/package/SAPS4HANACloud?section=Artifacts) |
+| API Documentation | [{{page.apiProvider}} API documentation](https://help.sap.com/saphelp_nw73ehp1/helpdata/en/48/5f9ba265c907dce10000000a42189d/frameset.htm) |
 | Authentication | Custom  |
 | Events | Polling |
 | Bulk | Supported |

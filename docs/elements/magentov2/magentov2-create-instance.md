@@ -81,7 +81,7 @@ Below is a successful JSON response:
     "id": 499,
     "name": "Magento 2.0",
     "hookName": "MagentoSoap",
-    "key": "magentosoapv19",
+    "key": "magentov20",
     "description": "Magento Commerce is the leading provider of open omnichannel innovation. Our open source digital commerce platform and cloud-based omnichannel solutions empower merchants to integrate digital and physical shopping experiences.",
     "image": "https://upload.wikimedia.org/wikipedia/en/c/c2/Magento_logo.png",
     "active": true,
