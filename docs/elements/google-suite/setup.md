@@ -72,7 +72,7 @@ To create a project:
 
 ### Enable APIs
 
-To make all of the requests available in the page.heading element, you must enable the following APIs
+To make all of the requests available in the {{page.heading}} element, you must enable the following APIs
 
 * Google People API
 * GMail API
