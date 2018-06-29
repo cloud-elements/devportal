@@ -181,10 +181,6 @@ API parameters in the UI are **bold**, while parameters available in the instanc
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
-6. In **OAuth API Key** enter your app's **{{page.apiKey}}**.
-6. In **OAuth API Secret** enter your app's **{{page.apiSecret}}**.
-
-
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |

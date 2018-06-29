@@ -34,10 +34,6 @@ To authenticate an element instance:
 4. Hover over the element card, and then click **Authenticate**.
 ![Create Instance](/assets/img/elements/authenticate-instance.gif)
 5. Enter a name for the element instance.
-6. In **OAuth API Key** enter your app's **{{page.apiKey}}**.
-6. In **OAuth API Secret** enter your app's **{{page.apiSecret}}**.
-7. In **OAuth Scope** leave the default scopes unless you extended the element. If so, add the required scopes for any resources that you add.
-9. Optionally type or select one or more Element Instance Tags to add to the authenticated element instance.
 7. Click **Create Instance**.
 8. Log in to {{page.apiProvider}}, and then allow the connection.
 
@@ -62,7 +58,7 @@ Authenticating through API follows a multi-step OAuth 2.0 process that involves:
 Use the following API call to request a redirect URL where the user can authenticate with the service provider. Replace `{keyOrId}` with the element key, `{{page.elementKey}}`.
 
 ```bash
-curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.apiKey}}>&apiSecret=<{{page.apiProvider}} {{page.apiSecret}}> &callbackUrl=<{{page.apiProvider}} {{page.callbackURL}}>
+curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.apiKey}}>&apiSecret=<{{page.apiProvider}} {{page.apiSecret}}> &callbackUrl=<{{page.apiProvider}} {{page.callbackURL}}>&scope=offline_access https://outlook.office.com/mail.send https://outlook.office.com/mail.read https://outlook.office.com/mail.readwrite
 ```
 
 #### Query Parameters
@@ -72,12 +68,13 @@ curl -X GET /elements/{keyOrId}/oauth/url?apiKey=<{{page.apiProvider}} {{page.ap
 | apiKey |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you recorded in [API Provider Setup](setup.html). |
 | apiSecret |    {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you recorded in [API Provider Setup](setup.html).  |
 | callbackUrl |   {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you recorded in [API Provider Setup](setup.html)   |
+| scope  | The list of scopes granted to the app. The list in the example (`offline_access https://outlook.office.com/mail.send https://outlook.office.com/mail.read https://outlook.office.com/mail.readwrite`) represent the minimum required to make the requests in Outlook Email's element API docs.   |
 
 #### Example Request
 
 ```bash
 curl -X GET \
-'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https:%3A%2F%2Fwww.mycoolapp.com%2auth' \
+'https://api.cloud-elements.com/elements/api-v2/elements/{{page.elementKey}}/oauth/url?apiKey=Rand0MAP1-key&apiSecret=fak3AP1-s3Cr3t&callbackUrl=https:%3A%2F%2Fwww.mycoolapp.com%2auth&scope=offline_access%20https://outlook.office.com/mail.send%20https://outlook.office.com/mail.read%20https://outlook.office.com/mail.readwrite' \
 ```
 
 #### Example Response
@@ -86,8 +83,8 @@ Use the `oauthUrl` in the response to allow users to authenticate with the vendo
 
 ```json
 {
-"oauthUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=Calendars.Read+Calendars.ReadWrite+offline_access&response_type=code&redirect_uri=https%3A%2F%2Fwww.mycoolapp.com%2auth&state=microsoftgraph&client_id=Rand0MAP1-key",
-"element": "{{page.elementKey}}"
+    "oauthUrl": "https://login.microsoftonline.com/common/oauth2/v2.0/authorize?scope=offline_access+https%3A%2F%2Foutlook.office.com%2Fmail.send+https%3A%2F%2Foutlook.office.com%2Fmail.read+https%3A%2F%2Foutlook.office.com%2Fmail.readwrite&response_type=code&redirect_uri=https%3A%2F%2Fhttpbin.org%2Fget&state=outlookemail&client_id=Rand0MAP1-key",
+    "element": "outlookemail"
 }
 ```
 
@@ -131,8 +128,7 @@ To authenticate an element instance:
       "configuration": {
         "oauth.api.key": "<{{page.apiProvider}} app {{page.apiKey}}>",
       	"oauth.api.secret": "<{{page.apiProvider}} app {{page.apiSecret}}>",
-        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >",
-        "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access"
+        "oauth.callback.url": "<{{page.apiProvider}} app {{page.callbackURL}} >"
       },
       "tags": [
         "<Add_Your_Tag>"
@@ -166,8 +162,7 @@ curl -X POST \
   "configuration": {
     "oauth.api.key": "Rand0MAP1-key",
     "oauth.api.secret": "fak3AP1-s3Cr3t",
-    "oauth.callback.url": "https;//mycoolapp.com",
-    "oauth.scope": "Calendars.Read Calendars.ReadWrite offline_access"
+    "oauth.callback.url": "https;//mycoolapp.com"
   },
   "tags": [
     "Docs"
@@ -181,19 +176,14 @@ API parameters in the UI are **bold**, while parameters available in the instanc
 
 {% include note.html content="Event related parameters are described in <a href=events.html>Events</a>." %}
 
-6. In **OAuth API Key** enter your app's **{{page.apiKey}}**.
-6. In **OAuth API Secret** enter your app's **{{page.apiSecret}}**.
-
-
 | Parameter | Description   | Data Type |
 | :------------- | :------------- | :------------- |
 | `key` | The element key.<br>{{page.elementKey}}  | string  |
 | `code` | {{site.data.glossary.element-auth-grant-code}} | string |
 |  **Name**</br>`name` |  {{site.data.glossary.element-auth-name}}  | string  |
-| **OAuth API Key**</br>`oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
-| **OAuth API Secret**</br>`oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
+| `oauth.api.key` |  {{site.data.glossary.element-auth-api-key}} This is the **{{page.apiKey}}** that you noted in [API Provider Setup](setup.html). |  string |
+|`oauth.api.secret` | {{site.data.glossary.element-auth-api-secret}} This is the **{{page.apiSecret}}** that you noted in [API Provider Setup](setup.html). | string |
 | `oauth.callback.url` | {{site.data.glossary.element-auth-oauth-callback}} This is the **{{page.callbackURL}}** that you noted in [API Provider Setup](setup.html).  | string |
-|  **OAuth Scope**</br> `oauth.scope`  | The permissions required to access resources set up on the element.  | string  |
 | Tags</br>`tags` | {{site.data.glossary.element-auth-tags}} | string |
 
 ## Example Response for an Authenticated Element Instance
@@ -207,11 +197,12 @@ In this example, the instance ID is `12345` and the instance token starts with "
   "createdDate": "2017-11-30T21:53:35Z",
   "token": "ABC/D...xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
   "element": {
-      "id": 17314,
+      "id": 6410,
       "name": "Outlook Email",
-      "key": "microsoftgraph",
-      "description": "Add a Outlook Email instance to connect your existing account allowing you to manage calendars and sync to a variety of microsoft endpoints. You will need your AWS account information to add an instance",
-      "image": "http://developers.cloud-elements.com/assets/img/default-ce-logo-element-builder.png",
+      "key": "outlookemail",
+      "description": "Add an Outlook Email Instance to connect your existing Outlook account to the general Hub, allowing you to manage your emails across multiple general Elements.You will need your Outlook account information to add an instance ",
+      "image": "elements/custom-element-default-logo.png",
+      "logo": "outlookemail",
       "active": true,
       "deleted": false,
       "typeOauth": false,
@@ -227,11 +218,13 @@ In this example, the instance ID is `12345` and the instance token starts with "
           "type": "oauth2"
       },
       "extended": false,
+      "useModelsForMetadata": true,
       "hub": "general",
-      "protocolType": "http",
-      "parameters": [  ]
+      "protocolType": "odata",
+      "parameters": [  ],
+      "private": false
     },
-    "elementId": 17314,
+    "elementId": 6410,
     "tags": [
         "Docs"
     ],

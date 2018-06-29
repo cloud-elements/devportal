@@ -21,7 +21,7 @@ To authenticate an {{page.heading}} element instance you must register an app wi
 
 If you've already set up an app and just need to know how to find your **{{page.apiKey}}** and **{{page.apiSecret}}**, see [Locate Credentials for Authentication](#locate-credentials-for-authentication). If you need to register an app, see [Create an Application](#create-an-application).
 
-See the latest setup instructions in the [{{page.apiProvider}} documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-appmodel-v2-overview).
+See the latest setup instructions in the [{{page.apiProvider}} documentation](https://developer.microsoft.com/en-us/graph/docs/concepts/auth_register_app_v2).
 
 {% include callout.html content="<strong>On this page</strong></br><a href=#locate-credentials-for-authentication>Locate Credentials for Authentication</a></br><a href=#create-an-application>Create an Application</a></br><a href=#permissions>Permissions</a></br><a href=#set-up-events>Set Up Events</a>" type="info" %}
 
@@ -36,6 +36,7 @@ To find your OAuth 2.0 credentials:
 3. Record the **{{page.apiKey}}**.
 4. If you don't know the **{{page.apiSecret}}**, click **Generate New Password** to get a new one and record it.
 4. Record the **{{page.callbackURL}}** for your app.
+![Outlook Email Creds](img/outlook-creds.png)
 
 ## Create an Application
 
@@ -47,42 +48,16 @@ To create an application:
 2. Click **Add an App**.
 3. Enter a name, and then click **Create**
 4. Record the **{{page.apiKey}}**.
+![Application Id](img/app-id.png)
 5. Under **Application Secrets**, click **Generate New Password**, record the **{{page.apiSecret}}**, and then click **OK**.
 
     {% include important.html content="You cannot show the Password/Public Key again, so you will need to generate a new one if it's lost. " %}
 
+![Password/Public Key](img/gen-password.png)
+
 5. Under **Platforms**, click **Add Platform**, and then select **Web**.
 6. In **Redirect URLs** enter the URL to redirect the user to at the end of the OAuth 2.0 authentication process. For example, the Cloud Elements 2.0 callback URL is `https://auth.cloudelements.io/oauth`.
-7. Under **Outlook Email Permissions** add the permissions needed to use your app. See [Permissions](#permissions) for details.
-8. Save your app.
-![Key secret and URL](./img/microsoftgraph_app_registration.gif)
-
-## Permissions
-
-When creating your app be aware of the permissions that you set. Each resource requires specific permissions. For example, the Calendar resource requires:
-
-| Permission Type | Permissions   |
-| :------------- | :------------- |
-|  Delegated (work or school account)  |  Calendars.Read, Calendars.ReadWrite  |
-| Delegated (personal Microsoft account)	   |Calendars.Read, Calendars.ReadWrite |
-| Application   | Calendars.Read, Calendars.ReadWrite  |
-
-For more information see: https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_list_calendars.
-
-When setting up your app, in the Delegated Permission section you need:
-
-* Calendars.Read
-* Calendars.ReadWrite
-
-In addition, to authenticate you need:
-
-* Delegated Permission: Users.Read.All (if an admin Users.Read)
-* Delegated Permission: Users.ReadWrite.All (non-admin Users.ReadWrite)
-* Application Permissions: Users.Read.All
-* Application Permissions: Users.ReadWrite.All.
-
-
-![Permissions](./img/findingPermissions.gif)
-
+7. Under **Outlook Email Permissions** add the permissions needed to use your app. Review the [Mail Permissions in Microsoft's documentation](https://developer.microsoft.com/en-us/graph/docs/concepts/permissions_reference#mail-permissions).
+8. Add any additional information, and then save your app.
 
 Next [authenticate an element instance with {{page.apiProvider}}](authenticate.html).

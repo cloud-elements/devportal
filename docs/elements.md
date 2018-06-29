@@ -105,6 +105,7 @@ layout: sidebarelementtile
 * [![Oracle Eloqua](/assets/img/element-logos/eloqua.png)Oracle Eloqua](./elements/eloqua/)
 * [![Oracle Sales Cloud](/assets/img/element-logos/oraclesalescloud.png)Oracle Sales Cloud](./elements/oraclesalescloud/)
 * [![Oracle Service Cloud](/assets/img/element-logos/oracleservicecloud.png)Oracle Service Cloud](./elements/oracleservicecloud/)
+* [![Outlook Email](https://dyzz9obi78pm5.cloudfront.net/app/image/id/5b35051aec161cfa6b303783/n/download.png )Outlook Email](./elements/outlookemail/)
 * [![Pardot](/assets/img/element-logos/pardot.png)Pardot](./elements/pardot/)
 * [![PayPal](/assets/img/element-logos/paypal.png)PayPal](./elements/paypal/)
 * [![Pipedrive](/assets/img/element-logos/pipedrive.png)Pipedrive](./elements/pipedrive/)

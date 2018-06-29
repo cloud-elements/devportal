@@ -19,10 +19,9 @@ The Cloud Elements Query Language (CEQL) is a query language used by Cloud Eleme
 
 Use CEQL to query the following endpoints:
 
-* GET /calendars
-* GET /calendars/{calendarId}/events
+* GET /messages
 * POST /bulk/query
-
-To see provider documentation: https://developer.microsoft.com/en-us/graph/docs/concepts/query_parameters
+* GET /{objectName}
+* GET /{objectName}/{objectId}/{childObjectName}
 
 {% include ceql-ref.md%}

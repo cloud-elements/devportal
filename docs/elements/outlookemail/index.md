@@ -30,7 +30,7 @@ Use this Postman collection and the documentation here to get started.
 | :------------- | :------------- |
 | API Documentation | [{{page.apiProvider}} API documentation](https://msdn.microsoft.com/en-us/office/office365/api/mail-rest-operations) |
 | Authentication | OAuth 2.0  |
-| Events | Webhooks |
+| Events | Polling |
 | Bulk | Supported for both upload and download. |
 | Transformations | Supported. See [Define Common Resources and Transformations](https://docs.cloud-elements.com/home/common-object) for more information about transforming your {{page.heading}} data.|
 
