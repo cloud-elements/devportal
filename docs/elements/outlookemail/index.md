@@ -14,7 +14,7 @@ order: 1
 
 # Welcome to the {{page.heading}} Element
 
-{{page.heading}} is available in the ERP hub. Connect a {{page.apiProvider}} account to integrate with accounts, currencies, customers, invoices, and more.
+{{page.heading}} is available in the general hub. Connect a {{page.apiProvider}} account to integrate with messages more.
 
 Use this Postman collection and the documentation here to get started.
 

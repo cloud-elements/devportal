@@ -17,7 +17,7 @@ order: 5
 
 # API Provider Setup
 
-To authenticate an {{page.heading}} element instance you must register an app with {{page.apiProvider}}. Then when you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** from your registered app as the **API Key**, **API Secret**, and **Callback URL**.  If you plan to monitor events, also configure the **Webhook URL**.
+To authenticate an {{page.heading}} element instance you must register an app with {{page.apiProvider}}. Then when you authenticate, use the **{{page.apiKey}}**, **{{page.apiSecret}}**, and **{{page.callbackURL}}** from your registered app as the **API Key**, **API Secret**, and **Callback URL**.
 
 If you've already set up an app and just need to know how to find your **{{page.apiKey}}** and **{{page.apiSecret}}**, see [Locate Credentials for Authentication](#locate-credentials-for-authentication). If you need to register an app, see [Create an Application](#create-an-application).
 
@@ -53,7 +53,7 @@ To create an application:
 
     {% include important.html content="You cannot show the Password/Public Key again, so you will need to generate a new one if it's lost. " %}
 
-![Password/Public Key](img/gen-password.png)
+    ![Password/Public Key](img/gen-password.png)
 
 5. Under **Platforms**, click **Add Platform**, and then select **Web**.
 6. In **Redirect URLs** enter the URL to redirect the user to at the end of the OAuth 2.0 authentication process. For example, the Cloud Elements 2.0 callback URL is `https://auth.cloudelements.io/oauth`.
