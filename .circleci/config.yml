@@ -28,11 +28,7 @@ jobs:
     - save_cache:
         key: v1-dep-{{ .Branch }}-{{ epoch }}
         paths:
-        # This is a broad list of cache paths to include many possible development environments
-        # You can probably delete some of these entries
         - vendor/bundle
-        - ~/virtualenvs
-        - ~/.ivy2
         - ~/.bundle
     - run:
         command: bundle exec jekyll build
