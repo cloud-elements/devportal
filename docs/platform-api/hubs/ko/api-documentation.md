@@ -1,10 +1,10 @@
 ---
-seo: Account API Docs | Cloud Elements API Docs
+seo: Hub API Docs | Cloud Elements API Docs
 title: Platform Documentation
-description: Account API Documentation.
+description: Hub API Documentation.
 layout: swagger-only
 apis: API Docs
-platform: accounts
+platform: hubs
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 90
