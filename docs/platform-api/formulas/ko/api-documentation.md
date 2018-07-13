@@ -1,11 +1,10 @@
 ---
-heading: Account APIs
-seo: Account API Docs | Cloud Elements API Docs
+seo: Instance API Docs | Cloud Elements API Docs
 title: Platform Documentation
-description: Account API Documentation.
+description: Instance API Documentation.
 layout: swagger-only
 apis: API Docs
-platform: accounts
+platform: instances
 breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 order: 90
