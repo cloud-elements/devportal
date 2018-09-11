@@ -181,9 +181,9 @@ The hook below applies to all delete method requests. If the request is ‘delet
 ```js
 if(request_vendor_method === 'DELETE') {
 	request_vendor_headers["Content-Type"] = "*/*";
-	return {
+	done( {
 		"request_vendor_headers": request_vendor_headers
-	}
+	} );
 }
 ```
 
@@ -195,7 +195,7 @@ This hook is an example of reading a value from the configuration of your elemen
 var body = JSON.parse(request_vendor_body);
 var contactEmailUpsert = configuration["contact.emailupsert"];
 if(contactEmailUpsert === false) {
-	return;
+	done();
 }
 //Updating the body field contact object with upsert=true
 body["contact"] = {
@@ -203,10 +203,10 @@ body["contact"] = {
 };
 
 //Converting the object to string and returning
-return {
+done( {
 	"request_vendor_body": JSON.stringify(body),
 	"continue": true
-}
+} );
 ```
 
 ### Post-Hook Reading Response Headers
@@ -219,13 +219,13 @@ The script only executes if the response behaves as expected.
 if(response_headers === null
 	|| !(response_status_code === 201
 		|| response_status_code === 200)) {
-	return;
+	done();
 }
 
 //Get the location string from headers
 var location = response_headers["location"];
 if(location === null) {
-	return;
+	done();
 }
 //Extract just the id part from the location string
 location = location.replace("https://someurl/v1/contacts/","")
@@ -237,9 +237,9 @@ var response = {
 };
 
 //return the response body
-return {
+done( {
 	"response_body": response
-}
+} );
 ```
 ### Reading Event Webhooks
 
@@ -271,9 +271,9 @@ if(webhook_types === 'convo.created') {
 }
 
 formattedEvents.add(eventObj);
-return {
+done( {
 	"events" : formattedEvents
-}
+} );
 ```
 
 ### Removing Headers
