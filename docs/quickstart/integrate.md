@@ -9,6 +9,8 @@ breadcrumbs: /docs/guides/home.html
 parent: Back to Guides
 published: true
 sitemap: false
+redirect_to:
+  - https://docs.cloud-elements.com/home/your-first-integration-sync-contacts-between-salesforce-and-shopify
 ---
 
 # Set Up Your First Integration

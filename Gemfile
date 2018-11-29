@@ -6,7 +6,7 @@ gem 'rb-inotify', '~> 0.9.7'
 
 gem 'jekyll'
 
-gem 'rake'
+gem 'rake', '12.3.1'
 
 group :jekyll_plugins do
   gem 'algoliasearch-jekyll', '~> 0.8.0'
