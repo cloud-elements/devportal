@@ -36,7 +36,7 @@ $(function() {
     else if(hubName != null && hubName != undefined) {
       return "https://api.cloud-elements.com/elements/api-v2/docs/" + hubName;
     } else if(uParams['elementId'] != null && uParams['elementId'] != undefined) {
-      return "https://api.cloud-elements.com/elements/api-v2/elements/" + uParams['elementId'] + "/docs";
+      return "https://api.cloud-elements.com/elements/api-v2/elements/" + uParams['elementId'] + "/docs?version=-1";
     } else if(uParams['element'] != null) {
       var url = "https://api.cloud-elements.com/elements/api-v2/docs/" + uParams['element'];
       if(uParams && uParams.elementKey) {
