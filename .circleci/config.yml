@@ -15,7 +15,6 @@ jobs:
   deployment:
     docker:
       - image: circleci/ruby:2.3.4
-    working_directory: ~/devportal
     steps:
       - checkout
       - run:
