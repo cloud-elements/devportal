@@ -1,5 +1,17 @@
 version: 2
 jobs:
+  echo_user:
+    docker:
+      - image: circleci/ruby:2.3.4
+    steps:
+      - checkout
+      - run: 
+          name: whoami
+          command: whoami
+      - run:
+          name: echo_user
+          command: echo "$USER"
+      
   test_build:
     docker:
       - image: circleci/ruby:2.3.4
@@ -43,6 +55,7 @@ workflows:
           filters:
             branches:
               ignore: master
+      - echo_user
   master_oncommit:
     jobs:
       - deployment:
