@@ -16,7 +16,7 @@ jobs:
           command: ls
       - run:
           name: chmod it
-          command: chown -R $USER:$USER ~/devportal
+          command: chown -R $USER:$USER /home/circleci/project
       
   test_build:
     docker:
