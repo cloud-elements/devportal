@@ -18,6 +18,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: bundle install
+          command: bundle install
+      - run:
           name: algolia push
           command: bundle exec jekyll algolia push
           timeout: 2400
@@ -28,7 +31,7 @@ jobs:
           name: set git username
           command: git config --global user.name 'cedevportal'
       - run:
-          name: do the rest
+          name: deploy it 
           command: cd _site; git init && git remote add gh "https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git" && git add -A && git commit -m 'Live release' && git push gh master --force
 
 workflows:
