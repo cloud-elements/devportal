@@ -15,15 +15,14 @@ jobs:
   deployment:
     docker:
       - image: circleci/ruby:2.3.4
-    working_directory: ~/devportal
     steps:
       - checkout
       - run:
           name: bundle install
           command: bundle install
       - run:
-          name: algolia push
-          command: bundle exec jekyll algolia push
+          name: jekyll build
+          command: bundle exec jekyll build
           timeout: 2400
       - run:
           name: set git email
@@ -43,6 +42,11 @@ workflows:
           filters:
             branches:
               ignore: master
+      - manual_deploy_approve:
+          type: approval
+      - deployment:
+          requires:
+            - manual_deploy_approve
   master_oncommit:
     jobs:
       - deployment:
