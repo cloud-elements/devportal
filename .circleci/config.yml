@@ -48,7 +48,7 @@ workflows:
               ignore: master
       - manual_deploy_approve:
           type: approval
-      - deploy:
+      - deployment:
           requires:
             - manual_deploy_approve
   master_oncommit:
