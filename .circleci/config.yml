@@ -61,7 +61,11 @@ workflows:
           filters:
             branches:
               ignore: master
-      - echo_user
+      - manual_deploy_approve:
+          type: approval
+      - echo_user:
+          requires:
+            - manual_deploy_approve
   master_oncommit:
     jobs:
       - deployment:
