@@ -1,12 +1,5 @@
 version: 2
 jobs:
-  echo:
-    docker:
-      - image: circleci/ruby:2.3.4
-    steps:
-      - checkout
-      - run: echo $USER
-      - run: echo `whoami`
   test_build:
     docker:
       - image: circleci/ruby:2.3.4
@@ -28,7 +21,7 @@ jobs:
           name: bundle install
           command: bundle install
       - run:
-          name: jekyll push
+          name: jekyll build
           command: bundle exec jekyll build
           timeout: 2400
       - run:
@@ -49,7 +42,6 @@ workflows:
           filters:
             branches:
               ignore: master
-      - echo
       - manual_deploy_approve:
           type: approval
       - deployment:
