@@ -1,5 +1,12 @@
 version: 2
-jobs:   
+jobs:
+  echo:
+    docker:
+      - image: circleci/ruby:2.3.4
+    steps:
+      - checkout
+      - run: echo $USER
+      - run: echo `whoami`
   test_build:
     docker:
       - image: circleci/ruby:2.3.4
@@ -45,6 +52,7 @@ workflows:
           filters:
             branches:
               ignore: master
+      - echo
       - manual_deploy_approve:
           type: approval
       - deployment:
