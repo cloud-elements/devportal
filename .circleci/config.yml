@@ -25,14 +25,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: chmod it
-          command: chown -R `whoami`:`whoami` /home/circleci/project
-      - run:
           name: bundle install
           command: bundle install
       - run:
-          name: algolia push
-          command: bundle exec jekyll algolia push
+          name: jekyll push
+          command: bundle exec jekyll push
           timeout: 2400
       - run:
           name: set git email
