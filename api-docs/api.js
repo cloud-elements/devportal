@@ -27,6 +27,7 @@ $(function() {
     }
   }
 
+  // FOR REF: This is the only getDocsUrl that get's called
   function getDocsUrl(uParams) {
     var hubName = uParams['hub'];
     var resource = uParams['resource'];
