@@ -1,0 +1,48 @@
+version: 2.1
+jobs:
+  test:
+    docker:
+      - image: circleci/ruby:2.3.4
+    steps:
+      - checkout
+      - run: 
+          name: bundle install
+          command: bundle install
+      - run:
+          name: test jekyll build
+          command: bundle exec jekyll build
+              timeout: 2400
+  deployment:
+    docker:
+      - image: circleci/ruby:2.3.4
+    steps:
+      - checkout
+      - run:
+          name: algolia push
+          command: bundle exec jekyll algolia push
+              timeout: 2400
+      - run:
+          name: set git email
+          command: git config --global user.email 'greg+cedevportal@cloud-elements.com'
+      - run:
+          name: set git username
+          command: git config --global user.name 'cedevportal'
+      - run:
+          name: do the rest
+          command: cd _site; git init && git remote add gh "https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git" && git add -A && git commit -m 'Live release' && git push gh master --force
+
+workflows:
+  version: 2
+  premerge:
+    jobs:
+      - test:
+        filters:
+          branches:
+            ignore: master
+  master_oncommit:
+    jobs:
+      - deployment:
+        filters:
+          branches:
+            only:
+              - master
