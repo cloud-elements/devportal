@@ -1,6 +1,6 @@
-version: 2.1
+version: 2
 jobs:
-  test:
+  test_build:
     docker:
       - image: circleci/ruby:2.3.4
     steps:
@@ -11,7 +11,7 @@ jobs:
       - run:
           name: test jekyll build
           command: bundle exec jekyll build
-              timeout: 2400
+          timeout: 2400
   deployment:
     docker:
       - image: circleci/ruby:2.3.4
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: algolia push
           command: bundle exec jekyll algolia push
-              timeout: 2400
+          timeout: 2400
       - run:
           name: set git email
           command: git config --global user.email 'greg+cedevportal@cloud-elements.com'
@@ -35,14 +35,14 @@ workflows:
   version: 2
   premerge:
     jobs:
-      - test:
-        filters:
-          branches:
-            ignore: master
+      - test_build:
+          filters:
+            branches:
+              ignore: master
   master_oncommit:
     jobs:
       - deployment:
-        filters:
-          branches:
-            only:
-              - master
+          filters:
+            branches:
+              only:
+                - master
