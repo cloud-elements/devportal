@@ -9,8 +9,8 @@ jobs:
           name: whoami
           command: whoami
       - run:
-          name: echo_user
-          command: echo "$USER"
+          name: chmod it
+          command: chown -R $USER:$USER ~/devportal
       
   test_build:
     docker:
