@@ -1,23 +1,5 @@
 version: 2
-jobs:
-  echo_user:
-    docker:
-      - image: circleci/ruby:2.3.4
-    steps:
-      - checkout
-      - run: 
-          name: whoami
-          command: whoami
-      - run: 
-          name: pwd
-          command: pwd
-      - run: 
-          name: list
-          command: ls
-      - run:
-          name: chmod it
-          command: chown -R $USER:$USER /home/circleci/project
-      
+jobs:   
   test_build:
     docker:
       - image: circleci/ruby:2.3.4
@@ -36,6 +18,9 @@ jobs:
     working_directory: ~/devportal
     steps:
       - checkout
+      - run:
+          name: chmod it
+          command: chown -R $USER:$USER /home/circleci/project
       - run:
           name: bundle install
           command: bundle install
@@ -63,7 +48,7 @@ workflows:
               ignore: master
       - manual_deploy_approve:
           type: approval
-      - echo_user:
+      - deploy:
           requires:
             - manual_deploy_approve
   master_oncommit:
