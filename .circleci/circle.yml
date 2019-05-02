@@ -1,0 +1,22 @@
+machine:
+  ruby:
+    version: 2.3.0
+
+dependencies:
+  override:
+    - bundle install
+
+test:
+  override:
+    - bundle exec jekyll build:
+        timeout: 2400
+
+deployment:
+  live:
+    branch: master
+    commands:
+      - bundle exec jekyll algolia push:
+          timeout: 2400
+      - git config --global user.email 'greg+cedevportal@cloud-elements.com'
+      - git config --global user.name 'cedevportal'
+      - cd _site; git init && git remote add gh "https://${GITHUB_USERNAME}:${GITHUB_PASSWORD}@github.com/cloud-elements/cloud-elements.github.io.git" && git add -A && git commit -m 'Live release' && git push gh master --force
