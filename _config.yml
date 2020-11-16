@@ -8,11 +8,19 @@ exclude:
 liquid:
   error_mode: strict
 
-markdown: redcarpet
+markdown: kramdown
 markdown_ext: markdown,mkdown,mkdn,mkd,md
 
-redcarpet:
-  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
+kramdown:
+    input: GFM
+    syntax_highligher: true
+    syntax_highlighter_opts:
+        line_numbers: true
+    auto_ids:      true
+    footnote_nr:   1
+    entity_output: as_char
+    toc_levels:    1..6
+    smart_quotes:  lsquo,rsquo,ldquo,rdquo
 
 url: https://developers.cloud-elements.com
 

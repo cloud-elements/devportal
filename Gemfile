@@ -11,7 +11,7 @@ gem 'rake'
 group :jekyll_plugins do
   gem 'algoliasearch-jekyll', '~> 0.8.0'
   gem 'jekyll-redirect-from'
-  gem 'redcarpet'
+  gem 'kramdown'
   gem 'jekyll-youtube'
   gem 'html-proofer'
   gem 'jekyll-paginate'
