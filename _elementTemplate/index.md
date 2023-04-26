@@ -28,7 +28,7 @@ Use this Postman collection and the documentation here to get started.
 
 | Element Information | Details     |
 | :------------- | :------------- |
-| API Documentation | [{{page.apiProvider}} API documentation](https://www.google.com/search?q={{page.heading}}+api+documentation) |
+| API Documentation link | [{{page.apiProvider}} API documentation](https://www.google.com/search?q={{page.heading}}+api+documentation) |
 | Authentication | OAuth 2.0  |
 | Events | Webhooks and polling |
 | Bulk | Supported for both upload and download. |
